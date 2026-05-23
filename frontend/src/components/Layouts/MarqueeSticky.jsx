@@ -38,12 +38,12 @@ const MarqueeSticky = () => {
                     </p>
                 </div>
 
-                <div className="marquee-con-none absolute top-0 -z-1 text-[#2C5F2E]">
+                <div className="marquee-con-none absolute top-12 md:top-20 -z-1 text-[#2C5F2E]">
                     <MarqueeText />
                 </div>
 
                 {/* SPACE RESERVER — extremely important */}
-                <div className="sticky-spacer w-full h-[8vh] md:h-[20vh]" />
+                <div className="sticky-spacer w-full h-[12vh] md:h-[20vh]" />
             </div>
         </section>
     );
