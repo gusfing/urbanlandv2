@@ -60,7 +60,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
           scale: 1,
           y: 0,
           opacity: 1,
-          borderRadius: window.innerWidth < 768 ? "32px" : "40px",
+          borderRadius: "0px",
           duration: 0.6,
           ease: "power4.out",
         }
@@ -125,16 +125,16 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
     <div
       ref={containerRef}
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-[6px] flex items-end justify-center pb-8 sm:pb-12 md:pb-14 px-4 sm:px-6 md:px-8 font-sans opacity-0 invisible"
+      className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-[6px] flex items-stretch justify-center font-sans opacity-0 invisible"
     >
       <div 
         ref={innerRef}
-        className="relative w-full max-w-[560px] h-[520px] max-h-[82vh] bg-white rounded-[2.5rem] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-12 shadow-2xl border border-black/5"
+        className="relative w-full h-full bg-[#f4efe7] overflow-hidden flex flex-col justify-between p-10 sm:p-16 md:p-24 shadow-none border-none rounded-none"
       >
         {/* Top Right Graphic (Premium abstract fluid ribbons) */}
         <div 
           ref={graphicRef}
-          className="absolute top-0 right-0 w-[45%] h-[55%] pointer-events-none select-none overflow-hidden rounded-tr-[2.5rem] opacity-0"
+          className="absolute top-0 right-0 w-[45%] h-[55%] pointer-events-none select-none overflow-hidden rounded-none opacity-0"
         >
           <img 
             src={abstractFluid} 
@@ -144,14 +144,14 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
         </div>
 
         {/* Top Section: Navigation Links */}
-        <div className="flex flex-col items-start gap-1 z-10 pt-4 pl-2 md:pt-6 md:pl-4">
+        <div className="flex flex-col items-start gap-4 z-10 pt-16 pl-6 md:pt-20 md:pl-16">
           {links.map((link, index) => (
             <a
               key={link}
               href={`#${link.toLowerCase().replace(' ', '-')}`}
               ref={(el) => (linksRef.current[index] = el)}
               onClick={() => setIsOpen(false)}
-              className="text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.1] text-[#1a1a1a] font-medium tracking-tight hover:text-gray-400 transition-colors duration-300"
+              className="text-4xl sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] leading-[0.95] text-[#2a2725] font-black uppercase tracking-tighter hover:text-[#993b21] transition-colors duration-300"
             >
               {link}
             </a>
@@ -161,7 +161,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
         {/* Bottom Section */}
         <div 
           ref={bottomRef} 
-          className="w-full flex items-end justify-between z-10 pt-6 pl-2 pr-2 md:pl-4 md:pr-4 opacity-0 relative"
+          className="w-full flex items-end justify-between z-10 pt-8 pl-6 pr-6 md:pl-16 md:pr-16 opacity-0 relative"
         >
           {/* Socials */}
           <div className="flex flex-col items-start gap-0.5 sm:gap-1 font-sans">

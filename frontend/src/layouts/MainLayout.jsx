@@ -5,7 +5,6 @@ import Header from "../components/Header/Header";
 import { useEffect } from "react";
 import { initLenis } from "../lib/lenis";
 import PreloaderII from "../components/Preloader/PreloaderII";
-import ReserveBtn from "../components/Buttons/ReserveBtn";
 import Footer from "../components/Footer/Footer";
 import FooterTitle from "../components/Footer/FooterTitle";
 
@@ -63,7 +62,6 @@ const MainLayout = () => {
         <>
             <PreloaderII />
             <Header />
-            <ReserveBtn />
             <main>
                 <Outlet /> {/* Hero, About, Contact, etc. */}
                 <Footer />
