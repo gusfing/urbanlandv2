@@ -74,9 +74,21 @@ const ProductsCatalog = ({ showTitle = true }) => {
     };
   }, []);
 
-  // Filter products based on selected category
+  // Filter products based on selected category or active design principle
   const filteredProducts = activeCategory === "all"
     ? productsList
+    : activeCategory === "Sustainable"
+    ? productsList.filter(p => ["platform", "morse", "kubus", "cube-planter"].includes(p.id))
+    : activeCategory === "Nature—Care"
+    ? productsList.filter(p => ["platform", "cube-planter", "cane-double", "cane-set"].includes(p.id))
+    : activeCategory === "Smart"
+    ? productsList.filter(p => ["aero-shelter", "car-port"].includes(p.id))
+    : activeCategory === "Privacy"
+    ? productsList.filter(p => ["cane-double", "cane-set", "sunscape", "car-port"].includes(p.id))
+    : activeCategory === "Spacious"
+    ? productsList.filter(p => ["platform", "morse", "linfa", "cane-set"].includes(p.id))
+    : activeCategory === "Glassed-in"
+    ? productsList.filter(p => ["aero-shelter", "car-port"].includes(p.id))
     : productsList.filter(p => p.category === activeCategory);
 
   // Scroll functions
@@ -154,7 +166,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
       className={`w-full overflow-hidden flex flex-col justify-start items-start gap-10 ${
         showTitle 
           ? "bg-transparent py-20 px-8 lg:px-16" 
-          : "mt-12"
+          : "mt-4"
       }`}
     >
       {/* Title block */}
@@ -172,136 +184,193 @@ const ProductsCatalog = ({ showTitle = true }) => {
         </div>
       )}
 
-      {/* Navigation and Category pills */}
-      <div className="w-full flex justify-between items-center gap-4 catalog-pills-row">
-        {/* Pills container */}
-        <div className="flex-1 overflow-x-auto scrollbar-none flex items-center gap-3 pr-4 py-1">
-          {categories.map((cat) => {
-            const isActive = activeCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium tracking-wide whitespace-nowrap cursor-pointer transition-all duration-300 ${
-                  isActive
-                    ? "bg-[#2C5F2E] text-[#F7F4EF] shadow-md border border-[#2C5F2E]"
-                    : "bg-[#2D2D2D]/5 text-[#2D2D2D] border border-[#2D2D2D]/10 hover:bg-[#2D2D2D]/10 hover:text-black"
-                }`}
-              >
-                {cat.icon}
-                {cat.name}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Scroll Buttons */}
-        <div className="flex items-center gap-2 shrink-0">
-          <button
-            onClick={() => scroll("left")}
-            className="w-12 h-12 rounded-full border border-[#2D2D2D]/10 flex justify-center items-center bg-[#2D2D2D]/5 text-[#2D2D2D] hover:bg-[#2D2D2D]/10 transition-all cursor-pointer"
-            aria-label="Scroll left"
-          >
-            <svg className="w-5 h-5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            className="w-12 h-12 rounded-full bg-[#2C5F2E] text-[#F7F4EF] flex justify-center items-center hover:bg-[#2C5F2E]/90 transition-all cursor-pointer shadow-md"
-            aria-label="Scroll right"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {/* Slider Carousel Container */}
-      <div 
-        ref={sliderRef}
-        className="w-full overflow-x-auto scrollbar-none flex gap-6 pb-6 snap-x snap-mandatory scroll-smooth"
-      >
-        {loading ? (
-          Array.from({ length: 4 }).map((_, idx) => (
-            <div
-              key={idx}
-              className="min-w-[280px] sm:min-w-[340px] md:min-w-[380px] lg:min-w-[420px] aspect-[4/5] bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] animate-pulse select-none"
-            >
-              <div className="flex justify-between items-start gap-4">
-                <div className="h-6 w-32 bg-black/10 rounded-md" />
-                <div className="h-5 w-12 bg-black/10 rounded-full" />
-              </div>
-              <div className="flex-1 my-6 flex justify-center items-center">
-                <div className="w-[65%] h-[65%] bg-black/[0.04] rounded-2xl" />
-              </div>
-              <div className="flex justify-between items-end">
-                <div className="h-5 w-20 bg-black/10 rounded-md" />
-                <div className="h-5 w-24 bg-black/5 rounded-full" />
-              </div>
-            </div>
-          ))
-        ) : (
-          filteredProducts.map((product) => (
-            <Link
-              key={product.id}
-              to={`/product/${product.id}`}
-              className="catalog-card min-w-[280px] sm:min-w-[340px] md:min-w-[380px] lg:min-w-[420px] aspect-[4/5] bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group cursor-pointer no-underline block"
-            >
-              {/* Header info */}
-              <div className="flex justify-between items-start gap-4">
-                <h3 className="text-xl md:text-2xl font-light text-[#1a1a1a] tracking-tight leading-tight group-hover:text-black transition-colors duration-300">
-                  {product.title}
-                </h3>
+      {/* NEW INTEGRATED CATEGORY SPLIT LAYOUT */}
+      <div className="w-full flex flex-col lg:flex-row gap-10 items-stretch catalog-pills-row">
+        
+        {/* Left column: Principles and Active Tag Filters */}
+        <div className="w-full lg:w-[32%] shrink-0 flex flex-col justify-between p-8 bg-[#F7F4EF]/60 rounded-[2.5rem] border border-[#2D2D2D]/5 shadow-[0_10px_35px_rgba(0,0,0,0.01)] select-none">
+          <div>
+            <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#2D2D2D]/70 leading-relaxed mb-6 block">
+              All Urbanland® products are designed and built on the same principles:
+            </span>
+            
+            {/* Principles Tag Grid */}
+            <div className="flex flex-wrap gap-2.5 mt-4">
+              {[
+                { name: "Sustainable", type: "green" },
+                { name: "Nature—Care", type: "gold" },
+                { name: "Smart", type: "green" },
+                { name: "Privacy", type: "gold" },
+                { name: "Spacious", type: "green" },
+                { name: "Glassed-in", type: "gold" }
+              ].map((pill) => {
+                const isActive = activeCategory === pill.name;
+                const isGreen = pill.type === "green";
                 
-                {/* Badges */}
-                <div className="flex gap-1.5 shrink-0 pt-1">
-                  {product.badges.map((badge, idx) => (
-                    <span
-                      key={idx}
-                      className={`text-[0.65rem] font-bold uppercase tracking-wider rounded-full px-2.5 py-1 ${
-                        badge === "new"
-                          ? "bg-[#2C5F2E] text-white"
-                          : "bg-[#C9A84C]/10 text-[#C9A84C]"
-                      }`}
-                    >
-                      {badge}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Middle: Product rendering */}
-              <div className="flex-1 my-6 flex justify-center items-center overflow-hidden relative">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="max-h-[85%] max-w-[85%] object-contain select-none transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-              </div>
-
-              {/* Bottom info */}
-              <div className="flex justify-between items-end">
-                <span className="text-sm font-bold tracking-[0.15em] text-[#1a1a1a]">
-                  {product.line}
-                </span>
-                <span className="text-[0.7rem] uppercase tracking-wider text-[#2C5F2E] font-semibold bg-[#2C5F2E]/5 px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  View Details
-                </span>
-              </div>
-            </Link>
-          ))
-        )}
-
-        {!loading && filteredProducts.length === 0 && (
-          <div className="w-full py-20 flex flex-col justify-center items-center text-center">
-            <svg className="w-12 h-12 text-[#7c756b]/40 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-            </svg>
-            <p className="text-[#524f4c]">No products currently in this category.</p>
+                return (
+                  <button
+                    key={pill.name}
+                    onClick={() => setActiveCategory(isActive ? "all" : pill.name)}
+                    className={`px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide border-[1.5px] transition-all duration-300 cursor-pointer ${
+                      isGreen
+                        ? isActive
+                          ? "bg-[#2C5F2E] text-[#F7F4EF] border-[#2C5F2E] shadow-sm scale-95"
+                          : "border-[#2C5F2E] text-[#2C5F2E] hover:bg-[#2C5F2E]/5"
+                        : isActive
+                          ? "bg-[#C9A84C] text-[#F7F4EF] border-[#C9A84C] shadow-sm scale-95"
+                          : "border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C]/5"
+                    }`}
+                  >
+                    {pill.name}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        )}
+          
+          {/* Bottom row: All Products + * + Navigation */}
+          <div className="mt-10 flex flex-wrap items-center gap-3 border-t border-[#2D2D2D]/10 pt-6">
+            
+            {/* All Products Pill Button */}
+            <button
+              onClick={() => setActiveCategory("all")}
+              className={`flex items-center gap-2.5 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                activeCategory === "all"
+                  ? "bg-[#2C5F2E] text-[#F7F4EF] shadow-md border border-[#2C5F2E] scale-95"
+                  : "bg-[#2D2D2D]/5 text-[#2D2D2D] border border-[#2D2D2D]/10 hover:bg-[#2D2D2D]/10"
+              }`}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              All products
+            </button>
+            
+            {/* Custom Asterisk Button */}
+            <button
+              onClick={() => {
+                const principles = ["Sustainable", "Nature—Care", "Smart", "Privacy", "Spacious", "Glassed-in"];
+                const rand = principles[Math.floor(Math.random() * principles.length)];
+                setActiveCategory(rand);
+              }}
+              className="w-12 h-12 rounded-full bg-[#EAE5DB] text-[#2D2D2D] hover:bg-[#EAE5DB]/80 flex justify-center items-center text-xl font-bold transition-all cursor-pointer"
+              title="Surprise Me (Random Principle)"
+            >
+              ✳
+            </button>
+            
+            {/* Navigation Arrows */}
+            <div className="flex items-center gap-2 ml-auto lg:ml-0">
+              <button
+                onClick={() => scroll("left")}
+                className="w-12 h-12 rounded-full bg-[#EAE5DB] text-[#2D2D2D] hover:bg-[#EAE5DB]/80 flex justify-center items-center transition-all cursor-pointer"
+                aria-label="Scroll left"
+              >
+                <svg className="w-5 h-5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              <button
+                onClick={() => scroll("right")}
+                className="w-12 h-12 rounded-full bg-[#2C5F2E] text-[#F7F4EF] hover:bg-[#2C5F2E]/90 flex justify-center items-center shadow-md transition-all cursor-pointer"
+                aria-label="Scroll right"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+            
+          </div>
+        </div>
+        
+        {/* Right column: Slider container */}
+        <div className="flex-1 min-w-0">
+          <div 
+            ref={sliderRef}
+            className="w-full overflow-x-auto scrollbar-none flex gap-6 pb-6 snap-x snap-mandatory scroll-smooth"
+          >
+            {loading ? (
+              Array.from({ length: 4 }).map((_, idx) => (
+                <div
+                  key={idx}
+                  className="min-w-[280px] sm:min-w-[340px] md:min-w-[380px] lg:min-w-[420px] aspect-[4/5] bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] animate-pulse select-none"
+                >
+                  <div className="flex justify-between items-start gap-4">
+                    <div className="h-6 w-32 bg-black/10 rounded-md" />
+                    <div className="h-5 w-12 bg-black/10 rounded-full" />
+                  </div>
+                  <div className="flex-1 my-6 flex justify-center items-center">
+                    <div className="w-[65%] h-[65%] bg-black/[0.04] rounded-2xl" />
+                  </div>
+                  <div className="flex justify-between items-end">
+                    <div className="h-5 w-20 bg-black/10 rounded-md" />
+                    <div className="h-5 w-24 bg-black/5 rounded-full" />
+                  </div>
+                </div>
+              ))
+            ) : (
+              filteredProducts.map((product) => (
+                <Link
+                  key={product.id}
+                  to={`/product/${product.id}`}
+                  className="catalog-card min-w-[280px] sm:min-w-[340px] md:min-w-[380px] lg:min-w-[420px] aspect-[4/5] bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group cursor-pointer no-underline block"
+                >
+                  {/* Header info */}
+                  <div className="flex justify-between items-start gap-4">
+                    <h3 className="text-xl md:text-2xl font-light text-[#1a1a1a] tracking-tight leading-tight group-hover:text-black transition-colors duration-300">
+                      {product.title}
+                    </h3>
+                    
+                    {/* Badges */}
+                    <div className="flex gap-1.5 shrink-0 pt-1">
+                      {product.badges.map((badge, idx) => (
+                        <span
+                          key={idx}
+                          className={`text-[0.65rem] font-bold uppercase tracking-wider rounded-full px-2.5 py-1 ${
+                            badge === "new"
+                              ? "bg-[#2C5F2E] text-white"
+                              : "bg-[#C9A84C]/10 text-[#C9A84C]"
+                          }`}
+                        >
+                          {badge}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Middle: Product rendering */}
+                  <div className="flex-1 my-6 flex justify-center items-center overflow-hidden relative">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="max-h-[85%] max-w-[85%] object-contain select-none transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                  </div>
+
+                  {/* Bottom info */}
+                  <div className="flex justify-between items-end">
+                    <span className="text-sm font-bold tracking-[0.15em] text-[#1a1a1a]">
+                      {product.line}
+                    </span>
+                    <span className="text-[0.7rem] uppercase tracking-wider text-[#2C5F2E] font-semibold bg-[#2C5F2E]/5 px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      View Details
+                    </span>
+                  </div>
+                </Link>
+              ))
+            )}
+
+            {!loading && filteredProducts.length === 0 && (
+              <div className="w-full py-20 flex flex-col justify-center items-center text-center bg-white rounded-[2rem] border border-black/[0.03] px-8">
+                <svg className="w-12 h-12 text-[#7c756b]/40 mb-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+                <p className="text-[#524f4c] font-medium">No products match this design principle currently.</p>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
     </Wrapper>
   );

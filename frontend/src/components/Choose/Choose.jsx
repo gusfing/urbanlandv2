@@ -80,42 +80,15 @@ const Choose = () => {
                                 </span>
                             </h1>
                         ))}
-                    </div>
                 </div>
-                <div className="choose-sec w-full flex lg:flex-row flex-col justify-center items-start gap-10 lg:mt-0">
-                    <div className='lg:w-1/2 w-full text-[#2D2D2D]/90 lg:text-[2rem] text-[1rem] md:leading-[1.1] lg:mt-0 mt-8 lg:pr-16 font-normal'>
+            </div>
+                
+            <div className="choose-sec w-full flex flex-col justify-start items-start gap-10 lg:mt-0 pb-6">
+                    <div className='w-full lg:max-w-4xl text-[#2D2D2D]/90 lg:text-[2.2rem] text-[1.2rem] md:leading-[1.2] lg:mt-0 mt-8 font-light'>
                         <p>You can choose from our wide range of premium Urbanland® furniture. Each of our products provides the highest quality and meets the standards adjusted to your needs. Choose the ones you like.</p>
-                    </div>
-                    <div className='lg:w-1/2 w-full'>
-                        <div className=" lg:w-[35%] w-[60%]">
-                            <p className="text-[.7rem] text-[#2D2D2D] font-medium uppercase tracking-wider">All Urbanland® products are designed and built on the same principles:</p>
-                        </div>
-                        <div className="flex flex-1 flex-wrap justify-start items-start gap-2 mt-8">
-                            <div className="border-[1.5px] border-[#2C5F2E] text-[#2C5F2E] lg:text-[1.8rem] text-sm font-semibold px-[20px] py-[6px] rounded-full hover:bg-[#2C5F2E]/5 transition-colors">
-                                Sustainable
-                            </div>
-                            <div className="border-[1.5px] border-[#C9A84C] text-[#C9A84C] lg:text-[1.8rem] text-sm font-semibold px-[20px] py-[6px] rounded-full hover:bg-[#C9A84C]/5 transition-colors">
-                                Nature—Care
-                            </div>
-                            <div className="border-[1.5px] border-[#2C5F2E] text-[#2C5F2E] lg:text-[1.8rem] text-sm font-semibold px-[20px] py-[6px] rounded-full hover:bg-[#2C5F2E]/5 transition-colors">
-                                Smart
-                            </div>
-                            <div className="border-[1.5px] border-[#C9A84C] text-[#C9A84C] lg:text-[1.8rem] text-sm font-semibold px-[20px] py-[6px] rounded-full hover:bg-[#C9A84C]/5 transition-colors">
-                                Privacy
-                            </div>
-                            <div className="border-[1.5px] border-[#2C5F2E] text-[#2C5F2E] lg:text-[1.8rem] text-sm font-semibold px-[20px] py-[6px] rounded-full hover:bg-[#2C5F2E]/5 transition-colors">
-                                Spacious
-                            </div>
-                            <div className="border-[1.5px] border-[#C9A84C] text-[#C9A84C] lg:text-[1.8rem] text-sm font-semibold px-[20px] py-[6px] rounded-full hover:bg-[#C9A84C]/5 transition-colors">
-                                Glassed-in
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-
-            {/* Divider Line */}
-            <div className="w-full border-t border-white/10 my-6"></div>
 
             {/* Nested Products Catalog */}
             <ProductsCatalog showTitle={false} />
