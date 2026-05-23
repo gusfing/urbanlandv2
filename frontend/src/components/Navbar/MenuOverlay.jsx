@@ -50,78 +50,92 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
   useEffect(() => {
     if (isOpen) {
       // Fade/show backdrop
-      gsap.to(containerRef.current, {
-        autoAlpha: 1,
-        duration: 0.5,
-        ease: "power2.out",
-      });
+      if (containerRef.current) {
+        gsap.to(containerRef.current, {
+          autoAlpha: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      }
       
       // Expand modal card directly upwards from the bottom navbar button position
-      gsap.fromTo(
-        innerRef.current,
-        { 
-          scale: 0.05, 
-          y: 60, 
-          opacity: 0,
-          borderRadius: "100px",
-          transformOrigin: "50% 100%"
-        },
-        {
-          scale: 1,
-          y: 0,
-          opacity: 1,
-          borderRadius: "0px",
-          duration: 0.6,
-          ease: "power4.out",
-        }
-      );
+      if (innerRef.current) {
+        gsap.fromTo(
+          innerRef.current,
+          { 
+            scale: 0.05, 
+            y: 60, 
+            opacity: 0,
+            borderRadius: "100px",
+            transformOrigin: "50% 100%"
+          },
+          {
+            scale: 1,
+            y: 0,
+            opacity: 1,
+            borderRadius: "0px",
+            duration: 0.6,
+            ease: "power4.out",
+          }
+        );
+      }
 
       // Animate link items in sequence
-      gsap.fromTo(
-        linksRef.current,
-        { y: 25, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.45,
-          stagger: 0.04,
-          delay: 0.22,
-          ease: "power3.out",
-        }
-      );
+      const validLinks = linksRef.current.filter(Boolean);
+      if (validLinks.length > 0) {
+        gsap.fromTo(
+          validLinks,
+          { y: 25, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.45,
+            stagger: 0.04,
+            delay: 0.22,
+            ease: "power3.out",
+          }
+        );
+      }
 
       // Animate bottom row and graphic
-      gsap.fromTo(
-        [bottomRef.current, graphicRef.current],
-        { opacity: 0, y: 10 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.45,
-          delay: 0.3,
-          ease: "power2.out",
-        }
-      );
+      const targets = [bottomRef.current, graphicRef.current].filter(Boolean);
+      if (targets.length > 0) {
+        gsap.fromTo(
+          targets,
+          { opacity: 0, y: 10 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.45,
+            delay: 0.3,
+            ease: "power2.out",
+          }
+        );
+      }
 
     } else {
       // Modal card scales back down into the bottom button
-      gsap.to(innerRef.current, {
-        scale: 0.05,
-        y: 60,
-        opacity: 0,
-        borderRadius: "100px",
-        duration: 0.4,
-        ease: "power3.in",
-        transformOrigin: "50% 100%"
-      });
+      if (innerRef.current) {
+        gsap.to(innerRef.current, {
+          scale: 0.05,
+          y: 60,
+          opacity: 0,
+          borderRadius: "100px",
+          duration: 0.4,
+          ease: "power3.in",
+          transformOrigin: "50% 100%"
+        });
+      }
 
       // Fade out backdrop
-      gsap.to(containerRef.current, {
-        autoAlpha: 0,
-        duration: 0.4,
-        delay: 0.05,
-        ease: "power2.inOut",
-      });
+      if (containerRef.current) {
+        gsap.to(containerRef.current, {
+          autoAlpha: 0,
+          duration: 0.4,
+          delay: 0.05,
+          ease: "power2.inOut",
+        });
+      }
     }
   }, [isOpen]);
 
