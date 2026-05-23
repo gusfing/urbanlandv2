@@ -53,13 +53,13 @@ const MapLink = () => {
     });
 
     return (
-        <section ref={container} className="w-full h-[90vh] bg-[#181717] flex flex-col justify-center items-center text-center">
+        <section ref={container} className="w-full h-[90vh] bg-[#F7F4EF] flex flex-col justify-center items-center text-center">
             {/* Existing Title Text */}
             <div>
-                <p className="text-[0.7rem] font-bold text-[#a79c8d] choose-subtitle uppercase tracking-widest mb-4">
+                <p className="text-[0.7rem] font-bold text-[#2C5F2E] choose-subtitle uppercase tracking-widest mb-4">
                     — Urbanland in the world
                 </p>                
-                <h1 className="text-3xl md:text-[5vw] md:leading-[1.1] tracking-tight mt-5 text-[#f4efe7]">
+                <h1 className="text-3xl md:text-[5vw] md:leading-[1.1] tracking-tight mt-5 text-[#1A1A1A]">
                     Urbanland® delivers custom outdoor furniture<br />
                     Mumbai to architects and developers<br />
                 </h1>
@@ -72,7 +72,7 @@ const MapLink = () => {
                 onClick={openMap}
                 onMouseEnter={() => setActive(true)}
                 onMouseLeave={() => setActive(false)}
-                className="text-[#b1a696] text-[5vw] underline hover:text-[#f4efe7] cursor-pointer bg-transparent border-none outline-none mt-2 transition-colors duration-300"
+                className="text-[#2C5F2E] text-[5vw] underline hover:text-[#C9A84C] cursor-pointer bg-transparent border-none outline-none mt-2 transition-colors duration-300"
             >
                 anywhere in India.
             </button>
@@ -97,17 +97,17 @@ const MapLink = () => {
                     />
                     
                     {/* Dark Vignette/Gradient for readability */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#181717]/80 via-[#181717]/20 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#2D2D2D]/80 via-[#2D2D2D]/20 to-transparent pointer-events-none" />
 
                     {/* Floating Info Card */}
                     <div 
                         ref={mapUI}
-                        className="absolute top-8 md:top-12 left-6 md:left-12 bg-[#1c1a19]/95 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 w-[85%] max-w-[380px] text-left shadow-2xl"
+                        className="absolute top-8 md:top-12 left-6 md:left-12 bg-[#2C5F2E]/95 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 w-[85%] max-w-[380px] text-left shadow-2xl"
                     >
-                        <h2 className="text-[#f4efe7] text-3xl font-bold tracking-tight mb-1">Urbanland<sup className="text-sm">®</sup></h2>
-                        <p className="text-[#b1a696] text-sm font-medium mb-8 pb-6 border-b border-white/10">Delivering everywhere in India.</p>
+                        <h2 className="text-[#F7F4EF] text-3xl font-bold tracking-tight mb-1">Urbanland<sup className="text-sm">®</sup></h2>
+                        <p className="text-[#C9A84C] text-sm font-medium mb-8 pb-6 border-b border-white/10">Delivering everywhere in India.</p>
                         
-                        <p className="text-[#eae5dd] text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Featured Collections</p>
+                        <p className="text-[#F7F4EF]/75 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Featured Collections</p>
                         
                         <div className="flex gap-3">
                             <div className="flex-1 group cursor-pointer">
@@ -115,14 +115,14 @@ const MapLink = () => {
                                     <img src={mapThumb1} alt="Benches" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
                                 </div>
-                                <p className="text-[#f4efe7] text-xs font-semibold">Benches</p>
+                                <p className="text-[#F7F4EF] text-xs font-semibold">Benches</p>
                             </div>
                             <div className="flex-1 group cursor-pointer">
                                 <div className="w-full aspect-[4/3] rounded-xl overflow-hidden mb-3 border border-white/5 relative">
                                     <img src={mapThumb2} alt="Shelters" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
                                 </div>
-                                <p className="text-[#f4efe7] text-xs font-semibold">Shelters</p>
+                                <p className="text-[#F7F4EF] text-xs font-semibold">Shelters</p>
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@ const MapLink = () => {
                     <button
                         ref={mapClose}
                         onClick={closeMap}
-                        className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 bg-[#181717]/80 hover:bg-white text-white hover:text-black border border-white/20 px-8 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 backdrop-blur-md cursor-pointer flex items-center gap-2 shadow-xl hover:shadow-white/20"
+                        className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 bg-[#2D2D2D]/80 hover:bg-[#2C5F2E] text-[#F7F4EF] hover:text-white border border-white/20 px-8 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-300 backdrop-blur-md cursor-pointer flex items-center gap-2 shadow-xl hover:shadow-white/20"
                     >
                         Close 
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

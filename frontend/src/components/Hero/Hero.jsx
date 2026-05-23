@@ -244,7 +244,7 @@ const Hero = () => {
             <div className="w-full h-[2px] bg-white/15 rounded-full overflow-hidden">
               <div 
                 ref={progressRef}
-                className="h-full bg-[#0a7c41] w-0"
+                className="h-full bg-[#2C5F2E] w-0"
               />
             </div>
 

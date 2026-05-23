@@ -2,16 +2,25 @@
 @import "tailwindcss";
 
 :root {
-	--base-100: #181717;
-	--base-200: #292725;
-	--base-300: #f5f5f5;
+	--base-100: #F7F4EF; /* Background */
+	--base-200: #2D2D2D; /* Secondary */
+	--base-300: #2C5F2E; /* Primary Forest Green */
+}
+
+@theme {
+  --color-primary: #2C5F2E;
+  --color-secondary: #2D2D2D;
+  --color-accent: #C9A84C;
+  --color-background: #F7F4EF;
+  --color-text: #1A1A1A;
 }
 
 html,
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #181717;
+	background-color: #F7F4EF;
+	color: #1A1A1A;
 	font-family: "Inter", sans-serif;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
@@ -134,7 +143,7 @@ body {
 /* --------------- Welcome Section Styles -------------- */
 
 .text-darkBrown {
-	color: rgba(244, 239, 231, 0.07);
+	color: rgba(26, 26, 26, 0.08);
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
@@ -146,7 +155,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	color: #f4efe7;
+	color: #1A1A1A;
 	clip-path: inset(0% 0% 100% 0%);
 	white-space: nowrap;
 	transition: none;
@@ -163,18 +172,13 @@ body {
 /* -------------- Choose Section Styles ----------------- */
 .choose-section {
 	background: linear-gradient(to bottom,
-			#181717 0%,
-			#181717 50%,
-			#1f1d1b 65%,
-			#1f1d1b 75%,
-			#1f1d1b 85%,
-			#1f1d1b 90%,
-			/* #241f1d 95%, */
-			#2b2825 100%);
+			#F7F4EF 0%,
+			#F7F4EF 50%,
+			#efeae0 100%);
 }
 
 .choose-title-break {
-	color: rgba(244, 239, 231, 0.07);
+	color: rgba(26, 26, 26, 0.08);
 	position: relative;
 	display: inline-block;
 	overflow: hidden;
@@ -185,7 +189,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	color: #f4efe7;
+	color: #1A1A1A;
 	clip-path: inset(100% 0 0 0);
 	white-space: wrap;
 	transition: none;

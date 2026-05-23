@@ -32,7 +32,7 @@ const Gallery = () => {
             });
 
             tl4.to(".gallery-page4", {
-                backgroundColor: "#181717",
+                backgroundColor: "#F7F4EF",
             }, 'start');
 
             gsap.set(".gallery-topText h4, .gallery-topText h3, .gallery-bottomText h3, .gallery-bottomText p, .gallery-bottomText a", {
@@ -141,7 +141,7 @@ const Gallery = () => {
             });
 
             tl4.to(".gallery-page4", {
-                backgroundColor: "#181717",
+                backgroundColor: "#F7F4EF",
             }, 'start');
 
             gsap.set(".gallery-topText h4, .gallery-topText h3, .gallery-bottomText h3, .gallery-bottomText p, .gallery-bottomText a", {
@@ -274,18 +274,18 @@ const Gallery = () => {
                     <div className="flex flex-col items-start gap-1 max-w-[65%]">
                         <h3 className="gallery-seo-keyword">outdoor furniture for real estate projects</h3>
                         <div className="w-full flex justify-start items-start gap-2">
-                            <BsFillPlusCircleFill className="w-5 h-5 text-[#b1a696] mt-1 flex-shrink-0" />
+                            <BsFillPlusCircleFill className="w-5 h-5 text-[#C9A84C] mt-1 flex-shrink-0" />
                             <p className="text-[14px] text-[#f4efe7] font-medium leading-relaxed">
                                 Premium WPC benches, GFRC planters, car parking sheds, and cabanas that enhance property value and resident experience. Bulk supply with guaranteed timelines for your handover schedule.
                             </p>
                         </div>
                     </div>
                     <div className="flex flex-col items-end justify-between min-h-[60px]">
-                        <a href="/solutions/real-estate" className="gallery-link-btn text-[#b1a696] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
+                        <a href="/solutions/real-estate" className="gallery-link-btn text-[#C9A84C] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
                             Explore Real Estate Solutions →
                         </a>
                         <div className="relative z-9 w-40 h-[0.1rem] bg-[#4f4b48]">
-                            <div className="progress-line absolute z-10 bg-[#0a7c41] w-[20%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                            <div className="progress-line absolute z-10 bg-[#2C5F2E] w-[20%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                         </div>
                     </div>
                 </div>
@@ -302,18 +302,18 @@ const Gallery = () => {
                     <div className="flex flex-col items-start gap-1 max-w-[65%]">
                         <h3 className="gallery-seo-keyword">hotel outdoor furniture manufacturer India</h3>
                         <div className="w-full flex justify-start items-start gap-2">
-                            <BsFillPlusCircleFill className="w-5 h-5 text-[#b1a696] mt-1 flex-shrink-0" />
+                            <BsFillPlusCircleFill className="w-5 h-5 text-[#C9A84C] mt-1 flex-shrink-0" />
                             <p className="text-[14px] text-[#f4efe7] font-medium leading-relaxed">
                                 Luxury poolside loungers, wicker dining sets, and canteen furniture engineered for high guest footfall. Custom finishes to match your property's design language.
                             </p>
                         </div>
                     </div>
                     <div className="flex flex-col items-end justify-between min-h-[60px]">
-                        <a href="/solutions/hotels-resorts" className="gallery-link-btn text-[#b1a696] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
+                        <a href="/solutions/hotels-resorts" className="gallery-link-btn text-[#C9A84C] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
                             Explore Hospitality Solutions →
                         </a>
                         <div className="relative z-9 w-40 h-[0.1rem] bg-[#4f4b48]">
-                            <div className="progress-line absolute z-10 bg-[#0a7c41] w-[40%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                            <div className="progress-line absolute z-10 bg-[#2C5F2E] w-[40%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                         </div>
                     </div>
                 </div>
@@ -330,18 +330,18 @@ const Gallery = () => {
                     <div className="flex flex-col items-start gap-1 max-w-[65%]">
                         <h3 className="gallery-seo-keyword">hospital outdoor furniture India</h3>
                         <div className="w-full flex justify-start items-start gap-2">
-                            <BsFillPlusCircleFill className="w-5 h-5 text-[#b1a696] mt-1 flex-shrink-0" />
+                            <BsFillPlusCircleFill className="w-5 h-5 text-[#C9A84C] mt-1 flex-shrink-0" />
                             <p className="text-[14px] text-[#f4efe7] font-medium leading-relaxed">
                                 Durable, low-maintenance benches, dustbins, and canteen tables built to withstand heavy daily use in medical campuses. Easy-clean materials that meet hygiene requirements.
                             </p>
                         </div>
                     </div>
                     <div className="flex flex-col items-end justify-between min-h-[60px]">
-                        <a href="/solutions/hospitals" className="gallery-link-btn text-[#b1a696] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
+                        <a href="/solutions/hospitals" className="gallery-link-btn text-[#C9A84C] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
                             Explore Healthcare Solutions →
                         </a>
                         <div className="relative z-9 w-40 h-[0.1rem] bg-[#4f4b48]">
-                            <div className="progress-line absolute z-10 bg-[#0a7c41] w-[60%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                            <div className="progress-line absolute z-10 bg-[#2C5F2E] w-[60%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                         </div>
                     </div>
                 </div>
@@ -358,18 +358,18 @@ const Gallery = () => {
                     <div className="flex flex-col items-start gap-1 max-w-[65%]">
                         <h3 className="gallery-seo-keyword">campus outdoor furniture manufacturer</h3>
                         <div className="w-full flex justify-start items-start gap-2">
-                            <BsFillPlusCircleFill className="w-5 h-5 text-[#b1a696] mt-1 flex-shrink-0" />
+                            <BsFillPlusCircleFill className="w-5 h-5 text-[#C9A84C] mt-1 flex-shrink-0" />
                             <p className="text-[14px] text-[#f4efe7] font-medium leading-relaxed">
                                 Heavy-duty canteen tables, WPC benches, and GFRC planters built for high-footfall educational campuses. Resistant to vandalism, low on maintenance.
                             </p>
                         </div>
                     </div>
                     <div className="flex flex-col items-end justify-between min-h-[60px]">
-                        <a href="/solutions/education" className="gallery-link-btn text-[#b1a696] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
+                        <a href="/solutions/education" className="gallery-link-btn text-[#C9A84C] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
                             Explore Campus Solutions →
                         </a>
                         <div className="relative z-9 w-40 h-[0.1rem] bg-[#4f4b48]">
-                            <div className="progress-line absolute z-10 bg-[#0a7c41] w-[80%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                            <div className="progress-line absolute z-10 bg-[#2C5F2E] w-[80%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                         </div>
                     </div>
                 </div>
@@ -386,18 +386,18 @@ const Gallery = () => {
                     <div className="flex flex-col items-start gap-1 max-w-[65%]">
                         <h3 className="gallery-seo-keyword">smart city furniture manufacturer India</h3>
                         <div className="w-full flex justify-start items-start gap-2">
-                            <BsFillPlusCircleFill className="w-5 h-5 text-[#b1a696] mt-1 flex-shrink-0" />
+                            <BsFillPlusCircleFill className="w-5 h-5 text-[#C9A84C] mt-1 flex-shrink-0" />
                             <p className="text-[14px] text-[#f4efe7] font-medium leading-relaxed">
                                 Robust MS/SS bus shelters, stainless steel bollards, park benches, and outdoor dustbins for India's Smart City Mission projects. Compliant with urban infrastructure standards.
                             </p>
                         </div>
                     </div>
                     <div className="flex flex-col items-end justify-between min-h-[60px]">
-                        <a href="/solutions/smart-cities" className="gallery-link-btn text-[#b1a696] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
+                        <a href="/solutions/smart-cities" className="gallery-link-btn text-[#C9A84C] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
                             Explore Smart City Solutions →
                         </a>
                         <div className="relative z-9 w-40 h-[0.1rem] bg-[#4f4b48]">
-                            <div className="progress-line absolute z-10 bg-[#0a7c41] w-[100%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                            <div className="progress-line absolute z-10 bg-[#2C5F2E] w-[100%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
                         </div>
                     </div>
                 </div>

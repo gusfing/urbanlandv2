@@ -33,10 +33,10 @@ const Activities = () => {
     return (
         <section className="activities-section w-full min-h-[100vh] lg:h-[100vh] p-8 mt-16 flex flex-col justify-between pb-16">
             <div>
-                <p className='text-[.7rem] font-bold text-[#eae5dd] activities-subtitle text-white/60'>— From Premium Townships to Smart Cities</p>
+                <p className='text-[.7rem] font-bold text-[#2C5F2E] activities-subtitle'>— From Premium Townships to Smart Cities</p>
                 <div className="lg:mt-10 mt-7 activities-part origin-bottom">
                     {activitiesLines.map((line, index) => (
-                        <h1 key={index} className="text-[#f4efe7] lg:text-[9.5rem] text-[3rem] leading-[0.9] font-medium tracking-tighter">
+                        <h1 key={index} className="text-[#1A1A1A] lg:text-[9.5rem] text-[3rem] leading-[0.9] font-medium tracking-tighter">
                             {line}
                         </h1>
                     ))}
@@ -46,11 +46,11 @@ const Activities = () => {
             <div className="activities-sec w-full flex lg:flex-row flex-col justify-between items-start gap-10 lg:mt-0 mt-8">
                 <div className='lg:w-[55%] w-full'>
                     <div className="mb-6">
-                        <p className="text-[.8rem] font-semibold text-[#eae5dd] uppercase tracking-wider">Trusted Across India</p>
+                        <p className="text-[.8rem] font-semibold text-[#1A1A1A]/70 uppercase tracking-wider">Trusted Across India</p>
                     </div>
                     <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 md:gap-4">
                         {brandLogos.map((logo, index) => (
-                            <div key={index} className="brand-logo-card flex justify-center items-center h-14 md:h-16 p-3 bg-[#eae5dd]/90 hover:bg-[#eae5dd] rounded-xl transition-all duration-300 shadow-sm hover:scale-105 transform">
+                            <div key={index} className="brand-logo-card flex justify-center items-center h-14 md:h-16 p-3 bg-[#2D2D2D]/5 hover:bg-[#2C5F2E]/10 rounded-xl transition-all duration-300 shadow-sm hover:scale-105 transform">
                                 <img 
                                     src={logo} 
                                     alt={`Brand logo ${index + 1}`} 
@@ -61,14 +61,14 @@ const Activities = () => {
                     </div>
                 </div>
                 <div className='lg:w-[40%] w-full flex flex-col justify-end gap-6 lg:-mt-12'>
-                    <div className="activities-featured-img w-full h-[220px] md:h-[280px] overflow-hidden rounded-3xl border border-[#4f4b48]/30 shadow-2xl">
+                    <div className="activities-featured-img w-full h-[220px] md:h-[280px] overflow-hidden rounded-3xl border border-[#2D2D2D]/10 shadow-2xl">
                         <img 
                             src={featuredImg} 
                             alt="Urbanland Premium Township Project" 
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                         />
                     </div>
-                    <div className='text-[#b1a696] lg:text-[1.6rem] text-[1.1rem] md:leading-[1.2] font-normal'>
+                    <div className='text-[#2D2D2D]/80 lg:text-[1.6rem] text-[1.1rem] md:leading-[1.2] font-normal'>
                         <p>Over 50 major outdoor furniture projects delivered across 15+ cities. Specified by India's most respected real estate developers, hospitality groups & municipal bodies.</p>
                     </div>
                 </div>

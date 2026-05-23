@@ -31,14 +31,14 @@ const MarqueeSticky = () => {
         <section className=" w-full overflow-hidden">
             <div className="pin-con relative">
                 <div className="pl-8">
-                    <p className="text-[0.7rem] text-[#eae5dd] choose-subtitle">
+                    <p className="text-[0.7rem] text-[#2C5F2E] choose-subtitle">
                         Want to learn more about
                         <br />
                         the benefits of—Urbanland<span>®</span>?
                     </p>
                 </div>
 
-                <div className="marquee-con-none absolute top-0 -z-1">
+                <div className="marquee-con-none absolute top-0 -z-1 text-[#2C5F2E]">
                     <MarqueeText />
                 </div>
 

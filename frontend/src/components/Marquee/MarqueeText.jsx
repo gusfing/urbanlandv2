@@ -83,7 +83,7 @@ const MarqueeText = () => {
     // Create multiple marquee items
     const marqueeItems = Array(6).fill(null).map((_, index) => (
         <div key={index} className="marquee-text-marquee">
-            <h1>Why Urbanland®?<span className='star-rotate'>*</span></h1>
+            <h1>Why Urbanland®?<span className='star-rotate text-[#C9A84C]'>*</span></h1>
         </div>
     ));
 

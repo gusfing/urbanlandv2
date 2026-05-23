@@ -153,7 +153,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
     >
       <div 
         ref={innerRef}
-        className="relative w-full h-full bg-[#f4efe7] overflow-hidden flex flex-col justify-between p-6 sm:p-12 md:p-20 shadow-none border-none rounded-none"
+        className="relative w-full h-full bg-[#F7F4EF] overflow-hidden flex flex-col justify-between p-6 sm:p-12 md:p-20 shadow-none border-none rounded-none"
       >
         
         {/* Dynamic Cinematic Background Image Previews */}
@@ -168,15 +168,15 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
             />
           ))}
           {/* Overlay to ensure maximum text contrast */}
-          <div className="absolute inset-0 bg-[#f4efe7]/95" />
+          <div className="absolute inset-0 bg-[#F7F4EF]/95" />
         </div>
 
         {/* Header inside menu: Brand logo on left, custom close on right */}
-        <div className="w-full flex items-center justify-between z-10 border-b border-[#2a2725]/5 pb-6">
+        <div className="w-full flex items-center justify-between z-10 border-b border-[#1A1A1A]/10 pb-6">
           <img src={logoImg} alt="Urbanland Logo" className="h-6 sm:h-8 object-contain" />
           <button 
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2a2725] text-[#f4efe7] hover:bg-[#993b21] active:scale-95 transition-all text-xs font-bold uppercase tracking-widest cursor-pointer shadow-sm z-30"
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2D2D2D] text-[#F7F4EF] hover:bg-[#2C5F2E] hover:text-[#C9A84C] active:scale-95 transition-all text-xs font-bold uppercase tracking-widest cursor-pointer shadow-sm z-30"
           >
             ✕ Close Menu
           </button>
@@ -195,10 +195,10 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                 onClick={() => setIsOpen(false)}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="group relative flex items-center gap-4 text-4xl sm:text-6xl md:text-[5.2rem] lg:text-[6.2rem] leading-[0.95] text-[#2a2725] font-black uppercase tracking-tighter hover:text-[#993b21] hover:translate-x-6 transition-all duration-300 select-none"
+                className="group relative flex items-center gap-4 text-4xl sm:text-6xl md:text-[5.2rem] lg:text-[6.2rem] leading-[0.95] text-[#1A1A1A] font-black uppercase tracking-tighter hover:text-[#2C5F2E] hover:translate-x-6 transition-all duration-300 select-none"
               >
                 {/* Micro-spinning star indicator on hover */}
-                <span className="text-[#993b21] opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-300 absolute -left-8 text-2xl pointer-events-none">
+                <span className="text-[#C9A84C] opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-300 absolute -left-8 text-2xl pointer-events-none">
                   ✦
                 </span>
                 <span className="relative">
@@ -209,14 +209,14 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
           </div>
 
           {/* RIGHT COLUMN: Dark Premium Information Box */}
-          <div className="w-full lg:w-[35%] bg-[#2a2725] rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between items-stretch gap-10 border border-white/5 shadow-inner self-center lg:self-stretch">
+          <div className="w-full lg:w-[35%] bg-[#2C5F2E] rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between items-stretch gap-10 border border-white/5 shadow-2xl self-center lg:self-stretch">
             
             {/* Top Part: SVG Brand symbol and details */}
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-4 border-b border-white/10 pb-6">
                 <svg 
                   viewBox="0 0 100 100" 
-                  className="h-10 w-10 text-[#f4efe7]" 
+                  className="h-10 w-10 text-[#C9A84C]" 
                   fill="none" 
                   stroke="currentColor" 
                   strokeWidth="6" 
@@ -231,11 +231,11 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                 </svg>
                 <div>
                   <h4 className="text-white text-sm font-bold uppercase tracking-widest leading-none">Urbanland®</h4>
-                  <p className="text-[#b1a696] text-[10px] uppercase tracking-widest mt-1">Premium Outdoor Systems</p>
+                  <p className="text-[#C9A84C] text-[10px] uppercase tracking-widest mt-1">Premium Outdoor Systems</p>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-4 text-[#eae5dd]/70 text-xs sm:text-sm leading-relaxed font-normal">
+              <div className="flex flex-col gap-4 text-[#F7F4EF]/85 text-xs sm:text-sm leading-relaxed font-normal">
                 <p>We craft high-contrast, low-maintenance urban furniture engineered for heavy footfall and beautiful residential, hospitality, and smart city infrastructure developments across India.</p>
                 <p>Designed with natural sustainable principles and custom precision finishes built to match your signature layout.</p>
               </div>
@@ -248,7 +248,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                   <a 
                     key={social} 
                     href="#" 
-                    className="text-[#b1a696] hover:text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-colors duration-300"
+                    className="text-[#F7F4EF]/75 hover:text-[#C9A84C] text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-colors duration-300"
                   >
                     ▸ {social}
                   </a>
@@ -256,10 +256,10 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
               </div>
 
               <div className="flex justify-between items-center text-[10px] md:text-xs font-semibold text-white">
-                <span className="text-[#b1a696] font-normal">{currentTime}</span>
+                <span className="text-[#F7F4EF]/75 font-normal">{currentTime}</span>
                 <a 
                   href="mailto:hello@urbanland.co" 
-                  className="underline decoration-1 underline-offset-4 hover:text-[#b1a696] transition-colors"
+                  className="underline decoration-1 underline-offset-4 hover:text-[#C9A84C] transition-colors"
                 >
                   hello@urbanland.co
                 </a>

@@ -36,18 +36,18 @@ const FooterBanner = () => {
 
     return (
         < div ref={fbConRef} className="w-full h-dvh p-2" >
-            <div className="relative w-full h-full rounded-[2.5rem] bg-[#292725] overflow-hidden flex flex-col lg:flex-row justify-center items-center lg:items-end lg:justify-between p-8 md:p-12 pb-20">
+            <div className="relative w-full h-full rounded-[2.5rem] bg-[#2D2D2D] overflow-hidden flex flex-col lg:flex-row justify-center items-center lg:items-end lg:justify-between p-8 md:p-12 pb-20">
                 <ClickIndicator active={active} />
                 <img
                     onMouseEnter={() => setActive(true)}
                     onMouseLeave={() => setActive(false)}
                     ref={fbImgRef} src={banner} alt="" className='w-full h-full object-cover' />
 
-                <h1 className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10vw] font-bold text-[#f4efe7]'>Urbanland<sub className='text-[5vw]'>®</sub></h1>
+                <h1 className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10vw] font-bold text-[#F7F4EF]'>Urbanland<sub className='text-[5vw]'>®</sub></h1>
                 <div className='absolute bottom-5 px-4 w-full'>
                     <div className="w-full h-auto flex md:flex-row flex-col md:justify-between md:items-end">
                         <h2
-                            className="text-start lg:mt-0 md:text-[#f4efe7] text-[#b1a696] text-2xl font-bold md:tracking-wider leading-5 flex flex-col gap-1"
+                            className="text-start lg:mt-0 md:text-[#F7F4EF] text-[#C9A84C] text-2xl font-bold md:tracking-wider leading-5 flex flex-col gap-1"
                             style={{ textShadow: '2px 2px 4px #000' }}
                         >
                             <span>Closer to</span>
@@ -56,7 +56,7 @@ const FooterBanner = () => {
                         </h2>
 
                         <p
-                            className="md:w-[20%] w-[80%] text-[#f4efe7] text-[0.7rem] font-bold  md:font-medium tracking-wide lg:text-end mt-2 text-justify"
+                            className="md:w-[20%] w-[80%] text-[#F7F4EF] text-[0.7rem] font-bold  md:font-medium tracking-wide lg:text-end mt-2 text-justify"
                             style={{ textShadow: '2px 2px 4px #000' }}
                         >
                             Experience the premium harmony of nature and architectural style across India with—Urbanland®.

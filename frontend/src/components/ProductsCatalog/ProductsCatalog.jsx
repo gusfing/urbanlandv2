@@ -237,14 +237,14 @@ const ProductsCatalog = ({ showTitle = true }) => {
     >
       {/* Title block */}
       {showTitle && (
-        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/10 pb-8 catalog-title">
+        <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#2D2D2D]/10 pb-8 catalog-title">
           <div>
-            <p className="text-[0.7rem] uppercase tracking-[0.2em] font-semibold text-[#0a7c41] mb-2">Our Collection</p>
-            <h2 className="text-4xl lg:text-6xl font-medium tracking-tight text-[#f4efe7]">
+            <p className="text-[0.7rem] uppercase tracking-[0.2em] font-semibold text-[#2C5F2E] mb-2">Our Collection</p>
+            <h2 className="text-4xl lg:text-6xl font-medium tracking-tight text-[#1A1A1A]">
               Urban furniture that connects.
             </h2>
           </div>
-          <p className="text-sm md:text-base text-[#b1a696] max-w-sm">
+          <p className="text-sm md:text-base text-[#2D2D2D]/80 max-w-sm">
             Discover modular designs built to blend natural aesthetics with sustainable, smart urban living.
           </p>
         </div>
@@ -262,8 +262,8 @@ const ProductsCatalog = ({ showTitle = true }) => {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium tracking-wide whitespace-nowrap cursor-pointer transition-all duration-300 ${
                   isActive
-                    ? "bg-white text-black shadow-md border border-white"
-                    : "bg-white/5 text-[#b1a696] border border-white/10 hover:bg-white/10 hover:text-white"
+                    ? "bg-[#2C5F2E] text-[#F7F4EF] shadow-md border border-[#2C5F2E]"
+                    : "bg-[#2D2D2D]/5 text-[#2D2D2D] border border-[#2D2D2D]/10 hover:bg-[#2D2D2D]/10 hover:text-black"
                 }`}
               >
                 {cat.icon}
@@ -277,7 +277,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => scroll("left")}
-            className="w-12 h-12 rounded-full border border-white/10 flex justify-center items-center bg-white/5 text-white hover:bg-white/10 transition-all cursor-pointer"
+            className="w-12 h-12 rounded-full border border-[#2D2D2D]/10 flex justify-center items-center bg-[#2D2D2D]/5 text-[#2D2D2D] hover:bg-[#2D2D2D]/10 transition-all cursor-pointer"
             aria-label="Scroll left"
           >
             <svg className="w-5 h-5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -286,7 +286,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
           </button>
           <button
             onClick={() => scroll("right")}
-            className="w-12 h-12 rounded-full bg-white text-black flex justify-center items-center hover:bg-white/90 transition-all cursor-pointer shadow-md"
+            className="w-12 h-12 rounded-full bg-[#2C5F2E] text-[#F7F4EF] flex justify-center items-center hover:bg-[#2C5F2E]/90 transition-all cursor-pointer shadow-md"
             aria-label="Scroll right"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -308,7 +308,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
           >
             {/* Header info */}
             <div className="flex justify-between items-start gap-4">
-              <h3 className="text-xl md:text-2xl font-light text-[#1c1a19] tracking-tight leading-tight group-hover:text-black transition-colors duration-300">
+              <h3 className="text-xl md:text-2xl font-light text-[#1a1a1a] tracking-tight leading-tight group-hover:text-black transition-colors duration-300">
                 {product.title}
               </h3>
               
@@ -319,8 +319,8 @@ const ProductsCatalog = ({ showTitle = true }) => {
                     key={idx}
                     className={`text-[0.65rem] font-bold uppercase tracking-wider rounded-full px-2.5 py-1 ${
                       badge === "new"
-                        ? "bg-[#ff5a1f] text-white"
-                        : "bg-[#7c756b]/10 text-[#524f4c]"
+                        ? "bg-[#2C5F2E] text-white"
+                        : "bg-[#C9A84C]/10 text-[#C9A84C]"
                     }`}
                   >
                     {badge}
@@ -340,10 +340,10 @@ const ProductsCatalog = ({ showTitle = true }) => {
 
             {/* Bottom info */}
             <div className="flex justify-between items-end">
-              <span className="text-sm font-bold tracking-[0.15em] text-[#1c1a19]">
+              <span className="text-sm font-bold tracking-[0.15em] text-[#1a1a1a]">
                 {product.line}
               </span>
-              <span className="text-[0.7rem] uppercase tracking-wider text-[#0a7c41] font-semibold bg-[#0a7c41]/5 px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <span className="text-[0.7rem] uppercase tracking-wider text-[#2C5F2E] font-semibold bg-[#2C5F2E]/5 px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 View Details
               </span>
             </div>

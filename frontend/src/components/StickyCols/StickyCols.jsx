@@ -115,33 +115,33 @@ const StickyCols = () => {
     return (
         <>
             {/* Desktop Layout - Pinned Horizontal Scroll Trigger */}
-            <section className="sticky-cols w-full h-screen bg-[#181717] hidden lg:block overflow-hidden">
+            <section className="sticky-cols w-full h-screen bg-[#F7F4EF] hidden lg:block overflow-hidden">
                 <div ref={containerRef} className="relative w-full h-full">
                     
                     {/* Slide 1 Text: Lodha */}
                     <div className="col col-1">
                         <div className="col-content">
-                            <div className="col-content-wrapper flex flex-col justify-between p-10 md:p-16 lg:p-20 bg-[#2a2725] overflow-hidden">
+                            <div className="col-content-wrapper flex flex-col justify-between p-10 md:p-16 lg:p-20 bg-[#2D2D2D] overflow-hidden">
                                 <div>
-                                    <span className="text-[#b1a696] text-[10px] md:text-xs font-semibold uppercase tracking-widest block mb-2">Lodha Group</span>
-                                    <h2 className="text-3xl md:text-5xl font-black text-[#f4efe7] leading-tight uppercase tracking-tight">Multiple Townships</h2>
+                                    <span className="text-[#C9A84C] text-[10px] md:text-xs font-semibold uppercase tracking-widest block mb-2">Lodha Group</span>
+                                    <h2 className="text-3xl md:text-5xl font-black text-[#F7F4EF] leading-tight uppercase tracking-tight">Multiple Townships</h2>
                                 </div>
                                 <div className="my-auto flex flex-col gap-3">
-                                    <div className="text-base md:text-xl font-extrabold text-[#f4efe7] border-l-2 border-[#b1a696] pl-3">
+                                    <div className="text-base md:text-xl font-extrabold text-[#C9A84C] border-l-2 border-[#C9A84C] pl-3">
                                         420+ Benches & Planters
                                     </div>
-                                    <p className="text-xs md:text-sm text-[#b1a696] leading-relaxed max-w-[90%]">
+                                    <p className="text-xs md:text-sm text-[#F7F4EF]/80 leading-relaxed max-w-[90%]">
                                         420+ WPC & SS benches + GFRC planters supplied across Lodha's premium residential township developments.
                                     </p>
                                 </div>
                                 <div className="flex justify-between items-end w-full">
                                     <a 
                                         href="/solutions/real-estate" 
-                                        className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#f4efe7] border-b border-[#f4efe7]/20 hover:text-[#b1a696] hover:border-[#b1a696]/40 pb-0.5 transition-all"
+                                        className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#F7F4EF] border-b border-[#F7F4EF]/25 hover:text-[#C9A84C] hover:border-[#C9A84C]/45 pb-0.5 transition-all"
                                     >
                                         Explore Lodha Project Details →
                                     </a>
-                                    <span className="text-[#b1a696] text-[10px] font-bold uppercase tracking-widest bg-black/30 px-3 py-1 rounded-full border border-[#b1a696]/20">01 / 04</span>
+                                    <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">01 / 04</span>
                                 </div>
                             </div>
                         </div>
@@ -164,56 +164,56 @@ const StickyCols = () => {
                     {/* Slide 2 & 3 Text: Adani & Oberoi */}
                     <div className="col col-3">
                         {/* Slide 2 Text */}
-                        <div className="col-content-wrapper flex flex-col justify-between p-10 md:p-16 lg:p-20 bg-[#2a2725] overflow-hidden">
+                        <div className="col-content-wrapper flex flex-col justify-between p-10 md:p-16 lg:p-20 bg-[#2C5F2E] overflow-hidden">
                             <div>
-                                <span className="text-[#b1a696] text-[10px] md:text-xs font-semibold uppercase tracking-widest block mb-2">Adani Realty</span>
-                                <h1 className="text-3xl md:text-5xl font-black text-[#f4efe7] leading-tight uppercase tracking-tight">
+                                <span className="text-[#C9A84C] text-[10px] md:text-xs font-semibold uppercase tracking-widest block mb-2">Adani Realty</span>
+                                <h1 className="text-3xl md:text-5xl font-black text-[#F7F4EF] leading-tight uppercase tracking-tight">
                                     Premium Residential
                                 </h1>
                             </div>
                             <div className="my-auto flex flex-col gap-3">
-                                <div className="text-base md:text-xl font-extrabold text-[#f4efe7] border-l-2 border-[#b1a696] pl-3">
+                                <div className="text-base md:text-xl font-extrabold text-[#C9A84C] border-l-2 border-[#C9A84C] pl-3">
                                     Complete Site Supply
                                 </div>
-                                <p className="text-xs md:text-sm text-[#b1a696] leading-relaxed max-w-[90%]">
+                                <p className="text-xs md:text-sm text-[#F7F4EF]/80 leading-relaxed max-w-[90%]">
                                     Complete outdoor furniture solution including benches, dustbins, planters, and car parking sheds delivered on schedule.
                                 </p>
                             </div>
                             <div className="flex justify-between items-end w-full">
                                 <a 
                                     href="/solutions/real-estate" 
-                                    className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#f4efe7] border-b border-[#f4efe7]/20 hover:text-[#b1a696] hover:border-[#b1a696]/40 pb-0.5 transition-all"
+                                    className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#F7F4EF] border-b border-[#F7F4EF]/25 hover:text-[#C9A84C] hover:border-[#C9A84C]/45 pb-0.5 transition-all"
                                 >
                                     Explore Adani Project Details →
                                 </a>
-                                <span className="text-[#b1a696] text-[10px] font-bold uppercase tracking-widest bg-black/30 px-3 py-1 rounded-full border border-[#b1a696]/20">02 / 04</span>
+                                <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">02 / 04</span>
                             </div>
                         </div>
                         
                         {/* Slide 3 Text */}
-                        <div className="col-content-wrapper-2 flex flex-col justify-between p-10 md:p-16 lg:p-20 bg-[#2a2725] overflow-hidden">
+                        <div className="col-content-wrapper-2 flex flex-col justify-between p-10 md:p-16 lg:p-20 bg-[#2D2D2D] overflow-hidden">
                             <div>
-                                <span className="text-[#b1a696] text-[10px] md:text-xs font-semibold uppercase tracking-widest block mb-2">Oberoi Realty</span>
-                                <h1 className="text-3xl md:text-5xl font-black text-[#f4efe7] leading-tight uppercase tracking-tight">
+                                <span className="text-[#C9A84C] text-[10px] md:text-xs font-semibold uppercase tracking-widest block mb-2">Oberoi Realty</span>
+                                <h1 className="text-3xl md:text-5xl font-black text-[#F7F4EF] leading-tight uppercase tracking-tight">
                                     Luxury Project
                                 </h1>
                             </div>
                             <div className="my-auto flex flex-col gap-3">
-                                <div className="text-base md:text-xl font-extrabold text-[#f4efe7] border-l-2 border-[#b1a696] pl-3">
+                                <div className="text-base md:text-xl font-extrabold text-[#C9A84C] border-l-2 border-[#C9A84C] pl-3">
                                     Premium Wicker & Cabanas
                                 </div>
-                                <p className="text-xs md:text-sm text-[#b1a696] leading-relaxed max-w-[90%]">
+                                <p className="text-xs md:text-sm text-[#F7F4EF]/80 leading-relaxed max-w-[90%]">
                                     Premium wicker furniture, poolside loungers, and cabanas crafted for Oberoi's high-end residential and hospitality developments.
                                 </p>
                             </div>
                             <div className="flex justify-between items-end w-full">
                                 <a 
                                     href="/solutions/hotels-resorts" 
-                                    className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#f4efe7] border-b border-[#f4efe7]/20 hover:text-[#b1a696] hover:border-[#b1a696]/40 pb-0.5 transition-all"
+                                    className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#F7F4EF] border-b border-[#F7F4EF]/25 hover:text-[#C9A84C] hover:border-[#C9A84C]/45 pb-0.5 transition-all"
                                 >
                                     Explore Oberoi Project Details →
                                 </a>
-                                <span className="text-[#b1a696] text-[10px] font-bold uppercase tracking-widest bg-black/30 px-3 py-1 rounded-full border border-[#b1a696]/20">03 / 04</span>
+                                <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">03 / 04</span>
                             </div>
                         </div>
                     </div>
@@ -235,40 +235,40 @@ const StickyCols = () => {
                     {/* Slide 4 Text: Smart City */}
                     <div className="col col-5">
                         <div className="col-content">
-                            <div className="col-content-wrapper flex flex-col justify-between p-10 md:p-16 lg:p-20 bg-[#2a2725] overflow-hidden">
+                            <div className="col-content-wrapper flex flex-col justify-between p-10 md:p-16 lg:p-20 bg-[#2C5F2E] overflow-hidden">
                                 <div>
-                                    <span className="text-[#b1a696] text-[10px] md:text-xs font-semibold uppercase tracking-widest block mb-2">Smart City / Municipal</span>
-                                    <h2 className="text-3xl md:text-5xl font-black text-[#f4efe7] leading-tight uppercase tracking-tight">Project</h2>
+                                    <span className="text-[#C9A84C] text-[10px] md:text-xs font-semibold uppercase tracking-widest block mb-2">Smart City / Municipal</span>
+                                    <h2 className="text-3xl md:text-5xl font-black text-[#F7F4EF] leading-tight uppercase tracking-tight">Project</h2>
                                 </div>
                                 <div className="my-auto flex flex-col gap-3">
-                                    <div className="text-base md:text-xl font-extrabold text-[#f4efe7] border-l-2 border-[#b1a696] pl-3">
+                                    <div className="text-base md:text-xl font-extrabold text-[#C9A84C] border-l-2 border-[#C9A84C] pl-3">
                                         Smart Transit Shelters
                                     </div>
-                                    <p className="text-xs md:text-sm text-[#b1a696] leading-relaxed max-w-[90%]">
+                                    <p className="text-xs md:text-sm text-[#F7F4EF]/80 leading-relaxed max-w-[90%]">
                                         MS/SS bus shelters, park benches, bollards, and outdoor dustbins delivered for urban infrastructure development.
                                     </p>
                                 </div>
-                                <div className="flex flex-col gap-4 border-t border-white/10 pt-4 w-full">
+                                <div className="flex flex-col gap-4 border-t border-[#F7F4EF]/15 pt-4 w-full">
                                     <div className="flex justify-between items-center w-full">
                                         <a 
                                             href="/solutions/smart-cities" 
-                                            className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#f4efe7] border-b border-[#f4efe7]/20 hover:text-[#b1a696] hover:border-[#b1a696]/40 pb-0.5 transition-all"
+                                            className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#F7F4EF] border-b border-[#F7F4EF]/25 hover:text-[#C9A84C] hover:border-[#C9A84C]/45 pb-0.5 transition-all"
                                         >
                                             Explore Smart City Details →
                                         </a>
-                                        <span className="text-[#b1a696] text-[10px] font-bold uppercase tracking-widest bg-black/30 px-3 py-1 rounded-full border border-[#b1a696]/20">04 / 04</span>
+                                        <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">04 / 04</span>
                                     </div>
                                     {/* Overall Section CTAs */}
                                     <div className="flex items-center gap-5 mt-2">
                                         <a 
                                             href="/projects" 
-                                            className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#b1a696] hover:text-[#f4efe7] transition-colors flex items-center"
+                                            className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#C9A84C] hover:text-[#F7F4EF] transition-colors flex items-center"
                                         >
                                             ▸ View All Projects →
                                         </a>
                                         <a 
                                             href="/contact" 
-                                            className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#f4efe7] hover:text-[#b1a696] transition-colors flex items-center"
+                                            className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#F7F4EF] hover:text-[#C9A84C] transition-colors flex items-center"
                                         >
                                             ▸ Get a Similar Solution for Your Project →
                                         </a>
@@ -282,100 +282,100 @@ const StickyCols = () => {
             </section>
 
             {/* Mobile Layout - Premium Responsive Card Stack (Scrolls Naturally) */}
-            <section className="sticky-cols-mobile w-full bg-[#181717] px-6 py-16 flex flex-col gap-10 lg:hidden block">
+            <section className="sticky-cols-mobile w-full bg-[#F7F4EF] px-6 py-16 flex flex-col gap-10 lg:hidden block">
                 <div className="flex flex-col gap-2 mb-4">
-                    <p className="text-[.7rem] font-bold text-[#b1a696] uppercase tracking-widest">— Case Studies</p>
-                    <h2 className="text-3xl font-extrabold text-[#f4efe7] tracking-tight leading-tight">Specified by Industry Leaders</h2>
+                    <p className="text-[.7rem] font-bold text-[#2C5F2E] uppercase tracking-widest">— Case Studies</p>
+                    <h2 className="text-3xl font-extrabold text-[#1A1A1A] tracking-tight leading-tight">Specified by Industry Leaders</h2>
                 </div>
 
                 <div className="mobile-projects-wrapper flex flex-col gap-8 w-full">
                     {/* Card 1: Lodha */}
-                    <div className="mobile-project-card bg-[#2a2725] rounded-[2rem] overflow-hidden p-5 border border-white/5 flex flex-col gap-4">
+                    <div className="mobile-project-card bg-[#2D2D2D] rounded-[2rem] overflow-hidden p-5 border border-white/5 flex flex-col gap-4">
                         <div className="w-full h-[200px] rounded-[1.5rem] overflow-hidden bg-black/10">
                             <img src={colimg1} alt="Urbanland Products WPC benches and planters installed in Lodha township" className="w-full h-full object-cover" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-between items-center w-full">
-                                <span className="text-[#b1a696] text-[10px] font-bold uppercase tracking-widest bg-black/30 px-3 py-1 rounded-full border border-[#b1a696]/20">01 / 04</span>
-                                <span className="text-[#eae5dd]/70 text-xs font-semibold">Lodha Group</span>
+                                <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">01 / 04</span>
+                                <span className="text-[#C9A84C] text-xs font-semibold">Lodha Group</span>
                             </div>
-                            <h3 className="text-xl font-bold text-[#f4efe7] leading-snug">Multiple Townships</h3>
-                            <div className="text-xs font-bold text-[#f4efe7] border-l-2 border-[#b1a696] pl-2 my-1">
+                            <h3 className="text-xl font-bold text-[#F7F4EF] leading-snug">Multiple Townships</h3>
+                            <div className="text-xs font-bold text-[#C9A84C] border-l-2 border-[#C9A84C] pl-2 my-1">
                                 420+ Benches & Planters
                             </div>
-                            <p className="text-xs text-[#b1a696] leading-relaxed">
+                            <p className="text-xs text-[#F7F4EF]/80 leading-relaxed">
                                 420+ WPC & SS benches + GFRC planters supplied across Lodha's premium residential township developments.
                             </p>
-                            <a href="/solutions/real-estate" className="text-[#f4efe7] text-[10px] font-bold uppercase tracking-wider border-b border-white/10 w-fit pb-0.5 mt-2">
+                            <a href="/solutions/real-estate" className="text-[#F7F4EF] text-[10px] font-bold uppercase tracking-wider border-b border-[#F7F4EF]/25 w-fit pb-0.5 mt-2 hover:text-[#C9A84C]">
                                 Explore Lodha Project Details →
                             </a>
                         </div>
                     </div>
 
                     {/* Card 2: Adani */}
-                    <div className="mobile-project-card bg-[#2a2725] rounded-[2rem] overflow-hidden p-5 border border-white/5 flex flex-col gap-4">
+                    <div className="mobile-project-card bg-[#2C5F2E] rounded-[2rem] overflow-hidden p-5 border border-white/5 flex flex-col gap-4">
                         <div className="w-full h-[200px] rounded-[1.5rem] overflow-hidden bg-black/10">
                             <img src={colimg2} alt="Outdoor urban furniture installed at Adani Realty residential project by Urbanland Products" className="w-full h-full object-cover" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-between items-center w-full">
-                                <span className="text-[#b1a696] text-[10px] font-bold uppercase tracking-widest bg-black/30 px-3 py-1 rounded-full border border-[#b1a696]/20">02 / 04</span>
-                                <span className="text-[#eae5dd]/70 text-xs font-semibold">Adani Realty</span>
+                                <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">02 / 04</span>
+                                <span className="text-[#C9A84C] text-xs font-semibold">Adani Realty</span>
                             </div>
-                            <h3 className="text-xl font-bold text-[#f4efe7] leading-snug">Premium Residential</h3>
-                            <div className="text-xs font-bold text-[#f4efe7] border-l-2 border-[#b1a696] pl-2 my-1">
+                            <h3 className="text-xl font-bold text-[#F7F4EF] leading-snug">Premium Residential</h3>
+                            <div className="text-xs font-bold text-[#C9A84C] border-l-2 border-[#C9A84C] pl-2 my-1">
                                 Complete Site Supply
                             </div>
-                            <p className="text-xs text-[#b1a696] leading-relaxed">
+                            <p className="text-xs text-[#F7F4EF]/80 leading-relaxed">
                                 Complete outdoor furniture solution including benches, dustbins, planters, and car parking sheds delivered on schedule.
                             </p>
-                            <a href="/solutions/real-estate" className="text-[#f4efe7] text-[10px] font-bold uppercase tracking-wider border-b border-white/10 w-fit pb-0.5 mt-2">
+                            <a href="/solutions/real-estate" className="text-[#F7F4EF] text-[10px] font-bold uppercase tracking-wider border-b border-[#F7F4EF]/25 w-fit pb-0.5 mt-2 hover:text-[#C9A84C]">
                                 Explore Adani Project Details →
                             </a>
                         </div>
                     </div>
 
                     {/* Card 3: Oberoi */}
-                    <div className="mobile-project-card bg-[#2a2725] rounded-[2rem] overflow-hidden p-5 border border-white/5 flex flex-col gap-4">
+                    <div className="mobile-project-card bg-[#2D2D2D] rounded-[2rem] overflow-hidden p-5 border border-white/5 flex flex-col gap-4">
                         <div className="w-full h-[200px] rounded-[1.5rem] overflow-hidden bg-black/10">
                             <img src={colimg3} alt="Premium wicker furniture, poolside loungers, and cabanas crafted for Oberoi's luxury project" className="w-full h-full object-cover" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-between items-center w-full">
-                                <span className="text-[#b1a696] text-[10px] font-bold uppercase tracking-widest bg-black/30 px-3 py-1 rounded-full border border-[#b1a696]/20">03 / 04</span>
-                                <span className="text-[#eae5dd]/70 text-xs font-semibold">Oberoi Realty</span>
+                                <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">03 / 04</span>
+                                <span className="text-[#C9A84C] text-xs font-semibold">Oberoi Realty</span>
                             </div>
-                            <h3 className="text-xl font-bold text-[#f4efe7] leading-snug">Luxury Project</h3>
-                            <div className="text-xs font-bold text-[#f4efe7] border-l-2 border-[#b1a696] pl-2 my-1">
+                            <h3 className="text-xl font-bold text-[#F7F4EF] leading-snug">Luxury Project</h3>
+                            <div className="text-xs font-bold text-[#C9A84C] border-l-2 border-[#C9A84C] pl-2 my-1">
                                 Premium Wicker & Cabanas
                             </div>
-                            <p className="text-xs text-[#b1a696] leading-relaxed">
+                            <p className="text-xs text-[#F7F4EF]/80 leading-relaxed">
                                 Premium wicker furniture, poolside loungers, and cabanas crafted for Oberoi's high-end residential and hospitality developments.
                             </p>
-                            <a href="/solutions/hotels-resorts" className="text-[#f4efe7] text-[10px] font-bold uppercase tracking-wider border-b border-white/10 w-fit pb-0.5 mt-2">
+                            <a href="/solutions/hotels-resorts" className="text-[#F7F4EF] text-[10px] font-bold uppercase tracking-wider border-b border-[#F7F4EF]/25 w-fit pb-0.5 mt-2 hover:text-[#C9A84C]">
                                 Explore Oberoi Project Details →
                             </a>
                         </div>
                     </div>
 
                     {/* Card 4: Smart City */}
-                    <div className="mobile-project-card bg-[#2a2725] rounded-[2rem] overflow-hidden p-5 border border-white/5 flex flex-col gap-4">
+                    <div className="mobile-project-card bg-[#2C5F2E] rounded-[2rem] overflow-hidden p-5 border border-white/5 flex flex-col gap-4">
                         <div className="w-full h-[200px] rounded-[1.5rem] overflow-hidden bg-black/10">
                             <img src={colimg4} alt="MS/SS bus shelters, park benches, bollards, and outdoor dustbins delivered for urban infrastructure" className="w-full h-full object-cover" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <div className="flex justify-between items-center w-full">
-                                <span className="text-[#b1a696] text-[10px] font-bold uppercase tracking-widest bg-black/30 px-3 py-1 rounded-full border border-[#b1a696]/20">04 / 04</span>
-                                <span className="text-[#eae5dd]/70 text-xs font-semibold">Smart City / Municipal</span>
+                                <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">04 / 04</span>
+                                <span className="text-[#C9A84C] text-xs font-semibold">Smart City / Municipal</span>
                             </div>
-                            <h3 className="text-xl font-bold text-[#f4efe7] leading-snug">Project</h3>
-                            <div className="text-xs font-bold text-[#f4efe7] border-l-2 border-[#b1a696] pl-2 my-1">
+                            <h3 className="text-xl font-bold text-[#F7F4EF] leading-snug">Project</h3>
+                            <div className="text-xs font-bold text-[#C9A84C] border-l-2 border-[#C9A84C] pl-2 my-1">
                                 Smart Transit Shelters
                             </div>
-                            <p className="text-xs text-[#b1a696] leading-relaxed">
+                            <p className="text-xs text-[#F7F4EF]/80 leading-relaxed">
                                 MS/SS bus shelters, park benches, bollards, and outdoor dustbins delivered for urban infrastructure development.
                             </p>
-                            <a href="/solutions/smart-cities" className="text-[#f4efe7] text-[10px] font-bold uppercase tracking-wider border-b border-white/10 w-fit pb-0.5 mt-2">
+                            <a href="/solutions/smart-cities" className="text-[#F7F4EF] text-[10px] font-bold uppercase tracking-wider border-b border-[#F7F4EF]/25 w-fit pb-0.5 mt-2 hover:text-[#C9A84C]">
                                 Explore Smart City Details →
                             </a>
                         </div>
@@ -383,16 +383,16 @@ const StickyCols = () => {
                 </div>
 
                 {/* Mobile Section CTAs */}
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 pt-8 border-t border-white/5 w-full">
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 pt-8 border-t border-[#1A1A1A]/10 w-full">
                     <a 
                         href="/projects" 
-                        className="w-full sm:w-auto text-center px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest bg-neutral-900 border border-white/10 text-[#b1a696] hover:text-[#f4efe7] hover:border-white/20 transition-all active:scale-95 cursor-pointer"
+                        className="w-full sm:w-auto text-center px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest bg-[#2D2D2D] border border-white/10 text-[#F7F4EF] hover:text-[#C9A84C] transition-all active:scale-95 cursor-pointer"
                     >
                         ▸ View All Projects →
                     </a>
                     <a 
                         href="/contact" 
-                        className="w-full sm:w-auto text-center px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest bg-[#f4efe7] text-[#2a2725] hover:bg-[#eae5dd] hover:scale-102 transition-all active:scale-95 cursor-pointer"
+                        className="w-full sm:w-auto text-center px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest bg-[#2C5F2E] text-[#F7F4EF] hover:bg-[#2D2D2D] hover:text-[#C9A84C] transition-all active:scale-95 cursor-pointer"
                     >
                         ▸ Get a Similar Solution for Your Project →
                     </a>

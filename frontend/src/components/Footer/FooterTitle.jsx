@@ -76,16 +76,16 @@ const FooterTitle = () => {
     }, { scope: ftConRef, dependencies: [fontsLoaded] });
 
     return (
-        <section ref={ftConRef} className='relative z-1 w-full h-[55vh] md:h-[60vh] border-1 border-t-[#c4c1b9] bg-[#181717] overflow-hidden'>
+        <section ref={ftConRef} className='relative z-1 w-full h-[55vh] md:h-[60vh] border-t border-t-[#F7F4EF]/15 bg-[#2D2D2D] overflow-hidden'>
             <div className='flex flex-col justify-start items-center w-full pt-12 md:pt-16 gap-1.5' >
-                <p className='text-[#b1a696] text-[0.7rem]'>
-                    Designed & Crafted for—<a href="#" className='text-[#f2ede5]'>Urbanland®</a>
+                <p className='text-[#F7F4EF]/60 text-[0.7rem]'>
+                    Designed & Crafted for—<a href="#" className='text-[#C9A84C] hover:text-[#F7F4EF] transition-colors duration-300'>Urbanland®</a>
                 </p>
-                <p className='text-[#b1a696] text-[0.7rem]'>
-                    This website is using <a href="#" className='text-[#f2ede5]'>cookies</a>
+                <p className='text-[#F7F4EF]/60 text-[0.7rem]'>
+                    This website is using <a href="#" className='text-[#C9A84C] hover:text-[#F7F4EF] transition-colors duration-300'>cookies</a>
                 </p>
-                <p className='text-[#b1a696] text-[0.7rem]'>
-                    All rights reserved © <a href="#" className='text-[#f2ede5]'>2025</a>
+                <p className='text-[#F7F4EF]/60 text-[0.7rem]'>
+                    All rights reserved © <a href="#" className='text-[#C9A84C] hover:text-[#F7F4EF] transition-colors duration-300'>2025</a>
                 </p>
             </div>
 

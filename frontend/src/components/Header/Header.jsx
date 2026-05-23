@@ -25,7 +25,7 @@ const Header = () => {
       
       {/* 1. Premium Floating Top Header Bar (Visible when NOT scrolled) */}
       <header 
-        className={`fixed top-6 left-1/2 -translate-x-1/2 w-[92vw] max-w-[1400px] h-14 md:h-16 bg-[#f4efe7] border border-[#2a2725]/10 rounded-2xl md:rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.06)] z-50 flex items-center justify-between px-6 md:px-10 transition-all duration-500 ease-out ${
+        className={`fixed top-6 left-1/2 -translate-x-1/2 w-[92vw] max-w-[1400px] h-14 md:h-16 bg-[#2D2D2D] border border-[#F7F4EF]/10 rounded-2xl md:rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.12)] z-50 flex items-center justify-between px-6 md:px-10 transition-all duration-500 ease-out ${
           scrolled ? "opacity-0 -translate-y-10 pointer-events-none" : "opacity-100 translate-y-0"
         }`}
       >
@@ -35,6 +35,7 @@ const Header = () => {
             src={logoImg} 
             alt="Urbanland Products LLP Logo" 
             className="h-6 sm:h-8 md:h-9 object-contain hover:opacity-90 transition-opacity duration-300"
+            style={{ filter: "brightness(0) invert(1)" }}
           />
         </div>
 
@@ -42,7 +43,7 @@ const Header = () => {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none select-none">
           <svg 
             viewBox="0 0 100 100" 
-            className="h-7 w-7 md:h-8 md:w-8 text-[#993b21]" 
+            className="h-7 w-7 md:h-8 md:w-8 text-[#C9A84C]" 
             fill="none" 
             stroke="currentColor" 
             strokeWidth="6" 
@@ -65,7 +66,7 @@ const Header = () => {
         {/* Right Side: + MENU Button */}
         <div 
           onClick={() => setIsOpen(true)}
-          className="flex items-center gap-1.5 cursor-pointer text-[#2a2725] hover:opacity-80 transition-all active:scale-95 select-none"
+          className="flex items-center gap-1.5 cursor-pointer text-[#F7F4EF] hover:text-[#C9A84C] transition-all active:scale-95 select-none"
         >
           <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider font-sans">+ MENU</span>
         </div>
@@ -73,7 +74,7 @@ const Header = () => {
 
       {/* 2. Premium Floating Bottom Header Bar (Visible when SCROLLED - Compact Pill) */}
       <header 
-        className={`fixed bottom-6 left-1/2 -translate-x-1/2 w-fit h-12 md:h-14 bg-[#f4efe7]/95 backdrop-blur-md border border-[#2a2725]/15 rounded-full shadow-[0_12px_40px_rgba(0,0,0,0.15)] z-50 flex items-center justify-between gap-4 px-6 transition-all duration-500 ease-out ${
+        className={`fixed bottom-6 left-1/2 -translate-x-1/2 w-fit h-12 md:h-14 bg-[#2D2D2D]/95 backdrop-blur-md border border-[#F7F4EF]/10 rounded-full shadow-[0_12px_40px_rgba(0,0,0,0.2)] z-50 flex items-center justify-between gap-4 px-6 transition-all duration-500 ease-out ${
           scrolled ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-90 pointer-events-none"
         }`}
       >
@@ -83,18 +84,19 @@ const Header = () => {
             src={logoImg} 
             alt="Urbanland Products LLP Logo" 
             className="h-5 sm:h-6 object-contain hover:opacity-90 transition-opacity duration-300"
+            style={{ filter: "brightness(0) invert(1)" }}
           />
         </div>
 
         {/* Custom micro separator line */}
-        <div className="w-[1px] h-4 bg-[#2a2725]/20 self-center" />
+        <div className="w-[1px] h-4 bg-[#F7F4EF]/25 self-center" />
 
         {/* Right Side: Hamburger Menu Icon */}
         <div 
           onClick={() => setIsOpen(true)}
-          className="flex items-center justify-center cursor-pointer text-[#2a2725] hover:opacity-75 transition-all active:scale-90 select-none"
+          className="flex items-center justify-center cursor-pointer text-[#F7F4EF] hover:text-[#C9A84C] transition-all active:scale-90 select-none"
         >
-          <IoMdMenu className="w-5 h-5 md:w-6 md:h-6 text-[#2a2725]" />
+          <IoMdMenu className="w-5 h-5 md:w-6 md:h-6 text-inherit" />
         </div>
       </header>
     </>

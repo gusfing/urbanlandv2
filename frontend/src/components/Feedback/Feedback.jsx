@@ -29,12 +29,12 @@ const Feedback = () => {
     return (
         <section className='w-sereen h-dvh p-8 flex flex-col justify-center items-center'>
             <div className='w-full text-left'>
-                <p className='text-[.7rem] font-bold text-[#eae5dd] activities-subtitle text-left'>
+                <p className='text-[.7rem] font-bold text-[#2C5F2E] activities-subtitle text-left'>
                     Do people like us?
                 </p>
 
                 <div>
-                    <h1 className='text-[#f4efe7] text-7xl mt-4 mb-6'>
+                    <h1 className='text-[#1A1A1A] text-7xl mt-4 mb-6 font-semibold leading-tight'>
                         {feedbackH1LG[index].map((line, i) => (
                             <span key={i}>
                                 {line}<br />
@@ -47,34 +47,34 @@ const Feedback = () => {
                     <img
                         src={reviewImages[feedbackReviewLG[index][2]]}
                         alt="review img"
-                        className='w-[4.5vw] rounded-4xl'
+                        className='w-[4.5vw] min-w-[50px] rounded-full'
                     />
-                    <p className="text-[#aca192] text-[0.7rem]">
+                    <p className="text-[#1A1A1A]/70 text-[0.7rem] font-medium leading-relaxed">
                         {feedbackReviewLG[index][0]}<br />
                         ({feedbackReviewLG[index][1]})
                     </p>
                 </div>
 
                 <div className="flex justify-between items-center mt-14">
-                    <div className="flex gap-1">
+                    <div className="flex gap-2">
                         <button
                             onClick={handlePrev}
-                            className='border-[1px] p-1 border-[#aaa090] hover:bg-[#aaa090] rounded-4xl'
+                            className='border border-[#2D2D2D]/35 hover:bg-[#2C5F2E] hover:border-[#2C5F2E] p-2.5 rounded-full transition-all group cursor-pointer'
                         >
-                            <IoMdArrowBack className="text-[#f1ece4] w-[2vw] h-[3.4vh]" />
+                            <IoMdArrowBack className="text-[#1A1A1A] group-hover:text-[#F7F4EF] w-5 h-5 transition-colors" />
                         </button>
 
                         <button
                             onClick={handleNext}
-                            className='border-[1px] p-1 border-[#aaa090] rounded-4xl'
+                            className='border border-[#2D2D2D]/35 hover:bg-[#2C5F2E] hover:border-[#2C5F2E] p-2.5 rounded-full transition-all group cursor-pointer'
                         >
-                            <IoMdArrowForward className="text-[#f1ece4] w-[2vw] h-[3.4vh]" />
+                            <IoMdArrowForward className="text-[#1A1A1A] group-hover:text-[#F7F4EF] w-5 h-5 transition-colors" />
                         </button>
                     </div>
 
-                    <div className="relative z-9 w-70 h-[0.1rem] bg-[#4f4b48]">
+                    <div className="relative z-9 w-70 h-[0.1rem] bg-[#2D2D2D]/15">
                         <div
-                            className="progress-line absolute z-10 bg-[#0a7c41] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"
+                            className="progress-line absolute z-10 bg-[#2C5F2E] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"
                             style={{ width: progressWidth }}
                         ></div>
                     </div>
