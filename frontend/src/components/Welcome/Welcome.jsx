@@ -62,7 +62,7 @@ const Welcome = () => {
                 </div>
                 <div className="md:w-1/2 w-full md:mt-0 mt-10">
                     <p className="md:text-[2rem] text-[1.4rem] text-[#b1a696] md:leading-[1.1] md:pr-24 font-normal leading-[26px] tracking-[-0.2px]">
-                        <span>Experience the perfect blend of nature and modern design with our premium urban furniture, crafted for the most breathtaking landscapes in India.</span>
+                        <span>Each of our premium collections is manufactured to international standards in state-of-the-art facilities, specifying only the finest sustainable materials.</span>
                     </p>
                 </div>
             </div>
