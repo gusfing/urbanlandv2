@@ -31,7 +31,7 @@ const Activities = () => {
     const activitiesLines = isMobD ? activitiesLinesSM : activitiesLinesLG;
 
     return (
-        <section id="activities" className="activities-section w-full min-h-[100vh] lg:h-[100vh] p-8 mt-16 flex flex-col justify-between pb-16">
+        <section id="activities" className="activities-section w-full py-16 lg:py-0 lg:h-[100vh] p-6 sm:p-8 flex flex-col justify-between">
             <div>
                 <p className='text-[.7rem] font-bold text-[#2C5F2E] activities-subtitle'>— From Premium Townships to Smart Cities</p>
                 <div className="lg:mt-10 mt-7 activities-part origin-bottom">
