@@ -1,0 +1,21 @@
+# Ignore large media and ZIP archives
+*.mp4
+*.zip
+*.avi
+*.mov
+*.mkv
+
+# Ignore environment variables and local configs
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependency directories
+node_modules/
+dist/
+
+# OS metadata
+.DS_Store
+Thumbs.db

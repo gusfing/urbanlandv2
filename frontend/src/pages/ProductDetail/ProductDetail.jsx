@@ -124,7 +124,7 @@ const ProductDetail = () => {
         <h2 className="text-3xl font-bold text-[#2D2D2D] mb-4">Product Not Found</h2>
         <p className="text-[#2D2D2D]/70 mb-8">The product you are looking for does not exist in our catalog.</p>
         <Link 
-          to="/Urbanland" 
+          to="/" 
           className="px-6 py-3 bg-[#2C5F2E] text-white rounded-full font-bold uppercase tracking-wider text-xs hover:bg-[#2D2D2D] transition-colors"
         >
           Return to Catalog
@@ -191,14 +191,14 @@ const ProductDetail = () => {
         {/* Breadcrumbs & Navigation Back Row */}
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 pb-4 flex items-center justify-between">
           <div className="flex items-center gap-1 text-[10px] md:text-xs text-black/50 uppercase tracking-widest font-bold select-none">
-            <Link to="/Urbanland" className="hover:text-[#e65a19] transition-colors">Catalog</Link>
+            <Link to="/" className="hover:text-[#e65a19] transition-colors">Catalog</Link>
             <MdKeyboardArrowRight className="text-sm" />
             <span className="text-black/35">{product.category}</span>
             <MdKeyboardArrowRight className="text-sm" />
             <span className="text-black/70">{product.line}</span>
           </div>
           <button 
-            onClick={() => navigate("/Urbanland")}
+            onClick={() => navigate("/")}
             className="flex items-center gap-1.5 text-[10px] md:text-xs font-bold uppercase tracking-wider text-black/60 hover:text-[#e65a19] transition-colors cursor-pointer"
           >
             <MdArrowBack className="text-base" /> Back to list

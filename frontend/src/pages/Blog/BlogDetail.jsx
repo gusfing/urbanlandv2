@@ -102,7 +102,7 @@ const BlogDetail = () => {
       {/* Breadcrumbs & Navigation Header Row */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 pb-4 flex items-center justify-between">
         <div className="flex items-center gap-1 text-[10px] md:text-xs text-[#2D2D2D]/50 uppercase tracking-widest font-bold select-none">
-          <Link to="/Urbanland" className="hover:text-[#2C5F2E] transition-colors">Catalog</Link>
+          <Link to="/" className="hover:text-[#2C5F2E] transition-colors">Catalog</Link>
           <MdKeyboardArrowRight className="text-sm" />
           <Link to="/blog" className="hover:text-[#2C5F2E] transition-colors">Journal</Link>
           <MdKeyboardArrowRight className="text-sm" />
@@ -168,7 +168,7 @@ const BlogDetail = () => {
           </Link>
 
           <Link
-            to="/Urbanland"
+            to="/"
             className="px-6 py-3.5 bg-[#2C5F2E] text-white rounded-full font-bold uppercase tracking-wider text-xs hover:bg-[#2D2D2D] transition-colors"
           >
             Explore Street Furniture Collection
