@@ -71,7 +71,7 @@ const Hero = () => {
         yPercent: 8,
         ease: "none",
         scrollTrigger: {
-          trigger: ".hero-section",
+          trigger: heroSectionRef.current,
           start: "top top",
           end: "bottom top",
           scrub: true,
@@ -99,7 +99,7 @@ const Hero = () => {
           gsap.fromTo(bg,
             { scale: 1.15, opacity: 0 },
             { 
-              scale: 1, 
+              scale: 1.1, 
               opacity: 1, 
               duration: 1.4, 
               ease: "power3.out",
@@ -160,8 +160,8 @@ const Hero = () => {
   };
 
   return (
-    <section ref={heroSectionRef} className="hero-section w-full md:h-dvh h-[100vh] px-2.5 pb-2.5 pt-0 md:px-2 md:pb-2 md:pt-0 mb-20 relative">
-      <div className="relative w-full h-full rounded-b-[2.5rem] overflow-hidden bg-neutral-950">
+    <section ref={heroSectionRef} id="hero" className="hero-section w-full md:h-dvh h-[100vh] p-[10px] pb-0 mb-20 relative">
+      <div className="relative w-full h-full rounded-[37.5px] overflow-hidden bg-neutral-950">
         
         {/* Background Images */}
         {slides.map((slide, index) => (

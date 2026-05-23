@@ -77,7 +77,7 @@ const FooterTitle = () => {
 
     return (
         <section ref={ftConRef} className='relative z-1 w-full h-[55vh] md:h-[60vh] border-t border-t-[#F7F4EF]/15 bg-[#2D2D2D] overflow-hidden'>
-            <div className='flex flex-col justify-start items-center w-full pt-12 md:pt-16 gap-1.5' >
+            <div className='flex flex-col justify-start items-center w-full pt-6 md:pt-8 gap-1.5' >
                 <p className='text-[#F7F4EF]/60 text-[0.7rem]'>
                     Designed & Crafted for—<a href="#" className='text-[#C9A84C] hover:text-[#F7F4EF] transition-colors duration-300'>Urbanland®</a>
                 </p>
@@ -90,7 +90,7 @@ const FooterTitle = () => {
             </div>
 
             <div className='footer-title w-full text-center'>
-                <h1 className='text-[18vw] font-bold'>
+                <h1 className='text-[clamp(5rem,15vw,12rem)] font-bold translate-y-[10%]'>
                     Urbanland<sub>®</sub>
                 </h1>
             </div>

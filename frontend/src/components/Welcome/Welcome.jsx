@@ -11,12 +11,11 @@ const Welcome = () => {
     useGSAP(() => {
         const mm = gsap.matchMedia();
 
-        // Shared animation logic for both breakpoints
-        const createTextReveal = () => {
-            const lines = gsap.utils.toArray(".clip-text-welcome");
+        mm.add("(min-width: 769px)", () => {
+            const lines = gsap.utils.toArray(".clip-text-welcome-lg");
             const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: ".welcome-text",
+                    trigger: ".welcome-line",
                     start: "top 85%",
                     end: "top 45%",
                     scrub: true,
@@ -29,27 +28,49 @@ const Welcome = () => {
                 stagger: 0.15,
                 duration: 1,
             });
-        };
+        });
 
-        mm.add("(min-width: 769px)", createTextReveal);
-        mm.add("(max-width: 768px)", createTextReveal);
+        mm.add("(max-width: 768px)", () => {
+            const lines = gsap.utils.toArray(".clip-text-welcome-sm");
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".welcome-line",
+                    start: "top 85%",
+                    end: "top 45%",
+                    scrub: true,
+                },
+            });
+
+            tl.to(lines, {
+                clipPath: "inset(0% 0% 0% 0%)",
+                ease: "none",
+                stagger: 0.15,
+                duration: 1,
+            });
+        });
 
         return () => mm.revert();
     }, { scope: sectionRef });
 
-    // Determine text lines based on screen width (uses CSS media query check at render time)
-    const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
-    const welcomeLines = isMobile ? welcomeLinesSM : welcomeLinesLG;
-
     return (
-        <div ref={sectionRef} className='welcome-section w-full min-h-screen h-auto py-12 md:py-16 md:h-[110vh] flex flex-col justify-between text-[#2A2725] md:px-7 px-6'>
+        <div ref={sectionRef} id="welcome" className='welcome-section w-full min-h-screen h-auto py-12 md:py-16 md:h-[110vh] flex flex-col justify-between text-[#2A2725] md:px-7 px-6'>
             <div className='flex flex-col gap-2 tracking-[-4] leading-2'>
-                <div className="w-full md:w-[86%] md:text-[64px] text-[34px] welcome-line md:pt-10">
-                    <div className="w-full welcome-text flex flex-col justify-center items-start">
-                        {welcomeLines.map((text, index) => (
+                <div className="w-full md:w-[86%] md:text-[clamp(2.2rem,3.6vw,4rem)] text-[34px] welcome-line md:pt-10">
+                    {/* Desktop Lines */}
+                    <div className="hidden md:flex w-full welcome-text flex-col justify-center items-start">
+                        {welcomeLinesLG.map((text, index) => (
                             <span key={index} className="relative block text-darkBrown md:tracking-[-0.010em] tracking-[0.015em] overflow-visible">
                                 {text}
-                                <span className="clip-text-welcome md:tracking-[-0.010em] tracking-[0.015em]">{text}</span>
+                                <span className="clip-text-welcome-lg md:tracking-[-0.010em] tracking-[0.015em]">{text}</span>
+                            </span>
+                        ))}
+                    </div>
+                    {/* Mobile Lines */}
+                    <div className="flex md:hidden w-full welcome-text flex-col justify-center items-start">
+                        {welcomeLinesSM.map((text, index) => (
+                            <span key={index} className="relative block text-darkBrown md:tracking-[-0.010em] tracking-[0.015em] overflow-visible">
+                                {text}
+                                <span className="clip-text-welcome-sm md:tracking-[-0.010em] tracking-[0.015em]">{text}</span>
                             </span>
                         ))}
                     </div>

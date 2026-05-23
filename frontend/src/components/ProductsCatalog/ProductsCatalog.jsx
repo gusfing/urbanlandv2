@@ -1,20 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Import product images
-import benchPlanterImg from "../../assets/products/Product Images/Bench Planter/Make_it_8k_resolution_image_202605170101.jpeg";
-import benchesImg from "../../assets/products/Product Images/Benches/Create_a_clean,_premium,_professional_202605162312.jpeg";
-import busSheltersImg from "../../assets/products/Product Images/Bus Shelters/Create_a_clean,_premium,_professional_202605170115.jpeg";
-import cabanasImg from "../../assets/products/Product Images/Cabanas/Create_a_clean,_premium,_professional_202605170136.jpeg";
-import caneFurniture2Img from "../../assets/products/Product Images/Cane Furniture/2 Items.jpeg";
-import caneFurniture3Img from "../../assets/products/Product Images/Cane Furniture/3 Items.jpeg";
-import canteenTableImg from "../../assets/products/Product Images/Canteen Table/Create_a_clean,_premium,_professional_202605170053.jpeg";
-import carShelterImg from "../../assets/products/Product Images/Car Shelter/Create_a_clean,_premium,_professional_202605170216.jpeg";
-import dustbinsImg from "../../assets/products/Product Images/Dustbins/Create_a_clean,_premium,_professional_202605170106.jpeg";
-import plantersBoxImg from "../../assets/products/Product Images/Planters Box/Create_a_clean,_premium,_professional_202605170111.jpeg";
-import poolsideLoungersImg from "../../assets/products/Product Images/Poolside Loungers/Create_a_clean,_premium,_professional_202605170154.jpeg";
+import { Link } from "react-router-dom";
+import { fetchProducts } from "../../lib/wp";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,106 +45,39 @@ const categories = [
   )}
 ];
 
-const products = [
-  {
-    id: "platform",
-    title: "Cultivation Island",
-    line: "PLATFORM",
-    category: "parklets",
-    image: benchPlanterImg,
-    badges: ["modular", "new"]
-  },
-  {
-    id: "morse",
-    title: "Message for the future",
-    line: "MORSE",
-    category: "seating",
-    image: canteenTableImg,
-    badges: ["modular", "new"]
-  },
-  {
-    id: "morse-dot",
-    title: "Morse Dot: A Random Turn for a Random Encounter",
-    line: "MORSE DOT",
-    category: "seating",
-    image: poolsideLoungersImg,
-    badges: ["modular", "new"]
-  },
-  {
-    id: "linfa",
-    title: "Visually Light, Exceptionally Strong",
-    line: "LINFA",
-    category: "seating",
-    image: benchesImg,
-    badges: ["new"]
-  },
-  {
-    id: "aero-shelter",
-    title: "Transit Shelter System",
-    line: "AERO",
-    category: "shelters",
-    image: busSheltersImg,
-    badges: ["smart"]
-  },
-  {
-    id: "kubus",
-    title: "Litter & Recycling Bin System",
-    line: "KUBUS",
-    category: "bins",
-    image: dustbinsImg,
-    badges: ["essential"]
-  },
-  {
-    id: "cube-planter",
-    title: "Green Oasis Modular Planter",
-    line: "CUBE PLANTER",
-    category: "parklets",
-    image: plantersBoxImg,
-    badges: ["modular"]
-  },
-  {
-    id: "sunscape",
-    title: "Private Oasis in the Warm Sun",
-    line: "SUNSCAPE",
-    category: "outdoor-furniture",
-    image: cabanasImg,
-    badges: ["premium", "new"]
-  },
-  {
-    id: "car-port",
-    title: "Solar-Ready Protection for Vehicles",
-    line: "CAR PORT",
-    category: "shelters",
-    image: carShelterImg,
-    badges: ["eco", "new"]
-  },
-  {
-    id: "cane-double",
-    title: "Wicker Harmony Double Seater",
-    line: "CANE DOUBLE",
-    category: "outdoor-furniture",
-    image: caneFurniture2Img,
-    badges: ["handcrafted"]
-  },
-  {
-    id: "cane-set",
-    title: "Wicker Harmony Lounge Set",
-    line: "CANE SET",
-    category: "children",
-    image: caneFurniture3Img,
-    badges: ["handcrafted", "new"]
-  }
-];
-
 const ProductsCatalog = ({ showTitle = true }) => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [productsList, setProductsList] = useState([]);
+  const [loading, setLoading] = useState(true);
   const sliderRef = useRef(null);
   const containerRef = useRef(null);
 
+  // Fetch dynamic products on mount
+  useEffect(() => {
+    let active = true;
+    const loadCatalogData = async () => {
+      setLoading(true);
+      try {
+        const data = await fetchProducts();
+        if (active) {
+          setProductsList(data);
+        }
+      } catch (err) {
+        console.error("Failed to load catalog products:", err);
+      } finally {
+        if (active) setLoading(false);
+      }
+    };
+    loadCatalogData();
+    return () => {
+      active = false;
+    };
+  }, []);
+
   // Filter products based on selected category
   const filteredProducts = activeCategory === "all"
-    ? products
-    : products.filter(p => p.category === activeCategory);
+    ? productsList
+    : productsList.filter(p => p.category === activeCategory);
 
   // Scroll functions
   const scroll = (direction) => {
@@ -301,56 +223,78 @@ const ProductsCatalog = ({ showTitle = true }) => {
         ref={sliderRef}
         className="w-full overflow-x-auto scrollbar-none flex gap-6 pb-6 snap-x snap-mandatory scroll-smooth"
       >
-        {filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            className="catalog-card min-w-[280px] sm:min-w-[340px] md:min-w-[380px] lg:min-w-[420px] aspect-[4/5] bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group"
-          >
-            {/* Header info */}
-            <div className="flex justify-between items-start gap-4">
-              <h3 className="text-xl md:text-2xl font-light text-[#1a1a1a] tracking-tight leading-tight group-hover:text-black transition-colors duration-300">
-                {product.title}
-              </h3>
-              
-              {/* Badges */}
-              <div className="flex gap-1.5 shrink-0 pt-1">
-                {product.badges.map((badge, idx) => (
-                  <span
-                    key={idx}
-                    className={`text-[0.65rem] font-bold uppercase tracking-wider rounded-full px-2.5 py-1 ${
-                      badge === "new"
-                        ? "bg-[#2C5F2E] text-white"
-                        : "bg-[#C9A84C]/10 text-[#C9A84C]"
-                    }`}
-                  >
-                    {badge}
-                  </span>
-                ))}
+        {loading ? (
+          Array.from({ length: 4 }).map((_, idx) => (
+            <div
+              key={idx}
+              className="min-w-[280px] sm:min-w-[340px] md:min-w-[380px] lg:min-w-[420px] aspect-[4/5] bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] animate-pulse select-none"
+            >
+              <div className="flex justify-between items-start gap-4">
+                <div className="h-6 w-32 bg-black/10 rounded-md" />
+                <div className="h-5 w-12 bg-black/10 rounded-full" />
+              </div>
+              <div className="flex-1 my-6 flex justify-center items-center">
+                <div className="w-[65%] h-[65%] bg-black/[0.04] rounded-2xl" />
+              </div>
+              <div className="flex justify-between items-end">
+                <div className="h-5 w-20 bg-black/10 rounded-md" />
+                <div className="h-5 w-24 bg-black/5 rounded-full" />
               </div>
             </div>
+          ))
+        ) : (
+          filteredProducts.map((product) => (
+            <Link
+              key={product.id}
+              to={`/Urbanland/product/${product.id}`}
+              className="catalog-card min-w-[280px] sm:min-w-[340px] md:min-w-[380px] lg:min-w-[420px] aspect-[4/5] bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group cursor-pointer no-underline block"
+            >
+              {/* Header info */}
+              <div className="flex justify-between items-start gap-4">
+                <h3 className="text-xl md:text-2xl font-light text-[#1a1a1a] tracking-tight leading-tight group-hover:text-black transition-colors duration-300">
+                  {product.title}
+                </h3>
+                
+                {/* Badges */}
+                <div className="flex gap-1.5 shrink-0 pt-1">
+                  {product.badges.map((badge, idx) => (
+                    <span
+                      key={idx}
+                      className={`text-[0.65rem] font-bold uppercase tracking-wider rounded-full px-2.5 py-1 ${
+                        badge === "new"
+                          ? "bg-[#2C5F2E] text-white"
+                          : "bg-[#C9A84C]/10 text-[#C9A84C]"
+                      }`}
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
-            {/* Middle: Product rendering */}
-            <div className="flex-1 my-6 flex justify-center items-center overflow-hidden relative">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="max-h-[85%] max-w-[85%] object-contain select-none transform group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-            </div>
+              {/* Middle: Product rendering */}
+              <div className="flex-1 my-6 flex justify-center items-center overflow-hidden relative">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="max-h-[85%] max-w-[85%] object-contain select-none transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
 
-            {/* Bottom info */}
-            <div className="flex justify-between items-end">
-              <span className="text-sm font-bold tracking-[0.15em] text-[#1a1a1a]">
-                {product.line}
-              </span>
-              <span className="text-[0.7rem] uppercase tracking-wider text-[#2C5F2E] font-semibold bg-[#2C5F2E]/5 px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                View Details
-              </span>
-            </div>
-          </div>
-        ))}
+              {/* Bottom info */}
+              <div className="flex justify-between items-end">
+                <span className="text-sm font-bold tracking-[0.15em] text-[#1a1a1a]">
+                  {product.line}
+                </span>
+                <span className="text-[0.7rem] uppercase tracking-wider text-[#2C5F2E] font-semibold bg-[#2C5F2E]/5 px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  View Details
+                </span>
+              </div>
+            </Link>
+          ))
+        )}
 
-        {filteredProducts.length === 0 && (
+        {!loading && filteredProducts.length === 0 && (
           <div className="w-full py-20 flex flex-col justify-center items-center text-center">
             <svg className="w-12 h-12 text-[#7c756b]/40 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />

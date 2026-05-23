@@ -53,7 +53,7 @@ const MapLink = () => {
     });
 
     return (
-        <section ref={container} className="w-full h-[90vh] bg-[#F7F4EF] flex flex-col justify-center items-center text-center">
+        <section ref={container} id="map-link" className="w-full h-auto py-20 md:py-0 md:h-[90vh] bg-[#F7F4EF] flex flex-col justify-center items-center text-center">
             {/* Existing Title Text */}
             <div>
                 <p className="text-[0.7rem] font-bold text-[#2C5F2E] choose-subtitle uppercase tracking-widest mb-4">
@@ -72,7 +72,7 @@ const MapLink = () => {
                 onClick={openMap}
                 onMouseEnter={() => setActive(true)}
                 onMouseLeave={() => setActive(false)}
-                className="text-[#2C5F2E] text-[5vw] underline hover:text-[#C9A84C] cursor-pointer bg-transparent border-none outline-none mt-2 transition-colors duration-300"
+                className="text-[#2C5F2E] text-3xl md:text-[5vw] underline hover:text-[#C9A84C] cursor-pointer bg-transparent border-none outline-none mt-2 transition-colors duration-300"
             >
                 anywhere in India.
             </button>

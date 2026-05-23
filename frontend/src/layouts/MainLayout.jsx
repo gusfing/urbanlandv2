@@ -7,6 +7,7 @@ import { initLenis } from "../lib/lenis";
 import PreloaderII from "../components/Preloader/PreloaderII";
 import Footer from "../components/Footer/Footer";
 import FooterTitle from "../components/Footer/FooterTitle";
+import ScrollToTop from "../components/ScrollToTop";
 
 const MainLayout = () => {
 
@@ -38,28 +39,17 @@ const MainLayout = () => {
         };
         window.addEventListener("load", handleLoad);
 
-        // 2. ResizeObserver to detect layout height changes (e.g. dynamic images)
-        let refreshTimeout;
-        const resizeObserver = new ResizeObserver(() => {
-            clearTimeout(refreshTimeout);
-            refreshTimeout = setTimeout(() => {
-                ScrollTrigger.refresh();
-            }, 200);
-        });
-        resizeObserver.observe(document.body);
-
         return () => {
             gsap.ticker.remove(updateScroll);
             clearTimeout(initialRefresh);
             window.removeEventListener("load", handleLoad);
-            resizeObserver.disconnect();
-            clearTimeout(refreshTimeout);
             lenis.destroy();
         };
     }, []);
 
     return (
         <>
+            <ScrollToTop />
             <PreloaderII />
             <Header />
             <main>

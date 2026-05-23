@@ -27,7 +27,7 @@ const Feedback = () => {
     const progressWidth = feedbackReviewLG[index][3];
 
     return (
-        <section className='w-sereen h-dvh p-8 flex flex-col justify-center items-center'>
+        <section id="feedback" className='w-sereen h-dvh p-8 flex flex-col justify-center items-center'>
             <div className='w-full text-left'>
                 <p className='text-[.7rem] font-bold text-[#2C5F2E] activities-subtitle text-left'>
                     Do people like us?
