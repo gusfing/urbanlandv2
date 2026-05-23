@@ -1,7 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { FiArrowUpRight } from "react-icons/fi";
+import logoImg from "../../assets/urbanland-logo.png";
 import abstractFluid from "../../assets/abstract_fluid.png";
+
+// Import Background Image assets for Solution Previews
+import gbg1 from '../../assets/gallery_real_estate.png';
+import gbg2 from '../../assets/gallery_hotels.png';
+import gbg3 from '../../assets/gallery_hospitals.png';
+import gbg4 from '../../assets/gallery_education.png';
+import gbg5 from '../../assets/gallery_smart_city.png';
 
 const MenuOverlay = ({ isOpen, setIsOpen }) => {
   const containerRef = useRef(null);
@@ -11,6 +18,9 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
   const graphicRef = useRef(null);
 
   const [currentTime, setCurrentTime] = useState("");
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const bgImages = [gbg1, gbg2, gbg3, gbg4, gbg5];
 
   useEffect(() => {
     const updateTime = () => {
@@ -51,7 +61,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
         innerRef.current,
         { 
           scale: 0.05, 
-          y: 60, // Starting point offsets the scale center to match the button height exactly
+          y: 60, 
           opacity: 0,
           borderRadius: "100px",
           transformOrigin: "50% 100%"
@@ -125,88 +135,127 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
     <div
       ref={containerRef}
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-[6px] flex items-stretch justify-center font-sans opacity-0 invisible"
+      className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-[12px] flex items-stretch justify-center font-sans opacity-0 invisible"
     >
       <div 
         ref={innerRef}
-        className="relative w-full h-full bg-[#f4efe7] overflow-hidden flex flex-col justify-between p-10 sm:p-16 md:p-24 shadow-none border-none rounded-none"
+        className="relative w-full h-full bg-[#f4efe7] overflow-hidden flex flex-col justify-between p-6 sm:p-12 md:p-20 shadow-none border-none rounded-none"
       >
-        {/* Top Right Graphic (Premium abstract fluid ribbons) */}
-        <div 
-          ref={graphicRef}
-          className="absolute top-0 right-0 w-[45%] h-[55%] pointer-events-none select-none overflow-hidden rounded-none opacity-0"
-        >
-          <img 
-            src={abstractFluid} 
-            alt="Abstract Fluid Shape" 
-            className="w-full h-full object-cover object-right-top opacity-95"
-          />
-        </div>
-
-        {/* Top Section: Navigation Links */}
-        <div className="flex flex-col items-start gap-4 z-10 pt-16 pl-6 md:pt-20 md:pl-16">
-          {links.map((link, index) => (
-            <a
-              key={link}
-              href={`#${link.toLowerCase().replace(' ', '-')}`}
-              ref={(el) => (linksRef.current[index] = el)}
-              onClick={() => setIsOpen(false)}
-              className="text-4xl sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] leading-[0.95] text-[#2a2725] font-black uppercase tracking-tighter hover:text-[#993b21] transition-colors duration-300"
-            >
-              {link}
-            </a>
+        
+        {/* Dynamic Cinematic Background Image Previews */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden transition-all duration-700">
+          {bgImages.map((img, idx) => (
+            <div 
+              key={idx}
+              className={`absolute inset-0 bg-cover bg-center transition-all duration-700 ease-out transform ${
+                hoveredIndex === idx ? "opacity-15 scale-105" : "opacity-0 scale-100"
+              }`}
+              style={{ backgroundImage: `url(${img})` }}
+            />
           ))}
+          {/* Overlay to ensure maximum text contrast */}
+          <div className="absolute inset-0 bg-[#f4efe7]/95" />
         </div>
 
-        {/* Bottom Section */}
-        <div 
-          ref={bottomRef} 
-          className="w-full flex items-end justify-between z-10 pt-8 pl-6 pr-6 md:pl-16 md:pr-16 opacity-0 relative"
-        >
-          {/* Socials */}
-          <div className="flex flex-col items-start gap-0.5 sm:gap-1 font-sans">
-            {socials.map((social) => (
-              <a 
-                key={social} 
-                href="#" 
-                className="text-[#666] text-[10px] sm:text-xs md:text-sm font-medium hover:text-[#111] transition-colors duration-300"
+        {/* Header inside menu: Brand logo on left, custom close on right */}
+        <div className="w-full flex items-center justify-between z-10 border-b border-[#2a2725]/5 pb-6">
+          <img src={logoImg} alt="Urbanland Logo" className="h-6 sm:h-8 object-contain" />
+          <button 
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#2a2725] text-[#f4efe7] hover:bg-[#993b21] active:scale-95 transition-all text-xs font-bold uppercase tracking-widest cursor-pointer shadow-sm z-30"
+          >
+            ✕ Close Menu
+          </button>
+        </div>
+
+        {/* Main Content Area: Split 60/35 on desktop */}
+        <div className="w-full h-full flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-20 z-10 mt-8 md:mt-12 overflow-y-auto scrollbar-none">
+          
+          {/* LEFT COLUMN: Animated Navigation Links */}
+          <div className="w-full lg:w-[60%] flex flex-col justify-center items-start gap-4 py-8 pl-4 lg:pl-10">
+            {links.map((link, index) => (
+              <a
+                key={link}
+                href={`#${link.toLowerCase().replace(' ', '-')}`}
+                ref={(el) => (linksRef.current[index] = el)}
+                onClick={() => setIsOpen(false)}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="group relative flex items-center gap-4 text-4xl sm:text-6xl md:text-[5.2rem] lg:text-[6.2rem] leading-[0.95] text-[#2a2725] font-black uppercase tracking-tighter hover:text-[#993b21] hover:translate-x-6 transition-all duration-300 select-none"
               >
-                {social}
+                {/* Micro-spinning star indicator on hover */}
+                <span className="text-[#993b21] opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 transition-all duration-300 absolute -left-8 text-2xl pointer-events-none">
+                  ✦
+                </span>
+                <span className="relative">
+                  {link}
+                </span>
               </a>
             ))}
           </div>
 
-          {/* Action Button (Pill) - Absolutely Centered */}
-          <div className="absolute left-1/2 bottom-0 translate-y-1/2 -translate-x-1/2 flex items-center bg-[#f5f5f5] rounded-full p-0.5 sm:p-1 border border-black/5 shadow-sm">
-            <button 
-              onClick={() => setIsOpen(false)}
-              className="px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-sm font-semibold text-[#111] bg-white hover:bg-gray-50 transition-colors shadow-[0_2px_4px_rgba(0,0,0,0.05)] cursor-pointer"
-            >
-              Close
-            </button>
-            <button 
-              onClick={() => setIsOpen(false)}
-              className="px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 rounded-full text-[10px] sm:text-xs md:text-sm font-semibold text-white bg-black flex items-center gap-1 sm:gap-1.5 hover:bg-neutral-800 transition-colors cursor-pointer"
-            >
-              Let's Talk
-              <span className="text-[#0a7c41]">
-                <FiArrowUpRight size={14} className="md:w-[16px] md:h-[16px]" strokeWidth={3} />
-              </span>
-            </button>
-          </div>
+          {/* RIGHT COLUMN: Dark Premium Information Box */}
+          <div className="w-full lg:w-[35%] bg-[#2a2725] rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between items-stretch gap-10 border border-white/5 shadow-inner self-center lg:self-stretch">
+            
+            {/* Top Part: SVG Brand symbol and details */}
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-4 border-b border-white/10 pb-6">
+                <svg 
+                  viewBox="0 0 100 100" 
+                  className="h-10 w-10 text-[#f4efe7]" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="6" 
+                  strokeLinecap="square"
+                >
+                  <line x1="38" y1="20" x2="26" y2="80" />
+                  <line x1="62" y1="20" x2="74" y2="80" />
+                  <line x1="34" y1="20" x2="66" y2="20" />
+                  <line x1="30" y1="36" x2="70" y2="36" />
+                  <line x1="22" y1="54" x2="78" y2="54" />
+                  <line x1="16" y1="72" x2="84" y2="72" />
+                </svg>
+                <div>
+                  <h4 className="text-white text-sm font-bold uppercase tracking-widest leading-none">Urbanland®</h4>
+                  <p className="text-[#b1a696] text-[10px] uppercase tracking-widest mt-1">Premium Outdoor Systems</p>
+                </div>
+              </div>
 
-          {/* Time & Email */}
-          <div className="flex flex-col items-end text-[10px] sm:text-xs md:text-sm font-medium text-[#111]">
-            <p className="text-gray-400 font-normal mb-0.5 sm:mb-1">{currentTime}</p>
-            <a 
-              href="mailto:hello@urbanland.co" 
-              className="underline decoration-1 underline-offset-4 hover:text-gray-500 transition-colors"
-            >
-              hello@urbanland.co
-            </a>
+              <div className="flex flex-col gap-4 text-[#eae5dd]/70 text-xs sm:text-sm leading-relaxed font-normal">
+                <p>We craft high-contrast, low-maintenance urban furniture engineered for heavy footfall and beautiful residential, hospitality, and smart city infrastructure developments across India.</p>
+                <p>Designed with natural sustainable principles and custom precision finishes built to match your signature layout.</p>
+              </div>
+            </div>
+
+            {/* Bottom Part: Social links and metadata */}
+            <div className="flex flex-col gap-6 pt-6 border-t border-white/10">
+              <div className="flex flex-wrap gap-4">
+                {socials.map((social) => (
+                  <a 
+                    key={social} 
+                    href="#" 
+                    className="text-[#b1a696] hover:text-white text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-colors duration-300"
+                  >
+                    ▸ {social}
+                  </a>
+                ))}
+              </div>
+
+              <div className="flex justify-between items-center text-[10px] md:text-xs font-semibold text-white">
+                <span className="text-[#b1a696] font-normal">{currentTime}</span>
+                <a 
+                  href="mailto:hello@urbanland.co" 
+                  className="underline decoration-1 underline-offset-4 hover:text-[#b1a696] transition-colors"
+                >
+                  hello@urbanland.co
+                </a>
+              </div>
+            </div>
+
           </div>
 
         </div>
+
       </div>
     </div>
   );
