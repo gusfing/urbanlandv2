@@ -19,17 +19,65 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
   const graphicRef = useRef(null);
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
   // Background images for the preview card. The default is capsuleImg
   const bgImages = [capsuleImg, gbg1, gbg2, gbg3, gbg4, gbg5, gbg1];
 
   const links = [
     { name: "Home", path: "/" },
-    { name: "Products", path: "/products" },
-    { name: "Solutions", path: "/solutions" },
-    { name: "Projects", path: "/projects" },
+    { 
+      name: "Products", 
+      path: "/products",
+      subLinks: [
+        { name: "View All Products", path: "/products" },
+        { name: "Bus Shelters", path: "/products/bus-shelters" },
+        { name: "Car Sheds", path: "/products/car-sheds" },
+        { name: "Canteen Tables", path: "/products/canteen-tables" },
+        { name: "Planters", path: "/products/planters" },
+        { name: "Dustbins", path: "/products/dustbins" },
+        { name: "Benches", path: "/products/benches" },
+        { name: "Cabanas", path: "/products/cabanas" },
+        { name: "Swings", path: "/products/swings" },
+        { name: "Wicker Furniture", path: "/products/wicker-furniture" },
+        { name: "Poolside Loungers", path: "/products/poolside-loungers" },
+        { name: "SS Bollards", path: "/products/ss-bollards" }
+      ]
+    },
+    { 
+      name: "Solutions", 
+      path: "/solutions",
+      subLinks: [
+        { name: "View All Solutions", path: "/solutions" },
+        { name: "Real Estate", path: "/solutions/real-estate" },
+        { name: "Hospitality & Hotels", path: "/solutions/hospitality" },
+        { name: "Healthcare", path: "/solutions/healthcare" },
+        { name: "Education", path: "/solutions/education" },
+        { name: "Municipal & Smart Cities", path: "/solutions/municipal-smart-city" }
+      ]
+    },
+    { 
+      name: "Projects", 
+      path: "/projects",
+      subLinks: [
+        { name: "View All Projects", path: "/projects" },
+        { name: "Lodha Projects", path: "/projects/lodha" },
+        { name: "Adani Realty Projects", path: "/projects/adani" },
+        { name: "Oberoi Projects", path: "/projects/oberoi" }
+      ]
+    },
     { name: "About Us", path: "/about-us" },
-    { name: "Resources", path: "/resources" },
+    { 
+      name: "Resources", 
+      path: "/resources",
+      subLinks: [
+        { name: "Resources Hub", path: "/resources" },
+        { name: "Downloads", path: "/resources/downloads" },
+        { name: "Blog / Journal", path: "/blog" },
+        { name: "FAQ", path: "/faq" },
+        { name: "Materials Guide", path: "/materials" }
+      ]
+    },
     { name: "Contact Us", path: "/contact" }
   ];
 
@@ -157,40 +205,64 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
           <div className="w-full lg:w-[55%] flex flex-col justify-between py-4 lg:py-6 pl-2 lg:pl-6 mt-8 lg:mt-0">
             
             {/* Links Block */}
-            <div className="flex flex-col gap-1 items-start justify-center flex-grow">
+            <div className="flex flex-col gap-3.5 items-start justify-center flex-grow w-full">
               {links.map((link, index) => {
-                const isHashLink = !!link.hash;
-                const isOnHomePage = location.pathname === "/" || location.pathname === "/";
-                
-                if (isHashLink && isOnHomePage) {
-                  return (
-                    <a
-                      key={link.name}
-                      href={link.hash}
-                      ref={(el) => (linksRef.current[index] = el)}
-                      onClick={() => setIsOpen(false)}
-                      onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)}
-                      className="group relative flex items-center text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] leading-[1.05] text-[#f4efe7]/60 font-medium tracking-tight hover:text-[#f4efe7] hover:translate-x-6 transition-all duration-300 select-none cursor-pointer no-underline"
-                    >
-                      <span>{link.name}</span>
-                    </a>
-                  );
-                } else {
-                  return (
-                    <Link
-                      key={link.name}
-                      to={link.path}
-                      ref={(el) => (linksRef.current[index] = el)}
-                      onClick={() => setIsOpen(false)}
-                      onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)}
-                      className="group relative flex items-center text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] leading-[1.05] text-[#f4efe7]/60 font-medium tracking-tight hover:text-[#f4efe7] hover:translate-x-6 transition-all duration-300 select-none cursor-pointer no-underline"
-                    >
-                      <span>{link.name}</span>
-                    </Link>
-                  );
-                }
+                const hasSub = !!link.subLinks;
+                const isExpanded = expandedIndex === index;
+
+                const handleLinkClick = (e) => {
+                  if (hasSub) {
+                    e.preventDefault();
+                    setExpandedIndex(isExpanded ? null : index);
+                  } else {
+                    setIsOpen(false);
+                  }
+                };
+
+                return (
+                  <div 
+                    key={link.name} 
+                    className="w-full flex flex-col items-start"
+                    ref={(el) => (linksRef.current[index] = el)}
+                  >
+                    <div className="flex items-center gap-4 group/item w-full justify-between sm:justify-start">
+                      <Link
+                        to={link.path}
+                        onClick={handleLinkClick}
+                        onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                        className="group relative flex items-center text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-[#f4efe7]/60 font-semibold tracking-tight hover:text-[#f4efe7] hover:translate-x-4 transition-all duration-300 select-none cursor-pointer no-underline"
+                      >
+                        <span>{link.name}</span>
+                      </Link>
+                      
+                      {hasSub && (
+                        <button
+                          onClick={() => setExpandedIndex(isExpanded ? null : index)}
+                          className="w-10 h-10 rounded-full border border-[#f4efe7]/15 hover:border-[#f4efe7] text-[#f4efe7]/85 flex items-center justify-center text-sm font-semibold cursor-pointer active:scale-90 transition-all select-none hover:bg-white/5 bg-transparent"
+                        >
+                          {isExpanded ? "✕" : "＋"}
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Sub Links Accordion panel */}
+                    {hasSub && isExpanded && (
+                      <div className="flex flex-wrap gap-x-2.5 gap-y-2 mt-4 mb-6 pl-4 sm:pl-8 border-l-2 border-[#2C5F2E] max-w-full">
+                        {link.subLinks.map((sub) => (
+                          <Link
+                            key={sub.name}
+                            to={sub.path}
+                            onClick={() => setIsOpen(false)}
+                            className="px-4 py-2 rounded-full bg-white/5 border border-white/5 text-[#f4efe7]/80 hover:text-white hover:bg-[#2C5F2E] hover:border-[#2C5F2E] text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 no-underline select-none"
+                          >
+                            {sub.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
               })}
             </div>
 
