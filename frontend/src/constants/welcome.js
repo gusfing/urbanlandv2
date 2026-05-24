@@ -14,11 +14,13 @@ export const welcomeLinesSM = [
 ];
 
 export const chooseLinesLG =[
-    "Choose the one",
-    "you like best"
+    "Why India's Leading Developers Choose",
+    "Urbanland Products for Their Projects"
 ];
 export const chooseLinesSM =[
-    "Choose the",
-    "one you like",
-    "best"
+    "Why India's",
+    "Leading Developers",
+    "Choose Urbanland",
+    "Products for Their Projects"
 ];
+

@@ -296,7 +296,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
               filteredProducts.map((product) => (
                 <Link
                   key={product.id}
-                  to={`/product/${product.id}`}
+                  to={product.url || `/product/${product.id}`}
                   className="catalog-card min-w-[310px] sm:min-w-[380px] md:min-w-[440px] lg:min-w-[500px] xl:min-w-[560px] aspect-[4/5] bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group cursor-pointer no-underline block"
                 >
                   {/* Header info */}
@@ -321,23 +321,23 @@ const ProductsCatalog = ({ showTitle = true }) => {
                       ))}
                     </div>
                   </div>
-
+ 
                   {/* Middle: Product rendering */}
                   <div className="flex-1 my-6 flex justify-center items-center overflow-hidden relative">
                     <img
                       src={product.image}
-                      alt={product.title}
+                      alt={`${product.title} manufacturer India — Urbanland Products`}
                       className="max-h-[85%] max-w-[85%] object-contain select-none transform group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                   </div>
-
+ 
                   {/* Bottom info */}
                   <div className="flex justify-between items-end">
-                    <span className="text-sm font-bold tracking-[0.15em] text-[#1a1a1a]">
+                    <span className="text-sm font-medium text-[#1a1a1a] leading-relaxed max-w-[70%]">
                       {product.line}
                     </span>
-                    <span className="text-[0.7rem] uppercase tracking-wider text-[#2C5F2E] font-semibold bg-[#2C5F2E]/5 px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      View Details
+                    <span className="text-[0.7rem] uppercase tracking-wider text-[#2C5F2E] font-semibold bg-[#2C5F2E]/5 px-3 py-1.5 rounded-full opacity-100 group-hover:bg-[#2C5F2E] group-hover:text-[#F7F4EF] transition-all duration-300">
+                      View & Get Quote
                     </span>
                   </div>
                 </Link>

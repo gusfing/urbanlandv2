@@ -28,17 +28,21 @@ const MarqueeSticky = () => {
     });
 
     return (
-        <section className=" w-full overflow-hidden">
-            <div className="pin-con relative z-10">
-                <div className="pl-8">
-                    <p className="text-[0.7rem] text-[#2C5F2E] choose-subtitle">
-                        Want to learn more about
-                        <br />
-                        the benefits of—Urbanland<span>®</span>?
+        <section className="w-full overflow-hidden bg-[#F7F4EF]">
+            <div className="pin-con relative z-10 py-16 px-8 md:px-16 lg:px-20 max-w-5xl">
+                <div className="flex flex-col gap-4">
+                    <p className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-[#2C5F2E] choose-subtitle">
+                        — Case Studies & Portfolio
+                    </p>
+                    <h2 className="text-4xl lg:text-7xl font-black text-[#1A1A1A] leading-[1.05] tracking-tight uppercase">
+                        Real Projects. Real Results. Across India.
+                    </h2>
+                    <p className="text-sm md:text-lg text-[#2D2D2D]/85 leading-relaxed max-w-3xl font-light mt-3">
+                        From India's largest residential townships to luxury resorts and government smart city initiatives — Urbanland Products has delivered outdoor and urban furniture for 50+ major projects. Here are a few highlights.
                     </p>
                 </div>
 
-                <div className="marquee-con-none absolute top-12 md:top-20 -z-1 text-[#2C5F2E]">
+                <div className="marquee-con-none absolute top-32 md:top-48 -z-1 text-[#2C5F2E] opacity-15">
                     <MarqueeText />
                 </div>
 

@@ -1,62 +1,98 @@
 import { FaBehance, FaInstagram, FaDribbble } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import { Link } from "react-router-dom";
-
 import MarqueeText from '../Marquee/MarqueeText';
 
 const Footer = () => {
     return (
-        <section className='w-full h-auto px-6 pt-36 pb-24 md:pt-48 md:pb-32 bg-[#2D2D2D]'>
-            <div className='flex flex-col md:flex-row w-full h-auto justify-between border-b pb-16 border-[#F7F4EF]/15 ' >
-                <p className='text-[.7rem] text-[#F7F4EF]/90 choose-subtitle mt-10'>Interested in transforming your space?<br />Explore solutions by Urbanland<span>®</span></p>
+        <section className='w-full h-auto px-6 pt-24 pb-16 bg-[#2D2D2D] border-t border-[#F7F4EF]/10'>
+            {/* Top segment with Call to Action marquee */}
+            <div className='flex flex-col md:flex-row w-full h-auto justify-between border-b pb-8 border-[#F7F4EF]/15'>
+                <p className='text-[.7rem] text-[#F7F4EF]/90 choose-subtitle mt-4'>
+                    Interested in transforming your space?<br />
+                    Explore premium urban furniture solutions by Urbanland<span>®</span>
+                </p>
             </div>
-            <div className="text-[#C9A84C]">
+            <div className="text-[#C9A84C] py-4">
                 <MarqueeText />
             </div>
 
-            <div className='flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mt-14'>
-                <h3 className='text-[#C9A84C] text-xl md:text-2xl max-w-xl font-normal leading-relaxed'>
-                    This website showcases the premium<br />
-                    outdoor furniture solutions by—Urbanland®<br />
-                    across architectural projects.<br /><br />
-                    If you would like to explore our range<br />
-                    or request a custom quote—<Link to="/contact" className='text-[#F7F4EF] hover:text-[#C9A84C] underline transition-colors'> contact us.</Link>
-                </h3>
+            {/* 4-Column Sitemap Grid */}
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mt-16 text-[#F7F4EF]/80 border-b border-[#F7F4EF]/15 pb-16'>
+                {/* Column 1: Brand */}
+                <div className="flex flex-col gap-4">
+                    <h3 className="text-[#C9A84C] text-lg font-bold uppercase tracking-wider">Urbanland Products</h3>
+                    <p className="text-xs text-[#F7F4EF]/75 leading-relaxed font-light">
+                        Outdoor & Urban Furniture Manufacturer in India
+                    </p>
+                    <p className="text-xs text-[#F7F4EF]/55 leading-relaxed font-light">
+                        Vasai Virar, Maharashtra | ISO 9001:2015 Certified
+                    </p>
+                </div>
 
-                <div className='flex flex-col justify-center items-start md:items-end gap-2 text-right select-none'>
-                    <Link to="/" className='text-[#F7F4EF] hover:text-[#C9A84C] text-2xl transition-colors duration-300 no-underline'>Home</Link>
-                    <Link to="/products" className='text-[#F7F4EF] hover:text-[#C9A84C] text-2xl transition-colors duration-300 no-underline'>Products Hub</Link>
-                    <Link to="/solutions" className='text-[#F7F4EF] hover:text-[#C9A84C] text-2xl transition-colors duration-300 no-underline'>Solutions</Link>
-                    <Link to="/projects" className='text-[#F7F4EF] hover:text-[#C9A84C] text-2xl transition-colors duration-300 no-underline'>Projects Portfolio</Link>
-                    <Link to="/about-us" className='text-[#F7F4EF] hover:text-[#C9A84C] text-2xl transition-colors duration-300 no-underline'>About Us</Link>
-                    <Link to="/resources" className='text-[#F7F4EF] hover:text-[#C9A84C] text-2xl transition-colors duration-300 no-underline'>Resources Portal</Link>
+                {/* Column 2: Products */}
+                <div className="flex flex-col gap-4">
+                    <h3 className="text-[#C9A84C] text-sm font-bold uppercase tracking-wider">Products</h3>
+                    <ul className="flex flex-col gap-2.5 text-xs text-[#F7F4EF]/75 list-none p-0 m-0 font-light">
+                        <li><Link to="/products/wpc-benches" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">WPC Benches</Link></li>
+                        <li><Link to="/products/bus-shelters" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Bus Shelters</Link></li>
+                        <li><Link to="/products/planters" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">GFRC Planters</Link></li>
+                        <li><Link to="/products/outdoor-dustbins" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Outdoor Dustbins</Link></li>
+                        <li><Link to="/products/car-parking-sheds" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Car Parking Sheds</Link></li>
+                        <li><Link to="/products/canteen-furniture" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Canteen Furniture</Link></li>
+                        <li><Link to="/products/poolside-furniture" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Poolside Loungers</Link></li>
+                        <li><Link to="/products/wicker-furniture" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Wicker Furniture</Link></li>
+                    </ul>
+                </div>
+
+                {/* Column 3: Solutions */}
+                <div className="flex flex-col gap-4">
+                    <h3 className="text-[#C9A84C] text-sm font-bold uppercase tracking-wider">Solutions</h3>
+                    <ul className="flex flex-col gap-2.5 text-xs text-[#F7F4EF]/75 list-none p-0 m-0 font-light">
+                        <li><Link to="/solutions/real-estate" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Real Estate & Townships</Link></li>
+                        <li><Link to="/solutions/hotels-resorts" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Hotels & Resorts</Link></li>
+                        <li><Link to="/solutions/hospitals" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Hospitals & Healthcare</Link></li>
+                        <li><Link to="/solutions/education" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Schools & Universities</Link></li>
+                        <li><Link to="/solutions/smart-cities" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Municipal & Smart Cities</Link></li>
+                    </ul>
+                </div>
+
+                {/* Column 4: Contact & Trust Badges */}
+                <div className="flex flex-col gap-4">
+                    <h3 className="text-[#C9A84C] text-sm font-bold uppercase tracking-wider">Contact & Trust</h3>
+                    <div className="flex flex-col gap-2.5 text-xs text-[#F7F4EF]/75 leading-relaxed font-light">
+                        <p>Phone: +91 20 6789 2200</p>
+                        <p>Email: info@urbanlandproducts.com</p>
+                        <p>WhatsApp: +91 97732 46830</p>
+                        <p>Address: Vasai Virar, Maharashtra</p>
+                    </div>
+                    <div className="flex flex-col gap-1.5 mt-3 pt-3 border-t border-[#F7F4EF]/10 text-[10px] text-[#F7F4EF]/60 font-semibold uppercase tracking-wider">
+                        <span className="flex items-center gap-1.5">★ ISO 9001:2015 Certified</span>
+                        <span className="flex items-center gap-1.5">✓ 2-Year Guarantee</span>
+                        <span className="flex items-center gap-1.5">Made in India</span>
+                    </div>
                 </div>
             </div>
 
-            <div className="w-full flex flex-col md:flex-row justify-between items-center mt-20 gap-6 border-t border-[#F7F4EF]/10 pt-8">
-                <div className="flex flex-col gap-3">
-                    <div className="flex justify-center md:justify-start items-center gap-1.5">
-                        <div className='border border-[#F7F4EF]/25 hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/10 rounded-full p-3 text-[#F7F4EF] hover:text-[#C9A84C] transition-all cursor-pointer duration-300'><FaBehance className="text-xl" /></div>
-                        <div className='border border-[#F7F4EF]/25 hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/10 rounded-full p-3 text-[#F7F4EF] hover:text-[#C9A84C] transition-all cursor-pointer duration-300'><FaInstagram className="text-xl" /></div>
-                        <div className='border border-[#F7F4EF]/25 hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/10 rounded-full p-3 text-[#F7F4EF] hover:text-[#C9A84C] transition-all cursor-pointer duration-300'><CiLinkedin className="text-xl" /></div>
-                        <div className='border border-[#F7F4EF]/25 hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/10 rounded-full p-3 text-[#F7F4EF] hover:text-[#C9A84C] transition-all cursor-pointer duration-300'><FaDribbble className="text-xl" /></div>
-                    </div>
-                    <div className="flex gap-4 text-[10px] uppercase tracking-widest text-[#F7F4EF]/40 justify-center md:justify-start mt-1 select-none">
-                        <Link to="/sustainability" className="hover:text-[#C9A84C] transition-colors no-underline">Sustainability</Link>
-                        <span>•</span>
-                        <Link to="/privacy-policy" className="hover:text-[#C9A84C] transition-colors no-underline">Privacy Policy</Link>
-                    </div>
-                </div>
-
-                <div>
-                    <p className="text-[0.8rem] text-[#F7F4EF]/70 text-center md:text-right leading-relaxed">
-                        Meet Urbanland®—premium urban<br />
-                        and outdoor furniture solutions.
+            {/* Bottom copyright bar with crawlable keyword paragraph */}
+            <div className="w-full flex flex-col md:flex-row justify-between items-center mt-8 gap-6 pt-4 text-[11px] text-[#F7F4EF]/45">
+                <div className="flex flex-col gap-1 text-center md:text-left">
+                    <p>© 2026 Urbanland Products. All rights reserved.   |   <Link to="/privacy-policy" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Privacy Policy</Link>   |   <Link to="/sitemap" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Sitemap</Link></p>
+                    <p className="text-[#F7F4EF]/60 font-medium tracking-wide mt-1.5">
+                        Outdoor Furniture Manufacturer in India — WPC Benches, Bus Shelters, GFRC Planters & Urban Street Furniture
                     </p>
+                </div>
+                
+                {/* Social icons */}
+                <div className="flex justify-center md:justify-end items-center gap-1.5 shrink-0">
+                    <div className='border border-[#F7F4EF]/25 hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/10 rounded-full p-2.5 text-[#F7F4EF] hover:text-[#C9A84C] transition-all cursor-pointer duration-300'><FaBehance className="text-base" /></div>
+                    <div className='border border-[#F7F4EF]/25 hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/10 rounded-full p-2.5 text-[#F7F4EF] hover:text-[#C9A84C] transition-all cursor-pointer duration-300'><FaInstagram className="text-base" /></div>
+                    <div className='border border-[#F7F4EF]/25 hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/10 rounded-full p-2.5 text-[#F7F4EF] hover:text-[#C9A84C] transition-all cursor-pointer duration-300'><CiLinkedin className="text-base" /></div>
+                    <div className='border border-[#F7F4EF]/25 hover:border-[#C9A84C]/50 hover:bg-[#C9A84C]/10 rounded-full p-2.5 text-[#F7F4EF] hover:text-[#C9A84C] transition-all cursor-pointer duration-300'><FaDribbble className="text-base" /></div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Footer;
+export default Footer;

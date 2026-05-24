@@ -19,6 +19,12 @@ import logo13 from "../../assets/brands/9-1.png";
 import logo14 from "../../assets/brands/New-Project-7-Photoroom.png";
 import featuredImg from "../../assets/Bench_Planter.png";
 
+const brandNames = [
+    "Lodha", "Adani Realty", "Oberoi", "Kalpataru", "Rustomjee",
+    "Godrej Properties", "Tata Housing", "Sobha", "DLF", "L&T Realty",
+    "Prestige Group", "Brigade Group", "K Raheja Corp", "Shapoorji Pallonji"
+];
+
 const brandLogos = [
     logo1, logo2, logo3, logo4, logo5, logo6, logo7,
     logo8, logo9, logo10, logo11, logo12, logo13, logo14
@@ -31,45 +37,72 @@ const Activities = () => {
     const activitiesLines = isMobD ? activitiesLinesSM : activitiesLinesLG;
 
     return (
-        <section id="activities" className="activities-section w-full py-16 lg:py-0 lg:h-[100vh] p-6 sm:p-8 flex flex-col justify-between">
+        <section id="activities" className="activities-section w-full py-16 lg:py-0 lg:h-auto p-6 sm:p-8 flex flex-col justify-between gap-12">
             <div>
-                <p className='text-[.7rem] font-bold text-[#2C5F2E] activities-subtitle'>— From Premium Townships to Smart Cities</p>
+                <p className='text-[.7rem] font-bold text-[#2C5F2E] activities-subtitle uppercase tracking-widest'>— Trusted Across India</p>
                 <div className="lg:mt-10 mt-7 activities-part origin-bottom">
                     {activitiesLines.map((line, index) => (
-                        <h1 key={index} className="text-[#1A1A1A] lg:text-[9.5rem] text-[3rem] leading-[0.9] font-medium tracking-tighter">
+                        <h2 key={index} className="text-[#1A1A1A] lg:text-[4.2rem] md:text-[3rem] text-[2rem] leading-[1.05] font-bold tracking-tight uppercase">
                             {line}
-                        </h1>
+                        </h2>
                     ))}
                 </div>
             </div>
             
             <div className="activities-sec w-full flex lg:flex-row flex-col justify-between items-start gap-10 lg:mt-0 mt-8">
-                <div className='lg:w-[55%] w-full'>
+                <div className='lg:w-[50%] w-full'>
                     <div className="mb-6">
-                        <p className="text-[.8rem] font-semibold text-[#1A1A1A]/70 uppercase tracking-wider">Trusted Across India</p>
+                        <p className="text-[.8rem] font-bold text-[#1A1A1A]/70 uppercase tracking-wider">— Partner Developers & Public Bodies</p>
                     </div>
                     <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 md:gap-4">
                         {brandLogos.map((logo, index) => (
                             <div key={index} className="brand-logo-card flex justify-center items-center h-14 md:h-16 p-3 bg-[#2D2D2D]/5 hover:bg-[#2C5F2E]/10 rounded-xl transition-all duration-300 shadow-sm hover:scale-105 transform">
                                 <img 
                                     src={logo} 
-                                    alt={`Brand logo ${index + 1}`} 
+                                    alt={`${brandNames[index] || "Leading real estate developer"} outdoor furniture supplier — Urbanland Products`} 
                                     className="max-h-full max-w-full object-contain hover:scale-110 transition-transform duration-300"
                                 />
                             </div>
                         ))}
                     </div>
                 </div>
-                <div className='lg:w-[40%] w-full flex flex-col justify-end gap-6 lg:-mt-12'>
-                    <div className="activities-featured-img w-full h-[220px] md:h-[280px] overflow-hidden rounded-3xl border border-[#2D2D2D]/10 shadow-2xl">
+                
+                <div className='lg:w-[45%] w-full flex flex-col justify-end gap-6'>
+                    <div className="activities-featured-img w-full h-[200px] md:h-[250px] overflow-hidden rounded-3xl border border-[#2D2D2D]/10 shadow-2xl">
                         <img 
                             src={featuredImg} 
-                            alt="Urbanland Premium Township Project" 
+                            alt="Lodha township WPC benches and GFRC planters installed by Urbanland Products" 
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                         />
                     </div>
-                    <div className='text-[#2D2D2D]/80 lg:text-[1.6rem] text-[1.1rem] md:leading-[1.2] font-normal'>
-                        <p>Over 50 major outdoor furniture projects delivered across 15+ cities. Specified by India's most respected real estate developers, hospitality groups & municipal bodies.</p>
+                    
+                    <div className='text-[#2D2D2D]/90 lg:text-[1.5rem] text-[1.1rem] md:leading-[1.25] font-light'>
+                        <p>Over 50 major outdoor furniture projects delivered across 15+ cities. Our products have been specified by India's most respected real estate developers, hospitality groups, and municipal bodies — backed by India's only 2-year outdoor furniture guarantee.</p>
+                    </div>
+
+                    {/* 3 Stat Counters */}
+                    <div className="grid grid-cols-3 gap-4 border-t border-[#2D2D2D]/10 pt-6">
+                        <div>
+                            <p className="text-xl md:text-3xl font-black text-[#2C5F2E]">50+</p>
+                            <p className="text-[10px] text-[#2D2D2D]/70 font-bold uppercase tracking-wider mt-1">Major Projects</p>
+                        </div>
+                        <div>
+                            <p className="text-xl md:text-3xl font-black text-[#2C5F2E]">15+</p>
+                            <p className="text-[10px] text-[#2D2D2D]/70 font-bold uppercase tracking-wider mt-1">Cities Nationwide</p>
+                        </div>
+                        <div>
+                            <p className="text-xl md:text-3xl font-black text-[#2C5F2E]">2-Year</p>
+                            <p className="text-[10px] text-[#2D2D2D]/70 font-bold uppercase tracking-wider mt-1">Full Guarantee</p>
+                        </div>
+                    </div>
+
+                    {/* ISO & Trust Badges */}
+                    <div className="flex flex-wrap items-center gap-3 text-[10px] font-bold text-[#1A1A1A]/80 bg-[#2D2D2D]/5 px-4 py-3 rounded-2xl border border-black/5 mt-2">
+                        <span className="flex items-center gap-1">★ ISO 9001:2015 Certified</span>
+                        <span className="opacity-30">•</span>
+                        <span className="flex items-center gap-1">✓ 2-Year Guarantee Badge</span>
+                        <span className="opacity-30">•</span>
+                        <span className="flex items-center gap-1">Made in India</span>
                     </div>
                 </div>
             </div>

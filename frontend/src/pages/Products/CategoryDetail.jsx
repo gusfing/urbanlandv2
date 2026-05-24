@@ -25,8 +25,8 @@ const categoriesMeta = {
     durability: "Class C5 corrosion protection coating with 20+ years service life.",
     installation: "Cast-in-place anchor bolts with drainage integration."
   },
-  "car-sheds": {
-    title: "Car Sheds & Parking Structures",
+  "car-parking-sheds": {
+    title: "Car Parking Sheds",
     tagline: "High-tensile architectural sheds and tensile canopies.",
     description: "Modular, high-tensile cantilever parking shelters designed to withstand heavy wind loads and block UV radiation. Clean architectural spans provide maximum clearance.",
     image: colimg2,
@@ -34,8 +34,8 @@ const categoriesMeta = {
     durability: "100% rust-free frame; PVDF fabric with self-cleaning lacquer and 15-year warranty.",
     installation: "Reinforced concrete footing pads with high-strength chemical anchors."
   },
-  "canteen-tables": {
-    title: "Canteen Tables & Sets",
+  "canteen-furniture": {
+    title: "Canteen Tables & Benches",
     tagline: "Extreme-durability campus dining setups.",
     description: "Integrated outdoor tables and benches crafted for educational, corporate, and public campuses. Low-maintenance structures cladded in HPL or weather-resistant slats.",
     image: colimg1,
@@ -44,7 +44,7 @@ const categoriesMeta = {
     installation: "Bolt-down base flange anchoring or free-standing layouts."
   },
   "planters": {
-    title: "GFRC & Wooden Planters",
+    title: "GFRC & Concrete Planters",
     tagline: "Bio-diverse cultivation islands for plazas and parklets.",
     description: "Architectural glass-fiber reinforced concrete (GFRC) and solid wood planters designed to integrate lush plant life directly into municipal walkways and public sitting spaces.",
     image: colimg1,
@@ -52,8 +52,8 @@ const categoriesMeta = {
     durability: "Frost resistant, internally sealed waterproof layers.",
     installation: "Free-standing layout on integrated structural leveling pads."
   },
-  "dustbins": {
-    title: "Litter & Recycling Bins",
+  "outdoor-dustbins": {
+    title: "Outdoor Dustbins",
     tagline: "Durable municipal receptacles for smart waste management.",
     description: "Dual-compartment litter and recycling bins designed for heavy urban foot traffic. Stainless steel hardware prevents corrosion under monsoons and high humidity.",
     image: colimg1,
@@ -61,8 +61,8 @@ const categoriesMeta = {
     durability: "Anti-graffiti finish, fire-safe internal ash receptacles.",
     installation: "Chemical expansion anchoring onto concrete surfaces."
   },
-  "benches": {
-    title: "Architectural Park Benches",
+  "wpc-benches": {
+    title: "WPC & Aluminium Benches",
     tagline: "High-comfort seating cladded in premium timbers.",
     description: "Linear and modular public benches designed for parks, commercial courtyards, and premium residential spaces. Engineered ergonomics meet timeless material warmth.",
     image: colimg1,
@@ -70,14 +70,14 @@ const categoriesMeta = {
     durability: "Extreme humidity and UV resistance, natural untreated timber silver patina aging.",
     installation: "Sub-surface ground cast, or concrete surface flanged anchoring."
   },
-  "cabanas": {
-    title: "Poolside Cabanas & Gazebos",
-    tagline: "Resort-grade architectural shade modules.",
-    description: "Premium sunshade modules cladded in natural slats and premium structural frames, ideal for swimming pools, resort terraces, and high-end residential gardens.",
+  "poolside-furniture": {
+    title: "Poolside Loungers & Cabanas",
+    tagline: "Resort-grade architectural shade modules and sunbeds.",
+    description: "Premium sunshade modules, gazebos, and sun loungers designed for poolside decks and wellness spas, combining aluminium frames with high-density synthetic wicker or PE weave.",
     image: colimg3,
-    materials: "Structural aluminium alloys, powder-coated fasteners, UV-stable fabrics.",
-    durability: "Saltwater mist resistant, fade-proof awning fabric overlays.",
-    installation: "Integrated heavy base weights or surface deck bolting."
+    materials: "Structural aluminium alloys, powder-coated fasteners, HDPE synthetic wicker, UV-stable fabrics.",
+    durability: "Saltwater mist and chlorine resistant, quick-dry padding.",
+    installation: "Free-standing movable or deck-bolted layouts."
   },
   "swings": {
     title: "Wicker & Cane Swings",
@@ -89,22 +89,13 @@ const categoriesMeta = {
     installation: "Free-standing heavy steel arches or concrete ceiling anchor hooks."
   },
   "wicker-furniture": {
-    title: "Wicker Outdoor Furniture",
+    title: "Wicker Furniture",
     tagline: "Premium synthetic wicker dining and lounging ensembles.",
     description: "Hand-woven synthetic wicker dining chairs, tables, and lounge sectionals crafted with weather-resistant internal cushions. Made to withstand heavy monsoons and UV exposures.",
     image: colimg3,
     materials: "Lightweight rust-free aluminium internal frames, high-density PE wicker fibers.",
     durability: "UV test certified to 3000 hours, water-repellent cushions.",
     installation: "Free-standing premium furniture elements with adjustable feet."
-  },
-  "poolside-loungers": {
-    title: "Poolside Loungers",
-    tagline: "Ergonomic weather-proof lounger beds.",
-    description: "Sleek, ergonomic sun loungers designed for poolside decks and wellness spas. Stacking capabilities and weather-proof meshes ensure easy operations in premium resorts.",
-    image: colimg3,
-    materials: "Powder-coated structural aluminium, UV-stable textilene mesh webbing.",
-    durability: "Chlorine and salt-water resistant, quick-dry internal cushioning.",
-    installation: "Free-standing movable layouts."
   },
   "metal-wooden-furniture": {
     title: "Metal Wooden Furniture",
