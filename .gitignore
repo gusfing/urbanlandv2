@@ -1,3 +1,6 @@
+# Ignore product image assets (large local files)
+Product Images-20260524T210544Z-3-001/
+
 # Ignore large media and ZIP archives
 *.mp4
 *.zip

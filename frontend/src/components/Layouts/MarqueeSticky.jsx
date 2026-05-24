@@ -44,7 +44,7 @@ const MarqueeSticky = () => {
             </div>
 
             {/* Symmetrical Edge-to-Edge 'Contact Urbanland' Marquee placed cleanly AFTER the subheading paragraph */}
-            <div className="marquee-con-none w-full text-[#C9A84C] opacity-[0.07] pointer-events-none mt-10 mb-8 overflow-hidden select-none">
+            <div className="marquee-con-none w-full text-[#C9A84C] mt-10 mb-8 overflow-hidden">
                 <MarqueeText />
             </div>
 
