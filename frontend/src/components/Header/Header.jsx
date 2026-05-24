@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { IoMdMenu } from "react-icons/io";
+import { Link } from "react-router-dom";
 import MenuOverlay from "../Navbar/MenuOverlay";
 import logoImg from "../../assets/urbanland-logo.png";
 
@@ -30,14 +31,14 @@ const Header = () => {
         }`}
       >
         {/* Left Side: Brand Logo (Natural Green/Brown Colors) */}
-        <div className="flex items-center cursor-pointer select-none">
+        <Link to="/" className="flex items-center cursor-pointer select-none">
           <img 
             src={logoImg} 
             alt="Urbanland Products LLP Logo" 
             className="h-6 sm:h-8 md:h-9 object-contain hover:opacity-90 transition-opacity duration-300"
             style={{ filter: "brightness(0) invert(1)" }}
           />
-        </div>
+        </Link>
 
         {/* Center: Stylized 'A' Tower Icon */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none select-none">
@@ -79,14 +80,14 @@ const Header = () => {
         }`}
       >
         {/* Left Side: Brand Logo (Natural Green/Brown Colors) - Compact Size */}
-        <div className="flex items-center cursor-pointer select-none">
+        <Link to="/" className="flex items-center cursor-pointer select-none">
           <img 
             src={logoImg} 
             alt="Urbanland Products LLP Logo" 
             className="h-5 sm:h-6 object-contain hover:opacity-90 transition-opacity duration-300"
             style={{ filter: "brightness(0) invert(1)" }}
           />
-        </div>
+        </Link>
 
         {/* Custom micro separator line */}
         <div className="w-[1px] h-4 bg-[#F7F4EF]/25 self-center" />
