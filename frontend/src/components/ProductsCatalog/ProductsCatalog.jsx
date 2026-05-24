@@ -241,6 +241,32 @@ const ProductsCatalog = ({ showTitle = true }) => {
                 );
               })}
             </div>
+
+            <span className="text-[0.75rem] font-bold uppercase tracking-wider text-[#2D2D2D]/70 leading-relaxed mt-8 mb-4 block border-t border-[#2D2D2D]/10 pt-6">
+              Browse by Product Category:
+            </span>
+            
+            {/* Categories Tag Grid */}
+            <div className="flex flex-wrap gap-2.5 mt-4">
+              {categories.filter(cat => cat.id !== "all").map((cat) => {
+                const isActive = activeCategory === cat.id;
+                
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveCategory(isActive ? "all" : cat.id)}
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold tracking-wide border transition-all duration-300 cursor-pointer ${
+                      isActive
+                        ? "bg-[#2D2D2D] text-[#F7F4EF] border-[#2D2D2D] shadow-sm scale-95"
+                        : "border-[#2D2D2D]/20 text-[#2D2D2D]/85 hover:bg-[#2D2D2D]/5"
+                    }`}
+                  >
+                    {cat.icon}
+                    <span>{cat.name}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
           
           {/* Bottom row: All Products + * + Navigation */}
