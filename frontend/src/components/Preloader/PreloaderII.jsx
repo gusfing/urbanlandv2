@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 // import { ArrowRight, Menu } from "lucide-react";
 
 import "./preloaderII.css";
-import logoImg from "../../assets/urbanland-logo.png";
 
 gsap.registerPlugin(SplitText);
 export default function PreloaderII() {
@@ -39,7 +38,6 @@ export default function PreloaderII() {
         const splits = createSplitTexts(splitElements);
 
         gsap.set(splits.logoChars.chars, { x: "100%" });
-        gsap.set(".preloader-logo-img", { y: 30, opacity: 0 });
 
         gsap.set(
             [
@@ -56,8 +54,8 @@ export default function PreloaderII() {
             for (let i = 0; i < counterSteps; i++) {
                 const finalStep = i === counterSteps - 1;
                 const targetProgress = finalStep
-                    ? 1
-                    : Math.min(currentProgress + Math.random() * 0.3 + 0.1, 0.9);
+                     ? 1
+                     : Math.min(currentProgress + Math.random() * 0.3 + 0.1, 0.9);
                 currentProgress = targetProgress;
 
                 tl.to(".preloader-progress-bar", {
@@ -77,12 +75,6 @@ export default function PreloaderII() {
             duration: 1,
             ease: "power4.inOut",
         })
-            .to(".preloader-logo-img", {
-                y: 0,
-                opacity: 1,
-                duration: 1.2,
-                ease: "power3.out",
-            }, "0")
             .to(
                 splits.footerLines.lines,
                 {
@@ -105,12 +97,6 @@ export default function PreloaderII() {
                 },
                 "+=0.15"
             )
-            .to(".preloader-logo-img", {
-                y: -30,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power3.in"
-            }, "<")
             .to(splits.footerLines.lines, {
                 y: "-100%",
                 stagger: 0.1,
@@ -151,7 +137,6 @@ export default function PreloaderII() {
             <div className="preloader-progress flex flex-col items-center">
                 <div className="preloader-progress-bar"></div>
                 <div className="preloader-logo flex flex-col items-center gap-4 text-center">
-                    <img src={logoImg} alt="Urbanland Products Logo" className="preloader-logo-img w-16 md:w-20 h-auto object-contain mb-2 select-none" />
                     <h1>Urbanland</h1>
                 </div>
             </div>
