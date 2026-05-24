@@ -208,9 +208,96 @@ export const fetchPostBySlug = async (slug) => {
 };
 
 /**
+ * Helper: Parses standard WordPress Posts (CPT fallback under categories 9/13) to match our product schema
+ */
+const parseWPPostToProduct = (post) => {
+  // Resolve image
+  let image = "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80";
+  if (post._embedded?.["wp:featuredmedia"]?.[0]?.source_url) {
+    image = post._embedded["wp:featuredmedia"][0].source_url;
+  }
+
+  // Gallery
+  const gallery = [image];
+
+  // Resolve clean title and line by stripping common SEO suffixes
+  let rawTitle = post.title?.rendered || "";
+  rawTitle = rawTitle.replace(/&amp;/g, "&").replace(/&#8217;/g, "'").replace(/&#8211;/g, "–");
+  
+  // Clean up B2B/SEO suffix patterns to make titles beautiful and clean
+  let title = rawTitle
+    .replace(/\s*[–|-]\s*Premium Outdoor Seating.*$/gi, "")
+    .replace(/\s*[–|-]\s*Durable and Stylish.*$/gi, "")
+    .replace(/\s*[–|-]\s*Transforming Open Spaces.*$/gi, "")
+    .replace(/\s*[–|-]\s*Trusted WPC Bench.*$/gi, "")
+    .replace(/\s*[–|-]\s*Luxury Outdoor Furniture.*$/gi, "")
+    .replace(/\s*[–|-]\s*Urbanland Products.*$/gi, "")
+    .replace(/\s*[–|-]\s*UrbanLand Products.*$/gi, "")
+    .replace(/\s*[–|-]\s*Leading Smart City.*$/gi, "")
+    .replace(/\s*[–|-]\s*Why UrbanLand Products Leads.*$/gi, "")
+    .replace(/Manufacturers in India/gi, "")
+    .replace(/Manufacturer in India/gi, "")
+    .replace(/Manufacturers/gi, "")
+    .replace(/Manufacturer/gi, "")
+    .trim();
+
+  // Make line clean
+  let line = "Architectural Street Infrastructure";
+  if (title.toLowerCase().includes("bench")) {
+    line = "Weather-resistant seating";
+  } else if (title.toLowerCase().includes("dustbin") || title.toLowerCase().includes("trash")) {
+    line = "Waste management system";
+  } else if (title.toLowerCase().includes("planter")) {
+    line = "Landscape element";
+  } else if (title.toLowerCase().includes("wicker")) {
+    line = "Hand-woven luxury wicker";
+  } else if (title.toLowerCase().includes("shelter")) {
+    line = "Transit shelter infrastructure";
+  }
+
+  // Determine category based on categories array
+  // Benches (9), Wicker (13)
+  let category = "Benches";
+  if (post.categories?.includes(13)) {
+    category = "Wicker";
+  } else if (title.toLowerCase().includes("dustbin") || title.toLowerCase().includes("trash")) {
+    category = "Dustbin";
+  } else if (title.toLowerCase().includes("planter")) {
+    category = "Planter";
+  } else if (title.toLowerCase().includes("shelter")) {
+    category = "Shelters";
+  }
+
+  return {
+    id: post.slug || String(post.id),
+    title: title,
+    line: line,
+    category: category,
+    image,
+    gallery,
+    badges: ["Featured"],
+    tagline: post.excerpt?.rendered?.replace(/<[^>]*>/g, "")?.slice(0, 100)?.trim() + "..." || "Visionary design for modern environments.",
+    description: post.content?.rendered || "",
+    features: ["Heavy duty construction", "Anti-corrosion coating", "Sustainably sourced materials"],
+    specifications: {
+      materials: "Galvanized powder-coated steel combined with organic composite profiles.",
+      dimensions: "Standard dimensions custom fabricated to project specifications.",
+      installation: "Surface anchored with concealed chemical anchoring systems.",
+      sustainability: "100% recyclable frame components with certified low carbon footprint."
+    },
+    options: {
+      wood: ["Jatoba FSC®", "Robinia", "Acacia"],
+      metal: ["Anthracite Grey (RAL 7016)", "Corten Texture", "Warm Sand"],
+      modules: ["Base Unit", "Side Extension"]
+    },
+    yoast_head_json: post.yoast_head_json || null
+  };
+};
+
+/**
  * Fetch products from Headless WordPress API
- * Queries WooCommerce REST API or standard WordPress custom post type products.
- * Falls back to our local high-fidelity products list if unconfigured or error occurs.
+ * Queries WooCommerce REST API, WordPress CPT products, or falls back to Posts categories 9/13.
+ * Falls back to our local high-fidelity products list if all fetch routes are unconfigured or fail.
  */
 export const fetchProducts = async () => {
   if (!WP_BASE_URL) {
@@ -219,17 +306,46 @@ export const fetchProducts = async () => {
   }
 
   try {
-    // Attempt standard WordPress Custom Post Type 'products' REST API
-    const res = await fetch(`${WP_BASE_URL}/wp-json/wp/v2/products?_embed`);
-    if (!res.ok) {
-      // Attempt WooCommerce fallback if CPT fails
-      const wcRes = await fetch(`${WP_BASE_URL}/wp-json/wc/v3/products`);
-      if (!wcRes.ok) throw new Error(`CPT & WooCommerce endpoints both returned errors.`);
-      const wcData = await wcRes.json();
-      return wcData.map((prod) => parseWCObjectToProduct(prod));
+    // 1. Attempt standard WordPress Custom Post Type 'products' REST API
+    const res = await fetch(`${WP_BASE_URL}/wp-json/wp/v2/products?_embed&per_page=100`);
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.length > 0) {
+        return data.map((prod) => parseWPProduct(prod));
+      }
     }
-    const data = await res.json();
-    return data.map((prod) => parseWPProduct(prod));
+
+    // 2. Attempt WooCommerce fallback if CPT fails or is empty
+    try {
+      const wcRes = await fetch(`${WP_BASE_URL}/wp-json/wc/v3/products?per_page=100`);
+      if (wcRes.ok) {
+        const wcData = await wcRes.json();
+        if (wcData && wcData.length > 0) {
+          return wcData.map((prod) => parseWCObjectToProduct(prod));
+        }
+      }
+    } catch (e) {
+      console.warn("WooCommerce API attempt failed:", e);
+    }
+
+    // 3. Fallback to querying standard Posts under Outdoor/Wicker Furniture categories (ID 9 and 13)
+    console.log("CPT & WooCommerce empty. Querying WordPress posts under product categories...");
+    const postsRes = await fetch(`${WP_BASE_URL}/wp-json/wp/v2/posts?categories=9,13&_embed&per_page=100`);
+    if (postsRes.ok) {
+      const postsData = await postsRes.json();
+      if (postsData && postsData.length > 0) {
+        const parsedProducts = postsData.map((post) => parseWPPostToProduct(post));
+        
+        // Merge the dynamic products from WP with our premium local templates to ensure complete coverage
+        const merged = [
+          ...parsedProducts,
+          ...localProducts.filter((lp) => !parsedProducts.some((pd) => pd.id === lp.id))
+        ];
+        return merged;
+      }
+    }
+
+    throw new Error("All WordPress REST endpoints returned empty or failed.");
   } catch (error) {
     console.warn("Failed to fetch products from Headless WordPress API. Falling back to local static catalog.", error);
     return localProducts;
