@@ -26,10 +26,18 @@
     will-change: transform;
 }
 
-/* Specific styling for the ® symbol */
-.footer-title h1 sub.ftChar {
-    /* font-size: 0.5em; */
-    /* Make ® smaller */
+/* Specific styling for the ® symbol as a sibling sub element */
+.footer-brand-sub {
+    font-size: 0.4em;
     vertical-align: super;
-    bottom: 0;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    bottom: 0.25em;
+    margin-left: 0.05em;
+}
+
+.footer-brand-sub span {
+    display: inline-block;
+    will-change: transform;
 }

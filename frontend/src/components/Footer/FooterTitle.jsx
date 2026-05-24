@@ -1,12 +1,11 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useRef, useState } from 'react';
 
 import "./footertitle.css";
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
+gsap.registerPlugin(SplitText);
 
 const FooterTitle = () => {
     const ftConRef = useRef(null);
@@ -21,15 +20,10 @@ const FooterTitle = () => {
     useGSAP(() => {
         if (!ftConRef.current || !fontsLoaded) return;
 
-        // Get the original HTML before splitting
-        const originalHTML = ftConRef.current.querySelector(".footer-title h1").innerHTML;
-
-        // Create split - exclude the sub element from being split
-        const split = new SplitText(".footer-title h1", {
+        // Split only the brand text cleanly
+        const split = new SplitText(".footer-brand-text", {
             type: "chars",
-            charsClass: "ftChar",
-            // Exclude the <sub> element from being split
-            exclude: "sub"
+            charsClass: "ftChar"
         });
 
         // Wrap each character in a span for animation
@@ -39,38 +33,38 @@ const FooterTitle = () => {
 
         const innerChars = split.chars.map(c => c.querySelector("span"));
 
-        // Handle the sub element separately
-        const sub = ftConRef.current.querySelector(".footer-title sub");
-        if (sub) {
-            sub.innerHTML = `<span>${sub.innerHTML}</span>`;
-            const subSpan = sub.querySelector("span");
-
-            // Add to innerChars array
+        // Add the sub element span to animate with the rest of the text
+        const subSpan = ftConRef.current.querySelector(".footer-brand-sub span");
+        if (subSpan) {
             innerChars.push(subSpan);
         }
 
         // Initial state - start from left (-120%)
         gsap.set(innerChars, { x: "-120%" });
 
-        // Animation - move to normal position
-        gsap.to(innerChars, {
-            x: "0%",
-            stagger: 0.02, // Add stagger for character-by-character reveal
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: ftConRef.current,
-                start: "top 90%",
-                end: "top 80%",
-                scrub: true,
-                // markers: true
-            }
+        // Animation - move to normal position when in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    gsap.to(innerChars, {
+                        x: "0%",
+                        stagger: 0.03, // Add stagger for character-by-character reveal
+                        duration: 1.2,
+                        ease: "power4.out"
+                    });
+                    observer.disconnect();
+                }
+            });
+        }, {
+            threshold: 0.05 // Trigger early when the footer enters the viewport
         });
 
-        // Cleanup - revert the split and restore original HTML
+        observer.observe(ftConRef.current);
+
+        // Cleanup - revert split and disconnect observer
         return () => {
+            observer.disconnect();
             split.revert();
-            // Restore the original HTML with sub element
-            ftConRef.current.querySelector(".footer-title h1").innerHTML = originalHTML;
         };
 
     }, { scope: ftConRef, dependencies: [fontsLoaded] });
@@ -90,8 +84,9 @@ const FooterTitle = () => {
             </div>
 
             <div className='footer-title w-full text-center select-none'>
-                <h1 className='text-[clamp(5rem,15vw,12rem)] font-bold translate-y-[0%] leading-none'>
-                    Urbanland<sub>®</sub>
+                <h1 className='text-[clamp(5rem,15vw,12rem)] font-bold translate-y-[0%] leading-none flex items-baseline justify-center'>
+                    <span className="footer-brand-text">Urbanland</span>
+                    <sub className="footer-brand-sub"><span>®</span></sub>
                 </h1>
             </div>
         </section>
