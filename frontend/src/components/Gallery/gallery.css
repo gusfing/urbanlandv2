@@ -53,10 +53,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    height: 85vh;
+    height: 82vh; /* Slightly adjusted to compose beautifully */
     padding-left: 6vw;
     padding-right: 20vw; /* Padding so the last card composed beautifully */
-    gap: 10px;
+    gap: 24px; /* Symmetrical clean gap, exactly like the reference image */
     z-index: 10;
     will-change: transform;
     flex-shrink: 0;
@@ -67,9 +67,9 @@
 .gallery-card {
     position: relative;
     flex-shrink: 0;
-    width: 72vw;
+    width: 80vw; /* Widescreen aspect ratio matching reference */
     height: 100%;
-    border-radius: 37.5px;
+    border-radius: 40px; /* Refined rounded corners */
     overflow: hidden;
     box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
     background-color: #2D2D2D;
@@ -138,9 +138,11 @@
 }
 
 .gallery-topText h4 {
-    font-size: 3.2rem;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-size: 3.6rem;
+    font-weight: 700; /* Bold, strong appearance exactly like reference image */
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: #F7F4EF;
     margin: 0;
 }
 
@@ -199,20 +201,37 @@
     border-color: #f4efe7;
 }
 
+/* Premium Slide Index Capsule Pill */
+.gallery-slide-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #F7F4EF;
+    border: 1.5px solid rgba(247, 244, 239, 0.3); /* Symmetrical with Explore button */
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+    letter-spacing: 0.05em;
+    user-select: none;
+}
+
 /* Responsive Overrides for Mobile Viewports (< 800px) */
 @media (max-width: 800px) {
     .gallery-horizontal-track {
-        height: 85vh;
+        height: 82vh;
         padding-left: 4vw;
         padding-right: 15vw;
-        gap: 10px;
+        gap: 16px;
         flex-shrink: 0;
         width: max-content;
     }
 
     .gallery-card {
-        width: 85vw;
-        border-radius: 37.5px;
+        width: 82vw;
+        border-radius: 24px;
     }
 
     .gallery-topText {

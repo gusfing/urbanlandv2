@@ -82,12 +82,19 @@ const Gallery = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-col items-end justify-between min-h-[60px]">
+                        <div className="flex flex-col items-end justify-between min-h-[60px] gap-2.5">
                             <a href="/solutions/real-estate" className="gallery-link-btn text-[#C9A84C] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
                                 Explore Real Estate Solutions →
                             </a>
-                            <div className="relative z-9 w-40 h-[0.1rem] bg-[#4f4b48]">
-                                <div className="progress-line absolute z-10 bg-[#2C5F2E] w-[20%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                            <div className="flex items-center gap-4">
+                                <div className="relative z-9 w-24 h-[0.1rem] bg-[#4f4b48]">
+                                    <div className="progress-line absolute z-10 bg-[#C9A84C] w-[20%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                                </div>
+                                <div className="gallery-slide-counter">
+                                    <span>01</span>
+                                    <span className="opacity-40">/</span>
+                                    <span className="opacity-40">05</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -110,12 +117,19 @@ const Gallery = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-col items-end justify-between min-h-[60px]">
+                        <div className="flex flex-col items-end justify-between min-h-[60px] gap-2.5">
                             <a href="/solutions/hotels-resorts" className="gallery-link-btn text-[#C9A84C] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
                                 Explore Hospitality Solutions →
                             </a>
-                            <div className="relative z-9 w-40 h-[0.1rem] bg-[#4f4b48]">
-                                <div className="progress-line absolute z-10 bg-[#2C5F2E] w-[40%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                            <div className="flex items-center gap-4">
+                                <div className="relative z-9 w-24 h-[0.1rem] bg-[#4f4b48]">
+                                    <div className="progress-line absolute z-10 bg-[#C9A84C] w-[40%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                                </div>
+                                <div className="gallery-slide-counter">
+                                    <span>02</span>
+                                    <span className="opacity-40">/</span>
+                                    <span className="opacity-40">05</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -138,12 +152,19 @@ const Gallery = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-col items-end justify-between min-h-[60px]">
+                        <div className="flex flex-col items-end justify-between min-h-[60px] gap-2.5">
                             <a href="/solutions/hospitals" className="gallery-link-btn text-[#C9A84C] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
                                 Explore Healthcare Solutions →
                             </a>
-                            <div className="relative z-9 w-40 h-[0.1rem] bg-[#4f4b48]">
-                                <div className="progress-line absolute z-10 bg-[#2C5F2E] w-[60%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                            <div className="flex items-center gap-4">
+                                <div className="relative z-9 w-24 h-[0.1rem] bg-[#4f4b48]">
+                                    <div className="progress-line absolute z-10 bg-[#C9A84C] w-[60%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                                </div>
+                                <div className="gallery-slide-counter">
+                                    <span>03</span>
+                                    <span className="opacity-40">/</span>
+                                    <span className="opacity-40">05</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -166,12 +187,19 @@ const Gallery = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-col items-end justify-between min-h-[60px]">
+                        <div className="flex flex-col items-end justify-between min-h-[60px] gap-2.5">
                             <a href="/solutions/education" className="gallery-link-btn text-[#C9A84C] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
                                 Explore Campus Solutions →
                             </a>
-                            <div className="relative z-9 w-40 h-[0.1rem] bg-[#4f4b48]">
-                                <div className="progress-line absolute z-10 bg-[#2C5F2E] w-[80%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                            <div className="flex items-center gap-4">
+                                <div className="relative z-9 w-24 h-[0.1rem] bg-[#4f4b48]">
+                                    <div className="progress-line absolute z-10 bg-[#C9A84C] w-[80%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                                </div>
+                                <div className="gallery-slide-counter">
+                                    <span>04</span>
+                                    <span className="opacity-40">/</span>
+                                    <span className="opacity-40">05</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -194,12 +222,19 @@ const Gallery = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-col items-end justify-between min-h-[60px]">
+                        <div className="flex flex-col items-end justify-between min-h-[60px] gap-2.5">
                             <a href="/solutions/smart-cities" className="gallery-link-btn text-[#C9A84C] hover:text-[#f4efe7] text-[13px] font-semibold tracking-wide uppercase transition-colors duration-300">
                                 Explore Smart City Solutions →
                             </a>
-                            <div className="relative z-9 w-40 h-[0.1rem] bg-[#4f4b48]">
-                                <div className="progress-line absolute z-10 bg-[#2C5F2E] w-[100%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                            <div className="flex items-center gap-4">
+                                <div className="relative z-9 w-24 h-[0.1rem] bg-[#4f4b48]">
+                                    <div className="progress-line absolute z-10 bg-[#C9A84C] w-[100%] h-[0.1rem] top-1/2 -translate-y-1/2 left-0"></div>
+                                </div>
+                                <div className="gallery-slide-counter">
+                                    <span>05</span>
+                                    <span className="opacity-40">/</span>
+                                    <span className="opacity-40">05</span>
+                                </div>
                             </div>
                         </div>
                     </div>
