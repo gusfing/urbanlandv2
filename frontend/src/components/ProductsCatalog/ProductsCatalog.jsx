@@ -13,34 +13,49 @@ const categories = [
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   )},
-  { id: "parklets", name: "Parklets", icon: (
+  { id: "Benches", name: "Outdoor Benches", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v18M3 12h18M6 6l12 12M6 18L18 6" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 9h16M4 15h16M4 9v6M20 9v6M8 15v4M16 15v4" />
     </svg>
   )},
-  { id: "children", name: "Children", icon: (
+  { id: "Wicker", name: "Wicker Furniture", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 12m-9 0a9 9 0 1 1 18 0a9 9 0 1 1 -18 0 M9 10a1.5 1.5 0 1 1 3 0 M12 10a1.5 1.5 0 1 1 3 0 M9 15c1 1.5 3 2.5 5 0" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9V6a2 2 0 00-2-2H7a2 2 0 00-2 2v3M3 11v5a2 2 0 002 2h14a2 2 0 002-2v-5a2 2 0 00-4 0v2H7v-2a2 2 0 00-4 0z" />
     </svg>
   )},
-  { id: "seating", name: "Park benches & seating", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 9h16M4 15h16M4 9v6M20 9v6M8 15v4M16 15v4M6 5h12v4H6z" />
-    </svg>
-  )},
-  { id: "shelters", name: "Bus shelters", icon: (
+  { id: "Shelters", name: "Shelters", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 21h18M4 21V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13M8 10h8M8 14h8" />
     </svg>
   )},
-  { id: "bins", name: "Litter & recycling bins", icon: (
+  { id: "Planter", name: "Planters", icon: (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3a9 9 0 000 18v-9a3 3 0 000-6V3z" />
+    </svg>
+  )},
+  { id: "Dustbin", name: "Dustbins", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
     </svg>
   )},
-  { id: "outdoor-furniture", name: "Outdoor furniture", icon: (
+  { id: "Cabanas", name: "Cabanas", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3a9 9 0 000 18v-9a3 3 0 000-6V3z" />
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v13M3 12h18M12 3L3 12h18zM6 21h12" />
+    </svg>
+  )},
+  { id: "Sheds", name: "Sheds & Pavilions", icon: (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 12l9-9 9 9M5 12v8a2 2 0 002 2h10a2 2 0 002-2v-8" />
+    </svg>
+  )},
+  { id: "Car sheds", name: "Car sheds", icon: (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 10V6a2 2 0 012-2h10a2 2 0 012 2v4M2 17h20M7 17a2 2 0 100-4 2 2 0 000 4zm10 0a2 2 0 100-4 2 2 0 000 4z" />
+    </svg>
+  )},
+  { id: "Pool", name: "Poolside Loungers", icon: (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M2 12c4-4 8 4 12 0s8-4 8 0M2 16c4-4 8 4 12 0s8-4 8 0" />
     </svg>
   )}
 ];
@@ -78,17 +93,17 @@ const ProductsCatalog = ({ showTitle = true }) => {
   const filteredProducts = activeCategory === "all"
     ? productsList
     : activeCategory === "Sustainable"
-    ? productsList.filter(p => ["platform", "morse", "kubus", "cube-planter"].includes(p.id))
+    ? productsList.filter(p => ["outdoor-benches", "outdoor-dustbins", "outdoor-planters", "pre-fab-homes"].includes(p.id))
     : activeCategory === "Nature—Care"
-    ? productsList.filter(p => ["platform", "cube-planter", "cane-double", "cane-set"].includes(p.id))
+    ? productsList.filter(p => ["outdoor-benches", "outdoor-planters", "wicker-furniture", "poolside-loungers"].includes(p.id))
     : activeCategory === "Smart"
-    ? productsList.filter(p => ["aero-shelter", "car-port"].includes(p.id))
+    ? productsList.filter(p => ["bus-shelters", "car-parking-sheds", "pre-fab-homes"].includes(p.id))
     : activeCategory === "Privacy"
-    ? productsList.filter(p => ["cane-double", "cane-set", "sunscape", "car-port"].includes(p.id))
+    ? productsList.filter(p => ["cabanas", "gazebo", "car-parking-sheds", "pre-fab-homes"].includes(p.id))
     : activeCategory === "Spacious"
-    ? productsList.filter(p => ["platform", "morse", "linfa", "cane-set"].includes(p.id))
+    ? productsList.filter(p => ["bus-shelters", "canteen-tables", "parabola", "gazebo"].includes(p.id))
     : activeCategory === "Glassed-in"
-    ? productsList.filter(p => ["aero-shelter", "car-port"].includes(p.id))
+    ? productsList.filter(p => ["bus-shelters", "cabanas", "gazebo"].includes(p.id))
     : productsList.filter(p => p.category === activeCategory);
 
   // Scroll functions

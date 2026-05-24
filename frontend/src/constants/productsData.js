@@ -34,132 +34,20 @@ import wickerFurnitureHero from '../assets/Wicker_Furniture.jpeg';
 
 export const products = [
   {
-    id: "platform",
-    title: "Cultivation Island",
-    line: "PLATFORM",
-    category: "parklets",
-    image: benchPlanterImg,
-    gallery: [benchPlanterImg, gbg1, benchPlanterHero],
-    badges: ["modular", "new"],
-    tagline: "Reclaiming street parking spaces for vibrant community life.",
-    description: "PLATFORM is a modular street furniture system designed to temporarily or permanently convert parking lanes into miniature public terraces. It establishes a vibrant, green oasis for rest, social interactions, and outdoor cafe seating in busy city streets.",
-    features: [
-      "Modular components for endless layouts",
-      "Integrated GFRC planters and safety guardrails",
-      "Adjustable leveling feet for uneven curbside slopes",
-      "Optional accessibility ramp for wheelchairs"
-    ],
-    specifications: {
-      materials: "Hot-dip galvanized steel chassis with durable powder coating; FSC-certified tropical Jatoba or Robinia wood decking; optional stainless steel accents and safety rubber bumpers.",
-      dimensions: "Base platform module: 2000 x 2000 mm; Planter modules: 1000 x 500 mm. Heights adjustable from 150 mm to 300 mm to align with adjacent sidewalks.",
-      installation: "Free-standing layout supported by high-load leveling feet, or anchored to asphalt/concrete with heavy-duty expansion bolts for high-wind areas.",
-      sustainability: "100% recyclable steel frame; timber sourced from FSC-certified responsible forestry; easy component replacement minimizes life-cycle maintenance costs."
-    },
-    options: {
-      wood: ["Jatoba FSC® (Natural Oil finish)", "Robinia (Light Brown tint)", "Acacia Thermo-wood"],
-      metal: ["Anthracite Grey (RAL 7016)", "Corten Brown (Fine Texture)", "Forest Green (RAL 6009)"],
-      modules: ["Base Platform", "Green Planter Element", "Double Bench Wood Seat", "Bicycle Lock Bar"]
-    }
-  },
-  {
-    id: "morse",
-    title: "Message for the Future",
-    line: "MORSE",
-    category: "seating",
-    image: canteenTableImg,
-    gallery: [canteenTableImg, gbg4, canteenTablesHero],
-    badges: ["modular", "new"],
-    tagline: "Heavy-duty outdoor dining engineered for corporate and public campuses.",
-    description: "The MORSE series is an integrated table and seating system that offers clean, geometric aesthetics for public break spaces. Designed to withstand extreme weather, it serves as a central hub for dining, meetings, and shared encounters.",
-    features: [
-      "Heavy-gauge steel frame with architectural coating",
-      "Anti-vandalism mounting hardware",
-      "Ergonomically spaced benches and tabletop",
-      "Low maintenance timber or HPL slats"
-    ],
-    specifications: {
-      materials: "Laser-cut sheet steel frame, galvanized and powder-coated; high-density HPL or durable thermo-wood slats; stainless steel assembly bolts.",
-      dimensions: "Total footprint: 2200 x 1800 mm. Tabletop height: 750 mm; Bench seat height: 450 mm. Custom configurations available.",
-      installation: "Surface mounted with heavy-duty anchoring bolts or surface anchored on leveling feet; optional free-standing layout with weighted base.",
-      sustainability: "HPL panels are composed of paper fibers and thermosetting resins for extreme lifespan; steel frame is fully recyclable."
-    },
-    options: {
-      wood: ["Robinia Slat Panels", "Thermo-Pine Slats", "Charcoal HPL (High-Pressure Laminate)"],
-      metal: ["Anthracite Grey (RAL 7016)", "Slate Grey (RAL 7015)", "Corten Texture"],
-      modules: ["Standard 6-Seater Table", "Extended 8-Seater Table", "Integrated USB Power Port"]
-    }
-  },
-  {
-    id: "morse-dot",
-    title: "Morse Dot Lounge Table",
-    line: "MORSE DOT",
-    category: "seating",
-    image: poolsideLoungersImg,
-    gallery: [poolsideLoungersImg, gbg2, welcome2],
-    badges: ["modular", "new"],
-    tagline: "A random turn for a random encounter.",
-    description: "MORSE DOT is a modular, high-contrast stool and table unit that brings playfulness and flexible configuration to corporate courtyards and campus pathways. Position them together as a collaborative ring or space them apart for quiet focus.",
-    features: [
-      "Modular circular seats and table disks",
-      "Architectural concrete or powder coated steel frames",
-      "High-contrast color selections",
-      "Optional integrated solar-powered device chargers"
-    ],
-    specifications: {
-      materials: "Ultra-high performance concrete (UHPC) or galvanized steel sheet frame; FSC-certified tropical wood or concrete cap seats; hidden floor mount bracket.",
-      dimensions: "Diameter: 600 mm or 800 mm. Table Height: 750 mm; Seat Height: 450 mm.",
-      installation: "Sub-surface anchoring or surface mounting on pre-existing concrete paving; can also be weighted for temporary, free-standing public events.",
-      sustainability: "Timber components are FSC-certified; UHPC concrete uses eco-efficient binding agents to minimize manufacturing carbon footprint."
-    },
-    options: {
-      wood: ["Jatoba FSC® Cap", "Robinia Slats Cap", "Smooth Anthracite Concrete Cap"],
-      metal: ["Golden Yellow (RAL 1004)", "Corten Brown (Fine Texture)", "Anthracite Grey (RAL 7016)"],
-      modules: ["Circular Seat", "Circular Table", "Solar Charging Hub"]
-    }
-  },
-  {
-    id: "linfa",
-    title: "Visually Light, Exceptionally Strong",
-    line: "LINFA",
-    category: "seating",
-    image: benchesImg,
-    gallery: [benchesImg, gbg1, benchHero],
-    badges: ["new"],
-    tagline: "Slender wooden slats on a refined structural frame.",
-    description: "LINFA redefines the classic park bench with a delicate silhouette that floats above the landscape. Built using high-tension structural steel plates, it offers superior load bearing capacity while keeping a minimal footprint.",
-    features: [
-      "Minimalist silhouette with hidden structural ribs",
-      "Premium, close-spaced wooden slats for maximum comfort",
-      "Available with or without ergonomic armrests",
-      "Integrated anti-skateboarding modules"
-    ],
-    specifications: {
-      materials: "High-yield structural steel sheet sides with weather-resistant powder coating; close-spaced Jatoba or Robinia wood slats; stainless steel hardware.",
-      dimensions: "Length: 1800 mm; Depth: 620 mm; Height: 810 mm. Seat height: 450 mm.",
-      installation: "Surface anchored with four chemical anchor bolts into sub-surface concrete slabs.",
-      sustainability: "FSC Jatoba wood uses biological preservation treatments; minimal metal thickness reduces resource consumption while maintaining load ratings."
-    },
-    options: {
-      wood: ["Jatoba FSC® (Natural Oil finish)", "Robinia Slats", "Acacia Thermo-wood"],
-      metal: ["Corten Brown (Fine Texture)", "Anthracite Grey (RAL 7016)", "Jet Black (RAL 9005)"],
-      modules: ["Standard Bench without Backrest", "Standard Bench with Backrest", "Integrated Steel Armrest"]
-    }
-  },
-  {
-    id: "aero-shelter",
-    title: "Transit Shelter System",
-    line: "AERO",
-    category: "shelters",
+    id: "bus-shelters",
+    title: "Bus Shelters",
+    line: "Robust infrastructure solutions",
+    category: "Shelters",
     image: busSheltersImg,
     gallery: [busSheltersImg, gbg5, busSheltersHero],
-    badges: ["smart"],
-    tagline: "Public transport infrastructure built for modern smart cities.",
-    description: "AERO is a highly modular public transport shelter system combining durable protection, elegant aesthetics, and modern technology. Perfect for municipal transit networks, it integrates solar power, digital route displays, and charging ports.",
+    badges: ["Popular"],
+    tagline: "Robust MS/SS bus shelters for townships, campuses & smart cities.",
+    description: "Our MS and SS bus shelters are engineered with hot-dip galvanized steel framing, tempered glass or polycarbonate wind barriers, and self-contained solar-powered lighting systems. Specified extensively for India's Smart City Mission projects, educational campuses, and large private townships.",
     features: [
       "Modular length expansion to fit high-traffic stops",
       "Toughened safety glass panels with decorative frit patterns",
       "Optional solar roof and integrated LED smart lighting",
-      "Integrated bench seating and trash receptacles"
+      "Concealed chemical anchoring for high wind-loads"
     ],
     specifications: {
       materials: "Structural steel tube columns with anti-corrosion duplex paint finish; laminated safety glass rear/side walls; aluminum roof frame; thermo-wood bench seat.",
@@ -174,14 +62,42 @@ export const products = [
     }
   },
   {
-    id: "kubus",
-    title: "Litter & Recycling Bin System",
-    line: "KUBUS",
-    category: "bins",
+    id: "outdoor-benches",
+    title: "Outdoor Benches",
+    line: "Weather-resistant park benches",
+    category: "Benches",
+    image: benchesImg,
+    gallery: [benchesImg, gbg1, benchHero],
+    badges: ["Best Seller"],
+    tagline: "Weather-resistant and durable outdoor benches.",
+    description: "Premium outdoor benches designed to redefine comfort in public parks, corporate offices, and private residential townships. Fabricated with corrosion-resistant metal side legs and sustainably sourced tropical hardwood or high-durability WPC composite slats.",
+    features: [
+      "Ergonomic seating angles with optional structural armrests",
+      "Sustainably sourced FSC certified timber or organic WPC slats",
+      "Heavy-duty cast iron or laser-cut steel framing support",
+      "Anti-skateboarding modules integrated by default"
+    ],
+    specifications: {
+      materials: "High-yield structural steel sheet sides with weather-resistant powder coating; close-spaced Jatoba or Robinia wood slats; stainless steel hardware.",
+      dimensions: "Length: 1800 mm; Depth: 620 mm; Height: 810 mm. Seat height: 450 mm.",
+      installation: "Surface anchored with four chemical anchor bolts into sub-surface concrete slabs.",
+      sustainability: "FSC Jatoba wood uses biological preservation treatments; minimal metal thickness reduces resource consumption while maintaining load ratings."
+    },
+    options: {
+      wood: ["Jatoba FSC® (Natural Oil finish)", "Robinia Slats", "Acacia Thermo-wood"],
+      metal: ["Corten Brown (Fine Texture)", "Anthracite Grey (RAL 7016)", "Jet Black (RAL 9005)"],
+      modules: ["Standard Bench without Backrest", "Standard Bench with Backrest", "Integrated Steel Armrest"]
+    }
+  },
+  {
+    id: "outdoor-dustbins",
+    title: "Outdoor Dustbins",
+    line: "Durable waste management",
+    category: "Dustbin",
     image: dustbinsImg,
     gallery: [dustbinsImg, gbg3, dustbinsHero],
-    badges: ["essential"],
-    tagline: "Clean, robust waste management for urban streets and parks.",
+    badges: ["Popular"],
+    tagline: "Stainless steel and composite dustbins for smart city zones.",
     description: "KUBUS is an elegant, modular litter and recycling bin system designed to fit cleanly into modern street layouts. Offering single, double, or triple sorting configurations, it combines high durability with simple collection workflows.",
     features: [
       "Modular sorting configurations (trash, plastic, paper)",
@@ -202,15 +118,15 @@ export const products = [
     }
   },
   {
-    id: "cube-planter",
-    title: "Green Oasis Planter Box",
-    line: "CUBE PLANTER",
-    category: "parklets",
+    id: "outdoor-planters",
+    title: "Outdoor Planters",
+    line: "Lightweight landscape elements",
+    category: "Planter",
     image: plantersBoxImg,
     gallery: [plantersBoxImg, gbg1, plantersBoxHero],
-    badges: ["modular"],
-    tagline: "Large-scale modular greenery containers for public spaces.",
-    description: "CUBE PLANTER brings nature to hard paving layouts. Engineered to handle large root structures and trees, these heavy-duty planter boxes can be used individually or connected to form wind-breaks and collaborative seating layouts.",
+    badges: ["Popular"],
+    tagline: "Lightweight outdoor planters for premium commercial developments.",
+    description: "Architectural large-scale greenery containers and planter boxes designed for commercial townships, hotels, and luxury garden landscapes. Built with double-walled insulation to optimize soil moisture levels and encourage natural root growth.",
     features: [
       "Reinforced double-walled structure with integrated insulation",
       "Self-watering reservoir and sub-surface drainage holes",
@@ -230,43 +146,43 @@ export const products = [
     }
   },
   {
-    id: "sunscape",
-    title: "Private Oasis in the Warm Sun",
-    line: "SUNSCAPE",
-    category: "outdoor-furniture",
-    image: cabanasImg,
-    gallery: [cabanasImg, gbg2, welcome1],
-    badges: ["premium", "new"],
-    tagline: "Architectural cabanas and lounges for hospitality terraces.",
-    description: "SUNSCAPE combines high-end comfort with public durability. Featuring integrated shading slats and premium lounging decks, it creates a cozy, luxury retreat for hotel poolsides, corporate rooftops, and high-end public spaces.",
+    id: "canteen-tables",
+    title: "Canteen Tables",
+    line: "Heavy-duty communal dining",
+    category: "Benches",
+    image: canteenTableImg,
+    gallery: [canteenTableImg, gbg4, canteenTablesHero],
+    badges: ["Popular"],
+    tagline: "Heavy-duty dining sets for corporate and campus spaces.",
+    description: "The MORSE series is an integrated table and seating system that offers clean, geometric aesthetics for public break spaces. Designed to withstand extreme weather, it serves as a central hub for dining, meetings, and shared encounters.",
     features: [
-      "Sturdy architectural pergola frame with overhead shading slats",
-      "Premium, weather-proof lounging platforms",
-      "Modular side privacy screens in timber or fabric",
-      "Integrated cup holders and device shelving"
+      "Heavy-gauge steel frame with architectural coating",
+      "Anti-vandalism mounting hardware",
+      "Ergonomically spaced benches and tabletop",
+      "Low maintenance timber or HPL slats"
     ],
     specifications: {
-      materials: "Structural steel tubes, powder-coated; FSC Jatoba or Robinia wood lounger slats; stainless steel joints; acrylic weather-proof fabric options.",
-      dimensions: "Total footprint: 2000 x 2000 mm. Pergola Height: 2200 mm. Lounger platform height: 450 mm.",
-      installation: "Surface mounted on wooden decks, tiled terraces, or concrete slabs using concealed floor anchoring brackets.",
-      sustainability: "Timber sourced from sustainably managed FSC-certified forests; structural steel is fully recyclable; durable fabrics resist UV degrading."
+      materials: "Laser-cut sheet steel frame, galvanized and powder-coated; high-density HPL or durable thermo-wood slats; stainless steel assembly bolts.",
+      dimensions: "Total footprint: 2200 x 1800 mm. Tabletop height: 750 mm; Bench seat height: 450 mm. Custom configurations available.",
+      installation: "Surface mounted with heavy-duty anchoring bolts or surface anchored on leveling feet; optional free-standing layout with weighted base.",
+      sustainability: "HPL panels are composed of paper fibers and thermosetting resins for extreme lifespan; steel frame is fully recyclable."
     },
     options: {
-      wood: ["Jatoba FSC® Slats", "Robinia Slats", "Acacia Thermo-wood"],
-      metal: ["Corten Brown (Fine Texture)", "Anthracite Grey (RAL 7016)", "Warm Sand (RAL 1013)"],
-      modules: ["Single Cabana Bed", "Double Cabana Bed", "Add-On Side Timber Slats Privacy Screen", "Add-On Fabric Curtains"]
+      wood: ["Robinia Slat Panels", "Thermo-Pine Slats", "Charcoal HPL (High-Pressure Laminate)"],
+      metal: ["Anthracite Grey (RAL 7016)", "Slate Grey (RAL 7015)", "Corten Texture"],
+      modules: ["Standard 6-Seater Table", "Extended 8-Seater Table", "Integrated USB Power Port"]
     }
   },
   {
-    id: "car-port",
-    title: "Solar-Ready Vehicle Protection",
-    line: "CAR PORT",
-    category: "shelters",
+    id: "car-parking-sheds",
+    title: "Car Parking Sheds",
+    line: "Modular vehicle protection",
+    category: "Car sheds",
     image: carShelterImg,
     gallery: [carShelterImg, gbg5, carShelterHero],
-    badges: ["eco", "new"],
-    tagline: "Engineered canopy structures for clean, green energy parking.",
-    description: "CAR PORT is a heavy-duty shelter solution that protects vehicles while enabling green energy collection. Designed to hold commercial solar PV panels, it features integrated wire routing and structural support for EV charging stations.",
+    badges: ["Featured"],
+    tagline: "Powder-coated, modular car sheds for residential projects.",
+    description: "Heavy-duty structural vehicle sheds designed to provide shelter and protection from sun, rain, and hail. Cantilever steel frames allow for seamless parking maneuvering and can support heavy overhead commercial solar PV panels.",
     features: [
       "Heavy-duty cantilever steel support frames for easy parking access",
       "Optimized roof pitch for maximum solar panel performance",
@@ -286,15 +202,43 @@ export const products = [
     }
   },
   {
-    id: "cane-double",
-    title: "Wicker Harmony Double Seater",
-    line: "CANE DOUBLE",
-    category: "outdoor-furniture",
+    id: "poolside-loungers",
+    title: "Poolside Loungers & Umbrella",
+    line: "Premium resort lounging",
+    category: "Pool",
+    image: poolsideLoungersImg,
+    gallery: [poolsideLoungersImg, gbg2, welcome2],
+    badges: ["Popular"],
+    tagline: "Premium loungers and cabanas for resort and hotel decks.",
+    description: "Handcrafted outdoor deck loungers designed for five-star hotels, luxury residential poolsides, and beachfront decks. Combining anti-rust aluminum framing with hand-woven, UV-stabilized synthetic wicker fibers to withstand chlorine and saltwater environments.",
+    features: [
+      "Handcrafted weave patterns using heavy-duty weather-proof fibers",
+      "Modular components to set up customizable layouts",
+      "Premium, water-repellent quick-dry foam cushions",
+      "Non-marking adjustable floor levelers"
+    ],
+    specifications: {
+      materials: "Anti-rust aluminum core tube framing; HDPE synthetic wicker weave; quick-dry polyurethane foam padding; high-performance outdoor fabric.",
+      dimensions: "Single Chair: 850 x 820 x 780 mm. Table: 900 mm diameter, 400 mm height. Cushions: 120 mm thickness.",
+      installation: "Free-standing layout; adjustable non-marking glides allow for easy leveling on irregular paving surfaces.",
+      sustainability: "Durable HDPE wicker offers 10+ years UV protection; foam cushions are free of ozone-depleting CFCs."
+    },
+    options: {
+      wood: ["No wood elements", "Natural Teak wood table-top", "Acacia wood table-top"],
+      metal: ["Charcoal Grey Wicker Pack", "Natural Tan Wicker Pack", "White Ash Wicker Pack"],
+      modules: ["Full Set (2 Chairs, 1 Sofa, 1 Table)", "Chairs Only Pack (2 Chairs)", "Table Only (1 Table)"]
+    }
+  },
+  {
+    id: "wicker-furniture",
+    title: "Wicker Furniture",
+    line: "Hand-woven luxury wicker",
+    category: "Wicker",
     image: caneFurniture2Img,
     gallery: [caneFurniture2Img, gbg2, wickerFurnitureHero],
-    badges: ["handcrafted"],
-    tagline: "Woven outdoor seating blending luxury with durability.",
-    description: "CANE DOUBLE combines organic, handcrafted charm with modern public durability. Utilizing high-performance synthetic fibers woven over a lightweight aluminum frame, it offers premium seating comfort for resort patios and gardens.",
+    badges: ["Popular"],
+    tagline: "Luxury hand-woven wicker dining sets and lounge chairs.",
+    description: "Luxury synthetic wicker seating systems handcrafted for outdoor hospitality terraces and resort garden lounges. Utilizes UV-stable, non-fading polymer strands wrapped tightly over high-strength powder-coated structural frames.",
     features: [
       "Hand-woven synthetic wicker fibers resistant to chlorine and UV",
       "Lightweight, rust-free powder-coated aluminum structural frame",
@@ -314,31 +258,115 @@ export const products = [
     }
   },
   {
-    id: "cane-set",
-    title: "Wicker Harmony Lounge Set",
-    line: "CANE SET",
-    category: "children",
+    id: "pre-fab-homes",
+    title: "Pre Fab Homes",
+    line: "Modular residential structures",
+    category: "Sheds",
     image: caneFurniture3Img,
-    gallery: [caneFurniture3Img, gbg2, wickerFurnitureHero],
-    badges: ["handcrafted", "new"],
-    tagline: "Flexible modular seating arrangements for outdoor lounge zones.",
-    description: "CANE SET is a complete lounge furniture family including single chairs, double benches, and matching coffee tables. Handcrafted to resemble natural cane, it is built to survive high-footfall public resort environments with zero fading.",
+    gallery: [caneFurniture3Img, gbg4, welcome1],
+    badges: ["New"],
+    tagline: "Premium modular homes for quick deployment.",
+    description: "Precision-engineered modular structural housing and office units designed for instant deployment in eco-sensitive zones, private resorts, and luxury farm estates. Features optimal thermal insulation and double-walled thermal efficiency.",
     features: [
-      "Handcrafted weave patterns using heavy-duty weather-proof fibers",
-      "Modular components to set up customizable layouts",
-      "Premium, water-repellent quick-dry foam cushions",
-      "Non-marking adjustable floor levelers"
+      "Pre-fabricated structural layouts assembled in under 48 hours",
+      "Double-walled thermal insulation with integrated climate venting",
+      "Helical pile foundation interface for minimal soil disturbance",
+      "Pre-wired conduits for solar PV batteries and off-grid routing"
     ],
     specifications: {
-      materials: "Anti-rust aluminum core tube framing; HDPE synthetic wicker weave; quick-dry polyurethane foam padding; high-performance outdoor fabric.",
-      dimensions: "Single Chair: 850 x 820 x 780 mm. Table: 900 mm diameter, 400 mm height. Cushions: 120 mm thickness.",
-      installation: "Free-standing layout; adjustable non-marking glides allow for easy leveling on irregular paving surfaces.",
-      sustainability: "Durable HDPE wicker offers 10+ years UV protection; foam cushions are free of ozone-depleting CFCs."
+      materials: "Structural hot-dip galvanized steel framing chassis with eco-efficient WPC composite external paneling.",
+      dimensions: "Base module starting from 25 sqm layout. High wall clearance of 2800 mm.",
+      installation: "Assembled directly over ground pile anchors or thin concrete floor foundations.",
+      sustainability: "High insulation properties minimize seasonal heating/cooling grid loads; built using 90% recyclable components."
     },
     options: {
-      wood: ["No wood elements", "Natural Teak wood table-top", "Acacia wood table-top"],
-      metal: ["Charcoal Grey Wicker Pack", "Natural Tan Wicker Pack", "White Ash Wicker Pack"],
-      modules: ["Full Set (2 Chairs, 1 Sofa, 1 Table)", "Chairs Only Pack (2 Chairs)", "Table Only (1 Table)"]
+      wood: ["Premium Eco WPC Panel", "Natural FSC Robinia Planking"],
+      metal: ["Charcoal Textured Steel", "Corten Finish Details"],
+      modules: ["Base Home Module", "Front Deck Patio Add-On", "Rooftop Solar PV Battery Kit"]
+    }
+  },
+  {
+    id: "parabola",
+    title: "Parabola",
+    line: "Modern shading structures",
+    category: "Sheds",
+    image: benchPlanterImg,
+    gallery: [benchPlanterImg, gbg1, benchPlanterHero],
+    badges: ["New"],
+    tagline: "Architectural parabolic shading for outdoor spaces.",
+    description: "Tensioned sculptural shade structures designed to provide shade and visual elegance to plazas, swimming decks, and resort paths. Highly protective against intense solar rays with minimal footprint.",
+    features: [
+      "High-tension commercial polymer sail fabrics",
+      "Minimalist structural masts with hidden cable tensioners",
+      "Parabolic curves engineered to spill heavy rainwater",
+      "Fully customized height distributions and shapes"
+    ],
+    specifications: {
+      materials: "Tensioned HDPE micro-porous polymer sail fabric; structural galvanized steel masts with Akzonobel PU paint.",
+      dimensions: "Base modular sizing starts from 5000 x 5000 mm coverage spans. Heights custom-tailored.",
+      installation: "Deep foundation chemical bolting with reinforced anchor rods into sub-grade concrete slabs.",
+      sustainability: "Highly resilient polymers avoid frequent replacements; masts are fully recyclable steel."
+    },
+    options: {
+      wood: ["No wood trim"],
+      metal: ["Anthracite Grey Masts", "Corten Textured Paint", "Bronze Metallic"],
+      modules: ["Single Sail Shade", "Dual Overlapping Shade Pack", "LED Mast Uplight Kit"]
+    }
+  },
+  {
+    id: "gazebo",
+    title: "Gazebo",
+    line: "Elegant garden structures",
+    category: "Sheds",
+    image: cabanasImg,
+    gallery: [cabanasImg, gbg1, wickerFurnitureHero],
+    badges: ["New"],
+    tagline: "Premium gazebos tailored for luxury outdoor relaxation.",
+    description: "Elegant outdoor pavilions crafted to provide sheltered seating areas for corporate break parks, upscale hotels, and residential lawns. Employs precision structural connectors to guarantee simple setup and premium architectural longevity.",
+    features: [
+      "FSC premium class wood framing with chemical anti-fungal treatment",
+      "Heavy-duty galvanized connector brackets for extreme wind resistance",
+      "Louvered wooden privacy shutters option",
+      "Pre-routed columns for electrical wiring and lighting fixtures"
+    ],
+    specifications: {
+      materials: "FSC certified tropical wood framing structure combined with high-grade powder coated steel joints.",
+      dimensions: "Standard pavilion size: 3600 x 3600 x 2700 mm high. Sizing fully customizable.",
+      installation: "Secured directly onto patios, paved lawns, or deck structures using heavy bracket flanges.",
+      sustainability: "FSC certified wood ensures responsible forestry; high longevity framing reduces overall lifecycle footprint."
+    },
+    options: {
+      wood: ["FSC Teak Structure", "Robinia Structure", "Acacia Structure"],
+      metal: ["Jet Black Brackets", "Textured Corten Brackets", "Polished Aluminum Brackets"],
+      modules: ["Standard Pavilion Frame", "Side Louvered Privacy Wall Kit", "Overhead Dimmable LED Kit"]
+    }
+  },
+  {
+    id: "cabanas",
+    title: "Cabanas",
+    line: "Poolside comfort",
+    category: "Cabanas",
+    image: cabanasImg,
+    gallery: [cabanasImg, gbg2, welcome1],
+    badges: ["New"],
+    tagline: "Resort-style cabanas for luxury private seating.",
+    description: "SUNSCAPE combines high-end comfort with public durability. Featuring integrated shading slats and premium lounging decks, it creates a cozy, luxury retreat for hotel poolsides, corporate rooftops, and high-end public spaces.",
+    features: [
+      "Sturdy architectural pergola frame with overhead shading slats",
+      "Premium, weather-proof lounging platforms",
+      "Modular side privacy screens in timber or fabric",
+      "Integrated cup holders and device shelving"
+    ],
+    specifications: {
+      materials: "Structural steel tubes, powder-coated; FSC Jatoba or Robinia wood lounger slats; stainless steel joints; acrylic weather-proof fabric options.",
+      dimensions: "Total footprint: 2000 x 2000 mm. Pergola Height: 2200 mm. Lounger platform height: 450 mm.",
+      installation: "Surface mounted on wooden decks, tiled terraces, or concrete slabs using concealed floor anchoring brackets.",
+      sustainability: "Timber sourced from sustainably managed FSC-certified forests; structural steel is fully recyclable; durable fabrics resist UV degrading."
+    },
+    options: {
+      wood: ["Jatoba FSC® Slats", "Robinia Slats", "Acacia Thermo-wood"],
+      metal: ["Corten Brown (Fine Texture)", "Anthracite Grey (RAL 7016)", "Warm Sand (RAL 1013)"],
+      modules: ["Single Cabana Bed", "Double Cabana Bed", "Add-On Side Timber Slats Privacy Screen", "Add-On Fabric Curtains"]
     }
   }
 ];
