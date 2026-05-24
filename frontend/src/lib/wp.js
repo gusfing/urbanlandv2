@@ -1,7 +1,7 @@
 import { products as localProducts } from "../constants/productsData";
 
 // Resolve WordPress base URL from env variables
-const WP_BASE_URL = import.meta.env.VITE_WP_API_URL || "";
+const WP_BASE_URL = import.meta.env.VITE_WP_API_URL || "https://backend.urbanlandproducts.com";
 
 // Fallback high-fidelity blog posts in case WordPress is unconfigured or offline
 const fallbackPosts = [
