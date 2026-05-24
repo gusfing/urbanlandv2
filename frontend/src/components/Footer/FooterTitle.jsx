@@ -70,21 +70,21 @@ const FooterTitle = () => {
     }, { scope: ftConRef, dependencies: [fontsLoaded] });
 
     return (
-        <section ref={ftConRef} className='relative z-1 w-full h-[55vh] md:h-[60vh] border-t border-t-[#F7F4EF]/15 bg-[#2D2D2D] overflow-hidden'>
-            <div className='flex flex-col justify-start items-center w-full pt-6 md:pt-8 gap-1.5' >
-                <p className='text-[#F7F4EF]/60 text-[0.7rem]'>
-                    Designed & Crafted for—<a href="#" className='text-[#C9A84C] hover:text-[#F7F4EF] transition-colors duration-300'>Urbanland®</a>
+        <section ref={ftConRef} className='relative z-1 w-full h-[50vh] md:h-[55vh] border-t border-t-[#F7F4EF]/15 bg-[#2D2D2D] overflow-hidden flex flex-col justify-between pb-6 md:pb-10'>
+            <div className='flex flex-col md:flex-row w-full justify-between items-center px-6 md:px-16 pt-8 md:pt-10 gap-3 md:gap-0' >
+                <p className='text-[#F7F4EF]/60 text-[0.75rem] font-medium tracking-wide'>
+                    Website made by—<a href="#" className='text-[#F7F4EF] hover:text-[#C9A84C] underline transition-colors duration-300'>Urbanland®</a>
                 </p>
-                <p className='text-[#F7F4EF]/60 text-[0.7rem]'>
-                    This website is using <a href="#" className='text-[#C9A84C] hover:text-[#F7F4EF] transition-colors duration-300'>cookies</a>
+                <p className='text-[#F7F4EF]/60 text-[0.75rem] font-medium tracking-wide'>
+                    This website is using <span className='text-[#F7F4EF] font-semibold'>cookies.</span>
                 </p>
-                <p className='text-[#F7F4EF]/60 text-[0.7rem]'>
-                    All rights reserved © <a href="#" className='text-[#C9A84C] hover:text-[#F7F4EF] transition-colors duration-300'>2025</a>
+                <p className='text-[#F7F4EF]/60 text-[0.75rem] font-medium tracking-wide'>
+                    All rights reserved © <span className='text-[#F7F4EF] font-semibold'>2025</span>
                 </p>
             </div>
 
             <div className='footer-title w-full text-center select-none'>
-                <h1 className='text-[clamp(5rem,15vw,12rem)] font-bold translate-y-[0%] leading-none flex items-baseline justify-center'>
+                <h1 className='text-[clamp(4.5rem,14vw,11.5rem)] font-bold translate-y-[0%] leading-none flex items-baseline justify-center'>
                     <span className="footer-brand-text">Urbanland</span>
                     <sub className="footer-brand-sub"><span>®</span></sub>
                 </h1>
