@@ -235,7 +235,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
           {/* Bottom row: All Products + * + Navigation */}
           <div className="mt-10 flex items-center justify-between border-t border-[#2D2D2D]/10 pt-6 w-full gap-2 flex-wrap sm:flex-nowrap">
             
-            {/* Left side group: All Products + Asterisk */}
+            {/* Left side group: All Products */}
             <div className="flex items-center gap-2 shrink-0 flex-nowrap">
               {/* All Products Pill Button */}
               <button
@@ -250,19 +250,6 @@ const ProductsCatalog = ({ showTitle = true }) => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
                 All products
-              </button>
-              
-              {/* Custom Asterisk Button */}
-              <button
-                onClick={() => {
-                  const validCategories = ["Benches", "Wicker", "Shelters", "Planter", "Dustbin", "Cabanas", "Sheds", "Car sheds", "Pool"];
-                  const rand = validCategories[Math.floor(Math.random() * validCategories.length)];
-                  setActiveCategory(rand);
-                }}
-                className="w-10 h-10 rounded-full bg-[#EAE5DB] text-[#2D2D2D] hover:bg-[#EAE5DB]/80 flex justify-center items-center text-lg font-bold transition-all cursor-pointer shrink-0"
-                title="Surprise Me (Random Category)"
-              >
-                ✳
               </button>
             </div>
             
