@@ -312,24 +312,9 @@
         order: 1 !important;
     }
 
-    /* Badge on TOP RIGHT corner of the image block */
+    /* Completely remove the duplicate grey Explore badge on mobile */
     .gallery-topText h3 {
-        position: absolute !important;
-        top: 1.25rem !important;
-        right: 1.25rem !important;
-        font-size: 0.7rem !important;
-        font-weight: 700 !important;
-        color: #F7F4EF !important;
-        border: 1.2px solid rgba(247, 244, 239, 0.4) !important;
-        padding: 0.35rem 0.9rem !important;
-        border-radius: 9999px !important;
-        background-color: rgba(0, 0, 0, 0.35) !important;
-        backdrop-filter: blur(8px) !important;
-        z-index: 10 !important;
-        margin: 0 !important;
-        letter-spacing: 0.08em !important;
-        text-transform: uppercase !important;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+        display: none !important;
     }
 
     /* Bottom text overlay converted to follow the title below */
@@ -356,11 +341,11 @@
         gap: 4px !important;
     }
 
-    /* SEO Tag Styled Cleanly in Forest Green */
+    /* SEO Tag Styled Cleanly in Accent Gold */
     .gallery-seo-keyword {
         font-size: 0.75rem !important;
         font-weight: 700 !important;
-        color: #2C5F2E !important; /* Signature brand green */
+        color: #C9A84C !important; /* Gold accent color */
         margin: 0 0 2px 0 !important;
         letter-spacing: 0.05em !important;
     }
@@ -384,20 +369,28 @@
         gap: 0px !important;
     }
 
-    /* Link CTA Button styled below card content */
+    /* Converted CTA Link into a high-fashion, premium brand green pill button */
     .gallery-link-btn {
-        font-size: 0.8rem !important;
-        color: #2C5F2E !important; /* Signature brand green for premium call to action */
+        font-size: 0.75rem !important;
+        color: #F7F4EF !important; /* Off-white cream text */
+        background-color: #2C5F2E !important; /* Signature brand green */
+        padding: 0.55rem 1.25rem !important;
+        border-radius: 9999px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         font-weight: 700 !important;
         letter-spacing: 0.05em !important;
         text-transform: uppercase !important;
-        display: inline-flex !important;
-        align-items: center !important;
+        margin-top: 1rem !important;
+        border: none !important;
+        box-shadow: 0 6px 15px rgba(44, 95, 46, 0.25) !important;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
         text-decoration: none !important;
-        border-bottom: 1.5px solid rgba(44, 95, 46, 0.25) !important;
-        padding-bottom: 2px !important;
-        margin: 0.25rem 0 0 0 !important;
-        transition: all 0.3s ease !important;
+    }
+
+    .gallery-link-btn:active {
+        transform: scale(0.95) !important;
     }
 
     /* Hide redundant horizontal progress line on mobile screens */
@@ -427,5 +420,10 @@
         align-items: center !important;
         gap: 4px !important;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+    }
+
+    /* Highlight the active slide counter in brand gold */
+    .gallery-slide-counter span:first-child {
+        color: #C9A84C !important;
     }
 }
