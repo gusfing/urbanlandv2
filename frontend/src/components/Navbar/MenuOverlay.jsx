@@ -190,7 +190,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
     <div
       ref={containerRef}
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-[60] bg-[#F7F4EF] flex items-stretch justify-center font-sans opacity-0 invisible"
+      className="fixed inset-0 z-[999] bg-[#F7F4EF] flex items-stretch justify-center font-sans opacity-0 invisible"
     >
       <div
         ref={innerRef}
