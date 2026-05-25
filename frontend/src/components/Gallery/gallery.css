@@ -1,12 +1,12 @@
 .gallery-page4 {
     position: relative;
     width: 100%;
-    height: 100vh;
-    padding: 0;
+    height: auto;
+    padding: 6rem 0;
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: #181717; /* Dark elegant background */
+    background-color: transparent; /* Removed background color, integrates with page */
 }
 
 /* Subtle repeating background text slider */
@@ -34,7 +34,7 @@
     font-size: 11rem;
     width: 60rem;
     position: absolute;
-    color: rgba(255, 255, 255, 0.02); /* Extremely subtle white watermark */
+    color: rgba(44, 95, 46, 0.03); /* Subtle green brand watermark on light background */
     font-weight: 700;
     left: 100%;
     animation: gallery-animate var(--time) linear infinite;
@@ -47,31 +47,36 @@
     }
 }
 
-/* Horizontal Track */
+/* Horizontal Track scrollable naturally by user */
 .gallery-horizontal-track {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    height: 98vh; /* Adjusted to fill the screen with an even smaller, clean gap */
+    align-items: stretch;
+    height: 70vh; /* Premium editorial height */
+    width: 100%;
+    overflow-x: auto; /* Natural horizontal scrolling */
+    overflow-y: hidden;
     padding-left: 6vw;
-    padding-right: 20vw; /* Padding so the last card composed beautifully */
-    gap: 8px; /* Symmetrical clean gap, exactly like the reference image */
+    padding-right: 6vw;
+    gap: 28px;
     z-index: 10;
-    will-change: transform;
-    flex-shrink: 0;
-    width: max-content;
+    scrollbar-width: none; /* Hide scrollbar on Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar on IE */
+}
+
+.gallery-horizontal-track::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on Chrome/Safari */
 }
 
 /* Slide Cards */
 .gallery-card {
     position: relative;
     flex-shrink: 0;
-    width: 80vw; /* Widescreen aspect ratio matching reference */
+    width: 65vw; /* Widescreen aspect ratio matching reference */
     height: 100%;
     border-radius: 40px; /* Refined rounded corners */
     overflow: hidden;
-    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 20px 40px -10px rgba(26, 26, 26, 0.15); /* Soft premium shadow for light cream background */
     background-color: #2D2D2D;
     isolation: isolate;
     -webkit-backface-visibility: hidden;
@@ -225,7 +230,7 @@
         height: 100dvh !important;
         display: flex !important;
         align-items: center !important;
-        background-color: #121212 !important; /* Premium dark background */
+        background-color: transparent !important; /* Removed background color, integrates with page */
     }
 
     .gallery-horizontal-track {
@@ -304,7 +309,7 @@
     .gallery-topText h4 {
         font-size: 1.65rem !important;
         font-weight: 800 !important;
-        color: #F7F4EF !important;
+        color: #1A1A1A !important; /* Premium dark charcoal text */
         line-height: 1.2 !important;
         letter-spacing: -0.02em !important;
         margin: 0 !important;
@@ -356,18 +361,18 @@
         gap: 4px !important;
     }
 
-    /* SEO Tag Styled Cleanly */
+    /* SEO Tag Styled Cleanly in Forest Green */
     .gallery-seo-keyword {
         font-size: 0.75rem !important;
         font-weight: 700 !important;
-        color: #C9A84C !important;
+        color: #2C5F2E !important; /* Signature brand green */
         margin: 0 0 2px 0 !important;
         letter-spacing: 0.05em !important;
     }
 
     .gallery-bottomText p {
         font-size: 0.85rem !important;
-        color: rgba(244, 239, 231, 0.75) !important;
+        color: rgba(45, 45, 45, 0.8) !important; /* Soft dark slate for elegant legibility */
         line-height: 1.45 !important;
         font-weight: 400 !important;
         margin: 0 !important;
@@ -387,14 +392,14 @@
     /* Link CTA Button styled below card content */
     .gallery-link-btn {
         font-size: 0.8rem !important;
-        color: #C9A84C !important;
+        color: #2C5F2E !important; /* Signature brand green for premium call to action */
         font-weight: 700 !important;
         letter-spacing: 0.05em !important;
         text-transform: uppercase !important;
         display: inline-flex !important;
         align-items: center !important;
         text-decoration: none !important;
-        border-bottom: 1.5px solid rgba(201, 168, 76, 0.25) !important;
+        border-bottom: 1.5px solid rgba(44, 95, 46, 0.25) !important;
         padding-bottom: 2px !important;
         margin: 0.25rem 0 0 0 !important;
         transition: all 0.3s ease !important;
