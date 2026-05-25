@@ -464,8 +464,8 @@ const ProductsCatalog = ({ showTitle = true }) => {
 
                   {/* MOBILE CARD LAYOUT (Mockup-inspired Premium Aesthetics) */}
                   <div className="flex md:hidden flex-col justify-start items-stretch w-full select-none">
-                    {/* Top Section: Landscape Image Frame Block with increased height aspect and padding */}
-                    <div className="relative w-full aspect-[1.15/1] bg-[#F7F5F2] rounded-[1.8rem] overflow-hidden border border-black/[0.02] flex items-center justify-center p-4 shadow-[inset_0_2px_8px_rgba(0,0,0,0.01)]">
+                    {/* Top Section: Portrait 4:5 Image Frame Block with increased height and padding */}
+                    <div className="relative w-full aspect-[4/5] bg-[#F7F5F2] rounded-[1.8rem] overflow-hidden border border-black/[0.02] flex items-center justify-center p-4 shadow-[inset_0_2px_8px_rgba(0,0,0,0.01)]">
                       
                       {/* Product Image */}
                       <img
