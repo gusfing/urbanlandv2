@@ -21,8 +21,8 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [expandedIndex, setExpandedIndex] = useState(null);
 
-  // Background images for the preview card. The default is capsuleImg
-  const bgImages = [capsuleImg, gbg1, gbg2, gbg3, gbg4, gbg5, gbg1];
+  // Background images for the preview card. The default is gbg1
+  const bgImages = [gbg1, gbg1, gbg2, gbg3, gbg4, gbg5, gbg1];
 
   const links = [
     { name: "Home", path: "/" },
@@ -186,29 +186,28 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
       setIsOpen(false);
     }
   };
-
   return (
     <div
       ref={containerRef}
       onClick={handleBackdropClick}
-      className="fixed inset-0 z-[60] bg-[#232120] flex items-stretch justify-center font-sans opacity-0 invisible"
+      className="fixed inset-0 z-[60] bg-[#F7F4EF] flex items-stretch justify-center font-sans opacity-0 invisible"
     >
       <div
         ref={innerRef}
-        className="relative w-full h-full bg-[#232120] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-14 lg:p-16 shadow-none border-none rounded-none"
+        className="relative w-full h-full bg-[#F7F4EF] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-14 lg:p-16 shadow-none border-none rounded-none"
       >
         {/* Decorative Premium Capsule Pills in the Menu Background */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
           {/* Glowing Green Capsule blur */}
-          <div className="absolute -left-20 -top-20 w-[60vw] h-[30vw] bg-[#2C5F2E]/8 rounded-full blur-[120px] transform -rotate-45" />
+          <div className="absolute -left-20 -top-20 w-[60vw] h-[30vw] bg-[#2C5F2E]/6 rounded-full blur-[120px] transform -rotate-45" />
           
           {/* Glowing Gold Capsule blur */}
-          <div className="absolute -right-20 -bottom-20 w-[50vw] h-[25vw] bg-[#C9A84C]/6 rounded-full blur-[120px] transform -rotate-45" />
+          <div className="absolute -right-20 -bottom-20 w-[50vw] h-[25vw] bg-[#C9A84C]/5 rounded-full blur-[120px] transform -rotate-45" />
 
           {/* Large Rotated Glassmorphic Outline Pill behind Links */}
-          <div className="absolute top-1/2 left-[15%] -translate-y-1/2 w-[650px] h-[325px] border border-white/[0.03] bg-white/[0.005] backdrop-blur-[1px] rounded-full transform -rotate-12 flex items-center justify-center">
-            <div className="w-[calc(100%-40px)] h-[calc(100%-40px)] border border-white/[0.015] rounded-full flex items-center justify-center">
-              <div className="w-[calc(100%-40px)] h-[calc(100%-40px)] border border-white/[0.008] rounded-full" />
+          <div className="absolute top-1/2 left-[15%] -translate-y-1/2 w-[650px] h-[325px] border border-black/[0.02] bg-black/[0.002] backdrop-blur-[1px] rounded-full transform -rotate-12 flex items-center justify-center">
+            <div className="w-[calc(100%-40px)] h-[calc(100%-40px)] border border-black/[0.012] rounded-full flex items-center justify-center">
+              <div className="w-[calc(100%-40px)] h-[calc(100%-40px)] border border-black/[0.006] rounded-full" />
             </div>
           </div>
         </div>
@@ -224,7 +223,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
               {links.map((link, index) => {
                 const hasSub = !!link.subLinks;
                 const isExpanded = expandedIndex === index;
-
+ 
                 const handleLinkClick = (e) => {
                   if (hasSub) {
                     e.preventDefault();
@@ -233,7 +232,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                     setIsOpen(false);
                   }
                 };
-
+ 
                 return (
                   <div 
                     key={link.name} 
@@ -246,7 +245,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                         onClick={handleLinkClick}
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
-                        className="group relative flex items-center text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-[#f4efe7]/60 font-semibold tracking-tight hover:text-[#f4efe7] hover:translate-x-4 transition-all duration-300 select-none cursor-pointer no-underline"
+                        className="group relative flex items-center text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-[#2D2D2D]/60 font-semibold tracking-tight hover:text-[#2C5F2E] hover:translate-x-4 transition-all duration-300 select-none cursor-pointer no-underline"
                       >
                         <span>{link.name}</span>
                       </Link>
@@ -254,13 +253,13 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                       {hasSub && (
                         <button
                           onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                          className="w-10 h-10 rounded-full border border-[#f4efe7]/15 hover:border-[#f4efe7] text-[#f4efe7]/85 flex items-center justify-center text-sm font-semibold cursor-pointer active:scale-90 transition-all select-none hover:bg-white/5 bg-transparent"
+                          className="w-10 h-10 rounded-full border border-black/10 hover:border-[#2C5F2E] text-black/60 hover:text-[#2C5F2E] flex items-center justify-center text-sm font-semibold cursor-pointer active:scale-90 transition-all select-none hover:bg-black/5 bg-transparent"
                         >
                           {isExpanded ? "✕" : "＋"}
                         </button>
                       )}
                     </div>
-
+ 
                     {/* Sub Links Accordion panel */}
                     {hasSub && isExpanded && (
                       <div className="flex flex-wrap gap-x-2.5 gap-y-2 mt-4 mb-6 pl-4 sm:pl-8 border-l-2 border-[#2C5F2E] max-w-full">
@@ -269,7 +268,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                             key={sub.name}
                             to={sub.path}
                             onClick={() => setIsOpen(false)}
-                            className="px-4 py-2 rounded-full bg-white/5 border border-white/5 text-[#f4efe7]/80 hover:text-white hover:bg-[#2C5F2E] hover:border-[#2C5F2E] text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 no-underline select-none"
+                            className="px-4 py-2 rounded-full bg-black/5 border border-black/5 text-[#2D2D2D]/80 hover:text-white hover:bg-[#2C5F2E] hover:border-[#2C5F2E] text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 no-underline select-none"
                           >
                             {sub.name}
                           </Link>
@@ -284,7 +283,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
             {/* Bottom Row inside left column: Social Icons and Concept Text */}
             <div
               ref={bottomRef}
-              className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-8 border-t border-white/10 w-full mt-8 lg:mt-0"
+              className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-8 border-t border-black/10 w-full mt-8 lg:mt-0"
             >
               {/* Circular Social Icons */}
               <div className="flex items-center gap-3">
@@ -296,7 +295,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                         href={social.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="w-12 h-12 rounded-full border border-[#f4efe7]/20 flex items-center justify-center text-[#f4efe7]/80 hover:text-white hover:border-white transition-all hover:bg-white/5 select-none cursor-pointer"
+                        className="w-12 h-12 rounded-full border border-black/15 flex items-center justify-center text-black/70 hover:text-[#2C5F2E] hover:border-[#2C5F2E] transition-all hover:bg-black/5 select-none cursor-pointer"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -313,7 +312,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                         href={social.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="w-12 h-12 rounded-full border border-[#f4efe7]/20 flex items-center justify-center text-[#f4efe7]/80 hover:text-white hover:border-white transition-all hover:bg-white/5 select-none cursor-pointer"
+                        className="w-12 h-12 rounded-full border border-black/15 flex items-center justify-center text-black/70 hover:text-[#2C5F2E] hover:border-[#2C5F2E] transition-all hover:bg-black/5 select-none cursor-pointer"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                           <circle cx="12" cy="12" r="10"></circle>
@@ -329,7 +328,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                       href={social.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-12 h-12 rounded-full border border-[#f4efe7]/20 flex items-center justify-center text-[#f4efe7]/85 hover:text-white hover:border-white transition-all text-[13px] font-medium tracking-wide font-sans select-none hover:bg-white/5 cursor-pointer"
+                      className="w-12 h-12 rounded-full border border-black/15 flex items-center justify-center text-black/70 hover:text-[#2C5F2E] hover:border-[#2C5F2E] transition-all text-[13px] font-medium tracking-wide font-sans select-none hover:bg-black/5 cursor-pointer"
                     >
                       {social.label}
                     </a>
@@ -338,20 +337,20 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
               </div>
 
               {/* Subtext info */}
-              <p className="text-[11px] sm:text-xs text-[#f4efe7]/40 leading-relaxed font-sans max-w-xs">
+              <p className="text-[11px] sm:text-xs text-black/40 leading-relaxed font-sans max-w-xs">
                 This website is just the concept work done by—Moyra to showcase our capabilities.
               </p>
             </div>
 
           </div>
 
-          {/* RIGHT COLUMN: Cinematic Card and Awwwards ribbon */}
+          {/* RIGHT COLUMN: Cinematic Card */}
           <div
             ref={graphicRef}
             className="w-full lg:w-[40%] flex justify-end items-stretch relative"
           >
             {/* The Cinematic Preview Card */}
-            <div className="relative w-full h-[70vh] lg:h-full rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-[#2D2D2D] shadow-2xl flex flex-col justify-end p-8 border border-white/5">
+            <div className="relative w-full h-[70vh] lg:h-full rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white shadow-2xl flex flex-col justify-end p-8 border border-black/5">
               {/* Background previews */}
               <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden transition-all duration-700">
                 {bgImages.map((img, idx) => (
@@ -366,28 +365,20 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                   />
                 ))}
                 {/* Vignette overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/30" />
               </div>
 
               {/* Card brand content floating over preview */}
-              <div className="relative z-10 flex items-center gap-4 text-[#f4efe7] select-none pointer-events-none mb-6">
+              <div className="relative z-10 flex items-center gap-4 text-white select-none pointer-events-none mb-6">
                 {/* Trademark Badge in white circle */}
                 <div className="w-14 h-14 rounded-full border border-white/60 flex items-center justify-center flex-shrink-0">
                   <span className="text-xl font-semibold leading-none">®</span>
                 </div>
-                {/* Massive cropped text Cap */}
-                <h2 className="text-[12vw] lg:text-[7.5vw] font-bold tracking-tighter leading-none text-white whitespace-nowrap translate-x-2">
-                  Cap
+                {/* Massive cropped text Urbanland */}
+                <h2 className="text-[12vw] lg:text-[6vw] font-bold tracking-tighter leading-none text-white whitespace-nowrap translate-x-2">
+                  Urbanland
                 </h2>
               </div>
-            </div>
-
-            {/* Awwwards Concept Ribbon Badge */}
-            <div className="absolute -right-4 top-1/3 bg-[#000000] text-white py-5 px-3 flex flex-col items-center gap-4 z-40 select-none pointer-events-none rounded-l-md font-sans border border-white/10 shadow-xl">
-              <span className="text-base font-black tracking-tight leading-none">W.</span>
-              <span className="text-[9px] uppercase tracking-[0.2em] font-medium text-white/90 [writing-mode:vertical-lr] py-2">
-                Site of the Day
-              </span>
             </div>
           </div>
 
@@ -397,10 +388,10 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30">
           <button
             onClick={() => setIsOpen(false)}
-            className="flex items-center gap-4 pl-6 pr-1.5 py-1.5 rounded-full bg-[#f4efe7] text-[#1a1a1a] hover:bg-white active:scale-95 transition-all text-xs font-bold uppercase tracking-widest cursor-pointer shadow-xl border border-white/10"
+            className="flex items-center gap-4 pl-6 pr-1.5 py-1.5 rounded-full bg-[#1A1A1A] text-[#F7F4EF] hover:bg-black active:scale-95 transition-all text-xs font-bold uppercase tracking-widest cursor-pointer shadow-xl border border-white/5"
           >
             Close
-            <span className="w-8 h-8 rounded-full bg-[#232120] text-white flex items-center justify-center text-xs font-semibold">
+            <span className="w-8 h-8 rounded-full bg-[#F7F4EF] text-[#1A1A1A] flex items-center justify-center text-xs font-semibold">
               ✕
             </span>
           </button>
