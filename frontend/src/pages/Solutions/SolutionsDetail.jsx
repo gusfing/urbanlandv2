@@ -179,7 +179,7 @@ const SolutionsDetail = () => {
               <Link
                 key={item.id}
                 to={`/product/${item.id}`}
-                className="bg-white rounded-[2rem] p-6 border border-black/[0.03] shadow-[0_5px_20px_rgba(0,0,0,0.01)] hover:shadow-[0_15px_45px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-500 cursor-pointer flex flex-col justify-between aspect-square group no-underline text-[#1A1A1A]"
+                className="bg-white rounded-[2rem] p-6 border border-black/[0.03] shadow-[0_5px_20px_rgba(0,0,0,0.01)] hover:shadow-[0_15px_45px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-500 cursor-pointer flex flex-col justify-between aspect-square group no-underline text-[#1A1A1A] w-full max-w-[320px]"
               >
                 <div>
                   <span className="text-[8px] font-black uppercase tracking-widest text-[#2C5F2E] bg-[#2C5F2E]/5 px-2.5 py-1 rounded-md mb-2 inline-block">
