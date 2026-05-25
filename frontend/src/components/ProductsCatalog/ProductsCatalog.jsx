@@ -391,7 +391,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
               Array.from({ length: 4 }).map((_, idx) => (
                 <div
                   key={idx}
-                  className="min-w-[310px] sm:min-w-[380px] md:min-w-[440px] lg:min-w-[500px] xl:min-w-[560px] aspect-[4/5] bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] animate-pulse select-none"
+                  className="min-w-[310px] sm:min-w-[380px] md:min-w-[440px] lg:min-w-[500px] xl:min-w-[560px] aspect-[4/5] bg-white rounded-[37.5px] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] animate-pulse select-none"
                 >
                   <div className="flex justify-between items-start gap-4">
                     <div className="h-6 w-32 bg-black/10 rounded-md" />
@@ -411,7 +411,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
                 <Link
                   key={product.id}
                   to={product.url || `/product/${product.id}`}
-                  className={`catalog-card bg-white rounded-[2.2rem] md:rounded-[2rem] p-4 md:p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group cursor-pointer no-underline block aspect-auto md:aspect-[4/5] ${
+                  className={`catalog-card bg-white rounded-[37.5px] p-4 md:p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group cursor-pointer no-underline block aspect-auto md:aspect-[4/5] ${
                     filteredProducts.length === 1 
                       ? 'w-[310px] sm:w-[350px] shrink-0' 
                       : 'min-w-[310px] sm:min-w-[380px] md:min-w-[440px] lg:min-w-[500px] xl:min-w-[560px]'
@@ -464,8 +464,8 @@ const ProductsCatalog = ({ showTitle = true }) => {
 
                   {/* MOBILE CARD LAYOUT (Mockup-inspired Premium Aesthetics) */}
                   <div className="flex md:hidden flex-col justify-start items-stretch w-full select-none">
-                    {/* Top Section: Portrait 4:5 Image Frame Block with increased height and padding */}
-                    <div className="relative w-full aspect-[4/5] bg-[#F7F5F2] rounded-[1.8rem] overflow-hidden border border-black/[0.02] flex items-center justify-center p-4 shadow-[inset_0_2px_8px_rgba(0,0,0,0.01)]">
+                    {/* Top Section: Portrait 4:5 Image Frame Block with increased height and 37.5px border radius */}
+                    <div className="relative w-full aspect-[4/5] bg-[#F7F5F2] rounded-[37.5px] overflow-hidden border border-black/[0.02] flex items-center justify-center p-4 shadow-[inset_0_2px_8px_rgba(0,0,0,0.01)]">
                       
                       {/* Product Image */}
                       <img
@@ -474,12 +474,12 @@ const ProductsCatalog = ({ showTitle = true }) => {
                         className="max-h-[92%] max-w-[92%] object-contain select-none transform group-hover:scale-105 transition-transform duration-700 ease-out z-1"
                       />
 
-                      {/* Left Side: Overlapping circular gallery previews */}
-                      <div className="absolute bottom-3 left-3 flex -space-x-2.5 items-center z-10">
+                      {/* Left Side: Overlapping circular gallery previews - styled larger with overlapping margin */}
+                      <div className="absolute bottom-4 left-4 flex -space-x-3.5 items-center z-10">
                         {product.gallery?.slice(0, 3).map((imgUrl, idx) => (
-                          <div key={idx} className="relative w-7 h-7 rounded-full border border-white overflow-hidden bg-white shadow-md">
+                          <div key={idx} className="relative w-10 h-10 rounded-full border-2 border-white overflow-hidden bg-white shadow-md">
                             <img src={imgUrl} className="w-full h-full object-cover" alt="gallery preview" />
-                            <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-[#C9A84C] rounded-full flex items-center justify-center text-[0.4rem] text-white shadow-sm border border-white/50">
+                            <span className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-[#C9A84C] rounded-full flex items-center justify-center text-[0.5rem] text-white shadow-sm border border-white/50">
                               ★
                             </span>
                           </div>
