@@ -36,7 +36,6 @@ const Header = () => {
             src={logoImg} 
             alt="Urbanland Products LLP Logo" 
             className="h-6 sm:h-7 object-contain hover:opacity-80 transition-opacity duration-300"
-            style={{ filter: "brightness(0)" }}
           />
         </Link>
 
@@ -64,7 +63,6 @@ const Header = () => {
             src={logoImg} 
             alt="Urbanland Products LLP Logo" 
             className="h-6 sm:h-7 object-contain hover:opacity-80 transition-opacity duration-300"
-            style={{ filter: "brightness(0)" }}
           />
         </Link>
 
