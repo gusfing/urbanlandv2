@@ -347,7 +347,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
           {/* RIGHT COLUMN: Cinematic Card */}
           <div
             ref={graphicRef}
-            className="w-full lg:w-[40%] flex justify-end items-stretch relative"
+            className="hidden lg:flex w-full lg:w-[40%] justify-end items-stretch relative"
           >
             {/* The Cinematic Preview Card */}
             <div className="relative w-full h-[70vh] lg:h-full rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white shadow-2xl flex flex-col justify-end p-8 border border-black/5">
