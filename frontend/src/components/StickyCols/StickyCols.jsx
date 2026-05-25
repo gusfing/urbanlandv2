@@ -283,7 +283,7 @@ const StickyCols = () => {
             </section>
 
             {/* Mobile Layout - Premium Responsive Card Stack (Scrolls Naturally) */}
-            <section className="sticky-cols-mobile w-full bg-[#F7F4EF] px-6 py-16 flex flex-col gap-10 lg:hidden block">
+            <section className="sticky-cols-mobile w-full bg-[#F7F4EF] px-6 pt-2 pb-16 flex flex-col gap-8 lg:hidden block">
                 <div className="flex flex-col gap-2 mb-4">
                     <p className="text-[.7rem] font-bold text-[#2C5F2E] uppercase tracking-widest">— Case Studies</p>
                     <h2 className="text-3xl font-extrabold text-[#1A1A1A] tracking-tight leading-tight">Specified by Industry Leaders</h2>

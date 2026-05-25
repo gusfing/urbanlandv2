@@ -28,7 +28,7 @@ const MarqueeSticky = () => {
     });
 
     return (
-        <section className="w-full overflow-hidden bg-[#F7F4EF] relative pt-16">
+        <section className="w-full overflow-hidden bg-[#F7F4EF] relative pt-12 lg:pt-16 pb-0">
             <div className="pin-con relative z-10 px-8 md:px-16 lg:px-20 max-w-5xl">
                 <div className="flex flex-col gap-4">
                     <p className="text-[0.7rem] uppercase tracking-[0.2em] font-bold text-[#C9A84C] choose-subtitle">
@@ -44,13 +44,13 @@ const MarqueeSticky = () => {
             </div>
 
             {/* Symmetrical Edge-to-Edge 'Contact Urbanland' Marquee placed cleanly AFTER the subheading paragraph */}
-            <div className="marquee-con-none w-full text-[#C9A84C] mt-10 mb-8 overflow-hidden">
+            <div className="marquee-con-none w-full text-[#C9A84C] mt-6 mb-2 lg:mt-10 lg:mb-8 overflow-hidden">
                 <MarqueeText />
             </div>
 
             <div className="pin-con relative z-10 px-8 md:px-16 lg:px-20 max-w-5xl">
-                {/* SPACE RESERVER — extremely important */}
-                <div className="sticky-spacer w-full h-[12vh] md:h-[20vh]" />
+                {/* SPACE RESERVER — extremely important, hidden on mobile to avoid background layout gaps */}
+                <div className="sticky-spacer w-full hidden lg:block h-[12vh] md:h-[20vh]" />
             </div>
         </section>
     );
