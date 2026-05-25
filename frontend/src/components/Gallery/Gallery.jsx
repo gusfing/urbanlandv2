@@ -13,7 +13,33 @@ const Gallery = () => {
     const pageRef = useRef(null);
     const sliderRef = useRef(null);
 
-    // Enable natural horizontal scrolling via CSS without vertical scroll hijacking
+    // GSAP ScrollTrigger - Desktop-only translation and pinning (min-width: 801px)
+    useGSAP(() => {
+        if (!sliderRef.current) return;
+
+        const mm = gsap.matchMedia();
+
+        mm.add("(min-width: 801px)", () => {
+            const scrollTween = gsap.to(sliderRef.current, {
+                x: () => -(sliderRef.current.scrollWidth - window.innerWidth),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: pageRef.current,
+                    start: "top top",
+                    end: () => `+=${sliderRef.current.scrollWidth - window.innerWidth}`,
+                    scrub: 1,
+                    pin: true,
+                    invalidateOnRefresh: true,
+                }
+            });
+            return () => {
+                scrollTween.scrollTrigger?.kill();
+                scrollTween.kill();
+            };
+        });
+
+        return () => mm.revert();
+    }, { scope: pageRef });
 
     // Generate repeating Urbanland® watermark elements in the background
     const generateUrbanland = (quantity = 6) => {

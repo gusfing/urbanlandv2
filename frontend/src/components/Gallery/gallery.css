@@ -1,12 +1,12 @@
 .gallery-page4 {
     position: relative;
     width: 100%;
-    height: auto;
-    padding: 6rem 0;
+    height: 100vh;
+    padding: 0;
     display: flex;
     align-items: center;
     overflow: hidden;
-    background-color: transparent; /* Removed background color, integrates with page */
+    background-color: #181717; /* Dark elegant background */
 }
 
 /* Subtle repeating background text slider */
@@ -34,7 +34,7 @@
     font-size: 11rem;
     width: 60rem;
     position: absolute;
-    color: rgba(44, 95, 46, 0.03); /* Subtle green brand watermark on light background */
+    color: rgba(255, 255, 255, 0.02); /* Extremely subtle white watermark */
     font-weight: 700;
     left: 100%;
     animation: gallery-animate var(--time) linear infinite;
@@ -47,36 +47,31 @@
     }
 }
 
-/* Horizontal Track scrollable naturally by user */
+/* Horizontal Track */
 .gallery-horizontal-track {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
-    height: 70vh; /* Premium editorial height */
-    width: 100%;
-    overflow-x: auto; /* Natural horizontal scrolling */
-    overflow-y: hidden;
+    align-items: center;
+    justify-content: flex-start;
+    height: 98vh; /* Adjusted to fill the screen with an even smaller, clean gap */
     padding-left: 6vw;
-    padding-right: 6vw;
-    gap: 28px;
+    padding-right: 20vw; /* Padding so the last card composed beautifully */
+    gap: 8px; /* Symmetrical clean gap, exactly like the reference image */
     z-index: 10;
-    scrollbar-width: none; /* Hide scrollbar on Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar on IE */
-}
-
-.gallery-horizontal-track::-webkit-scrollbar {
-    display: none; /* Hide scrollbar on Chrome/Safari */
+    will-change: transform;
+    flex-shrink: 0;
+    width: max-content;
 }
 
 /* Slide Cards */
 .gallery-card {
     position: relative;
     flex-shrink: 0;
-    width: 65vw; /* Widescreen aspect ratio matching reference */
+    width: 80vw; /* Widescreen aspect ratio matching reference */
     height: 100%;
     border-radius: 40px; /* Refined rounded corners */
     overflow: hidden;
-    box-shadow: 0 20px 40px -10px rgba(26, 26, 26, 0.15); /* Soft premium shadow for light cream background */
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
     background-color: #2D2D2D;
     isolation: isolate;
     -webkit-backface-visibility: hidden;
