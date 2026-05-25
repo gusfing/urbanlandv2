@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import gsap, { ScrollTrigger, SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import colimg1 from "../../assets/Bench_Planter.png";
@@ -135,12 +136,12 @@ const StickyCols = () => {
                                     </p>
                                 </div>
                                 <div className="flex justify-between items-end w-full">
-                                    <a 
-                                        href="/solutions/real-estate" 
+                                    <Link 
+                                        to="/solutions/real-estate" 
                                         className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#F7F4EF] border-b border-[#F7F4EF]/25 hover:text-[#C9A84C] hover:border-[#C9A84C]/45 pb-0.5 transition-all"
                                     >
                                         Explore Lodha Project Details →
-                                    </a>
+                                    </Link>
                                     <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">01 / 04</span>
                                 </div>
                             </div>
@@ -180,12 +181,12 @@ const StickyCols = () => {
                                 </p>
                             </div>
                             <div className="flex justify-between items-end w-full">
-                                <a 
-                                    href="/solutions/real-estate" 
+                                <Link 
+                                    to="/solutions/real-estate" 
                                     className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#F7F4EF] border-b border-[#F7F4EF]/25 hover:text-[#C9A84C] hover:border-[#C9A84C]/45 pb-0.5 transition-all"
                                 >
                                     Explore Adani Project Details →
-                                </a>
+                                </Link>
                                 <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">02 / 04</span>
                             </div>
                         </div>
@@ -207,12 +208,12 @@ const StickyCols = () => {
                                 </p>
                             </div>
                             <div className="flex justify-between items-end w-full">
-                                <a 
-                                    href="/solutions/hotels-resorts" 
+                                <Link 
+                                    to="/solutions/hotels-resorts" 
                                     className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#F7F4EF] border-b border-[#F7F4EF]/25 hover:text-[#C9A84C] hover:border-[#C9A84C]/45 pb-0.5 transition-all"
                                 >
                                     Explore Oberoi Project Details →
-                                </a>
+                                </Link>
                                 <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">03 / 04</span>
                             </div>
                         </div>
@@ -250,28 +251,28 @@ const StickyCols = () => {
                                 </div>
                                 <div className="flex flex-col gap-4 border-t border-[#F7F4EF]/15 pt-4 w-full">
                                     <div className="flex justify-between items-center w-full">
-                                        <a 
-                                            href="/solutions/smart-cities" 
+                                        <Link 
+                                            to="/solutions/smart-cities" 
                                             className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-[#F7F4EF] border-b border-[#F7F4EF]/25 hover:text-[#C9A84C] hover:border-[#C9A84C]/45 pb-0.5 transition-all"
                                         >
                                             Explore Smart City Details →
-                                        </a>
+                                        </Link>
                                         <span className="text-[#F7F4EF]/60 text-[10px] font-bold uppercase tracking-widest bg-black/20 px-3 py-1 rounded-full border border-[#F7F4EF]/20">04 / 04</span>
                                     </div>
                                     {/* Overall Section CTAs */}
                                     <div className="flex items-center gap-5 mt-2">
-                                        <a 
-                                            href="/projects" 
+                                        <Link 
+                                            to="/projects" 
                                             className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#C9A84C] hover:text-[#F7F4EF] transition-colors flex items-center"
                                         >
                                             ▸ View All Projects →
-                                        </a>
-                                        <a 
-                                            href="/contact" 
+                                        </Link>
+                                        <Link 
+                                            to="/contact" 
                                             className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[#F7F4EF] hover:text-[#C9A84C] transition-colors flex items-center"
                                         >
                                             ▸ Get a Similar Solution for Your Project →
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -330,12 +331,12 @@ const StickyCols = () => {
 
                         {/* 4. Action Link */}
                         <div className="flex items-center justify-between w-full mt-1">
-                            <a 
-                                href="/solutions/real-estate" 
+                            <Link 
+                                to="/solutions/real-estate" 
                                 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#C9A84C] border-b border-[#C9A84C]/25 pb-0.5 hover:text-[#F7F4EF] hover:border-[#F7F4EF]/40 transition-colors"
                             >
                                 Explore Lodha Project Details →
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -380,12 +381,12 @@ const StickyCols = () => {
 
                         {/* 4. Action Link */}
                         <div className="flex items-center justify-between w-full mt-1">
-                            <a 
-                                href="/solutions/real-estate" 
+                            <Link 
+                                to="/solutions/real-estate" 
                                 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#C9A84C] border-b border-[#C9A84C]/25 pb-0.5 hover:text-[#F7F4EF] hover:border-[#F7F4EF]/40 transition-colors"
                             >
                                 Explore Adani Project Details →
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -430,12 +431,12 @@ const StickyCols = () => {
 
                         {/* 4. Action Link */}
                         <div className="flex items-center justify-between w-full mt-1">
-                            <a 
-                                href="/solutions/hotels-resorts" 
+                            <Link 
+                                to="/solutions/hotels-resorts" 
                                 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#C9A84C] border-b border-[#C9A84C]/25 pb-0.5 hover:text-[#F7F4EF] hover:border-[#F7F4EF]/40 transition-colors"
                             >
                                 Explore Oberoi Project Details →
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -480,30 +481,30 @@ const StickyCols = () => {
 
                         {/* 4. Action Link */}
                         <div className="flex items-center justify-between w-full mt-1">
-                            <a 
-                                href="/solutions/smart-cities" 
+                            <Link 
+                                to="/solutions/smart-cities" 
                                 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#C9A84C] border-b border-[#C9A84C]/25 pb-0.5 hover:text-[#F7F4EF] hover:border-[#F7F4EF]/40 transition-colors"
                             >
                                 Explore Smart City Details →
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
 
                 {/* Mobile Section CTAs */}
                 <div className="flex flex-row justify-center items-stretch gap-3 mt-8 pt-8 border-t border-[#1A1A1A]/10 w-full">
-                    <a 
-                        href="/projects" 
+                    <Link 
+                        to="/projects" 
                         className="flex-1 flex items-center justify-center text-center px-4 py-3 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest bg-[#2D2D2D] border border-white/10 text-[#F7F4EF] hover:text-[#C9A84C] transition-all active:scale-95 cursor-pointer leading-tight"
                     >
                         ▸ View Projects →
-                    </a>
-                    <a 
-                        href="/contact" 
+                    </Link>
+                    <Link 
+                        to="/contact" 
                         className="flex-1 flex items-center justify-center text-center px-4 py-3 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest bg-[#2C5F2E] text-[#F7F4EF] hover:bg-[#2D2D2D] hover:text-[#C9A84C] transition-all active:scale-95 cursor-pointer leading-tight"
                     >
                         ▸ Get Similar →
-                    </a>
+                    </Link>
                 </div>
             </section>
         </>
