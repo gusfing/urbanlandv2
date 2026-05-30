@@ -423,7 +423,7 @@ const CategoryDetail = () => {
         <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24 font-outfit">
           <div className="text-left mb-12 border-b border-[#2D2D2D]/10 pb-6 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-2 block">— SIGNATURE DESIGN</span>
+              <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-2 block">— SIGNATURE DESIGN</span>
               <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#1A1A1A] leading-none">
                 Featured Masterpieces
               </h2>

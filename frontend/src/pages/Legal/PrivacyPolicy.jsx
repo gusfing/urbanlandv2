@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-32">
       <section className="max-w-[850px] mx-auto px-6">
-        <p className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3">— Legal Compliance</p>
+        <p className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3">— Legal Compliance</p>
         <h1 className="text-4xl sm:text-5xl font-black tracking-tight uppercase leading-none text-[#1A1A1A] mb-12">
           Privacy Policy & <br/>
           <span className="text-[#C9A84C]">Terms of Use.</span>

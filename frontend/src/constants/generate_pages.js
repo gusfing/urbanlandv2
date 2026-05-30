@@ -1226,14 +1226,14 @@ const ${componentName} = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
                 <div>
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
                         {${JSON.stringify(config.tabs.standard.features)}.map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
 
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
                     <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
                         ${config.tabs.standard.ideal}
                     </p>
@@ -1249,7 +1249,7 @@ const ${componentName} = () => {
 
                 <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
                     <div>
-                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
                         <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
                             <div className="grid grid-cols-1 min-[380px]:grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
@@ -1298,14 +1298,14 @@ const ${componentName} = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
                 <div>
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
                         {${JSON.stringify(config.tabs.premium.features)}.map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
 
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
                     <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
                         ${config.tabs.premium.ideal}
                     </p>
@@ -1321,7 +1321,7 @@ const ${componentName} = () => {
 
                 <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
                     <div>
-                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
                         <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
                             <div className="grid grid-cols-1 min-[380px]:grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
@@ -1374,14 +1374,14 @@ const ${componentName} = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
                 <div>
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
                         {${JSON.stringify(config.tabs.super.features)}.map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
 
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
                     <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
                         ${config.tabs.super.ideal}
                     </p>
@@ -1397,7 +1397,7 @@ const ${componentName} = () => {
 
                 <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
                     <div>
-                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
                         <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
                             <div className="grid grid-cols-1 min-[380px]:grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
@@ -1526,7 +1526,7 @@ const ${componentName} = () => {
             {/* SECTION 1 — WHY CHOOSE URBANLAND */}
             <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-16 max-w-5xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— CHOOSE DURABILITY</span>
+                    <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— CHOOSE DURABILITY</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
                         Why Developers, Municipalities & Architects Choose Urbanland
                     </h2>
@@ -1555,7 +1555,7 @@ const ${componentName} = () => {
             {/* SECTION 2 — THREE CONFIGURATIONS */}
             <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-12 max-w-4xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— SYSTEM SPECS MATRIX</span>
+                    <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— SYSTEM SPECS MATRIX</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
                         Three ${pageName} Configurations — Choose What Fits Your Project
                     </h2>
@@ -1670,7 +1670,7 @@ const ${componentName} = () => {
             {/* SECTION 3 — MATERIAL COMPARISON */}
             <section id="specifications" className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-12">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— MATERIAL SELECTION GUIDE</span>
+                    <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— MATERIAL SELECTION GUIDE</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
                         Materials & Customization Guide
                     </h2>
@@ -1714,7 +1714,7 @@ const ${componentName} = () => {
             {/* SECTION 4 — CASE STUDIES */}
             <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-16 max-w-4xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— INFRASTRUCTURE PROJECTS</span>
+                    <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— INFRASTRUCTURE PROJECTS</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
                         Real Projects. Real Results. Across India.
                     </h2>
@@ -1760,7 +1760,7 @@ const ${componentName} = () => {
 
             {/* SECTION 5 — FAQ */}
             <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— AFTER-SALES LIFECYCLE GUIDE</span>
+                <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— AFTER-SALES LIFECYCLE GUIDE</span>
                 <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A] mb-12">
                     Installation, Warranty & Top Questions
                 </h2>
@@ -1844,7 +1844,7 @@ const ${componentName} = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-[#2C5F2E] to-[#1d4720] opacity-95 pointer-events-none" />
                     
                     <div className="relative z-10 max-w-4xl flex flex-col items-center">
-                        <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-white/10 text-[#C9A84C] px-3.5 py-1.5 rounded-full select-none mb-6">
+                        <span className="text-[9px] sm:text-[0.8125rem] md:text-sm font-black uppercase tracking-widest bg-white/10 text-[#C9A84C] px-3.5 py-1.5 rounded-full select-none mb-6">
                             Ready to Partner
                         </span>
                         

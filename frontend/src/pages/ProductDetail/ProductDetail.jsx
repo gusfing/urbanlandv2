@@ -305,7 +305,7 @@ const ProductDetail = () => {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1A1A1A]">
                 {product.title}
               </h2>
-              <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] bg-[#2C5F2E]/5 border border-[#2C5F2E]/10 rounded-full px-4 py-1.5 self-start sm:self-center">
+              <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] bg-[#2C5F2E]/5 border border-[#2C5F2E]/10 rounded-full px-4 py-1.5 self-start sm:self-center">
                 {product.category}
               </span>
             </div>
@@ -319,7 +319,7 @@ const ProductDetail = () => {
 
           {/* Key features bullets */}
           <div className="flex flex-col gap-3 bg-white/30 border border-black/[0.03] p-6 rounded-3xl">
-            <p className="text-[10px] font-black uppercase tracking-widest text-[#2D2D2D]/55 mb-1">Key Design Advantages</p>
+            <p className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2D2D2D]/55 mb-1">Key Design Advantages</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {product.features.map((feat, idx) => (
                 <li key={idx} className="text-xs text-[#2D2D2D]/85 flex items-center gap-2">

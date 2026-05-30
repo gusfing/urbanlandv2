@@ -66,7 +66,7 @@ const BlogList = () => {
     <div className="w-full min-h-screen bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-32">
       {/* Blog List Header */}
       <section className="max-w-[1400px] mx-auto px-6 md:px-12 py-8 border-b border-black/[0.04]">
-        <p className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-2">— Urbanland Journal</p>
+        <p className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-2">— Urbanland Journal</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-none text-black">
           Insights & Ideas
         </h1>

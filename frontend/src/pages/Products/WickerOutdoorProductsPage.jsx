@@ -5,8 +5,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 import carouselImg1 from "../../assets/products/Product Images/Wicker Dining/wicker_dining.jpeg";
-import carouselImg2 from "../../assets/products/Product Images/Wicker Dining/UGC_wicker_dining.jpeg";
-import carouselImg3 from "../../assets/products/Product Images/Wicker Living/3 Items.jpeg";
+import carouselImg2 from "../../assets/products/Product Images/Wicker Living/Wicker_Living.jpeg";
+import carouselImg3 from "../../assets/products/Product Images/Wicker Dining/UGC_wicker_dining.jpeg";
 
 // Brand logos
 import logo1 from "../../assets/brands/1.png";
@@ -172,14 +172,14 @@ const WickerOutdoorProductsPage = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
                 <div>
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
                         {["Frame: Powder coated steel with PE cane weave","Fabric: Standard water-resistant polyester","Design: 2x Armchairs, 1x Circular glass top side table","Capacity: Standard residential seating load"].map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
 
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
                     <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
                         Residential balconies, small cafe patios, society clubhouse decks.
                     </p>
@@ -195,7 +195,7 @@ const WickerOutdoorProductsPage = () => {
 
                 <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
                     <div>
-                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
                         <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
                             <div className="grid grid-cols-1 min-[380px]:grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
@@ -244,14 +244,14 @@ const WickerOutdoorProductsPage = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
                 <div>
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
                         {["Frame: Structural anodized aluminium under-chassis","Body Wrap: High-grade HDPE wicker flat weave","Cushions: 50mm quick-dry foam seat pads with Sunbrella covers","Design: 6x Dining armchairs, 1x Rectangular dining table (tempered glass top)"].map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
 
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
                     <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
                         Hotel rooftop dining, open-air resort restaurants, large villa terraces.
                     </p>
@@ -267,7 +267,7 @@ const WickerOutdoorProductsPage = () => {
 
                 <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
                     <div>
-                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
                         <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
                             <div className="grid grid-cols-1 min-[380px]:grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
@@ -320,14 +320,14 @@ const WickerOutdoorProductsPage = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
                 <div>
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
                         {["Frame: Heavy structural aluminium wrapped in synthetic PE rope weave","Body Wrap: Thick round PE wicker or synthetic rope weave","Cushions: 120mm plush quick-dry foam cushions with modular back pillows","Design: L-shape modular sofa set (6-seater) with central coffee table"].map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
 
-                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
                     <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
                         Luxury beach clubs, resort lobbies, premium executive rooftop decks.
                     </p>
@@ -343,7 +343,7 @@ const WickerOutdoorProductsPage = () => {
 
                 <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
                     <div>
-                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
                         <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
                             <div className="grid grid-cols-1 min-[380px]:grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
@@ -472,7 +472,7 @@ const WickerOutdoorProductsPage = () => {
             {/* SECTION 1 — WHY CHOOSE URBANLAND */}
             <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-16 max-w-5xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— CHOOSE DURABILITY</span>
+                    <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— CHOOSE DURABILITY</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
                         Why Developers, Municipalities & Architects Choose Urbanland
                     </h2>
@@ -501,7 +501,7 @@ const WickerOutdoorProductsPage = () => {
             {/* SECTION 2 — THREE CONFIGURATIONS */}
             <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-12 max-w-4xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— SYSTEM SPECS MATRIX</span>
+                    <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— SYSTEM SPECS MATRIX</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
                         Three Wicker Outdoor Products Configurations — Choose What Fits Your Project
                     </h2>
@@ -514,19 +514,19 @@ const WickerOutdoorProductsPage = () => {
                 <div className="hidden md:flex flex-row gap-2 border-b border-[#2D2D2D]/15 pb-4 mb-12 select-none">
                     <button
                         onClick={() => { setActiveTab("standard"); trackEvent("variant_selection", "standard"); }}
-                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "standard" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 \${activeTab === "standard" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
                     >
                         Standard Configuration
                     </button>
                     <button
                         onClick={() => { setActiveTab("premium"); trackEvent("variant_selection", "premium"); }}
-                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "premium" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 \${activeTab === "premium" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
                     >
                         Premium Configuration
                     </button>
                     <button
                         onClick={() => { setActiveTab("super"); trackEvent("variant_selection", "super_premium"); }}
-                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "super" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 \${activeTab === "super" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
                     >
                         Super Premium Configuration
                     </button>
@@ -616,7 +616,7 @@ const WickerOutdoorProductsPage = () => {
             {/* SECTION 3 — MATERIAL COMPARISON */}
             <section id="specifications" className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-12">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— MATERIAL SELECTION GUIDE</span>
+                    <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— MATERIAL SELECTION GUIDE</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
                         Materials & Customization Guide
                     </h2>
@@ -660,7 +660,7 @@ const WickerOutdoorProductsPage = () => {
             {/* SECTION 4 — CASE STUDIES */}
             <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-16 max-w-4xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— INFRASTRUCTURE PROJECTS</span>
+                    <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— INFRASTRUCTURE PROJECTS</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
                         Real Projects. Real Results. Across India.
                     </h2>
@@ -706,7 +706,7 @@ const WickerOutdoorProductsPage = () => {
 
             {/* SECTION 5 — FAQ */}
             <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— AFTER-SALES LIFECYCLE GUIDE</span>
+                <span className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— AFTER-SALES LIFECYCLE GUIDE</span>
                 <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A] mb-12">
                     Installation, Warranty & Top Questions
                 </h2>
@@ -790,7 +790,7 @@ const WickerOutdoorProductsPage = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-[#2C5F2E] to-[#1d4720] opacity-95 pointer-events-none" />
                     
                     <div className="relative z-10 max-w-4xl flex flex-col items-center">
-                        <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-white/10 text-[#C9A84C] px-3.5 py-1.5 rounded-full select-none mb-6">
+                        <span className="text-[9px] sm:text-[0.8125rem] md:text-sm font-black uppercase tracking-widest bg-white/10 text-[#C9A84C] px-3.5 py-1.5 rounded-full select-none mb-6">
                             Ready to Partner
                         </span>
                         
