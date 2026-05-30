@@ -9,78 +9,127 @@ gsap.registerPlugin(ScrollTrigger);
 
 const categories = [
   { id: "all", name: "All products", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="7" rx="1.5" />
+      <rect x="14" y="3" width="7" height="7" rx="1.5" />
+      <rect x="3" y="14" width="7" height="7" rx="1.5" />
+      <rect x="14" y="14" width="7" height="7" rx="1.5" />
     </svg>
   )},
   { id: "benches", name: "Benches", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 9h16M4 15h16M4 9v6M20 9v6M8 15v4M16 15v4" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M4 6h16M4 9h16" strokeLinecap="round" />
+      <path d="M3 13h18M3 15h18" strokeLinecap="round" strokeJoin="round" />
+      <path d="M4 6v9m16-9v9M5 15l-1 5m16-5l1 5M8 15v4m8-4v4" strokeLinecap="round" />
     </svg>
   )},
   { id: "bench-planters", name: "Bench Planters", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v13M3 12h18M12 3L3 12h18zM6 21h12" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <rect x="3" y="11" width="6" height="9" rx="1" />
+      <path d="M6 11c0-3 1.5-4 1.5-4s1.5 1 1.5 4M6 11c0-2-1-3-1-3s-1 .5-1 3" strokeLinecap="round" />
+      <path d="M9 14h11M9 16h11" strokeLinecap="round" />
+      <path d="M17 14v6m3-6v6" strokeLinecap="round" />
     </svg>
   )},
   { id: "planters", name: "Planters", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3a9 9 0 000 18v-9a3 3 0 000-6V3z" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M6 13l1.5 7h9l1.5-7H6z" strokeLinejoin="round" />
+      <path d="M5 13h14" strokeLinecap="round" />
+      <path d="M12 13c0-5 2.5-7 2.5-7s2.5 2 2.5 7M12 13c0-6-2.5-8-2.5-8S7 7 7 13" strokeLinecap="round" />
+      <path d="M12 13c0-4 1-5.5 1-5.5s1 1.5 1 5.5" strokeLinecap="round" />
     </svg>
   )},
   { id: "dustbins", name: "Dustbins", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <rect x="4" y="6" width="7" height="14" rx="1.5" />
+      <rect x="13" y="6" width="7" height="14" rx="1.5" />
+      <path d="M3 6h9M12 6h9" strokeLinecap="round" />
+      <circle cx="7.5" cy="10" r="1.5" />
+      <path d="M15 10h3" strokeLinecap="round" />
     </svg>
   )},
   { id: "bus-shelters", name: "Bus Shelters", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 21h18M4 21V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13M8 10h8M8 14h8" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M2 7c2-1.5 5-2 10-2s8 .5 10 2" strokeLinecap="round" />
+      <path d="M3 7v13m18-13v13" strokeLinecap="round" />
+      <path d="M7 7v7m5-7v7m5-7v7" strokeDasharray="2 2" strokeLinecap="round" />
+      <path d="M5 14h14M8 14v3m8-3v3" strokeLinecap="round" />
     </svg>
   )},
   { id: "car-shelters", name: "Car Shelters", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 10V6a2 2 0 012-2h10a2 2 0 012 2v4M2 17h20M7 17a2 2 0 100-4 2 2 0 000 4zm10 0a2 2 0 100-4 2 2 0 000 4z" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M3 6l16-2 2 4M3 6v14" strokeLinecap="round" strokeJoin="round" />
+      <path d="M3 9l4-2" strokeLinecap="round" />
+      <path d="M9 16h8l1-2.5h-10l1 2.5z" strokeLinejoin="round" />
+      <circle cx="10.5" cy="18.5" r="1.5" />
+      <circle cx="15.5" cy="18.5" r="1.5" />
+      <path d="M7 18.5h2M12 18.5h2M17 18.5h1" strokeLinecap="round" />
     </svg>
   )},
   { id: "canteen-tables", name: "Canteen Tables", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 9h16M4 15h16M4 9v6M20 9v6M8 15v4M16 15v4" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M5 9h14M5 11h14" strokeLinecap="round" />
+      <path d="M8 11v6m8-6v6" strokeLinecap="round" />
+      <path d="M2 14h3M19 14h3" strokeLinecap="round" strokeWidth="2" />
+      <path d="M3.5 14v4M20.5 14v4" strokeLinecap="round" />
+      <path d="M3.5 16.5h17" strokeLinecap="round" strokeDasharray="1 1" />
     </svg>
   )},
   { id: "pergolas", name: "Pergolas", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v13M3 12h18M12 3L3 12h18zM6 21h12" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M5 7v13M19 7v13" strokeLinecap="round" />
+      <path d="M3 7h18M3 9h18" strokeLinecap="round" />
+      <path d="M6 5v2M9 5v2M12 5v2M15 5v2M18 5v2" strokeLinecap="round" />
     </svg>
   )},
   { id: "gazebos", name: "Gazebos", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 12l9-9 9 9M5 12v8a2 2 0 002 2h10a2 2 0 002-2v-8" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M12 3L3 9h18L12 3z" strokeLinejoin="round" />
+      <path d="M12 3v6" strokeLinecap="round" />
+      <path d="M5 9v11M12 9v11M19 9v11" strokeLinecap="round" />
+      <path d="M5 16h14" strokeLinecap="round" />
+      <path d="M5 18h14" strokeLinecap="round" strokeDasharray="2 2" />
     </svg>
   )},
   { id: "cabanas", name: "Cabanas", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v13M3 12h18M12 3L3 12h18zM6 21h12" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="16" rx="1.5" />
+      <path d="M4 4c2 2 2 6 0 12M20 4c-2 2-2 6 0 12" strokeLinecap="round" />
+      <path d="M4 11h1.5M18.5 11h1.5" strokeLinecap="round" />
+      <path d="M6 16h12v2.5H6V16z" strokeLinejoin="round" />
+      <path d="M6.5 16c1-1.5 2-1.5 2 0" strokeLinecap="round" />
     </svg>
   )},
   { id: "pre-fab-homes", name: "Pre Fab Homes", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 12l9-9 9 9M5 12v8a2 2 0 002 2h10a2 2 0 002-2v-8" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M3 8l15-2 3 2v11a1 1 0 01-1 1H4a1 1 0 01-1-1V8z" strokeLinejoin="round" />
+      <rect x="5" y="12" width="4" height="7" rx="0.5" />
+      <rect x="11" y="9" width="7" height="6" rx="0.5" />
+      <path d="M14.5 9v6M11 12h7" strokeLinecap="round" strokeDasharray="1 1" />
     </svg>
   )},
   { id: "poolside-loungers", name: "Poolside Loungers", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M2 12c4-4 8 4 12 0s8-4 8 0M2 16c4-4 8 4 12 0s8-4 8 0" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M3 17c1.5 0 2.5-1 3.5-3.5S8.5 9.5 11.5 9.5s3.5 1.5 5 4.5S19.5 17 21 17" strokeLinecap="round" strokeJoin="round" />
+      <path d="M7 14v4M16 14.5v3.5" strokeLinecap="round" />
+      <rect x="3.5" y="11" width="2" height="4" rx="1" transform="rotate(20 3.5 11)" />
     </svg>
   )},
   { id: "wicker-living-sets", name: "Wicker Living", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9V6a2 2 0 00-2-2H7a2 2 0 00-2 2v3M3 11v5a2 2 0 002 2h14a2 2 0 002-2v-5a2 2 0 00-4 0v2H7v-2a2 2 0 00-4 0z" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M4 8v6c0 2 2 3 5 3h6c3 0 5-1 5-3V8" strokeLinecap="round" />
+      <rect x="4.5" y="11.5" width="15" height="3" rx="1.5" />
+      <path d="M6 8c2-3 10-3 12 0" strokeLinecap="round" />
+      <path d="M8 15v3M12 15v3M16 15v3" strokeLinecap="round" strokeDasharray="1.5 1.5" />
     </svg>
   )},
   { id: "wicker-dining-sets", name: "Wicker Dining", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9V6a2 2 0 00-2-2H7a2 2 0 00-2 2v3M3 11v5a2 2 0 002 2h14a2 2 0 002-2v-5a2 2 0 00-4 0v2H7v-2a2 2 0 00-4 0z" />
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <rect x="6" y="8" width="12" height="4" rx="1" />
+      <path d="M8 12v6M16 12v6" strokeLinecap="round" />
+      <path d="M3 11v7h2v-7" strokeLinecap="round" />
+      <path d="M19 11v7h2v-7" strokeLinecap="round" />
+      <path d="M3 11c0-2.5 1.5-2.5 2 0M19 11c0-2.5 1.5-2.5 2 0" strokeLinecap="round" />
     </svg>
   )}
 ];
