@@ -8,6 +8,7 @@ import { initLenis } from "../lib/lenis";
 import Footer from "../components/Footer/Footer";
 import FooterTitle from "../components/Footer/FooterTitle";
 import ScrollToTop from "../components/ScrollToTop";
+import ExitIntentPopup from "../components/ExitIntentPopup/ExitIntentPopup";
 
 const MainLayout = () => {
 
@@ -52,6 +53,7 @@ const MainLayout = () => {
             <ScrollToTop />
             {/* <PreloaderII /> */}
             <Header />
+            <ExitIntentPopup />
             <main>
                 <Outlet /> {/* Hero, About, Contact, etc. */}
                 <Footer />
