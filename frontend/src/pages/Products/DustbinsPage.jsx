@@ -592,23 +592,48 @@ const DustbinsPage = () => {
                             </Link>
                         </div>
 
-                        <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#2D2D2D]/55 flex flex-wrap justify-center gap-x-6 gap-y-2 select-none border-t border-black/10 pt-6 w-full mb-8">
-                            <span>✓ Free custom quote</span>
-                            <span>✓ No commitment</span>
-                            <span>✓ Nationwide delivery</span>
-                            <span>✓ 2-Year Guarantee</span>
-                            <span>✓ Installation support</span>
-                        </p>
+                        <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#2D2D2D]/65 flex flex-wrap justify-center gap-x-6 gap-y-2.5 select-none border-t border-black/10 pt-6 w-full mb-8">
+                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> Free custom quote</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> No commitment</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> Nationwide delivery</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> 2-Year Guarantee</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> Installation support</span>
+                        </div>
 
-                        <h3 className="text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-6">— Why Urbanland Stands Apart</h3>
+                        <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-6 select-none">— Why Urbanland Stands Apart</h3>
                         
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-xs font-bold text-[#2D2D2D]/85 text-left max-w-3xl border-b border-black/10 pb-8 mb-8">
-                            <li>✓ ISO 9001:2015 Certified</li>
-                            <li>✓ 2-Year Guarantee (India’s only)</li>
-                            <li>✓ Smart City Guidelines Compliant</li>
-                            <li>✓ 50+ completed B2B projects</li>
-                            <li>✓ Nationwide delivery & installation support</li>
-                        </ul>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-4xl border-b border-black/10 pb-8 mb-8">
+                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
+                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">ISO 9001:2015 Certified</span>
+                            </div>
+                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
+                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">2-Year Guarantee (India’s only)</span>
+                            </div>
+                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
+                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">Smart City Guidelines Compliant</span>
+                            </div>
+                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
+                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">50+ completed B2B projects</span>
+                            </div>
+                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
+                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">Nationwide delivery & installation support</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
