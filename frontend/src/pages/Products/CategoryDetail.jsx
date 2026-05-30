@@ -454,14 +454,9 @@ const CategoryDetail = () => {
                   <img
                     src={bin.image}
                     alt={bin.title}
-                    className="object-contain select-none transform group-hover:scale-104 transition-transform duration-700 ease-out"
+                    className="max-h-[85%] max-w-[85%] object-contain select-none transform group-hover:scale-104 transition-transform duration-700 ease-out"
                     loading="lazy"
-                    style={{ 
-                      maxHeight: "var(--product-img-size, 52%)", 
-                      maxWidth: "var(--product-img-size, 52%)", 
-                      mixBlendMode: "multiply", 
-                      filter: "brightness(1.12) contrast(1.05)" 
-                    }}
+                    style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }}
                   />
                 </div>
 
@@ -555,20 +550,19 @@ const CategoryDetail = () => {
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="absolute inset-0 m-auto object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0"
-                    style={{ 
-                      maxHeight: "var(--product-img-size, 52%)", 
-                      maxWidth: "var(--product-img-size, 52%)", 
-                      mixBlendMode: "multiply", 
-                      filter: "brightness(1.12) contrast(1.05)" 
-                    }}
+                    className={`absolute inset-0 max-h-[80%] max-w-[80%] m-auto object-contain select-none transition-opacity duration-300 ease-in-out ${
+                      product.gallery && product.gallery[1] ? 'group-hover:opacity-0' : ''
+                    }`}
+                    style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }}
                   />
                   {/* Second image: UGC background */}
-                  <img
-                    src={product.gallery && product.gallery[1] ? product.gallery[1] : product.image}
-                    alt={`${product.title} installation`}
-                    className="absolute inset-0 w-full h-full object-cover rounded-[20px] select-none opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
-                  />
+                  {product.gallery && product.gallery[1] && (
+                    <img
+                      src={product.gallery[1]}
+                      alt={`${product.title} installation`}
+                      className="absolute inset-0 max-h-[80%] max-w-[80%] m-auto object-contain select-none opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                    />
+                  )}
                 </div>
 
                 <div className="flex justify-between items-end select-none">
