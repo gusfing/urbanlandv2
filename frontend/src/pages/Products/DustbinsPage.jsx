@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 // Asset imports
 import dustbinsJpeg from "../../assets/Dustbins.jpeg";
@@ -41,6 +43,33 @@ const DustbinsPage = () => {
     const [faqOpen, setFaqOpen] = useState(Array(5).fill(false));
     const [showStickyHeader, setShowStickyHeader] = useState(false);
     const heroScrollRef = useRef(null);
+    const pageContainerRef = useRef(null);
+
+    useGSAP(() => {
+        const sections = gsap.utils.toArray("section");
+        sections.forEach((section) => {
+            gsap.fromTo(section, 
+                {
+                    filter: "blur(12px)",
+                    opacity: 0,
+                    y: 40
+                },
+                {
+                    filter: "blur(0px)",
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 85%",
+                        end: "bottom 15%",
+                        toggleActions: "play reverse play reverse",
+                    }
+                }
+            );
+        });
+    }, { scope: pageContainerRef });
 
     const scrollHeroLeft = () => {
         if (heroScrollRef.current) {
@@ -88,7 +117,7 @@ const DustbinsPage = () => {
     };
 
     return (
-        <div className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-28">
+        <div ref={pageContainerRef} className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-28">
             
             {/* STICKY HEADER ON SCROLL (Desktop only) */}
             <div className={`fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-[#2D2D2D]/10 py-4 px-8 lg:px-16 z-[99] flex justify-between items-center transition-all duration-500 shadow-md ${showStickyHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}`}>
