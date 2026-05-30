@@ -519,14 +519,14 @@ const ProductsCatalog = ({ showTitle = true }) => {
                       <img
                         src={product.image}
                         alt={`${product.title} manufacturer India — Urbanland Products`}
-                        className="absolute inset-0 max-h-[92%] max-w-[92%] m-auto object-contain select-none transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:scale-95"
+                        className="absolute inset-0 max-h-[78%] max-w-[78%] m-auto object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                         style={{ mixBlendMode: 'multiply', filter: 'brightness(1.12) contrast(1.05)' }}
                       />
                       {/* Second image: UGC background */}
                       <img
                         src={product.gallery && product.gallery[1] ? product.gallery[1] : product.image}
                         alt={`${product.title} installation`}
-                        className="absolute inset-0 w-full h-full object-cover rounded-[24px] select-none opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 scale-105 group-hover:scale-100"
+                        className="absolute inset-0 w-full h-full object-cover rounded-[24px] select-none opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
                       />
                     </div>
    
@@ -552,7 +552,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
                       <img
                         src={product.image}
                         alt={`${product.title} manufacturer India`}
-                        className="max-h-[92%] max-w-[92%] object-contain select-none transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:scale-95 z-1"
+                        className="max-h-[78%] max-w-[78%] object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0 z-1"
                         style={{ mixBlendMode: 'multiply', filter: 'brightness(1.12) contrast(1.05)' }}
                       />
 
@@ -560,7 +560,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
                       <img
                         src={product.gallery && product.gallery[1] ? product.gallery[1] : product.image}
                         alt={`${product.title} installation`}
-                        className="absolute inset-0 w-full h-full object-cover select-none opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 scale-105 group-hover:scale-100 z-1"
+                        className="absolute inset-0 w-full h-full object-cover select-none opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 z-1"
                       />
 
                       {/* Left Side: Overlapping circular gallery previews - styled larger with overlapping margin */}
