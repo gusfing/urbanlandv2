@@ -454,9 +454,14 @@ const CategoryDetail = () => {
                   <img
                     src={bin.image}
                     alt={bin.title}
-                    className="max-h-[85%] max-w-[85%] object-contain select-none transform group-hover:scale-104 transition-transform duration-700 ease-out"
+                    className="object-contain select-none transform group-hover:scale-104 transition-transform duration-700 ease-out"
                     loading="lazy"
-                    style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }}
+                    style={{ 
+                      maxHeight: "var(--product-img-size, 52%)", 
+                      maxWidth: "var(--product-img-size, 52%)", 
+                      mixBlendMode: "multiply", 
+                      filter: "brightness(1.12) contrast(1.05)" 
+                    }}
                   />
                 </div>
 
@@ -550,8 +555,13 @@ const CategoryDetail = () => {
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="absolute inset-0 max-h-[52%] max-w-[52%] m-auto object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0"
-                    style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }}
+                    className="absolute inset-0 m-auto object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    style={{ 
+                      maxHeight: "var(--product-img-size, 52%)", 
+                      maxWidth: "var(--product-img-size, 52%)", 
+                      mixBlendMode: "multiply", 
+                      filter: "brightness(1.12) contrast(1.05)" 
+                    }}
                   />
                   {/* Second image: UGC background */}
                   <img

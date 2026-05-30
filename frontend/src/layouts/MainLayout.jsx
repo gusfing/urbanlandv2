@@ -8,6 +8,7 @@ import { initLenis } from "../lib/lenis";
 import Footer from "../components/Footer/Footer";
 import FooterTitle from "../components/Footer/FooterTitle";
 import ScrollToTop from "../components/ScrollToTop";
+import ImageDebugMenu from "../components/ImageDebugMenu";
 
 const MainLayout = () => {
 
@@ -50,6 +51,7 @@ const MainLayout = () => {
     return (
         <>
             <ScrollToTop />
+            <ImageDebugMenu />
             {/* <PreloaderII /> */}
             <Header />
             <main>
