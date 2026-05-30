@@ -59,7 +59,7 @@ const MetalWoodenFurniturePage = () => {
                         trigger: section,
                         start: "top 85%",
                         end: "bottom 15%",
-                        toggleActions: "play reverse play reverse",
+                        toggleActions: "play none none none",
                     }
                 }
             );
@@ -197,7 +197,7 @@ const MetalWoodenFurniturePage = () => {
                     <div>
                         <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
                         <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
-                            <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
+                            <div className="grid grid-cols-1 min-[380px]:grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
                                     <span className="font-bold">1500L × 600W × 780H mm</span>
@@ -269,7 +269,7 @@ const MetalWoodenFurniturePage = () => {
                     <div>
                         <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
                         <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
-                            <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
+                            <div className="grid grid-cols-1 min-[380px]:grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
                                     <span className="font-bold">1800L × 620W × 810H mm</span>
@@ -345,7 +345,7 @@ const MetalWoodenFurniturePage = () => {
                     <div>
                         <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
                         <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
-                            <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
+                            <div className="grid grid-cols-1 min-[380px]:grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
                                     <span className="font-bold">Varies (modular design)</span>
@@ -405,7 +405,7 @@ const MetalWoodenFurniturePage = () => {
             </div>
 
             {/* BREADCRUMB NAVIGATION */}
-            <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-4 select-none">
+            <div className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 py-4 select-none">
                 <nav className="flex items-center text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#2D2D2D]/60 gap-2">
                     <Link to="/" className="hover:text-[#2C5F2E] transition-colors">Home</Link>
                     <span>/</span>
@@ -422,7 +422,7 @@ const MetalWoodenFurniturePage = () => {
                     className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-4 px-6 md:px-12"
                 >
                     {[{"tag":"Product Spotlight","h":"Bespoke Metal Wooden<br />Site Furniture in India","label":"01","desc":"Engineered steel-and-wood benches and seating"},{"tag":"Architectural Blend","h":"Perfect fusion of<br />structural metals &<br />natural timbers","label":"02","desc":"FSC certified Robinia, Teak or WPC wood"},{"tag":"B2B Guarantee","h":"2-Year Warranty<br />& ISO Certified<br />Standards","label":"03","desc":"Specified by top developers, hotels and public sectors"},{"tag":"Corrosion Proof","h":"Galvanized frames<br />coated with premium<br />Akzonobel powder","label":"04","desc":"Corrosion-resistant metal structures for public spaces"},{"tag":"Bespoke Shapes","h":"Custom linear, curved<br />or geometric modular<br />seating layouts","label":"05","desc":"Tailored to public parks and township plazas"}].map((card, idx) => (
-                        <div key={idx} className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
+                        <div key={idx} className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[420px] sm:min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
                             <img 
                                 src={idx % 2 === 0 ? carouselImg1 : carouselImg2} 
                                 alt={card.tag} 
@@ -470,7 +470,7 @@ const MetalWoodenFurniturePage = () => {
             </section>
 
             {/* SECTION 1 — WHY CHOOSE URBANLAND */}
-            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
+            <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-16 max-w-5xl">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— CHOOSE DURABILITY</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
@@ -499,7 +499,7 @@ const MetalWoodenFurniturePage = () => {
             </section>
 
             {/* SECTION 2 — THREE CONFIGURATIONS */}
-            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
+            <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-12 max-w-4xl">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— SYSTEM SPECS MATRIX</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
@@ -614,7 +614,7 @@ const MetalWoodenFurniturePage = () => {
             </section>
 
             {/* SECTION 3 — MATERIAL COMPARISON */}
-            <section id="specifications" className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
+            <section id="specifications" className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-12">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— MATERIAL SELECTION GUIDE</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
@@ -658,7 +658,7 @@ const MetalWoodenFurniturePage = () => {
             </section>
 
             {/* SECTION 4 — CASE STUDIES */}
-            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
+            <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-16 max-w-4xl">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— INFRASTRUCTURE PROJECTS</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
@@ -705,7 +705,7 @@ const MetalWoodenFurniturePage = () => {
             </section>
 
             {/* SECTION 5 — FAQ */}
-            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
+            <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-24">
                 <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— AFTER-SALES LIFECYCLE GUIDE</span>
                 <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A] mb-12">
                     Installation, Warranty & Top Questions
@@ -748,7 +748,7 @@ const MetalWoodenFurniturePage = () => {
             </section>
 
             {/* TRUST GRID */}
-            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
+            <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-16">
                 <div className="text-center mb-10 select-none">
                     <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-3">— Why Urbanland Stands Apart</h3>
                     <h2 className="text-2xl sm:text-3.5xl font-black uppercase tracking-tight text-[#1A1A1A]">Engineered for Smart Cities</h2>
@@ -785,7 +785,7 @@ const MetalWoodenFurniturePage = () => {
             </section>
 
             {/* FINAL CTA SECTION */}
-            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-12">
+            <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-12">
                 <div className="w-full bg-[#2C5F2E] rounded-[2.5rem] p-8 md:p-16 flex flex-col items-center text-center text-white relative overflow-hidden shadow-xl border border-black/5">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#2C5F2E] to-[#1d4720] opacity-95 pointer-events-none" />
                     

@@ -15,6 +15,9 @@
   --color-background: #F7F4EF;
   --color-text: #1A1A1A;
   --font-size-8xl: 4rem;
+  --breakpoint-3xl: 1920px;
+  --breakpoint-4xl: 2560px;
+  --breakpoint-5xl: 3840px;
 }
 
 html,
@@ -28,6 +31,23 @@ body {
 	-ms-overflow-style: none;
 	overflow-x: hidden;
 	width: 100%;
+}
+
+/* TV & 4K Monitor Responsive Root Font Scaling */
+@media (min-width: 1920px) {
+  html {
+    font-size: 18px; /* Scales everything using rem by 12.5% */
+  }
+}
+@media (min-width: 2560px) {
+  html {
+    font-size: 21px; /* Scales everything using rem by 31.25% */
+  }
+}
+@media (min-width: 3840px) {
+  html {
+    font-size: 28px; /* Scales everything using rem by 75% for TV displays */
+  }
 }
 
 .font-outfit {
@@ -372,7 +392,7 @@ body {
 .text-3xl.sm:text-5xl.font-black.uppercase.tracking-tight.leading-none.text-[#1A1A1A].mb-12,
 .text-3xl.sm:text-5xl.font-black.uppercase.tracking-tight.leading-tight.text-[#1A1A1A].max-w-3xl.mb-6,
 #root > main:nth-child(4) > div.w-full.bg-[#F7F4EF].text-[#1A1A1A].font-sans.pb-24.overflow-x-hidden.pt-28:nth-child(1) > section.max-w-[1400px].mx-auto.px-6.md:px-12.mb-24:nth-child(4) > div.text-left.mb-16.max-w-5xl:nth-child(1) > h2.text-3xl.sm:text-5xl.font-black.uppercase.tracking-tight.leading-none.text-[#1A1A1A]:nth-child(2) {
-font-size: 30px;
+font-size: 1.875rem; /* Converted to rem for TV & 4K monitor scaling */
 }
 .text-sm.sm:text-base.md:text-lg.text-white/80.leading-relaxed.mb-8,
 .text-xs.sm:text-sm.md:text-base.text-white/80.leading-relaxed.font-light.mb-6,
@@ -380,11 +400,11 @@ font-size: 30px;
 .text-sm.text-[#2D2D2D]/75.mt-4.leading-relaxed,
 .text-sm.sm:text-base.md:text-lg.text-[#2D2D2D]/75.leading-relaxed.mt-6,
 .text-sm.sm:text-base.text-[#2D2D2D]/75.leading-relaxed.max-w-2xl.mb-10 {
-font-size: 12px;
+font-size: 0.75rem; /* Converted to rem for TV & 4K monitor scaling */
 }
 .px-8.py-4.bg-white/10.hover:bg-white/20.border.border-white/20.text-white.rounded-full.font-bold.uppercase.tracking-wider.text-xs.text-center.transition-all.backdrop-blur-sm.w-full.sm:w-auto.animate-pulse,
 .custom-premium-card p {
-  font-size: 10px !important;
+  font-size: 0.625rem !important; /* Converted to rem for TV & 4K monitor scaling */
 }
 
 .custom-premium-card img {
@@ -414,5 +434,5 @@ font-size: 12px;
 }
 
 .custom-premium-card h3 {
-  font-size: 15px !important;
-}
+  font-size: 0.9375rem !important; /* Converted to rem for TV & 4K monitor scaling */
+}
