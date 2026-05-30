@@ -1723,7 +1723,7 @@ const ${componentName} = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 select-none mb-12">
                     {${JSON.stringify(config.projects)}.map((p, idx) => (
                         <div key={idx} className="bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
-                            <div className="w-full h-48 bg-black/5 overflow-hidden relative">
+                            <div className="w-full h-64 bg-black/5 overflow-hidden relative">
                                 <img src={idx === 1 ? carouselImg2 : carouselImg1} alt={p.title} className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" />
                                 <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">{p.tag}</div>
                             </div>
