@@ -1174,19 +1174,59 @@ const BusSheltersPage = () => {
                 </div>
             </section>
 
-            {/* SECTION 6 — FINAL CTA + TRUST */}
+            {/* SECTION 6 — WHY URBANLAND STANDS APART (TRUST GRID) */}
+            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
+                <div className="text-center mb-10 select-none">
+                    <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-3">— Why Urbanland Stands Apart</h3>
+                    <h2 className="text-2xl sm:text-3.5xl font-black uppercase tracking-tight text-[#1A1A1A]">Engineered for Smart Cities</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full max-w-5xl mx-auto">
+                    <div className="flex items-start gap-4 bg-[#F7F4EF]/45 p-5 rounded-[2rem] border border-black/[0.03] transition-all duration-300 hover:bg-[#F7F4EF]/70 shadow-[0_5px_15px_rgba(0,0,0,0.01)]">
+                        <svg className="w-5 h-5 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">ISO 9001:2015</h4>
+                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Certified quality management and strict manufacturing controls.</p>
+                        </div>
+                    </div>
+                    <div className="flex items-start gap-4 bg-[#F7F4EF]/45 p-5 rounded-[2rem] border border-black/[0.03] transition-all duration-300 hover:bg-[#F7F4EF]/70 shadow-[0_5px_15px_rgba(0,0,0,0.01)]">
+                        <svg className="w-5 h-5 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">IS 11707:2016 Compliant</h4>
+                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Fully compliant standard for public transport and passenger bus shelters.</p>
+                        </div>
+                    </div>
+                    <div className="flex items-start gap-4 bg-[#F7F4EF]/45 p-5 rounded-[2rem] border border-black/[0.03] transition-all duration-300 hover:bg-[#F7F4EF]/70 shadow-[0_5px_15px_rgba(0,0,0,0.01)]">
+                        <svg className="w-5 h-5 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">Smart City Guidelines</h4>
+                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Designed ready for integration with IoT, solar arrays, and digital displays.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION 7 — FINAL CTA */}
             <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-12">
-                <div className="w-full bg-white rounded-[2.5rem] p-8 md:p-16 flex flex-col items-center text-center border border-black/[0.03] shadow-lg relative overflow-hidden">
+                <div className="w-full bg-[#2C5F2E] rounded-[2.5rem] p-8 md:p-16 flex flex-col items-center text-center text-white relative overflow-hidden shadow-xl border border-black/5">
+                    {/* Subtle Overlay to enrich gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#2C5F2E] to-[#1d4720] opacity-95 pointer-events-none" />
+                    
                     <div className="relative z-10 max-w-4xl flex flex-col items-center">
-                        <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-[#2C5F2E]/10 text-[#2C5F2E] px-3.5 py-1.5 rounded-full select-none mb-6">
+                        <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-white/10 text-[#C9A84C] px-3.5 py-1.5 rounded-full select-none mb-6">
                             Ready to Partner
                         </span>
                         
-                        <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-[#1A1A1A] max-w-3xl mb-6">
+                        <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-white max-w-3xl mb-6">
                             Ready to Specify Bus Shelters for Your Project?
                         </h2>
 
-                        <p className="text-sm sm:text-base text-[#2D2D2D]/75 leading-relaxed max-w-2xl mb-10">
+                        <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl mb-10 font-medium">
                             Get a custom quote, detailed proposal, and technical specifications within 24 hours. Urbanland serves municipalities, developers, and architects nationwide.
                         </p>
 
@@ -1195,7 +1235,7 @@ const BusSheltersPage = () => {
                             <Link
                                 to="/get-quote/?product=bus-shelters"
                                 onClick={() => trackEvent("final_cta_primary", "bus_shelter_quote")}
-                                className="px-8 py-4 bg-[#C9A84C] text-[#232120] hover:bg-black hover:text-white rounded-full font-black uppercase tracking-wider text-xs transition-all shadow-lg hover:scale-102 transform duration-300 text-center font-bold"
+                                className="px-8 py-4 bg-[#C9A84C] text-[#232120] hover:bg-white hover:text-[#2C5F2E] rounded-full font-black uppercase tracking-wider text-xs transition-all shadow-lg hover:scale-102 transform duration-300 text-center font-bold"
                             >
                                 Request Custom Quote →
                             </Link>
@@ -1203,69 +1243,28 @@ const BusSheltersPage = () => {
                             <Link
                                 to="/resources/downloads"
                                 onClick={() => trackEvent("final_cta_secondary", "spec_guide_download")}
-                                className="px-8 py-4 bg-white hover:bg-black hover:text-white border border-black/10 text-black rounded-full font-bold uppercase tracking-wider text-xs transition-all text-center font-bold"
+                                className="px-8 py-4 bg-transparent hover:bg-white hover:text-[#2C5F2E] border border-white/20 text-white rounded-full font-bold uppercase tracking-wider text-xs transition-all text-center font-bold"
                             >
                                 Download Specification Guide ↓
                             </Link>
                         </div>
 
-                        <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#2D2D2D]/65 flex flex-wrap justify-center gap-x-6 gap-y-2.5 select-none border-t border-black/10 pt-6 w-full mb-8">
-                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> Free custom quote</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> No commitment</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> Nationwide delivery</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> 2-Year Guarantee</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> Installation support</span>
+                        <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/70 flex flex-wrap justify-center gap-x-6 gap-y-2.5 select-none border-t border-white/15 pt-6 w-full mb-8">
+                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Free custom quote</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> No commitment</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Nationwide delivery</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> 2-Year Guarantee</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Installation support</span>
                         </div>
 
-                        <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-6 select-none">— Why Urbanland Stands Apart</h3>
-                        
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-4xl border-b border-black/10 pb-8 mb-8">
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">ISO 9001:2015 Certified</span>
-                            </div>
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">IS 11707:2016 Compliant (Public Transport Shelters)</span>
-                            </div>
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">Smart City Mission Guidelines Compliant</span>
-                            </div>
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">50+ completed projects | 2000+ operational shelters</span>
-                            </div>
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">Zero defect rate in first 12 months (100+ recent projects)</span>
-                            </div>
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">Only Indian manufacturer offering 2-year guarantee on all components</span>
-                            </div>
-                        </div>
-
-                        <p className="text-xs font-semibold text-[#2D2D2D]/75">
+                        <p className="text-xs font-semibold text-white/85">
                             Questions? Contact our team or chat with us on WhatsApp →
                             <span className="block sm:inline mt-2 sm:mt-0 sm:ml-4">
-                                <Link to="/contact/" className="text-[#2C5F2E] hover:underline font-bold mr-4">Contact Form</Link>
+                                <Link to="/contact/" className="text-[#C9A84C] hover:underline font-bold mr-4">Contact Form</Link>
                                 <a 
                                     href="https://wa.me/919999999999?text=Hi%20Urbanland,%20I%20need%20a%20quote%20for%20bus%20shelters%20for%20a%20project.%20Can%20you%20share%20details?" 
                                     onClick={() => trackEvent("whatsapp_click", "final")}
-                                    className="text-[#2C5F2E] hover:underline font-bold" 
+                                    className="text-[#C9A84C] hover:underline font-bold" 
                                     target="_blank" 
                                     rel="noreferrer"
                                 >

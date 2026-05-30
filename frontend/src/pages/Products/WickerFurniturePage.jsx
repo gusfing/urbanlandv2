@@ -674,19 +674,59 @@ const WickerFurniturePage = () => {
                 </div>
             </section>
 
-            {/* SECTION 6 — FINAL CTA + TRUST */}
-            <section className="w-full px-6 md:px-12 mb-12">
-                <div className="w-full bg-white rounded-[2.5rem] p-8 md:p-16 flex flex-col items-center text-center border border-black/[0.03] shadow-lg relative overflow-hidden">
+            {/* SECTION 6 — WHY URBANLAND STANDS APART (TRUST GRID) */}
+            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
+                <div className="text-center mb-10 select-none">
+                    <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-3">— Why Urbanland Stands Apart</h3>
+                    <h2 className="text-2xl sm:text-3.5xl font-black uppercase tracking-tight text-[#1A1A1A]">Luxury Wicker Craftsmanship</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full max-w-5xl mx-auto">
+                    <div className="flex items-start gap-4 bg-[#F7F4EF]/45 p-5 rounded-[2rem] border border-black/[0.03] transition-all duration-300 hover:bg-[#F7F4EF]/70 shadow-[0_5px_15px_rgba(0,0,0,0.01)]">
+                        <svg className="w-5 h-5 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">ISO 9001:2015</h4>
+                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Certified quality management and strict manufacturing controls.</p>
+                        </div>
+                    </div>
+                    <div className="flex items-start gap-4 bg-[#F7F4EF]/45 p-5 rounded-[2rem] border border-black/[0.03] transition-all duration-300 hover:bg-[#F7F4EF]/70 shadow-[0_5px_15px_rgba(0,0,0,0.01)]">
+                        <svg className="w-5 h-5 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">HDPE Synthetic Weave</h4>
+                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Weatherproof, UV-protected materials suitable for coastal and extreme climates.</p>
+                        </div>
+                    </div>
+                    <div className="flex items-start gap-4 bg-[#F7F4EF]/45 p-5 rounded-[2rem] border border-black/[0.03] transition-all duration-300 hover:bg-[#F7F4EF]/70 shadow-[0_5px_15px_rgba(0,0,0,0.01)]">
+                        <svg className="w-5 h-5 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">Commercial Resort Grade</h4>
+                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Engineered to support heavy use in hotels, clubs, and hospitality ventures.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION 7 — FINAL CTA */}
+            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-12">
+                <div className="w-full bg-[#2C5F2E] rounded-[2.5rem] p-8 md:p-16 flex flex-col items-center text-center text-white relative overflow-hidden shadow-xl border border-black/5">
+                    {/* Subtle Overlay to enrich gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#2C5F2E] to-[#1d4720] opacity-95 pointer-events-none" />
+                    
                     <div className="relative z-10 max-w-4xl flex flex-col items-center">
-                        <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-[#2C5F2E]/10 text-[#2C5F2E] px-3.5 py-1.5 rounded-full select-none mb-6">
+                        <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-white/10 text-[#C9A84C] px-3.5 py-1.5 rounded-full select-none mb-6">
                             Transform Your Space
                         </span>
                         
-                        <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-[#1A1A1A] max-w-3xl mb-6">
+                        <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-white max-w-3xl mb-6">
                             Ready to Transform Your Outdoor Space with Premium Wicker Products?
                         </h2>
 
-                        <p className="text-sm sm:text-base text-[#2D2D2D]/75 leading-relaxed max-w-2xl mb-10">
+                        <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl mb-10 font-medium">
                             Specify Urbanland® B2B wicker furniture for your commercial properties, hotels, townships, or open-air dining plazas. Request a custom quote today.
                         </p>
 
@@ -694,60 +734,25 @@ const WickerFurniturePage = () => {
                         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 select-none mb-8 w-full sm:w-auto">
                             <Link
                                 to="/get-quote/?product=wicker-furniture"
-                                className="px-8 py-4 bg-[#C9A84C] text-[#232120] hover:bg-black hover:text-white rounded-full font-black uppercase tracking-wider text-xs transition-all shadow-lg hover:scale-102 transform duration-300 text-center font-bold"
+                                className="px-8 py-4 bg-[#C9A84C] text-[#232120] hover:bg-white hover:text-[#2C5F2E] rounded-full font-black uppercase tracking-wider text-xs transition-all shadow-lg hover:scale-102 transform duration-300 text-center font-bold"
                             >
                                 Request Custom Quote →
                             </Link>
 
                             <Link
                                 to="/resources/downloads"
-                                className="px-8 py-4 bg-white hover:bg-black hover:text-white border border-black/10 text-black rounded-full font-bold uppercase tracking-wider text-xs transition-all text-center font-bold"
+                                className="px-8 py-4 bg-transparent hover:bg-white hover:text-[#2C5F2E] border border-white/20 text-white rounded-full font-bold uppercase tracking-wider text-xs transition-all text-center font-bold"
                             >
                                 Download the Brochure ↓
                             </Link>
                         </div>
 
-                        <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#2D2D2D]/65 flex flex-wrap justify-center gap-x-6 gap-y-2.5 select-none border-t border-black/10 pt-6 w-full mb-8">
-                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> Free custom quote</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> No commitment</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> Nationwide delivery</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> 2-Year Guarantee</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#2C5F2E]">✓</span> Installation support</span>
-                        </div>
-
-                        <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-6 select-none">— Why Urbanland Stands Apart</h3>
-                        
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-4xl border-b border-black/10 pb-8 mb-8">
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">ISO 9001:2015 Certified</span>
-                            </div>
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">2-Year Guarantee (India’s only)</span>
-                            </div>
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">Complete range of wicker outdoor products</span>
-                            </div>
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">50+ completed projects</span>
-                            </div>
-                            <div className="flex items-start gap-3 bg-[#F7F4EF]/55 p-4 rounded-2xl border border-black/[0.03] transition-all hover:bg-[#F7F4EF]/80">
-                                <svg className="w-4 h-4 text-[#2C5F2E] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                                <span className="text-xs font-bold text-[#2D2D2D]/85 leading-snug">Nationwide delivery & installation support</span>
-                            </div>
+                        <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/70 flex flex-wrap justify-center gap-x-6 gap-y-2.5 select-none border-t border-white/15 pt-6 w-full mb-8">
+                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Free custom quote</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> No commitment</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Nationwide delivery</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> 2-Year Guarantee</span>
+                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Installation support</span>
                         </div>
                     </div>
                 </div>
