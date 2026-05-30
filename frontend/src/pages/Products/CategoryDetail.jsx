@@ -550,7 +550,7 @@ const CategoryDetail = () => {
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="absolute inset-0 max-h-[62%] max-w-[62%] m-auto object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    className="absolute inset-0 max-h-[52%] max-w-[52%] m-auto object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                     style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }}
                   />
                   {/* Second image: UGC background */}
