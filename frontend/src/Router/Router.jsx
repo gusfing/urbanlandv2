@@ -12,6 +12,20 @@ import BusSheltersPage from "../pages/Products/BusSheltersPage";
 import WickerFurniturePage from "../pages/Products/WickerFurniturePage";
 import DustbinsPage from "../pages/Products/DustbinsPage";
 import CategoryDetail from "../pages/Products/CategoryDetail";
+
+// Newly Generated Product Pages
+import AluminiumBenchesPage from "../pages/Products/AluminiumBenchesPage";
+import BenchesPage from "../pages/Products/BenchesPage";
+import CabanasPage from "../pages/Products/CabanasPage";
+import CanteenTablesPage from "../pages/Products/CanteenTablesPage";
+import CarSheltersPage from "../pages/Products/CarSheltersPage";
+import IndoorFurniturePage from "../pages/Products/IndoorFurniturePage";
+import MetalWoodenFurniturePage from "../pages/Products/MetalWoodenFurniturePage";
+import PlantersPage from "../pages/Products/PlantersPage";
+import PoolsideLoungersPage from "../pages/Products/PoolsideLoungersPage";
+import SSBollardsPage from "../pages/Products/SSBollardsPage";
+import WickerOutdoorProductsPage from "../pages/Products/WickerOutdoorProductsPage";
+
 import SolutionsHub from "../pages/Solutions/SolutionsHub";
 import SolutionsDetail from "../pages/Solutions/SolutionsDetail";
 import ProjectsHub from "../pages/Projects/ProjectsHub";
@@ -39,9 +53,27 @@ const router = createBrowserRouter([
             { path: "products", element: <ProductsHub /> },
             { path: "products/bus-shelters", element: <BusSheltersPage /> },
             { path: "products/wicker-furniture", element: <WickerFurniturePage /> },
-            { path: "products/wicker-furniture/wicker-outdoor-products", element: <WickerFurniturePage /> },
+            { path: "products/wicker-furniture/wicker-outdoor-products", element: <WickerOutdoorProductsPage /> },
             { path: "products/dustbins", element: <DustbinsPage /> },
             { path: "products/outdoor-dustbins", element: <DustbinsPage /> },
+            { path: "products/benches/aluminium-benches", element: <AluminiumBenchesPage /> },
+            { path: "products/benches", element: <BenchesPage /> },
+            { path: "products/wpc-benches", element: <BenchesPage /> },
+            { path: "products/cabanas", element: <CabanasPage /> },
+            { path: "products/canteen-tables", element: <CanteenTablesPage /> },
+            { path: "products/canteen-furniture", element: <CanteenTablesPage /> },
+            { path: "products/car-shelters", element: <CarSheltersPage /> },
+            { path: "products/car-parking-sheds", element: <CarSheltersPage /> },
+            { path: "products/car-sheds", element: <CarSheltersPage /> },
+            { path: "products/indoor-furniture", element: <IndoorFurniturePage /> },
+            { path: "products/metal-wooden-furniture", element: <MetalWoodenFurniturePage /> },
+            { path: "products/planters", element: <PlantersPage /> },
+            { path: "products/poolside-loungers", element: <PoolsideLoungersPage /> },
+            { path: "products/poolside-furniture", element: <PoolsideLoungersPage /> },
+            { path: "products/ss-bollards", element: <SSBollardsPage /> },
+            { path: "products/wicker-outdoor-products", element: <WickerOutdoorProductsPage /> },
+            { path: "products/wicker-living-sets", element: <WickerFurniturePage /> },
+            { path: "products/wicker-dining-sets", element: <WickerOutdoorProductsPage /> },
             { path: "products/:category", element: <CategoryDetail /> },
             { path: "products/:category/:subcategory", element: <CategoryDetail /> },
             

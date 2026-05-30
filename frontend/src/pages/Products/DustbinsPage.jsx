@@ -4,15 +4,9 @@ import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-// Asset imports
-import dustbinsJpeg from "../../assets/Dustbins.jpeg";
-import skylineImg from "../../assets/products/Product Images/Dustbins/skyline.png";
-import nanukNextImg from "../../assets/products/Product Images/Dustbins/nanuk_next.png";
-import tleskImg from "../../assets/products/Product Images/Dustbins/tlesk.png";
-import sortCorrugatedImg from "../../assets/products/Product Images/Dustbins/sort_corrugated.png";
-import hotelImg from "../../assets/gallery_hotels.png";
-import realEstateImg from "../../assets/gallery_real_estate.png";
-import smartCityImg from "../../assets/gallery_smart_city.png";
+import carouselImg1 from "../../assets/products/Product Images/Dustbins/Create_a_clean,_premium,_professional_202605170106.jpeg";
+import carouselImg2 from "../../assets/products/Product Images/Dustbins/UGC_Dustbins.jpeg";
+import carouselImg3 from "../../assets/Dustbins.jpeg";
 
 // Brand logos
 import logo1 from "../../assets/brands/1.png";
@@ -40,6 +34,7 @@ const brandLogos = [
 ];
 
 const DustbinsPage = () => {
+    const [activeTab, setActiveTab] = useState("standard");
     const [faqOpen, setFaqOpen] = useState(Array(5).fill(false));
     const [showStickyHeader, setShowStickyHeader] = useState(false);
     const heroScrollRef = useRef(null);
@@ -83,16 +78,35 @@ const DustbinsPage = () => {
         }
     };
 
+    const scrollHeroStart = () => {
+        if (heroScrollRef.current) {
+            heroScrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        }
+    };
+
+    const [exitPopupVisible, setExitPopupVisible] = useState(false);
+    const [exitPopupSubmitted, setExitPopupSubmitted] = useState(false);
+    const [emailInput, setEmailInput] = useState("");
+
+    const trackEvent = (eventName, value = "") => {
+        if (window.gtag) {
+            window.gtag("event", eventName, {
+                event_category: "product_page",
+                event_label: "dustbinspage",
+                value: value
+            });
+        }
+        console.log(`[GA4 Event] ${eventName} | Category: product_page | Label: dustbinspage | Value: ${value}`);
+    };
+
     useEffect(() => {
-        // Dynamic SEO Metadata Configuration
         updatePageSEO({
-            title: "Premium Outdoor Dustbins Manufacturer India | Smart Waste Sorting | Urbanland",
-            description: "Custom-designed municipal & commercial outdoor dustbins. Vandal-resistant, solar-ready and smart sorting configurations. 2-Year Guarantee. Staggered bulk delivery.",
+            title: "Dustbins Manufacturer India | Outdoor & Commercial Dustbins | Urbanland Products",
+            description: "Premium dustbins and waste bins in Mild Steel, Stainless Steel & Galvanized finish. Ideal for parks, hospitals, schools, commercial complexes, townships and smart cities. Durable, hygienic and low-maintenance. India’s only 2-Year Guarantee.",
             og_type: "product",
-            og_image: dustbinsJpeg
+            og_image: carouselImg1
         });
 
-        // Scroll listener for sticky header
         const handleScroll = () => {
             if (window.scrollY > 300) {
                 setShowStickyHeader(true);
@@ -102,6 +116,37 @@ const DustbinsPage = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
+
+        const sessionKey = "urbanland_exit_intent_dustbinspage";
+        const isShown = sessionStorage.getItem(sessionKey);
+
+        if (!isShown) {
+            const handleMouseLeave = (e) => {
+                if (e.clientY < 20) {
+                    triggerPopup();
+                }
+            };
+            const timer = setTimeout(() => {
+                triggerPopup();
+            }, 45000);
+
+            const triggerPopup = () => {
+                setExitPopupVisible(true);
+                sessionStorage.setItem(sessionKey, "true");
+                document.removeEventListener("mouseleave", handleMouseLeave);
+                clearTimeout(timer);
+            };
+
+            document.addEventListener("mouseleave", handleMouseLeave);
+
+            return () => {
+                cleanPageSEO();
+                window.removeEventListener("scroll", handleScroll);
+                document.removeEventListener("mouseleave", handleMouseLeave);
+                clearTimeout(timer);
+            };
+        }
+
         return () => {
             cleanPageSEO();
             window.removeEventListener("scroll", handleScroll);
@@ -114,7 +159,232 @@ const DustbinsPage = () => {
             next[idx] = !next[idx];
             return next;
         });
+        trackEvent("faq_click", `faq_${idx + 1}`);
     };
+
+    const renderStandardTab = () => (
+        <div className="animate-fadeIn">
+            <div className="mb-6">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/10 px-3 py-1.5 rounded-full select-none">Value Option</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Standard Double Segregation Bin — Compact</h3>
+                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Residential society paths, retail storefronts, indoor office lobbies.</h4>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
+                <div>
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
+                        {["Frame: Mild Steel with powder coating","Inner: Galvanized sheet metal liners","Capacity: 2x 60 Litre compartments","Design: Dual sorting dry & wet waste"].map((f, idx) => (
+                            <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
+                        ))}
+                    </ul>
+
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
+                        Residential society paths, retail storefronts, indoor office lobbies.
+                    </p>
+                </div>
+
+                <div className="lg:col-span-1 h-[280px] lg:h-auto rounded-[2rem] bg-black/5 overflow-hidden flex items-center justify-center p-4 border border-black/[0.04] shrink-0">
+                    <img 
+                        src={carouselImg1} 
+                        alt="Standard variant" 
+                        className="w-full h-full object-cover rounded-2xl" 
+                    />
+                </div>
+
+                <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
+                    <div>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
+                            <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
+                                    <span className="font-bold">800L × 450W × 900H mm</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Weight</span>
+                                    <span className="font-bold">35-40 kg</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lead Time</span>
+                                    <span className="font-bold">15-20 days</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Annual Maintenance</span>
+                                    <span className="font-bold">Wipe clean</span>
+                                </div>
+                                <div className="col-span-2 border-t border-black/[0.04] pt-3 mt-1">
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lifespan</span>
+                                    <span className="font-bold text-[#2C5F2E]">5-6 years</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <Link
+                        to="/get-quote/?variant=standard"
+                        onClick={() => trackEvent("variant_selection", "standard")}
+                        className="px-6 py-4 bg-[#2C5F2E] hover:bg-black text-white rounded-full font-black uppercase tracking-wider text-[10px] text-center transition-colors duration-300 w-full"
+                    >
+                        Get Standard Quote →
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+
+    const renderPremiumTab = () => (
+        <div className="animate-fadeIn">
+            <div className="mb-6">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/10 px-3 py-1.5 rounded-full select-none">Most Specified</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Premium Triple Segregation Bin — All-Weather</h3>
+                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Smart City footpaths, commercial IT park walkways, premium resorts.</h4>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
+                <div>
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
+                        {["Frame: Galvanized steel with architectural powder coating","Inner: Heavy-duty plastic waste liners","Capacity: 3x 80 Litre compartments","Design: Triple sorting (dry, wet, sanitary/ewaste)"].map((f, idx) => (
+                            <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
+                        ))}
+                    </ul>
+
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
+                        Smart City footpaths, commercial IT park walkways, premium resorts.
+                    </p>
+                </div>
+
+                <div className="lg:col-span-1 h-[280px] lg:h-auto rounded-[2rem] bg-black/5 overflow-hidden flex items-center justify-center p-4 border border-black/[0.04] shrink-0">
+                    <img 
+                        src={carouselImg2} 
+                        alt="Premium variant" 
+                        className="w-full h-full object-cover rounded-2xl" 
+                    />
+                </div>
+
+                <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
+                    <div>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
+                            <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
+                                    <span className="font-bold">1200L × 500W × 950H mm</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Weight</span>
+                                    <span className="font-bold">65-75 kg</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lead Time</span>
+                                    <span className="font-bold">20-25 days</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Annual Maintenance</span>
+                                    <span className="font-bold">Zero (periodic wipe)</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lifespan</span>
+                                    <span className="font-bold text-[#2C5F2E]">10-12 years</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Special Rating</span>
+                                    <span className="font-bold text-[#2C5F2E]">Anti-vandal anchor bolt flanging</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <Link
+                        to="/get-quote/?variant=premium"
+                        onClick={() => trackEvent("variant_selection", "premium")}
+                        className="px-6 py-4 bg-[#2C5F2E] hover:bg-black text-white rounded-full font-black uppercase tracking-wider text-[10px] text-center transition-colors duration-300 w-full"
+                    >
+                        Get Premium Quote →
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+
+    const renderSuperPremiumTab = () => (
+        <div className="animate-fadeIn">
+            <div className="mb-6">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/10 px-3 py-1.5 rounded-full select-none">Smart Ready</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Super Premium Smart Bin — Solar & IoT</h3>
+                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: High-traffic transit stations, central municipal plazas, airport terminals.</h4>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
+                <div>
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
+                        {["Frame: Stainless Steel 304 or mirror-polished SS","Inner: Fire-suppressive stainless steel compartments","Capacity: 4x 100 Litre compartments (quad sorting)","Tech: Solar-powered LED status indicators, fill-level IoT sensors, EV charging side ports"].map((f, idx) => (
+                            <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
+                        ))}
+                    </ul>
+
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
+                        High-traffic transit stations, central municipal plazas, airport terminals.
+                    </p>
+                </div>
+
+                <div className="lg:col-span-1 h-[280px] lg:h-auto rounded-[2rem] bg-black/5 overflow-hidden flex items-center justify-center p-4 border border-black/[0.04] shrink-0">
+                    <img 
+                        src={carouselImg3} 
+                        alt="Super Premium variant" 
+                        className="w-full h-full object-cover rounded-2xl" 
+                    />
+                </div>
+
+                <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
+                    <div>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
+                            <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
+                                    <span className="font-bold">1600L × 600W × 1000H mm</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Weight</span>
+                                    <span className="font-bold">110-130 kg</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lead Time</span>
+                                    <span className="font-bold">30-40 days</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Annual Maintenance</span>
+                                    <span className="font-bold">Annual sensor battery swap</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lifespan</span>
+                                    <span className="font-bold text-[#2C5F2E]">15+ years</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Tech Features</span>
+                                    <span className="font-bold text-[#2C5F2E]">IoT smart routing integration ready</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <Link
+                        to="/get-quote/?variant=super-premium"
+                        onClick={() => trackEvent("variant_selection", "super_premium")}
+                        className="px-6 py-4 bg-[#C9A84C] hover:bg-black text-[#232120] hover:text-white rounded-full font-black uppercase tracking-wider text-[10px] text-center transition-colors duration-300 w-full"
+                    >
+                        Get Super Premium Proposal →
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
 
     return (
         <div ref={pageContainerRef} className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-28">
@@ -123,10 +393,11 @@ const DustbinsPage = () => {
             <div className={`fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-[#2D2D2D]/10 py-4 px-8 lg:px-16 z-[99] flex justify-between items-center transition-all duration-500 shadow-md ${showStickyHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}`}>
                 <div className="flex items-center gap-3">
                     <span className="text-[#2C5F2E] font-black tracking-tighter text-lg">URBANLAND®</span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#2D2D2D]/50 hidden sm:inline">Outdoor Dustbins</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#2D2D2D]/50 hidden sm:inline">Dustbins</span>
                 </div>
                 <Link
-                    to="/get-quote/?product=outdoor-dustbins"
+                    to="/get-quote/?product=dustbins"
+                    onClick={() => trackEvent("product_page_cta_primary", "quote_request")}
                     className="px-6 py-2.5 bg-[#E65F2B] hover:bg-black text-white rounded-full font-black uppercase tracking-wider text-[10px] transition-all shadow-sm"
                 >
                     Get Project Quote →
@@ -140,7 +411,7 @@ const DustbinsPage = () => {
                     <span>/</span>
                     <Link to="/products" className="hover:text-[#2C5F2E] transition-colors">Products</Link>
                     <span>/</span>
-                    <span className="text-[#2C5F2E]">Outdoor Dustbins</span>
+                    <span className="text-[#2C5F2E]">Dustbins</span>
                 </nav>
             </div>
 
@@ -150,366 +421,285 @@ const DustbinsPage = () => {
                     ref={heroScrollRef}
                     className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-4 px-6 md:px-12"
                 >
-                    {/* Card 1: Premium Outdoor Litter Bins */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={dustbinsJpeg} 
-                            alt="Premium custom outdoor dustbins manufactured in India" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
+                    {[{"tag":"Product Spotlight","h":"Premium Public &<br />Commercial Dustbins","label":"01","desc":"High-durability waste segregation bins"},{"tag":"Smart Segregation","h":"Double, triple &<br />quad sorting bins<br />for modern spaces","label":"02","desc":"Built to public smart city guidelines"},{"tag":"B2B Guarantee","h":"2-Year Warranty<br />& ISO Certified<br />Standards","label":"03","desc":"Trusted by top townships, IT parks & hotels"},{"tag":"Weather Resistant","h":"Fire-suppressive and<br />vandal-resistant steel<br />frame bins","label":"04","desc":"Akzonobel powder coated finish"},{"tag":"Bespoke Styles","h":"Custom colors, shapes<br />and concrete aggregate<br />planter-integrated bins","label":"05","desc":"Designed for heavy-traffic public walkways"}].map((card, idx) => (
+                        <div key={idx} className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
+                            <img 
+                                src={idx % 2 === 0 ? carouselImg1 : carouselImg2} 
+                                alt={card.tag} 
+                                className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
 
-                        <div className="z-10">
-                            <span className="text-[9px] font-black uppercase tracking-wider bg-[#C9A84C] text-[#232120] px-3.5 py-1.5 rounded-full w-fit mb-3 block">
-                                Waste Management Spot
-                            </span>
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                Premium Outdoor<br />Litter Bins &<br />Sorting Stations
-                            </h3>
+                            <div className="z-10">
+                                <span className="text-[9px] font-black uppercase tracking-wider bg-[#C9A84C] text-[#232120] px-3.5 py-1.5 rounded-full w-fit mb-3 block">
+                                    {card.tag}
+                                </span>
+                                <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans" dangerouslySetInnerHTML={{ __html: card.h }} />
+                            </div>
+
+                            <div className="z-10 flex justify-between items-end w-full">
+                                <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
+                                    <span className="font-black mr-2 text-[#C9A84C]">{card.label}</span>{card.desc}
+                                </span>
+                                {idx === 2 && (
+                                    <button 
+                                        onClick={scrollHeroRight}
+                                        className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
+                                        aria-label="Next slide"
+                                    >
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                )}
+                                {idx === 4 && (
+                                    <button 
+                                        onClick={scrollHeroStart}
+                                        className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
+                                        aria-label="Start over"
+                                    >
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18" />
+                                        </svg>
+                                    </button>
+                                )}
+                            </div>
                         </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">01</span>Vandal-resistant galvanized designs
-                            </span>
-                        </div>
-                    </div>
-
-                    {/* Card 2: Smart Sorting Bento */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={skylineImg} 
-                            alt="Skyline wood slatted premium recycling sorting station" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
-
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                Smart Waste<br />sorting bento<br />stations
-                            </h3>
-                        </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">02</span>Eco WPC & Robinia wood finishes
-                            </span>
-                        </div>
-                    </div>
-
-                    {/* Card 3: Vandal Resistant Locks */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={nanukNextImg} 
-                            alt="Nanuk Next wood cladding dustbin with anti vandal cylinder lock" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
-
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                Vandal-resistant<br />heavy duty steel<br />cylinder locks
-                            </h3>
-                        </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">03</span>Heavy piano hinges & lock channels
-                            </span>
-                            
-                            {/* Floating White Circular Arrow Button */}
-                            <button 
-                                onClick={scrollHeroRight}
-                                className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
-                                aria-label="Next slide"
-                            >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Card 4: 2-Year B2B Warranty */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={tleskImg} 
-                            alt="Tlesk cage style litter bins with B2B warranty coverage" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
-
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                2-Year B2B Warranty<br />& ISO Certified<br />Standards
-                            </h3>
-                        </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">04</span>Trusted across 50+ smart townships
-                            </span>
-                        </div>
-                    </div>
-
-                    {/* Card 5: Tailor-Made Branding */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={sortCorrugatedImg} 
-                            alt="Korton Triple corrugated sheet segregation bin with custom branding finishes" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
-
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                Tailor-made laser<br />branding & PU<br />powder finishes
-                            </h3>
-                        </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">05</span>50+ RAL colors & custom laser logos
-                            </span>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
 
-            {/* SECTION 1 — OUR DUSTBIN RANGE (Bento Grid layout) */}
+            {/* SECTION 1 — WHY CHOOSE URBANLAND */}
             <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-16 max-w-5xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— EXQUISITE PORTFOLIO</span>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— CHOOSE DURABILITY</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
-                        Signature Sorting Receptacles & Ash Bins
+                        Why Developers, Municipalities & Architects Choose Urbanland
                     </h2>
                     <p className="text-sm sm:text-base md:text-lg text-[#2D2D2D]/75 leading-relaxed mt-6">
-                        Explore our modular public sorting stations designed to withstand vandal exposures, heavy monsoons, and extreme public footfalls, combining galvanized sheet cores with contemporary minimal styling.
+                        Why People Choose Urbanland Products for Dustbins
                     </p>
                 </div>
 
-                {/* Bento Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    {/* Item 1: Nanuk Next */}
-                    <div className="bg-white rounded-[2.5rem] p-8 border border-black/[0.03] shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full group">
-                        <div className="flex-1 w-full flex justify-center items-center overflow-hidden min-h-[200px] relative select-none bg-white rounded-[20px]">
-                            <img src={nanukNextImg} alt="Nanuk Next Wood Slatted Dustbin" className="max-h-[85%] max-w-[85%] object-contain select-none group-hover:scale-105 transition-transform duration-500" style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }} />
-                        </div>
-                        <div className="mt-6 border-t border-black/[0.04] pt-6">
-                            <h3 className="text-xl font-black uppercase text-[#1A1A1A] leading-tight">NANUK NEXT</h3>
-                            <p className="text-xs text-[#2D2D2D]/70 leading-relaxed mt-3">
-                                Sleek wood-slatted waste bin cladded in WPC wood slats with a lockable black steel lid and internal ash receptacle.
-                            </p>
-                        </div>
-                    </div>
+                <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-8">— 4 Core Reasons</h3>
 
-                    {/* Item 2: Skyline */}
-                    <div className="bg-white rounded-[2.5rem] p-8 border border-black/[0.03] shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full group">
-                        <div className="flex-1 w-full flex justify-center items-center overflow-hidden min-h-[200px] relative select-none bg-white rounded-[20px]">
-                            <img src={skylineImg} alt="Skyline Robinia wood double sorting bin" className="max-h-[85%] max-w-[85%] object-contain select-none group-hover:scale-105 transition-transform duration-500" style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }} />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 select-none">
+                    {[{"title":"Waste Segregation","desc":"Designed with double, triple, or quad compartment bins to support standard dry, wet, and hazardous recycling segregations."},{"title":"Anti-Vandal Steel","desc":"Heavy galvanized steel frames with thick-wall panels, preventing theft, severe denting, and public vandalism."},{"title":"Self-Extinguishing","desc":"Features fire-suppressive internal configurations that cut off oxygen, suffocating fires before they spread."},{"title":"Smart Ready Option","desc":"Available with IoT level sensor integration, notifying sanitation teams when bins are 80% full."}].map((r, idx) => (
+                        <div key={idx} className="bg-white rounded-[2rem] border border-black/[0.03] p-8 md:p-10 shadow-sm hover:bg-[#F7F4EF]/55 hover:shadow-lg transition-all duration-300 flex flex-col gap-5 group">
+                            <div className={`w-14 h-14 ${idx % 2 === 0 ? "bg-[#2C5F2E]/10 text-[#2C5F2E]" : "bg-[#C9A84C]/10 text-[#C9A84C]"} rounded-full flex justify-center items-center`}>
+                                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                </svg>
+                            </div>
+                            <h4 className="text-xl font-black uppercase text-[#1A1A1A]">{r.title}</h4>
+                            <p className="text-xs sm:text-sm text-[#2D2D2D]/70 leading-relaxed">{r.desc}</p>
                         </div>
-                        <div className="mt-6 border-t border-black/[0.04] pt-6">
-                            <h3 className="text-xl font-black uppercase text-[#1A1A1A] leading-tight">SKYLINE</h3>
-                            <p className="text-xs text-[#2D2D2D]/70 leading-relaxed mt-3">
-                                Architectural double-compartment sorting station cladded in premium Robinia timber with distinct yellow sorting lids.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Item 3: Tlesk */}
-                    <div className="bg-white rounded-[2.5rem] p-8 border border-black/[0.03] shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full group">
-                        <div className="flex-1 w-full flex justify-center items-center overflow-hidden min-h-[200px] relative select-none bg-white rounded-[20px]">
-                            <img src={tleskImg} alt="Tlesk Playful wireframe cage litter bins" className="max-h-[85%] max-w-[85%] object-contain select-none group-hover:scale-105 transition-transform duration-500" style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }} />
-                        </div>
-                        <div className="mt-6 border-t border-black/[0.04] pt-6">
-                            <h3 className="text-xl font-black uppercase text-[#1A1A1A] leading-tight">TLESK</h3>
-                            <p className="text-xs text-[#2D2D2D]/70 leading-relaxed mt-3">
-                                Vibrant yellow and blue wireframe cage litter bins with integrated cylindrical liners, bringing playful curves to plazas.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Item 4: Korton Triple */}
-                    <div className="bg-white rounded-[2.5rem] p-8 border border-black/[0.03] shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full group">
-                        <div className="flex-1 w-full flex justify-center items-center overflow-hidden min-h-[200px] relative select-none bg-white rounded-[20px]">
-                            <img src={sortCorrugatedImg} alt="Korton Triple Corrugated Sheet Sorting Station" className="max-h-[85%] max-w-[85%] object-contain select-none group-hover:scale-105 transition-transform duration-500" style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }} />
-                        </div>
-                        <div className="mt-6 border-t border-black/[0.04] pt-6">
-                            <h3 className="text-xl font-black uppercase text-[#1A1A1A] leading-tight">KORTON TRIPLE</h3>
-                            <p className="text-xs text-[#2D2D2D]/70 leading-relaxed mt-3">
-                                Heavy-gauge corrugated steel three-compartment sorting station featuring distinct color-coded collection ports.
-                            </p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
 
-            {/* SECTION 2 — WHY PEOPLE SPECIFY URBANLAND DUSTBINS */}
+            {/* SECTION 2 — THREE CONFIGURATIONS */}
             <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
-                <div className="bg-[#2D2D2D] rounded-[2.5rem] border border-white/5 p-8 md:p-16 text-white grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                    <div className="lg:col-span-7">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-[#C9A84C] mb-3 block">— METRIC OF TRUST</span>
-                        <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-white mb-6 font-outfit">
-                            Engineered for High-Traffic Municipal Landscapes
-                        </h2>
-                        <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed font-light mb-6">
-                            When municipal bodies, builders, or town planners specify litter receptacles for public spaces, they need structures that can handle rain, heat, vandalism, and massive foot traffic.
-                        </p>
-                        <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed font-light">
-                            Urbanland B2B dustbins are manufactured using robust Grade 304 or 316 Stainless Steel cores, zinc-primed steel plates, and anti-graffiti powder coatings, guaranteeing a 10+ year lifespan with minimal maintenance costs.
-                        </p>
+                <div className="text-left mb-12 max-w-4xl">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— SYSTEM SPECS MATRIX</span>
+                    <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
+                        Three Dustbins Configurations — Choose What Fits Your Project
+                    </h2>
+                    <p className="text-sm sm:text-base text-[#2D2D2D]/75 mt-4">
+                        All Urbanland architectural products are built on proven specifications but fully customizable.
+                    </p>
+                </div>
+
+                {/* DESKTOP TABS TOGGLE */}
+                <div className="hidden md:flex flex-row gap-2 border-b border-[#2D2D2D]/15 pb-4 mb-12 select-none">
+                    <button
+                        onClick={() => { setActiveTab("standard"); trackEvent("variant_selection", "standard"); }}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "standard" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                    >
+                        Standard Configuration
+                    </button>
+                    <button
+                        onClick={() => { setActiveTab("premium"); trackEvent("variant_selection", "premium"); }}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "premium" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                    >
+                        Premium Configuration
+                    </button>
+                    <button
+                        onClick={() => { setActiveTab("super"); trackEvent("variant_selection", "super_premium"); }}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "super" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                    >
+                        Super Premium Configuration
+                    </button>
+                </div>
+
+                {/* DESKTOP CONTENT BLOCK */}
+                <div className="hidden md:block bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-14 shadow-sm">
+                    {activeTab === "standard" && renderStandardTab()}
+                    {activeTab === "premium" && renderPremiumTab()}
+                    {activeTab === "super" && renderSuperPremiumTab()}
+                </div>
+
+                {/* MOBILE ACCORDIONS STACK */}
+                <div className="flex md:hidden flex-col gap-4">
+                    <div className="bg-white rounded-3xl border border-black/[0.03] overflow-hidden shadow-sm">
+                        <button
+                            onClick={() => { const next = activeTab === "standard" ? null : "standard"; setActiveTab(next); if (next) trackEvent("variant_selection", "standard"); }}
+                            className="w-full text-left p-6 flex justify-between items-center font-black uppercase tracking-wider text-sm text-[#1A1A1A]"
+                        >
+                            <span>Standard Configuration</span>
+                            <span className="text-[#2C5F2E] text-xl font-bold font-mono">{activeTab === "standard" ? "−" : "+"}</span>
+                        </button>
+                        {activeTab === "standard" && <div className="p-6 border-t border-[#2D2D2D]/5 bg-white">{renderStandardTab()}</div>}
                     </div>
 
-                    <div className="lg:col-span-5 w-full h-[320px] rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 relative shrink-0">
-                        <img 
-                            src={dustbinsJpeg} 
-                            alt="Luxury hand-woven B2B resort furniture" 
-                            className="w-full h-full object-cover scale-103 brightness-90"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#2D2D2D]/60 to-transparent" />
+                    <div className="bg-white rounded-3xl border border-black/[0.03] overflow-hidden shadow-sm">
+                        <button
+                            onClick={() => { const next = activeTab === "premium" ? null : "premium"; setActiveTab(next); if (next) trackEvent("variant_selection", "premium"); }}
+                            className="w-full text-left p-6 flex justify-between items-center font-black uppercase tracking-wider text-sm text-[#1A1A1A]"
+                        >
+                            <span>Premium Configuration</span>
+                            <span className="text-[#2C5F2E] text-xl font-bold font-mono">{activeTab === "premium" ? "−" : "+"}</span>
+                        </button>
+                        {activeTab === "premium" && <div className="p-6 border-t border-[#2D2D2D]/5 bg-white">{renderPremiumTab()}</div>}
+                    </div>
+
+                    <div className="bg-white rounded-3xl border border-black/[0.03] overflow-hidden shadow-sm">
+                        <button
+                            onClick={() => { const next = activeTab === "super" ? null : "super"; setActiveTab(next); if (next) trackEvent("variant_selection", "super"); }}
+                            className="w-full text-left p-6 flex justify-between items-center font-black uppercase tracking-wider text-sm text-[#1A1A1A]"
+                        >
+                            <span>Super Premium Configuration</span>
+                            <span className="text-[#2C5F2E] text-xl font-bold font-mono">{activeTab === "super" ? "−" : "+"}</span>
+                        </button>
+                        {activeTab === "super" && <div className="p-6 border-t border-[#2D2D2D]/5 bg-white">{renderSuperPremiumTab()}</div>}
+                    </div>
+                </div>
+
+                {/* QUICK COMPARISON TABLE */}
+                <div className="mt-16">
+                    <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-6">— Quick Comparison</h3>
+                    <div className="w-full overflow-x-auto border border-black/[0.04] rounded-3xl bg-white shadow-sm scrollbar-thin">
+                        <table className="w-full text-left border-collapse min-w-[650px]">
+                            <thead>
+                                <tr className="bg-[#2D2D2D] text-white select-none text-[10px] sm:text-xs font-black uppercase tracking-wider">
+                                    <th className="p-5 border-b border-[#2D2D2D]/10">Aspect</th>
+                                    <th className="p-5 border-b border-[#2D2D2D]/10">Standard</th>
+                                    <th className="p-5 border-b border-[#2D2D2D]/10">Premium</th>
+                                    <th className="p-5 border-b border-[#2D2D2D]/10">Super Premium</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-xs font-semibold text-[#1A1A1A]/85">
+                                <tr className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
+                                    <td className="p-5 font-bold uppercase tracking-wider bg-[#2C5F2E]/5">Lifespan</td>
+                                    <td className="p-5">5-6 years</td>
+                                    <td className="p-5">10-12 years</td>
+                                    <td className="p-5">15+ years</td>
+                                </tr>
+                                <tr className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
+                                    <td className="p-5 font-bold uppercase tracking-wider bg-[#2C5F2E]/5">Lead Time</td>
+                                    <td className="p-5">15-20 days</td>
+                                    <td className="p-5">20-25 days</td>
+                                    <td className="p-5">30-40 days</td>
+                                </tr>
+                                <tr className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
+                                    <td className="p-5 font-bold uppercase tracking-wider bg-[#2C5F2E]/5">Best For</td>
+                                    <td className="p-5">Inland / Municipal</td>
+                                    <td className="p-5">Premium / Corporate</td>
+                                    <td className="p-5">Ultra Luxury / Smart Hubs</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 3 — MATERIALS & CUSTOMIZATION OPTIONS */}
+            {/* SECTION 3 — MATERIAL COMPARISON */}
             <section id="specifications" className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
-                <div className="text-left mb-16 max-w-4xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— TECHNICAL PROFILE</span>
+                <div className="text-left mb-12">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— MATERIAL SELECTION GUIDE</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
-                        Materials & Customization Options
+                        Materials & Customization Guide
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                    {/* KEY FEATURES */}
-                    <div className="bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-12 shadow-sm flex flex-col justify-between">
-                        <div>
-                            <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-6 border-b border-black/5 pb-3 select-none">— Key Features</h3>
-                            <ul className="flex flex-col gap-4 text-xs sm:text-sm font-bold text-[#1A1A1A]/85">
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> 75L to 225L heavy-duty internal sorting capacities</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Galvanized, zinc-primed steel plates for 100% monsoon isolation</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Integrated key-lock systems preventing unauthorized access/theft</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Separate rain-safe hoods and internal ash containers</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> FSC® sustainable vertical Jatoba or WPC timber accents</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div className="w-full overflow-x-auto border border-black/[0.04] rounded-3xl bg-white shadow-sm mb-12 scrollbar-thin">
+                    <table className="w-full text-left border-collapse min-w-[650px]">
+                        <thead>
+                            <tr className="bg-[#2C5F2E] text-white select-none text-[10px] sm:text-xs font-black uppercase tracking-wider">
+                                <th className="p-5 border-b border-[#2D2D2D]/10">Material Option</th>
+                                <th className="p-5 border-b border-[#2D2D2D]/10">Lifespan</th>
+                                <th className="p-5 border-b border-[#2D2D2D]/10">Maintenance</th>
+                                <th className="p-5 border-b border-[#2D2D2D]/10">Best For</th>
+                                <th className="p-5 border-b border-[#2D2D2D]/10">Cost Factor</th>
+                            </tr>
+                        </thead>
+                        <tbody className="text-xs font-semibold text-[#1A1A1A]/85">
+                            {[{"name":"Mild Steel (MS) Coated","life":"5-6 years","maint":"Periodic rust check","best":"Indoor lobbies & office plazas","cost":"Base price (1x)"},{"name":"Galvanized Steel + Powder","life":"10-12 years","maint":"Zero (wash clean)","best":"Smart city footpaths & parks","cost":"Moderate (1.4x)"},{"name":"Stainless Steel 304/316","life":"20+ years","maint":"Minimal cleaning","best":"Coastal beach corridors & labs","cost":"Highest end (2.5x)"}].map((m, idx) => (
+                                <tr key={idx} className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
+                                    <td className="p-5 font-bold uppercase tracking-wider">{m.name}</td>
+                                    <td className="p-5">{m.life}</td>
+                                    <td className="p-5">{m.maint}</td>
+                                    <td className="p-5">{m.best}</td>
+                                    <td className="p-5">{m.cost}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
 
-                    {/* CUSTOMIZATION OPTIONS */}
-                    <div className="bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-12 shadow-sm flex flex-col justify-between">
-                        <div>
-                            <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-6 border-b border-black/5 pb-3 select-none">— Customization Options</h3>
-                            <ul className="flex flex-col gap-4 text-xs sm:text-sm font-bold text-[#1A1A1A]/85">
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Single, dual, triple, or quad sorting configurations</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Wide range of custom colors (50+ Akzonobel RAL finishes)</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Custom sorting text labels and laser-cut icons</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Surface flanges or submerged ground-embedded roots</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Fire-suppressive self-extinguishing internal configurations</li>
-                            </ul>
-                        </div>
-                    </div>
+                <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-6">— Customization Options</h3>
+                <div className="bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-12 mb-12 shadow-sm">
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm font-bold text-[#1A1A1A]/85">
+                        {["Compartments: Double, triple, quad sorting, or custom multiple bins","Table/Seat top: Integrated ash trays, rain flaps, advertising poster clips","Colors: Available in 30+ RAL colors or brushed metal looks","Bases: Flanged anchor plates, sub-surface cast roots, or heavy concrete blocks","Tech: IoT fill-level ultrasonic sensors, solar LED indicator rings"].map((c, idx) => (
+                            <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> {c}</li>
+                        ))}
+                    </ul>
                 </div>
             </section>
 
-            {/* SECTION 4 — REAL PROJECTS (Social Proof) */}
+            {/* SECTION 4 — CASE STUDIES */}
             <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-16 max-w-4xl">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— INFRASTRUCTURE PROJECTS</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
-                        Real Waste Infrastructure. Real Results. Across India.
+                        Real Projects. Real Results. Across India.
                     </h2>
-                    <p className="text-sm text-[#2D2D2D]/75 mt-4 leading-relaxed">
-                        Proven across 50+ major municipal townships and commercial plazas. Here are three project case studies.
-                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 select-none mb-12">
-                    {/* PROJECT CARD 1 */}
-                    <div className="bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
-                        <div className="w-full h-48 bg-black/5 overflow-hidden relative">
-                            <img src={smartCityImg} alt="Urbanland Skyline Dustbins installed in Pune smart city public avenues" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" loading="lazy" />
-                            <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
-                                Pune Smart City
+                    {[{"tag":"Nagpur Smart City","subtitle":"Nagpur Municipal Corp","title":"Pedestrian Walkway Beautification — 250 Segregation Bests","time":"5 months","desc":" Nagpur Smart City authority deployed 250 double sorting premium public bins across central walking paths. The anti-vandal anchor systems prevent theft while clean labeling aids public compliance."},{"tag":"TCS IT Park","subtitle":"Tata Consultancy Services — Chennai","title":"IT Campus Walkway — 80 Triple Sorting Bins","time":"2 months","desc":"Installed custom segregation bins across outdoor food courts and walking lanes. Provided space-efficient design matching clean campus architecture."},{"tag":"Taj Exotica Goa","subtitle":"Taj Hotels — Goa","title":"Luxury Beachfront Promenade — 30 Stainless Steel Bins","time":"3 months","desc":" Taj Hotels partnered with Urbanland to supply 30 mirror-finished SS 316 double sorting bins. Marine-grade steel holds up against corrosive salt sprays and sea mist."}].map((p, idx) => (
+                        <div key={idx} className="bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
+                            <div className="w-full h-48 bg-black/5 overflow-hidden relative">
+                                <img src={idx === 1 ? carouselImg2 : carouselImg1} alt={p.title} className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" />
+                                <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">{p.tag}</div>
+                            </div>
+                            <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
+                                <div>
+                                    <span className="text-[9px] font-black uppercase tracking-wider text-[#C9A84C]">{p.subtitle}</span>
+                                    <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight mt-1">{p.title}</h3>
+                                    <div className="text-[10px] font-bold text-[#2C5F2E] my-2">Timeline: {p.time}</div>
+                                    <p className="text-xs text-[#2D2D2D]/70 leading-relaxed">{p.desc}</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
-                            <div>
-                                <span className="text-[9px] font-black uppercase tracking-wider text-[#C9A84C]">Municipal Spotlight — Maharashtra</span>
-                                <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight mt-1">Smart City Public Plazas — 250 Dual Sorting Stations</h3>
-                                <div className="text-[10px] font-bold text-[#2C5F2E] my-2">Timeline: 90 Days</div>
-                                <p className="text-xs text-[#2D2D2D]/70 leading-relaxed">
-                                    Pune Smart City specified Urbanland for 250 wood-clad Skyline sorting stations, incorporating rain-safe lids and lockable heavy steel roots anchored onto concrete surfaces.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* PROJECT CARD 2 */}
-                    <div className="bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
-                        <div className="w-full h-48 bg-black/5 overflow-hidden relative">
-                            <img src={realEstateImg} alt="Urbanland Nanuk Next trash receptacles in Lodha Premium Townships" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" loading="lazy" />
-                            <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
-                                Lodha Group
-                            </div>
-                        </div>
-                        <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
-                            <div>
-                                <span className="text-[9px] font-black uppercase tracking-wider text-[#C9A84C]">Real Estate — Lodha Patios</span>
-                                <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight mt-1">Luxury Residential Patios — 180 Minimalist Timber Bins</h3>
-                                <div className="text-[10px] font-bold text-[#2C5F2E] my-2">Timeline: 60 Days</div>
-                                <p className="text-xs text-[#2D2D2D]/70 leading-relaxed">
-                                    Lodha purchased 180 Nanuk Next minimalist WPC wood-slatted dustbins for township common walks, delivering natural visual warmth aligned with B2B warranty coverage.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* PROJECT CARD 3 */}
-                    <div className="bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
-                        <div className="w-full h-48 bg-black/5 overflow-hidden relative">
-                            <img src={hotelImg} alt="Urbanland Sigma Triple sorting columns at corporate tech parks" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" loading="lazy" />
-                            <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
-                                Tech Parks
-                            </div>
-                        </div>
-                        <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
-                            <div>
-                                <span className="text-[9px] font-black uppercase tracking-wider text-[#C9A84C]">Corporate Lounges — Bangalore</span>
-                                <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight mt-1">Rooftop Terraces & Lobby Lounges — Sigma Triple Sorting Columns</h3>
-                                <div className="text-[10px] font-bold text-[#2C5F2E] my-2">Timeline: 30 Days</div>
-                                <p className="text-xs text-[#2D2D2D]/70 leading-relaxed">
-                                    Bespoke triple-sorting stainless steel columns custom branded and color-coded for modular lobby installations across 5 premium corporate parks.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
 
                 {/* STATS BAR */}
-                <div className="bg-[#2D2D2D] rounded-[2rem] border border-white/5 p-8 md:p-10 text-white flex flex-col md:flex-row justify-between items-center text-center gap-8 shadow-md select-none">
+                <div className="bg-[#2D2D2D] rounded-[2rem] border border-white/5 p-8 md:p-10 text-white flex flex-col md:flex-row justify-between items-center text-center gap-8 shadow-md">
                     <div className="flex-1">
-                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">50+</span>
-                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Major Projects Delivered</span>
+                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">80+</span>
+                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">B2B Waste Management Projects</span>
                     </div>
                     <div className="w-[1px] h-8 bg-white/10 md:block hidden" />
                     <div className="flex-1">
-                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">15+</span>
+                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">25+</span>
                         <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Cities Served</span>
                     </div>
                     <div className="w-[1px] h-8 bg-white/10 md:block hidden" />
                     <div className="flex-1">
-                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">2-Year</span>
-                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Comprehensive Guarantee</span>
+                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">5000+</span>
+                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Outdoor Bins Manufactured</span>
                     </div>
                 </div>
             </section>
@@ -522,62 +712,31 @@ const DustbinsPage = () => {
                 </h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-14 mb-16 shadow-sm">
-                    {/* Installation Support */}
                     <div>
-                        <h3 className="text-xl font-black uppercase text-[#1A1A1A] border-b border-black/10 pb-3">▸ Installation Support</h3>
+                        <h3 className="text-xl font-black uppercase text-[#1A1A1A] border-b border-black/10 pb-3">▸ Installation & Assembly</h3>
                         <p className="text-xs sm:text-sm text-[#2D2D2D]/75 leading-relaxed mt-4">
-                            We provide nationwide logistics and complete anchor-bolting installation support, securing each receptacle onto concrete floor spaces for absolute vandal-proofing.
+                            We provide comprehensive delivery and professional assembly support across India. For major commercial developments and municipal layouts, our trained engineering crews manage anchors, leveling, and site handovers.
                         </p>
                     </div>
-
-                    {/* 2-Year Comprehensive Warranty */}
                     <div>
-                        <h3 className="text-xl font-black uppercase text-[#1A1A1A] border-b border-black/10 pb-3">▸ 2-Year B2B Warranty</h3>
+                        <h3 className="text-xl font-black uppercase text-[#1A1A1A] border-b border-black/10 pb-3">▸ 2-Year Comprehensive Warranty</h3>
                         <p className="text-xs sm:text-sm text-[#2D2D2D]/75 leading-relaxed mt-4">
-                            Covers lock mechanisms, zinc priming integrity, anti-rust coatings, and structural steel assemblies. Simple digital claim resolution with immediate part replacement.
+                            Urbanland stands behind its products. We offer a comprehensive 2-year guarantee covering frame structure, powder coating peeling, structural cracking, and hardware defects.
                         </p>
                     </div>
                 </div>
 
-                {/* FAQ section */}
                 <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-8">— Frequently Asked Questions</h3>
                 <div className="flex flex-col gap-4 max-w-4xl mx-auto">
-                    {[
-                        {
-                            q: "What coating protection do you use to isolate public dustbins from rust?",
-                            a: "Every single one of our mild steel dustbins undergoes a rigorous multi-stage chemical pre-treatment, a heavy-duty zinc-primer undercoat, and a top finish coating of Akzonobel architectural PU powder. This creates a multi-layered barrier completely sealing the steel from moisture and sea salt mist."
-                        },
-                        {
-                            q: "Are the lock systems vandal-resistant?",
-                            a: "Yes! Our public receptacles feature custom heavy-duty locking systems and high-strength piano-hinges. The lock requires a special key to unlock and swing open the front doors, ensuring only authorized cleaning personnel can pull out the internal zinc-plated steel liners."
-                        },
-                        {
-                            q: "Can the sorting icons and text be custom branded?",
-                            a: "Absolutely. We routinely cut custom corporate logos, sitemap indicators, sorting icons (e.g. wet waste, glass, plastic, dry), and municipal lettering directly into the steel sheets using laser-cutting, or apply architectural weather-proof vinyl decals."
-                        },
-                        {
-                            q: "What is your B2B lead time for bulk municipal projects?",
-                            a: "For bulk orders (e.g. 50-200 units), the typical manufacturing lead time is 30 to 40 days depending on raw material customization specs. We also offer staggered logistics schedules to align with township handover timelines."
-                        },
-                        {
-                            q: "Do you supply internal zinc liners with all standard models?",
-                            a: "Yes, every standard municipal litter bin or sorting station we manufacture is supplied with high-capacity galvanized internal steel sheet liners with handles, making it extremely fast, clean, and ergonomic for staff to empty them."
-                        }
-                    ].map((faq, idx) => (
-                        <div 
-                            key={idx} 
-                            className="bg-white rounded-2xl border border-black/[0.03] overflow-hidden shadow-sm transition-all"
-                        >
+                    {[{"q":"Which bin configuration is best for public parks?","a":"Double or triple compartment bins with heavy galvanized steel frames are highly recommended to resist weathering and encourage recycling segregation."},{"q":"Are they waterproof?","a":"Yes, our bins feature integrated rain canopies or self-draining rain flaps to prevent rain water from pooling inside."},{"q":"Can the bins be customized with branding?","a":"Yes, we can laser-cut or screen-print municipal, corporate, or project logos directly onto the metal surfaces."},{"q":"What is the typical lead time?","a":"Standard lead times are 20-25 days depending on the volume and customization specs."},{"q":"Do you ship nationwide?","a":"Yes, we ship bins securely using customized pallets across India."}].map((faq, idx) => (
+                        <div key={idx} className="bg-white rounded-2xl border border-black/[0.03] overflow-hidden shadow-sm transition-all">
                             <button
                                 onClick={() => toggleFaq(idx)}
                                 className="w-full text-left p-6 sm:p-7 flex justify-between items-center font-bold text-sm sm:text-base cursor-pointer hover:bg-[#F7F4EF]/35"
                             >
                                 <span className="max-w-[90%]">{faq.q}</span>
-                                <span className="text-[#2C5F2E] text-xl font-bold font-mono">
-                                    {faqOpen[idx] ? "−" : "+"}
-                                </span>
+                                <span className="text-[#2C5F2E] text-xl font-bold font-mono">{faqOpen[idx] ? "−" : "+"}</span>
                             </button>
-
                             {faqOpen[idx] && (
                                 <div className="px-6 pb-6 sm:px-7 sm:pb-7 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/75 border-t border-[#2D2D2D]/5 pt-4">
                                     {faq.a}
@@ -588,11 +747,11 @@ const DustbinsPage = () => {
                 </div>
             </section>
 
-            {/* SECTION 6 — WHY URBANLAND STANDS APART (TRUST GRID) */}
+            {/* TRUST GRID */}
             <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
                 <div className="text-center mb-10 select-none">
                     <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-3">— Why Urbanland Stands Apart</h3>
-                    <h2 className="text-2xl sm:text-3.5xl font-black uppercase tracking-tight text-[#1A1A1A]">Architectural Waste Solutions</h2>
+                    <h2 className="text-2xl sm:text-3.5xl font-black uppercase tracking-tight text-[#1A1A1A]">Engineered for Smart Cities</h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full max-w-5xl mx-auto">
                     <div className="flex items-start gap-4 bg-[#F7F4EF]/45 p-5 rounded-[2rem] border border-black/[0.03] transition-all duration-300 hover:bg-[#F7F4EF]/70 shadow-[0_5px_15px_rgba(0,0,0,0.01)]">
@@ -609,8 +768,8 @@ const DustbinsPage = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
                         <div>
-                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">Smart City Compliance</h4>
-                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Designed in alignment with premium municipal and civic guidelines.</p>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">2-Year Guarantee</h4>
+                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Comprehensive coverage on all components, structure and coatings.</p>
                         </div>
                     </div>
                     <div className="flex items-start gap-4 bg-[#F7F4EF]/45 p-5 rounded-[2rem] border border-black/[0.03] transition-all duration-300 hover:bg-[#F7F4EF]/70 shadow-[0_5px_15px_rgba(0,0,0,0.01)]">
@@ -618,37 +777,35 @@ const DustbinsPage = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
                         <div>
-                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">Commercial Durability</h4>
-                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Vandal-resistant locks and marine-grade protective coatings.</p>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">Smart Ready Design</h4>
+                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Ready to deploy within major commercial projects and townships.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 7 — FINAL CTA */}
+            {/* FINAL CTA SECTION */}
             <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-12">
                 <div className="w-full bg-[#2C5F2E] rounded-[2.5rem] p-8 md:p-16 flex flex-col items-center text-center text-white relative overflow-hidden shadow-xl border border-black/5">
-                    {/* Subtle Overlay to enrich gradient */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#2C5F2E] to-[#1d4720] opacity-95 pointer-events-none" />
                     
                     <div className="relative z-10 max-w-4xl flex flex-col items-center">
                         <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-white/10 text-[#C9A84C] px-3.5 py-1.5 rounded-full select-none mb-6">
-                            Ready to Specify
+                            Ready to Partner
                         </span>
                         
                         <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-white max-w-3xl mb-6">
-                            Specify Architectural Waste Infrastructure for Your Project
+                            Ready to Specify Dustbins for Your Project?
                         </h2>
 
                         <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl mb-10 font-medium">
-                            Get a custom quote, detailed bento project configurations, or dwg/revit sitemaps within 24 hours. Nationwide B2B delivery.
+                            Get a custom quote, detailed proposal, and technical specifications within 24 hours. Urbanland serves municipalities, developers, and architects nationwide.
                         </p>
 
-                        {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 select-none mb-8 w-full sm:w-auto">
                             <Link
-                                to="/get-quote/?product=outdoor-dustbins"
-                                className="px-8 py-4 bg-[#C9A84C] text-[#232120] hover:bg-white hover:text-[#2C5F2E] rounded-full font-black uppercase tracking-wider text-xs transition-all shadow-lg hover:scale-102 transform duration-300 text-center font-bold"
+                                to="/get-quote/?product=dustbins"
+                                className="px-8 py-4 bg-[#C9A84C] text-[#232120] hover:bg-white hover:text-[#2C5F2E] rounded-full font-black uppercase tracking-wider text-xs transition-all shadow-lg transform duration-300 text-center font-bold"
                             >
                                 Request Custom Quote →
                             </Link>
@@ -660,17 +817,35 @@ const DustbinsPage = () => {
                                 Download Specification Guide ↓
                             </Link>
                         </div>
-
-                        <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/70 flex flex-wrap justify-center gap-x-6 gap-y-2.5 select-none border-t border-white/15 pt-6 w-full mb-8">
-                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Free custom quote</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> No commitment</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Nationwide delivery</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> 2-Year Guarantee</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Installation support</span>
-                        </div>
                     </div>
                 </div>
             </section>
+
+            {/* EXIT-INTENT POPUP */}
+            {exitPopupVisible && (
+                <div className="fixed inset-0 z-[9999] flex justify-center items-center px-4">
+                    <div className="absolute inset-0 bg-black/65 backdrop-blur-sm" onClick={() => setExitPopupVisible(false)} />
+                    <div className="relative bg-white text-[#1A1A1A] max-w-lg w-full rounded-[2.5rem] z-10 p-8 sm:p-12 shadow-2xl">
+                        <button onClick={() => setExitPopupVisible(false)} className="absolute top-6 right-6 w-8 h-8 flex justify-center items-center text-black/45 hover:text-black font-mono text-lg font-bold">✕</button>
+                        {!exitPopupSubmitted ? (
+                            <div className="flex flex-col items-center text-center">
+                                <h3 className="text-xl sm:text-2xl font-black uppercase text-[#1A1A1A] mb-3">Download the Dustbins Buyer's Guide</h3>
+                                <p className="text-xs sm:text-sm text-[#2D2D2D]/70 mb-8">Get our complete guide to material specifications, custom sizing, and bulk pricing matrices.</p>
+                                <form onSubmit={(e) => { e.preventDefault(); if (emailInput.trim()) { setExitPopupSubmitted(true); trackEvent("exit_intent_submit", emailInput); } }} className="w-full flex flex-col gap-3">
+                                    <input type="email" required placeholder="Enter professional email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} className="w-full px-6 py-4 rounded-full border border-black/10 text-sm focus:outline-none focus:border-[#2C5F2E] bg-[#F7F4EF]" />
+                                    <button type="submit" className="w-full py-4 bg-[#C9A84C] hover:bg-black hover:text-white text-[#232120] font-black uppercase text-xs rounded-full transition-colors">Get the Guide (PDF)</button>
+                                </form>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col items-center text-center py-6">
+                                <h3 className="text-xl sm:text-2xl font-black uppercase text-[#1A1A1A] mb-3">Guide Sent!</h3>
+                                <p className="text-xs sm:text-sm text-[#2D2D2D]/70 mb-8">We've sent the guide to <span className="font-bold text-[#2C5F2E]">{emailInput}</span>.</p>
+                                <button onClick={() => setExitPopupVisible(false)} className="px-8 py-3 bg-[#2C5F2E] text-white font-black uppercase text-xs rounded-full">Close Window</button>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

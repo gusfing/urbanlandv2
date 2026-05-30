@@ -4,9 +4,9 @@ import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-import carouselImg1 from "../../assets/products/Product Images/Bus Shelters/Create_a_clean,_premium,_professional_202605170115.jpeg";
-import carouselImg2 from "../../assets/products/Product Images/Bus Shed/Hyper-realistic_8K_ultra_high_resolution_202605281655.jpeg";
-import carouselImg3 from "../../assets/products/Product Images/Bus Shed/UGC_Bus_Shelters.jpeg";
+import carouselImg1 from "../../assets/products/Product Images/Car Shed/Create_a_clean,_premium,_professional_202605170216.jpeg";
+import carouselImg2 from "../../assets/products/Product Images/Car Shed/UGC_Car_Shelter.jpeg";
+import carouselImg3 from "../../assets/Car_Shelter.jpeg";
 
 // Brand logos
 import logo1 from "../../assets/brands/1.png";
@@ -33,7 +33,7 @@ const brandLogos = [
     { name: "Godrej Properties", img: logo10 }
 ];
 
-const BusShelter_Page = () => {
+const CarShelterPage = () => {
     const [activeTab, setActiveTab] = useState("standard");
     const [faqOpen, setFaqOpen] = useState(Array(5).fill(false));
     const [showStickyHeader, setShowStickyHeader] = useState(false);
@@ -92,17 +92,17 @@ const BusShelter_Page = () => {
         if (window.gtag) {
             window.gtag("event", eventName, {
                 event_category: "product_page",
-                event_label: "busshelter_page",
+                event_label: "carshelterpage",
                 value: value
             });
         }
-        console.log(`[GA4 Event] ${eventName} | Category: product_page | Label: busshelter_page | Value: ${value}`);
+        console.log(`[GA4 Event] ${eventName} | Category: product_page | Label: carshelterpage | Value: ${value}`);
     };
 
     useEffect(() => {
         updatePageSEO({
-            title: "Bus Shelter Manufacturer India | Bus Stop Shelters | Urbanland Products",
-            description: "High-quality bus stop shelters in Mild Steel, Stainless Steel & Aluminium. Designed for Indian weather, smart cities & municipalities. 2-Year Guarantee, custom sizes & fast installation.",
+            title: "Car Sheds Manufacturer India | Car Parking Sheds & Carports | Urbanland Products",
+            description: "Premium car parking sheds and carports in Mild Steel, Stainless Steel & Aluminium. Custom-designed for homes, apartments, townships & commercial spaces. India’s only 2-Year Guarantee. Fast delivery & professional installation.",
             og_type: "product",
             og_image: carouselImg1
         });
@@ -117,7 +117,7 @@ const BusShelter_Page = () => {
 
         window.addEventListener("scroll", handleScroll);
 
-        const sessionKey = "urbanland_exit_intent_busshelter_page";
+        const sessionKey = "urbanland_exit_intent_carshelterpage";
         const isShown = sessionStorage.getItem(sessionKey);
 
         if (!isShown) {
@@ -166,22 +166,22 @@ const BusShelter_Page = () => {
         <div className="animate-fadeIn">
             <div className="mb-6">
                 <span className="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/10 px-3 py-1.5 rounded-full select-none">Value Option</span>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Standard Bus Shelter — Cost-Effective & Durable</h3>
-                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Inland municipalities, township amenities, secondary transit routes.</h4>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Standard 2-Car Canopy — Compact & Robust</h3>
+                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Residential bungalows, private villa parking, small office driveways.</h4>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
                 <div>
                     <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
-                        {["Frame: Mild Steel with Akzonobel PU powder coating","Roof: Galvanized sheet or polycarbonate (ACP)","Seating: MS bench with anti-slip surface","Capacity: 8-12 standing + 3-4 seated"].map((f, idx) => (
+                        {["Frame: Mild Steel truss with standard zinc primer & powder coating","Roofing: Polycarbonate sheet or profile GI sheet","Design: Dual post arched canopy structure","Capacity: 2 cars"].map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
 
                     <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
                     <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
-                        Inland municipalities, township amenities, secondary transit routes.
+                        Residential bungalows, private villa parking, small office driveways.
                     </p>
                 </div>
 
@@ -200,11 +200,11 @@ const BusShelter_Page = () => {
                             <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
-                                    <span className="font-bold">4500L × 1800W × 2500H mm</span>
+                                    <span className="font-bold">5000L × 5000W × 2500H mm</span>
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Weight</span>
-                                    <span className="font-bold">1200-1400 kg</span>
+                                    <span className="font-bold">750-900 kg</span>
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lead Time</span>
@@ -212,7 +212,7 @@ const BusShelter_Page = () => {
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Annual Maintenance</span>
-                                    <span className="font-bold">₹3,000-5,000</span>
+                                    <span className="font-bold">Moderate</span>
                                 </div>
                                 <div className="col-span-2 border-t border-black/[0.04] pt-3 mt-1">
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lifespan</span>
@@ -238,22 +238,22 @@ const BusShelter_Page = () => {
         <div className="animate-fadeIn">
             <div className="mb-6">
                 <span className="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/10 px-3 py-1.5 rounded-full select-none">Most Specified</span>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Premium Bus Shelter — Stainless Steel, Zero Maintenance</h3>
-                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Coastal areas, high-traffic zones, premium real estate.</h4>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Premium Tensile Car Shelter — Cantilever Style</h3>
+                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Corporate offices, luxury residential apartments, premium hospitals.</h4>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
                 <div>
                     <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
-                        {["Frame: Stainless Steel (304/316 grade) with brushed or mirror finish","Roof: Polycarbonate or toughened glass panels","Seating: SS bench with ergonomic backrest","Capacity: 10-15 standing + 4-5 seated"].map((f, idx) => (
+                        {["Frame: Heavy structural steel hollow sections with epoxy zinc primer and polyurethane top coat","Roofing: 900 GSM PVDF high-tensile German tensile membrane","Design: Cantilever design with posts on one side only","Capacity: Multi-car modular bays (expandable)"].map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
 
                     <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
                     <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
-                        Coastal areas, high-traffic zones, premium real estate.
+                        Corporate offices, luxury residential apartments, premium hospitals.
                     </p>
                 </div>
 
@@ -272,11 +272,11 @@ const BusShelter_Page = () => {
                             <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
-                                    <span className="font-bold">4500L × 1800W × 2500H mm</span>
+                                    <span className="font-bold">5000L × 5000W × 2500H mm (per bay)</span>
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Weight</span>
-                                    <span className="font-bold">1600-2000 kg</span>
+                                    <span className="font-bold">1100-1300 kg</span>
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lead Time</span>
@@ -284,15 +284,15 @@ const BusShelter_Page = () => {
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Annual Maintenance</span>
-                                    <span className="font-bold">₹500-1,000 (minimal)</span>
+                                    <span className="font-bold">Annual tension check & wash</span>
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lifespan</span>
-                                    <span className="font-bold text-[#2C5F2E]">15-20+ years</span>
+                                    <span className="font-bold text-[#2C5F2E]">12-15 years</span>
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Special Rating</span>
-                                    <span className="font-bold text-[#2C5F2E]">Indefinite coastal performance</span>
+                                    <span className="font-bold text-[#2C5F2E]">Wind-load certificate up to 120km/h</span>
                                 </div>
                             </div>
                         </div>
@@ -314,22 +314,22 @@ const BusShelter_Page = () => {
         <div className="animate-fadeIn">
             <div className="mb-6">
                 <span className="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/10 px-3 py-1.5 rounded-full select-none">Smart Ready</span>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Super Premium Bus Shelter — Smart City Ready + IoT</h3>
-                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Smart City Mission Phase-II, premium developments, IoT-enabled infrastructure.</h4>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Super Premium Solar Parking Shed — Eco Power</h3>
+                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Smart City public parking, airport transit parking, green corporate offices.</h4>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
                 <div>
                     <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
-                        {["Frame: Stainless Steel 304/316 (premium grade, mirror-polished)","Roof: Toughened glass with integrated solar panel mounts","Tech: Solar-powered LED, Type-A & C USB ports, pre-wired for IoT sensors","Capacity: 12-18 standing + 5-6 seated"].map((f, idx) => (
+                        {["Frame: Hot-dip galvanized structural steel (Akzonobel marine powder coating)","Roofing: Integrated monocrystalline solar panels with grid-tied inverter wiring","Design: Double-sided cantilever canopy with central structural columns","Tech: Integrated LED strip lights, pre-wired EV charging station ports"].map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
 
                     <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
                     <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
-                        Smart City Mission Phase-II, premium developments, IoT-enabled infrastructure.
+                        Smart City public parking, airport transit parking, green corporate offices.
                     </p>
                 </div>
 
@@ -348,19 +348,19 @@ const BusShelter_Page = () => {
                             <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
-                                    <span className="font-bold">4500L × 1800W × 2500H mm</span>
+                                    <span className="font-bold">5500L × 600W × 2700H mm (per bay)</span>
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Weight</span>
-                                    <span className="font-bold">2200-2800 kg</span>
+                                    <span className="font-bold">1800-2200 kg (with panels)</span>
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lead Time</span>
-                                    <span className="font-bold">35-45 days</span>
+                                    <span className="font-bold">40-50 days</span>
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Annual Maintenance</span>
-                                    <span className="font-bold">₹1,500-2,500</span>
+                                    <span className="font-bold">Quarterly solar panel cleaning</span>
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lifespan</span>
@@ -368,7 +368,7 @@ const BusShelter_Page = () => {
                                 </div>
                                 <div>
                                     <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Tech Features</span>
-                                    <span className="font-bold text-[#2C5F2E]">Off-grid solar array & EV charger prep</span>
+                                    <span className="font-bold text-[#2C5F2E]">Pre-wired EV charger integration ready</span>
                                 </div>
                             </div>
                         </div>
@@ -393,10 +393,10 @@ const BusShelter_Page = () => {
             <div className={`fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-[#2D2D2D]/10 py-4 px-8 lg:px-16 z-[99] flex justify-between items-center transition-all duration-500 shadow-md ${showStickyHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}`}>
                 <div className="flex items-center gap-3">
                     <span className="text-[#2C5F2E] font-black tracking-tighter text-lg">URBANLAND®</span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#2D2D2D]/50 hidden sm:inline">Bus Shelter_</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#2D2D2D]/50 hidden sm:inline">Car Shelter</span>
                 </div>
                 <Link
-                    to="/get-quote/?product=bus-shelters"
+                    to="/get-quote/?product=car-shelters"
                     onClick={() => trackEvent("product_page_cta_primary", "quote_request")}
                     className="px-6 py-2.5 bg-[#E65F2B] hover:bg-black text-white rounded-full font-black uppercase tracking-wider text-[10px] transition-all shadow-sm"
                 >
@@ -411,7 +411,7 @@ const BusShelter_Page = () => {
                     <span>/</span>
                     <Link to="/products" className="hover:text-[#2C5F2E] transition-colors">Products</Link>
                     <span>/</span>
-                    <span className="text-[#2C5F2E]">Bus Shelter_</span>
+                    <span className="text-[#2C5F2E]">Car Shelter</span>
                 </nav>
             </div>
 
@@ -421,7 +421,7 @@ const BusShelter_Page = () => {
                     ref={heroScrollRef}
                     className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-4 px-6 md:px-12"
                 >
-                    {[{"tag":"Infrastructure Spotlight","h":"Premium Smart<br />Bus Shelters in India","label":"01","desc":"High-durability MS & SS stop designs"},{"tag":"Modern Transit","h":"Stops with safety<br />glass windguards<br />and LED lights","label":"02","desc":"Built to municipal smart city guidelines"},{"tag":"B2B Guarantee","h":"2-Year Warranty<br />& ISO Certified<br />Standards","label":"03","desc":"Trusted across 50+ smart townships"},{"tag":"High-Strength","h":"Windload certified<br />cantilever steel<br />frame structures","label":"04","desc":"Duplex anti-corrosion paint coatings"},{"tag":"Smart City Ready","h":"Solar Powered Stops<br />with USB ports &<br />IoT wire pre-runs","label":"05","desc":"Ready for smart city network grids"}].map((card, idx) => (
+                    {[{"tag":"Infrastructure Spotlight","h":"Premium Car Sheds<br />& Tensile Car Shelters","label":"01","desc":"Heavy-duty structural steel parking canopies"},{"tag":"Tensile Shades","h":"High-tensile PVDF<br />membrane roofing<br />structures","label":"02","desc":"Provides 100% UV block & heat reduction"},{"tag":"B2B Guarantee","h":"2-Year Warranty<br />& ISO Certified<br />Standards","label":"03","desc":"Trusted by hotels, developers, and corporate parks"},{"tag":"Weather Protection","h":"Wind-load certified<br />cantilever steel sheds<br />for multiple cars","label":"04","desc":"Galvanized frames with Akzonobel coatings"},{"tag":"Custom Parking","h":"Custom modular bays<br />in single-sided or<br />double-sided setups","label":"05","desc":"Tailored to commercial and residential parking"}].map((card, idx) => (
                         <div key={idx} className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
                             <img 
                                 src={idx % 2 === 0 ? carouselImg1 : carouselImg2} 
@@ -477,14 +477,14 @@ const BusShelter_Page = () => {
                         Why Developers, Municipalities & Architects Choose Urbanland
                     </h2>
                     <p className="text-sm sm:text-base md:text-lg text-[#2D2D2D]/75 leading-relaxed mt-6">
-                        Why People Choose Urbanland Products for Bus Shelters
+                        Why People Choose Urbanland Products for Car Parking Sheds
                     </p>
                 </div>
 
                 <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-8">— 4 Core Reasons</h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 select-none">
-                    {[{"title":"Smart City Design","desc":"Designed to meet smart city guidelines, ready for solar panel integration, USB charging, and digital display units."},{"title":"Extreme Durability","desc":"Built with galvanized steel or Stainless Steel (304/316) frames, offering high wind-load resistance and structural safety."},{"title":"Low Maintenance","desc":"Protected by Akzonobel PU powder coating, ensuring long-term paint adhesion and resistance to corrosion and fading."},{"title":"Turnkey Installation","desc":"Our professional crews provide full concrete foundation, bolting, assembly, and testing across India."}].map((r, idx) => (
+                    {[{"title":"Cantilever Design","desc":"Provides unobstructed space beneath the canopy, allowing drivers to park easily without hitting structural posts."},{"title":"PVDF Membrane","desc":"Uses premium high-tensile PVDF membrane roofing which blocks 100% of UV rays and reduces temperature under the canopy by up to 10°C."},{"title":"Wind Resistance","desc":"Structural steel framework is wind-load calculated and certified to withstand wind velocities of up to 120 km/h."},{"title":"Staggered Delivery","desc":"Modular fabrication enables staggered delivery and rapid erection, minimizing site disruptions in operational car parks."}].map((r, idx) => (
                         <div key={idx} className="bg-white rounded-[2rem] border border-black/[0.03] p-8 md:p-10 shadow-sm hover:bg-[#F7F4EF]/55 hover:shadow-lg transition-all duration-300 flex flex-col gap-5 group">
                             <div className={`w-14 h-14 ${idx % 2 === 0 ? "bg-[#2C5F2E]/10 text-[#2C5F2E]" : "bg-[#C9A84C]/10 text-[#C9A84C]"} rounded-full flex justify-center items-center`}>
                                 <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -503,7 +503,7 @@ const BusShelter_Page = () => {
                 <div className="text-left mb-12 max-w-4xl">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— SYSTEM SPECS MATRIX</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
-                        Three Bus Shelter_ Configurations — Choose What Fits Your Project
+                        Three Car Shelter Configurations — Choose What Fits Your Project
                     </h2>
                     <p className="text-sm sm:text-base text-[#2D2D2D]/75 mt-4">
                         All Urbanland architectural products are built on proven specifications but fully customizable.
@@ -592,14 +592,14 @@ const BusShelter_Page = () => {
                                 <tr className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
                                     <td className="p-5 font-bold uppercase tracking-wider bg-[#2C5F2E]/5">Lifespan</td>
                                     <td className="p-5">8-10 years</td>
-                                    <td className="p-5">15-20+ years</td>
+                                    <td className="p-5">12-15 years</td>
                                     <td className="p-5">20+ years</td>
                                 </tr>
                                 <tr className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
                                     <td className="p-5 font-bold uppercase tracking-wider bg-[#2C5F2E]/5">Lead Time</td>
                                     <td className="p-5">25-30 days</td>
                                     <td className="p-5">30-35 days</td>
-                                    <td className="p-5">35-45 days</td>
+                                    <td className="p-5">40-50 days</td>
                                 </tr>
                                 <tr className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
                                     <td className="p-5 font-bold uppercase tracking-wider bg-[#2C5F2E]/5">Best For</td>
@@ -634,7 +634,7 @@ const BusShelter_Page = () => {
                             </tr>
                         </thead>
                         <tbody className="text-xs font-semibold text-[#1A1A1A]/85">
-                            {[{"name":"Mild Steel (MS)","life":"8-10 years","maint":"Annual paint touch-ups","best":"Inland municipalities","cost":"Base price (1x)"},{"name":"Stainless Steel 304/316","life":"15-20+ years","maint":"Minimal cleaning","best":"Coastal & high-traffic zones","cost":"2.5-3x MS cost"},{"name":"Aluminium","life":"12-15 years","maint":"Periodic check","best":"Remote installations","cost":"1.8-2x MS cost"}].map((m, idx) => (
+                            {[{"name":"Structural MS + PVDF","life":"12-15 years","maint":"Periodic cleaning","best":"Premium commercial spaces & hotels","cost":"Base premium (1.5x vs GI)"},{"name":"Mild Steel + GI Sheet","life":"6-8 years","maint":"Rust check & paint","best":"Low budget warehouse parking","cost":"Base price (1x)"},{"name":"Hot-Dip Galvanized + PVDF","life":"20+ years","maint":"Minimal maintenance","best":"Coastal beach developments & smart cities","cost":"Highest end (2.2x)"}].map((m, idx) => (
                                 <tr key={idx} className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
                                     <td className="p-5 font-bold uppercase tracking-wider">{m.name}</td>
                                     <td className="p-5">{m.life}</td>
@@ -650,7 +650,7 @@ const BusShelter_Page = () => {
                 <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-6">— Customization Options</h3>
                 <div className="bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-12 mb-12 shadow-sm">
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm font-bold text-[#1A1A1A]/85">
-                        {["Dimensions: Custom lengths 3500-7000mm","Frame materials: MS, SS 304, SS 316, Aluminium","Roof options: Galvanized sheet, polycarbonate, toughened glass","Finishes: Standard colors, 50+ RAL colors, mirror polish, brushed","Add-ons: LED lighting, solar panels, digital displays, IoT sensor pre-wiring"].map((c, idx) => (
+                        {["Layout: Single cantilever, double-sided gull-wing, arched canopy, or custom modular parking rows","Roofing material: 900 GSM PVDF membrane, multiwall polycarbonate sheets, pre-painted GI sheets, or solar glass panels","Frame coating: Akzonobel architectural powder coating, epoxy-zinc coatings, or hot-dip galvanization","Color: Available in a variety of RAL colors for frames, and white/grey/sand shades for fabrics","Add-ons: EV charger post integrations, rain gutters & downspouts, solar LED lighting kits, safety bollard shields"].map((c, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> {c}</li>
                         ))}
                     </ul>
@@ -667,7 +667,7 @@ const BusShelter_Page = () => {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 select-none mb-12">
-                    {[{"tag":"Nagpur Smart City","subtitle":"Nagpur Municipal Corp","title":"Smart City Municipal Project — 120 Shelters","time":"8 months","desc":"A metropolitan city selected Urbanland for 120 bus stops across its transit network. Standard configuration (MS frame, galvanized roof) met municipal budget while ensuring durability. Urbanland coordinated bulk manufacturing, logistics, and staggered installation."},{"tag":"Lodha World Towers","subtitle":"Lodha Group — Maharashtra","title":"Premium Township — 85 Stainless Steel Shelters","time":"6 months","desc":"Lodha partnered with Urbanland for 85 Premium SS shelters custom-designed with mirror-polished finish. Design consistency across 3 townships. Zero maintenance needed 18+ months post-installation—critical for resident satisfaction."},{"tag":"Goa Development","subtitle":"Coastal Authority — Goa","title":"Coastal Smart City — 45 SS Shelters (Zero Degradation)","time":"4 months","desc":"Coastal city required shelters withstanding salt spray, humidity, and extreme heat. Urbanland specified 316-grade SS (premium vs. standard 304) for superior corrosion resistance. Result: 14 months post-installation, zero rust or degradation observed."}].map((p, idx) => (
+                    {[{"tag":"Adani Corporate House","subtitle":"Adani Realty — Ahmedabad","title":"Corporate Headquarters — 120 Car Tensile Canopy","time":"5 months","desc":"Designed, fabricated, and erected 120 car parking cantilever tensile shelters at the Adani corporate office. The cantilever design eliminated central poles, maximizing driving lanes and preventing car scrapes."},{"tag":"Nagpur Smart City","subtitle":"Nagpur Municipal Corp","title":"Smart City Parking Hub — 45 Solar Parking Bays","time":"4 months","desc":"Installed modular structural steel solar car sheds at the central smart city parking hub. Integrated off-grid monocrystalline solar roofing systems, contributing power back to the grid and sheltering municipal fleets."},{"tag":"Taj Lands End","subtitle":"Taj Hotels — Mumbai","title":"Luxury Hotel Guest Parking — 30 Cantilever Bays","time":"3 months","desc":"Constructed premium cantilever car shelters with marine-grade hot-dip galvanized steel and PVDF fabrics. Structures successfully resist severe beachfront winds and corrosive salt sprays."}].map((p, idx) => (
                         <div key={idx} className="bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
                             <div className="w-full h-48 bg-black/5 overflow-hidden relative">
                                 <img src={idx === 1 ? carouselImg2 : carouselImg1} alt={p.title} className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" />
@@ -688,18 +688,18 @@ const BusShelter_Page = () => {
                 {/* STATS BAR */}
                 <div className="bg-[#2D2D2D] rounded-[2rem] border border-white/5 p-8 md:p-10 text-white flex flex-col md:flex-row justify-between items-center text-center gap-8 shadow-md">
                     <div className="flex-1">
-                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">50+</span>
-                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Major Infrastructure Projects</span>
+                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">40+</span>
+                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Major B2B Car Sheds Erected</span>
                     </div>
                     <div className="w-[1px] h-8 bg-white/10 md:block hidden" />
                     <div className="flex-1">
-                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">15+</span>
+                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">18+</span>
                         <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Cities Served</span>
                     </div>
                     <div className="w-[1px] h-8 bg-white/10 md:block hidden" />
                     <div className="flex-1">
-                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">2000+</span>
-                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Operational Shelters</span>
+                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">1500+</span>
+                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Parking Bays Sheltered</span>
                     </div>
                 </div>
             </section>
@@ -728,7 +728,7 @@ const BusShelter_Page = () => {
 
                 <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-8">— Frequently Asked Questions</h3>
                 <div className="flex flex-col gap-4 max-w-4xl mx-auto">
-                    {[{"q":"Which material should I choose for coastal areas?","a":"Stainless steel 304/316 grade. MS will rust in 2-3 years despite coating. SS requires minimal maintenance and is more economical long-term (saves repainting costs)."},{"q":"How long is the lead time?","a":"Standard 25-30 days | Premium 30-35 days | Super Premium 35-45 days from order confirmation. Rush orders (15-20 days) available at +15% surcharge."},{"q":"Can you customize dimensions?","a":"Yes. We build custom sizes from 3500mm to 7000mm length. Customization adds 5-7 days to lead time. Email your site plans for a custom quote."},{"q":"Do you provide installation?","a":"Yes, included for sites within 50km of Vasai Virar. We dispatch a trained team for foundation bolting, assembly, leveling, and commissioning."},{"q":"What if my shelter is damaged in an accident?","a":"The 2-year warranty covers manufacturing defects, not accidents or vandalism. We recommend installing bollards around high-traffic shelters to prevent vehicle collisions."}].map((faq, idx) => (
+                    {[{"q":"Which material is best for coastal areas?","a":"Hot-dip galvanized structural steel or marine-grade anodized aluminium with high-tensile PVDF roofing membranes."},{"q":"What is the typical lead time for car sheds?","a":"30-45 days depending on the structural design approval and foundation excavation requirements."},{"q":"Can car sheds be customized for multiple vehicles?","a":"Yes. We offer modular multi-car bays in single-sided cantilever or double-sided layouts."},{"q":"Do you provide installation services?","a":"Yes. We provide complete turnkey foundation works, structural erection, and membrane installation."},{"q":"What does the 2-Year Guarantee cover?","a":"Covers structural structural integrity, weld defects, paint peeling, and water leakages under standard weather conditions."}].map((faq, idx) => (
                         <div key={idx} className="bg-white rounded-2xl border border-black/[0.03] overflow-hidden shadow-sm transition-all">
                             <button
                                 onClick={() => toggleFaq(idx)}
@@ -795,7 +795,7 @@ const BusShelter_Page = () => {
                         </span>
                         
                         <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-white max-w-3xl mb-6">
-                            Ready to Specify Bus Shelter_ for Your Project?
+                            Ready to Specify Car Shelter for Your Project?
                         </h2>
 
                         <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl mb-10 font-medium">
@@ -804,7 +804,7 @@ const BusShelter_Page = () => {
 
                         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 select-none mb-8 w-full sm:w-auto">
                             <Link
-                                to="/get-quote/?product=bus-shelters"
+                                to="/get-quote/?product=car-shelters"
                                 className="px-8 py-4 bg-[#C9A84C] text-[#232120] hover:bg-white hover:text-[#2C5F2E] rounded-full font-black uppercase tracking-wider text-xs transition-all shadow-lg transform duration-300 text-center font-bold"
                             >
                                 Request Custom Quote →
@@ -829,7 +829,7 @@ const BusShelter_Page = () => {
                         <button onClick={() => setExitPopupVisible(false)} className="absolute top-6 right-6 w-8 h-8 flex justify-center items-center text-black/45 hover:text-black font-mono text-lg font-bold">✕</button>
                         {!exitPopupSubmitted ? (
                             <div className="flex flex-col items-center text-center">
-                                <h3 className="text-xl sm:text-2xl font-black uppercase text-[#1A1A1A] mb-3">Download the Bus Shelter_ Buyer's Guide</h3>
+                                <h3 className="text-xl sm:text-2xl font-black uppercase text-[#1A1A1A] mb-3">Download the Car Shelter Buyer's Guide</h3>
                                 <p className="text-xs sm:text-sm text-[#2D2D2D]/70 mb-8">Get our complete guide to material specifications, custom sizing, and bulk pricing matrices.</p>
                                 <form onSubmit={(e) => { e.preventDefault(); if (emailInput.trim()) { setExitPopupSubmitted(true); trackEvent("exit_intent_submit", emailInput); } }} className="w-full flex flex-col gap-3">
                                     <input type="email" required placeholder="Enter professional email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} className="w-full px-6 py-4 rounded-full border border-black/10 text-sm focus:outline-none focus:border-[#2C5F2E] bg-[#F7F4EF]" />
@@ -850,4 +850,4 @@ const BusShelter_Page = () => {
     );
 };
 
-export default BusShelter_Page;
+export default CarShelterPage;

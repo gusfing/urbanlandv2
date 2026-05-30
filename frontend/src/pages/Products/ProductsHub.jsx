@@ -5,19 +5,23 @@ import { products } from "../../constants/productsData";
 
 const divisions = [
   { id: "benches", name: "Outdoor Benches", count: 18, tagline: "WPC, Aluminium, & GFRC architectural benches.", path: "/products/benches" },
-  { id: "bench-planters", name: "Bench Planters", count: 8, tagline: "Integrated WPC seating and concrete planter boxes.", path: "/products/bench-planters" },
+  { id: "aluminium-benches", name: "Aluminium Benches", count: 12, tagline: "Premium lightweight rust-proof benches.", path: "/products/benches/aluminium-benches" },
   { id: "planters", name: "Planters Boxes", count: 12, tagline: "GFRC cultivation islands and planters boxes.", path: "/products/planters" },
   { id: "dustbins", name: "Litter & Recycling Bins", count: 8, tagline: "Anti-vandalism dual litter recycling receptacles.", path: "/products/dustbins" },
   { id: "bus-shelters", name: "Smart Bus Shelters", count: 6, tagline: "MS/SS intelligent municipal bus stop canopies.", path: "/products/bus-shelters" },
   { id: "car-shelters", name: "Premium Car Shelters", count: 4, tagline: "High-tensile modular vehicle shading parking canopies.", path: "/products/car-shelters" },
   { id: "canteen-tables", name: "Canteen Tables & Sets", count: 5, tagline: "Heavy-duty outdoor corporate dining furniture.", path: "/products/canteen-tables" },
-  { id: "pergolas", name: "Architectural Pergolas", count: 6, tagline: "Modern tensioned shading sail and louver structures.", path: "/products/pergolas" },
-  { id: "gazebos", name: "Elegant Gazebos", count: 5, tagline: "Pre-engineered luxury timber pavilions.", path: "/products/gazebos" },
   { id: "cabanas", name: "Luxury Cabanas", count: 3, tagline: "Premium daybed shade structures for hotels & pools.", path: "/products/cabanas" },
-  { id: "pre-fab-homes", name: "Pre Fab Homes", count: 4, tagline: "Modular residential structures and garden cabins.", path: "/products/pre-fab-homes" },
   { id: "poolside-loungers", name: "Poolside Loungers", count: 6, tagline: "Ergonomic weather-proof poolside lounge beds.", path: "/products/poolside-loungers" },
   { id: "wicker-living-sets", name: "Wicker Living Sets", count: 14, tagline: "High-density premium polyethylene wicker sofas.", path: "/products/wicker-living-sets" },
-  { id: "wicker-dining-sets", name: "Wicker Dining Sets", count: 10, tagline: "Luxury synthetic wicker dining tables and chairs.", path: "/products/wicker-dining-sets" }
+  { id: "wicker-dining-sets", name: "Wicker Dining Sets", count: 10, tagline: "Luxury synthetic wicker dining tables and chairs.", path: "/products/wicker-dining-sets" },
+  { id: "indoor-furniture", name: "Indoor Furniture", count: 8, tagline: "Modern luxury indoor dining and accent furniture.", path: "/products/indoor-furniture" },
+  { id: "metal-wooden-furniture", name: "Metal & Wooden Furniture", count: 10, tagline: "Premium architectural steel and timber furniture.", path: "/products/metal-wooden-furniture" },
+  { id: "ss-bollards", name: "SS Bollards", count: 6, tagline: "High-durability stainless steel safety bollards.", path: "/products/ss-bollards" },
+  { id: "bench-planters", name: "Bench Planters", count: 8, tagline: "Integrated WPC seating and concrete planter boxes.", path: "/products/bench-planters" },
+  { id: "pergolas", name: "Architectural Pergolas", count: 6, tagline: "Modern tensioned shading sail and louver structures.", path: "/products/pergolas" },
+  { id: "gazebos", name: "Elegant Gazebos", count: 5, tagline: "Pre-engineered luxury timber pavilions.", path: "/products/gazebos" },
+  { id: "pre-fab-homes", name: "Pre Fab Homes", count: 4, tagline: "Modular residential structures and garden cabins.", path: "/products/pre-fab-homes" }
 ];
 
 const ProductsHub = () => {
@@ -48,7 +52,10 @@ const ProductsHub = () => {
       <section className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {divisions.map((div) => {
-            const matchedProd = products.find(p => p.category === div.id);
+            let lookupId = div.id;
+            if (div.id === "aluminium-benches") lookupId = "benches";
+            if (div.id === "indoor-furniture" || div.id === "metal-wooden-furniture" || div.id === "ss-bollards") lookupId = "canteen-tables";
+            const matchedProd = products.find(p => p.category === lookupId);
             const image = matchedProd ? matchedProd.image : "";
             
             return (

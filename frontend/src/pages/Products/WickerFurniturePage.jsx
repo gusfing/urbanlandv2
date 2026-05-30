@@ -4,19 +4,9 @@ import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-// Asset imports
-import wickerImg from "../../assets/Wicker_Furniture.png";
-import wickerJpeg from "../../assets/Wicker_Furniture.jpeg";
-import hotelImg from "../../assets/gallery_hotels.png";
-import realEstateImg from "../../assets/gallery_real_estate.png";
-import hospitalImg from "../../assets/gallery_hospitals.png";
-import wickerAwardImg from "../../assets/wicker_award.png";
-import wickerResortImg from "../../assets/wicker_resort.png";
-import wickerStoolImg from "../../assets/wicker_stool.png";
-import wickerSustainableImg from "../../assets/wicker_sustainable.png";
-import wickerDiningImg from "../../assets/wicker_dining.png";
-import wickerSofaImg from "../../assets/wicker_sofa.png";
-import wickerCushionsImg from "../../assets/wicker_cushions.png";
+import carouselImg1 from "../../assets/products/Product Images/Wicker Living/Wicker_Living.jpeg";
+import carouselImg2 from "../../assets/products/Product Images/Wicker Living/UGC_Wicker_Living.jpeg";
+import carouselImg3 from "../../assets/products/Product Images/Wicker Living/2 Items.jpeg";
 
 // Brand logos
 import logo1 from "../../assets/brands/1.png";
@@ -44,6 +34,7 @@ const brandLogos = [
 ];
 
 const WickerFurniturePage = () => {
+    const [activeTab, setActiveTab] = useState("standard");
     const [faqOpen, setFaqOpen] = useState(Array(5).fill(false));
     const [showStickyHeader, setShowStickyHeader] = useState(false);
     const heroScrollRef = useRef(null);
@@ -93,18 +84,29 @@ const WickerFurniturePage = () => {
         }
     };
 
+    const [exitPopupVisible, setExitPopupVisible] = useState(false);
+    const [exitPopupSubmitted, setExitPopupSubmitted] = useState(false);
+    const [emailInput, setEmailInput] = useState("");
 
+    const trackEvent = (eventName, value = "") => {
+        if (window.gtag) {
+            window.gtag("event", eventName, {
+                event_category: "product_page",
+                event_label: "wickerfurniturepage",
+                value: value
+            });
+        }
+        console.log(`[GA4 Event] ${eventName} | Category: product_page | Label: wickerfurniturepage | Value: ${value}`);
+    };
 
     useEffect(() => {
-        // Dynamic SEO Metadata Configuration
         updatePageSEO({
-            title: "Wicker Outdoor Products India | Cabanas, Poolside Loungers | Urbanland",
-            description: "Premium wicker outdoor products including cabanas, poolside loungers, wicker living & dining sets. Stylish, weather-resistant B2B outdoor furniture in India. 2-Year Guarantee.",
+            title: "Wicker Furniture Manufacturer India | Outdoor Wicker Sets, Loungers, Cabanas & Benches | Urbanland",
+            description: "Premium wicker outdoor furniture in India. Wicker sofa sets, dining sets, poolside loungers, cabanas, WPC benches, aluminium benches and GFRC benches. Stylish, durable, weather-resistant and low-maintenance. Backed by India’s only 2-Year Guarantee.",
             og_type: "product",
-            og_image: wickerImg
+            og_image: carouselImg1
         });
 
-        // Scroll listener for sticky header
         const handleScroll = () => {
             if (window.scrollY > 300) {
                 setShowStickyHeader(true);
@@ -114,6 +116,37 @@ const WickerFurniturePage = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
+
+        const sessionKey = "urbanland_exit_intent_wickerfurniturepage";
+        const isShown = sessionStorage.getItem(sessionKey);
+
+        if (!isShown) {
+            const handleMouseLeave = (e) => {
+                if (e.clientY < 20) {
+                    triggerPopup();
+                }
+            };
+            const timer = setTimeout(() => {
+                triggerPopup();
+            }, 45000);
+
+            const triggerPopup = () => {
+                setExitPopupVisible(true);
+                sessionStorage.setItem(sessionKey, "true");
+                document.removeEventListener("mouseleave", handleMouseLeave);
+                clearTimeout(timer);
+            };
+
+            document.addEventListener("mouseleave", handleMouseLeave);
+
+            return () => {
+                cleanPageSEO();
+                window.removeEventListener("scroll", handleScroll);
+                document.removeEventListener("mouseleave", handleMouseLeave);
+                clearTimeout(timer);
+            };
+        }
+
         return () => {
             cleanPageSEO();
             window.removeEventListener("scroll", handleScroll);
@@ -126,7 +159,232 @@ const WickerFurniturePage = () => {
             next[idx] = !next[idx];
             return next;
         });
+        trackEvent("faq_click", `faq_${idx + 1}`);
     };
+
+    const renderStandardTab = () => (
+        <div className="animate-fadeIn">
+            <div className="mb-6">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/10 px-3 py-1.5 rounded-full select-none">Value Option</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Standard Wicker Chair & Table Set — Bistro Style</h3>
+                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Residential balconies, small cafe patios, society clubhouse decks.</h4>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
+                <div>
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
+                        {["Frame: Powder coated steel with PE cane weave","Fabric: Standard water-resistant polyester","Design: 2x Armchairs, 1x Circular glass top side table","Capacity: Standard residential seating load"].map((f, idx) => (
+                            <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
+                        ))}
+                    </ul>
+
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
+                        Residential balconies, small cafe patios, society clubhouse decks.
+                    </p>
+                </div>
+
+                <div className="lg:col-span-1 h-[280px] lg:h-auto rounded-[2rem] bg-black/5 overflow-hidden flex items-center justify-center p-4 border border-black/[0.04] shrink-0">
+                    <img 
+                        src={carouselImg1} 
+                        alt="Standard variant" 
+                        className="w-full h-full object-cover rounded-2xl" 
+                    />
+                </div>
+
+                <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
+                    <div>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
+                            <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
+                                    <span className="font-bold">Chair: 600W × 600D × 850H mm</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Weight</span>
+                                    <span className="font-bold">18 kg (total set)</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lead Time</span>
+                                    <span className="font-bold">25-30 days</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Annual Maintenance</span>
+                                    <span className="font-bold">Low (hose down clean)</span>
+                                </div>
+                                <div className="col-span-2 border-t border-black/[0.04] pt-3 mt-1">
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lifespan</span>
+                                    <span className="font-bold text-[#2C5F2E]">5-6 years</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <Link
+                        to="/get-quote/?variant=standard"
+                        onClick={() => trackEvent("variant_selection", "standard")}
+                        className="px-6 py-4 bg-[#2C5F2E] hover:bg-black text-white rounded-full font-black uppercase tracking-wider text-[10px] text-center transition-colors duration-300 w-full"
+                    >
+                        Get Standard Quote →
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+
+    const renderPremiumTab = () => (
+        <div className="animate-fadeIn">
+            <div className="mb-6">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/10 px-3 py-1.5 rounded-full select-none">Most Specified</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Premium Wicker Dining Set — Resort Collection</h3>
+                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Hotel rooftop dining, open-air resort restaurants, large villa terraces.</h4>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
+                <div>
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
+                        {["Frame: Structural anodized aluminium under-chassis","Body Wrap: High-grade HDPE wicker flat weave","Cushions: 50mm quick-dry foam seat pads with Sunbrella covers","Design: 6x Dining armchairs, 1x Rectangular dining table (tempered glass top)"].map((f, idx) => (
+                            <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
+                        ))}
+                    </ul>
+
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
+                        Hotel rooftop dining, open-air resort restaurants, large villa terraces.
+                    </p>
+                </div>
+
+                <div className="lg:col-span-1 h-[280px] lg:h-auto rounded-[2rem] bg-black/5 overflow-hidden flex items-center justify-center p-4 border border-black/[0.04] shrink-0">
+                    <img 
+                        src={carouselImg2} 
+                        alt="Premium variant" 
+                        className="w-full h-full object-cover rounded-2xl" 
+                    />
+                </div>
+
+                <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
+                    <div>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
+                            <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
+                                    <span className="font-bold">Table: 1800L × 900W × 750H mm</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Weight</span>
+                                    <span className="font-bold">65 kg (total set)</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lead Time</span>
+                                    <span className="font-bold">30-45 days</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Annual Maintenance</span>
+                                    <span className="font-bold">Seasonal fabric wash</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lifespan</span>
+                                    <span className="font-bold text-[#2C5F2E]">8-10 years</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Special Rating</span>
+                                    <span className="font-bold text-[#2C5F2E]">Tempered glass table top protector</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <Link
+                        to="/get-quote/?variant=premium"
+                        onClick={() => trackEvent("variant_selection", "premium")}
+                        className="px-6 py-4 bg-[#2C5F2E] hover:bg-black text-white rounded-full font-black uppercase tracking-wider text-[10px] text-center transition-colors duration-300 w-full"
+                    >
+                        Get Premium Quote →
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+
+    const renderSuperPremiumTab = () => (
+        <div className="animate-fadeIn">
+            <div className="mb-6">
+                <span className="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/10 px-3 py-1.5 rounded-full select-none">Smart Ready</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Super Premium Modular Sofa Lounge — Island Style</h3>
+                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Luxury beach clubs, resort lobbies, premium executive rooftop decks.</h4>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 border-t border-[#2D2D2D]/10 pt-8">
+                <div>
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
+                    <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
+                        {["Frame: Heavy structural aluminium wrapped in synthetic PE rope weave","Body Wrap: Thick round PE wicker or synthetic rope weave","Cushions: 120mm plush quick-dry foam cushions with modular back pillows","Design: L-shape modular sofa set (6-seater) with central coffee table"].map((f, idx) => (
+                            <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
+                        ))}
+                    </ul>
+
+                    <h4 className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mt-10 mb-4 select-none">— Ideal For</h4>
+                    <p className="text-xs sm:text-sm text-[#2D2D2D]/75 font-semibold leading-relaxed">
+                        Luxury beach clubs, resort lobbies, premium executive rooftop decks.
+                    </p>
+                </div>
+
+                <div className="lg:col-span-1 h-[280px] lg:h-auto rounded-[2rem] bg-black/5 overflow-hidden flex items-center justify-center p-4 border border-black/[0.04] shrink-0">
+                    <img 
+                        src={carouselImg3} 
+                        alt="Super Premium variant" 
+                        className="w-full h-full object-cover rounded-2xl" 
+                    />
+                </div>
+
+                <div className="bg-[#F7F4EF] rounded-[2rem] p-6 sm:p-8 flex flex-col justify-between gap-6">
+                    <div>
+                        <h4 className="text-[10px] font-black uppercase tracking-widest text-black/60 mb-4 select-none">— Specifications Matrix</h4>
+                        <div className="w-full border border-black/[0.04] rounded-2xl bg-white p-4 sm:p-6 overflow-hidden shadow-sm">
+                            <div className="grid grid-cols-2 gap-y-4 gap-x-4 text-xs font-semibold text-[#1A1A1A]">
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Dimensions</span>
+                                    <span className="font-bold">Modular L-shape layout</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Weight</span>
+                                    <span className="font-bold">95 kg (total set)</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lead Time</span>
+                                    <span className="font-bold">40-50 days</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Annual Maintenance</span>
+                                    <span className="font-bold">Minimal</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Lifespan</span>
+                                    <span className="font-bold text-[#2C5F2E]">12+ years</span>
+                                </div>
+                                <div>
+                                    <span className="block text-[8px] uppercase tracking-wider text-black/45 mb-0.5">Tech Features</span>
+                                    <span className="font-bold text-[#2C5F2E]">Modular link buckles & quick-dry mesh bases</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <Link
+                        to="/get-quote/?variant=super-premium"
+                        onClick={() => trackEvent("variant_selection", "super_premium")}
+                        className="px-6 py-4 bg-[#C9A84C] hover:bg-black text-[#232120] hover:text-white rounded-full font-black uppercase tracking-wider text-[10px] text-center transition-colors duration-300 w-full"
+                    >
+                        Get Super Premium Proposal →
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
 
     return (
         <div ref={pageContainerRef} className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-28">
@@ -135,10 +393,11 @@ const WickerFurniturePage = () => {
             <div className={`fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-[#2D2D2D]/10 py-4 px-8 lg:px-16 z-[99] flex justify-between items-center transition-all duration-500 shadow-md ${showStickyHeader ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"}`}>
                 <div className="flex items-center gap-3">
                     <span className="text-[#2C5F2E] font-black tracking-tighter text-lg">URBANLAND®</span>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#2D2D2D]/50 hidden sm:inline">Wicker Outdoor Products</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#2D2D2D]/50 hidden sm:inline">Wicker Furniture</span>
                 </div>
                 <Link
-                    to="/get-quote/?product=wicker-outdoor-products"
+                    to="/get-quote/?product=wicker-furniture"
+                    onClick={() => trackEvent("product_page_cta_primary", "quote_request")}
                     className="px-6 py-2.5 bg-[#E65F2B] hover:bg-black text-white rounded-full font-black uppercase tracking-wider text-[10px] transition-all shadow-sm"
                 >
                     Get Project Quote →
@@ -146,13 +405,13 @@ const WickerFurniturePage = () => {
             </div>
 
             {/* BREADCRUMB NAVIGATION */}
-            <div className="w-full px-6 md:px-12 py-4 select-none">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-4 select-none">
                 <nav className="flex items-center text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#2D2D2D]/60 gap-2">
                     <Link to="/" className="hover:text-[#2C5F2E] transition-colors">Home</Link>
                     <span>/</span>
                     <Link to="/products" className="hover:text-[#2C5F2E] transition-colors">Products</Link>
                     <span>/</span>
-                    <span className="text-[#2C5F2E]">Wicker Outdoor Products</span>
+                    <span className="text-[#2C5F2E]">Wicker Furniture</span>
                 </nav>
             </div>
 
@@ -162,537 +421,322 @@ const WickerFurniturePage = () => {
                     ref={heroScrollRef}
                     className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-4 px-6 md:px-12"
                 >
-                    {/* Card 1: Award Win */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={wickerAwardImg} 
-                            alt="Premium handcrafted wicker outdoor furniture" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
+                    {[{"tag":"Hospitality Spotlight","h":"Premium Hand-Woven<br />Wicker Outdoor Furniture","label":"01","desc":"Resort-grade synthetic rattan dining and living furniture"},{"tag":"Terrace Oasis","h":"Weatherproof dining<br />sets, sofas & loungers<br />for resort decks","label":"02","desc":"PE wicker weave over thick aluminium chassis"},{"tag":"B2B Guarantee","h":"2-Year Warranty<br />& ISO Certified<br />Standards","label":"03","desc":"Trusted by leading hotel chains & real estate developers"},{"tag":"Extreme Weather","h":"UV-stabilized HDPE<br />weaves that resist fading<br />and heavy monsoon rain","label":"04","desc":"Chlorine and saltwater resistant weaves"},{"tag":"Bespoke Ensembles","h":"Custom dimensions,<br />colors & performance<br />upholstery fabrics","label":"05","desc":"Tailored to high-end residential outdoor patios"}].map((card, idx) => (
+                        <div key={idx} className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
+                            <img 
+                                src={idx % 2 === 0 ? carouselImg1 : carouselImg2} 
+                                alt={card.tag} 
+                                className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
 
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                Premium Wicker<br />Outdoor Furniture<br />in India
-                            </h3>
+                            <div className="z-10">
+                                <span className="text-[9px] font-black uppercase tracking-wider bg-[#C9A84C] text-[#232120] px-3.5 py-1.5 rounded-full w-fit mb-3 block">
+                                    {card.tag}
+                                </span>
+                                <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans" dangerouslySetInnerHTML={{ __html: card.h }} />
+                            </div>
+
+                            <div className="z-10 flex justify-between items-end w-full">
+                                <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
+                                    <span className="font-black mr-2 text-[#C9A84C]">{card.label}</span>{card.desc}
+                                </span>
+                                {idx === 2 && (
+                                    <button 
+                                        onClick={scrollHeroRight}
+                                        className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
+                                        aria-label="Next slide"
+                                    >
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                )}
+                                {idx === 4 && (
+                                    <button 
+                                        onClick={scrollHeroStart}
+                                        className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
+                                        aria-label="Start over"
+                                    >
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18" />
+                                        </svg>
+                                    </button>
+                                )}
+                            </div>
                         </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">01</span>Elegant and durable resort-grade wicker
-                            </span>
-                        </div>
-                    </div>
-
-                    {/* Card 2: Resort Oasis */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={wickerResortImg} 
-                            alt="Premium synthetic wicker loungers in Taj Poolside Oasis" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
-
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                Bespoke Resort<br />Cabanas &<br />Loungers
-                            </h3>
-                        </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">02</span>Weatherproof HDPE synthetic fibers
-                            </span>
-                        </div>
-                    </div>
-
-                    {/* Card 3: When Style Becomes Custom */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={wickerStoolImg} 
-                            alt="Luxury custom round wicker dining and seating stool" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
-
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                2-Year B2B Warranty<br />& ISO Certified<br />Standards
-                            </h3>
-                        </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">03</span>Trusted across 50+ luxury projects
-                            </span>
-                            
-                            {/* Floating White Circular Arrow Button */}
-                            <button 
-                                onClick={scrollHeroRight}
-                                className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
-                                aria-label="Next slide"
-                            >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Card 4: Sustainable Materials */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={wickerSustainableImg} 
-                            alt="Sustainably sourced and recyclable wicker outdoor armchair" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
-
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                Sustainably Sourced<br />& Recyclable<br />Materials
-                            </h3>
-                        </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">04</span>Recyclable HDPE weave & eco-friendly structures
-                            </span>
-                            
-                            {/* Floating White Circular Arrow Button */}
-                            <button 
-                                onClick={scrollHeroRight}
-                                className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
-                                aria-label="Next slide"
-                            >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Card 5: Al-Fresco Dining */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={wickerDiningImg} 
-                            alt="Luxury modern wicker outdoor dining sets" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
-
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                Terrace Dining<br />& Al-Fresco<br />Ensembles
-                            </h3>
-                        </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">05</span>Timeless wicker tables and chairs
-                            </span>
-                            
-                            {/* Floating White Circular Arrow Button */}
-                            <button 
-                                onClick={scrollHeroRight}
-                                className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
-                                aria-label="Next slide"
-                            >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Card 6: Luxury Modular Living & Lounges */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={wickerSofaImg} 
-                            alt="Luxury modular wicker outdoor sofa set" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
-
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                Luxury Modular<br />Outdoor Living<br />& Lounges
-                            </h3>
-                        </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">06</span>High-density foam & custom configurations
-                            </span>
-                            
-                            {/* Floating White Circular Arrow Button */}
-                            <button 
-                                onClick={scrollHeroRight}
-                                className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
-                                aria-label="Next slide"
-                            >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Card 7: Weatherproof Cushions & Custom Weaves */}
-                    <div className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
-                        {/* Background Image */}
-                        <img 
-                            src={wickerCushionsImg} 
-                            alt="Custom wicker weaves and outdoor performance fabrics" 
-                            className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-                        />
-                        {/* Overlays */}
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
-
-                        <div className="z-10">
-                            <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans">
-                                Weatherproof<br />Cushions &<br />Custom Weaves
-                            </h3>
-                        </div>
-
-                        <div className="z-10 flex justify-between items-end w-full">
-                            <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                <span className="font-black mr-2 text-[#C9A84C]">07</span>UV-protected performance upholstery
-                            </span>
-                            
-                            {/* Floating White Circular Reset Button */}
-                            <button 
-                                onClick={scrollHeroStart}
-                                className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
-                                aria-label="Start over"
-                            >
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
 
-
-
-            {/* SECTION 1 — OUR WICKER OUTDOOR COLLECTION */}
-            <section className="w-full px-6 md:px-12 mb-24">
+            {/* SECTION 1 — WHY CHOOSE URBANLAND */}
+            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-16 max-w-5xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— EXQUISITE PORTFOLIO</span>
-                    <h2 className="text-[18px] font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
-                        Our Premium Wicker Outdoor Products Range
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— CHOOSE DURABILITY</span>
+                    <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
+                        Why Developers, Municipalities & Architects Choose Urbanland
                     </h2>
                     <p className="text-sm sm:text-base md:text-lg text-[#2D2D2D]/75 leading-relaxed mt-6">
-                        Urbanland offers a complete range of luxurious wicker outdoor products designed for modern outdoor living. Each product is crafted using high-grade synthetic wicker combined with strong frames to deliver timeless style, exceptional comfort, and long-lasting performance in Indian outdoor conditions.
+                        Why People Choose Urbanland for Wicker Furniture
                     </p>
                 </div>
 
-                {/* Highly Visual 4-Column Image Grid Showcase */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* Item 1: Wicker Cabanas */}
-                    <div id="wicker-cabanas" className="custom-premium-card bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group h-full">
-                        <div className="relative aspect-[4/3] bg-black/5 overflow-hidden">
-                            <img src={hotelImg} alt="Premium Wicker Cabana poolside resort lounge" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                            <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[8px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full select-none shadow-sm">RESORTS</div>
-                        </div>
-                        <div className="p-6 flex flex-col justify-between flex-1">
-                            <div>
-                                <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight">Wicker Cabanas</h3>
-                                <p className="text-xs text-[#2D2D2D]/70 leading-relaxed mt-3">
-                                    Elegant shaded retreats perfect for luxury poolsides, resort decks, gardens, and premium residential terrace areas.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-8">— 4 Core Reasons</h3>
 
-                    {/* Item 2: Poolside Loungers & Daybeds */}
-                    <div id="poolside-loungers" className="custom-premium-card bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group h-full">
-                        <div className="relative aspect-[4/3] bg-black/5 overflow-hidden">
-                            <img src={hotelImg} alt="Luxury wicker poolside loungers and daybeds" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                            <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[8px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full select-none shadow-sm">POOLSIDE</div>
-                        </div>
-                        <div className="p-6 flex flex-col justify-between flex-1">
-                            <div>
-                                <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight">Poolside Loungers</h3>
-                                <p className="text-xs text-[#2D2D2D]/70 leading-relaxed mt-3">
-                                    Comfortable, ergonomic and incredibly stylish sun loungers and modular daybeds engineered for ultimate relaxation.
-                                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 select-none">
+                    {[{"title":"HDPE Synthetic Cane","desc":"Weaved using 100% recyclable High-Density Polyethylene (HDPE) cane, formulated to resist split, fade, mold, and rot."},{"title":"Aluminium Under-Chassis","desc":"Weaved over thick-walled structural aluminium underframes, ensuring a lightweight, completely rust-proof core."},{"title":"Performance Fabrics","desc":"Cushion covers use Sunbrella® or outdoor acrylic fabrics, offering premium water repellency and UV colorfastness."},{"title":"Reticulated Quick-Dry","desc":"Cushion cores are filled with reticulated open-cell foam, allowing monsoon rain to drain out within minutes of downpours."}].map((r, idx) => (
+                        <div key={idx} className="bg-white rounded-[2rem] border border-black/[0.03] p-8 md:p-10 shadow-sm hover:bg-[#F7F4EF]/55 hover:shadow-lg transition-all duration-300 flex flex-col gap-5 group">
+                            <div className={`w-14 h-14 ${idx % 2 === 0 ? "bg-[#2C5F2E]/10 text-[#2C5F2E]" : "bg-[#C9A84C]/10 text-[#C9A84C]"} rounded-full flex justify-center items-center`}>
+                                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                </svg>
                             </div>
+                            <h4 className="text-xl font-black uppercase text-[#1A1A1A]">{r.title}</h4>
+                            <p className="text-xs sm:text-sm text-[#2D2D2D]/70 leading-relaxed">{r.desc}</p>
                         </div>
-                    </div>
-
-                    {/* Item 3: Wicker Living Sets */}
-                    <div id="wicker-living-sets" className="custom-premium-card bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group h-full">
-                        <div className="relative aspect-[4/3] bg-black/5 overflow-hidden">
-                            <img src={wickerImg} alt="Sophisticated wicker outdoor sofas and living sets" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                            <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[8px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full select-none shadow-sm">LIVING</div>
-                        </div>
-                        <div className="p-6 flex flex-col justify-between flex-1">
-                            <div>
-                                <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight">Wicker Living Sets</h3>
-                                <p className="text-xs text-[#2D2D2D]/70 leading-relaxed mt-3">
-                                    Sophisticated outdoor sofas, woven armchairs, and matching coffee tables that blend living-room comfort with outdoor durability.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Item 4: Wicker Dining Sets */}
-                    <div id="wicker-dining-sets" className="custom-premium-card bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group h-full">
-                        <div className="relative aspect-[4/3] bg-black/5 overflow-hidden">
-                            <img src={wickerJpeg} alt="Timeless al-fresco wicker dining chairs and tables" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                            <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[8px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full select-none shadow-sm">DINING</div>
-                        </div>
-                        <div className="p-6 flex flex-col justify-between flex-1">
-                            <div>
-                                <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight">Wicker Dining Sets</h3>
-                                <p className="text-xs text-[#2D2D2D]/70 leading-relaxed mt-3">
-                                    Beautiful, robust dining tables and chairs perfect for al-fresco meals, open-air cafes, and hotel rooftop entertaining.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
 
-            {/* SECTION 2 — WHY PEOPLE CHOOSE URBANLAND */}
-            <section className="w-full px-6 md:px-12 mb-24">
-                <div className="bg-[#2D2D2D] rounded-[2.5rem] border border-white/5 p-8 md:p-16 text-white grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                    <div className="lg:col-span-7">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-[#C9A84C] mb-3 block">— METRIC OF TRUST</span>
-                        <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-white mb-6 font-outfit">
-                            Why People Choose Urbanland Wicker Outdoor Products
-                        </h2>
-                        <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed font-light mb-6">
-                            Urbanland wicker outdoor products combine natural beauty with modern engineering. They are designed to withstand India’s harsh climate while offering elegance, comfort, and minimal maintenance.
-                        </p>
-                        <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed font-light">
-                            By choosing Urbanland wicker outdoor products, you get premium B2B furniture that enhances your garden, patio, balcony, resort, or township with timeless style and superior craftsmanship. We focus on creating pieces that elevate your outdoor experience while delivering long-term value and extreme weather durability.
-                        </p>
-                    </div>
-
-                    <div className="lg:col-span-5 w-full h-[320px] rounded-[2rem] overflow-hidden bg-white/5 border border-white/10 relative shrink-0">
-                        <img 
-                            src={wickerImg} 
-                            alt="Luxury hand-woven B2B resort furniture" 
-                            className="w-full h-full object-cover scale-103 brightness-90"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#2D2D2D]/60 to-transparent" />
-                    </div>
-                </div>
-            </section>
-
-            {/* SECTION 3 — MATERIALS & CUSTOMIZATION OPTIONS */}
-            <section id="specifications" className="w-full px-6 md:px-12 mb-24">
-                <div className="text-left mb-16 max-w-4xl">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— TECHNICAL PROFILE</span>
+            {/* SECTION 2 — THREE CONFIGURATIONS */}
+            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
+                <div className="text-left mb-12 max-w-4xl">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— SYSTEM SPECS MATRIX</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
-                        Materials & Customization Options
+                        Three Wicker Furniture Configurations — Choose What Fits Your Project
+                    </h2>
+                    <p className="text-sm sm:text-base text-[#2D2D2D]/75 mt-4">
+                        All Urbanland architectural products are built on proven specifications but fully customizable.
+                    </p>
+                </div>
+
+                {/* DESKTOP TABS TOGGLE */}
+                <div className="hidden md:flex flex-row gap-2 border-b border-[#2D2D2D]/15 pb-4 mb-12 select-none">
+                    <button
+                        onClick={() => { setActiveTab("standard"); trackEvent("variant_selection", "standard"); }}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "standard" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                    >
+                        Standard Configuration
+                    </button>
+                    <button
+                        onClick={() => { setActiveTab("premium"); trackEvent("variant_selection", "premium"); }}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "premium" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                    >
+                        Premium Configuration
+                    </button>
+                    <button
+                        onClick={() => { setActiveTab("super"); trackEvent("variant_selection", "super_premium"); }}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "super" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                    >
+                        Super Premium Configuration
+                    </button>
+                </div>
+
+                {/* DESKTOP CONTENT BLOCK */}
+                <div className="hidden md:block bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-14 shadow-sm">
+                    {activeTab === "standard" && renderStandardTab()}
+                    {activeTab === "premium" && renderPremiumTab()}
+                    {activeTab === "super" && renderSuperPremiumTab()}
+                </div>
+
+                {/* MOBILE ACCORDIONS STACK */}
+                <div className="flex md:hidden flex-col gap-4">
+                    <div className="bg-white rounded-3xl border border-black/[0.03] overflow-hidden shadow-sm">
+                        <button
+                            onClick={() => { const next = activeTab === "standard" ? null : "standard"; setActiveTab(next); if (next) trackEvent("variant_selection", "standard"); }}
+                            className="w-full text-left p-6 flex justify-between items-center font-black uppercase tracking-wider text-sm text-[#1A1A1A]"
+                        >
+                            <span>Standard Configuration</span>
+                            <span className="text-[#2C5F2E] text-xl font-bold font-mono">{activeTab === "standard" ? "−" : "+"}</span>
+                        </button>
+                        {activeTab === "standard" && <div className="p-6 border-t border-[#2D2D2D]/5 bg-white">{renderStandardTab()}</div>}
+                    </div>
+
+                    <div className="bg-white rounded-3xl border border-black/[0.03] overflow-hidden shadow-sm">
+                        <button
+                            onClick={() => { const next = activeTab === "premium" ? null : "premium"; setActiveTab(next); if (next) trackEvent("variant_selection", "premium"); }}
+                            className="w-full text-left p-6 flex justify-between items-center font-black uppercase tracking-wider text-sm text-[#1A1A1A]"
+                        >
+                            <span>Premium Configuration</span>
+                            <span className="text-[#2C5F2E] text-xl font-bold font-mono">{activeTab === "premium" ? "−" : "+"}</span>
+                        </button>
+                        {activeTab === "premium" && <div className="p-6 border-t border-[#2D2D2D]/5 bg-white">{renderPremiumTab()}</div>}
+                    </div>
+
+                    <div className="bg-white rounded-3xl border border-black/[0.03] overflow-hidden shadow-sm">
+                        <button
+                            onClick={() => { const next = activeTab === "super" ? null : "super"; setActiveTab(next); if (next) trackEvent("variant_selection", "super"); }}
+                            className="w-full text-left p-6 flex justify-between items-center font-black uppercase tracking-wider text-sm text-[#1A1A1A]"
+                        >
+                            <span>Super Premium Configuration</span>
+                            <span className="text-[#2C5F2E] text-xl font-bold font-mono">{activeTab === "super" ? "−" : "+"}</span>
+                        </button>
+                        {activeTab === "super" && <div className="p-6 border-t border-[#2D2D2D]/5 bg-white">{renderSuperPremiumTab()}</div>}
+                    </div>
+                </div>
+
+                {/* QUICK COMPARISON TABLE */}
+                <div className="mt-16">
+                    <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-6">— Quick Comparison</h3>
+                    <div className="w-full overflow-x-auto border border-black/[0.04] rounded-3xl bg-white shadow-sm scrollbar-thin">
+                        <table className="w-full text-left border-collapse min-w-[650px]">
+                            <thead>
+                                <tr className="bg-[#2D2D2D] text-white select-none text-[10px] sm:text-xs font-black uppercase tracking-wider">
+                                    <th className="p-5 border-b border-[#2D2D2D]/10">Aspect</th>
+                                    <th className="p-5 border-b border-[#2D2D2D]/10">Standard</th>
+                                    <th className="p-5 border-b border-[#2D2D2D]/10">Premium</th>
+                                    <th className="p-5 border-b border-[#2D2D2D]/10">Super Premium</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-xs font-semibold text-[#1A1A1A]/85">
+                                <tr className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
+                                    <td className="p-5 font-bold uppercase tracking-wider bg-[#2C5F2E]/5">Lifespan</td>
+                                    <td className="p-5">5-6 years</td>
+                                    <td className="p-5">8-10 years</td>
+                                    <td className="p-5">12+ years</td>
+                                </tr>
+                                <tr className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
+                                    <td className="p-5 font-bold uppercase tracking-wider bg-[#2C5F2E]/5">Lead Time</td>
+                                    <td className="p-5">25-30 days</td>
+                                    <td className="p-5">30-45 days</td>
+                                    <td className="p-5">40-50 days</td>
+                                </tr>
+                                <tr className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
+                                    <td className="p-5 font-bold uppercase tracking-wider bg-[#2C5F2E]/5">Best For</td>
+                                    <td className="p-5">Inland / Municipal</td>
+                                    <td className="p-5">Premium / Corporate</td>
+                                    <td className="p-5">Ultra Luxury / Smart Hubs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            {/* SECTION 3 — MATERIAL COMPARISON */}
+            <section id="specifications" className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
+                <div className="text-left mb-12">
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— MATERIAL SELECTION GUIDE</span>
+                    <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
+                        Materials & Customization Guide
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                    {/* KEY FEATURES */}
-                    <div className="bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-12 shadow-sm flex flex-col justify-between">
-                        <div>
-                            <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-6 border-b border-black/5 pb-3 select-none">— Key Features</h3>
-                            <ul className="flex flex-col gap-4 text-xs sm:text-sm font-bold text-[#1A1A1A]/85">
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> High-grade synthetic wicker (PE rattan) – UV-resistant and weatherproof</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Strong and lightweight aluminium or powder-coated frames</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Fade-resistant and easy-to-clean surfaces</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Excellent ventilation and ergonomic seating comfort</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Eco-friendly, highly recyclable raw materials</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div className="w-full overflow-x-auto border border-black/[0.04] rounded-3xl bg-white shadow-sm mb-12 scrollbar-thin">
+                    <table className="w-full text-left border-collapse min-w-[650px]">
+                        <thead>
+                            <tr className="bg-[#2C5F2E] text-white select-none text-[10px] sm:text-xs font-black uppercase tracking-wider">
+                                <th className="p-5 border-b border-[#2D2D2D]/10">Material Option</th>
+                                <th className="p-5 border-b border-[#2D2D2D]/10">Lifespan</th>
+                                <th className="p-5 border-b border-[#2D2D2D]/10">Maintenance</th>
+                                <th className="p-5 border-b border-[#2D2D2D]/10">Best For</th>
+                                <th className="p-5 border-b border-[#2D2D2D]/10">Cost Factor</th>
+                            </tr>
+                        </thead>
+                        <tbody className="text-xs font-semibold text-[#1A1A1A]/85">
+                            {[{"name":"HDPE Cane + Aluminium","life":"8-10 years","maint":"Zero maintenance","best":"Resorts & commercial dining","cost":"Base premium (1.2x)"},{"name":"PE Rope + SS 304 Frame","life":"12+ years","maint":"Periodic cleaning","best":"Premium beachfront terraces","cost":"Highest end (2.2x)"},{"name":"Standard PE Cane + Steel","life":"4-5 years","maint":"Rust check","best":"Budget residential lawns","cost":"Standard (0.8x)"}].map((m, idx) => (
+                                <tr key={idx} className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
+                                    <td className="p-5 font-bold uppercase tracking-wider">{m.name}</td>
+                                    <td className="p-5">{m.life}</td>
+                                    <td className="p-5">{m.maint}</td>
+                                    <td className="p-5">{m.best}</td>
+                                    <td className="p-5">{m.cost}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
 
-                    {/* CUSTOMIZATION OPTIONS */}
-                    <div className="bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-12 shadow-sm flex flex-col justify-between">
-                        <div>
-                            <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-6 border-b border-black/5 pb-3 select-none">— Customization Options</h3>
-                            <ul className="flex flex-col gap-4 text-xs sm:text-sm font-bold text-[#1A1A1A]/85">
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Complete sets: Living sets, dining sets, loungers, cabanas</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Colours: Wide range of modern wicker shades and frame finishes</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Cushions: Waterproof, UV-protected fabric in multiple colours and styles</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Size & Configuration: Fully customisable B2B custom dimensions</li>
-                                <li className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> Add-ons: Tempered glass tops, side tables, ottomans, custom covers, lighting</li>
-                            </ul>
-                        </div>
-                    </div>
+                <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-6">— Customization Options</h3>
+                <div className="bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-12 mb-12 shadow-sm">
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm font-bold text-[#1A1A1A]/85">
+                        {["Weave types: Flat rattan, round synthetic cane, open basket weave, or vertical outdoor rope weaves","Colors: Wicker available in natural teak, espresso brown, charcoal black, or sand beige shades","Fabrics: Available in 30+ textured solid outdoor acrylic or Sunbrella® canvas colors","Table Tops: Toughened clear glass, frosted glass, solid teak wood slats, or WPC board tops","Configurations: Custom modular seating rows, L-shaped sectional sofas, or large banquette dining setups"].map((c, idx) => (
+                            <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">✦</span> {c}</li>
+                        ))}
+                    </ul>
                 </div>
             </section>
 
-            {/* SECTION 4 — REAL PROJECTS (Social Proof) */}
-            <section className="w-full px-6 md:px-12 mb-24">
+            {/* SECTION 4 — CASE STUDIES */}
+            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
                 <div className="text-left mb-16 max-w-4xl">
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— INFRASTRUCTURE PROJECTS</span>
                     <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A]">
-                        Real Wicker Outdoor Products. Real Results. Across India.
+                        Real Projects. Real Results. Across India.
                     </h2>
-                    <p className="text-sm text-[#2D2D2D]/75 mt-4 leading-relaxed">
-                        Proven across 50+ major luxury hospitality and premium real estate townships. Here are three project case studies.
-                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 select-none mb-12">
-                    {/* PROJECT CARD 1 */}
-                    <div className="custom-premium-card bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
-                        <div className="w-full h-48 bg-black/5 overflow-hidden relative">
-                            <img src={hotelImg} alt="Urbanland Wicker Daybeds installed in Taj Resorts Goa" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" loading="lazy" />
-                            <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
-                                Taj Resorts
+                    {[{"tag":"Taj Exotica Goa","subtitle":"Taj Hotels — Goa","title":"Rooftop Cafeteria Deck — 25 Wicker Dining Sets","time":"3 months","desc":" taj Hotels partnered with Urbanland to manufacture and deploy 25 premium wicker dining sets for their open-air oceanfront cafe. The aluminium frames and HDPE weaves successfully withstand Goan humidity."},{"tag":"Prestige Golfshire","subtitle":"Prestige Group — Bangalore","title":"Clubhouse Terrace — 15 Wicker Lounge Ensembles","time":"2 months","desc":"Installed custom modular wicker sectional sofas around the central golf clubhouse deck. The reticulated quick-dry foam cushions ensure seating is dry and usable within minutes of rain."},{"tag":"Oberoi Beach Resort","subtitle":"Oberoi Group — Mumbai","title":"VIP Poolside Deck — 10 Custom Daybed Cabanas","time":"2 months","desc":"Manufactured and installed 10 bespoke circular wicker loungers for a VIP poolside lounge area. Rear roller wheels enable staff to easily adjust configurations."}].map((p, idx) => (
+                        <div key={idx} className="bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
+                            <div className="w-full h-48 bg-black/5 overflow-hidden relative">
+                                <img src={idx === 1 ? carouselImg2 : carouselImg1} alt={p.title} className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" />
+                                <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">{p.tag}</div>
+                            </div>
+                            <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
+                                <div>
+                                    <span className="text-[9px] font-black uppercase tracking-wider text-[#C9A84C]">{p.subtitle}</span>
+                                    <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight mt-1">{p.title}</h3>
+                                    <div className="text-[10px] font-bold text-[#2C5F2E] my-2">Timeline: {p.time}</div>
+                                    <p className="text-xs text-[#2D2D2D]/70 leading-relaxed">{p.desc}</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
-                            <div>
-                                <span className="text-[9px] font-black uppercase tracking-wider text-[#C9A84C]">Hospitality Spotlight — Goa</span>
-                                <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight mt-1">Taj Resorts Poolside — 40 Loungers & Daybeds</h3>
-                                <div className="text-[10px] font-bold text-[#2C5F2E] my-2">Timeline: 45 Days</div>
-                                <p className="text-xs text-[#2D2D2D]/70 leading-relaxed">
-                                    Taj resorts selected Urbanland for high-density synthetic wicker poolside daybeds and sun loungers. High-salt air and intense UV exposure required custom powder-coated aluminium internal frames and quick-dry cushions.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* PROJECT CARD 2 */}
-                    <div className="custom-premium-card bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
-                        <div className="w-full h-48 bg-black/5 overflow-hidden relative">
-                            <img src={realEstateImg} alt="Premium Urbanland wicker furniture in Lodha Clubhouse patios" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" loading="lazy" />
-                            <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
-                                Lodha Group
-                            </div>
-                        </div>
-                        <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
-                            <div>
-                                <span className="text-[9px] font-black uppercase tracking-wider text-[#C9A84C]">Lodha Patios — Maharashtra</span>
-                                <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight mt-1">Luxury Clubhouse Patios — Wicker Living & Dining Ensembles</h3>
-                                <div className="text-[10px] font-bold text-[#2C5F2E] my-2">Timeline: 60 Days</div>
-                                <p className="text-xs text-[#2D2D2D]/70 leading-relaxed">
-                                    Lodha specified Urbanland's weather-resistant wicker dining and sophisticated outdoor living sets for their luxury residential township clubhouse gardens, delivering high aesthetic styling and robust B2B warranty.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* PROJECT CARD 3 */}
-                    <div className="custom-premium-card bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
-                        <div className="w-full h-48 bg-black/5 overflow-hidden relative">
-                            <img src={hospitalImg} alt="Urbanland wicker dining chairs at Oberoi rooftop B2B lounges" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" loading="lazy" />
-                            <div className="absolute top-4 right-4 bg-[#2C5F2E] text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
-                                Oberoi Lounges
-                            </div>
-                        </div>
-                        <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
-                            <div>
-                                <span className="text-[9px] font-black uppercase tracking-wider text-[#C9A84C]">Corporate Lounges — Oberoi</span>
-                                <h3 className="text-lg font-black uppercase text-[#1A1A1A] leading-tight mt-1">Rooftop Terraces — Custom Shaded Wicker Cabanas</h3>
-                                <div className="text-[10px] font-bold text-[#2C5F2E] my-2">Timeline: 30 Days</div>
-                                <p className="text-xs text-[#2D2D2D]/70 leading-relaxed">
-                                    For open-air corporate lounges, Oberoi specified bespoke wicker cabanas with concealed conduits, integrating stylish B2B shading parameters with weather covers for the heavy monsoons.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
 
                 {/* STATS BAR */}
-                <div className="bg-[#2D2D2D] rounded-[2rem] border border-white/5 p-8 md:p-10 text-white flex flex-col md:flex-row justify-between items-center text-center gap-8 shadow-md select-none">
+                <div className="bg-[#2D2D2D] rounded-[2rem] border border-white/5 p-8 md:p-10 text-white flex flex-col md:flex-row justify-between items-center text-center gap-8 shadow-md">
                     <div className="flex-1">
-                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">50+</span>
-                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Major Projects Delivered</span>
+                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">45+</span>
+                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Hotel & Resort Terraces</span>
                     </div>
                     <div className="w-[1px] h-8 bg-white/10 md:block hidden" />
                     <div className="flex-1">
-                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">15+</span>
+                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">12+</span>
                         <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Cities Served</span>
                     </div>
                     <div className="w-[1px] h-8 bg-white/10 md:block hidden" />
                     <div className="flex-1">
-                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">2-Year</span>
-                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Comprehensive Guarantee</span>
+                        <span className="block text-3xl font-black uppercase tracking-tight text-[#C9A84C]">600+</span>
+                        <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/55 mt-1 block">Wicker Dining Sets Delivered</span>
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 5 — INSTALLATION, WARRANTY & FAQ */}
-            <section className="w-full px-6 md:px-12 mb-24">
+            {/* SECTION 5 — FAQ */}
+            <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
                 <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— AFTER-SALES LIFECYCLE GUIDE</span>
                 <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-none text-[#1A1A1A] mb-12">
                     Installation, Warranty & Top Questions
                 </h2>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white rounded-[2.5rem] border border-black/[0.03] p-8 md:p-14 mb-16 shadow-sm">
-                    {/* Installation Support */}
                     <div>
-                        <h3 className="text-xl font-black uppercase text-[#1A1A1A] border-b border-black/10 pb-3">▸ Installation Support</h3>
+                        <h3 className="text-xl font-black uppercase text-[#1A1A1A] border-b border-black/10 pb-3">▸ Installation & Assembly</h3>
                         <p className="text-xs sm:text-sm text-[#2D2D2D]/75 leading-relaxed mt-4">
-                            We provide comprehensive delivery and professional installation support across India. Our trained team handles unloading, placement, assembly, and modular configurations.
+                            We provide comprehensive delivery and professional assembly support across India. For major commercial developments and municipal layouts, our trained engineering crews manage anchors, leveling, and site handovers.
                         </p>
                     </div>
-
-                    {/* 2-Year Comprehensive Warranty */}
                     <div>
-                        <h3 className="text-xl font-black uppercase text-[#1A1A1A] border-b border-black/10 pb-3">▸ 2-Year B2B Warranty</h3>
+                        <h3 className="text-xl font-black uppercase text-[#1A1A1A] border-b border-black/10 pb-3">▸ 2-Year Comprehensive Warranty</h3>
                         <p className="text-xs sm:text-sm text-[#2D2D2D]/75 leading-relaxed mt-4">
-                            Covers structural frame integrity, synthetic wicker PE core materials, and manufacturing defects. Claim resolution is simple with on-site inspections and quick repairs.
+                            Urbanland stands behind its products. We offer a comprehensive 2-year guarantee covering frame structure, powder coating peeling, structural cracking, and hardware defects.
                         </p>
                     </div>
                 </div>
 
-                {/* FAQ section */}
                 <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-8">— Frequently Asked Questions</h3>
                 <div className="flex flex-col gap-4 max-w-4xl mx-auto">
-                    {[
-                        {
-                            q: "Is wicker outdoor furniture suitable for Indian weather?",
-                            a: "Yes! Unlike natural rattan, our high-density PE synthetic wicker is specifically engineered to withstand harsh UV rays, monsoon downpours, high humidity, and temperature fluctuations without fading, cracking, or molding."
-                        },
-                        {
-                            q: "How does synthetic wicker compare to natural rattan?",
-                            a: "Natural rattan is highly organic but degrades quickly under outdoor sunlight and moisture. PE synthetic wicker replicates the warm natural appearance perfectly while providing 10x more durability, washability, and weather resistance."
-                        },
-                        {
-                            q: "Can wicker outdoor sets be fully customized?",
-                            a: "Absolutely! As a direct B2B manufacturer, we customize wicker colors, cushion fabrics (waterproof and UV-resistant in multiple shades), dimensions, modules, glass tops, and complete seating configurations to align with your site plans."
-                        },
-                        {
-                            q: "What is the typical B2B lead time?",
-                            a: "Standard B2B orders take about 30 to 45 days from confirmation and drawings approval, depending on the custom specifications and order volume. Staggered logistics options are available for township handovers."
-                        },
-                        {
-                            q: "Do you provide installation services?",
-                            a: "Yes. We coordinate nationwide logistics and deploy skilled field technicians to unpack, assemble, and position the wicker cabanas, loungers, or dining sets at your site, ensuring zero hassle for your team."
-                        }
-                    ].map((faq, idx) => (
-                        <div 
-                            key={idx} 
-                            className="bg-white rounded-2xl border border-black/[0.03] overflow-hidden shadow-sm transition-all"
-                        >
+                    {[{"q":"Can wicker products be left outdoors year-round?","a":"Yes. Our synthetic wicker is UV-rated for 3000+ hours, and frame bases are rust-proof, allowing year-round outdoor placement."},{"q":"What makes HDPE wicker superior to natural cane?","a":"HDPE wicker does not rot, crack, peel, or host pests, whereas natural cane degrades quickly under sunlight and moisture."},{"q":"Can I choose custom fabric colors?","a":"Yes, we offer a select range of 30+ solid and textured outdoor fabric colors."},{"q":"What is the lead time?","a":"Lead times are 30-45 days depending on design selection."},{"q":"Do you provide delivery across India?","a":"Yes, we ship safely to commercial, resort, and residential sites nationwide."}].map((faq, idx) => (
+                        <div key={idx} className="bg-white rounded-2xl border border-black/[0.03] overflow-hidden shadow-sm transition-all">
                             <button
                                 onClick={() => toggleFaq(idx)}
                                 className="w-full text-left p-6 sm:p-7 flex justify-between items-center font-bold text-sm sm:text-base cursor-pointer hover:bg-[#F7F4EF]/35"
                             >
                                 <span className="max-w-[90%]">{faq.q}</span>
-                                <span className="text-[#2C5F2E] text-xl font-bold font-mono">
-                                    {faqOpen[idx] ? "−" : "+"}
-                                </span>
+                                <span className="text-[#2C5F2E] text-xl font-bold font-mono">{faqOpen[idx] ? "−" : "+"}</span>
                             </button>
-
                             {faqOpen[idx] && (
                                 <div className="px-6 pb-6 sm:px-7 sm:pb-7 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/75 border-t border-[#2D2D2D]/5 pt-4">
                                     {faq.a}
@@ -703,11 +747,11 @@ const WickerFurniturePage = () => {
                 </div>
             </section>
 
-            {/* SECTION 6 — WHY URBANLAND STANDS APART (TRUST GRID) */}
+            {/* TRUST GRID */}
             <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
                 <div className="text-center mb-10 select-none">
                     <h3 className="text-xs font-black uppercase tracking-widest text-[#2C5F2E] mb-3">— Why Urbanland Stands Apart</h3>
-                    <h2 className="text-2xl sm:text-3.5xl font-black uppercase tracking-tight text-[#1A1A1A]">Luxury Wicker Craftsmanship</h2>
+                    <h2 className="text-2xl sm:text-3.5xl font-black uppercase tracking-tight text-[#1A1A1A]">Engineered for Smart Cities</h2>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 w-full max-w-5xl mx-auto">
                     <div className="flex items-start gap-4 bg-[#F7F4EF]/45 p-5 rounded-[2rem] border border-black/[0.03] transition-all duration-300 hover:bg-[#F7F4EF]/70 shadow-[0_5px_15px_rgba(0,0,0,0.01)]">
@@ -724,8 +768,8 @@ const WickerFurniturePage = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
                         <div>
-                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">HDPE Synthetic Weave</h4>
-                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Weatherproof, UV-protected materials suitable for coastal and extreme climates.</p>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">2-Year Guarantee</h4>
+                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Comprehensive coverage on all components, structure and coatings.</p>
                         </div>
                     </div>
                     <div className="flex items-start gap-4 bg-[#F7F4EF]/45 p-5 rounded-[2rem] border border-black/[0.03] transition-all duration-300 hover:bg-[#F7F4EF]/70 shadow-[0_5px_15px_rgba(0,0,0,0.01)]">
@@ -733,37 +777,35 @@ const WickerFurniturePage = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
                         <div>
-                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">Commercial Resort Grade</h4>
-                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Engineered to support heavy use in hotels, clubs, and hospitality ventures.</p>
+                            <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A] mb-1">Smart Ready Design</h4>
+                            <p className="text-[11px] font-semibold text-[#2D2D2D]/75 leading-relaxed">Ready to deploy within major commercial projects and townships.</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* SECTION 7 — FINAL CTA */}
+            {/* FINAL CTA SECTION */}
             <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-12">
                 <div className="w-full bg-[#2C5F2E] rounded-[2.5rem] p-8 md:p-16 flex flex-col items-center text-center text-white relative overflow-hidden shadow-xl border border-black/5">
-                    {/* Subtle Overlay to enrich gradient */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#2C5F2E] to-[#1d4720] opacity-95 pointer-events-none" />
                     
                     <div className="relative z-10 max-w-4xl flex flex-col items-center">
                         <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest bg-white/10 text-[#C9A84C] px-3.5 py-1.5 rounded-full select-none mb-6">
-                            Transform Your Space
+                            Ready to Partner
                         </span>
                         
                         <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-white max-w-3xl mb-6">
-                            Ready to Transform Your Outdoor Space with Premium Wicker Products?
+                            Ready to Specify Wicker Furniture for Your Project?
                         </h2>
 
                         <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl mb-10 font-medium">
-                            Specify Urbanland® B2B wicker furniture for your commercial properties, hotels, townships, or open-air dining plazas. Request a custom quote today.
+                            Get a custom quote, detailed proposal, and technical specifications within 24 hours. Urbanland serves municipalities, developers, and architects nationwide.
                         </p>
 
-                        {/* CTA Buttons */}
                         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 select-none mb-8 w-full sm:w-auto">
                             <Link
                                 to="/get-quote/?product=wicker-furniture"
-                                className="px-8 py-4 bg-[#C9A84C] text-[#232120] hover:bg-white hover:text-[#2C5F2E] rounded-full font-black uppercase tracking-wider text-xs transition-all shadow-lg hover:scale-102 transform duration-300 text-center font-bold"
+                                className="px-8 py-4 bg-[#C9A84C] text-[#232120] hover:bg-white hover:text-[#2C5F2E] rounded-full font-black uppercase tracking-wider text-xs transition-all shadow-lg transform duration-300 text-center font-bold"
                             >
                                 Request Custom Quote →
                             </Link>
@@ -772,20 +814,38 @@ const WickerFurniturePage = () => {
                                 to="/resources/downloads"
                                 className="px-8 py-4 bg-transparent hover:bg-white hover:text-[#2C5F2E] border border-white/20 text-white rounded-full font-bold uppercase tracking-wider text-xs transition-all text-center font-bold"
                             >
-                                Download the Brochure ↓
+                                Download Specification Guide ↓
                             </Link>
-                        </div>
-
-                        <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/70 flex flex-wrap justify-center gap-x-6 gap-y-2.5 select-none border-t border-white/15 pt-6 w-full mb-8">
-                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Free custom quote</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> No commitment</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Nationwide delivery</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> 2-Year Guarantee</span>
-                            <span className="flex items-center gap-1.5"><span className="text-[#C9A84C]">✓</span> Installation support</span>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* EXIT-INTENT POPUP */}
+            {exitPopupVisible && (
+                <div className="fixed inset-0 z-[9999] flex justify-center items-center px-4">
+                    <div className="absolute inset-0 bg-black/65 backdrop-blur-sm" onClick={() => setExitPopupVisible(false)} />
+                    <div className="relative bg-white text-[#1A1A1A] max-w-lg w-full rounded-[2.5rem] z-10 p-8 sm:p-12 shadow-2xl">
+                        <button onClick={() => setExitPopupVisible(false)} className="absolute top-6 right-6 w-8 h-8 flex justify-center items-center text-black/45 hover:text-black font-mono text-lg font-bold">✕</button>
+                        {!exitPopupSubmitted ? (
+                            <div className="flex flex-col items-center text-center">
+                                <h3 className="text-xl sm:text-2xl font-black uppercase text-[#1A1A1A] mb-3">Download the Wicker Furniture Buyer's Guide</h3>
+                                <p className="text-xs sm:text-sm text-[#2D2D2D]/70 mb-8">Get our complete guide to material specifications, custom sizing, and bulk pricing matrices.</p>
+                                <form onSubmit={(e) => { e.preventDefault(); if (emailInput.trim()) { setExitPopupSubmitted(true); trackEvent("exit_intent_submit", emailInput); } }} className="w-full flex flex-col gap-3">
+                                    <input type="email" required placeholder="Enter professional email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} className="w-full px-6 py-4 rounded-full border border-black/10 text-sm focus:outline-none focus:border-[#2C5F2E] bg-[#F7F4EF]" />
+                                    <button type="submit" className="w-full py-4 bg-[#C9A84C] hover:bg-black hover:text-white text-[#232120] font-black uppercase text-xs rounded-full transition-colors">Get the Guide (PDF)</button>
+                                </form>
+                            </div>
+                        ) : (
+                            <div className="flex flex-col items-center text-center py-6">
+                                <h3 className="text-xl sm:text-2xl font-black uppercase text-[#1A1A1A] mb-3">Guide Sent!</h3>
+                                <p className="text-xs sm:text-sm text-[#2D2D2D]/70 mb-8">We've sent the guide to <span className="font-bold text-[#2C5F2E]">{emailInput}</span>.</p>
+                                <button onClick={() => setExitPopupVisible(false)} className="px-8 py-3 bg-[#2C5F2E] text-white font-black uppercase text-xs rounded-full">Close Window</button>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
