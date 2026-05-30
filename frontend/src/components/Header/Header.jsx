@@ -47,7 +47,7 @@ const Header = () => {
           onClick={() => setIsOpen(true)}
           className="flex items-center gap-1.5 cursor-pointer text-[#1A1A1A] hover:text-[#C9A84C] transition-all active:scale-95 select-none"
         >
-          <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider font-sans">+ MENU</span>
+          <span className="text-[0.5625rem] md:text-[0.625rem] font-bold uppercase tracking-wider font-sans">+ MENU</span>
         </div>
       </header>
 

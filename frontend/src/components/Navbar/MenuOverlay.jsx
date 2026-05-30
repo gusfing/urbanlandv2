@@ -208,9 +208,9 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
           <div className="absolute -right-20 -bottom-20 w-[50vw] h-[25vw] bg-[#C9A84C]/5 rounded-full blur-[120px] transform -rotate-45" />
 
           {/* Large Rotated Glassmorphic Outline Pill behind Links */}
-          <div className="absolute top-1/2 left-[15%] -translate-y-1/2 w-[650px] h-[325px] border border-black/[0.02] bg-black/[0.002] backdrop-blur-[1px] rounded-full transform -rotate-12 flex items-center justify-center">
-            <div className="w-[calc(100%-40px)] h-[calc(100%-40px)] border border-black/[0.012] rounded-full flex items-center justify-center">
-              <div className="w-[calc(100%-40px)] h-[calc(100%-40px)] border border-black/[0.006] rounded-full" />
+          <div className="absolute top-1/2 left-[15%] -translate-y-1/2 w-[40.625rem] h-[20.3125rem] border border-black/[0.02] bg-black/[0.002] backdrop-blur-[1px] rounded-full transform -rotate-12 flex items-center justify-center">
+            <div className="w-[calc(100%-2.5rem)] h-[calc(100%-2.5rem)] border border-black/[0.012] rounded-full flex items-center justify-center">
+              <div className="w-[calc(100%-2.5rem)] h-[calc(100%-2.5rem)] border border-black/[0.006] rounded-full" />
             </div>
           </div>
         </div>
@@ -271,7 +271,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                             key={sub.name}
                             to={sub.path}
                             onClick={() => setIsOpen(false)}
-                            className="px-4 py-2 rounded-full bg-black/5 border border-black/5 text-[#2D2D2D]/80 hover:text-white hover:bg-[#2C5F2E] hover:border-[#2C5F2E] text-[10px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 no-underline select-none"
+                            className="px-4 py-2 rounded-full bg-black/5 border border-black/5 text-[#2D2D2D]/80 hover:text-white hover:bg-[#2C5F2E] hover:border-[#2C5F2E] text-[0.625rem] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 no-underline select-none"
                           >
                             {sub.name}
                           </Link>
@@ -331,7 +331,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                       href={social.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-12 h-12 rounded-full border border-black/15 flex items-center justify-center text-black/70 hover:text-[#2C5F2E] hover:border-[#2C5F2E] transition-all text-[13px] font-medium tracking-wide font-sans select-none hover:bg-black/5 cursor-pointer"
+                      className="w-12 h-12 rounded-full border border-black/15 flex items-center justify-center text-black/70 hover:text-[#2C5F2E] hover:border-[#2C5F2E] transition-all text-[0.8125rem] font-medium tracking-wide font-sans select-none hover:bg-black/5 cursor-pointer"
                     >
                       {social.label}
                     </a>
@@ -340,7 +340,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
               </div>
 
               {/* Subtext info */}
-              <p className="text-[11px] sm:text-xs text-black/40 leading-relaxed font-sans max-w-xs">
+              <p className="text-[0.6875rem] sm:text-xs text-black/40 leading-relaxed font-sans max-w-xs">
                 This website is just the concept work done by—Moyra to showcase our capabilities.
               </p>
             </div>
