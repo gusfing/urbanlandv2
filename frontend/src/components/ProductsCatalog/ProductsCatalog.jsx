@@ -519,7 +519,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
                       <img
                         src={product.image}
                         alt={`${product.title} manufacturer India — Urbanland Products`}
-                        className="absolute inset-0 max-h-[78%] max-w-[78%] m-auto object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                        className="absolute inset-0 max-h-[62%] max-w-[62%] m-auto object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0"
                         style={{ mixBlendMode: 'multiply', filter: 'brightness(1.12) contrast(1.05)' }}
                       />
                       {/* Second image: UGC background */}
@@ -552,7 +552,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
                       <img
                         src={product.image}
                         alt={`${product.title} manufacturer India`}
-                        className="max-h-[78%] max-w-[78%] object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0 z-1"
+                        className="max-h-[62%] max-w-[62%] object-contain select-none transition-opacity duration-300 ease-in-out group-hover:opacity-0 z-1"
                         style={{ mixBlendMode: 'multiply', filter: 'brightness(1.12) contrast(1.05)' }}
                       />
 
