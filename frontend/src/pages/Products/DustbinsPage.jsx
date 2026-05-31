@@ -510,23 +510,22 @@ const DustbinsPage = () => {
                     </p>
                 </div>
 
-                {/* DESKTOP TABS TOGGLE */}
                 <div className="hidden md:flex flex-row gap-2 border-b border-[#2D2D2D]/15 pb-4 mb-12 select-none">
                     <button
                         onClick={() => { setActiveTab("standard"); trackEvent("variant_selection", "standard"); }}
-                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 \${activeTab === "standard" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "standard" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
                     >
                         Standard Configuration
                     </button>
                     <button
                         onClick={() => { setActiveTab("premium"); trackEvent("variant_selection", "premium"); }}
-                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 \${activeTab === "premium" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "premium" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
                     >
                         Premium Configuration
                     </button>
                     <button
                         onClick={() => { setActiveTab("super"); trackEvent("variant_selection", "super_premium"); }}
-                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 \${activeTab === "super" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
+                        className={`flex-1 text-center py-4 px-6 rounded-2xl text-xs font-black uppercase tracking-wider transition-all duration-300 ${activeTab === "super" ? "bg-[#2C5F2E] text-white shadow-md" : "bg-white text-[#1A1A1A] hover:bg-[#EAE5DB]/40 border border-black/[0.04]"}`}
                     >
                         Super Premium Configuration
                     </button>
