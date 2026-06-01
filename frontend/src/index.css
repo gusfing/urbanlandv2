@@ -470,3 +470,105 @@ font-size: 0.75rem; /* Converted to rem for TV & 4K monitor scaling */
     padding-left: 0.5rem !important;
   }
 }
+
+/* --- Menu Overlay Premium Short-Height Screen Optimizations --- */
+@media (max-height: 850px) and (min-width: 1024px) {
+  /* Scale down the modal padding for more space */
+  .menu-overlay-inner {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+
+  /* Make sure the main flex container gaps are smaller */
+  .menu-main-content {
+    gap: 1.5rem !important;
+  }
+
+  /* Scale down the menu link text size to prevent massive overflow */
+  .menu-link-text {
+    font-size: 3rem !important; /* Scale down from 4.5rem (72px) to 3rem (48px) */
+    line-height: 1.1 !important;
+  }
+
+  /* Scale down the button to toggle sub-links */
+  .menu-sub-toggle-btn {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+  }
+
+  /* Reduce gap inside the links block */
+  .menu-links-block {
+    gap: 0.5rem !important;
+  }
+
+  /* Scale down Cinematic preview card height */
+  .menu-cinematic-card {
+    height: 60vh !important;
+  }
+
+  /* Reduce spacing in the bottom social row */
+  .menu-bottom-row {
+    margin-top: 1.5rem !important;
+    padding-top: 1.5rem !important;
+  }
+
+  /* Scale down the sub-links pill buttons slightly */
+  .menu-sublinks-panel {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+    gap: 0.35rem !important;
+  }
+  .menu-sublink-item {
+    padding: 0.35rem 0.75rem !important;
+    font-size: 9px !important;
+  }
+}
+
+@media (max-height: 700px) and (min-width: 1024px) {
+  .menu-overlay-inner {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .menu-link-text {
+    font-size: 2.35rem !important; /* Scale down to 38px */
+  }
+
+  .menu-links-block {
+    gap: 0.25rem !important;
+  }
+
+  .menu-bottom-row {
+    margin-top: 1rem !important;
+    padding-top: 1rem !important;
+  }
+}
+
+@media (max-height: 600px) {
+  .menu-link-text {
+    font-size: 2rem !important; /* 32px */
+  }
+  .menu-sub-toggle-btn {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  .menu-sublinks-panel {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .menu-sublink-item {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 8px !important;
+  }
+}
+
+/* --- Global Sliders Grab Cursors --- */
+.overflow-x-auto {
+  cursor: grab;
+  user-select: none;
+}
+.overflow-x-auto:active {
+  cursor: grabbing;
+}

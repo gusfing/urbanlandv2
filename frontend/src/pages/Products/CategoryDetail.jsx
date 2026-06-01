@@ -6,8 +6,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Import static products list to dynamically fetch category images
-import { products as staticProducts } from "../../constants/productsData";
+// Import fallback product image
+import colimg1 from "../../assets/Bench_Planter.png";
 
 // Premium Dustbins Generated Studio Images
 import nanukNextImg from "../../assets/products/Product Images/Dustbins/nanuk_next.png";
@@ -301,7 +301,7 @@ const CategoryDetail = () => {
       active = false;
       cleanPageSEO();
     };
-  }, [category, subcategory, meta]);
+  }, [category, subcategory, meta.title, meta.description, meta.image]);
 
   // Google Font Outfit dynamic loading
   useEffect(() => {

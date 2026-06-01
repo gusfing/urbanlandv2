@@ -19,7 +19,7 @@ const categories = [
   { id: "benches", name: "Benches", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
       <path d="M4 6h16M4 9h16" strokeLinecap="round" />
-      <path d="M3 13h18M3 15h18" strokeLinecap="round" strokeJoin="round" />
+      <path d="M3 13h18M3 15h18" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M4 6v9m16-9v9M5 15l-1 5m16-5l1 5M8 15v4m8-4v4" strokeLinecap="round" />
     </svg>
   )},
@@ -58,7 +58,7 @@ const categories = [
   )},
   { id: "car-shelters", name: "Car Shelters", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-      <path d="M3 6l16-2 2 4M3 6v14" strokeLinecap="round" strokeJoin="round" />
+      <path d="M3 6l16-2 2 4M3 6v14" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M3 9l4-2" strokeLinecap="round" />
       <path d="M9 16h8l1-2.5h-10l1 2.5z" strokeLinejoin="round" />
       <circle cx="10.5" cy="18.5" r="1.5" />
@@ -110,7 +110,7 @@ const categories = [
   )},
   { id: "poolside-loungers", name: "Poolside Loungers", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-      <path d="M3 17c1.5 0 2.5-1 3.5-3.5S8.5 9.5 11.5 9.5s3.5 1.5 5 4.5S19.5 17 21 17" strokeLinecap="round" strokeJoin="round" />
+      <path d="M3 17c1.5 0 2.5-1 3.5-3.5S8.5 9.5 11.5 9.5s3.5 1.5 5 4.5S19.5 17 21 17" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M7 14v4M16 14.5v3.5" strokeLinecap="round" />
       <rect x="3.5" y="11" width="2" height="4" rx="1" transform="rotate(20 3.5 11)" />
     </svg>
@@ -133,106 +133,6 @@ const categories = [
     </svg>
   )}
 ];
-
-const getPremiumOverlayText = (id) => {
-  const mapping = {
-    "bench-planters": "Double-Walled GFRC",
-    "benches": "FSC® Hardwood",
-    "bus-shelters": "Solar-Ready Roof",
-    "cabanas": "Premium Bed Slats",
-    "canteen-tables": "Durable HPL Slats",
-    "car-shelters": "EV-Charger Ready",
-    "dustbins": "Galvanized Liners",
-    "gazebos": "Concealed Conduits",
-    "pergolas": "High-Tension Tensile",
-    "planters": "Architectural Concrete",
-    "poolside-loungers": "HDPE Wicker Weave",
-    "pre-fab-homes": "Double Insulation",
-    "wicker-dining-sets": "Tempered Glass Top",
-    "wicker-living-sets": "Sunbrella® Cushions"
-  };
-  return mapping[id] || "Architectural Grade";
-};
-
-const getProductStats = (id) => {
-  const stats = {
-    "bench-planters": [
-      { text: "Integrated seating", icon: "🪑" },
-      { text: "Concrete planter", icon: "🧱" },
-      { text: "Drainage channel", icon: "💧" }
-    ],
-    "benches": [
-      { text: "FSC® Hardwood", icon: "🪵" },
-      { text: "Ergonomic Angle", icon: "📐" },
-      { text: "Anti-Skate", icon: "🛡" }
-    ],
-    "bus-shelters": [
-      { text: "Galvanized MS/SS", icon: "🏗" },
-      { text: "Solar-Ready", icon: "☀" },
-      { text: "Modular Length", icon: "📏" }
-    ],
-    "cabanas": [
-      { text: "Sunscape Bed", icon: "🛌" },
-      { text: "Pergola shading", icon: "⛺" },
-      { text: "Device shelves", icon: "📱" }
-    ],
-    "canteen-tables": [
-      { text: "Morse Series", icon: "🪑" },
-      { text: "Solid HPL Slats", icon: "🪵" },
-      { text: "6-8 Seater", icon: "👥" }
-    ],
-    "car-shelters": [
-      { text: "Double vehicle", icon: "🚗" },
-      { text: "EV-Charger Ready", icon: "🔌" },
-      { text: "Concealed Drainage", icon: "🌧" }
-    ],
-    "dustbins": [
-      { text: "75L-225L Sorting", icon: "🗑" },
-      { text: "Galvanized Liners", icon: "📦" },
-      { text: "Vandal-Resist Lock", icon: "🔒" }
-    ],
-    "gazebos": [
-      { text: "FSC certified wood", icon: "🪵" },
-      { text: "Louvered wood", icon: "🪟" },
-      { text: "Concealed conduits", icon: "⚡" }
-    ],
-    "pergolas": [
-      { text: "Tensile Polymer", icon: "🎐" },
-      { text: "Parabolic Curve", icon: "〽" },
-      { text: "Custom Height", icon: "📐" }
-    ],
-    "planters": [
-      { text: "GFRC Concrete", icon: "🧱" },
-      { text: "Double-Walled", icon: "🛡" },
-      { text: "Self-Watering", icon: "💧" }
-    ],
-    "poolside-loungers": [
-      { text: "HDPE Wicker Weave", icon: "🌴" },
-      { text: "Quick-Dry Foam", icon: "🧼" },
-      { text: "Anti-Rust Frame", icon: "🏗" }
-    ],
-    "pre-fab-homes": [
-      { text: "25 sqm base", icon: "🏡" },
-      { text: "48-Hour Setup", icon: "⚡" },
-      { text: "Eco WPC Panel", icon: "🌱" }
-    ],
-    "wicker-dining-sets": [
-      { text: "Tempered Glass", icon: "🥛" },
-      { text: "Rust-free Frame", icon: "🏗" },
-      { text: "Sunbrella® Fabric", icon: "🧵" }
-    ],
-    "wicker-living-sets": [
-      { text: "Sunbrella® Fabric", icon: "🧵" },
-      { text: "UV-Stable strands", icon: "☀" },
-      { text: "Modular seating", icon: "🧩" }
-    ]
-  };
-  return stats[id] || [
-    { text: "Architectural", icon: "✦" },
-    { text: "Sustainable", icon: "🌱" },
-    { text: "Premium Finish", icon: "★" }
-  ];
-};
 
 const ProductsCatalog = ({ showTitle = true }) => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -339,7 +239,19 @@ const ProductsCatalog = ({ showTitle = true }) => {
     }
   };
 
+  const scrollPills = (direction) => {
+    if (pillsRef.current) {
+      const scrollAmount = direction === "left" ? -350 : 350;
+      pillsRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: "smooth"
+      });
+    }
+  };
+
   useGSAP(() => {
+    if (loading) return;
+
     if (showTitle) {
       // Reveal section title
       gsap.fromTo(
@@ -393,7 +305,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
         }
       }
     );
-  }, { scope: containerRef });
+  }, { scope: containerRef, dependencies: [loading] });
 
   const Wrapper = showTitle ? "section" : "div";
 
@@ -425,77 +337,82 @@ const ProductsCatalog = ({ showTitle = true }) => {
       <div className="w-full flex flex-col gap-8 catalog-pills-row">
         
         {/* Horizontal Navigation Grid */}
-        <div className="w-full flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-[#2D2D2D]/10">
+        <div className="w-full flex items-center justify-between pb-6 border-b border-[#2D2D2D]/10">
           
-          {/* Categories Pill list */}
-          <div ref={pillsRef} className="flex-1 overflow-x-auto scrollbar-none flex items-center gap-2.5 py-1 pr-4">
+          {/* Pills Wrapper with Left and Right scroll buttons flanking them */}
+          <div className="flex-1 flex items-center relative w-full overflow-hidden">
             
-            {/* All Products Pill Button */}
+            {/* Left Category Scroll Button */}
             <button
-              onClick={() => setActiveCategory("all")}
-              className={`flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer shrink-0 ${
-                activeCategory === "all"
-                  ? "bg-[#2C5F2E] text-[#F7F4EF] shadow-sm border border-[#2C5F2E] scale-95"
-                  : "bg-[#2D2D2D]/5 text-[#2D2D2D] border border-[#2D2D2D]/10 hover:bg-[#2D2D2D]/10"
-              }`}
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <span>All products</span>
-            </button>
-
-            {/* Category pills */}
-            {categories.filter(cat => cat.id !== "all").map((cat) => {
-              const isActive = activeCategory === cat.id;
-              
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(isActive ? "all" : cat.id)}
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide border transition-all duration-300 cursor-pointer shrink-0 ${
-                    isActive
-                      ? "bg-[#2D2D2D] text-[#F7F4EF] border-[#2D2D2D] shadow-sm scale-95"
-                      : "border-[#2D2D2D]/20 text-[#2D2D2D]/85 hover:bg-[#2D2D2D]/5"
-                  }`}
-                >
-                  {cat.icon}
-                  <span>{cat.name}</span>
-                </button>
-              );
-            })}
-          </div>
-          
-          {/* Slider Navigation Arrows on the right */}
-          <div className="hidden md:flex items-center gap-2.5 shrink-0 ml-auto md:ml-0">
-            <button
-              onClick={() => scroll("left")}
-              className="w-10 h-10 rounded-full bg-[#EAE5DB] text-[#2D2D2D] hover:bg-[#EAE5DB]/80 flex justify-center items-center transition-all cursor-pointer shrink-0"
-              aria-label="Scroll left"
+              onClick={() => scrollPills("left")}
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EAE5DB] text-[#2D2D2D] hover:bg-[#EAE5DB]/80 flex justify-center items-center transition-all cursor-pointer shrink-0 mr-3 shadow-sm active:scale-95"
+              aria-label="Scroll categories left"
             >
               <svg className="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
             </button>
+
+            {/* Categories Pill list */}
+            <div ref={pillsRef} className="flex-1 overflow-x-auto scrollbar-none flex items-center gap-2.5 py-1 pr-4 scroll-smooth">
+              
+              {/* All Products Pill Button */}
+              <button
+                onClick={() => setActiveCategory("all")}
+                className={`flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer shrink-0 ${
+                  activeCategory === "all"
+                    ? "bg-[#2C5F2E] text-[#F7F4EF] shadow-sm border border-[#2C5F2E] scale-95"
+                    : "bg-[#2D2D2D]/5 text-[#2D2D2D] border border-[#2D2D2D]/10 hover:bg-[#2D2D2D]/10"
+                }`}
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <span>All products</span>
+              </button>
+
+              {/* Category pills */}
+              {categories.filter(cat => cat.id !== "all").map((cat) => {
+                const isActive = activeCategory === cat.id;
+                
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setActiveCategory(isActive ? "all" : cat.id)}
+                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide border transition-all duration-300 cursor-pointer shrink-0 ${
+                      isActive
+                        ? "bg-[#2D2D2D] text-[#F7F4EF] border-[#2D2D2D] shadow-sm scale-95"
+                        : "border-[#2D2D2D]/20 text-[#2D2D2D]/85 hover:bg-[#2D2D2D]/5"
+                    }`}
+                  >
+                    {cat.icon}
+                    <span>{cat.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right Pill Scroll Button */}
             <button
-              onClick={() => scroll("right")}
-              className="w-10 h-10 rounded-full bg-[#2C5F2E] text-[#F7F4EF] hover:bg-[#2C5F2E]/90 flex justify-center items-center shadow-md transition-all cursor-pointer shrink-0"
-              aria-label="Scroll right"
+              onClick={() => scrollPills("right")}
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#2C5F2E] text-[#F7F4EF] hover:bg-[#2C5F2E]/90 flex justify-center items-center shadow-md transition-all cursor-pointer shrink-0 ml-3 active:scale-95"
+              aria-label="Scroll categories right"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
             </button>
+
           </div>
         </div>
 
         {/* Bottom row: Slider container */}
         <div className="w-full relative">
           
-          {/* Left Arrow (Visible on Mobile) */}
+          {/* Left Arrow (Visible on all screens) */}
           <button
             onClick={() => scroll("left")}
-            className="absolute left-2 top-[38%] -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#EAE5DB]/90 backdrop-blur-md text-[#2D2D2D] hover:bg-[#EAE5DB] flex justify-center items-center transition-all cursor-pointer shadow-md active:scale-95 md:hidden"
+            className="absolute left-2 md:left-4 top-[38%] md:top-[42%] -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#EAE5DB]/90 backdrop-blur-md text-[#2D2D2D] hover:bg-[#EAE5DB] flex justify-center items-center transition-all cursor-pointer shadow-md active:scale-95"
             aria-label="Scroll left"
           >
             <svg className="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -665,10 +582,10 @@ const ProductsCatalog = ({ showTitle = true }) => {
             )}
           </div>
 
-          {/* Right Arrow (Visible on Mobile) */}
+          {/* Right Arrow (Visible on all screens) */}
           <button
             onClick={() => scroll("right")}
-            className="absolute right-2 top-[38%] -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#2C5F2E]/90 backdrop-blur-md text-[#F7F4EF] hover:bg-[#2C5F2E] flex justify-center items-center shadow-lg transition-all cursor-pointer active:scale-95 md:hidden"
+            className="absolute right-2 md:right-4 top-[38%] md:top-[42%] -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#2C5F2E]/90 backdrop-blur-md text-[#F7F4EF] hover:bg-[#2C5F2E] flex justify-center items-center shadow-lg transition-all cursor-pointer active:scale-95"
             aria-label="Scroll right"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

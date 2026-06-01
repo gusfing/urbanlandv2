@@ -416,7 +416,15 @@ const BusShelter_Page = () => {
             </div>
 
             {/* PREMIUM HORIZONTAL CAROUSEL HERO SECTION */}
-            <section className="w-full mb-8 relative select-none">
+            <section className="w-full mb-8 relative select-none group/hero">
+                {/* Left Navigation Arrow */}
+                <button
+                    onClick={scrollHeroLeft}
+                    className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#EAE5DB]/90 backdrop-blur-md text-[#2D2D2D] hover:bg-[#EAE5DB] flex justify-center items-center shadow-md active:scale-95 opacity-0 group-hover/hero:opacity-100 transition-all duration-300 cursor-pointer select-none font-sans text-base"
+                    aria-label="Scroll left"
+                >
+                    ←
+                </button>
                 <div 
                     ref={heroScrollRef}
                     className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-4 px-6 md:px-12"
@@ -467,6 +475,15 @@ const BusShelter_Page = () => {
                         </div>
                     ))}
                 </div>
+
+                {/* Right Navigation Arrow */}
+                <button
+                    onClick={scrollHeroRight}
+                    className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#2C5F2E]/90 backdrop-blur-md text-[#F7F4EF] hover:bg-[#2C5F2E] flex justify-center items-center shadow-lg active:scale-95 opacity-0 group-hover/hero:opacity-100 transition-all duration-300 cursor-pointer select-none font-sans text-base"
+                    aria-label="Scroll right"
+                >
+                    →
+                </button>
             </section>
 
             {/* SECTION 1 — WHY CHOOSE URBANLAND */}

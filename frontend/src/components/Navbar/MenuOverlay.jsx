@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // Import image assets
-import capsuleImg from '../../assets/cap1.png';
 import gbg1 from '../../assets/gallery_real_estate.png';
 import gbg2 from '../../assets/gallery_hotels.png';
 import gbg3 from '../../assets/gallery_hospitals.png';
@@ -11,7 +10,6 @@ import gbg4 from '../../assets/gallery_education.png';
 import gbg5 from '../../assets/gallery_smart_city.png';
 
 const MenuOverlay = ({ isOpen, setIsOpen }) => {
-  const location = useLocation();
   const containerRef = useRef(null);
   const innerRef = useRef(null);
   const linksRef = useRef([]);
@@ -64,12 +62,23 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
       path: "/projects",
       subLinks: [
         { name: "View All Projects", path: "/projects" },
-        { name: "Lodha Projects", path: "/projects/lodha" },
-        { name: "Adani Realty Projects", path: "/projects/adani" },
-        { name: "Oberoi Projects", path: "/projects/oberoi" }
+        { name: "Lodha Gated Estates", path: "/projects/lodha" },
+        { name: "Adani Corporate Plazas", path: "/projects/adani" },
+        { name: "Oberoi Leisure Hubs", path: "/projects/oberoi" },
+        { name: "Mumbai Smart Shelters", path: "/projects/mumbai" },
+        { name: "Delhi Metro Plazas", path: "/projects/delhi" },
+        { name: "Bangalore Social Courtyards", path: "/projects/bangalore" },
+        { name: "Pune Public Shelters", path: "/projects/pune" }
       ]
     },
-    { name: "About Us", path: "/about-us" },
+    { 
+      name: "About Us", 
+      path: "/about-us",
+      subLinks: [
+        { name: "Our Profile & History", path: "/about-us" },
+        { name: "Sustainability & Metallurgy", path: "/sustainability" }
+      ]
+    },
     { 
       name: "Resources", 
       path: "/resources",
@@ -197,7 +206,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
     >
       <div
         ref={innerRef}
-        className="relative w-full h-full bg-[#F7F4EF] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-14 lg:p-16 shadow-none border-none rounded-none"
+        className="menu-overlay-inner relative w-full h-full bg-[#F7F4EF] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-14 lg:p-16 shadow-none border-none rounded-none"
       >
         {/* Decorative Premium Capsule Pills in the Menu Background */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
@@ -216,13 +225,13 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
         </div>
         
         {/* Main Content Area: Split left/right on desktop */}
-        <div className="w-full h-full flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-16 z-10 overflow-y-auto scrollbar-none pb-12 lg:pb-0">
+        <div className="menu-main-content w-full h-full flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-16 z-10 overflow-y-auto scrollbar-none pb-12 lg:pb-0">
           
           {/* LEFT COLUMN: Animated Navigation Links & Social Row */}
-          <div className="w-full lg:w-[55%] flex flex-col justify-between py-4 lg:py-6 pl-2 lg:pl-6 mt-8 lg:mt-0">
+          <div className="w-full lg:w-[55%] flex flex-col justify-between py-4 lg:py-6 pl-2 lg:pl-6 mt-8 lg:mt-0 lg:h-full lg:overflow-y-auto lg:scrollbar-none pb-24 lg:pb-28">
             
             {/* Links Block */}
-            <div className="flex flex-col gap-3.5 items-start justify-center flex-grow w-full">
+            <div className="menu-links-block flex flex-col gap-3.5 items-start justify-center flex-grow w-full">
               {links.map((link, index) => {
                 const hasSub = !!link.subLinks;
                 const isExpanded = expandedIndex === index;
@@ -248,7 +257,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                         onClick={handleLinkClick}
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
-                        className="group relative flex items-center text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.05] text-[#2D2D2D]/60 font-semibold tracking-tight hover:text-[#2C5F2E] hover:translate-x-4 transition-all duration-300 select-none cursor-pointer no-underline"
+                        className="menu-link-text group relative flex items-center text-[clamp(1.8rem,5vw,2.5rem)] sm:text-[clamp(2.3rem,6vw,3.6rem)] lg:text-[clamp(2rem,7.5vh,4.2rem)] leading-[1.05] text-[#2D2D2D]/60 font-semibold tracking-tight hover:text-[#2C5F2E] hover:translate-x-4 transition-all duration-300 select-none cursor-pointer no-underline"
                       >
                         <span>{link.name}</span>
                       </Link>
@@ -256,7 +265,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                       {hasSub && (
                         <button
                           onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                          className="w-10 h-10 rounded-full border border-black/10 hover:border-[#2C5F2E] text-black/60 hover:text-[#2C5F2E] flex items-center justify-center text-sm font-semibold cursor-pointer active:scale-90 transition-all select-none hover:bg-black/5 bg-transparent"
+                          className="menu-sub-toggle-btn w-10 h-10 rounded-full border border-black/10 hover:border-[#2C5F2E] text-black/60 hover:text-[#2C5F2E] flex items-center justify-center text-sm font-semibold cursor-pointer active:scale-90 transition-all select-none hover:bg-black/5 bg-transparent"
                         >
                           {isExpanded ? "✕" : "＋"}
                         </button>
@@ -265,13 +274,13 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
  
                     {/* Sub Links Accordion panel */}
                     {hasSub && isExpanded && (
-                      <div className="flex flex-wrap gap-x-2.5 gap-y-2 mt-4 mb-6 pl-4 sm:pl-8 border-l-2 border-[#2C5F2E] max-w-full">
+                      <div className="menu-sublinks-panel flex flex-wrap gap-x-2.5 gap-y-2 mt-4 mb-6 pl-4 sm:pl-8 border-l-2 border-[#2C5F2E] max-w-full">
                         {link.subLinks.map((sub) => (
                           <Link
                             key={sub.name}
                             to={sub.path}
                             onClick={() => setIsOpen(false)}
-                            className="px-4 py-2 rounded-full bg-black/5 border border-black/5 text-[#2D2D2D]/80 hover:text-white hover:bg-[#2C5F2E] hover:border-[#2C5F2E] text-[0.625rem] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 no-underline select-none"
+                            className="menu-sublink-item px-4 py-2 rounded-full bg-black/5 border border-black/5 text-[#2D2D2D]/80 hover:text-white hover:bg-[#2C5F2E] hover:border-[#2C5F2E] text-[0.625rem] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 no-underline select-none"
                           >
                             {sub.name}
                           </Link>
@@ -286,11 +295,11 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
             {/* Bottom Row inside left column: Social Icons and Concept Text */}
             <div
               ref={bottomRef}
-              className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-8 border-t border-black/10 w-full mt-8 lg:mt-0"
+              className="menu-bottom-row flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-8 border-t border-black/10 w-full mt-8 lg:mt-0"
             >
               {/* Circular Social Icons */}
               <div className="flex items-center gap-3">
-                {socials.map((social, idx) => {
+                {socials.map((social) => {
                   if (social.name === "instagram") {
                     return (
                       <a
@@ -353,7 +362,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
             className="hidden lg:flex w-full lg:w-[40%] justify-end items-stretch relative"
           >
             {/* The Cinematic Preview Card */}
-            <div className="relative w-full h-[70vh] lg:h-full rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white shadow-2xl flex flex-col justify-end p-8 border border-black/5">
+            <div className="menu-cinematic-card relative w-full h-[70vh] lg:h-full rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white shadow-2xl flex flex-col justify-end p-8 border border-black/5">
               {/* Background previews */}
               <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden transition-all duration-700">
                 {bgImages.map((img, idx) => (
