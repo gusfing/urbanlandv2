@@ -71,7 +71,7 @@ const Activities = () => {
                     <div className="activities-featured-img w-full h-[200px] md:h-[250px] overflow-hidden rounded-3xl border border-[#2D2D2D]/10 shadow-2xl">
                         <img 
                             src={featuredImg} 
-                            alt="Lodha township WPC benches and GFRC planters installed by Urbanland Products" 
+                            alt="Lodha township WPC benches and concrete planters installed by Urbanland Products" 
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                         />
                     </div>

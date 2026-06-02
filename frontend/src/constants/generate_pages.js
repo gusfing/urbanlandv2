@@ -111,7 +111,7 @@ const pageConfigs = {
     materials: [
       { name: "Wood-Plastic Composite (WPC)", life: "8-10 years", maint: "Zero maintenance", best: "Low maintenance B2B landscapes", cost: "Economical (1.2x vs wood)" },
       { name: "FSC Robinia Hardwood", life: "12-15 years", maint: "Annual wood stain/oil", best: "Luxury hospitality & resorts", cost: "Premium (1.8x vs WPC)" },
-      { name: "GFRC Concrete Aggregate", life: "20+ years", maint: "Zero (sealant touch-up)", best: "Heavy public urban streetscapes", cost: "High-durability (1.5x vs WPC)" }
+      { name: "Concrete Aggregate", life: "20+ years", maint: "Zero (sealant touch-up)", best: "Heavy public urban streetscapes", cost: "High-durability (1.5x vs WPC)" }
     ],
     customization: [
       "Slats: Robinia timber, Jatoba, Teak wood, WPC, or perforated steel sheets",
@@ -601,17 +601,17 @@ const pageConfigs = {
     routePath: "products/planters",
     images: ["plantersImg", "plantersUgc", "plantersBoxHero"],
     carouselCards: [
-      { tag: "Product Spotlight", h: "GFRC Concrete &<br />Fiberglass Planters Box", label: "01", desc: "Premium lightweight architectural street planters" },
+      { tag: "Product Spotlight", h: "Architectural Concrete &<br />Fiberglass Planters Box", label: "01", desc: "Premium lightweight architectural street planters" },
       { tag: "Smart Streetscapes", h: "Weatherproof large<br />street planters with<br />drainage systems", label: "02", desc: "Internal waterproofing treatment ready" },
       { tag: "B2B Guarantee", h: "2-Year Warranty<br />& ISO Certified<br />Standards", label: "03", desc: "Trusted by hotels, corporate hubs & township parks" },
-      { tag: "Extreme Durability", h: "Glass Fiber Concrete<br />which resists cracks<br />and weather splits", label: "04", desc: "High-tensile GFRC composite planter blocks" },
+      { tag: "Extreme Durability", h: "Architectural Concrete<br />which resists cracks<br />and weather splits", label: "04", desc: "High-tensile concrete composite planter blocks" },
       { tag: "Bespoke Sizing", h: "Custom round, square<br />or bento planter boxes<br />up to 1.5m depth", label: "05", desc: "Ready to accommodate large public trees" }
     ],
     reasons: [
-      { title: "GFRC Concrete", desc: "Glass Fiber Reinforced Concrete provides high-tensile strength and crack resistance while remaining 70% lighter than standard concrete." },
+      { title: "Architectural Concrete", desc: "Architectural Concrete provides high-tensile strength and crack resistance while remaining exceptionally durable compared to standard casting." },
       { title: "Internal Waterproofing", desc: "All planter interiors are coated with heavy-duty waterproofing membrane sealants, preventing moisture seepage and outer salt stains." },
       { title: "Built-In Drainage", desc: "Features integrated bottom drainage holes with soil barrier screen inserts, preventing root rot and soil washouts." },
-      { title: "Theft Resistant", desc: "Heavy GFRC planters remain securely positioned in public spaces, resisting theft and unauthorized relocation." }
+      { title: "Theft Resistant", desc: "Heavy concrete planters remain securely positioned in public spaces, resisting theft and unauthorized relocation." }
     ],
     tabs: {
       standard: {
@@ -622,22 +622,22 @@ const pageConfigs = {
         matrix: { dims: "1000L × 350W × 450H mm", wt: "8-10 kg (empty)", lt: "15-20 days", maint: "Zero (wipe clean)", life: "5-6 years", custom: "None" }
       },
       premium: {
-        title: "Premium GFRC Street Planter — Heavy Duty",
+        title: "Premium Concrete Street Planter — Heavy Duty",
         ideal: "Smart City footpaths, hotel driveway perimeters, commercial outdoor plazas.",
-        features: ["Material: Glass Fiber Reinforced Concrete (GFRC)", "Finish: Natural textured raw concrete aggregate", "Design: Square architectural street block planter", "Capacity: 400-500 kg soil load"],
+        features: ["Material: High-Performance Architectural Concrete", "Finish: Natural textured raw concrete aggregate", "Design: Square architectural street block planter", "Capacity: 400-500 kg soil load"],
         imgIdx: 2,
         matrix: { dims: "900L × 900W × 750H mm", wt: "110-135 kg (empty)", lt: "25-30 days", maint: "Low (periodic sealant touch-up)", life: "15+ years", custom: "Internal waterproofing membrane" }
       },
       super: {
         title: "Super Premium Tree Planter — Custom Structural",
         ideal: "Central smart city squares, mega township plazas, hotel entrances.",
-        features: ["Material: Heavy structural GFRC reinforced with internal steel frames", "Finish: Smooth sandstone or charcoal granite finish", "Design: Large circular tree planter with built-in wooden perimeter bench", "Tech: Built-in crane lifting hooks, integrated sub-irrigation water reservoir"],
+        features: ["Material: Heavy structural concrete reinforced with internal steel frames", "Finish: Smooth sandstone or charcoal granite finish", "Design: Large circular tree planter with built-in wooden perimeter bench", "Tech: Built-in crane lifting hooks, integrated sub-irrigation water reservoir"],
         imgIdx: 3,
         matrix: { dims: "1500L × 1500W × 900H mm", wt: "280-320 kg (empty)", lt: "35-45 days", maint: "Annual irrigation check", life: "20+ years indefinite", custom: "Crane hook lifting points & sub-irrigation kit" }
       }
     },
     materials: [
-      { name: "Glass Fiber Concrete (GFRC)", life: "15+ years", maint: "Zero maintenance", best: "Heavy public street planters", cost: "Premium (1.6x vs FRP)" },
+      { name: "Architectural Concrete", life: "15+ years", maint: "Zero maintenance", best: "Heavy public street planters", cost: "Premium (1.6x vs FRP)" },
       { name: "Fiberglass (FRP)", life: "5-7 years", maint: "Periodic cleaning", best: "Indoor/rooftop lightweight weight layouts", cost: "Base price (1x)" },
       { name: "Stainless Steel / Corten", life: "20+ years", maint: "Minimal cleaning", best: "Premium commercial plazas & museums", cost: "Highest end (2.5x vs FRP)" }
     ],
@@ -649,17 +649,17 @@ const pageConfigs = {
       "Add-ons: Integrated sub-irrigation water wells, root barrier lining, crane lifting lugs, bottom forklift pockets"
     ],
     projects: [
-      { tag: "Nagpur Smart City", subtitle: "Nagpur Municipal Corp", title: "Smart City Footpath Beautification — 80 GFRC Planters", time: "3 months", desc: "Pedestrian walkways smart city beautification project. Bins and concrete planters act as safe vehicle buffers." },
-      { tag: "Taj Lands End", subtitle: "Taj Hotels — Mumbai", title: "Luxury Hotel Entrance Walkways — 30 GFRC Planters", time: "2 months", desc: "Installed custom circular sand-textured GFRC planters containing seasonal flowers along the main driveway. Internally waterproofed to prevent salt-stain seepage and maintain premium hotel aesthetics." },
+      { tag: "Nagpur Smart City", subtitle: "Nagpur Municipal Corp", title: "Smart City Footpath Beautification — 80 Concrete Planters", time: "3 months", desc: "Pedestrian walkways smart city beautification project. Bins and concrete planters act as safe vehicle buffers." },
+      { tag: "Taj Lands End", subtitle: "Taj Hotels — Mumbai", title: "Luxury Hotel Entrance Walkways — 30 Concrete Planters", time: "2 months", desc: "Installed custom circular sand-textured concrete planters containing seasonal flowers along the main driveway. Internally waterproofed to prevent salt-stain seepage and maintain premium hotel aesthetics." },
       { tag: "Tata Green Hills", subtitle: "Tata Realty — Pune", title: "Corporate Rooftop Terrace — 60 Lightweight Planters", time: "2 months", desc: "Supplied 60 lightweight fiberglass partition planters for Tata's staff lunch deck. The low-weight structures met structural deck load limits." }
     ],
     stats: { p: "50+", c: "18+", o: "2000+", pLbl: "B2B Projects Delivered", cLbl: "Cities Served", oLbl: "Street Planters Installed" },
     faqList: [
-      { q: "What is GFRC and why is it used for planters?", a: "Glass Fiber Reinforced Concrete (GFRC) is lightweight, has high-tensile strength, and is crack-resistant, making it ideal for large street planters." },
+      { q: "What is Architectural Concrete and why is it used for planters?", a: "Architectural Concrete is lightweight, has high-tensile strength, and is crack-resistant, making it ideal for large street planters." },
       { q: "Are they waterproof?", a: "Yes, all planters are treated with heavy-duty waterproofing sealants on the interior to prevent water seepage." },
       { q: "Can they accommodate large trees?", a: "Yes. We offer structural sizes up to 1.5m depth with built-in crane lifting points and root barrier insulation." },
       { q: "Do you ship nationwide?", a: "Yes, we ship heavy-duty planters safely using customized wooden crates across India." },
-      { q: "What is the lead time?", a: "Lead times are 25-30 days for standard sizes, and 35 days for custom GFRC designs." }
+      { q: "What is the lead time?", a: "Lead times are 25-30 days for standard sizes, and 35 days for custom concrete designs." }
     ]
   },
   "Poolside Loungers": {

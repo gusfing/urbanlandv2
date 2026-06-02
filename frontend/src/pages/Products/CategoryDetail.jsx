@@ -26,7 +26,7 @@ const categoriesMeta = {
     title: "Bench Planters",
     tagline: "Integrated WPC seating & concrete planter boxes.",
     description: "Designed to combine architectural seating with built-in planter islands. Perfect for shopping mall corridors, municipal streetscapes, and university plazas where public space is premium.",
-    materials: "FSC certified WPC wood slats, GFRC concrete mix, stainless steel frame.",
+    materials: "FSC certified WPC wood slats, concrete mix, stainless steel frame.",
     durability: "Class C4 corrosion protection coating, waterproof sealant layers.",
     installation: "Surface flanged concrete anchoring, or free-standing placement."
   },
@@ -95,10 +95,10 @@ const categoriesMeta = {
     installation: "Deep foundation chemical concrete anchor bolting."
   },
   "planters": {
-    title: "GFRC Planters",
+    title: "Concrete Planters",
     tagline: "Architectural concrete planting pots for public spaces.",
     description: "Double-walled insulated concrete container systems designed to nurture large trees and shrubs in urban environments. Easy relocation slots.",
-    materials: "GFRC concrete mix, waterproof interior sealants, foam insulation core.",
+    materials: "Concrete mix, waterproof interior sealants, foam insulation core.",
     durability: "Frost resistant, internally sealed waterproof layers.",
     installation: "Free-standing layout on integrated leveling pads."
   },
@@ -256,7 +256,7 @@ const CategoryDetail = () => {
         
         // Filter by Subcategory if provided
         if (subcategory) {
-          const materialKeyword = subcategory.split("-")[0]; // e.g. "wpc", "aluminium", "gfrc", "wicker", "cane"
+          const materialKeyword = subcategory.split("-")[0]; // e.g. "wpc", "aluminium", "concrete", "wicker", "cane"
           filtered = filtered.filter((p) => {
             const desc = (p.description || "").toLowerCase();
             const mat = (p.specifications?.materials || "").toLowerCase();

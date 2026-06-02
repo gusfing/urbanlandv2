@@ -132,7 +132,7 @@ const StickyCols = () => {
                                         420+ Benches & Planters
                                     </div>
                                     <p className="text-xs md:text-sm text-[#F7F4EF]/80 leading-relaxed max-w-[90%]">
-                                        420+ WPC & SS benches + GFRC planters supplied across Lodha's premium residential township developments.
+                                        420+ WPC & SS benches + concrete planters supplied across Lodha's premium residential township developments.
                                     </p>
                                 </div>
                                 <div className="flex justify-between items-end w-full">
@@ -315,7 +315,7 @@ const StickyCols = () => {
                                 </div>
                                 {/* Description Paragraph */}
                                 <p className="text-[11px] text-[#F7F4EF]/85 leading-relaxed font-medium">
-                                    420+ WPC & SS benches + GFRC planters supplied across Lodha's premium residential township developments.
+                                    420+ WPC & SS benches + concrete planters supplied across Lodha's premium residential township developments.
                                 </p>
                             </div>
                         </div>

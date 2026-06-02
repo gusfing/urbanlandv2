@@ -64,7 +64,7 @@ const projectsMeta = {
   "adani": {
     title: "Adani Realty Projects",
     client: "Adani Realty Group",
-    supplied: "Complete site outdoor furniture: benches, trashbins, GFRC planters, cantilever car shelters",
+    supplied: "Complete site outdoor furniture: benches, trashbins, concrete planters, cantilever car shelters",
     volume: "Premium luxury towers and townships in Ahmedabad, Mumbai, NCR",
     standards: "High-wind certified cantilever structural car sheds, Grade 304/316 SS hardware",
     image: gbg5,
@@ -268,7 +268,7 @@ const projectsMeta = {
   "bangalore": {
     title: "Bangalore Projects",
     client: "IT Park Developers, Corporate Plazas, and Residential Gated Communities",
-    supplied: "GFRC Cultivation planters, Corporate bench modules, Smart-city dustbins, Parklet avenues",
+    supplied: "Concrete Cultivation planters, Corporate bench modules, Smart-city dustbins, Parklet avenues",
     volume: "Outer Ring Road tech parks, gated estates in Anekal, Whitefield, Electronic City",
     standards: "FSC certified responsible composites, low-VOC antibacterial finishes",
     image: gbg3,

@@ -77,19 +77,19 @@ export const products = [
     description: "Designed to combine architectural seating with built-in planter islands. Perfect for shopping mall corridors, municipal streetscapes, and university plazas where public space is premium.",
     features: [
       "High-durability WPC seating slats with weather treatment",
-      "Glass-Fiber Reinforced Concrete (GFRC) soil container mix",
+      "Architectural concrete soil container structure",
       "Internal water drainage channels with soil barrier screens",
       "Modular linking configurations for custom public layouts"
     ],
     specifications: {
-      materials: "FSC certified WPC wood slats; lightweight GFRC concrete container structure; stainless steel support framework.",
+      materials: "FSC certified WPC wood slats; lightweight concrete container structure; stainless steel support framework.",
       dimensions: "Standard module: 2200 mm length, 800 mm planter width, 450 mm bench seat height.",
       installation: "Surface mounted directly on pavement or secured using concealed expansion concrete anchors.",
-      sustainability: "Optimizes urban green spaces; uses organic recycled timber fibers and low-impact GFRC aggregates."
+      sustainability: "Optimizes urban green spaces; uses organic recycled timber fibers and low-impact concrete aggregates."
     },
     options: {
       wood: ["WPC teak finish slats", "Natural Jatoba timber finish", "Acacia slats"],
-      metal: ["Smooth Sandstone GFRC", "Charcoal Grey Concrete", "White Granite Concrete finish"],
+      metal: ["Smooth Sandstone Concrete", "Charcoal Grey Concrete", "White Granite Concrete finish"],
       modules: ["Linear Single Planter Set", "L-shaped Dual Planter Set", "Hexagonal Central Planter Set"]
     }
   },
@@ -327,8 +327,8 @@ export const products = [
   },
   {
     id: "planters",
-    title: "GFRC Planters",
-    line: "Lightweight GFRC and concrete planters.",
+    title: "Concrete Planters",
+    line: "Lightweight architectural concrete planters.",
     category: "planters",
     url: "/products/planters",
     image: plantersImg,
@@ -337,13 +337,13 @@ export const products = [
     tagline: "Architectural concrete planting pots for public spaces.",
     description: "Double-walled insulated concrete container systems designed to nurture large trees and shrubs in urban environments. Easy relocation slots.",
     features: [
-      "GFRC composition offering extreme durability at half concrete weight",
+      "Lightweight concrete composition offering extreme durability at reduced weight",
       "Double-walled interior cavity to protect roots from extreme temperatures",
       "Built-in overflow drainage pipes with filtering screens",
       "Integrated sub-base forklift pockets for easy relocation"
     ],
     specifications: {
-      materials: "Glass-Fiber Reinforced Concrete mix; waterproof inner sealant layer; internal foam insulation core.",
+      materials: "Architectural Concrete mix; waterproof inner sealant layer; internal foam insulation core.",
       dimensions: "Rectangular planter: 1500 mm length, 750 mm width, 800 mm height. Standard cube: 1000 mm x 1000 mm x 800 mm.",
       installation: "Placed directly on floor or patio; leveling pads compensate for slopes.",
       sustainability: "Insulated walls minimize water usage; uses natural sand and local cement aggregates."

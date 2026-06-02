@@ -91,7 +91,7 @@ const faqsList = [
   {
     category: "customization",
     q: "Can products be customised?",
-    a: "Yes. Customization is one of our primary strengths. We work closely with landscape architects to create tailored site lengths, custom steel cutouts, bespoke GFRC planter radii, custom RAL powder shades, and custom seating designs."
+    a: "Yes. Customization is one of our primary strengths. We work closely with landscape architects to create tailored site lengths, custom steel cutouts, bespoke concrete planter radii, custom RAL powder shades, and custom seating designs."
   },
   {
     category: "customization",

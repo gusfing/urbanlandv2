@@ -102,7 +102,7 @@ const WickerFurniturePage = () => {
     useEffect(() => {
         updatePageSEO({
             title: "Wicker Furniture Manufacturer India | Outdoor Wicker Sets, Loungers, Cabanas & Benches | Urbanland",
-            description: "Premium wicker outdoor furniture in India. Wicker sofa sets, dining sets, poolside loungers, cabanas, WPC benches, aluminium benches and GFRC benches. Stylish, durable, weather-resistant and low-maintenance. Backed by India’s only 2-Year Guarantee.",
+            description: "Premium wicker outdoor furniture in India. Wicker sofa sets, dining sets, poolside loungers, cabanas, WPC benches, aluminium benches and concrete benches. Stylish, durable, weather-resistant and low-maintenance. Backed by India’s only 2-Year Guarantee.",
             og_type: "product",
             og_image: carouselImg1
         });

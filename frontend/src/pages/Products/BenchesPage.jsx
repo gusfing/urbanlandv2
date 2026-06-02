@@ -101,8 +101,8 @@ const BenchesPage = () => {
 
     useEffect(() => {
         updatePageSEO({
-            title: "Benches Manufacturer India | WPC, Aluminium & GFRC Park Benches | Urbanland Products",
-            description: "Premium outdoor benches in WPC, Aluminium, GFRC and Mild Steel. Park benches, garden benches and public seating solutions. Durable, stylish and low-maintenance. India’s only 2-Year Guarantee.",
+            title: "Benches Manufacturer India | WPC, Aluminium & Concrete Park Benches | Urbanland Products",
+            description: "Premium outdoor benches in WPC, Aluminium, Concrete and Mild Steel. Park benches, garden benches and public seating solutions. Durable, stylish and low-maintenance. India’s only 2-Year Guarantee.",
             og_type: "product",
             og_image: carouselImg1
         });
@@ -650,7 +650,7 @@ const BenchesPage = () => {
                             </tr>
                         </thead>
                         <tbody className="text-xs font-semibold text-[#1A1A1A]/85">
-                            {[{"name":"Wood-Plastic Composite (WPC)","life":"8-10 years","maint":"Zero maintenance","best":"Low maintenance B2B landscapes","cost":"Economical (1.2x vs wood)"},{"name":"FSC Robinia Hardwood","life":"12-15 years","maint":"Annual wood stain/oil","best":"Luxury hospitality & resorts","cost":"Premium (1.8x vs WPC)"},{"name":"GFRC Concrete Aggregate","life":"20+ years","maint":"Zero (sealant touch-up)","best":"Heavy public urban streetscapes","cost":"High-durability (1.5x vs WPC)"}].map((m, idx) => (
+                            {[{"name":"Wood-Plastic Composite (WPC)","life":"8-10 years","maint":"Zero maintenance","best":"Low maintenance B2B landscapes","cost":"Economical (1.2x vs wood)"},{"name":"FSC Robinia Hardwood","life":"12-15 years","maint":"Annual wood stain/oil","best":"Luxury hospitality & resorts","cost":"Premium (1.8x vs WPC)"},{"name":"Concrete Aggregate","life":"20+ years","maint":"Zero (sealant touch-up)","best":"Heavy public urban streetscapes","cost":"High-durability (1.5x vs WPC)"}].map((m, idx) => (
                                 <tr key={idx} className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
                                     <td className="p-5 font-bold uppercase tracking-wider">{m.name}</td>
                                     <td className="p-5">{m.life}</td>

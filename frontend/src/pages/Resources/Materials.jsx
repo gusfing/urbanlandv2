@@ -280,9 +280,9 @@ const Materials = () => {
 
           <div className="bg-white rounded-[2rem] border border-black/[0.03] p-8 md:p-10 shadow-[0_5px_20px_rgba(0,0,0,0.005)]">
             <span className="text-2xl mb-4 block">🧱</span>
-            <h3 className="text-sm font-black uppercase tracking-wider text-[#C9A84C] mb-3">GFRC Mix Design Formula</h3>
+            <h3 className="text-sm font-black uppercase tracking-wider text-[#C9A84C] mb-3">Concrete Mix Design Formula</h3>
             <p className="text-xs text-[#2D2D2D]/60 leading-relaxed">
-              Our Glass Fiber Reinforced Concrete (GFRC) structures incorporate premium white Portland cement, selected aggregates, and <strong>5% alkali-resistant (AR) glass fibers</strong> with advanced acrylic polymers. This custom mix achieves an exceptionally high flexural strength of <strong>18-22 MPa</strong>, preventing surface micro-cracks.
+              Our Architectural Concrete structures incorporate premium white Portland cement, selected silica sands, and high-performance structural aggregates. This custom mix achieves exceptionally high flexural strength and surface hardness, preventing surface micro-cracks and weathering splits in extreme tropical conditions.
             </p>
           </div>
 

@@ -14,7 +14,7 @@ export const feedbackH1LG = [
         "luxury design language."
     ],
     [
-        "The heavy-duty GFRC planters and",
+        "The heavy-duty concrete planters and",
         "smart public shelters transformed our",
         "Smart City walkways. Exceptional",
         "strength, vandal-resistant, and built",

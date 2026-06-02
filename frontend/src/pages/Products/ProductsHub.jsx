@@ -4,9 +4,9 @@ import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import { products } from "../../constants/productsData";
 
 const divisions = [
-  { id: "benches", name: "Outdoor Benches", count: 18, tagline: "WPC, Aluminium, & GFRC architectural benches.", path: "/products/benches", specs: ["FSC Robinia", "GFRC Concrete", "HDG Steel"] },
+  { id: "benches", name: "Outdoor Benches", count: 18, tagline: "WPC, Aluminium, & Concrete architectural benches.", path: "/products/benches", specs: ["FSC Robinia", "Concrete", "HDG Steel"] },
   { id: "aluminium-benches", name: "Aluminium Benches", count: 12, tagline: "Premium lightweight rust-proof benches.", path: "/products/benches/aluminium-benches", specs: ["Al-Mg-Si Alloy", "Rust Proof", "Akzonobel Coating"] },
-  { id: "planters", name: "Planters Boxes", count: 12, tagline: "GFRC cultivation islands and planters boxes.", path: "/products/planters", specs: ["Lightweight GFRC", "Double-Walled", "Root Protection"] },
+  { id: "planters", name: "Planters Boxes", count: 12, tagline: "Concrete cultivation islands and planters boxes.", path: "/products/planters", specs: ["Lightweight Concrete", "Double-Walled", "Root Protection"] },
   { id: "dustbins", name: "Litter & Recycling Bins", count: 8, tagline: "Anti-vandalism dual litter recycling receptacles.", path: "/products/dustbins", specs: ["Vandal Resistant", "Segregation Lids", "Casing Locks"] },
   { id: "bus-shelters", name: "Smart Bus Shelters", count: 6, tagline: "MS/SS intelligent municipal bus stop canopies.", path: "/products/bus-shelters", specs: ["Structural Steel", "Safety Laminated Glass", "Solar Roofing Option"] },
   { id: "car-shelters", name: "Premium Car Shelters", count: 4, tagline: "High-tensile modular vehicle shading parking canopies.", path: "/products/car-shelters", specs: ["PVDF Tensile Roof", "Cantilever Columns", "EV Ready"] },
@@ -44,7 +44,7 @@ const ProductsHub = () => {
           <span className="text-[#C9A84C]">Vibrant Environments.</span>
         </h1>
         <p className="text-sm sm:text-base md:text-lg text-[#2D2D2D]/70 max-w-2xl leading-relaxed mt-6">
-          We manufacture premium street furniture, shelter systems, and outdoor wicker furniture utilizing hot-dip galvanized steel, GFRC, and FSC-certified timbers. Select a division to explore models.
+          We manufacture premium street furniture, shelter systems, and outdoor wicker furniture utilizing hot-dip galvanized steel, Concrete, and FSC-certified timbers. Select a division to explore models.
         </p>
       </section>
 

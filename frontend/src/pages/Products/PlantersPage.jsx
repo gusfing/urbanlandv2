@@ -238,7 +238,7 @@ const PlantersPage = () => {
         <div className="animate-fadeIn">
             <div className="mb-6">
                 <span className="text-[9px] font-black uppercase tracking-widest text-[#C9A84C] bg-[#C9A84C]/10 px-3 py-1.5 rounded-full select-none">Most Specified</span>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Premium GFRC Street Planter — Heavy Duty</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black uppercase text-[#1A1A1A] mt-3">Premium Concrete Street Planter — Heavy Duty</h3>
                 <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#2D2D2D]/60 mt-1">Best for: Smart City footpaths, hotel driveway perimeters, commercial outdoor plazas.</h4>
             </div>
 
@@ -246,7 +246,7 @@ const PlantersPage = () => {
                 <div>
                     <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
-                        {["Material: Glass Fiber Reinforced Concrete (GFRC)","Finish: Natural textured raw concrete aggregate","Design: Square architectural street block planter","Capacity: 400-500 kg soil load"].map((f, idx) => (
+                        {["Material: High-Performance Architectural Concrete","Finish: Natural textured raw concrete aggregate","Design: Square architectural street block planter","Capacity: 400-500 kg soil load"].map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
@@ -322,7 +322,7 @@ const PlantersPage = () => {
                 <div>
                     <h4 className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-4 select-none">— Key Features</h4>
                     <ul className="flex flex-col gap-3 text-xs sm:text-sm font-semibold text-[#1A1A1A]/85">
-                        {["Material: Heavy structural GFRC reinforced with internal steel frames","Finish: Smooth sandstone or charcoal granite finish","Design: Large circular tree planter with built-in wooden perimeter bench","Tech: Built-in crane lifting hooks, integrated sub-irrigation water reservoir"].map((f, idx) => (
+                        {["Material: Heavy structural concrete reinforced with internal steel frames","Finish: Smooth sandstone or charcoal granite finish","Design: Large circular tree planter with built-in wooden perimeter bench","Tech: Built-in crane lifting hooks, integrated sub-irrigation water reservoir"].map((f, idx) => (
                             <li key={idx} className="flex items-center gap-3"><span className="text-[#C9A84C]">▸</span> {f}</li>
                         ))}
                     </ul>
@@ -429,7 +429,7 @@ const PlantersPage = () => {
                     ref={heroScrollRef}
                     className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-4 px-6 md:px-12"
                 >
-                    {[{"tag":"Product Spotlight","h":"GFRC Concrete &<br />Fiberglass Planters Box","label":"01","desc":"Premium lightweight architectural street planters"},{"tag":"Smart Streetscapes","h":"Weatherproof large<br />street planters with<br />drainage systems","label":"02","desc":"Internal waterproofing treatment ready"},{"tag":"B2B Guarantee","h":"2-Year Warranty<br />& ISO Certified<br />Standards","label":"03","desc":"Trusted by hotels, corporate hubs & township parks"},{"tag":"Extreme Durability","h":"Glass Fiber Concrete<br />which resists cracks<br />and weather splits","label":"04","desc":"High-tensile GFRC composite planter blocks"},{"tag":"Bespoke Sizing","h":"Custom round, square<br />or bento planter boxes<br />up to 1.5m depth","label":"05","desc":"Ready to accommodate large public trees"}].map((card, idx) => (
+                    {[{"tag":"Product Spotlight","h":"Architectural Concrete &<br />Fiberglass Planters Box","label":"01","desc":"Premium lightweight architectural street planters"},{"tag":"Smart Streetscapes","h":"Weatherproof large<br />street planters with<br />drainage systems","label":"02","desc":"Internal waterproofing treatment ready"},{"tag":"B2B Guarantee","h":"2-Year Warranty<br />& ISO Certified<br />Standards","label":"03","desc":"Trusted by hotels, corporate hubs & township parks"},{"tag":"Extreme Durability","h":"Architectural Concrete<br />which resists cracks<br />and weather splits","label":"04","desc":"High-tensile concrete composite planter blocks"},{"tag":"Bespoke Sizing","h":"Custom round, square<br />or bento planter boxes<br />up to 1.5m depth","label":"05","desc":"Ready to accommodate large public trees"}].map((card, idx) => (
                         <div key={idx} className="flex-shrink-0 w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[420px] sm:min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
                             <img 
                                 src={idx % 2 === 0 ? carouselImg1 : carouselImg2} 
@@ -501,7 +501,7 @@ const PlantersPage = () => {
                 <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-8">— 4 Core Reasons</h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 select-none">
-                    {[{"title":"GFRC Concrete","desc":"Glass Fiber Reinforced Concrete provides high-tensile strength and crack resistance while remaining 70% lighter than standard concrete."},{"title":"Internal Waterproofing","desc":"All planter interiors are coated with heavy-duty waterproofing membrane sealants, preventing moisture seepage and outer salt stains."},{"title":"Built-In Drainage","desc":"Features integrated bottom drainage holes with soil barrier screen inserts, preventing root rot and soil washouts."},{"title":"Theft Resistant","desc":"Heavy GFRC planters remain securely positioned in public spaces, resisting theft and unauthorized relocation."}].map((r, idx) => (
+                    {[{"title":"Architectural Concrete","desc":"Architectural Concrete provides high-tensile strength and crack resistance while remaining exceptionally durable compared to standard casting."},{"title":"Internal Waterproofing","desc":"All planter interiors are coated with heavy-duty waterproofing membrane sealants, preventing moisture seepage and outer salt stains."},{"title":"Built-In Drainage","desc":"Features integrated bottom drainage holes with soil barrier screen inserts, preventing root rot and soil washouts."},{"title":"Theft Resistant","desc":"Heavy concrete planters remain securely positioned in public spaces, resisting theft and unauthorized relocation."}].map((r, idx) => (
                         <div key={idx} className="bg-white rounded-[2rem] border border-black/[0.03] p-8 md:p-10 shadow-sm hover:bg-[#F7F4EF]/55 hover:shadow-lg transition-all duration-300 flex flex-col gap-5 group">
                             <div className={`w-14 h-14 ${idx % 2 === 0 ? "bg-[#2C5F2E]/10 text-[#2C5F2E]" : "bg-[#C9A84C]/10 text-[#C9A84C]"} rounded-full flex justify-center items-center`}>
                                 <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -650,7 +650,7 @@ const PlantersPage = () => {
                             </tr>
                         </thead>
                         <tbody className="text-xs font-semibold text-[#1A1A1A]/85">
-                            {[{"name":"Glass Fiber Concrete (GFRC)","life":"15+ years","maint":"Zero maintenance","best":"Heavy public street planters","cost":"Premium (1.6x vs FRP)"},{"name":"Fiberglass (FRP)","life":"5-7 years","maint":"Periodic cleaning","best":"Indoor/rooftop lightweight weight layouts","cost":"Base price (1x)"},{"name":"Stainless Steel / Corten","life":"20+ years","maint":"Minimal cleaning","best":"Premium commercial plazas & museums","cost":"Highest end (2.5x vs FRP)"}].map((m, idx) => (
+                            {[{"name":"Architectural Concrete","life":"15+ years","maint":"Zero maintenance","best":"Heavy public street planters","cost":"Premium (1.6x vs FRP)"},{"name":"Fiberglass (FRP)","life":"5-7 years","maint":"Periodic cleaning","best":"Indoor/rooftop lightweight weight layouts","cost":"Base price (1x)"},{"name":"Stainless Steel / Corten","life":"20+ years","maint":"Minimal cleaning","best":"Premium commercial plazas & museums","cost":"Highest end (2.5x vs FRP)"}].map((m, idx) => (
                                 <tr key={idx} className="border-b border-[#2D2D2D]/10 hover:bg-[#F7F4EF]/45">
                                     <td className="p-5 font-bold uppercase tracking-wider">{m.name}</td>
                                     <td className="p-5">{m.life}</td>
@@ -683,7 +683,7 @@ const PlantersPage = () => {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 select-none mb-12">
-                    {[{"tag":"Nagpur Smart City","subtitle":"Nagpur Municipal Corp","title":"Smart City Footpath Beautification — 80 GFRC Planters","time":"3 months","desc":"Pedestrian walkways smart city beautification project. Bins and concrete planters act as safe vehicle buffers."},{"tag":"Taj Lands End","subtitle":"Taj Hotels — Mumbai","title":"Luxury Hotel Entrance Walkways — 30 GFRC Planters","time":"2 months","desc":"Installed custom circular sand-textured GFRC planters containing seasonal flowers along the main driveway. Internally waterproofed to prevent salt-stain seepage and maintain premium hotel aesthetics."},{"tag":"Tata Green Hills","subtitle":"Tata Realty — Pune","title":"Corporate Rooftop Terrace — 60 Lightweight Planters","time":"2 months","desc":"Supplied 60 lightweight fiberglass partition planters for Tata's staff lunch deck. The low-weight structures met structural deck load limits."}].map((p, idx) => (
+                    {[{"tag":"Nagpur Smart City","subtitle":"Nagpur Municipal Corp","title":"Smart City Footpath Beautification — 80 Concrete Planters","time":"3 months","desc":"Pedestrian walkways smart city beautification project. Bins and concrete planters act as safe vehicle buffers."},{"tag":"Taj Lands End","subtitle":"Taj Hotels — Mumbai","title":"Luxury Hotel Entrance Walkways — 30 Concrete Planters","time":"2 months","desc":"Installed custom circular sand-textured concrete planters containing seasonal flowers along the main driveway. Internally waterproofed to prevent salt-stain seepage and maintain premium hotel aesthetics."},{"tag":"Tata Green Hills","subtitle":"Tata Realty — Pune","title":"Corporate Rooftop Terrace — 60 Lightweight Planters","time":"2 months","desc":"Supplied 60 lightweight fiberglass partition planters for Tata's staff lunch deck. The low-weight structures met structural deck load limits."}].map((p, idx) => (
                         <div key={idx} className="bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-sm hover:shadow-lg hover:scale-[1.01] transform transition-all duration-300 flex flex-col justify-between group">
                             <div className="w-full h-64 bg-black/5 overflow-hidden relative">
                                 <img src={idx === 1 ? carouselImg2 : carouselImg1} alt={p.title} className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" />
@@ -744,7 +744,7 @@ const PlantersPage = () => {
 
                 <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-8">— Frequently Asked Questions</h3>
                 <div className="flex flex-col gap-4 max-w-4xl mx-auto">
-                    {[{"q":"What is GFRC and why is it used for planters?","a":"Glass Fiber Reinforced Concrete (GFRC) is lightweight, has high-tensile strength, and is crack-resistant, making it ideal for large street planters."},{"q":"Are they waterproof?","a":"Yes, all planters are treated with heavy-duty waterproofing sealants on the interior to prevent water seepage."},{"q":"Can they accommodate large trees?","a":"Yes. We offer structural sizes up to 1.5m depth with built-in crane lifting points and root barrier insulation."},{"q":"Do you ship nationwide?","a":"Yes, we ship heavy-duty planters safely using customized wooden crates across India."},{"q":"What is the lead time?","a":"Lead times are 25-30 days for standard sizes, and 35 days for custom GFRC designs."}].map((faq, idx) => (
+                    {[{"q":"What is Architectural Concrete and why is it used for planters?","a":"Architectural Concrete is lightweight, has high-tensile strength, and is crack-resistant, making it ideal for large street planters."},{"q":"Are they waterproof?","a":"Yes, all planters are treated with heavy-duty waterproofing sealants on the interior to prevent water seepage."},{"q":"Can they accommodate large trees?","a":"Yes. We offer structural sizes up to 1.5m depth with built-in crane lifting points and root barrier insulation."},{"q":"Do you ship nationwide?","a":"Yes, we ship heavy-duty planters safely using customized wooden crates across India."},{"q":"What is the lead time?","a":"Lead times are 25-30 days for standard sizes, and 35 days for custom concrete designs."}].map((faq, idx) => (
                         <div key={idx} className="bg-white rounded-2xl border border-black/[0.03] overflow-hidden shadow-sm transition-all">
                             <button
                                 onClick={() => toggleFaq(idx)}

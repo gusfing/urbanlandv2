@@ -83,7 +83,7 @@ const Gallery = () => {
                         <div className="flex flex-col items-start gap-1 max-w-[65%]">
                             <h3 className="gallery-seo-keyword">outdoor furniture for real estate projects</h3>
                             <p className="text-[#f4efe7] font-medium leading-relaxed">
-                                Premium WPC benches, GFRC planters, car parking sheds, and cabanas that enhance property value and resident experience. Bulk supply with guaranteed timelines for your handover schedule.
+                                Premium WPC benches, concrete planters, car parking sheds, and cabanas that enhance property value and resident experience. Bulk supply with guaranteed timelines for your handover schedule.
                             </p>
                         </div>
                         <div className="flex flex-col items-end justify-between min-h-[60px] gap-2.5">
@@ -185,7 +185,7 @@ const Gallery = () => {
                         <div className="flex flex-col items-start gap-1 max-w-[65%]">
                             <h3 className="gallery-seo-keyword">campus outdoor furniture manufacturer</h3>
                             <p className="text-[#f4efe7] font-medium leading-relaxed">
-                                Heavy-duty canteen tables, WPC benches, and GFRC planters built for high-footfall educational campuses. Resistant to vandalism, low on maintenance.
+                                Heavy-duty canteen tables, WPC benches, and concrete planters built for high-footfall educational campuses. Resistant to vandalism, low on maintenance.
                             </p>
                         </div>
                         <div className="flex flex-col items-end justify-between min-h-[60px] gap-2.5">

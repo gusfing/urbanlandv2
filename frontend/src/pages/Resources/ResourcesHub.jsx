@@ -9,7 +9,7 @@ const resources = [
   { id: "downloads", name: "Master Downloads", tagline: "Master catalog, CAD plans, brochures.", desc: "Download our complete street furniture master catalog, DWG technical specifications, and architectural brochures.", path: "/resources/downloads" },
   { id: "blog", name: "Journal & Insights", tagline: "Smart planning and materials logs.", desc: "Read technical articles on modular parklet grids, sustainable urban planning, and timber performance weathering.", path: "/blog" },
   { id: "faq", name: "Frequently Asked Questions", tagline: "Timelines, custom casting, and orders guide.", desc: "Explore answers regarding manufacturing tolerances, anchoring systems, custom FSC timbers, and warranty terms.", path: "/faq" },
-  { id: "materials", name: "Materials Engineering", tagline: "Timbers, steel, GFRC weathering guides.", desc: "Evaluate full lifecycles, weathering indexes, and powder coating specifications for Jatoba, Robinia, and galvanized frames.", path: "/materials" }
+  { id: "materials", name: "Materials Engineering", tagline: "Timbers, steel, concrete weathering guides.", desc: "Evaluate full lifecycles, weathering indexes, and powder coating specifications for Jatoba, Robinia, and galvanized frames.", path: "/materials" }
 ];
 
 const ResourcesHub = () => {

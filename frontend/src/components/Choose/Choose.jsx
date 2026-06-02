@@ -87,7 +87,7 @@ const Choose = () => {
                 
             <div className="choose-sec w-full flex flex-col justify-start items-start gap-10 lg:mt-0 pb-6">
                 <div className='w-full lg:max-w-4xl text-[#2D2D2D]/90 lg:text-[2.2rem] text-[1.2rem] md:leading-[1.2] lg:mt-0 mt-8 font-light'>
-                    <p>When a real estate developer, hotel chain, or municipal body specifies outdoor and urban furniture for a large-scale project, they need a manufacturer they can trust — on quality, delivery timelines, and long-term durability. Urbanland Products is India's only outdoor furniture manufacturer offering a comprehensive 2-year guarantee, with a proven track record supplying premium WPC benches, bus shelters, GFRC planters, and more to landmark developments across the country.</p>
+                    <p>When a real estate developer, hotel chain, or municipal body specifies outdoor and urban furniture for a large-scale project, they need a manufacturer they can trust — on quality, delivery timelines, and long-term durability. Urbanland Products is India's only outdoor furniture manufacturer offering a comprehensive 2-year guarantee, with a proven track record supplying premium WPC benches, bus shelters, concrete planters, and more to landmark developments across the country.</p>
                 </div>
             </div>
 
@@ -127,7 +127,7 @@ const Choose = () => {
                     </div>
                     <div className="flex flex-col gap-2 mt-2">
                         <h3 className="text-lg font-bold text-[#1A1A1A] group-hover:text-[#2C5F2E] transition-colors">Multi-Material Expertise</h3>
-                        <p className="text-xs text-[#2D2D2D]/80 leading-relaxed">WPC • Stainless Steel • GFRC • Aluminium • Wicker. One supplier for your entire outdoor furniture specification.</p>
+                        <p className="text-xs text-[#2D2D2D]/80 leading-relaxed">WPC • Stainless Steel • Concrete • Aluminium • Wicker. One supplier for your entire outdoor furniture specification.</p>
                     </div>
                 </div>
 

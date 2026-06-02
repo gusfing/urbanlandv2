@@ -79,7 +79,7 @@ const Footer = () => {
                 <div className="flex flex-col gap-1 text-center md:text-left">
                     <p>© 2026 Urbanland Products. All rights reserved.   |   <Link to="/privacy-policy" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Privacy Policy</Link>   |   <Link to="/sitemap" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Sitemap</Link></p>
                     <p className="text-[#F7F4EF]/60 font-medium tracking-wide mt-1.5">
-                        Outdoor Furniture Manufacturer in India — WPC Benches, Bus Shelters, GFRC Planters & Urban Street Furniture
+                        Outdoor Furniture Manufacturer in India — WPC Benches, Bus Shelters, Concrete Planters & Urban Street Furniture
                     </p>
                 </div>
                 

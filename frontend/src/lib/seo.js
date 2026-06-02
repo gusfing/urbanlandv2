@@ -9,7 +9,7 @@ export const updatePageSEO = (seoData = {}) => {
 
   const {
     title = "Urbanland | Premium Street Furniture & Parklets",
-    description = "Urbanland Products LLP designs and manufactures premium modular street furniture, GFRC planter systems, and transit shelters in India.",
+    description = "Urbanland Products LLP designs and manufactures premium modular street furniture, concrete planter systems, and transit shelters in India.",
     og_title,
     og_description,
     og_image,
