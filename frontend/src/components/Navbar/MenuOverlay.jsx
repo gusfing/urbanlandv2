@@ -76,7 +76,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
       path: "/about-us",
       subLinks: [
         { name: "Our Profile & History", path: "/about-us" },
-        { name: "Sustainability & Metallurgy", path: "/sustainability" }
+        { name: "Sustainability", path: "/sustainability" }
       ]
     },
     { 

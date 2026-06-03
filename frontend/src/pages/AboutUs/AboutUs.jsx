@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
+import CTASection from "../../components/CTASection/CTASection";
 
 // Import images
 import welcome1 from '../../assets/welcome-1.png';
@@ -33,15 +34,40 @@ const AboutUs = () => {
             
             {/* Trust Line */}
             <div className="mt-8 flex flex-wrap gap-y-2 gap-x-4 justify-center md:justify-start text-xs font-semibold text-[#2C5F2E] bg-[#EAE5DB]/40 px-5 py-3 rounded-full border border-black/[0.04] w-fit">
-              <span>✓ Founded 2023</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Founded 2023</span>
+              </span>
               <span className="opacity-30">|</span>
-              <span>✓ ISO 9001:2015 Certified</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>ISO 9001:2015 Certified</span>
+              </span>
               <span className="opacity-30">|</span>
-              <span>✓ 2-Year Guarantee</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>2-Year Guarantee</span>
+              </span>
               <span className="opacity-30">|</span>
-              <span>✓ 50+ Projects Delivered</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>50+ Projects Delivered</span>
+              </span>
               <span className="opacity-30">|</span>
-              <span>✓ Made in India</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Made in India</span>
+              </span>
             </div>
 
             {/* CTAs */}
@@ -233,8 +259,11 @@ const AboutUs = () => {
         </div>
 
         <div className="bg-[#EAE5DB]/40 rounded-[2rem] p-8 border border-black/[0.04] mt-8 text-center">
-          <p className="text-xs sm:text-sm font-semibold text-[#2C5F2E] uppercase tracking-wide">
-            ✓ Proven Track Record — 50+ successful projects across real estate, municipal, hospitality, healthcare and education sectors.
+          <p className="text-xs sm:text-sm flex items-center justify-center gap-1.5 font-semibold text-[#2C5F2E] uppercase tracking-wide">
+            <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Proven Track Record — 50+ successful projects across real estate, municipal, hospitality, healthcare and education sectors.</span>
           </p>
         </div>
       </section>
@@ -260,31 +289,15 @@ const AboutUs = () => {
       </section>
 
       {/* Final Call-to-Action */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="bg-white rounded-[2.5rem] border border-black/[0.04] p-8 md:p-16 text-center shadow-[0_15px_45px_rgba(0,0,0,0.015)]">
-          <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#1A1A1A] max-w-3xl mx-auto leading-tight">
-            Ready to Partner with a Sustainable Outdoor Furniture Manufacturer?
-          </h2>
-          <p className="text-xs sm:text-sm text-[#2D2D2D]/60 max-w-xl mx-auto mt-4 leading-relaxed">
-            Get in touch with our team of technical experts to review custom drawings, design swatches, and material specifications.
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="px-6 py-3.5 bg-[#2C5F2E] text-white rounded-full font-bold uppercase tracking-wider text-xs hover:bg-[#2D2D2D] transition-colors cursor-pointer shadow-md no-underline"
-            >
-              Get in Touch With Us →
-            </Link>
-            <Link
-              to="/resources/downloads"
-              className="px-6 py-3.5 bg-[#EAE5DB] text-[#2D2D2D] rounded-full font-bold uppercase tracking-wider text-xs hover:bg-[#C9A84C] hover:text-white transition-colors border border-black/[0.04] cursor-pointer no-underline"
-            >
-              Download Company Profile ↓
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        title="Ready to Partner with a Sustainable Outdoor Furniture Manufacturer?"
+        description="Get in touch with our team of technical experts to review custom drawings, design swatches, and material specifications."
+        tagText="Ready to Partner"
+        primaryText="Get in Touch With Us →"
+        primaryLink="/contact"
+        secondaryText="Download Company Profile ↓"
+        secondaryLink="/resources/downloads"
+      />
     </div>
   );
 };

@@ -104,11 +104,26 @@ const Materials = () => {
 
         {/* Trust Badges */}
         <div className="mt-8 flex flex-wrap gap-y-2 gap-x-4 text-xs font-semibold text-[#2C5F2E] bg-[#EAE5DB]/40 px-5 py-3 rounded-full border border-black/[0.04] w-fit">
-          <span>✓ WPC & NFC – Reclaiming Natural Fibers</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>WPC & NFC – Reclaiming Natural Fibers</span>
+          </span>
           <span className="opacity-30">|</span>
-          <span>✓ ISO 9001:2015 Structural Auditing</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>ISO 9001:2015 Structural Auditing</span>
+          </span>
           <span className="opacity-30">|</span>
-          <span>✓ 2-Year Comprehensive Material Guarantee</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>2-Year Comprehensive Material Guarantee</span>
+          </span>
         </div>
       </section>
 
@@ -309,19 +324,35 @@ const Materials = () => {
               </h2>
               <ul className="text-xs sm:text-sm text-white/70 space-y-4 max-w-xl">
                 <li className="flex items-start gap-3">
-                  <span className="text-[#2C5F2E] font-bold">✓</span>
+                  <span className="text-[#2C5F2E] flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-[#2C5F2E]/10 select-none mt-0.5">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
                   <span><strong>Deforestation Prevention:</strong> WPC and NFC Wood composites completely substitute natural timber, protecting forests.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#2C5F2E] font-bold">✓</span>
+                  <span className="text-[#2C5F2E] flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-[#2C5F2E]/10 select-none mt-0.5">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
                   <span><strong>Circular Polymers:</strong> We utilize post-consumer agricultural waste and recycled plastics, reducing municipal landfill loads.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#2C5F2E] font-bold">✓</span>
+                  <span className="text-[#2C5F2E] flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-[#2C5F2E]/10 select-none mt-0.5">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
                   <span><strong>Green Building Points:</strong> Help projects earn certified IGBC, GRIHA, and LEED credits via product recycling and low embodied energy.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="text-[#2C5F2E] font-bold">✓</span>
+                  <span className="text-[#2C5F2E] flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-[#2C5F2E]/10 select-none mt-0.5">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
                   <span><strong>Zero-VOC Coatings:</strong> Dry thermoset powder coatings release zero volatile organic compounds during applications.</span>
                 </li>
               </ul>
@@ -347,7 +378,11 @@ const Materials = () => {
         <div className="bg-white rounded-[3rem] border border-black/[0.04] p-8 md:p-16 shadow-[0_15px_50px_rgba(0,0,0,0.02)]">
           {submitted ? (
             <div className="text-center py-10 flex flex-col justify-center items-center">
-              <span className="w-16 h-16 rounded-full bg-[#2C5F2E]/10 text-[#2C5F2E] flex items-center justify-center text-3xl mb-6">✓</span>
+              <span className="w-16 h-16 rounded-full bg-[#2C5F2E]/10 text-[#2C5F2E] flex items-center justify-center mb-6">
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
               <h3 className="text-2xl font-black uppercase tracking-tight text-black mb-3">Sample Request Received!</h3>
               <p className="text-xs sm:text-sm text-black/60 max-w-md leading-relaxed mb-6">
                 Thank you, <strong>{formData.name}</strong>. We have registered your material sample request for <strong>{formData.material}</strong>. Our project advisor will contact you at <strong>{formData.email}</strong> within 24 hours to verify shipping coordinates.

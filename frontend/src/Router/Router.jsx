@@ -38,6 +38,7 @@ import Materials from "../pages/Resources/Materials";
 import Contact from "../pages/Contact/Contact";
 import Sustainability from "../pages/Sustainability/Sustainability";
 import PrivacyPolicy from "../pages/Legal/PrivacyPolicy";
+import StyleGuide from "../pages/StyleGuide/StyleGuide";
 
 const router = createBrowserRouter([
     {
@@ -100,7 +101,8 @@ const router = createBrowserRouter([
             
             // Supporting SEO & Legal Pages
             { path: "sustainability", element: <Sustainability /> },
-            { path: "privacy-policy", element: <PrivacyPolicy /> }
+            { path: "privacy-policy", element: <PrivacyPolicy /> },
+            { path: "style-guide", element: <StyleGuide /> }
         ],
     },
 ]);

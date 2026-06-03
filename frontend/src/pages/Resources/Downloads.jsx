@@ -34,15 +34,40 @@ const Downloads = () => {
 
         {/* Trust Line */}
         <div className="mt-8 flex flex-wrap gap-y-2 gap-x-4 justify-center md:justify-start text-xs font-semibold text-[#2C5F2E] bg-[#EAE5DB]/40 px-5 py-3 rounded-full border border-black/[0.04] w-fit">
-          <span>✓ Latest 2026 Master Catalogue</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Latest 2026 Master Catalogue</span>
+          </span>
           <span className="opacity-30">|</span>
-          <span>✓ Sector-Specific Brochures</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Sector-Specific Brochures</span>
+          </span>
           <span className="opacity-30">|</span>
-          <span>✓ Sustainable Materials Guide</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Sustainable Materials Guide</span>
+          </span>
           <span className="opacity-30">|</span>
-          <span>✓ Technical Documents</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Technical Documents</span>
+          </span>
           <span className="opacity-30">|</span>
-          <span>✓ 2-Year Guarantee Included</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>2-Year Guarantee Included</span>
+          </span>
         </div>
       </section>
 
@@ -225,7 +250,12 @@ const Downloads = () => {
             </ul>
 
             {submitted ? (
-              <p className="text-xs font-semibold text-[#2C5F2E] uppercase">✓ Click individual links above to download technical specifications.</p>
+              <p className="text-xs font-semibold text-[#2C5F2E] flex items-center gap-1.5 uppercase">
+                <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Click individual links above to download technical specifications.</span>
+              </p>
             ) : (
               <a href="#unlock-form" className="inline-block px-5 py-3 bg-[#EAE5DB] text-[#2D2D2D] rounded-full font-bold uppercase tracking-wider text-[10px] hover:bg-[#C9A84C] hover:text-white transition-all border border-black/[0.04] cursor-pointer no-underline">
                 Unlock Technical Files ↓

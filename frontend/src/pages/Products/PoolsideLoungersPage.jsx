@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import CTASection from "../../components/CTASection/CTASection";
 
 import carouselImg1 from "../../assets/products/Product Images/Poolside Loungers/Create_a_clean,_premium,_professional_202605170154.jpeg";
 import carouselImg2 from "../../assets/products/Product Images/Poolside Loungers/UGC_Poolside_Loungers.jpeg";
@@ -126,24 +127,39 @@ const PoolsideLoungersPage = () => {
                     triggerPopup();
                 }
             };
-            const timer = setTimeout(() => {
-                triggerPopup();
-            }, 45000);
+
+            const handleScrollForPopup = () => {
+                const scrollPosition = window.scrollY + window.innerHeight;
+                const totalHeight = document.documentElement.scrollHeight;
+                if (totalHeight > 0 && scrollPosition / totalHeight >= 0.7) {
+                    triggerPopup();
+                }
+            };
+
+            const handleVisibilityChange = () => {
+                if (document.hidden) {
+                    triggerPopup();
+                }
+            };
 
             const triggerPopup = () => {
                 setExitPopupVisible(true);
                 sessionStorage.setItem(sessionKey, "true");
                 document.removeEventListener("mouseleave", handleMouseLeave);
-                clearTimeout(timer);
+                window.removeEventListener("scroll", handleScrollForPopup);
+                document.removeEventListener("visibilitychange", handleVisibilityChange);
             };
 
             document.addEventListener("mouseleave", handleMouseLeave);
+            window.addEventListener("scroll", handleScrollForPopup);
+            document.addEventListener("visibilitychange", handleVisibilityChange);
 
             return () => {
                 cleanPageSEO();
                 window.removeEventListener("scroll", handleScroll);
                 document.removeEventListener("mouseleave", handleMouseLeave);
-                clearTimeout(timer);
+                window.removeEventListener("scroll", handleScrollForPopup);
+                document.removeEventListener("visibilitychange", handleVisibilityChange);
             };
         }
 
@@ -416,15 +432,7 @@ const PoolsideLoungersPage = () => {
             </div>
 
             {/* PREMIUM HORIZONTAL CAROUSEL HERO SECTION */}
-            <section className="w-full mb-8 relative select-none group/hero">
-                {/* Left Navigation Arrow */}
-                <button
-                    onClick={scrollHeroLeft}
-                    className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#EAE5DB]/90 backdrop-blur-md text-[#2D2D2D] hover:bg-[#EAE5DB] flex justify-center items-center shadow-md active:scale-95 opacity-0 group-hover/hero:opacity-100 transition-all duration-300 cursor-pointer select-none font-sans text-base"
-                    aria-label="Scroll left"
-                >
-                    ←
-                </button>
+            <section className="w-full mb-8 relative select-none">
                 <div 
                     ref={heroScrollRef}
                     className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-4 px-6 md:px-12"
@@ -475,15 +483,6 @@ const PoolsideLoungersPage = () => {
                         </div>
                     ))}
                 </div>
-
-                {/* Right Navigation Arrow */}
-                <button
-                    onClick={scrollHeroRight}
-                    className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-[#2C5F2E]/90 backdrop-blur-md text-[#F7F4EF] hover:bg-[#2C5F2E] flex justify-center items-center shadow-lg active:scale-95 opacity-0 group-hover/hero:opacity-100 transition-all duration-300 cursor-pointer select-none font-sans text-base"
-                    aria-label="Scroll right"
-                >
-                    →
-                </button>
             </section>
 
             {/* SECTION 1 — WHY CHOOSE URBANLAND */}
@@ -745,19 +744,36 @@ const PoolsideLoungersPage = () => {
                 <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A84C] mb-8">— Frequently Asked Questions</h3>
                 <div className="flex flex-col gap-4 max-w-4xl mx-auto">
                     {[{"q":"Can the cushions remain outdoors during rain?","a":"Our loungers use quick-dry open-cell foam and Sunbrella performance fabrics that drain water rapidly and dry quickly."},{"q":"Is the synthetic wicker chlorine and salt resistant?","a":"Yes, our HDPE wicker is formulated to resist chlorine pools, saltwater ocean mist, and intense tropical UV radiation."},{"q":"How do I clean the loungers?","a":"Simple pressure wash with mild soap and water keeps them clean. No oils or special varnishes required."},{"q":"What is the lead time?","a":"Production lead times are 25-30 days from order confirmation."},{"q":"What is the warranty coverage?","a":"Backed by our 2-Year comprehensive warranty covering frame structural failure and wicker split/fade."}].map((faq, idx) => (
-                        <div key={idx} className="bg-white rounded-2xl border border-black/[0.03] overflow-hidden shadow-sm transition-all">
+                        <div 
+                            key={idx} 
+                            className={`bg-white rounded-[2rem] border transition-all duration-500 overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.005)] ${
+                                faqOpen[idx] 
+                                    ? "border-[#2C5F2E]/40 ring-1 ring-[#2C5F2E]/10" 
+                                    : "border-black/[0.03] hover:border-black/10"
+                            }`}
+                        >
                             <button
                                 onClick={() => toggleFaq(idx)}
-                                className="w-full text-left p-6 sm:p-7 flex justify-between items-center font-bold text-sm sm:text-base cursor-pointer hover:bg-[#F7F4EF]/35"
+                                className="w-full px-6 py-6 md:px-8 flex justify-between items-center text-left cursor-pointer focus:outline-none border-none select-none group bg-white"
                             >
-                                <span className="max-w-[90%]">{faq.q}</span>
-                                <span className="text-[#2C5F2E] text-xl font-bold font-mono">{faqOpen[idx] ? "−" : "+"}</span>
+                                <h3 className="text-sm sm:text-base font-black uppercase tracking-tight text-[#1A1A1A] group-hover:text-[#2C5F2E] pr-6 transition-colors leading-snug">
+                                    {faq.q}
+                                </h3>
+                                <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 shrink-0 select-none ${
+                                    faqOpen[idx] ? "bg-[#2C5F2E] text-white rotate-45" : "bg-[#F7F4EF] text-[#2D2D2D] group-hover:bg-[#2C5F2E]/10"
+                                }`}>
+                                    ＋
+                                </span>
                             </button>
-                            {faqOpen[idx] && (
-                                <div className="px-6 pb-6 sm:px-7 sm:pb-7 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/75 border-t border-[#2D2D2D]/5 pt-4">
+                            <div 
+                                className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                                    faqOpen[idx] ? "max-h-[300px] border-t border-black/[0.05]" : "max-h-0"
+                                }`}
+                            >
+                                <p className="px-6 py-6 md:px-8 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/75 bg-[#F7F4EF]/20">
                                     {faq.a}
-                                </div>
-                            )}
+                                </p>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -801,41 +817,10 @@ const PoolsideLoungersPage = () => {
             </section>
 
             {/* FINAL CTA SECTION */}
-            <section className="max-w-[1400px] 3xl:max-w-[1700px] 4xl:max-w-[2200px] 5xl:max-w-[3000px] mx-auto px-6 md:px-12 mb-12">
-                <div className="w-full bg-[#2C5F2E] rounded-[2.5rem] p-8 md:p-16 flex flex-col items-center text-center text-white relative overflow-hidden shadow-xl border border-black/5">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#2C5F2E] to-[#1d4720] opacity-95 pointer-events-none" />
-                    
-                    <div className="relative z-10 max-w-4xl flex flex-col items-center">
-                        <span className="text-[9px] sm:text-[0.8125rem] md:text-sm font-black uppercase tracking-widest bg-white/10 text-[#C9A84C] px-3.5 py-1.5 rounded-full select-none mb-6">
-                            Ready to Partner
-                        </span>
-                        
-                        <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight leading-tight text-white max-w-3xl mb-6">
-                            Ready to Specify Poolside Loungers for Your Project?
-                        </h2>
-
-                        <p className="text-sm sm:text-base text-white/80 leading-relaxed max-w-2xl mb-10 font-medium">
-                            Get a custom quote, detailed proposal, and technical specifications within 24 hours. Urbanland serves municipalities, developers, and architects nationwide.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 select-none mb-8 w-full sm:w-auto">
-                            <Link
-                                to="/get-quote/?product=poolside-loungers"
-                                className="px-8 py-4 bg-[#C9A84C] text-[#232120] hover:bg-white hover:text-[#2C5F2E] rounded-full font-black uppercase tracking-wider text-xs transition-all shadow-lg transform duration-300 text-center font-bold"
-                            >
-                                Request Custom Quote →
-                            </Link>
-
-                            <Link
-                                to="/resources/downloads"
-                                className="px-8 py-4 bg-transparent hover:bg-white hover:text-[#2C5F2E] border border-white/20 text-white rounded-full font-bold uppercase tracking-wider text-xs transition-all text-center font-bold"
-                            >
-                                Download Specification Guide ↓
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <CTASection 
+                title="Ready to Specify Poolside Loungers for Your Project?"
+                primaryLink="/get-quote/?product=poolside-loungers"
+            />
 
             {/* EXIT-INTENT POPUP */}
             {exitPopupVisible && (

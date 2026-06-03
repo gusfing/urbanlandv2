@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
+import CTASection from "../../components/CTASection/CTASection";
 
 // Import images
 import gbg1 from '../../assets/gallery_real_estate.png';
@@ -8,6 +9,8 @@ import gbg2 from '../../assets/gallery_hotels.png';
 import gbg3 from '../../assets/gallery_hospitals.png';
 import gbg4 from '../../assets/gallery_education.png';
 import gbg5 from '../../assets/gallery_smart_city.png';
+import welcome1 from '../../assets/welcome-1.png';
+import welcome2 from '../../assets/welcome-2.png';
 
 const verticalsMeta = {
   "real-estate": {
@@ -152,7 +155,7 @@ const verticalsMeta = {
     ],
     cases: [
       { name: "Godrej Projects", location: "Palghar, Maharashtra", desc: "Supplied 78 premium benches + 65 planter boxes for residential-style healthcare complex landscaping." },
-      { name: "Kalpataru Vienta", location: "Kandivali, Mumbai", desc: "24 WPC benches + premium planter boxes supplied for campus pathways and recovery zones." },
+      { name: "Kalpataru Vienta", location: "Kandivali, Mumbai", desc: "24 WPC benches + premium planter boxes supplied for recovery zones." },
       { name: "Navandhe Village Complex", location: "Raigad, Maharashtra", desc: "36 benches + 42 planter boxes installed across public paths and green spaces." },
       { name: "TATA Projects Ltd", location: "Gujarat Sites", desc: "Large-scale heavy-duty benches and planters for public institutional landscaping. Completed in 2–3 weeks." }
     ],
@@ -295,6 +298,9 @@ const SolutionsDetail = () => {
 
   const meta = verticalsMeta[vertical] || verticalsMeta["real-estate"];
 
+  // Gallery array to loop visual assets for cases
+  const galleryImages = [gbg1, gbg2, gbg3, gbg4, gbg5, welcome1, welcome2];
+
   useEffect(() => {
     updatePageSEO({
       title: meta.metaTitle || `${meta.name} Solutions | Urbanland Products`,
@@ -305,26 +311,31 @@ const SolutionsDetail = () => {
   }, [meta]);
 
   return (
-    <div className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-32">
+    <div className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-24">
       {/* breadcrumb */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-4 flex items-center select-none text-[10px] font-bold uppercase tracking-widest text-[#2D2D2D]/55">
-        <Link to="/" className="hover:text-[#2C5F2E]">Home</Link>
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-6 flex items-center select-none text-[10px] font-bold uppercase tracking-widest text-[#2D2D2D]/55">
+        <Link to="/" className="hover:text-[#2C5F2E] no-underline">Home</Link>
         <span className="mx-1.5">/</span>
-        <Link to="/solutions" className="hover:text-[#2C5F2E]">Solutions</Link>
+        <Link to="/solutions" className="hover:text-[#2C5F2E] no-underline">Solutions</Link>
         <span className="mx-1.5">/</span>
         <span className="text-[#2D2D2D]/85">{meta.name}</span>
       </section>
 
-      {/* Hero Banner */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
-        <div className="w-full aspect-[21/9] md:aspect-[24/9] rounded-[2.5rem] overflow-hidden bg-black/5 relative shadow-lg">
-          <img
-            src={meta.image}
-            alt={meta.name}
-            className="w-full h-full object-cover select-none"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/40 flex flex-col justify-end p-8 md:p-12 text-white">
-            <span className="text-[10px] font-black uppercase tracking-wider bg-[#C9A84C] text-[#232120] px-3 py-1 rounded-full w-fit mb-3">
+      {/* Hero Banner - Full Width */}
+      <section className="w-full mb-16 relative aspect-[21/9] md:aspect-[24/9] bg-black/5 overflow-hidden shadow-md">
+        {/* Background Image spanning full width */}
+        <img
+          src={meta.image}
+          alt={meta.name}
+          className="absolute inset-0 w-full h-full object-cover select-none z-0"
+        />
+        {/* Overlay gradient spanning full width */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/40 z-10" />
+
+        {/* Content container aligned with site margins */}
+        <div className="absolute inset-0 z-20 flex flex-col justify-end text-white">
+          <div className="max-w-[1400px] mx-auto w-full px-6 md:px-12 pb-8 md:pb-12">
+            <span className="text-[10px] font-black uppercase tracking-wider bg-[#C9A84C] text-[#232120] px-3 py-1 rounded-full w-fit mb-3 block">
               Industry Vertical
             </span>
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-black uppercase leading-none tracking-tight max-w-4xl">
@@ -337,168 +348,212 @@ const SolutionsDetail = () => {
         </div>
       </section>
 
-      {/* Sector Description and Specs */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        <div>
+      {/* Sector Overview & Compliance visual split */}
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Left text summaries & specs badges */}
+        <div className="lg:col-span-7 text-left">
           <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— Landscape Integration</span>
+          <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#1A1A1A] mb-6 leading-none">
+            Sector Guidelines & Solutions
+          </h2>
           <p className="text-sm sm:text-base leading-relaxed text-[#2D2D2D]/85">
             {meta.desc}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          {/* Mini logistics card grid instead of text blocks */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 mb-8">
+            <div className="bg-[#EAE5DB]/30 rounded-2xl p-4 border border-black/[0.03]">
+              <span className="block text-[8px] font-black uppercase tracking-wider text-black/40">Primary Developers</span>
+              <span className="text-xs font-black uppercase text-black/85 block mt-1">{meta.developer.split(',')[0]}</span>
+            </div>
+            <div className="bg-[#EAE5DB]/30 rounded-2xl p-4 border border-black/[0.03]">
+              <span className="block text-[8px] font-black uppercase tracking-wider text-black/40">Delivered Volume</span>
+              <span className="text-xs font-black uppercase text-black/85 block mt-1">{meta.supplied.split(',')[0]}</span>
+            </div>
+            <div className="bg-[#EAE5DB]/30 rounded-2xl p-4 border border-black/[0.03]">
+              <span className="block text-[8px] font-black uppercase tracking-wider text-black/40">Compliance Standards</span>
+              <span className="text-xs font-black uppercase text-[#2C5F2E] block mt-1">{meta.standards.split(',')[0]}</span>
+            </div>
+            <div className="bg-[#EAE5DB]/30 rounded-2xl p-4 border border-black/[0.03]">
+              <span className="block text-[8px] font-black uppercase tracking-wider text-black/40">India Guarantee</span>
+              <span className="text-xs font-black uppercase text-[#C9A84C] block mt-1">2-Year Comprehensive</span>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-4">
             <Link
               to="/contact"
-              className="px-5 py-3 bg-[#2C5F2E] text-white rounded-full font-bold uppercase tracking-wider text-[10px] hover:bg-[#2D2D2D] transition-colors cursor-pointer shadow-md no-underline"
+              className="px-6 py-3.5 bg-[#2C5F2E] hover:bg-[#C9A84C] text-white rounded-full font-bold uppercase tracking-wider text-[10px] transition-colors cursor-pointer shadow-md no-underline"
             >
               Get a Quote →
             </Link>
             <Link
               to="/resources/downloads"
-              className="px-5 py-3 bg-[#EAE5DB] text-[#2D2D2D] rounded-full font-bold uppercase tracking-wider text-[10px] hover:bg-[#C9A84C] hover:text-white transition-colors border border-black/[0.04] cursor-pointer no-underline"
+              className="px-6 py-3.5 bg-[#EAE5DB] text-[#2D2D2D] rounded-full font-bold uppercase tracking-wider text-[10px] hover:bg-black hover:text-white transition-colors border border-black/[0.04] cursor-pointer no-underline"
             >
               Download Brochure ↓
             </Link>
           </div>
         </div>
-        
-        {/* Specs Box Card */}
-        <div className="bg-[#EAE5DB]/45 rounded-[2rem] border border-black/[0.03] p-8 flex flex-col gap-5">
-          <h3 className="text-xs font-black uppercase tracking-wider text-black mb-2">— SECTOR COMPLIANCE METRICS</h3>
-          
-          <div className="flex flex-col gap-1 pb-3 border-b border-black/[0.08]">
-            <span className="text-[9px] font-bold uppercase tracking-wider text-black/50">Primary Developer Clients</span>
-            <span className="text-xs font-semibold text-black/85">{meta.developer}</span>
-          </div>
-          <div className="flex flex-col gap-1 pb-3 border-b border-black/[0.08]">
-            <span className="text-[9px] font-bold uppercase tracking-wider text-black/50">Supplied Volume Scope</span>
-            <span className="text-xs font-semibold text-black/85">{meta.supplied}</span>
-          </div>
-          <div className="flex flex-col gap-1">
-            <span className="text-[9px] font-bold uppercase tracking-wider text-black/50">Regulatory Standards Met</span>
-            <span className="text-xs font-semibold text-black/85">{meta.standards}</span>
-          </div>
+
+        {/* Right huge immersive image card */}
+        <div className="lg:col-span-5 relative group overflow-hidden rounded-[2.5rem] shadow-xl aspect-square border border-black/[0.05] select-none">
+          <img 
+            src={meta.image} 
+            alt={meta.name} 
+            className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+          <span className="absolute bottom-6 left-6 text-[9px] font-black uppercase tracking-widest text-white bg-black/45 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full">
+            ✦ Visual Range Showcase
+          </span>
         </div>
       </section>
 
-      {/* Challenges Section */}
+      {/* Challenges Visual Cards Section */}
       {meta.challenges && (
-        <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-20">
-          <div className="bg-white rounded-[2.5rem] border border-black/[0.04] p-8 md:p-12 shadow-[0_5px_20px_rgba(0,0,0,0.005)]">
+        <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
+          <div className="bg-white rounded-[2.5rem] border border-black/[0.04] p-8 md:p-14 shadow-sm">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— Industry Pain Points</span>
-            <h2 className="text-2xl font-black uppercase tracking-tight text-[#1A1A1A] mb-8 border-b border-[#2D2D2D]/10 pb-4">
-              Challenges Face by Operators & Developers
+            <h2 className="text-3xl font-black uppercase tracking-tight text-[#1A1A1A] mb-12 border-b border-[#2D2D2D]/10 pb-4">
+              Challenges Faced by Operators & Developers
             </h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-xs sm:text-sm text-[#2D2D2D]/85">
-              {meta.challenges.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <span className="w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-xs shrink-0 select-none">!</span>
-                  <span>{item}</span>
-                </li>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {meta.challenges.slice(0, 3).map((item, idx) => (
+                <div key={idx} className="bg-[#F7F4EF]/55 rounded-[2rem] p-6 border border-black/[0.03] flex flex-col gap-4">
+                  <span className="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0 select-none border border-red-100">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
+                    </svg>
+                  </span>
+                  <p className="text-xs sm:text-sm text-[#2D2D2D]/85 leading-relaxed font-semibold">
+                    {item}
+                  </p>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
       )}
 
       {/* Tailored Solutions Section */}
       {meta.solutions && (
-        <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-20">
-          <div className="mb-10">
+        <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
+          <div className="mb-12">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— Manufactured Range</span>
-            <h2 className="text-2xl font-black uppercase tracking-tight text-[#1A1A1A]">
+            <h2 className="text-3xl font-black uppercase tracking-tight text-[#1A1A1A] leading-none">
               Our Tailored Solutions for this Sector
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {meta.solutions.map((item, idx) => (
-              <div key={idx} className="bg-white rounded-[2rem] p-8 border border-black/[0.03] shadow-[0_5px_15px_rgba(0,0,0,0.005)]">
+              <div key={idx} className="bg-white rounded-[2rem] p-8 border border-black/[0.03] shadow-sm hover:border-[#2C5F2E]/25 transition-all">
                 <div className="w-8 h-8 rounded-md bg-[#2C5F2E]/10 flex items-center justify-center font-bold text-[#2C5F2E] mb-4 text-xs select-none">
                   0{idx + 1}
                 </div>
-                <h3 className="text-base font-black text-black uppercase mb-2">{item.title}</h3>
-                <p className="text-xs text-[#2D2D2D]/60 leading-relaxed">{item.desc}</p>
+                <h3 className="text-base font-black text-black uppercase mb-2 leading-none">{item.title}</h3>
+                <p className="text-xs text-[#2D2D2D]/60 leading-relaxed font-medium">{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
       )}
 
-      {/* Real Projects Section */}
+      {/* Real Projects Image Gallery Section (Uses images more than text) */}
       {meta.cases && (
-        <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-20">
-          <div className="bg-[#2D2D2D] text-white rounded-[2.5rem] p-8 md:p-12 shadow-lg border border-white/5">
-            <div className="flex flex-col lg:flex-row justify-between gap-12">
-              <div className="w-full lg:w-[35%] shrink-0">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#C9A84C] mb-3 block">— Track Record</span>
-                <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-white mb-6">
-                  Real Projects. Real Impact.
-                </h2>
-                
-                {/* Stats Row */}
-                <div className="flex flex-col gap-6 mt-8">
-                  {meta.stats.map((stat, idx) => (
-                    <div key={idx} className="flex flex-col gap-1 pb-4 border-b border-white/10 last:border-none">
-                      <span className="text-3xl font-black text-[#C9A84C] leading-none">{stat.value}</span>
-                      <span className="text-[9px] font-bold uppercase tracking-wider text-white/50">{stat.label}</span>
-                    </div>
-                  ))}
+        <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24 select-none">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+            <div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-[#C9A84C] mb-3 block">— Visual Case Studies</span>
+              <h2 className="text-3xl font-black uppercase tracking-tight text-[#1A1A1A] leading-none">
+                Real Projects. Real Impact.
+              </h2>
+            </div>
+            <div className="flex gap-6">
+              {meta.stats.map((stat, idx) => (
+                <div key={idx} className="flex flex-col gap-1 pr-6 border-r border-black/10 last:border-none">
+                  <span className="text-2xl font-black text-[#2C5F2E] leading-none">{stat.value}</span>
+                  <span className="text-[8px] font-bold uppercase tracking-wider text-black/45">{stat.label}</span>
                 </div>
-              </div>
-
-              <div className="w-full lg:w-[60%] flex flex-col gap-6">
-                <h3 className="text-xs font-black uppercase tracking-wider text-white/50 border-b border-white/10 pb-2 mb-2">
-                  — FEATURED CASE STUDY HIGH-LIGHTS
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {meta.cases.map((c, idx) => (
-                    <div key={idx} className="bg-white/5 rounded-2xl p-6 border border-white/5 flex flex-col justify-between">
-                      <div>
-                        <span className="text-[8px] font-bold text-[#C9A84C] uppercase tracking-wider mb-2 block">{c.location}</span>
-                        <h4 className="text-sm font-black uppercase tracking-tight text-white mb-2 leading-tight pr-6">{c.name}</h4>
-                        <p className="text-xs text-white/60 leading-relaxed mt-2">{c.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {meta.extraCases && (
-                  <p className="text-xs text-white/55 border-t border-white/10 pt-4 mt-2">
-                    <strong>Additional Deployments:</strong> {meta.extraCases}
-                  </p>
-                )}
-              </div>
+              ))}
             </div>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {meta.cases.map((c, idx) => {
+              // Cycle through available visual gallery assets
+              const cardImage = galleryImages[idx % galleryImages.length];
+              return (
+                <div 
+                  key={idx} 
+                  className="group relative bg-[#2D2D2D] rounded-[2.5rem] overflow-hidden aspect-[16/11] flex flex-col justify-end p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-black/5 cursor-pointer"
+                >
+                  {/* Photo background */}
+                  <div className="absolute inset-0 z-0 transition-transform duration-700 ease-out transform group-hover:scale-103">
+                    <img src={cardImage} alt={c.name} className="w-full h-full object-cover opacity-60 group-hover:opacity-45 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+                  </div>
+
+                  {/* Content overlay */}
+                  <div className="relative z-10 w-full text-left">
+                    <span className="text-[9px] font-black uppercase tracking-wider text-[#C9A84C] bg-[#C9A84C]/10 border border-[#C9A84C]/35 px-3 py-1 rounded-full mb-3 inline-block">
+                      {c.location}
+                    </span>
+                    <h3 className="text-lg sm:text-xl font-black uppercase text-white mb-2 leading-tight group-hover:text-[#C9A84C] transition-colors">
+                      {c.name}
+                    </h3>
+                    <p className="text-xs text-white/70 leading-relaxed font-semibold max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-500 overflow-hidden pt-1 border-t border-white/10 mt-2">
+                      {c.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {meta.extraCases && (
+            <div className="bg-[#EAE5DB]/35 rounded-[2rem] border border-black/[0.03] p-6 text-center mt-8">
+              <p className="text-xs text-black/65 font-bold leading-relaxed">
+                📢 <strong>Additional Regional Deployments:</strong> {meta.extraCases}
+              </p>
+            </div>
+          )}
         </section>
       )}
 
       {/* Why Choose Us Section */}
       {meta.whyChoose && (
-        <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-20">
-          <div className="bg-white rounded-[2.5rem] border border-black/[0.04] p-8 md:p-12 shadow-[0_5px_20px_rgba(0,0,0,0.005)]">
+        <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-24">
+          <div className="bg-white rounded-[2.5rem] border border-black/[0.04] p-8 md:p-14 shadow-sm">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— The Client Advantage</span>
-            <h2 className="text-2xl font-black uppercase tracking-tight text-[#1A1A1A] mb-8 border-b border-[#2D2D2D]/10 pb-4">
+            <h2 className="text-3xl font-black uppercase tracking-tight text-[#1A1A1A] mb-12 border-b border-[#2D2D2D]/10 pb-4">
               Why Leading Developers & Organizations Prefer Urbanland Solutions
             </h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 text-xs sm:text-sm text-[#2D2D2D]/85">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
               {meta.whyChoose.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <span className="text-[#2C5F2E] font-bold">✓</span>
-                  <span>{item}</span>
-                </li>
+                <div key={idx} className="flex items-start gap-4 p-2 rounded-xl transition-all hover:bg-[#F7F4EF]/55">
+                  <span className="w-6 h-6 rounded-full bg-[#2C5F2E]/10 text-[#2C5F2E] flex items-center justify-center shrink-0 select-none">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span className="text-xs sm:text-sm text-[#2D2D2D]/85 font-semibold leading-relaxed">
+                    {item}
+                  </span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </section>
       )}
 
       {/* Sector FAQ Accordion */}
       {meta.faqs && (
-        <section className="max-w-[850px] mx-auto px-6 mb-20">
+        <section className="max-w-[850px] mx-auto px-6 mb-24">
           <div className="text-center mb-12">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— FAQ</span>
-            <h2 className="text-2xl font-black uppercase tracking-tight text-[#1A1A1A]">
+            <h2 className="text-3xl font-black uppercase tracking-tight text-[#1A1A1A]">
               Frequently Asked Questions
             </h2>
           </div>
@@ -509,7 +564,11 @@ const SolutionsDetail = () => {
               return (
                 <div 
                   key={idx}
-                  className="bg-white rounded-[2rem] border border-black/[0.03] overflow-hidden transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.005)]"
+                  className={`bg-white rounded-[2rem] border transition-all duration-500 overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.005)] ${
+                    isOpen 
+                      ? "border-[#2C5F2E]/40 ring-1 ring-[#2C5F2E]/10" 
+                      : "border-black/[0.03] hover:border-black/10"
+                  }`}
                 >
                   <button
                     onClick={() => setActiveIndex(isOpen ? null : idx)}
@@ -518,8 +577,8 @@ const SolutionsDetail = () => {
                     <h3 className="text-sm sm:text-base font-black uppercase tracking-tight text-[#1A1A1A] group-hover:text-[#2C5F2E] pr-6 transition-colors leading-snug">
                       {faq.q}
                     </h3>
-                    <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold transition-all text-xs shrink-0 ${
-                      isOpen ? "bg-[#2C5F2E] text-white rotate-45" : "bg-[#F7F4EF] text-[#2D2D2D]"
+                    <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 shrink-0 select-none ${
+                      isOpen ? "bg-[#2C5F2E] text-white rotate-45" : "bg-[#F7F4EF] text-[#2D2D2D] group-hover:bg-[#2C5F2E]/10"
                     }`}>
                       ＋
                     </span>
@@ -528,7 +587,7 @@ const SolutionsDetail = () => {
                   <div className={`transition-all duration-500 ease-in-out overflow-hidden ${
                     isOpen ? "max-h-[300px] border-t border-black/[0.05]" : "max-h-0"
                   }`}>
-                    <p className="px-6 py-6 md:px-8 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/70 bg-white/50">
+                    <p className="px-6 py-6 md:px-8 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/75 bg-[#F7F4EF]/20">
                       {faq.a}
                     </p>
                   </div>
@@ -541,38 +600,57 @@ const SolutionsDetail = () => {
 
       {/* Recommended Products Grid */}
       {meta.recommended?.length > 0 && (
-        <section className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <h2 className="text-2xl font-black uppercase tracking-tight text-[#1A1A1A] mb-8 border-b border-[#2D2D2D]/10 pb-4 select-none">
-            Recommended Products for this Sector:
+        <section className="max-w-[1400px] mx-auto px-6 md:px-12 select-none">
+          <h2 className="text-3xl font-black uppercase tracking-tight text-[#1A1A1A] mb-12 border-b border-[#2D2D2D]/10 pb-4">
+            Recommended Products for this Sector
           </h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {meta.recommended.map((item) => (
-              <Link
-                key={item.id}
-                to={`/products`}
-                className="bg-white rounded-[2rem] p-6 border border-black/[0.03] shadow-[0_5px_20px_rgba(0,0,0,0.01)] hover:shadow-[0_15px_45px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-500 cursor-pointer flex flex-col justify-between aspect-square group no-underline text-[#1A1A1A] w-full max-w-[320px]"
-              >
-                <div>
-                  <span className="text-[8px] font-black uppercase tracking-widest text-[#2C5F2E] bg-[#2C5F2E]/5 px-2.5 py-1 rounded-md mb-2 inline-block">
-                    {vertical.replace("-", " ")}
+            {meta.recommended.map((item, idx) => {
+              // Visual asset rotation for recommendations
+              const cardImage = galleryImages[(idx + 4) % galleryImages.length];
+              return (
+                <Link
+                  key={item.id}
+                  to={`/products`}
+                  className="relative bg-white rounded-[2rem] border border-black/[0.04] p-6 shadow-sm hover:shadow-xl hover:border-[#2C5F2E]/30 hover:-translate-y-1 transition-all duration-500 cursor-pointer flex flex-col justify-between aspect-square group no-underline text-[#1A1A1A] overflow-hidden"
+                >
+                  {/* Miniature decorative preview asset to make it visual */}
+                  <div className="absolute inset-0 z-0 transition-transform duration-700 ease-out transform group-hover:scale-105 opacity-5 group-hover:opacity-10">
+                    <img src={cardImage} alt={item.name} className="w-full h-full object-cover" />
+                  </div>
+                  
+                  <div className="relative z-10 text-left">
+                    <span className="text-[8px] font-black uppercase tracking-widest text-[#2C5F2E] bg-[#2C5F2E]/5 border border-[#2C5F2E]/10 px-2.5 py-1.5 rounded-md mb-2 inline-block">
+                      {vertical.replace("-", " ")}
+                    </span>
+                    <h4 className="text-lg sm:text-xl font-black uppercase group-hover:text-[#2C5F2E] transition-colors leading-snug mt-2">
+                      {item.name}
+                    </h4>
+                  </div>
+                  
+                  <span className="relative z-10 text-[10px] font-black uppercase tracking-wider text-black/35 group-hover:text-[#2C5F2E] transition-colors mt-6 block">
+                    View Specifications →
                   </span>
-                  <h4 className="text-lg font-bold group-hover:text-[#2C5F2E] transition-colors leading-snug">
-                    {item.name}
-                  </h4>
-                </div>
-                
-                <span className="text-[10px] font-bold uppercase tracking-wider text-black/35 group-hover:text-[#2C5F2E] transition-colors mt-6 block">
-                  View Specifications →
-                </span>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </section>
       )}
+
+      {/* Unified CTA Section */}
+      <CTASection 
+        title={`Ready to Partner with India's Leading solutions Provider for ${meta.name}?`}
+        description="Support sustainable development, earn LEED points, and select premium outdoor systems designed for absolute longevity."
+        tagText="Collaborate with Urbanland"
+        primaryText="Initiate Quote Builder →"
+        primaryLink="/contact"
+        secondaryText="Download Sector Brochure ↓"
+        secondaryLink="/resources/downloads"
+      />
     </div>
   );
 };
 
 export default SolutionsDetail;
-

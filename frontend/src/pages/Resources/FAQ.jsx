@@ -148,13 +148,33 @@ const FAQ = () => {
 
         {/* Trust Badges */}
         <div className="mt-8 flex flex-wrap gap-y-2 gap-x-4 text-xs font-semibold text-[#2C5F2E] bg-[#EAE5DB]/40 px-5 py-3 rounded-full border border-black/[0.04] w-fit">
-          <span>✓ Honest Answers</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Honest Answers</span>
+          </span>
           <span className="opacity-30">|</span>
-          <span>✓ 2-Year Comprehensive Guarantee</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>2-Year Comprehensive Guarantee</span>
+          </span>
           <span className="opacity-30">|</span>
-          <span>✓ Sustainable Green Materials</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Sustainable Green Materials</span>
+          </span>
           <span className="opacity-30">|</span>
-          <span>✓ Proudly Manufactured in India</span>
+          <span className="flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Proudly Manufactured in India</span>
+          </span>
         </div>
       </section>
 

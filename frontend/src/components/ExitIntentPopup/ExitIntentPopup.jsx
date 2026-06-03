@@ -38,7 +38,7 @@ const ExitIntentPopup = () => {
     ];
 
     const hasLocalPopup = localPopupPaths.includes(normalizedPath);
-    const isExcluded = hasLocalPopup;
+    const isExcluded = hasLocalPopup || normalizedPath === "/contact" || normalizedPath === "/get-quote";
 
     const trackEvent = (eventName, value = "") => {
         if (window.gtag) {
@@ -111,23 +111,37 @@ const ExitIntentPopup = () => {
                 }
             };
 
-            const timer = setTimeout(() => {
-                triggerPopup();
-            }, 45000); // 45 seconds fallback timer
+            const handleScroll = () => {
+                const scrollPosition = window.scrollY + window.innerHeight;
+                const totalHeight = document.documentElement.scrollHeight;
+                if (totalHeight > 0 && scrollPosition / totalHeight >= 0.7) {
+                    triggerPopup();
+                }
+            };
+
+            const handleVisibilityChange = () => {
+                if (document.hidden) {
+                    triggerPopup();
+                }
+            };
 
             const triggerPopup = () => {
                 setIsVisible(true);
                 sessionStorage.setItem(sessionKey, "true");
                 document.removeEventListener("mouseleave", handleMouseLeave);
-                clearTimeout(timer);
+                window.removeEventListener("scroll", handleScroll);
+                document.removeEventListener("visibilitychange", handleVisibilityChange);
                 trackEvent("popup_trigger");
             };
 
             document.addEventListener("mouseleave", handleMouseLeave);
+            window.addEventListener("scroll", handleScroll);
+            document.addEventListener("visibilitychange", handleVisibilityChange);
 
             return () => {
                 document.removeEventListener("mouseleave", handleMouseLeave);
-                clearTimeout(timer);
+                window.removeEventListener("scroll", handleScroll);
+                document.removeEventListener("visibilitychange", handleVisibilityChange);
             };
         }
     }, [normalizedPath, isExcluded]);

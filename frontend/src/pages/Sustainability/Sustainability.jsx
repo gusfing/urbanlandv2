@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
+import CTASection from "../../components/CTASection/CTASection";
 
 // Reuse assets
 import welcome2 from '../../assets/welcome-2.png';
@@ -57,13 +58,33 @@ const Sustainability = () => {
 
             {/* Trust Line */}
             <div className="mt-8 flex flex-wrap gap-y-2 gap-x-4 justify-center md:justify-start text-xs font-semibold text-[#2C5F2E] bg-[#EAE5DB]/40 px-5 py-3 rounded-full border border-black/[0.04] w-fit">
-              <span>✓ WPC & NFC Wood Alternatives</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>WPC & NFC Wood Alternatives</span>
+              </span>
               <span className="opacity-30">|</span>
-              <span>✓ Supports IGBC, GRIHA & LEED</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Supports IGBC, GRIHA & LEED</span>
+              </span>
               <span className="opacity-30">|</span>
-              <span>✓ Recycled Content Focus</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Recycled Content Focus</span>
+              </span>
               <span className="opacity-30">|</span>
-              <span>✓ 2-Year Guarantee</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>2-Year Guarantee</span>
+              </span>
             </div>
 
             {/* CTAs */}
@@ -200,8 +221,11 @@ const Sustainability = () => {
             </div>
           </div>
 
-          <p className="text-xs sm:text-sm text-center font-bold text-[#2C5F2E] border-t border-black/[0.05] pt-6 uppercase tracking-wide">
-            ✓ All materials are chosen for their ability to deliver beauty, performance and genuine environmental responsibility.
+          <p className="text-xs sm:text-sm flex items-center justify-center gap-1.5 font-bold text-[#2C5F2E] border-t border-black/[0.05] pt-6 uppercase tracking-wide">
+            <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>All materials are chosen for their ability to deliver beauty, performance and genuine environmental responsibility.</span>
           </p>
         </div>
       </section>
@@ -231,23 +255,43 @@ const Sustainability = () => {
 
           <ul className="text-xs sm:text-sm text-[#2D2D2D]/85 leading-relaxed space-y-4 max-w-2xl">
             <li className="flex items-start gap-3">
-              <span className="text-[#2C5F2E] font-bold">✓</span>
+              <span className="text-[#2C5F2E] flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-[#2C5F2E]/10 select-none mt-0.5">
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
               <span>We will never use endangered, undocumented, or illegal timber in any of our furniture components.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-[#2C5F2E] font-bold">✓</span>
+              <span className="text-[#2C5F2E] flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-[#2C5F2E]/10 select-none mt-0.5">
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
               <span>We actively promote WPC and NFC Wood as sustainable, high-durability, biophilic alternatives to natural wood.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-[#2C5F2E] font-bold">✓</span>
+              <span className="text-[#2C5F2E] flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-[#2C5F2E]/10 select-none mt-0.5">
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
               <span>We actively support our developer clients and landscape architects in achieving premium green building certifications.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-[#2C5F2E] font-bold">✓</span>
+              <span className="text-[#2C5F2E] flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-[#2C5F2E]/10 select-none mt-0.5">
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
               <span>We design products for maximum lifespan (12–20+ years) to minimize waste and promote the circular economy.</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-[#2C5F2E] font-bold">✓</span>
+              <span className="text-[#2C5F2E] flex items-center justify-center shrink-0 w-5 h-5 rounded-full bg-[#2C5F2E]/10 select-none mt-0.5">
+                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </span>
               <span>We continue to research and innovate new green materials, low-VOC finishes, and energy-efficient manufacturing processes.</span>
             </li>
           </ul>
@@ -269,7 +313,11 @@ const Sustainability = () => {
             return (
               <div 
                 key={idx}
-                className="bg-white rounded-[2rem] border border-black/[0.03] overflow-hidden transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.005)]"
+                className={`bg-white rounded-[2rem] border transition-all duration-500 overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.005)] ${
+                  isOpen 
+                    ? "border-[#2C5F2E]/40 ring-1 ring-[#2C5F2E]/10" 
+                    : "border-black/[0.03] hover:border-black/10"
+                }`}
               >
                 <button
                   onClick={() => setActiveIndex(isOpen ? null : idx)}
@@ -278,8 +326,8 @@ const Sustainability = () => {
                   <h3 className="text-sm sm:text-base font-black uppercase tracking-tight text-[#1A1A1A] group-hover:text-[#2C5F2E] pr-6 transition-colors leading-snug">
                     {faq.q}
                   </h3>
-                  <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold transition-all text-xs shrink-0 ${
-                    isOpen ? "bg-[#2C5F2E] text-white rotate-45" : "bg-[#F7F4EF] text-[#2D2D2D]"
+                  <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 shrink-0 select-none ${
+                    isOpen ? "bg-[#2C5F2E] text-white rotate-45" : "bg-[#F7F4EF] text-[#2D2D2D] group-hover:bg-[#2C5F2E]/10"
                   }`}>
                     ＋
                   </span>
@@ -288,7 +336,7 @@ const Sustainability = () => {
                 <div className={`transition-all duration-500 ease-in-out overflow-hidden ${
                   isOpen ? "max-h-[300px] border-t border-black/[0.05]" : "max-h-0"
                 }`}>
-                  <p className="px-6 py-6 md:px-8 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/70 bg-white/50">
+                  <p className="px-6 py-6 md:px-8 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/75 bg-[#F7F4EF]/20">
                     {faq.a}
                   </p>
                 </div>
@@ -299,31 +347,15 @@ const Sustainability = () => {
       </section>
 
       {/* Final Call-to-Action */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="bg-white rounded-[2.5rem] border border-black/[0.04] p-8 md:p-16 text-center shadow-[0_15px_45px_rgba(0,0,0,0.015)]">
-          <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#1A1A1A] max-w-3xl mx-auto leading-tight">
-            Ready to Partner with a Truly Green Outdoor Furniture Manufacturer?
-          </h2>
-          <p className="text-xs sm:text-sm text-[#2D2D2D]/60 max-w-xl mx-auto mt-4 leading-relaxed">
-            Support biophilic architectural design, earn IGBC points, and reduce deforestation with our premium WPC and NFC solutions.
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="px-6 py-3.5 bg-[#2C5F2E] text-white rounded-full font-bold uppercase tracking-wider text-xs hover:bg-[#2D2D2D] transition-colors cursor-pointer shadow-md no-underline"
-            >
-              Request Sustainable Quote →
-            </Link>
-            <Link
-              to="/resources/downloads"
-              className="px-6 py-3.5 bg-[#EAE5DB] text-[#2D2D2D] rounded-full font-bold uppercase tracking-wider text-xs hover:bg-[#C9A84C] hover:text-white transition-colors border border-black/[0.04] cursor-pointer no-underline"
-            >
-              Download Sustainability Report ↓
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CTASection 
+        title="Ready to Partner with a Truly Green Outdoor Furniture Manufacturer?"
+        description="Support biophilic architectural design, earn IGBC points, and reduce deforestation with our premium WPC and NFC solutions."
+        tagText="Ecological Integrity"
+        primaryText="Request Sustainable Quote →"
+        primaryLink="/contact"
+        secondaryText="Download Sustainability Report ↓"
+        secondaryLink="/resources/downloads"
+      />
     </div>
   );
 };

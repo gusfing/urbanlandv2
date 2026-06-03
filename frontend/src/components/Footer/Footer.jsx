@@ -77,7 +77,7 @@ const Footer = () => {
             {/* Bottom copyright bar with crawlable keyword paragraph */}
             <div className="w-full flex flex-col md:flex-row justify-between items-center mt-8 gap-6 pt-4 text-[11px] text-[#F7F4EF]/45">
                 <div className="flex flex-col gap-1 text-center md:text-left">
-                    <p>© 2026 Urbanland Products. All rights reserved.   |   <Link to="/privacy-policy" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Privacy Policy</Link>   |   <Link to="/sitemap" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Sitemap</Link></p>
+                    <p>© 2026 Urbanland Products. All rights reserved.   |   <Link to="/privacy-policy" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Privacy Policy</Link>   |   <Link to="/sitemap" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Sitemap</Link>   |   <Link to="/style-guide" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Style Guide</Link></p>
                     <p className="text-[#F7F4EF]/60 font-medium tracking-wide mt-1.5">
                         Outdoor Furniture Manufacturer in India — WPC Benches, Bus Shelters, Concrete Planters & Urban Street Furniture
                     </p>
