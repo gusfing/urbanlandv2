@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
+import faqHeroImage from "../../assets/faq_hero_image.png";
 
 const categories = [
-  { id: "all", name: "All Questions", icon: "🔍" },
-  { id: "general", name: "General Info", icon: "💬" },
-  { id: "products", name: "Products & Materials", icon: "🪵" },
-  { id: "sustainability", name: "Sustainability", icon: "🌱" },
-  { id: "projects", name: "Projects & Delivery", icon: "🚚" },
-  { id: "warranty", name: "Warranty & Support", icon: "🛡️" },
-  { id: "customization", name: "Customization & Quotes", icon: "✏️" }
+  { id: "all", name: "All Questions" },
+  { id: "general", name: "General Info" },
+  { id: "products", name: "Products & Materials" },
+  { id: "sustainability", name: "Sustainability" },
+  { id: "projects", name: "Projects & Delivery" },
+  { id: "warranty", name: "Warranty & Support" },
+  { id: "customization", name: "Customization & Quotes" }
 ];
 
 const faqsList = [
@@ -118,10 +119,10 @@ const FAQ = () => {
     return () => cleanPageSEO();
   }, []);
 
-  const handleToggle = (faqIndex) => {
+  const handleToggle = (faqQuestion) => {
     setOpenIndex(prev => ({
       ...prev,
-      [faqIndex]: !prev[faqIndex]
+      [faqQuestion]: !prev[faqQuestion]
     }));
   };
 
@@ -134,93 +135,95 @@ const FAQ = () => {
   });
 
   return (
-    <div className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-32">
-      {/* Header */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-12">
-        <p className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3">— Frequently Asked Questions</p>
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-none text-[#1A1A1A] max-w-5xl">
-          All Your <br/>
-          <span className="text-[#C9A84C]">Questions Answered.</span>
-        </h1>
-        <p className="text-sm sm:text-base text-[#2D2D2D]/70 max-w-2xl leading-relaxed mt-6">
-          Clear answers to the most common questions about our sustainable outdoor furniture, manufacturing, green materials, warranties, and commercial project support.
-        </p>
+    <div className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-32 relative">
+      {/* Background ambient radial gradients */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_top_right,rgba(44,95,46,0.06),transparent_65%)] pointer-events-none z-0" />
+      <div className="absolute top-[40%] left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_left,rgba(201,168,76,0.04),transparent_65%)] pointer-events-none z-0" />
 
-        {/* Trust Badges */}
-        <div className="mt-8 flex flex-wrap gap-y-2 gap-x-4 text-xs font-semibold text-[#2C5F2E] bg-[#EAE5DB]/40 px-5 py-3 rounded-full border border-black/[0.04] w-fit">
-          <span className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>Honest Answers</span>
-          </span>
-          <span className="opacity-30">|</span>
-          <span className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>2-Year Comprehensive Guarantee</span>
-          </span>
-          <span className="opacity-30">|</span>
-          <span className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>Sustainable Green Materials</span>
-          </span>
-          <span className="opacity-30">|</span>
-          <span className="flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
-            <span>Proudly Manufactured in India</span>
-          </span>
+      {/* Hero Section: 2-column split-view layout */}
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Column: Heading and description */}
+          <div className="lg:col-span-7 text-left">
+            <p className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3">— Frequently Asked Questions</p>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-none text-[#1A1A1A] max-w-5xl">
+              All Your <br/>
+              <span className="text-[#C9A84C]">Questions Answered.</span>
+            </h1>
+            <p className="text-sm sm:text-base text-[#2D2D2D]/70 max-w-2xl leading-relaxed mt-6">
+              Clear answers to the most common questions about our sustainable outdoor furniture, manufacturing, green materials, warranties, and commercial project support.
+            </p>
+
+            {/* B2B Trust Badges - Icon-free, clean dot markers */}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <div className="flex items-center gap-2 bg-[#EAE5DB]/45 px-4 py-2 rounded-full border border-black/[0.04] text-[10px] sm:text-xs font-semibold text-[#2C5F2E] select-none hover:bg-[#2C5F2E]/5 transition-colors">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2C5F2E]" />
+                <span>Honest Answers</span>
+              </div>
+              <div className="flex items-center gap-2 bg-[#EAE5DB]/45 px-4 py-2 rounded-full border border-black/[0.04] text-[10px] sm:text-xs font-semibold text-[#2C5F2E] select-none hover:bg-[#2C5F2E]/5 transition-colors">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2C5F2E]" />
+                <span>2-Year Comprehensive Guarantee</span>
+              </div>
+              <div className="flex items-center gap-2 bg-[#EAE5DB]/45 px-4 py-2 rounded-full border border-black/[0.04] text-[10px] sm:text-xs font-semibold text-[#2C5F2E] select-none hover:bg-[#2C5F2E]/5 transition-colors">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2C5F2E]" />
+                <span>Sustainable Materials</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Hero visual mockup */}
+          <div className="lg:col-span-5 relative rounded-[2.5rem] overflow-hidden select-none bg-[#EAE5DB]/25 p-4 shadow-sm border border-black/[0.04] aspect-[4/3] flex items-center justify-center">
+            <img 
+              src={faqHeroImage} 
+              alt="Premium sustainable outdoor plaza benches and planters layouts" 
+              className="rounded-[2rem] w-full h-full object-cover shadow-inner" 
+            />
+            <div className="absolute bottom-6 right-6 bg-black/45 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full text-white text-[9px] font-black uppercase tracking-widest pointer-events-none">
+              ✦ Urbanland Systems
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* Search & Tabs Controls */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-12">
-        {/* Live Search Bar */}
-        <div className="relative max-w-xl mb-10 group">
+      {/* Search & Tabs Filtering Section */}
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-12 relative z-10">
+        
+        {/* Live Search Bar - Emojis removed */}
+        <div className="relative max-w-2xl mb-10 group text-left">
           <input
             type="text"
             placeholder="Search FAQs by keywords (e.g. 'coastal', 'lead time', 'WPC')..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white border border-black/10 rounded-full px-7 py-4.5 pl-14 text-sm text-black focus:outline-none focus:border-[#2C5F2E] font-medium shadow-[0_5px_15px_rgba(0,0,0,0.015)] transition-all duration-300 placeholder:text-black/35"
+            className="w-full bg-white/70 border border-black/10 rounded-full px-7 py-4.5 text-xs sm:text-sm text-black focus:outline-none focus:border-[#2C5F2E] focus:ring-1 focus:ring-[#2C5F2E]/10 font-medium shadow-[0_4px_20px_rgba(0,0,0,0.015)] transition-all duration-300 placeholder:text-black/35"
           />
-          <span className="absolute left-6 top-1/2 -translate-y-1/2 text-lg opacity-40 select-none pointer-events-none group-focus-within:opacity-100 transition-opacity">
-            🔍
-          </span>
           {searchQuery && (
             <button 
               onClick={() => setSearchQuery("")}
-              className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/5 hover:bg-black/15 text-[10px] uppercase font-bold tracking-wider px-3 py-1.5 rounded-full transition-colors cursor-pointer"
+              className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/5 hover:bg-black/15 text-[9px] uppercase font-black tracking-wider px-3.5 py-1.5 rounded-full transition-colors cursor-pointer"
             >
               Clear
             </button>
           )}
         </div>
 
-        {/* Tab Filter buttons */}
-        <div className="flex flex-wrap gap-2.5 border-b border-black/[0.06] pb-6">
+        {/* Tab Filter Buttons - Emojis completely removed */}
+        <div className="flex flex-wrap gap-2.5 border-b border-black/[0.06] pb-8">
           {categories.map((cat) => {
             const isActive = activeTab === cat.id;
             return (
               <button
                 key={cat.id}
-                onClick={() => {
-                  setActiveTab(cat.id);
-                  // Optionally clear search query to avoid confusion
-                }}
-                className={`px-5 py-3 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-300 border cursor-pointer select-none flex items-center gap-2 ${
+                onClick={() => setActiveTab(cat.id)}
+                className={`px-5 py-3 rounded-full text-[10px] md:text-xs font-black uppercase tracking-wider transition-all duration-300 border cursor-pointer select-none ${
                   isActive 
                     ? "bg-[#2C5F2E] border-[#2C5F2E] text-white shadow-md transform -translate-y-0.5" 
-                    : "bg-white border-black/[0.04] text-[#2D2D2D] hover:bg-[#EAE5DB] hover:border-black/10"
+                    : "bg-white/60 border-black/[0.04] text-[#2D2D2D] hover:bg-[#EAE5DB] hover:border-black/15 hover:text-black"
                 }`}
               >
-                <span>{cat.icon}</span>
-                <span>{cat.name}</span>
+                {cat.name}
               </button>
             );
           })}
@@ -228,11 +231,10 @@ const FAQ = () => {
       </section>
 
       {/* Accordion Stack */}
-      <section className="max-w-[1000px] mx-auto px-6 mb-20">
+      <section className="max-w-[1000px] mx-auto px-6 mb-24 relative z-10">
         {filteredFaqs.length > 0 ? (
           <div className="flex flex-col gap-4.5">
             {filteredFaqs.map((faq) => {
-              // Creating a unique key based on question text to keep correct state during filtering
               const isOpen = !!openIndex[faq.q];
               return (
                 <div 
@@ -251,14 +253,19 @@ const FAQ = () => {
                       <span className="text-[8px] font-black uppercase tracking-widest text-[#C9A84C]">
                         {categories.find(c => c.id === faq.category)?.name || faq.category}
                       </span>
-                      <h3 className="text-base sm:text-lg font-black uppercase tracking-tight text-[#1A1A1A] group-hover:text-[#2C5F2E] transition-colors leading-snug">
+                      <h3 className="text-sm sm:text-base lg:text-lg font-black uppercase tracking-tight text-[#1A1A1A] group-hover:text-[#2C5F2E] transition-colors leading-snug">
                         {faq.q}
                       </h3>
                     </div>
-                    <span className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 shrink-0 select-none ${
-                      isOpen ? "bg-[#2C5F2E] text-white rotate-45" : "bg-[#F7F4EF] text-[#2D2D2D] group-hover:bg-[#2C5F2E]/10"
-                    }`}>
-                      ＋
+                    {/* Text-based toggle indicator button - Emojis & raw icons completely removed */}
+                    <span 
+                      className={`text-[9px] font-black uppercase tracking-widest px-4 py-2 rounded-full transition-all duration-300 shrink-0 select-none ${
+                        isOpen 
+                          ? "bg-[#2C5F2E] text-white" 
+                          : "bg-[#F7F4EF] text-[#2D2D2D]/60 group-hover:bg-[#2C5F2E]/10 group-hover:text-[#2C5F2E]"
+                      }`}
+                    >
+                      {isOpen ? "Close" : "Read Answer"}
                     </span>
                   </button>
 
@@ -268,7 +275,7 @@ const FAQ = () => {
                       isOpen ? "max-h-[350px] border-t border-black/[0.05]" : "max-h-0"
                     }`}
                   >
-                    <p className="px-6 py-6 md:px-9 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/75 bg-[#F7F4EF]/20">
+                    <p className="px-6 py-6 md:px-9 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/75 bg-[#F7F4EF]/20 text-left">
                       {faq.a}
                     </p>
                   </div>
@@ -277,8 +284,8 @@ const FAQ = () => {
             })}
           </div>
         ) : (
+          /* Empty State - Emojis & icons completely removed */
           <div className="text-center py-20 bg-white rounded-[2.5rem] border border-black/[0.04] p-10 max-w-xl mx-auto shadow-inner">
-            <span className="text-4xl mb-4 block">🔍</span>
             <h3 className="text-lg font-black uppercase tracking-tight text-black mb-2">No matching questions found</h3>
             <p className="text-xs text-black/50 leading-relaxed mb-6">
               We couldn't find any FAQs matching "{searchQuery}". Try searching for another keyword or browse questions by clicking on the category tabs above.
@@ -294,8 +301,8 @@ const FAQ = () => {
       </section>
 
       {/* Still Have Questions? Banner */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="bg-[#2D2D2D] rounded-[3rem] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+        <div className="bg-[#2D2D2D] rounded-[2.5rem] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(44,95,46,0.2),transparent_60%)] pointer-events-none" />
           <div className="absolute right-0 top-0 w-[400px] h-[400px] bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,0.1),transparent_70%)] pointer-events-none" />
           
@@ -313,13 +320,13 @@ const FAQ = () => {
                 href="/contact" 
                 className="px-8 py-4.5 bg-[#2C5F2E] hover:bg-[#3d7a40] text-white rounded-full font-bold uppercase tracking-wider text-xs transition-colors shadow-md no-underline inline-block"
               >
-                Get in Touch With Us →
+                Connect With Us
               </a>
               <a 
                 href="/resources/downloads" 
                 className="px-8 py-4.5 bg-white/10 hover:bg-white/20 border border-white/15 text-white rounded-full font-bold uppercase tracking-wider text-xs transition-all no-underline inline-block"
               >
-                Download Master Catalogue ↓
+                Download Master Catalogue
               </a>
             </div>
           </div>
@@ -330,4 +337,3 @@ const FAQ = () => {
 };
 
 export default FAQ;
-
