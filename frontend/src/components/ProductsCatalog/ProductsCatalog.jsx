@@ -50,20 +50,32 @@ const categories = [
   )},
   { id: "bus-shelters", name: "Bus Shelters", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-      <path d="M2 7c2-1.5 5-2 10-2s8 .5 10 2" strokeLinecap="round" />
-      <path d="M3 7v13m18-13v13" strokeLinecap="round" />
-      <path d="M7 7v7m5-7v7m5-7v7" strokeDasharray="2 2" strokeLinecap="round" />
-      <path d="M5 14h14M8 14v3m8-3v3" strokeLinecap="round" />
+      {/* Modern angled shelter roof */}
+      <path d="M3 6h15l3 3H6L3 6z" strokeLinejoin="round" strokeLinecap="round" />
+      {/* Support structures */}
+      <path d="M6 9v10M18 9v10" strokeLinecap="round" />
+      {/* Glass back panel horizontal line */}
+      <path d="M6 13h12" strokeLinecap="round" strokeDasharray="3 3" />
+      {/* Integrated bench */}
+      <path d="M8 14h8M9 14v4M15 14v4" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Side info schedule board */}
+      <rect x="18" y="10" width="3" height="8" rx="0.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )},
   { id: "car-shelters", name: "Car Shelters", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-      <path d="M3 6l16-2 2 4M3 6v14" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M3 9l4-2" strokeLinecap="round" />
-      <path d="M9 16h8l1-2.5h-10l1 2.5z" strokeLinejoin="round" />
-      <circle cx="10.5" cy="18.5" r="1.5" />
-      <circle cx="15.5" cy="18.5" r="1.5" />
-      <path d="M7 18.5h2M12 18.5h2M17 18.5h1" strokeLinecap="round" />
+      {/* Cantilever support structure */}
+      <path d="M4 18V5" strokeLinecap="round" />
+      <path d="M4 6l13 3" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 9.5l6 1.5" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Tensile canopy membrane */}
+      <path d="M2.5 7.5c5.5-3.5 12.5-3.5 18 0l.5-1.5c-6-4-13.5-4-19 0l.5 1.5z" strokeLinejoin="round" />
+      {/* Minimalist modern car outline */}
+      <path d="M6.5 16.5v-2h1.5l1.2-1.8h3.6l1.2 1.8h1.5v2" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="9" cy="16.5" r="1.5" />
+      <circle cx="14" cy="16.5" r="1.5" />
+      {/* Ground line */}
+      <path d="M2 18h20" strokeLinecap="round" />
     </svg>
   )},
   { id: "canteen-tables", name: "Canteen Tables", icon: (
@@ -110,9 +122,15 @@ const categories = [
   )},
   { id: "poolside-loungers", name: "Poolside Loungers", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-      <path d="M3 17c1.5 0 2.5-1 3.5-3.5S8.5 9.5 11.5 9.5s3.5 1.5 5 4.5S19.5 17 21 17" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M7 14v4M16 14.5v3.5" strokeLinecap="round" />
-      <rect x="3.5" y="11" width="2" height="4" rx="1" transform="rotate(20 3.5 11)" />
+      {/* The Lounger Bed (Angled backrest, flat middle, curved footrest) */}
+      <path d="M3 10l3.5 3h9.5l3 4.5" strokeLinecap="round" strokeLinejoin="round" />
+      {/* Lounger Legs */}
+      <path d="M6.5 13v4.5M14 13v4.5" strokeLinecap="round" />
+      {/* Pool Waves */}
+      <path d="M3 19.5c1.2 0 1.8-.8 3-.8s1.8.8 3 .8 1.8-.8 3-.8 1.8.8 3 .8 1.8-.8 3-.8 1.8.8 3 .8" strokeLinecap="round" />
+      {/* Sun */}
+      <circle cx="18" cy="6" r="2.5" strokeLinecap="round" />
+      <path d="M18 2.5v1M18 8.5v1M14.5 6h1M20.5 6h1" strokeLinecap="round" />
     </svg>
   )},
   { id: "wicker-living-sets", name: "Wicker Living", icon: (
