@@ -12,6 +12,16 @@ import gbg5 from '../../assets/gallery_smart_city.png';
 import welcome1 from '../../assets/welcome-1.png';
 import welcome2 from '../../assets/welcome-2.png';
 
+// Import catalog thumbnails for points
+import benchImg from '../../assets/Bench.jpeg';
+import benchPlanterImg from '../../assets/Bench_Planter.jpeg';
+import busSheltersImg from '../../assets/Bus_Shelters.jpeg';
+import carShelterImg from '../../assets/Car_Shelter.jpeg';
+import canteenTablesImg from '../../assets/Canteen_Tables.jpeg';
+import dustbinsImg from '../../assets/Dustbins.jpeg';
+import plantersBoxImg from '../../assets/Planters_Box.jpeg';
+import wickerFurnitureImg from '../../assets/Wicker_Furniture.jpeg';
+
 const verticalsMeta = {
   "real-estate": {
     name: "Real Estate Projects",
@@ -24,18 +34,18 @@ const verticalsMeta = {
     metaTitle: "Outdoor Furniture for Real Estate Projects India | Luxury Villas, Gated Communities & Clubhouses | Urbanland Products",
     metaDesc: "Premium outdoor benches, planter boxes and amenity furniture for real estate projects in India. Trusted by Godrej, Kalpataru, Wadhwa Wise City and leading developers. Durable WPC, NFC Wood, Aluminium & Mild Steel solutions with 2-Year Guarantee.",
     challenges: [
-      "Tight RERA handover timelines for amenity decks and common areas.",
-      "Harsh Indian weather (extreme heat & heavy monsoons) damaging ordinary furniture within 2–3 years.",
-      "High footfall in clubhouses, pool decks, and gardens driving up maintenance costs.",
-      "Need for outdoor furniture that matches modern architectural themes and supports green building certifications.",
-      "Growing demand from buyers for truly usable, beautiful, and low-maintenance outdoor spaces."
+      { text: "Tight RERA handover timelines for amenity decks and common areas.", image: welcome2 },
+      { text: "Harsh Indian weather (extreme heat & heavy monsoons) damaging ordinary furniture within 2–3 years.", image: gbg5 },
+      { text: "High footfall in clubhouses, pool decks, and gardens driving up maintenance costs.", image: gbg2 },
+      { text: "Need for outdoor furniture that matches modern architectural themes and supports green building certifications.", image: welcome1 },
+      { text: "Growing demand from buyers for truly usable, beautiful, and low-maintenance outdoor spaces.", image: gbg1 }
     ],
     solutions: [
-      { title: "WPC & NFC Wood Benches", desc: "Natural warm wood look with zero deforestation, zero maintenance, and high fade resistance." },
-      { title: "Mild Steel & Stainless Steel Benches", desc: "Double-layer zinc primed and powder-coated for heavy-duty public use in common areas." },
-      { title: "Premium Planter Boxes", desc: "Available in Aluminium, MS, and SS to create lush green zones, rooftops, and biophilic pathways." },
-      { title: "Modular Amenity Packages", desc: "Integrated clubhouse seating, pool decks, and garden lounge sets tailored to project layout." },
-      { title: "Wicker Outdoor Furniture", desc: "Sophisticated, UV-resistant hand-woven dining and lounge sets for premium villas." }
+      { title: "WPC & NFC Wood Benches", desc: "Natural warm wood look with zero deforestation, zero maintenance, and high fade resistance.", image: benchPlanterImg },
+      { title: "Mild Steel & Stainless Steel Benches", desc: "Double-layer zinc primed and powder-coated for heavy-duty public use in common areas.", image: benchImg },
+      { title: "Premium Planter Boxes", desc: "Available in Aluminium, MS, and SS to create lush green zones, rooftops, and biophilic pathways.", image: plantersBoxImg },
+      { title: "Modular Amenity Packages", desc: "Integrated clubhouse seating, pool decks, and garden lounge sets tailored to project layout.", image: welcome1 },
+      { title: "Wicker Outdoor Furniture", desc: "Sophisticated, UV-resistant hand-woven dining and lounge sets for premium villas.", image: wickerFurnitureImg }
     ],
     stats: [
       { value: "50+", label: "Real Estate Projects" },
@@ -80,18 +90,18 @@ const verticalsMeta = {
     metaTitle: "Outdoor Furniture for Hospitality & Hotels India | Resorts, Pool Areas, Restaurants & Rooftops | Urbanland Products",
     metaDesc: "Premium wicker furniture, benches, planter boxes and outdoor seating solutions for hotels, resorts, restaurants and pool areas in India. Durable, stylish and low-maintenance products trusted by hospitality operators. 2-Year Guarantee.",
     challenges: [
-      "High daily footfall and constant guest usage in pool, restaurant, and lounge areas.",
-      "Harsh weather conditions (UV rays, heavy monsoons, chlorinated or saline mist) damaging outdoor materials.",
-      "Need for highly stylish, Instagram-worthy outdoor spaces to attract and retain premium guests.",
-      "High maintenance and periodic replacement costs eating into operational profits.",
-      "Requirement for fast delivery and easy replacements during seasonal renovations."
+      { text: "High daily footfall and constant guest usage in pool, restaurant, and lounge areas.", image: gbg2 },
+      { text: "Harsh weather conditions (UV rays, heavy monsoons, chlorinated or saline mist) damaging outdoor materials.", image: wickerFurnitureImg },
+      { text: "Need for highly stylish, Instagram-worthy outdoor spaces to attract and retain premium guests.", image: welcome1 },
+      { text: "High maintenance and periodic replacement costs eating into operational profits.", image: benchImg },
+      { text: "Requirement for fast delivery and easy replacements during seasonal renovations.", image: welcome2 }
     ],
     solutions: [
-      { title: "Wicker Furniture Sets", desc: "Sophisticated outdoor dining and lounge sets with intricate woven detailing and comfort cushions." },
-      { title: "Aluminium Benches & Seating", desc: "Lightweight, completely rust-proof, and modern for pool decks, rooftops, and beachside zones." },
-      { title: "Premium Planter Boxes", desc: "Create lush green boundaries, enhance aesthetics, and establish private guest zones." },
-      { title: "WPC & NFC Wood Benches", desc: "Low-maintenance, natural-looking public seating for entryways and surrounding pathways." },
-      { title: "Poolside Loungers & Daybeds", desc: "Comfortable, UV-resistant, and weatherproof lounge beds for ultimate guest relaxation." }
+      { title: "Wicker Furniture Sets", desc: "Sophisticated outdoor dining and lounge sets with intricate woven detailing and comfort cushions.", image: wickerFurnitureImg },
+      { title: "Aluminium Benches & Seating", desc: "Lightweight, completely rust-proof, and modern for pool decks, rooftops, and beachside zones.", image: benchImg },
+      { title: "Premium Planter Boxes", desc: "Create lush green boundaries, enhance aesthetics, and establish private guest zones.", image: plantersBoxImg },
+      { title: "WPC & NFC Wood Benches", desc: "Low-maintenance, natural-looking public seating for entryways and surrounding pathways.", image: benchPlanterImg },
+      { title: "Poolside Loungers & Daybeds", desc: "Comfortable, UV-resistant, and weatherproof lounge beds for ultimate guest relaxation.", image: gbg2 }
     ],
     stats: [
       { value: "2-4 Wks", label: "Typical Turnaround" },
@@ -136,17 +146,17 @@ const verticalsMeta = {
     metaTitle: "Outdoor Furniture for Healthcare & Hospitals India | Healing Gardens, Waiting Areas & Hospital Campuses | Urbanland Products",
     metaDesc: "Premium, easy-clean benches and planter boxes for healthcare & hospitals in India. Hygienic, durable solutions for healing gardens, waiting areas and hospital campuses. Trusted by healthcare facilities with 2-Year Guarantee.",
     challenges: [
-      "Strict infection control and ease of sanitization/cleaning protocols for public spaces.",
-      "Need for calming, therapeutic healing gardens and biophilic outdoor zones to support patient recovery.",
-      "Extreme durability required for constant 24/7 patient and visitor institutional usage.",
-      "Compliance with medical standards, wheelchair accessibility, and green building norms.",
-      "Balancing calming visual aesthetics with zero maintenance and long-term cost efficiency."
+      { text: "Strict infection control and ease of sanitization/cleaning protocols for public spaces.", image: gbg3 },
+      { text: "Need for calming, therapeutic healing gardens and biophilic outdoor zones to support patient recovery.", image: plantersBoxImg },
+      { text: "Extreme durability required for constant 24/7 patient and visitor institutional usage.", image: benchImg },
+      { text: "Compliance with medical standards, wheelchair accessibility, and green building norms.", image: welcome1 },
+      { text: "Balancing calming visual aesthetics with zero maintenance and long-term cost efficiency.", image: welcome2 }
     ],
     solutions: [
-      { title: "Easy-Clean Benches", desc: "WPC, NFC, and metal options featuring smooth, non-porous, sanitizable surfaces to prevent bacterial buildup." },
-      { title: "Healing Garden Planters", desc: "Create serene, calming green sanctuaries and therapeutic zones to reduce patient stress." },
-      { title: "Durable Institutional Seating", desc: "Heavy-duty steel-frame benches engineered for campus pathways and high-traffic waiting zones." },
-      { title: "Calming Landscape Solutions", desc: "Integrated biophilic planter-benches designed to foster peace and human well-being." }
+      { title: "Easy-Clean Benches", desc: "WPC, NFC, and metal options featuring smooth, non-porous, sanitizable surfaces to prevent bacterial buildup.", image: benchImg },
+      { title: "Healing Garden Planters", desc: "Create serene, calming green sanctuaries and therapeutic zones to reduce patient stress.", image: plantersBoxImg },
+      { title: "Durable Institutional Seating", desc: "Heavy-duty steel-frame benches engineered for campus pathways and high-traffic waiting zones.", image: benchPlanterImg },
+      { title: "Calming Landscape Solutions", desc: "Integrated biophilic planter-benches designed to foster peace and human well-being.", image: gbg3 }
     ],
     stats: [
       { value: "100%", label: "Easy to Sanitize" },
@@ -190,17 +200,17 @@ const verticalsMeta = {
     metaTitle: "Outdoor Furniture for Education & Universities India | Campus Canteens, Open Classrooms & Student Zones | Urbanland Products",
     metaDesc: "Durable canteen tables, benches and planter boxes for schools, colleges and universities in India. Student-proof, low-maintenance outdoor furniture for campuses, open-air classrooms and common areas. 2-Year Guarantee.",
     challenges: [
-      "Extreme daily wear and tear from thousands of active students in high-volume zones.",
-      "Budget constraints while requiring long-lasting, heavy-duty outdoor assets.",
-      "Safety and durability requirements for campus open-air classrooms and canteens.",
-      "High maintenance burden on campus facilities and cleaning teams.",
-      "Need for versatile, multi-purpose outdoor spaces supporting dining, studying, and college events."
+      { text: "Extreme daily wear and tear from thousands of active students in high-volume zones.", image: gbg4 },
+      { text: "Budget constraints while requiring long-lasting, heavy-duty outdoor assets.", image: canteenTablesImg },
+      { text: "Safety and durability requirements for campus open-air classrooms and canteens.", image: benchImg },
+      { text: "High maintenance burden on campus facilities and cleaning teams.", image: welcome2 },
+      { text: "Need for versatile, multi-purpose outdoor spaces supporting dining, studying, and college events.", image: welcome1 }
     ],
     solutions: [
-      { title: "Heavy-Duty Canteen Tables", desc: "Robust picnic-style tables with WPC/wooden tops and steel structures designed for busy university dining areas." },
-      { title: "Durable Public Benches", desc: "WPC, NFC Wood, Mild Steel, and Aluminium benches engineered to prevent sagging, cracking, or tipping." },
-      { title: "Premium Planter Boxes", desc: "Introduce beautiful green boundaries, improve local campus air quality, and enhance aesthetics." },
-      { title: "Modular Student Zones", desc: "Versatile benches and tables that easily adapt to study pods, events, and campus lawns." }
+      { title: "Heavy-Duty Canteen Tables", desc: "Robust picnic-style tables with WPC/wooden tops and steel structures designed for busy university dining areas.", image: canteenTablesImg },
+      { title: "Durable Public Benches", desc: "WPC, NFC Wood, Mild Steel, and Aluminium benches engineered to prevent sagging, cracking, or tipping.", image: benchImg },
+      { title: "Premium Planter Boxes", desc: "Introduce beautiful green boundaries, improve local campus air quality, and enhance aesthetics.", image: plantersBoxImg },
+      { title: "Modular Student Zones", desc: "Versatile benches and tables that easily adapt to study pods, events, and campus lawns.", image: gbg4 }
     ],
     stats: [
       { value: "Student", label: "Vandal Proof" },
@@ -222,7 +232,7 @@ const verticalsMeta = {
       "2-Year Warranty – Unmatched commercial security for educational institutions."
     ],
     faqs: [
-      { q: "What is the typical lead time for education campus projects?", a: "Most campus projects are completed in 2–4 weeks from order to installation. We coordinate around school/college breaks to avoid disruption." },
+      { q: "What is the typical lead time for canteen tables, benches and planters be customised for our campus?", a: "Most campus projects are completed in 2–4 weeks from order to installation. We coordinate around school/college breaks to avoid disruption." },
       { q: "Can canteen tables, benches and planters be customised for our campus?", a: "Yes. We customize dimensions, sizes, and frame finishes to match school colors or college branding." },
       { q: "Are your canteen tables suitable for high wear and tear?", a: "Absolutely. Our heavy-duty tables are manufactured with zinc-primed steel frames and robust WPC/NFC slating, making them practically vandal-proof." },
       { q: "Do you provide installation services across India?", a: "Yes. We handle pan-India shipping and professional chemical anchoring on concrete bases." }
@@ -245,18 +255,18 @@ const verticalsMeta = {
     metaTitle: "Outdoor Furniture for Municipal & Smart Cities India | Bus Shelters, Benches, Dustbins & Urban Infrastructure | Urbanland Products",
     metaDesc: "Durable, vandal-resistant bus shelters, benches, dustbins, bollards and planter boxes for municipal corporations and smart city projects in India. Tender-compliant, low-maintenance urban furniture with 2-Year Guarantee.",
     challenges: [
-      "Constant 24/7 public usage leading to rapid physical wear, weathering, and vandalism.",
-      "Strict government tender specifications and compliance certificates requirements.",
-      "High ongoing municipal maintenance and frequent replacement budgets.",
-      "Need to upgrade the visual aesthetics of public avenues while managing cost-efficiency.",
-      "Requirement for fast delivery and robust chemical anchoring across multiple transit sites."
+      { text: "Constant 24/7 public usage leading to rapid physical wear, weathering, and vandalism.", image: gbg5 },
+      { text: "Strict government tender specifications and compliance certificates requirements.", image: busSheltersImg },
+      { text: "High ongoing municipal maintenance and frequent replacement budgets.", image: dustbinsImg },
+      { text: "Need to upgrade the visual aesthetics of public avenues while managing cost-efficiency.", image: welcome1 },
+      { text: "Requirement for fast delivery and robust chemical anchoring across multiple transit sites.", image: welcome2 }
     ],
     solutions: [
-      { title: "Custom Bus Shelters", desc: "Modern, durable, and highly weather-resistant transit shelters engineered for public comfort and advertisements." },
-      { title: "Heavy-Duty Benches", desc: "WPC, NFC Wood, and double-zinc primed steel benches tailored for public parks, avenues, and smart avenues." },
-      { title: "Smart-City Dustbins", desc: "Dual-compartment waste and recycling bins with robust locking systems to prevent animal access or theft." },
-      { title: "SS Bollards & Safety Barriers", desc: "High-strength stainless steel bollards (fixed or removable) to secure pedestrian avenues." },
-      { title: "Premium Planter Boxes", desc: "Avenue-grade steel and composite planters to introduce robust public greenery and bioswales." }
+      { title: "Custom Bus Shelters", desc: "Modern, durable, and highly weather-resistant transit shelters engineered for public comfort and advertisements.", image: busSheltersImg },
+      { title: "Heavy-Duty Benches", desc: "WPC, NFC Wood, and double-zinc primed steel benches tailored for public parks, avenues, and smart avenues.", image: benchImg },
+      { title: "Smart-City Dustbins", desc: "Dual-compartment waste and recycling bins with robust locking systems to prevent animal access or theft.", image: dustbinsImg },
+      { title: "SS Bollards & Safety Barriers", desc: "High-strength stainless steel bollards (fixed or removable) to secure pedestrian avenues.", image: gbg5 },
+      { title: "Premium Planter Boxes", desc: "Avenue-grade steel and composite planters to introduce robust public greenery and bioswales.", image: plantersBoxImg }
     ],
     stats: [
       { value: "Tender", label: "Compliant" },
@@ -423,15 +433,24 @@ const SolutionsDetail = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {meta.challenges.slice(0, 3).map((item, idx) => (
-                <div key={idx} className="bg-[#F7F4EF]/55 rounded-[2rem] p-6 border border-black/[0.03] flex flex-col gap-4">
-                  <span className="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0 select-none border border-red-100">
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
-                    </svg>
-                  </span>
-                  <p className="text-xs sm:text-sm text-[#2D2D2D]/85 leading-relaxed font-semibold">
-                    {item}
-                  </p>
+                <div key={idx} className="bg-white rounded-[2rem] border border-black/[0.03] overflow-hidden flex flex-col hover:shadow-md transition-all group">
+                  <div className="w-full aspect-[16/10] overflow-hidden relative select-none">
+                    <img 
+                      src={item.image} 
+                      alt={`Challenge ${idx + 1}`} 
+                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" 
+                    />
+                    <span className="absolute top-4 left-4 w-8 h-8 rounded-full bg-red-50/90 backdrop-blur-sm text-red-600 flex items-center justify-center select-none border border-red-100/50 shadow-sm">
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col justify-start">
+                    <p className="text-xs sm:text-sm text-[#2D2D2D]/85 leading-relaxed font-semibold">
+                      {item.text}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -451,12 +470,21 @@ const SolutionsDetail = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {meta.solutions.map((item, idx) => (
-              <div key={idx} className="bg-white rounded-[2rem] p-8 border border-black/[0.03] shadow-sm hover:border-[#2C5F2E]/25 transition-all">
-                <div className="w-8 h-8 rounded-md bg-[#2C5F2E]/10 flex items-center justify-center font-bold text-[#2C5F2E] mb-4 text-xs select-none">
-                  0{idx + 1}
+              <div key={idx} className="bg-white rounded-[2rem] border border-black/[0.03] overflow-hidden flex flex-col shadow-sm hover:border-[#2C5F2E]/25 transition-all group">
+                <div className="w-full aspect-[16/10] overflow-hidden select-none">
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" 
+                  />
                 </div>
-                <h3 className="text-base font-black text-black uppercase mb-2 leading-none">{item.title}</h3>
-                <p className="text-xs text-[#2D2D2D]/60 leading-relaxed font-medium">{item.desc}</p>
+                <div className="p-6 flex-1 flex flex-col justify-start">
+                  <div className="w-8 h-8 rounded-md bg-[#2C5F2E]/10 flex items-center justify-center font-bold text-[#2C5F2E] mb-4 text-xs select-none">
+                    0{idx + 1}
+                  </div>
+                  <h3 className="text-base font-black text-black uppercase mb-2 leading-none">{item.title}</h3>
+                  <p className="text-xs text-[#2D2D2D]/60 leading-relaxed font-medium">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -603,7 +631,7 @@ const SolutionsDetail = () => {
 
       {/* Recommended Products Grid */}
       {meta.recommended?.length > 0 && (
-        <section className="max-w-[1400px] mx-auto px-6 md:px-12 select-none">
+        <section className="max-w-[1400px] mx-auto px-6 md:px-12 select-none mb-24">
           <h2 className="text-3xl font-black uppercase tracking-tight text-[#1A1A1A] mb-12 border-b border-[#2D2D2D]/10 pb-4">
             Recommended Products for this Sector
           </h2>

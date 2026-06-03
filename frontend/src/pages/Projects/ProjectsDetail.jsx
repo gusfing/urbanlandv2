@@ -12,6 +12,16 @@ import gbg5 from '../../assets/gallery_smart_city.png';
 import welcome1 from '../../assets/welcome-1.png';
 import welcome2 from '../../assets/welcome-2.png';
 
+// Import catalog thumbnails for points
+import benchImg from '../../assets/Bench.jpeg';
+import benchPlanterImg from '../../assets/Bench_Planter.jpeg';
+import busSheltersImg from '../../assets/Bus_Shelters.jpeg';
+import carShelterImg from '../../assets/Car_Shelter.jpeg';
+import canteenTablesImg from '../../assets/Canteen_Tables.jpeg';
+import dustbinsImg from '../../assets/Dustbins.jpeg';
+import plantersBoxImg from '../../assets/Planters_Box.jpeg';
+import wickerFurnitureImg from '../../assets/Wicker_Furniture.jpeg';
+
 const projectsMeta = {
   "lodha": {
     title: "Lodha Projects",
@@ -25,18 +35,18 @@ const projectsMeta = {
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
     desc: "Urbanland Products partners with Lodha to deliver premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions. Our sustainable WPC, NFC Wood and long-life metal products help create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
     challenges: [
-      "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED).",
-      "Reducing long-term environmental impact through durable, low-maintenance materials.",
-      "Replacing traditional wood with sustainable, eco-friendly alternatives like WPC and NFC Wood.",
-      "Minimising waste and carbon footprint across large-scale township and villa projects.",
-      "Delivering beautiful, biophilic outdoor environments that enhance resident well-being."
+      { text: "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED).", image: gbg1 },
+      { text: "Reducing long-term environmental impact through durable, low-maintenance materials.", image: benchImg },
+      { text: "Replacing traditional wood with sustainable, eco-friendly alternatives like WPC and NFC Wood.", image: benchPlanterImg },
+      { text: "Minimising waste and carbon footprint across large-scale township and villa projects.", image: welcome2 },
+      { text: "Delivering beautiful, biophilic outdoor environments that enhance resident well-being.", image: welcome1 }
     ],
     solutions: [
-      { title: "WPC & NFC Wood Benches", desc: "Made from recycled plastics and natural fibers – zero deforestation, exceptional weather resistance and zero maintenance." },
-      { title: "Premium Planter Boxes", desc: "Mild Steel, Wooden, Aluminium & Stainless Steel options that support lush green landscaping and biophilic design." },
-      { title: "Modular Clubhouse Seating", desc: "Sustainable, sophisticated lounge and dining sets for high-traffic community spaces." },
-      { title: "Poolside Loungers & Daybeds", desc: "Weatherproof, long-life materials that reduce replacement frequency and chemical treatment waste." },
-      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens and villa terraces." }
+      { title: "WPC & NFC Wood Benches", desc: "Made from recycled plastics and natural fibers – zero deforestation, exceptional weather resistance and zero maintenance.", image: benchImg },
+      { title: "Premium Planter Boxes", desc: "Mild Steel, Wooden, Aluminium & Stainless Steel options that support lush green landscaping and biophilic design.", image: plantersBoxImg },
+      { title: "Modular Clubhouse Seating", desc: "Sustainable, sophisticated lounge and dining sets for high-traffic community spaces.", image: welcome1 },
+      { title: "Poolside Loungers & Daybeds", desc: "Weatherproof, long-life materials that reduce replacement frequency and chemical treatment waste.", image: gbg2 },
+      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens and villa terraces.", image: benchPlanterImg }
     ],
     stats: [
       { value: "50+", label: "Luxury Projects" },
@@ -76,18 +86,18 @@ const projectsMeta = {
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
     desc: "Urbanland Products partners with Adani Realty to deliver premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions. Our sustainable WPC, NFC Wood and long-life metal products help create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
     challenges: [
-      "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED).",
-      "Reducing long-term environmental impact through durable, low-maintenance materials.",
-      "Replacing traditional wood with sustainable, eco-friendly WPC and NFC Wood.",
-      "Minimising waste and carbon footprint across massive township and mixed-use projects.",
-      "Delivering beautiful, biophilic outdoor environments that enhance resident well-being and project value."
+      { text: "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED).", image: gbg5 },
+      { text: "Reducing long-term environmental impact through durable, low-maintenance materials.", image: benchImg },
+      { text: "Replacing traditional wood with sustainable, eco-friendly WPC and NFC Wood.", image: benchPlanterImg },
+      { text: "Minimising waste and carbon footprint across massive township and mixed-use projects.", image: welcome2 },
+      { text: "Delivering beautiful, biophilic outdoor environments that enhance resident well-being and project value.", image: welcome1 }
     ],
     solutions: [
-      { title: "WPC & NFC Wood Benches", desc: "Made from recycled plastics and natural fibers – zero deforestation, exceptional weather resistance and zero maintenance." },
-      { title: "Premium Planter Boxes", desc: "Mild Steel, Wooden, Aluminium & Stainless Steel options that support lush green landscaping and biophilic design." },
-      { title: "Modular Clubhouse Seating", desc: "Sustainable, sophisticated lounge and dining sets for community spaces." },
-      { title: "Poolside Loungers & Daybeds", desc: "Weatherproof, long-life materials that reduce replacement frequency and chemical treatment waste." },
-      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens and large township terraces." }
+      { title: "WPC & NFC Wood Benches", desc: "Made from recycled plastics and natural fibers – zero deforestation, exceptional weather resistance and zero maintenance.", image: benchImg },
+      { title: "Premium Planter Boxes", desc: "Mild Steel, Wooden, Aluminium & Stainless Steel options that support lush green landscaping and biophilic design.", image: plantersBoxImg },
+      { title: "Modular Clubhouse Seating", desc: "Sustainable, sophisticated lounge and dining sets for community spaces.", image: welcome1 },
+      { title: "Poolside Loungers & Daybeds", desc: "Weatherproof, long-life materials that reduce replacement frequency and chemical treatment waste.", image: gbg2 },
+      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens and large township terraces.", image: carShelterImg }
     ],
     stats: [
       { value: "50+", label: "Luxury Projects" },
@@ -127,18 +137,18 @@ const projectsMeta = {
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
     desc: "Urbanland Products partners with Oberoi to deliver premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions. Our sustainable WPC, NFC Wood and long-life metal products help create sophisticated, low-maintenance green spaces that enhance luxury living and support biophilic design.",
     challenges: [
-      "Creating world-class, premium outdoor spaces while achieving high green building standards (IGBC, GRIHA, LEED).",
-      "Reducing environmental impact through durable, recyclable materials instead of traditional wood.",
-      "Delivering low-maintenance solutions that maintain pristine, luxury aesthetics for decades.",
-      "Meeting stringent timelines for luxury project handovers and seasonal resort renovations.",
-      "Providing biophilic design elements that enhance resident well-being and property value."
+      { text: "Creating world-class, premium outdoor spaces while achieving high green building standards (IGBC, GRIHA, LEED).", image: gbg2 },
+      { text: "Reducing environmental impact through durable, recyclable materials instead of traditional wood.", image: benchImg },
+      { text: "Delivering low-maintenance solutions that maintain pristine, luxury aesthetics for decades.", image: wickerFurnitureImg },
+      { text: "Meeting stringent timelines for luxury project handovers and seasonal resort renovations.", image: welcome2 },
+      { text: "Providing biophilic design elements that enhance resident well-being and property value.", image: welcome1 }
     ],
     solutions: [
-      { title: "WPC & NFC Wood Benches", desc: "Made from recycled plastics and natural fibers – zero deforestation, exceptional weather resistance and zero maintenance." },
-      { title: "Premium Planter Boxes", desc: "Mild Steel, Wooden, Aluminium & Stainless Steel options that create lush, biophilic green spaces." },
-      { title: "Modular Clubhouse Seating", desc: "Sustainable, sophisticated lounge and dining sets for exclusive community areas." },
-      { title: "Poolside Loungers & Daybeds", desc: "Weatherproof, long-life materials that reduce replacement frequency and chemical treatment waste." },
-      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens and villa terraces." }
+      { title: "WPC & NFC Wood Benches", desc: "Made from recycled plastics and natural fibers – zero deforestation, exceptional weather resistance and zero maintenance.", image: benchImg },
+      { title: "Premium Planter Boxes", desc: "Mild Steel, Wooden, Aluminium & Stainless Steel options that create lush, biophilic green spaces.", image: plantersBoxImg },
+      { title: "Modular Clubhouse Seating", desc: "Sustainable, sophisticated lounge and dining sets for exclusive community areas.", image: welcome1 },
+      { title: "Poolside Loungers & Daybeds", desc: "Weatherproof, long-life materials that reduce replacement frequency and chemical treatment waste.", image: gbg2 },
+      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens and villa terraces.", image: wickerFurnitureImg }
     ],
     stats: [
       { value: "50+", label: "Luxury Projects" },
@@ -178,18 +188,18 @@ const projectsMeta = {
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
     desc: "Urbanland Products has successfully delivered premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions across Mumbai, Navi Mumbai, Thane and surrounding regions. Our sustainable WPC, NFC Wood and metal furniture help leading developers create beautiful, long-lasting green spaces in luxury residential projects.",
     challenges: [
-      "Creating premium outdoor spaces while meeting green building standards in a dense urban environment.",
-      "Combating a harsh coastal climate, heavy monsoons, and high humidity levels daily.",
-      "Reducing ongoing maintenance and repair costs for high-footfall clubhouses and sky decks.",
-      "Replacing traditional teak and sesam wood with truly sustainable alternatives (WPC & NFC Wood).",
-      "Delivering biophilic green spaces that enhance resident well-being and property value."
+      { text: "Creating premium outdoor spaces while meeting green building standards in a dense urban environment.", image: gbg5 },
+      { text: "Combating a harsh coastal climate, heavy monsoons, and high humidity levels daily.", image: wickerFurnitureImg },
+      { text: "Reducing ongoing maintenance and repair costs for high-footfall clubhouses and sky decks.", image: benchImg },
+      { text: "Replacing traditional teak and sesam wood with truly sustainable alternatives (WPC & NFC Wood).", image: welcome2 },
+      { text: "Delivering biophilic green spaces that enhance resident well-being and property value.", image: welcome1 }
     ],
     solutions: [
-      { title: "WPC & NFC Wood Benches", desc: "Zero-maintenance, natural wood look, ideal for Mumbai's coastal and high-humidity environments." },
-      { title: "Premium Planter Boxes", desc: "Create lush green oases and privacy boundaries in limited urban and sky deck spaces." },
-      { title: "Modular Clubhouse Seating", desc: "Stylish and highly durable hand-woven lounge & dining wicker furniture sets." },
-      { title: "Poolside & Terrace Furniture", desc: "Weatherproof daybeds and poolside loungers built to withstand chlorinated pool water." },
-      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens, and villa terraces." }
+      { title: "WPC & NFC Wood Benches", desc: "Zero-maintenance, natural wood look, ideal for Mumbai's coastal and high-humidity environments.", image: benchImg },
+      { title: "Premium Planter Boxes", desc: "Create lush green oases and privacy boundaries in limited urban and sky deck spaces.", image: plantersBoxImg },
+      { title: "Modular Clubhouse Seating", desc: "Stylish and highly durable hand-woven lounge & dining wicker furniture sets.", image: wickerFurnitureImg },
+      { title: "Poolside & Terrace Furniture", desc: "Weatherproof daybeds and poolside loungers built to withstand chlorinated pool water.", image: gbg2 },
+      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens, and villa terraces.", image: busSheltersImg }
     ],
     stats: [
       { value: "24+", label: "Mumbai Projects" },
@@ -229,18 +239,18 @@ const projectsMeta = {
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
     desc: "Urbanland Products delivers premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions across Delhi NCR. Our sustainable WPC, NFC Wood and long-life metal products help developers and architects create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
     challenges: [
-      "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED) in a highly polluted urban environment.",
-      "Combating extreme climate weathering – scorching summers, heavy monsoons, and cold winters.",
-      "Reducing ongoing maintenance and repair costs in massive gated communities and luxury townships.",
-      "Replacing traditional wood with truly sustainable alternatives like WPC and NFC Wood.",
-      "Delivering biophilic green spaces that improve local air quality and resident well-being."
+      { text: "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED) in a highly polluted urban environment.", image: gbg4 },
+      { text: "Combating extreme climate weathering – scorching summers, heavy monsoons, and cold winters.", image: benchImg },
+      { text: "Reducing ongoing maintenance and repair costs in massive gated communities and luxury townships.", image: plantersBoxImg },
+      { text: "Replacing traditional wood with truly sustainable alternatives like WPC and NFC Wood.", image: welcome2 },
+      { text: "Delivering biophilic green spaces that improve local air quality and resident well-being.", image: welcome1 }
     ],
     solutions: [
-      { title: "WPC & NFC Wood Benches", desc: "Made from recycled plastics and natural fibers – zero deforestation, extreme temperature resistance and zero maintenance." },
-      { title: "Premium Planter Boxes", desc: "Mild Steel, Wooden, Aluminium & Stainless Steel options that create lush green sanctuaries and improve local air quality." },
-      { title: "Modular Clubhouse Seating", desc: "Sustainable lounge and dining sets for community spaces." },
-      { title: "Poolside Loungers & Daybeds", desc: "Weatherproof, long-life materials that reduce replacement frequency and chemical treatments." },
-      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens and villa terraces." }
+      { title: "WPC & NFC Wood Benches", desc: "Made from recycled plastics and natural fibers – zero deforestation, extreme temperature resistance and zero maintenance.", image: benchImg },
+      { title: "Premium Planter Boxes", desc: "Mild Steel, Wooden, Aluminium & Stainless Steel options that create lush green sanctuaries and improve local air quality.", image: plantersBoxImg },
+      { title: "Modular Clubhouse Seating", desc: "Sustainable lounge and dining sets for community spaces.", image: welcome1 },
+      { title: "Poolside Loungers & Daybeds", desc: "Weatherproof, long-life materials that reduce replacement frequency and chemical treatments.", image: gbg2 },
+      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens and villa terraces.", image: carShelterImg }
     ],
     stats: [
       { value: "18+", label: "NCR Projects" },
@@ -280,17 +290,17 @@ const projectsMeta = {
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
     desc: "Urbanland Products has successfully delivered premium, sustainable outdoor furniture solutions in Bangalore (Bengaluru). Our eco-friendly benches, planter boxes and durable products help create beautiful, low-maintenance green spaces for residential, tech park and institutional developments.",
     challenges: [
-      "Creating premium outdoor spaces while meeting green building standards (IGBC, GRIHA, LEED).",
-      "Combating high humidity, heavy monsoons, and urban heat island effects.",
-      "Reducing long-term maintenance and replacement costs in gated communities and tech campuses.",
-      "Replacing traditional wood with truly sustainable alternatives like WPC and NFC Wood.",
-      "Delivering biophilic green spaces that improve air quality and resident/employee well-being."
+      { text: "Creating premium outdoor spaces while meeting green building standards (IGBC, GRIHA, LEED).", image: gbg3 },
+      { text: "Combating high humidity, heavy monsoons, and urban heat island effects.", image: benchImg },
+      { text: "Reducing long-term maintenance and replacement costs in gated communities and tech campuses.", image: plantersBoxImg },
+      { text: "Replacing traditional wood with truly sustainable alternatives like WPC and NFC Wood.", image: welcome2 },
+      { text: "Delivering biophilic green spaces that improve air quality and resident/employee well-being.", image: welcome1 }
     ],
     solutions: [
-      { title: "WPC & NFC Wood Benches", desc: "Zero-maintenance, natural wood look, ideal for Bangalore's climate." },
-      { title: "Premium Planter Boxes", desc: "Create lush green zones and improve local campus and plaza air quality." },
-      { title: "Durable Institutional Seating", desc: "Heavy-duty steel-frame benches designed for high-traffic IT parks." },
-      { title: "Modular Amenity Solutions", desc: "Clubhouse, poolside, and rooftop furniture ensembles designed for comfort." }
+      { title: "WPC & NFC Wood Benches", desc: "Zero-maintenance, natural wood look, ideal for Bangalore's climate.", image: benchImg },
+      { title: "Premium Planter Boxes", desc: "Create lush green zones and improve local campus and plaza air quality.", image: plantersBoxImg },
+      { title: "Durable Institutional Seating", desc: "Heavy-duty steel-frame benches engineered for high-traffic IT parks.", image: benchPlanterImg },
+      { title: "Modular Amenity Solutions", desc: "Clubhouse, poolside, and rooftop furniture ensembles designed for comfort.", image: welcome1 }
     ],
     stats: [
       { value: "15+", label: "Bengaluru Projects" },
@@ -330,18 +340,18 @@ const projectsMeta = {
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
     desc: "Urbanland Products has successfully delivered premium, eco-friendly benches, planter boxes, canteen tables and complete outdoor amenity solutions across Pune. Our sustainable WPC, NFC Wood and long-life metal products help developers and architects create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
     challenges: [
-      "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED).",
-      "Combating high humidity, heavy monsoons, and the urban heat island effect.",
-      "Reducing long-term maintenance and replacement costs in large gated communities and tech campuses.",
-      "Replacing traditional wood with truly sustainable alternatives like WPC and NFC Wood.",
-      "Delivering biophilic green spaces that improve air quality and resident/employee well-being."
+      { text: "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED).", image: gbg1 },
+      { text: "Combating high humidity, heavy monsoons, and the urban heat island effect.", image: benchImg },
+      { text: "Reducing long-term maintenance and replacement costs in large gated communities and tech campuses.", image: canteenTablesImg },
+      { text: "Replacing traditional wood with truly sustainable alternatives like WPC and NFC Wood.", image: welcome2 },
+      { text: "Delivering biophilic green spaces that improve air quality and resident/employee well-being.", image: welcome1 }
     ],
     solutions: [
-      { title: "WPC & NFC Wood Benches", desc: "Made from recycled plastics and natural fibers – zero deforestation, excellent weather resistance and zero maintenance." },
-      { title: "Premium Planter Boxes", desc: "Mild Steel, Wooden, Aluminium & Stainless Steel options that create lush green sanctuaries." },
-      { title: "Heavy-Duty Canteen Tables", desc: "Robust picnic-style tables with composite tops and strong steel frames for campus dining areas." },
-      { title: "Modular Clubhouse Seating", desc: "Sustainable lounge and dining sets for community spaces." },
-      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens and villa terraces." }
+      { title: "WPC & NFC Wood Benches", desc: "Made from recycled plastics and natural fibers – zero deforestation, excellent weather resistance and zero maintenance.", image: benchImg },
+      { title: "Premium Planter Boxes", desc: "Mild Steel, Wooden, Aluminium & Stainless Steel options that create lush green sanctuaries.", image: plantersBoxImg },
+      { title: "Heavy-Duty Canteen Tables", desc: "Robust picnic-style tables with composite tops and strong steel frames for campus dining areas.", image: canteenTablesImg },
+      { title: "Modular Clubhouse Seating", desc: "Sustainable lounge and dining sets for community spaces.", image: welcome1 },
+      { title: "Custom Amenity Packages", desc: "Turnkey green solutions for sky decks, rooftop gardens and villa terraces.", image: benchPlanterImg }
     ],
     stats: [
       { value: "12+", label: "Pune Projects" },
@@ -502,15 +512,24 @@ const ProjectsDetail = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {meta.challenges.slice(0, 3).map((item, idx) => (
-                <div key={idx} className="bg-[#F7F4EF]/55 rounded-[2rem] p-6 border border-black/[0.03] flex flex-col gap-4">
-                  <span className="w-8 h-8 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0 select-none border border-red-100">
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
-                    </svg>
-                  </span>
-                  <p className="text-xs sm:text-sm text-[#2D2D2D]/85 leading-relaxed font-semibold">
-                    {item}
-                  </p>
+                <div key={idx} className="bg-white rounded-[2rem] border border-black/[0.03] overflow-hidden flex flex-col hover:shadow-md transition-all group">
+                  <div className="w-full aspect-[16/10] overflow-hidden relative select-none">
+                    <img 
+                      src={item.image} 
+                      alt={`Challenge ${idx + 1}`} 
+                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" 
+                    />
+                    <span className="absolute top-4 left-4 w-8 h-8 rounded-full bg-red-50/90 backdrop-blur-sm text-red-600 flex items-center justify-center select-none border border-red-100/50 shadow-sm">
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
+                      </svg>
+                    </span>
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col justify-start">
+                    <p className="text-xs sm:text-sm text-[#2D2D2D]/85 leading-relaxed font-semibold">
+                      {item.text}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -530,12 +549,21 @@ const ProjectsDetail = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {meta.solutions.map((item, idx) => (
-              <div key={idx} className="bg-white rounded-[2rem] p-8 border border-black/[0.03] shadow-sm hover:border-[#2C5F2E]/25 transition-all">
-                <div className="w-8 h-8 rounded-md bg-[#2C5F2E]/10 flex items-center justify-center font-bold text-[#2C5F2E] mb-4 text-xs select-none">
-                  0{idx + 1}
+              <div key={idx} className="bg-white rounded-[2rem] border border-black/[0.03] overflow-hidden flex flex-col shadow-sm hover:border-[#2C5F2E]/25 transition-all group">
+                <div className="w-full aspect-[16/10] overflow-hidden select-none">
+                  <img 
+                    src={item.image} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" 
+                  />
                 </div>
-                <h3 className="text-base font-black text-black uppercase mb-2 leading-none">{item.title}</h3>
-                <p className="text-xs text-[#2D2D2D]/60 leading-relaxed font-medium">{item.desc}</p>
+                <div className="p-6 flex-1 flex flex-col justify-start">
+                  <div className="w-8 h-8 rounded-md bg-[#2C5F2E]/10 flex items-center justify-center font-bold text-[#2C5F2E] mb-4 text-xs select-none">
+                    0{idx + 1}
+                  </div>
+                  <h3 className="text-base font-black text-black uppercase mb-2 leading-none">{item.title}</h3>
+                  <p className="text-xs text-[#2D2D2D]/60 leading-relaxed font-medium">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
