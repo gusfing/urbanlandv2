@@ -85,10 +85,6 @@ const WickerOutdoorProductsPage = () => {
         }
     };
 
-    const [exitPopupVisible, setExitPopupVisible] = useState(false);
-    const [exitPopupSubmitted, setExitPopupSubmitted] = useState(false);
-    const [emailInput, setEmailInput] = useState("");
-
     const trackEvent = (eventName, value = "") => {
         if (window.gtag) {
             window.gtag("event", eventName, {
@@ -117,51 +113,6 @@ const WickerOutdoorProductsPage = () => {
         };
 
         window.addEventListener("scroll", handleScroll);
-
-        const sessionKey = "urbanland_exit_intent_wickeroutdoorproductspage";
-        const isShown = sessionStorage.getItem(sessionKey);
-
-        if (!isShown) {
-            const handleMouseLeave = (e) => {
-                if (e.clientY < 20) {
-                    triggerPopup();
-                }
-            };
-
-            const handleScrollForPopup = () => {
-                const scrollPosition = window.scrollY + window.innerHeight;
-                const totalHeight = document.documentElement.scrollHeight;
-                if (totalHeight > 0 && scrollPosition / totalHeight >= 0.7) {
-                    triggerPopup();
-                }
-            };
-
-            const handleVisibilityChange = () => {
-                if (document.hidden) {
-                    triggerPopup();
-                }
-            };
-
-            const triggerPopup = () => {
-                setExitPopupVisible(true);
-                sessionStorage.setItem(sessionKey, "true");
-                document.removeEventListener("mouseleave", handleMouseLeave);
-                window.removeEventListener("scroll", handleScrollForPopup);
-                document.removeEventListener("visibilitychange", handleVisibilityChange);
-            };
-
-            document.addEventListener("mouseleave", handleMouseLeave);
-            window.addEventListener("scroll", handleScrollForPopup);
-            document.addEventListener("visibilitychange", handleVisibilityChange);
-
-            return () => {
-                cleanPageSEO();
-                window.removeEventListener("scroll", handleScroll);
-                document.removeEventListener("mouseleave", handleMouseLeave);
-                window.removeEventListener("scroll", handleScrollForPopup);
-                document.removeEventListener("visibilitychange", handleVisibilityChange);
-            };
-        }
 
         return () => {
             cleanPageSEO();
@@ -821,32 +772,6 @@ const WickerOutdoorProductsPage = () => {
                 title="Ready to Specify Wicker Outdoor Products for Your Project?"
                 primaryLink="/get-quote/?product=wicker-outdoor-products"
             />
-
-            {/* EXIT-INTENT POPUP */}
-            {exitPopupVisible && (
-                <div className="fixed inset-0 z-[9999] flex justify-center items-center px-4">
-                    <div className="absolute inset-0 bg-black/65 backdrop-blur-sm" onClick={() => setExitPopupVisible(false)} />
-                    <div className="relative bg-white text-[#1A1A1A] max-w-lg w-full rounded-[2.5rem] z-10 p-8 sm:p-12 shadow-2xl">
-                        <button onClick={() => setExitPopupVisible(false)} className="absolute top-6 right-6 w-8 h-8 flex justify-center items-center text-black/45 hover:text-black font-mono text-lg font-bold">✕</button>
-                        {!exitPopupSubmitted ? (
-                            <div className="flex flex-col items-center text-center">
-                                <h3 className="text-xl sm:text-2xl font-black uppercase text-[#1A1A1A] mb-3">Download the Wicker Outdoor Products Buyer's Guide</h3>
-                                <p className="text-xs sm:text-sm text-[#2D2D2D]/70 mb-8">Get our complete guide to material specifications, custom sizing, and bulk pricing matrices.</p>
-                                <form onSubmit={(e) => { e.preventDefault(); if (emailInput.trim()) { setExitPopupSubmitted(true); trackEvent("exit_intent_submit", emailInput); } }} className="w-full flex flex-col gap-3">
-                                    <input type="email" required placeholder="Enter professional email" value={emailInput} onChange={(e) => setEmailInput(e.target.value)} className="w-full px-6 py-4 rounded-full border border-black/10 text-sm focus:outline-none focus:border-[#2C5F2E] bg-[#F7F4EF]" />
-                                    <button type="submit" className="w-full py-4 bg-[#C9A84C] hover:bg-black hover:text-white text-[#232120] font-black uppercase text-xs rounded-full transition-colors">Get the Guide (PDF)</button>
-                                </form>
-                            </div>
-                        ) : (
-                            <div className="flex flex-col items-center text-center py-6">
-                                <h3 className="text-xl sm:text-2xl font-black uppercase text-[#1A1A1A] mb-3">Guide Sent!</h3>
-                                <p className="text-xs sm:text-sm text-[#2D2D2D]/70 mb-8">We've sent the guide to <span className="font-bold text-[#2C5F2E]">{emailInput}</span>.</p>
-                                <button onClick={() => setExitPopupVisible(false)} className="px-8 py-3 bg-[#2C5F2E] text-white font-black uppercase text-xs rounded-full">Close Window</button>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            )}
         </div>
     );
 };
