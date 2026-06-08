@@ -165,13 +165,16 @@ const Hero = () => {
         
         {/* Background Images */}
         {slides.map((slide, index) => (
-          <div
+          <img
             key={index}
-            className={`hero-slide-bg slide-bg-${index} absolute -top-[10%] -bottom-[10%] inset-x-0 bg-no-repeat bg-cover bg-center pointer-events-none`}
+            src={slide.image}
+            alt={slide.title}
+            className={`hero-slide-bg slide-bg-${index} absolute -top-[10%] -bottom-[10%] inset-x-0 w-full h-full object-cover pointer-events-none`}
             style={{
-              backgroundImage: `url(${slide.image})`,
               opacity: index === 0 ? 1 : 0,
             }}
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchPriority={index === 0 ? "high" : "low"}
           />
         ))}
 
