@@ -3,6 +3,22 @@ import { products as localProducts } from "../constants/productsData";
 // Resolve WordPress base URL from env variables
 const WP_BASE_URL = import.meta.env.VITE_WP_API_URL || "https://backend.urbanlandproducts.com";
 
+/**
+ * Image CDN Optimization Helper: Uses images.weserv.nl (Cloudflare) to resize, 
+ * cache, and compress dynamic images fetched from slow WordPress hosting on-the-fly.
+ */
+export const getOptimizedImageUrl = (url) => {
+  if (!url) return url;
+  if (url.startsWith("data:") || url.includes("images.unsplash.com") || url.includes("images.weserv.nl")) {
+    return url;
+  }
+  if (url.startsWith("http://") || url.startsWith("https://")) {
+    const cleanUrl = url.replace(/^https?:\/\//, "");
+    return `https://images.weserv.nl/?url=${encodeURIComponent(cleanUrl)}&w=800&output=webp&q=80`;
+  }
+  return url;
+};
+
 // Fallback high-fidelity blog posts in case WordPress is unconfigured or offline
 const fallbackPosts = [
   {
@@ -273,8 +289,8 @@ const parseWPPostToProduct = (post) => {
     title: title,
     line: line,
     category: category,
-    image,
-    gallery,
+    image: getOptimizedImageUrl(image),
+    gallery: gallery.map((img) => getOptimizedImageUrl(img)),
     badges: ["Featured"],
     tagline: post.excerpt?.rendered?.replace(/<[^>]*>/g, "")?.slice(0, 100)?.trim() + "..." || "Visionary design for modern environments.",
     description: post.content?.rendered || "",
@@ -384,7 +400,7 @@ const parseWPPost = (post) => {
     date: post.date,
     author_name,
     category_names,
-    featured_image,
+    featured_image: getOptimizedImageUrl(featured_image),
     yoast_head_json: post.yoast_head_json || null
   };
 };
@@ -416,8 +432,8 @@ const parseWPProduct = (prod) => {
     title: prod.title?.rendered || "",
     line: prod.acf?.line || (prod.title?.rendered ? prod.title.rendered.toUpperCase() : "PRODUCT"),
     category: prod.acf?.category || "parklets",
-    image,
-    gallery,
+    image: getOptimizedImageUrl(image),
+    gallery: gallery.map((img) => getOptimizedImageUrl(img)),
     badges: prod.acf?.badges || ["modular"],
     tagline: prod.acf?.tagline || "Visionary design for modern environments.",
     description: prod.content?.rendered || prod.acf?.description || "",
@@ -449,8 +465,8 @@ const parseWCObjectToProduct = (prod) => {
     title: prod.name || "",
     line: prod.sku || (prod.name ? prod.name.toUpperCase() : "PRODUCT"),
     category: prod.categories?.[0]?.slug || "parklets",
-    image,
-    gallery,
+    image: getOptimizedImageUrl(image),
+    gallery: gallery.map((img) => getOptimizedImageUrl(img)),
     badges: ["new"],
     tagline: prod.short_description?.replace(/<[^>]*>/g, "") || "Premium street furniture.",
     description: prod.description || "",
