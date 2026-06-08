@@ -335,7 +335,18 @@ export const fetchProducts = async () => {
       return localProducts;
     }
     
-    return allProducts.map((prod) => parseWPProduct(prod));
+    const parsedProducts = allProducts.map((prod) => parseWPProduct(prod));
+    const uniqueProducts = [];
+    const seenIds = new Set();
+    
+    parsedProducts.forEach(prod => {
+      if (!seenIds.has(prod.id)) {
+        seenIds.add(prod.id);
+        uniqueProducts.push(prod);
+      }
+    });
+    
+    return uniqueProducts;
   } catch (error) {
     console.warn("Failed to fetch products from WordPress API. Falling back to local dataset.", error);
     return localProducts;

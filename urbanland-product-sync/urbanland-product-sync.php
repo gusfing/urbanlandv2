@@ -5150,8 +5150,15 @@ JSON;
         $tagline = sanitize_text_field( $prod['tagline'] );
         $description = wp_kses_post( $prod['description'] );
 
-        // Check if post exists
-        $existing_post = get_page_by_path( $slug, OBJECT, 'urbanland_product' );
+        // Check if post exists by slug name (failsafe for non-hierarchical CPTs)
+        $existing_posts = get_posts( array(
+            'name'           => $slug,
+            'post_type'      => 'urbanland_product',
+            'post_status'    => 'any',
+            'posts_per_page' => 1,
+        ) );
+        $existing_post = ! empty( $existing_posts ) ? $existing_posts[0] : null;
+
         $post_data = array(
             'post_title'   => $title,
             'post_content' => $description,

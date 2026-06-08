@@ -281,6 +281,8 @@ const Catalogue = () => {
                     <img
                       src={p.image}
                       alt={`${p.title} street furniture`}
+                      loading="lazy"
+                      decoding="async"
                       className={`absolute inset-0 max-h-[92%] max-w-[92%] m-auto object-contain select-none transition-opacity duration-500 ease-in-out ${
                         secondImage ? "group-hover:opacity-0" : ""
                       }`}
@@ -290,6 +292,8 @@ const Catalogue = () => {
                       <img
                         src={secondImage}
                         alt={`${p.title} installation`}
+                        loading="lazy"
+                        decoding="async"
                         className="absolute inset-0 w-full h-full object-cover rounded-2xl select-none opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
                       />
                     )}

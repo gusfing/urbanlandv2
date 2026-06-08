@@ -556,6 +556,8 @@ const ProductsCatalog = ({ showTitle = true }) => {
                       <img
                         src={product.image}
                         alt={`${product.title} manufacturer India`}
+                        loading="lazy"
+                        decoding="async"
                         className={`max-h-[92%] max-w-[92%] object-contain select-none transition-opacity duration-700 ease-in-out z-1 ${
                           product.gallery && product.gallery[1] ? 'group-hover:opacity-0' : ''
                         }`}
@@ -567,6 +569,8 @@ const ProductsCatalog = ({ showTitle = true }) => {
                         <img
                           src={product.gallery[1]}
                           alt={`${product.title} installation`}
+                          loading="lazy"
+                          decoding="async"
                           className="absolute inset-0 w-full h-full object-cover select-none opacity-0 transition-opacity duration-700 ease-in-out group-hover:opacity-100 z-1"
                         />
                       )}

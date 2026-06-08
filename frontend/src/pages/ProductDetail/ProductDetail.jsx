@@ -283,6 +283,8 @@ const ProductDetail = () => {
                 <img 
                   src={imgUrl} 
                   alt={`${product.title} contextual slide ${index + 1}`} 
+                  loading="lazy"
+                  decoding="async"
                   className={`h-full w-auto select-none ${
                     index === 0 && imgUrl.toLowerCase().endsWith('.png') 
                       ? 'object-contain p-8 bg-white' 
@@ -741,6 +743,8 @@ const ProductDetail = () => {
                 <img 
                   src={rel.image} 
                   alt={rel.title} 
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-[85%] max-w-[85%] object-contain transform group-hover:scale-103 transition-transform duration-500" 
                 />
               </div>
