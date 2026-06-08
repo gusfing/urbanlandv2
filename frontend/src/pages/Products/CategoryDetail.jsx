@@ -5,6 +5,7 @@ import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ProductInquiryModal from "../../components/ProductInquiryModal/ProductInquiryModal";
 
 // Import fallback product image
 import colimg1 from "../../assets/Bench_Planter.png";
@@ -247,6 +248,7 @@ const CategoryDetail = () => {
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const containerRef = useRef(null);
 
   // Fallback metadata for undefined parameters
@@ -535,10 +537,10 @@ const CategoryDetail = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
-              <Link
+              <div
                 key={product.id}
-                to={`/product/${product.id}`}
-                className="catalog-card bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch aspect-[4/5] border border-black/[0.03] shadow-[0_8px_30px_rgba(0,0,0,0.015)] hover:-translate-y-1 transition-all duration-500 group cursor-pointer no-underline block w-full max-w-[350px]"
+                onClick={() => setSelectedProduct(product)}
+                className="catalog-card bg-white rounded-[2rem] p-8 flex flex-col justify-between items-stretch aspect-[4/5] border border-black/[0.03] shadow-[0_8px_30px_rgba(0,0,0,0.015)] hover:-translate-y-1 transition-all duration-500 group cursor-pointer block w-full max-w-[350px]"
               >
                 <div className="flex justify-between items-start gap-4">
                   <h3 className="text-xl sm:text-2xl font-light text-[#1A1A1A] tracking-tight group-hover:text-black transition-colors leading-tight">
@@ -589,11 +591,17 @@ const CategoryDetail = () => {
                     View Details
                   </span>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         )}
       </section>
+      {selectedProduct && (
+        <ProductInquiryModal 
+          product={selectedProduct} 
+          onClose={() => setSelectedProduct(null)} 
+        />
+      )}
     </div>
   );
 };

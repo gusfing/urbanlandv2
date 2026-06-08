@@ -5,6 +5,7 @@ import { products } from "../../constants/productsData";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ProductInquiryModal from "../../components/ProductInquiryModal/ProductInquiryModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,6 +33,7 @@ const categoriesConfig = [
 const Catalogue = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const pillsRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -250,10 +252,10 @@ const Catalogue = () => {
               const secondImage = p.gallery && p.gallery[1] ? p.gallery[1] : "";
 
               return (
-                <Link
+                <div
                   key={p.id}
-                  to={p.url || `/product/${p.id}`}
-                  className="catalogue-card bg-white rounded-[37.5px] p-6 flex flex-col justify-between items-stretch shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] transition-all duration-500 group cursor-pointer no-underline aspect-[4/5] hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(0,0,0,0.05)]"
+                  onClick={() => setSelectedProduct(p)}
+                  className="catalogue-card bg-white rounded-[37.5px] p-6 flex flex-col justify-between items-stretch shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] transition-all duration-500 group cursor-pointer aspect-[4/5] hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(0,0,0,0.05)]"
                 >
                   {/* Header info with badge overlays */}
                   <div className="flex justify-between items-start gap-4">
@@ -308,7 +310,7 @@ const Catalogue = () => {
                       Details →
                     </span>
                   </div>
-                </Link>
+                </div>
               );
             })}
           </div>
@@ -336,6 +338,12 @@ const Catalogue = () => {
           </div>
         )}
       </section>
+      {selectedProduct && (
+        <ProductInquiryModal 
+          product={selectedProduct} 
+          onClose={() => setSelectedProduct(null)} 
+        />
+      )}
     </div>
   );
 };

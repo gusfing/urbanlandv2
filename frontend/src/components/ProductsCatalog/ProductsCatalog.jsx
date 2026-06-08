@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
 import { fetchProducts } from "../../lib/wp";
+import ProductInquiryModal from "../ProductInquiryModal/ProductInquiryModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -172,6 +173,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [productsList, setProductsList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const sliderRef = useRef(null);
   const containerRef = useRef(null);
   const pillsRef = useRef(null);
@@ -479,10 +481,10 @@ const ProductsCatalog = ({ showTitle = true }) => {
               ))
             ) : (
               filteredProducts.map((product) => (
-                <Link
+                <div
                   key={product.id}
-                  to={product.url || `/product/${product.id}`}
-                  className={`catalog-card bg-white rounded-[37.5px] p-4 md:p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] transition-all duration-500 group cursor-pointer no-underline block aspect-auto md:aspect-[4/5] ${
+                  onClick={() => setSelectedProduct(product)}
+                  className={`catalog-card bg-white rounded-[37.5px] p-4 md:p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] transition-all duration-500 group cursor-pointer block aspect-auto md:aspect-[4/5] ${
                     filteredProducts.length === 1 
                       ? 'w-[310px] sm:w-[350px] md:w-[450px] shrink-0' 
                       : 'min-w-[310px] sm:min-w-[380px] md:min-w-[450px]'
@@ -606,7 +608,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
                       </p>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))
             )}
 
@@ -632,6 +634,12 @@ const ProductsCatalog = ({ showTitle = true }) => {
           </button>
         </div>
       </div>
+      {selectedProduct && (
+        <ProductInquiryModal 
+          product={selectedProduct} 
+          onClose={() => setSelectedProduct(null)} 
+        />
+      )}
     </Wrapper>
   );
 };
