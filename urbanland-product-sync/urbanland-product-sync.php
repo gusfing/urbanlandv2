@@ -45,6 +45,16 @@ function urbanland_register_rest_fields() {
     ) );
 }
 
+// Enable CORS for REST API requests so different origins (localhost and production frontend) can query the data
+add_filter( 'rest_pre_serve_request', 'urbanland_send_cors_headers', 15 );
+function urbanland_send_cors_headers( $value ) {
+    header( 'Access-Control-Allow-Origin: *' );
+    header( 'Access-Control-Allow-Methods: GET, OPTIONS' );
+    header( 'Access-Control-Allow-Credentials: true' );
+    header( 'Access-Control-Allow-Headers: Authorization, Content-Type, X-WP-Nonce, X-Requested-With' );
+    return $value;
+}
+
 function urbanland_get_product_acf_meta( $object ) {
     $post_id = $object['id'];
     
