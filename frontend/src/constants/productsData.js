@@ -2116,6 +2116,6 @@ const staticProducts = [
   }
 ];
 
-export const products = (typeof window !== 'undefined' && window.localStorage && localStorage.getItem('urbanland_admin_products'))
-  ? JSON.parse(localStorage.getItem('urbanland_admin_products'))
+export const products = (typeof window !== 'undefined' && window.localStorage && localStorage.getItem('urbanland_admin_products_v2'))
+  ? JSON.parse(localStorage.getItem('urbanland_admin_products_v2'))
   : staticProducts;
