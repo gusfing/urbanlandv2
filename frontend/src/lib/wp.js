@@ -183,44 +183,16 @@ const fallbackPosts = [
  * Automatically falls back to standard mock posts if request fails or URL is empty.
  */
 export const fetchPosts = async () => {
-  if (!WP_BASE_URL) {
-    console.log("WordPress API URL not configured. Returning fallback blogs.");
-    return fallbackPosts;
-  }
-
-  try {
-    const res = await fetch(`${WP_BASE_URL}/wp-json/wp/v2/posts?_embed`);
-    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
-    const data = await res.json();
-    return data.map((post) => parseWPPost(post));
-  } catch (error) {
-    console.warn("Failed to fetch posts from WordPress API. Falling back to local dataset.", error);
-    return fallbackPosts;
-  }
+  console.log("Returning local fallback blog posts.");
+  return fallbackPosts;
 };
 
 /**
- * Fetch a single blog post by slug from Headless WordPress API
+ * Fetch a single blog post by slug
  */
 export const fetchPostBySlug = async (slug) => {
-  if (!WP_BASE_URL) {
-    const found = fallbackPosts.find((p) => p.slug === slug);
-    return found || null;
-  }
-
-  try {
-    const res = await fetch(`${WP_BASE_URL}/wp-json/wp/v2/posts?slug=${slug}&_embed`);
-    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
-    const data = await res.json();
-    if (data.length === 0) {
-      // Check if it's in fallback
-      return fallbackPosts.find((p) => p.slug === slug) || null;
-    }
-    return parseWPPost(data[0]);
-  } catch (error) {
-    console.warn(`Failed to fetch post by slug '${slug}'. Returning fallback if present.`, error);
-    return fallbackPosts.find((p) => p.slug === slug) || null;
-  }
+  const found = fallbackPosts.find((p) => p.slug === slug);
+  return found || null;
 };
 
 /**
@@ -316,57 +288,8 @@ const parseWPPostToProduct = (post) => {
  * Falls back to our local high-fidelity products list if all fetch routes are unconfigured or fail.
  */
 export const fetchProducts = async () => {
-  if (!WP_BASE_URL) {
-    console.log("WordPress API URL not configured. Returning local products.");
-    return localProducts;
-  }
-
-  try {
-    let allProducts = [];
-    let page = 1;
-    let keepFetching = true;
-    
-    while (keepFetching) {
-      const res = await fetch(`${WP_BASE_URL}/wp-json/wp/v2/urbanland_product?per_page=100&page=${page}`);
-      if (!res.ok) {
-        if (page > 1) {
-          break;
-        }
-        throw new Error(`HTTP error ${res.status}`);
-      }
-      const data = await res.json();
-      if (!Array.isArray(data) || data.length === 0) {
-        break;
-      }
-      allProducts = [...allProducts, ...data];
-      if (data.length < 100) {
-        keepFetching = false;
-      } else {
-        page++;
-      }
-    }
-    
-    if (allProducts.length === 0) {
-      console.warn("No products returned from WordPress API. Returning local products.");
-      return localProducts;
-    }
-    
-    const parsedProducts = allProducts.map((prod) => parseWPProduct(prod));
-    const uniqueProducts = [];
-    const seenIds = new Set();
-    
-    parsedProducts.forEach(prod => {
-      if (!seenIds.has(prod.id)) {
-        seenIds.add(prod.id);
-        uniqueProducts.push(prod);
-      }
-    });
-    
-    return uniqueProducts;
-  } catch (error) {
-    console.warn("Failed to fetch products from WordPress API. Falling back to local dataset.", error);
-    return localProducts;
-  }
+  console.log("Returning local catalog products.");
+  return localProducts;
 };
 
 /**
