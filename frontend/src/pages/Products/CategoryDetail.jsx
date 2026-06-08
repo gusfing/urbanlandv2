@@ -244,11 +244,13 @@ const CategoryDetail = () => {
                  : rawCategory === "gazebo" ? "gazebos"
                  : rawCategory === "parabola" ? "pergolas"
                  : rawCategory === "wicker-furniture" ? "wicker-living-sets"
+                 : rawCategory === "bench-planters" ? "planters"
                  : rawCategory;
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [loadedImages, setLoadedImages] = useState({});
   const containerRef = useRef(null);
 
   // Fallback metadata for undefined parameters
@@ -564,11 +566,22 @@ const CategoryDetail = () => {
 
                 {/* Rendering image container */}
                 <div className="flex-1 my-4 flex justify-center items-center overflow-hidden relative select-none w-full h-[180px] bg-white rounded-[20px]">
+                  {!loadedImages[product.id] && (
+                    <div className="absolute inset-0 bg-black/[0.02] animate-pulse rounded-[20px] flex items-center justify-center">
+                      <svg className="w-5 h-5 text-[#2C5F2E]/25 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                      </svg>
+                    </div>
+                  )}
                   {/* First image: White background */}
                   <img
                     src={product.image}
                     alt={product.title}
-                    className={`absolute inset-0 max-h-[80%] max-w-[80%] m-auto object-contain select-none transition-opacity duration-700 ease-in-out ${
+                    onLoad={() => setLoadedImages(prev => ({ ...prev, [product.id]: true }))}
+                    className={`absolute inset-0 max-h-[80%] max-w-[80%] m-auto object-contain select-none transition-all duration-500 ease-in-out ${
+                      loadedImages[product.id] ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                    } ${
                       product.gallery && product.gallery[1] ? 'group-hover:opacity-0' : ''
                     }`}
                     style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }}

@@ -24,15 +24,7 @@ const categories = [
       <path d="M4 6v9m16-9v9M5 15l-1 5m16-5l1 5M8 15v4m8-4v4" strokeLinecap="round" />
     </svg>
   )},
-  { id: "bench-planters", name: "Bench Planters", icon: (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-      <rect x="3" y="11" width="6" height="9" rx="1" />
-      <path d="M6 11c0-3 1.5-4 1.5-4s1.5 1 1.5 4M6 11c0-2-1-3-1-3s-1 .5-1 3" strokeLinecap="round" />
-      <path d="M9 14h11M9 16h11" strokeLinecap="round" />
-      <path d="M17 14v6m3-6v6" strokeLinecap="round" />
-    </svg>
-  )},
-  { id: "planters", name: "Planters", icon: (
+    { id: "planters", name: "Planters", icon: (
     <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
       <path d="M6 13l1.5 7h9l1.5-7H6z" strokeLinejoin="round" />
       <path d="M5 13h14" strokeLinecap="round" />

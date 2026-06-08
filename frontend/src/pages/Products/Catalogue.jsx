@@ -12,8 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Standard layout and design tokens
 const categoriesConfig = [
   { id: "all", name: "All Products" },
-  { id: "bench-planters", name: "Bench Planters" },
-  { id: "benches", name: "Outdoor Benches" },
+    { id: "benches", name: "Outdoor Benches" },
   { id: "bus-shelters", name: "Bus Shelters" },
   { id: "cabanas", name: "Cabanas" },
   { id: "canteen-tables", name: "Canteen Tables" },
@@ -34,8 +33,19 @@ const Catalogue = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState({});
   const pillsRef = useRef(null);
   const containerRef = useRef(null);
+
+  // Dynamic skeleton loading transition
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 450);
+    return () => clearTimeout(timer);
+  }, [activeCategory, searchTerm]);
 
   // Set page SEO on mount
   useEffect(() => {
@@ -246,10 +256,32 @@ const Catalogue = () => {
 
       {/* Grid of Catalogue Cards */}
       <section className="max-w-[1400px] mx-auto px-6 md:px-12">
-        {filteredProducts.length > 0 ? (
+        {loading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {Array.from({ length: 8 }).map((_, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-[37.5px] p-6 flex flex-col justify-between items-stretch shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] aspect-[4/5] animate-pulse"
+              >
+                <div className="flex justify-between items-start gap-4">
+                  <div className="h-6 w-28 bg-black/10 rounded-lg" />
+                  <div className="h-4 w-12 bg-black/10 rounded-full" />
+                </div>
+                <div className="flex-1 my-4 flex justify-center items-center overflow-hidden relative w-full h-[180px] bg-[#F7F4EF]/45 rounded-2xl">
+                  <div className="w-[80%] h-[80%] bg-black/5 rounded-xl" />
+                </div>
+                <div className="flex justify-between items-end gap-3 pt-2">
+                  <div className="h-3 w-2/3 bg-black/10 rounded-md" />
+                  <div className="h-8 w-20 bg-[#2C5F2E]/10 rounded-full" />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredProducts.map((p) => {
               const secondImage = p.gallery && p.gallery[1] ? p.gallery[1] : "";
+              const isImageLoaded = loadedImages[p.id];
 
               return (
                 <div
@@ -280,14 +312,23 @@ const Catalogue = () => {
 
                   {/* Rendering with hover overlay */}
                   <div className="flex-1 my-4 flex justify-center items-center overflow-hidden relative w-full h-[180px] bg-[#F7F4EF]/45 rounded-2xl">
+                    {!isImageLoaded && (
+                      <div className="absolute inset-0 bg-black/[0.02] animate-pulse rounded-2xl flex items-center justify-center">
+                        <svg className="w-5 h-5 text-[#2C5F2E]/25 animate-spin" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                        </svg>
+                      </div>
+                    )}
                     <img
                       src={p.image}
                       alt={`${p.title} street furniture`}
                       loading="lazy"
                       decoding="async"
-                      className={`absolute inset-0 max-h-[92%] max-w-[92%] m-auto object-contain select-none transition-opacity duration-500 ease-in-out ${
-                        secondImage ? "group-hover:opacity-0" : ""
-                      }`}
+                      onLoad={() => setLoadedImages(prev => ({ ...prev, [p.id]: true }))}
+                      className={`absolute inset-0 max-h-[92%] max-w-[92%] m-auto object-contain select-none transition-all duration-500 ease-in-out ${
+                        isImageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                      } ${secondImage ? "group-hover:opacity-0" : ""}`}
                       style={{ mixBlendMode: "multiply", filter: "brightness(1.12) contrast(1.05)" }}
                     />
                     {secondImage && (

@@ -96,8 +96,7 @@ const assetReverseMap = {
 };
 
 const categoriesList = [
-  { id: "bench-planters", name: "Bench Planters" },
-  { id: "benches", name: "Outdoor Benches" },
+    { id: "benches", name: "Outdoor Benches" },
   { id: "bus-shelters", name: "Bus Shelters" },
   { id: "cabanas", name: "Cabanas" },
   { id: "canteen-tables", name: "Canteen Tables" },
@@ -114,12 +113,239 @@ const categoriesList = [
   { id: "metal-wooden-furniture", name: "Metal & Wooden" }
 ];
 
+const originalAssets = [
+  { name: "Original Benches Image (benchesImg)", value: "benchesImg" },
+  { name: "Original Dustbins Image (dustbinsImg)", value: "dustbinsImg" },
+  { name: "Original Bus Shelters Image (busSheltersImg)", value: "busSheltersImg" },
+  { name: "Original Car Shelters Image (carSheltersImg)", value: "carSheltersImg" },
+  { name: "Original Wicker Living Image (wickerLivingImg)", value: "wickerLivingImg" },
+  { name: "Original Wicker Dining Image (wickerDiningImg)", value: "wickerDiningImg" },
+  { name: "Original Planters Image (plantersImg)", value: "plantersImg" },
+  { name: "Original Cabanas Image (cabanasImg)", value: "cabanasImg" },
+  { name: "Original Poolside Loungers Image (poolsideLoungersImg)", value: "poolsideLoungersImg" },
+  { name: "Original Canteen Tables Image (canteenTablesImg)", value: "canteenTablesImg" }
+];
+
+const allWhiteImagesList = [
+  "1-1.webp_202606080031.jpeg",
+  "1-1.webp_202606090228.jpeg",
+  "1-10.webp_202606080031.jpeg",
+  "1-10.webp_202606090228.jpeg",
+  "1-2.webp_202606080031.jpeg",
+  "1-2.webp_202606090229.jpeg",
+  "1-3.webp_202606080031.jpeg",
+  "1-3.webp_202606090229.jpeg",
+  "1-6.webp_202606080031.jpeg",
+  "1-6.webp_202606090226.jpeg",
+  "1-7.webp_202606080031.jpeg",
+  "1-7.webp_202606090228.jpeg",
+  "1-8.webp_202606080031.jpeg",
+  "1-8.webp_202606090228.jpeg",
+  "1-9.webp_202606080031.jpeg",
+  "1-9.webp_202606090228.jpeg",
+  "10-1.webp_202606080031.jpeg",
+  "10-1.webp_202606090229.jpeg",
+  "10-3.webp_202606080031.jpeg",
+  "10-3.webp_202606090228.jpeg",
+  "10-4.webp_202606080031.jpeg",
+  "10-4.webp_202606090228.jpeg",
+  "10.webp_202606080031.jpeg",
+  "10.webp_202606090228.jpeg",
+  "11-2.webp_202606080031.jpeg",
+  "11-2.webp_202606090228.jpeg",
+  "11.webp_202606080031.jpeg",
+  "11.webp_202606090228.jpeg",
+  "12-2.webp_202606080031.jpeg",
+  "12-2.webp_202606090228.jpeg",
+  "12.webp_202606080031.jpeg",
+  "12.webp_202606090228.jpeg",
+  "13.webp_202606080031.jpeg",
+  "13.webp_202606090228.jpeg",
+  "14.webp_202606080031.jpeg",
+  "14.webp_202606090228.jpeg",
+  "2-2.webp_202606080031.jpeg",
+  "2-2.webp_202606090229.jpeg",
+  "2-3.webp_202606080031.jpeg",
+  "2-3.webp_202606090229.jpeg",
+  "2-5.webp_202606080031.jpeg",
+  "2-5.webp_202606090226.jpeg",
+  "2-6.webp_202606080031.jpeg",
+  "2-6.webp_202606090228.jpeg",
+  "2-7.webp_202606080031.jpeg",
+  "2-7.webp_202606090228.jpeg",
+  "2-8.webp_202606080031.jpeg",
+  "2-8.webp_202606090228.jpeg",
+  "2-9.webp_202606080031.jpeg",
+  "2-9.webp_202606090228.jpeg",
+  "3-2.webp_202606080031.jpeg",
+  "3-2.webp_202606090229.jpeg",
+  "3-4.webp_202606080031.jpeg",
+  "3-4.webp_202606090226.jpeg",
+  "3-5.webp_202606080031.jpeg",
+  "3-5.webp_202606090228.jpeg",
+  "3-6.webp_202606080031.jpeg",
+  "3-6.webp_202606090228.jpeg",
+  "3-7.webp_202606080031.jpeg",
+  "3-7.webp_202606090228.jpeg",
+  "3-8.webp_202606080031.jpeg",
+  "3-8.webp_202606090228.jpeg",
+  "4-1.webp_202606080031.jpeg",
+  "4-1.webp_202606090228.jpeg",
+  "4-2.webp_202606080031.jpeg",
+  "4-2.webp_202606090229.jpeg",
+  "4-4.webp_202606080031.jpeg",
+  "4-4.webp_202606090226.jpeg",
+  "4-5.webp_202606080031.jpeg",
+  "4-5.webp_202606090228.jpeg",
+  "4-6.webp_202606080031.jpeg",
+  "4-6.webp_202606090228.jpeg",
+  "4-7.webp_202606080031.jpeg",
+  "4-7.webp_202606090228.jpeg",
+  "5-1.webp_202606080031.jpeg",
+  "5-1.webp_202606090228.jpeg",
+  "5-2.webp_202606080031.jpeg",
+  "5-2.webp_202606090229.jpeg",
+  "5-4.webp_202606080031.jpeg",
+  "5-4.webp_202606090228.jpeg",
+  "5-5.webp_202606080031.jpeg",
+  "5-5.webp_202606090228.jpeg",
+  "5-6.webp_202606080031.jpeg",
+  "5-6.webp_202606090228.jpeg",
+  "6-2.webp_202606080031.jpeg",
+  "6-2.webp_202606090229.jpeg",
+  "6-5.webp_202606080031.jpeg",
+  "6-5.webp_202606090228.jpeg",
+  "6-6.webp_202606080031.jpeg",
+  "6-6.webp_202606090228.jpeg",
+  "7-1.webp_202606080031.jpeg",
+  "7-1.webp_202606090229.jpeg",
+  "7-3.webp_202606080031.jpeg",
+  "7-3.webp_202606090228.jpeg",
+  "7-4.webp_202606080031.jpeg",
+  "7-4.webp_202606090228.jpeg",
+  "7-5.webp_202606080031.jpeg",
+  "7-5.webp_202606090228.jpeg",
+  "7.webp_202606080031.jpeg",
+  "7.webp_202606090228.jpeg",
+  "8-1.webp_202606080031.jpeg",
+  "8-1.webp_202606090229.jpeg",
+  "8-3.webp_202606080031.jpeg",
+  "8-3.webp_202606090228.jpeg",
+  "8-4.webp_202606080031.jpeg",
+  "8-4.webp_202606090228.jpeg",
+  "8-5.webp_202606080031.jpeg",
+  "8-5.webp_202606090228.jpeg",
+  "8.webp_202606080031.jpeg",
+  "8.webp_202606090228.jpeg",
+  "9-1.webp_202606080031.jpeg",
+  "9-1.webp_202606090229.jpeg",
+  "9-3.webp_202606080031.jpeg",
+  "9-3.webp_202606090228.jpeg",
+  "9-4.webp_202606080031.jpeg",
+  "9-4.webp_202606090228.jpeg",
+  "9.webp_202606080031.jpeg",
+  "9.webp_202606090228.jpeg",
+  "New-Project-1-1.webp_202606080031.jpeg",
+  "New-Project-1-1.webp_202606090229.jpeg",
+  "New-Project-1.webp_202606080031.jpeg",
+  "New-Project-1.webp_202606090229.jpeg",
+  "New-Project-2-1.webp_202606080031.jpeg",
+  "New-Project-2-1.webp_202606090229.jpeg",
+  "New-Project-3-1.webp_202606080031.jpeg",
+  "New-Project-3-1.webp_202606090229.jpeg",
+  "New-Project-3.webp_202606080031.jpeg",
+  "New-Project-3.webp_202606090229.jpeg",
+  "New-Project-4-1.webp_202606080031.jpeg",
+  "New-Project-4-1.webp_202606090229.jpeg",
+  "New-Project-6.webp_202606080031.jpeg",
+  "New-Project-6.webp_202606090229.jpeg",
+  "New-Project-7.webp_202606080031.jpeg",
+  "New-Project-7.webp_202606090229.jpeg",
+  "New-Project.webp_202606080031.jpeg",
+  "New-Project.webp_202606090229.jpeg",
+  "outdoor_benches_ulb_01.jpeg",
+  "outdoor_benches_ulb_01_ugc.jpeg",
+  "outdoor_benches_ulb_02.jpeg",
+  "outdoor_benches_ulb_02_ugc.jpeg",
+  "outdoor_benches_ulb_03.jpeg",
+  "outdoor_benches_ulb_03_ugc.jpeg",
+  "outdoor_benches_ulb_04.jpeg",
+  "outdoor_benches_ulb_04_ugc.jpeg",
+  "outdoor_benches_ulb_05.jpeg",
+  "outdoor_benches_ulb_05_ugc.jpeg",
+  "outdoor_benches_ulb_06.jpeg",
+  "outdoor_benches_ulb_06_ugc.jpeg",
+  "outdoor_benches_ulb_07.jpeg",
+  "outdoor_benches_ulb_07_ugc.jpeg",
+  "outdoor_benches_ulb_08.jpeg",
+  "outdoor_benches_ulb_08_ugc.jpeg",
+  "outdoor_benches_ulb_09.jpeg",
+  "outdoor_benches_ulb_09_ugc.jpeg",
+  "outdoor_benches_ulb_10.jpeg",
+  "outdoor_benches_ulb_10_ugc.jpeg",
+  "outdoor_benches_ulb_11.jpeg",
+  "outdoor_benches_ulb_11_ugc.jpeg",
+  "outdoor_benches_ulb_12.jpeg",
+  "outdoor_benches_ulb_12_ugc.jpeg",
+  "outdoor_benches_ulb_13.jpeg",
+  "outdoor_benches_ulb_13_ugc.jpeg",
+  "outdoor_benches_ulb_14.jpeg",
+  "outdoor_benches_ulb_14_ugc.jpeg",
+  "outdoor_benches_ulb_15.jpeg",
+  "outdoor_benches_ulb_15_ugc.jpeg",
+  "outdoor_benches_ulb_16.jpeg",
+  "outdoor_benches_ulb_16_ugc.jpeg",
+  "outdoor_benches_ulb_17.jpeg",
+  "outdoor_benches_ulb_17_ugc.jpeg",
+  "outdoor_benches_ulb_18.jpeg",
+  "outdoor_benches_ulb_18_ugc.jpeg",
+  "outdoor_benches_ulb_19.jpeg",
+  "outdoor_benches_ulb_19_ugc.jpeg",
+  "outdoor_benches_ulb_20.jpeg",
+  "outdoor_benches_ulb_20_ugc.jpeg",
+  "outdoor_benches_ulb_21.jpeg",
+  "outdoor_benches_ulb_21_ugc.jpeg",
+  "outdoor_benches_ulb_22.jpeg",
+  "outdoor_benches_ulb_22_ugc.jpeg",
+  "outdoor_benches_ulb_23.jpeg",
+  "outdoor_benches_ulb_23_ugc.jpeg",
+  "outdoor_benches_ulb_24.jpeg",
+  "outdoor_benches_ulb_24_ugc.jpeg",
+  "outdoor_benches_ulb_25.jpeg",
+  "outdoor_benches_ulb_25_ugc.jpeg",
+  "outdoor_benches_ulb_26.jpeg",
+  "outdoor_benches_ulb_27.jpeg",
+  "outdoor_benches_ulb_27_ugc.jpeg",
+  "outdoor_benches_ulb_28.jpeg",
+  "outdoor_benches_ulb_28_ugc.jpeg",
+  "outdoor_benches_ulb_29.jpeg",
+  "outdoor_benches_ulb_29_ugc.jpeg",
+  "outdoor_benches_ulb_30.jpeg",
+  "outdoor_benches_ulb_30_ugc.jpeg",
+  "outdoor_benches_ulb_31.jpeg",
+  "outdoor_benches_ulb_31_ugc.jpeg",
+  "outdoor_benches_ulb_33.jpeg"
+];
+
 const ProductAdmin = () => {
   const [dbProducts, setDbProducts] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("bench-planters");
+  const [activeCategory, setActiveCategory] = useState("planters");
   const [searchTerm, setSearchTerm] = useState("");
   const [isExportModalOpen, setIsExportModalOpen] = useState(false);
   const [notification, setNotification] = useState("");
+
+  // Add/Edit Modals State
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [editingProduct, setEditingProduct] = useState(null);
+
+  // Form Fields State
+  const [formId, setFormId] = useState("");
+  const [formTitle, setFormTitle] = useState("");
+  const [formCategory, setFormCategory] = useState("planters");
+  const [formImage, setFormImage] = useState("/products/all_white/1-1.webp_202606080031.jpeg");
+  const [formLine, setFormLine] = useState("");
+  const [formDescription, setFormDescription] = useState("");
 
   // Load database on mount
   useEffect(() => {
@@ -198,9 +424,127 @@ const ProductAdmin = () => {
     showNotification(`Changed product category successfully!`);
   };
 
+  // Delete product
+  const handleDeleteProduct = (productId) => {
+    if (window.confirm("Are you sure you want to delete this product?")) {
+      const updated = dbProducts.filter((p) => p.id !== productId);
+      setDbProducts(updated);
+      showNotification("Product deleted successfully!");
+    }
+  };
+
+  // Open add product modal
+  const handleOpenAddModal = () => {
+    setFormId("");
+    setFormTitle("");
+    setFormCategory(activeCategory);
+    setFormImage("/products/all_white/1-1.webp_202606080031.jpeg");
+    setFormLine("Premium outdoor furniture collection item.");
+    setFormDescription("Designed for high-traffic environments using premium durable materials.");
+    setIsAddModalOpen(true);
+  };
+
+  // Save added product
+  const handleSaveAddProduct = (e) => {
+    e.preventDefault();
+    if (!formId.trim() || !formTitle.trim()) {
+      alert("Please provide both product ID and Title!");
+      return;
+    }
+    const cleanId = formId.trim().toLowerCase();
+    if (dbProducts.some(p => p.id === cleanId)) {
+      alert("A product with this ID already exists!");
+      return;
+    }
+
+    // Default template fields based on category
+    const defaultTemplates = {
+      benches: {
+        features: ["High-durability weather-resistant coating","Concealed expansion anchoring system","Modern all-white premium finish","Minimal maintenance requirements"],
+        specifications: {"materials":"Structural steel base frame with premium double powder coating; UV-stabilized white polymer composite slats.","dimensions":"Standard layout: 1800 mm length, 600 mm width, 450 mm seating height.","installation":"Concealed surface mounting using expansion chemical concrete bolts.","sustainability":"Eco-friendly materials; 100% recyclable metal frames and composite elements."},
+        options: {"wood":["Pure White composite","Eggshell White polymer"],"metal":["Powder-coated White (RAL 9016)","Signal White (RAL 9003)"],"modules":["Standard 3-seater bench","Standard 4-seater bench"]}
+      },
+      planters: {
+        features: ["Lightweight concrete composition offering extreme durability at reduced weight","Double-walled interior cavity to protect roots from extreme temperatures","Built-in overflow drainage pipes with filtering screens","Integrated sub-base forklift pockets for easy relocation"],
+        specifications: {"materials":"Architectural Concrete mix; waterproof inner sealant layer; internal foam insulation core.","dimensions":"Rectangular planter: 1500 mm length, 750 mm width, 800 mm height. Standard cube: 1000 mm x 1000 mm x 800 mm.","installation":"Placed directly on floor or patio; leveling pads compensate for slopes.","sustainability":"Insulated walls minimize water usage; uses natural sand and local cement aggregates."},
+        options: {"wood":["No timber trim","Top-edge timber trim slats"],"metal":["Smooth Sandstone finish","Textured Granite finish","Corten steel effect"],"modules":["Standard Rectangular box","Square planter cube","Planter box with clip-on WPC bench seat"]}
+      },
+      dustbins: {
+        features: ["Dual and triple waste segregation sorting channels","Easy-pull inner galvanized liners with ergonomic handles","Heavy-duty cylinder locks to prevent unauthorized opening","Anti-rain hood lids with optional integrated ashtrays"],
+        specifications: {"materials":"Textured powder-coated sheet steel casing; Grade 304 stainless steel lid; galvanized metal inner buckets.","dimensions":"Triple sorting module: 1500 mm width, 500 mm depth, 950 mm height. Capacity: 225L.","installation":"Flange plates bolted from the inside of the casing onto concrete pathways.","sustainability":"Encourages segregated garbage collection; uses highly durable and recyclable metals."},
+        options: {"wood":["No timber cladding","Robinia wood front cladding","Jatoba front cladding"],"metal":["Corten Texture finish","Forest Green","Anthracite Grey"],"modules":["Single Litter Bin","Double Sorting Bin","Triple Recycling Station"]}
+      }
+    };
+
+    const template = defaultTemplates[formCategory] || {
+      features: ["Premium weather-resistant materials","High-durability structural frame","Concealed anchoring systems","Low maintenance design"],
+      specifications: {"materials":"High-grade raw materials; premium anti-corrosion finish; stainless steel hardware.","dimensions":"Standard layout matching architectural guidelines.","installation":"Anchor anchoring with high-tensile bolts.","sustainability":"Designed with 100% recyclable components."},
+      options: {"wood":["No timber details","Teak details"],"metal":["Powder-coated Polar White","Textured Satin White"],"modules":["Standard Module","Premium Module"]}
+    };
+
+    const newProd = {
+      id: cleanId,
+      title: formTitle.trim(),
+      line: formLine.trim(),
+      category: formCategory,
+      url: `/product/${cleanId}`,
+      image: formImage,
+      gallery: [formImage],
+      badges: ["New"],
+      tagline: formLine.trim(),
+      description: formDescription.trim(),
+      ...template
+    };
+
+    setDbProducts([...dbProducts, newProd]);
+    setIsAddModalOpen(false);
+    showNotification("Product added successfully!");
+  };
+
+  // Open edit product modal
+  const handleOpenEditModal = (prod) => {
+    setEditingProduct(prod);
+    setFormId(prod.id);
+    setFormTitle(prod.title);
+    setFormCategory(prod.category);
+    setFormImage(prod.image);
+    setFormLine(prod.line || "");
+    setFormDescription(prod.description || "");
+    setIsEditModalOpen(true);
+  };
+
+  // Save edited product
+  const handleSaveEditProduct = (e) => {
+    e.preventDefault();
+    if (!formTitle.trim()) {
+      alert("Please provide a product Title!");
+      return;
+    }
+
+    const updated = dbProducts.map((p) => {
+      if (p.id === editingProduct.id) {
+        return {
+          ...p,
+          title: formTitle.trim(),
+          category: formCategory,
+          image: formImage,
+          gallery: p.gallery[0] === p.image ? [formImage] : p.gallery,
+          line: formLine.trim(),
+          description: formDescription.trim(),
+          url: `/product/${p.id}`
+        };
+      }
+      return p;
+    });
+
+    setDbProducts(updated);
+    setIsEditModalOpen(false);
+    setEditingProduct(null);
+    showNotification("Product edited successfully!");
+  };
   // Persist modifications to localStorage
   const handleSavePreview = () => {
-    localStorage.setItem("urbanland_admin_products_v2", JSON.stringify(dbProducts));
+    localStorage.setItem("urbanland_admin_products_v13", JSON.stringify(dbProducts));
     showNotification("Saved to Local Preview! Re-loading elements...");
     // Trigger live update across open browser tabs
     window.location.reload();
@@ -209,7 +553,7 @@ const ProductAdmin = () => {
   // Revert back to code baseline
   const handleReset = () => {
     if (window.confirm("Revert database modifications back to static baseline?")) {
-      localStorage.removeItem("urbanland_admin_products_v2");
+      localStorage.removeItem("urbanland_admin_products_v13");
       showNotification("Restored static database baseline.");
       window.location.reload();
     }
@@ -319,7 +663,7 @@ import wickerFurnitureHero from '../assets/Wicker_Furniture.jpeg';`;
   }`;
     }).join(",\n");
 
-    return `${importStatements}\n\nconst staticProducts = [\n${arrayItems}\n];\n\nexport const products = (typeof window !== 'undefined' && window.localStorage && localStorage.getItem('urbanland_admin_products_v2'))\n  ? JSON.parse(localStorage.getItem('urbanland_admin_products_v2'))\n  : staticProducts;\n`;
+    return `${importStatements}\n\nconst staticProducts = [\n${arrayItems}\n];\n\nexport const products = (typeof window !== 'undefined' && window.localStorage && localStorage.getItem('urbanland_admin_products_v13'))\n  ? JSON.parse(localStorage.getItem('urbanland_admin_products_v13'))\n  : staticProducts;\n`;
   }, [dbProducts]);
 
   const handleDownload = () => {
@@ -420,13 +764,21 @@ import wickerFurnitureHero from '../assets/Wicker_Furniture.jpeg';`;
             <h2 className="text-lg font-light tracking-tight px-2">
               Showing <span className="text-[#C9A84C] font-bold">{displayProducts.length}</span> Products in <span className="font-semibold text-white">{(categoriesList.find(c => c.id === activeCategory) || {}).name}</span>
             </h2>
-            <input
-              type="text"
-              placeholder="Search by code or title..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="px-5 py-2.5 bg-[#142216] border border-white/15 rounded-full text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#C9A84C] w-full sm:w-64"
-            />
+            <div className="flex items-center gap-3 w-full sm:w-auto">
+              <input
+                type="text"
+                placeholder="Search by code or title..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="px-5 py-2.5 bg-[#142216] border border-white/15 rounded-full text-xs text-white placeholder-white/40 focus:outline-none focus:border-[#C9A84C] w-full sm:w-64"
+              />
+              <button
+                onClick={handleOpenAddModal}
+                className="px-5 py-2.5 bg-[#C9A84C] hover:bg-[#E5C76B] text-[#142216] font-black uppercase text-[10px] rounded-full transition-all tracking-wider cursor-pointer shadow-md shrink-0 select-none"
+              >
+                + Add Product
+              </button>
+            </div>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -441,12 +793,12 @@ import wickerFurnitureHero from '../assets/Wicker_Furniture.jpeg';`;
                   >
                     {/* Image & Title Details */}
                     <div className="flex items-center gap-5">
-                      <div className="w-16 h-16 bg-[#142216]/50 rounded-2xl overflow-hidden flex items-center justify-center shrink-0 border border-white/10">
+                      <div className="w-24 h-24 sm:w-28 sm:h-28 bg-[#F7F4EF] rounded-2xl overflow-hidden flex items-center justify-center shrink-0 border border-[#C9A84C]/20 shadow-inner">
                         <img
                           src={prod.image}
                           alt={prod.title}
-                          className="w-[88%] h-[88%] object-contain select-none"
-                          style={{ mixBlendMode: 'multiply', filter: 'brightness(1.1)' }}
+                          className="w-[92%] h-[92%] object-contain select-none transition-transform duration-300 hover:scale-105"
+                          style={{ filter: 'brightness(1.02)' }}
                         />
                       </div>
                       <div className="flex flex-col gap-1">
@@ -527,6 +879,27 @@ import wickerFurnitureHero from '../assets/Wicker_Furniture.jpeg';`;
                         </div>
                       </div>
 
+                      {/* Action controllers (Edit & Delete) */}
+                      <div className="flex flex-col gap-1 items-end">
+                        <label className="text-[8px] font-bold uppercase tracking-widest text-white/40 self-start md:self-end">Actions</label>
+                        <div className="flex items-center gap-1.5">
+                          <button
+                            onClick={() => handleOpenEditModal(prod)}
+                            title="Edit Product details"
+                            className="px-3 py-2 bg-[#142216] hover:bg-[#C9A84C] hover:text-[#142216] text-[#C9A84C] border border-[#C9A84C]/25 rounded-xl transition-all cursor-pointer text-[10px] font-bold uppercase tracking-wide"
+                          >
+                            Edit
+                          </button>
+                          <button
+                            onClick={() => handleDeleteProduct(prod.id)}
+                            title="Delete Product"
+                            className="px-3 py-2 bg-red-900/10 hover:bg-red-800 text-red-300 hover:text-white border border-red-500/20 rounded-xl transition-all cursor-pointer text-[10px] font-bold uppercase tracking-wide"
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                 );
@@ -591,6 +964,196 @@ import wickerFurnitureHero from '../assets/Wicker_Furniture.jpeg';`;
               </button>
             </div>
 
+          </div>
+        </div>
+      )}
+
+      {/* Add Product Modal */}
+      {isAddModalOpen && (
+        <div className="fixed inset-0 z-[9999] flex justify-center items-center px-4">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsAddModalOpen(false)} />
+          <div className="relative bg-[#1D3220] border border-[#C9A84C]/25 text-[#F7F4EF] w-full max-w-lg rounded-[2.5rem] z-10 p-8 shadow-2xl flex flex-col max-h-[90vh] overflow-y-auto scrollbar-thin animate-fadeIn">
+            <h3 className="text-xl font-bold uppercase tracking-wide mb-5 text-[#C9A84C] border-b border-white/10 pb-3">Add New Product</h3>
+            <form onSubmit={handleSaveAddProduct} className="flex flex-col gap-4 text-xs font-semibold text-[#F7F4EF]">
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Product ID (Unique Slug)</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. uldb-13"
+                  value={formId}
+                  onChange={(e) => setFormId(e.target.value)}
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C]"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Product Title (Display Name)</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. ULDB-13"
+                  value={formTitle}
+                  onChange={(e) => setFormTitle(e.target.value)}
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C]"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Category</label>
+                <select
+                  value={formCategory}
+                  onChange={(e) => setFormCategory(e.target.value)}
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C] cursor-pointer"
+                >
+                  {categoriesList.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+                </select>
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Product Image File</label>
+                <select
+                  value={formImage}
+                  onChange={(e) => setFormImage(e.target.value)}
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C] cursor-pointer"
+                >
+                  <optgroup label="Original Assets">
+                    {originalAssets.map(a => <option key={a.value} value={a.value}>{a.name}</option>)}
+                  </optgroup>
+                  <optgroup label="White Collection Images">
+                    {allWhiteImagesList.map(name => {
+                      const pathVal = `/products/all_white/${name}`;
+                      return <option key={name} value={pathVal}>{name}</option>;
+                    })}
+                  </optgroup>
+                </select>
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Line Tagline</label>
+                <input
+                  type="text"
+                  placeholder="e.g. Premium Outdoor Seating"
+                  value={formLine}
+                  onChange={(e) => setFormLine(e.target.value)}
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C]"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Description</label>
+                <textarea
+                  placeholder="Enter details..."
+                  value={formDescription}
+                  onChange={(e) => setFormDescription(e.target.value)}
+                  rows="3"
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C] resize-none"
+                />
+              </div>
+              <div className="flex justify-end gap-3 mt-4 border-t border-white/10 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setIsAddModalOpen(false)}
+                  className="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-full transition-colors cursor-pointer"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-6 py-2.5 bg-[#C9A84C] hover:bg-[#E5C76B] text-[#142216] font-black uppercase rounded-full transition-colors cursor-pointer"
+                >
+                  Add Product
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Edit Product Modal */}
+      {isEditModalOpen && (
+        <div className="fixed inset-0 z-[9999] flex justify-center items-center px-4">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => { setIsEditModalOpen(false); setEditingProduct(null); }} />
+          <div className="relative bg-[#1D3220] border border-[#C9A84C]/25 text-[#F7F4EF] w-full max-w-lg rounded-[2.5rem] z-10 p-8 shadow-2xl flex flex-col max-h-[90vh] overflow-y-auto scrollbar-thin animate-fadeIn">
+            <h3 className="text-xl font-bold uppercase tracking-wide mb-5 text-[#C9A84C] border-b border-white/10 pb-3">Edit Product</h3>
+            <form onSubmit={handleSaveEditProduct} className="flex flex-col gap-4 text-xs font-semibold text-[#F7F4EF]">
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Product ID (Read Only)</label>
+                <input
+                  type="text"
+                  disabled
+                  value={formId}
+                  className="bg-[#142216]/50 border border-white/5 rounded-xl p-3 text-white/50 focus:outline-none cursor-not-allowed"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Product Title (Display Name)</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. ULDB-13"
+                  value={formTitle}
+                  onChange={(e) => setFormTitle(e.target.value)}
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C]"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Category</label>
+                <select
+                  value={formCategory}
+                  onChange={(e) => setFormCategory(e.target.value)}
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C] cursor-pointer"
+                >
+                  {categoriesList.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+                </select>
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Product Image File</label>
+                <select
+                  value={formImage}
+                  onChange={(e) => setFormImage(e.target.value)}
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C] cursor-pointer"
+                >
+                  <optgroup label="Original Assets">
+                    {originalAssets.map(a => <option key={a.value} value={a.value}>{a.name}</option>)}
+                  </optgroup>
+                  <optgroup label="White Collection Images">
+                    {allWhiteImagesList.map(name => {
+                      const pathVal = `/products/all_white/${name}`;
+                      return <option key={name} value={pathVal}>{name}</option>;
+                    })}
+                  </optgroup>
+                </select>
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Line Tagline</label>
+                <input
+                  type="text"
+                  value={formLine}
+                  onChange={(e) => setFormLine(e.target.value)}
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C]"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] font-bold uppercase tracking-wider text-white/50">Description</label>
+                <textarea
+                  value={formDescription}
+                  onChange={(e) => setFormDescription(e.target.value)}
+                  rows="3"
+                  className="bg-[#142216] border border-white/15 rounded-xl p-3 text-white focus:outline-none focus:border-[#C9A84C] resize-none"
+                />
+              </div>
+              <div className="flex justify-end gap-3 mt-4 border-t border-white/10 pt-4">
+                <button
+                  type="button"
+                  onClick={() => { setIsEditModalOpen(false); setEditingProduct(null); }}
+                  className="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-full transition-colors cursor-pointer"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-6 py-2.5 bg-[#C9A84C] hover:bg-[#E5C76B] text-[#142216] font-black uppercase rounded-full transition-colors cursor-pointer"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}

@@ -6,7 +6,6 @@ import { products } from "../../constants/productsData";
 const divisions = [
   { id: "benches", name: "Outdoor Benches", tagline: "WPC, Aluminium, & Concrete architectural benches.", path: "/products/benches", specs: ["FSC Robinia", "Concrete", "HDG Steel"] },
   { id: "aluminium-benches", name: "Aluminium Benches", tagline: "Premium lightweight rust-proof benches.", path: "/products/benches/aluminium-benches", specs: ["Al-Mg-Si Alloy", "Rust Proof", "Akzonobel Coating"] },
-  { id: "bench-planters", name: "Bench Planters", tagline: "Integrated WPC seating and concrete planter boxes.", path: "/products/bench-planters", specs: ["Integrated WPC Seating", "Concrete Planter Mix", "Insulated Core"] },
   { id: "planters", name: "Planters Boxes", tagline: "Concrete cultivation islands and planters boxes.", path: "/products/planters", specs: ["Lightweight Concrete", "Double-Walled", "Root Protection"] },
   { id: "dustbins", name: "Litter & Recycling Bins", tagline: "Anti-vandalism dual litter recycling receptacles.", path: "/products/dustbins", specs: ["Vandal Resistant", "Segregation Lids", "Casing Locks"] },
   { id: "bus-shelters", name: "Smart Bus Shelters", tagline: "MS/SS intelligent municipal bus stop canopies.", path: "/products/bus-shelters", specs: ["Structural Steel", "Safety Laminated Glass", "Solar Roofing Option"] },
