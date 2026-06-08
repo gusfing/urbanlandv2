@@ -94,27 +94,40 @@ function urbanland_sync_dashboard_html() {
     // Handle form submit triggers
     if ( isset( $_POST['run_urbanland_import'] ) ) {
         check_admin_referer( 'urbanland_import_nonce_action', 'urbanland_import_nonce' );
-        $import_count = urbanland_execute_import();
-        echo '<div class="notice notice-success is-dismissible"><p>' . sprintf( __( 'Successfully synchronized %d products!', 'urbanland' ), $import_count ) . '</p></div>';
+        $source_base_url = isset( $_POST['urbanland_source_base_url'] ) ? esc_url_raw( trim( $_POST['urbanland_source_base_url'] ) ) : '';
+        update_option( 'urbanland_source_base_url', $source_base_url );
+        $import_count = urbanland_execute_import( $source_base_url );
+        echo '<div class="notice notice-success is-dismissible"><p>' . sprintf( __( 'Successfully synchronized %d products and sideloaded images!', 'urbanland' ), $import_count ) . '</p></div>';
     }
 
+    $current_source_url = get_option( 'urbanland_source_base_url', 'https://urbanv2.vercel.app' );
     ?>
     <div class="wrap" style="max-width: 800px; margin-top: 20px;">
         <h1 style="font-weight: 900; color: #142216; font-size: 2.2em; text-transform: uppercase; letter-spacing: -0.5px;">
             Urbanland <span style="color: #C9A84C;">Sync Studio</span>
         </h1>
         <p style="color: #666; font-size: 1.1em; margin-bottom: 25px;">
-            Synchronize 114 product models and their category taxonomies from the React catalog directly into your WordPress database.
+            Synchronize 114 product models, categories, and media library attachments from your React catalog directly into your WordPress database.
         </p>
 
         <div class="card" style="background: #ffffff; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; margin-bottom: 30px;">
             <h2 style="font-weight: 700; color: #1a202c; font-size: 1.4em; margin-top: 0;">One-Click Product Sync</h2>
             <p style="color: #4a5568; line-height: 1.6;">
-                Clicking the button below will register the active category taxonomies, generate Custom Post Types, map structured specification metrics (features, options, materials), and push all 114 products into your local WordPress tables. If a product code already exists, the record will automatically update.
+                Clicking the button below will register the active category taxonomies, generate/update Custom Post Types, map specifications, and import all 114 products. 
+                It will also download and register all images into the WordPress Media Library. Already imported images are skipped.
             </p>
 
             <form method="post" action="" style="margin-top: 25px;">
                 <?php wp_nonce_field( 'urbanland_import_nonce_action', 'urbanland_import_nonce' ); ?>
+                
+                <div style="margin-bottom: 20px;">
+                    <label for="urbanland_source_base_url" style="font-weight: bold; color: #2d3748; display: block; margin-bottom: 5px;">Source Images Base URL:</label>
+                    <input type="url" name="urbanland_source_base_url" id="urbanland_source_base_url" class="regular-text" style="width: 100%; max-width: 500px; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;" placeholder="e.g. https://urbanv2.vercel.app" value="<?php echo esc_url( $current_source_url ); ?>" required>
+                    <p class="description" style="color: #64748b; font-size: 0.85em; margin-top: 5px;">
+                        Specify the public URL where your React frontend's static assets are hosted. The seeder will fetch and sideload images from this domain directly into your WordPress uploads folder.
+                    </p>
+                </div>
+
                 <input type="submit" name="run_urbanland_import" id="submit" class="button button-primary button-large" style="background: #2C5F2E; border-color: #2C5F2E; font-weight: bold; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; padding: 6px 20px 8px; border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);" value="<?php _e( 'Sync 114 Products Now', 'urbanland' ); ?>">
             </form>
         </div>
@@ -137,7 +150,17 @@ function urbanland_sync_dashboard_html() {
 }
 
 // 4. Ingestion Sync Action Engine
-function urbanland_execute_import() {
+function urbanland_execute_import( $source_base_url = '' ) {
+    if ( empty( $source_base_url ) ) {
+        $source_base_url = get_option( 'urbanland_source_base_url', 'https://urbanv2.vercel.app' );
+    }
+
+    // Prevent timeout and memory exhaustion
+    @set_time_limit( 300 );
+    if ( function_exists( 'wp_raise_memory_limit' ) ) {
+        wp_raise_memory_limit( 'admin' );
+    }
+
     $products_json = <<<'JSON'
 [
   {
@@ -5210,8 +5233,30 @@ JSON;
         update_post_meta( $post_id, '_urbanland_tagline', $tagline );
         update_post_meta( $post_id, '_urbanland_description', $description );
 
+        // Sideload and associate main image as Featured Image
+        if ( ! empty( $prod['image'] ) ) {
+            $main_img_data = urbanland_sideload_image( $prod['image'], $source_base_url );
+            if ( ! empty( $main_img_data['id'] ) ) {
+                set_post_thumbnail( $post_id, $main_img_data['id'] );
+            }
+        }
+
+        // Sideload and associate gallery images
+        $gallery_urls = array();
+        if ( ! empty( $prod['gallery'] ) && is_array( $prod['gallery'] ) ) {
+            foreach ( $prod['gallery'] as $gallery_img_path ) {
+                $gallery_img_data = urbanland_sideload_image( $gallery_img_path, $source_base_url );
+                if ( ! empty( $gallery_img_data['url'] ) ) {
+                    $gallery_urls[] = $gallery_img_data['url'];
+                } else {
+                    // Fallback to the original relative path if sideload failed
+                    $gallery_urls[] = $gallery_img_path;
+                }
+            }
+        }
+        update_post_meta( $post_id, '_urbanland_gallery', $gallery_urls );
+
         // Array / Structured Object Metas
-        update_post_meta( $post_id, '_urbanland_gallery', $prod['gallery'] );
         update_post_meta( $post_id, '_urbanland_badges', $prod['badges'] );
         update_post_meta( $post_id, '_urbanland_features', $prod['features'] );
         update_post_meta( $post_id, '_urbanland_specifications', $prod['specifications'] );
@@ -5221,4 +5266,77 @@ JSON;
     }
 
     return $import_count;
+}
+
+/**
+ * Sideload an image from a remote URL to WordPress Media Library.
+ * Reuses existing attachments if they match the relative path to avoid duplicates.
+ */
+function urbanland_sideload_image( $relative_path, $source_base_url ) {
+    if ( empty( $relative_path ) ) {
+        return array( 'id' => 0, 'url' => '' );
+    }
+
+    global $wpdb;
+    // Check if we already have an attachment for this relative path
+    $attachment_id = $wpdb->get_var( $wpdb->prepare(
+        "SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_source_relative_path' AND meta_value = %s LIMIT 1",
+        $relative_path
+    ) );
+
+    if ( $attachment_id ) {
+        $attachment_id = intval( $attachment_id );
+        if ( get_post( $attachment_id ) ) {
+            return array(
+                'id'  => $attachment_id,
+                'url' => wp_get_attachment_url( $attachment_id )
+            );
+        }
+    }
+
+    // Prepare URL
+    $source_url = rtrim( $source_base_url, '/' ) . '/' . ltrim( $relative_path, '/' );
+
+    // Ensure WP Admin image APIs are loaded
+    if ( ! function_exists( 'download_url' ) ) {
+        require_once ABSPATH . 'wp-admin/includes/image.php';
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+        require_once ABSPATH . 'wp-admin/includes/media.php';
+    }
+
+    $tmp_file = download_url( $source_url );
+
+    if ( is_wp_error( $tmp_file ) ) {
+        error_log( 'Urbanland Sync Image Download Error: ' . $tmp_file->get_error_message() . ' for URL: ' . $source_url );
+        return array(
+            'id'  => 0,
+            'url' => $relative_path // Fallback
+        );
+    }
+
+    $file_array = array(
+        'name'     => basename( $relative_path ),
+        'tmp_name' => $tmp_file,
+    );
+
+    // Sideload the image
+    $desc = basename( $relative_path );
+    $attachment_id = media_handle_sideload( $file_array, 0, $desc );
+
+    if ( is_wp_error( $attachment_id ) ) {
+        @unlink( $file_array['tmp_name'] );
+        error_log( 'Urbanland Sync Image Sideload Error: ' . $attachment_id->get_error_message() . ' for URL: ' . $source_url );
+        return array(
+            'id'  => 0,
+            'url' => $relative_path
+        );
+    }
+
+    $attachment_id = intval( $attachment_id );
+    update_post_meta( $attachment_id, '_source_relative_path', $relative_path );
+
+    return array(
+        'id'  => $attachment_id,
+        'url' => wp_get_attachment_url( $attachment_id )
+    );
 }
