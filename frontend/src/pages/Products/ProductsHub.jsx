@@ -4,24 +4,24 @@ import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import { products } from "../../constants/productsData";
 
 const divisions = [
-  { id: "benches", name: "Outdoor Benches", count: 18, tagline: "WPC, Aluminium, & Concrete architectural benches.", path: "/products/benches", specs: ["FSC Robinia", "Concrete", "HDG Steel"] },
-  { id: "aluminium-benches", name: "Aluminium Benches", count: 12, tagline: "Premium lightweight rust-proof benches.", path: "/products/benches/aluminium-benches", specs: ["Al-Mg-Si Alloy", "Rust Proof", "Akzonobel Coating"] },
-  { id: "planters", name: "Planters Boxes", count: 12, tagline: "Concrete cultivation islands and planters boxes.", path: "/products/planters", specs: ["Lightweight Concrete", "Double-Walled", "Root Protection"] },
-  { id: "dustbins", name: "Litter & Recycling Bins", count: 8, tagline: "Anti-vandalism dual litter recycling receptacles.", path: "/products/dustbins", specs: ["Vandal Resistant", "Segregation Lids", "Casing Locks"] },
-  { id: "bus-shelters", name: "Smart Bus Shelters", count: 6, tagline: "MS/SS intelligent municipal bus stop canopies.", path: "/products/bus-shelters", specs: ["Structural Steel", "Safety Laminated Glass", "Solar Roofing Option"] },
-  { id: "car-shelters", name: "Premium Car Shelters", count: 4, tagline: "High-tensile modular vehicle shading parking canopies.", path: "/products/car-shelters", specs: ["PVDF Tensile Roof", "Cantilever Columns", "EV Ready"] },
-  { id: "canteen-tables", name: "Canteen Tables & Sets", count: 5, tagline: "Heavy-duty outdoor corporate dining furniture.", path: "/products/canteen-tables", specs: ["HPL Panel Slats", "Morse Frame Series", "Corporate Grade"] },
-  { id: "cabanas", name: "Luxury Cabanas", count: 3, tagline: "Premium daybed shade structures for hotels & pools.", path: "/products/cabanas", specs: ["Sunbrella® Fabric", "Powder Coated Steel", "Beverage Racks"] },
-  { id: "poolside-loungers", name: "Poolside Loungers", count: 6, tagline: "Ergonomic weather-proof poolside lounge beds.", path: "/products/poolside-loungers", specs: ["HDPE Synthetic Wicker", "Rustless Aluminium", "Quick-Dry Core"] },
-  { id: "wicker-living-sets", name: "Wicker Living Sets", count: 14, tagline: "High-density premium polyethylene wicker sofas.", path: "/products/wicker-living-sets", specs: ["UV-Blocked Weave", "Modular Sofa Sections", "Performance Canvas"] },
-  { id: "wicker-dining-sets", name: "Wicker Dining Sets", count: 10, tagline: "Luxury synthetic wicker dining tables and chairs.", path: "/products/wicker-dining-sets", specs: ["Tempered Glass Top", "High-Density Weave", "Leveler Glides"] },
-  { id: "indoor-furniture", name: "Indoor Furniture", count: 8, tagline: "Modern luxury indoor dining and accent furniture.", path: "/products/indoor-furniture", specs: ["Modern Luxury Dining", "Timeless Silhouettes", "Architectural Accents"] },
-  { id: "metal-wooden-furniture", name: "Metal & Wooden Furniture", count: 10, tagline: "Premium architectural steel and timber furniture.", path: "/products/metal-wooden-furniture", specs: ["Structural Timber", "Premium Carbon Steel", "Laser-Cut Joins"] },
-  { id: "ss-bollards", name: "SS Bollards", count: 6, tagline: "High-durability stainless steel safety bollards.", path: "/products/ss-bollards", specs: ["High-Impact SS304/316", "Safety Reflector Rings", "Cast In-Place"] },
-  { id: "bench-planters", name: "Bench Planters", count: 8, tagline: "Integrated WPC seating and concrete planter boxes.", path: "/products/bench-planters", specs: ["Integrated WPC Seating", "Concrete Planter Mix", "Insulated Core"] },
-  { id: "pergolas", name: "Architectural Pergolas", count: 6, tagline: "Modern tensioned shading sail and louver structures.", path: "/products/pergolas", specs: ["HDPE Polymer Sails", "High-Tension Rigging", "Severe Weather Proof"] },
-  { id: "gazebos", name: "Elegant Gazebos", count: 5, tagline: "Pre-engineered luxury timber pavilions.", path: "/products/gazebos", specs: ["FSC Teak Pavilions", "Concealed Wiring", "Louver Privacy"] },
-  { id: "pre-fab-homes", name: "Pre Fab Homes", count: 4, tagline: "Modular residential structures and garden cabins.", path: "/products/pre-fab-homes", specs: ["Insulated Chassis", "Eco WPC Cladding", "48h Rapid Install"] }
+  { id: "benches", name: "Outdoor Benches", tagline: "WPC, Aluminium, & Concrete architectural benches.", path: "/products/benches", specs: ["FSC Robinia", "Concrete", "HDG Steel"] },
+  { id: "aluminium-benches", name: "Aluminium Benches", tagline: "Premium lightweight rust-proof benches.", path: "/products/benches/aluminium-benches", specs: ["Al-Mg-Si Alloy", "Rust Proof", "Akzonobel Coating"] },
+  { id: "bench-planters", name: "Bench Planters", tagline: "Integrated WPC seating and concrete planter boxes.", path: "/products/bench-planters", specs: ["Integrated WPC Seating", "Concrete Planter Mix", "Insulated Core"] },
+  { id: "planters", name: "Planters Boxes", tagline: "Concrete cultivation islands and planters boxes.", path: "/products/planters", specs: ["Lightweight Concrete", "Double-Walled", "Root Protection"] },
+  { id: "dustbins", name: "Litter & Recycling Bins", tagline: "Anti-vandalism dual litter recycling receptacles.", path: "/products/dustbins", specs: ["Vandal Resistant", "Segregation Lids", "Casing Locks"] },
+  { id: "bus-shelters", name: "Smart Bus Shelters", tagline: "MS/SS intelligent municipal bus stop canopies.", path: "/products/bus-shelters", specs: ["Structural Steel", "Safety Laminated Glass", "Solar Roofing Option"] },
+  { id: "car-shelters", name: "Premium Car Shelters", tagline: "High-tensile modular vehicle shading parking canopies.", path: "/products/car-shelters", specs: ["PVDF Tensile Roof", "Cantilever Columns", "EV Ready"] },
+  { id: "canteen-tables", name: "Canteen Tables & Sets", tagline: "Heavy-duty outdoor corporate dining furniture.", path: "/products/canteen-tables", specs: ["HPL Panel Slats", "Morse Frame Series", "Corporate Grade"] },
+  { id: "cabanas", name: "Luxury Cabanas", tagline: "Premium daybed shade structures for hotels & pools.", path: "/products/cabanas", specs: ["Sunbrella® Fabric", "Powder Coated Steel", "Beverage Racks"] },
+  { id: "poolside-loungers", name: "Poolside Loungers", tagline: "Ergonomic weather-proof poolside lounge beds.", path: "/products/poolside-loungers", specs: ["HDPE Synthetic Wicker", "Rustless Aluminium", "Quick-Dry Core"] },
+  { id: "wicker-living-sets", name: "Wicker Living Sets", tagline: "High-density premium polyethylene wicker sofas.", path: "/products/wicker-living-sets", specs: ["UV-Blocked Weave", "Modular Sofa Sections", "Performance Canvas"] },
+  { id: "wicker-dining-sets", name: "Wicker Dining Sets", tagline: "Luxury synthetic wicker dining tables and chairs.", path: "/products/wicker-dining-sets", specs: ["Tempered Glass Top", "High-Density Weave", "Leveler Glides"] },
+  { id: "indoor-furniture", name: "Indoor Furniture", tagline: "Modern luxury indoor dining and accent furniture.", path: "/products/indoor-furniture", specs: ["Modern Luxury Dining", "Timeless Silhouettes", "Architectural Accents"] },
+  { id: "metal-wooden-furniture", name: "Metal & Wooden Furniture", tagline: "Premium architectural steel and timber furniture.", path: "/products/metal-wooden-furniture", specs: ["Structural Timber", "Premium Carbon Steel", "Laser-Cut Joins"] },
+  { id: "ss-bollards", name: "SS Bollards", tagline: "High-durability stainless steel safety bollards.", path: "/products/ss-bollards", specs: ["High-Impact SS304/316", "Safety Reflector Rings", "Cast In-Place"] },
+  { id: "pergolas", name: "Architectural Pergolas", tagline: "Modern tensioned shading sail and louver structures.", path: "/products/pergolas", specs: ["HDPE Polymer Sails", "High-Tension Rigging", "Severe Weather Proof"] },
+  { id: "gazebos", name: "Elegant Gazebos", tagline: "Pre-engineered luxury timber pavilions.", path: "/products/gazebos", specs: ["FSC Teak Pavilions", "Concealed Wiring", "Louver Privacy"] },
+  { id: "pre-fab-homes", name: "Pre Fab Homes", tagline: "Modular residential structures and garden cabins.", path: "/products/pre-fab-homes", specs: ["Insulated Chassis", "Eco WPC Cladding", "48h Rapid Install"] }
 ];
 
 const ProductsHub = () => {
@@ -54,10 +54,31 @@ const ProductsHub = () => {
           {divisions.map((div) => {
             let lookupId = div.id;
             if (div.id === "aluminium-benches") lookupId = "benches";
-            if (div.id === "indoor-furniture" || div.id === "metal-wooden-furniture" || div.id === "ss-bollards") lookupId = "canteen-tables";
-            const matchedProd = products.find(p => p.category === lookupId);
+            let matchedProd = products.find(p => {
+              if (div.id === "aluminium-benches") {
+                return p.category === "benches" && 
+                  ((p.description || "").toLowerCase().includes("aluminium") || 
+                   (p.specifications?.materials || "").toLowerCase().includes("aluminium") || 
+                   (p.title || "").toLowerCase().includes("aluminium"));
+              }
+              return p.category === lookupId;
+            });
+            if (!matchedProd) {
+              matchedProd = products.find(p => p.category === "canteen-tables");
+            }
             const image = matchedProd ? matchedProd.image : "";
             const secondImage = matchedProd && matchedProd.gallery && matchedProd.gallery[1] ? matchedProd.gallery[1] : "";
+            
+            const modelCount = (() => {
+              if (div.id === "aluminium-benches") {
+                return products.filter(p => p.category === "benches" && 
+                  ((p.description || "").toLowerCase().includes("aluminium") || 
+                   (p.specifications?.materials || "").toLowerCase().includes("aluminium") || 
+                   (p.title || "").toLowerCase().includes("aluminium"))
+                ).length;
+              }
+              return products.filter(p => p.category === div.id).length;
+            })();
             
             return (
               <Link
@@ -74,7 +95,7 @@ const ProductsHub = () => {
                   {/* Model Count Badge matching home page style */}
                   <div className="flex gap-1.5 shrink-0 pt-1">
                     <span className="text-[0.65rem] font-bold uppercase tracking-wider rounded-full px-3 py-1.5 bg-[#C9A84C]/10 text-[#C9A84C]">
-                      {div.count} Models
+                      {modelCount} Models
                     </span>
                   </div>
                 </div>

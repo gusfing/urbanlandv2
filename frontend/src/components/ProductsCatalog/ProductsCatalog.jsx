@@ -149,6 +149,22 @@ const categories = [
       <path d="M19 11v7h2v-7" strokeLinecap="round" />
       <path d="M3 11c0-2.5 1.5-2.5 2 0M19 11c0-2.5 1.5-2.5 2 0" strokeLinecap="round" />
     </svg>
+  )},
+  { id: "ss-bollards", name: "SS Bollards", icon: (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <rect x="5" y="4" width="3" height="16" rx="0.5" />
+      <rect x="11" y="4" width="3" height="16" rx="0.5" />
+      <rect x="17" y="4" width="3" height="16" rx="0.5" />
+      <path d="M5 8h3M11 8h3M17 8h3" strokeLinecap="round" />
+      <path d="M2 20h20" strokeLinecap="round" />
+    </svg>
+  )},
+  { id: "metal-wooden-furniture", name: "Metal & Wooden", icon: (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <rect x="4" y="6" width="16" height="12" rx="1" />
+      <path d="M4 10h16M4 14h16" strokeLinecap="round" />
+      <path d="M8 6v12M12 6v12M16 6v12" strokeLinecap="round" />
+    </svg>
   )}
 ];
 

@@ -28,9 +28,11 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
       name: "Products", 
       path: "/products",
       subLinks: [
-        { name: "View All Products", path: "/products" },
-        { name: "Benches", path: "/products/benches" },
+        { name: "Products Directory", path: "/products" },
+        { name: "Full Catalogue", path: "/catalogue" },
+        { name: "Outdoor Benches", path: "/products/benches" },
         { name: "Aluminium Benches", path: "/products/benches/aluminium-benches" },
+        { name: "Bench Planters", path: "/products/bench-planters" },
         { name: "Planters", path: "/products/planters" },
         { name: "Dustbins", path: "/products/dustbins" },
         { name: "Bus Shelters", path: "/products/bus-shelters" },
@@ -38,11 +40,14 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
         { name: "Canteen Tables", path: "/products/canteen-tables" },
         { name: "Cabanas", path: "/products/cabanas" },
         { name: "Poolside Loungers", path: "/products/poolside-loungers" },
-        { name: "Wicker Living Sets", path: "/products/wicker-living-sets" },
-        { name: "Wicker Dining Sets", path: "/products/wicker-dining-sets" },
+        { name: "Wicker Living", path: "/products/wicker-living-sets" },
+        { name: "Wicker Dining", path: "/products/wicker-dining-sets" },
         { name: "Indoor Furniture", path: "/products/indoor-furniture" },
         { name: "Metal & Wooden Furniture", path: "/products/metal-wooden-furniture" },
-        { name: "SS Bollards", path: "/products/ss-bollards" }
+        { name: "SS Bollards", path: "/products/ss-bollards" },
+        { name: "Architectural Pergolas", path: "/products/pergolas" },
+        { name: "Elegant Gazebos", path: "/products/gazebos" },
+        { name: "Pre Fab Homes", path: "/products/pre-fab-homes" }
       ]
     },
     { 

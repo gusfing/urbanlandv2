@@ -300,8 +300,46 @@ const parseWPPostToProduct = (post) => {
  * Falls back to our local high-fidelity products list if all fetch routes are unconfigured or fail.
  */
 export const fetchProducts = async () => {
-  // Bypassed WordPress fetch per user request to use local static catalog with background-removed assets
-  return localProducts;
+  if (!WP_BASE_URL) {
+    console.log("WordPress API URL not configured. Returning local products.");
+    return localProducts;
+  }
+
+  try {
+    let allProducts = [];
+    let page = 1;
+    let keepFetching = true;
+    
+    while (keepFetching) {
+      const res = await fetch(`${WP_BASE_URL}/wp-json/wp/v2/urbanland_product?per_page=100&page=${page}`);
+      if (!res.ok) {
+        if (page > 1) {
+          break;
+        }
+        throw new Error(`HTTP error ${res.status}`);
+      }
+      const data = await res.json();
+      if (!Array.isArray(data) || data.length === 0) {
+        break;
+      }
+      allProducts = [...allProducts, ...data];
+      if (data.length < 100) {
+        keepFetching = false;
+      } else {
+        page++;
+      }
+    }
+    
+    if (allProducts.length === 0) {
+      console.warn("No products returned from WordPress API. Returning local products.");
+      return localProducts;
+    }
+    
+    return allProducts.map((prod) => parseWPProduct(prod));
+  } catch (error) {
+    console.warn("Failed to fetch products from WordPress API. Falling back to local dataset.", error);
+    return localProducts;
+  }
 };
 
 /**
@@ -344,16 +382,22 @@ const parseWPPost = (post) => {
  * Helper: Parses standard WordPress Custom Post Type Product object
  */
 const parseWPProduct = (prod) => {
+  // Resolve gallery first to allow setting main image from it if featuredmedia is absent
+  let gallery = [];
+  if (prod.acf?.gallery) {
+    gallery = Array.isArray(prod.acf.gallery) ? prod.acf.gallery : [prod.acf.gallery];
+  }
+
   // Resolve image
   let image = "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80";
   if (prod._embedded?.["wp:featuredmedia"]?.[0]?.source_url) {
     image = prod._embedded["wp:featuredmedia"][0].source_url;
+  } else if (gallery.length > 0) {
+    image = gallery[0];
   }
 
-  // Resolve multiple gallery images
-  let gallery = [image];
-  if (prod.acf?.gallery) {
-    gallery = Array.isArray(prod.acf.gallery) ? prod.acf.gallery : [image];
+  if (gallery.length === 0) {
+    gallery = [image];
   }
 
   return {

@@ -133,6 +133,22 @@ const categoriesMeta = {
     materials: "HDPE synthetic wicker weave, aluminum frames, Sunbrella® canvas.",
     durability: "Water-repellent cushions, 10+ years UV protection weave.",
     installation: "Free-standing layout with modular connector clips."
+  },
+  "ss-bollards": {
+    title: "SS Bollards",
+    tagline: "High-durability stainless steel safety bollards.",
+    description: "Architectural safety and boundary bollards made from heavy-wall stainless steel with high-impact resistance. Designed for pedestrian protection and pathway traffic control.",
+    materials: "Grade 304 or 316 Stainless Steel, safety reflective rings.",
+    durability: "Corrosion-resistant polished finish, extreme weather resilience.",
+    installation: "Sub-surface concrete embedding or surface flange bolt-down."
+  },
+  "metal-wooden-furniture": {
+    title: "Metal & Wooden Furniture",
+    tagline: "Premium architectural steel and timber furniture.",
+    description: "Heavy-duty outdoor and streetscape elements combining robust metal framing with premium wood cladding. Perfect for tree guards, custom seating, and urban park projects.",
+    materials: "Powder-coated structural steel, FSC-certified Robinia or Teak wood.",
+    durability: "Duplex anti-rust primer, AkzoNobel powder coating, UV-treated wood.",
+    installation: "Concealed chemical anchoring or modular bolt-together system."
   }
 };
 

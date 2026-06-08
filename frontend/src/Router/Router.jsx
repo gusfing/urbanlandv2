@@ -12,6 +12,8 @@ import BusSheltersPage from "../pages/Products/BusSheltersPage";
 import WickerFurniturePage from "../pages/Products/WickerFurniturePage";
 import DustbinsPage from "../pages/Products/DustbinsPage";
 import CategoryDetail from "../pages/Products/CategoryDetail";
+import Catalogue from "../pages/Products/Catalogue";
+import ProductAdmin from "../pages/Admin/ProductAdmin";
 
 // Newly Generated Product Pages
 import AluminiumBenchesPage from "../pages/Products/AluminiumBenchesPage";
@@ -52,6 +54,9 @@ const router = createBrowserRouter([
             
             // Products Sitemap Paths
             { path: "products", element: <ProductsHub /> },
+            { path: "products/all", element: <Catalogue /> },
+            { path: "catalogue", element: <Catalogue /> },
+            { path: "admin", element: <ProductAdmin /> },
             { path: "products/bus-shelters", element: <BusSheltersPage /> },
             { path: "products/wicker-furniture", element: <WickerFurniturePage /> },
             { path: "products/wicker-furniture/wicker-outdoor-products", element: <WickerOutdoorProductsPage /> },
