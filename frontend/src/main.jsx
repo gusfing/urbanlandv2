@@ -14,6 +14,13 @@ root.render(
 
 // --- GLOBAL DRAG-TO-SCROLL FOR ALL SLIDERS ---
 if (typeof window !== "undefined" && typeof document !== "undefined") {
+  // Prevent browser's default image drag ghost preview to allow custom drag-to-scroll
+  document.addEventListener("dragstart", (e) => {
+    if (e.target.closest(".overflow-x-auto")) {
+      e.preventDefault();
+    }
+  });
+
   document.addEventListener("mousedown", (e) => {
     // Find the closest parent that has horizontal overflow scrolling
     const scrollContainer = e.target.closest(".overflow-x-auto");
