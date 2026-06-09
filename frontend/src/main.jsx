@@ -29,19 +29,46 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
     // Prevent drag-to-scroll on text inputs, selects, and textareas where text selection/focus is needed
     if (e.target.closest("input, select, textarea")) return;
 
+    // Cancel any active momentum scrolling animation on click/mousedown
+    if (scrollContainer.momentumId) {
+      cancelAnimationFrame(scrollContainer.momentumId);
+      scrollContainer.momentumId = null;
+    }
+
     let isDown = true;
     let startX = e.pageX - scrollContainer.offsetLeft;
     let scrollLeft = scrollContainer.scrollLeft;
     let hasMoved = false;
 
+    // Kinetic velocity tracking variables
+    let lastX = e.pageX;
+    let lastTime = Date.now();
+    let velocity = 0;
+
     scrollContainer.style.cursor = "grabbing";
     
-    // Temporarily disable smooth scrolling during drag to prevent drag lag
+    // Temporarily disable smooth scrolling and CSS scroll snapping during drag to prevent drag lag and snapping fights
     const originalScrollBehavior = scrollContainer.style.scrollBehavior;
+    const computedStyle = getComputedStyle(scrollContainer);
+    const originalSnapType = scrollContainer.style.scrollSnapType || computedStyle.scrollSnapType || computedStyle.getPropertyValue("scroll-snap-type");
+    
     scrollContainer.style.scrollBehavior = "auto";
+    scrollContainer.style.scrollSnapType = "none";
 
     const onMouseMove = (moveEvent) => {
       if (!isDown) return;
+      
+      const currentX = moveEvent.pageX;
+      const currentTime = Date.now();
+      const dt = currentTime - lastTime;
+      
+      if (dt > 0) {
+        const dx = currentX - lastX;
+        velocity = dx / dt; // pixels per millisecond
+      }
+      
+      lastX = currentX;
+      lastTime = currentTime;
       
       // Calculate delta
       const x = moveEvent.pageX - scrollContainer.offsetLeft;
@@ -56,11 +83,15 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
 
     const onMouseUpOrLeave = () => {
       isDown = false;
-      scrollContainer.style.cursor = "grab";
-      scrollContainer.style.scrollBehavior = originalScrollBehavior;
       document.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseup", onMouseUpOrLeave);
       document.removeEventListener("mouseleave", onMouseUpOrLeave);
+
+      const restoreDefaults = () => {
+        scrollContainer.style.cursor = "grab";
+        scrollContainer.style.scrollBehavior = originalScrollBehavior;
+        scrollContainer.style.scrollSnapType = ""; // remove inline override to restore CSS stylesheet snapping
+      };
 
       // If dragging occurred, intercept next click to prevent routing/actions
       if (hasMoved) {
@@ -70,6 +101,29 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
           scrollContainer.removeEventListener("click", preventClick, true);
         };
         scrollContainer.addEventListener("click", preventClick, true);
+
+        // Apply kinetic momentum scroll animation if released with speed
+        const timeSinceLastMove = Date.now() - lastTime;
+        if (timeSinceLastMove < 100 && Math.abs(velocity) > 0.05) {
+          let momentumVelocity = velocity * 15; // speed factor
+          
+          const step = () => {
+            scrollContainer.scrollLeft -= momentumVelocity;
+            momentumVelocity *= 0.95; // decay factor (friction)
+            
+            if (Math.abs(momentumVelocity) > 0.3 && !isDown) {
+              scrollContainer.momentumId = requestAnimationFrame(step);
+            } else {
+              scrollContainer.momentumId = null;
+              restoreDefaults();
+            }
+          };
+          scrollContainer.momentumId = requestAnimationFrame(step);
+        } else {
+          restoreDefaults();
+        }
+      } else {
+        restoreDefaults();
       }
     };
 
