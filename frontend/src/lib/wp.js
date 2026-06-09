@@ -178,21 +178,111 @@ const fallbackPosts = [
   }
 ];
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Two-tier cache: in-memory (zero latency, survives SPA navigation) +
+// sessionStorage (survives page refreshes within the same browser tab session)
+// ─────────────────────────────────────────────────────────────────────────────
+const CACHE_KEY_POSTS = "ul_wp_posts_cache";
+const CACHE_KEY_POST_PREFIX = "ul_wp_post_";
+
+// Level 1 – runtime in-memory (fastest, wiped on full page reload)
+let _postsMemoryCache = null;
+const _postBySlugMemoryCache = {};
+
 /**
- * Fetch blog posts from Headless WordPress API
- * Automatically falls back to standard mock posts if request fails or URL is empty.
+ * Read/write sessionStorage safely (it can throw in some private browsers).
  */
-export const fetchPosts = async () => {
-  console.log("Returning local fallback blog posts.");
-  return fallbackPosts;
+const ssGet = (key) => {
+  try { return JSON.parse(sessionStorage.getItem(key)); } catch { return null; }
+};
+const ssSet = (key, value) => {
+  try { sessionStorage.setItem(key, JSON.stringify(value)); } catch { /* noop */ }
 };
 
 /**
- * Fetch a single blog post by slug
+ * Fetch blog posts from Headless WordPress API.
+ * Returns instantly from memory or sessionStorage on repeat visits.
+ * Only fires a network request once per browser session.
+ */
+export const fetchPosts = async () => {
+  // Level 1 – in-memory hit (SPA navigation between pages)
+  if (_postsMemoryCache) return _postsMemoryCache;
+
+  // Level 2 – sessionStorage hit (hard refresh within same tab session)
+  const cached = ssGet(CACHE_KEY_POSTS);
+  if (cached) {
+    _postsMemoryCache = cached;
+    return cached;
+  }
+
+  // Level 3 – network request
+  try {
+    const response = await fetch(`${WP_BASE_URL}/wp-json/wp/v2/posts?_embed&per_page=100`);
+    if (!response.ok) throw new Error(`WordPress API returned status ${response.status}`);
+    const posts = await response.json();
+    if (Array.isArray(posts)) {
+      const parsed = posts.map(parseWPPost);
+      _postsMemoryCache = parsed;
+      ssSet(CACHE_KEY_POSTS, parsed);
+      return parsed;
+    }
+    throw new Error("Invalid response format from WordPress API");
+  } catch (error) {
+    console.warn("Error fetching live posts from WordPress, falling back to local posts:", error);
+    return fallbackPosts;
+  }
+};
+
+/**
+ * Fetch a single blog post by slug.
+ * First checks in-memory cache, then the full posts cache, then sessionStorage,
+ * then fires a targeted network request only if nothing is cached yet.
  */
 export const fetchPostBySlug = async (slug) => {
-  const found = fallbackPosts.find((p) => p.slug === slug);
-  return found || null;
+  // Level 1a – per-slug in-memory cache
+  if (_postBySlugMemoryCache[slug]) return _postBySlugMemoryCache[slug];
+
+  // Level 1b – search within the already-fetched all-posts memory cache
+  if (_postsMemoryCache) {
+    const found = _postsMemoryCache.find((p) => p.slug === slug);
+    if (found) { _postBySlugMemoryCache[slug] = found; return found; }
+  }
+
+  // Level 2 – sessionStorage for this specific slug
+  const cached = ssGet(`${CACHE_KEY_POST_PREFIX}${slug}`);
+  if (cached) {
+    _postBySlugMemoryCache[slug] = cached;
+    return cached;
+  }
+
+  // Level 2b – parse from full posts sessionStorage cache if available
+  const allCached = ssGet(CACHE_KEY_POSTS);
+  if (allCached) {
+    const found = allCached.find((p) => p.slug === slug);
+    if (found) {
+      _postBySlugMemoryCache[slug] = found;
+      return found;
+    }
+  }
+
+  // Level 3 – targeted network request
+  try {
+    const response = await fetch(`${WP_BASE_URL}/wp-json/wp/v2/posts?_embed&slug=${encodeURIComponent(slug)}`);
+    if (!response.ok) throw new Error(`WordPress API returned status ${response.status}`);
+    const posts = await response.json();
+    if (Array.isArray(posts) && posts.length > 0) {
+      const parsed = parseWPPost(posts[0]);
+      _postBySlugMemoryCache[slug] = parsed;
+      ssSet(`${CACHE_KEY_POST_PREFIX}${slug}`, parsed);
+      return parsed;
+    }
+    const found = fallbackPosts.find((p) => p.slug === slug);
+    return found || null;
+  } catch (error) {
+    console.warn(`Error fetching post "${slug}" from WordPress, using fallback:`, error);
+    const found = fallbackPosts.find((p) => p.slug === slug);
+    return found || null;
+  }
 };
 
 /**

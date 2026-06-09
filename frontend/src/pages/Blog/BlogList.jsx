@@ -139,13 +139,16 @@ const BlogList = () => {
         ) : (
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.map((post) => {
+              {filteredPosts.map((post, idx) => {
                 // Formatting Date
                 const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "short",
                   day: "numeric"
                 });
+
+                // First 3 cards are above the fold — load eagerly with high priority
+                const isAboveFold = idx < 3;
 
                 return (
                   <Link
@@ -159,7 +162,9 @@ const BlogList = () => {
                         src={post.featured_image}
                         alt={post.title?.rendered || "Featured post"}
                         className="w-full h-full object-cover transform group-hover:scale-103 transition-transform duration-700 ease-out"
-                        loading="lazy"
+                        loading={isAboveFold ? "eager" : "lazy"}
+                        fetchpriority={isAboveFold ? "high" : "auto"}
+                        decoding="async"
                       />
                       {/* Floating Category Badge */}
                       {post.category_names?.[0] && (

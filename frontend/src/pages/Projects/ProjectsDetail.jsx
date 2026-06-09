@@ -517,11 +517,7 @@ const ProjectsDetail = () => {
                       alt={`Challenge ${idx + 1}`} 
                       className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" 
                     />
-                    <span className="absolute top-4 left-4 w-8 h-8 rounded-full bg-red-50/90 backdrop-blur-sm text-red-600 flex items-center justify-center select-none border border-red-100/50 shadow-sm">
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M12 3a9 9 0 100 18 9 9 0 000-18z" />
-                      </svg>
-                    </span>
+
                   </div>
                   <div className="p-6 flex-1 flex flex-col justify-start">
                     <p className="text-xs sm:text-sm text-[#2D2D2D]/85 leading-relaxed font-semibold">

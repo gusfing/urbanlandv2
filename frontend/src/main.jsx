@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import router from "./Router/Router";
 import "./index.css";
+import { fetchPosts } from "./lib/wp";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
@@ -11,6 +12,16 @@ root.render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+
+// Pre-warm the blog cache in the background immediately after the first render.
+// This way blog data is already cached when the user navigates to /blog or any article.
+// Uses requestIdleCallback when available, or a short setTimeout as a fallback.
+const prewarm = () => fetchPosts().catch(() => {/* silently ignore errors */});
+if (typeof requestIdleCallback !== "undefined") {
+  requestIdleCallback(prewarm, { timeout: 3000 });
+} else {
+  setTimeout(prewarm, 500);
+}
 
 // --- GLOBAL DRAG-TO-SCROLL FOR ALL SLIDERS ---
 if (typeof window !== "undefined" && typeof document !== "undefined") {

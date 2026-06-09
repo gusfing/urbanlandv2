@@ -158,12 +158,12 @@
 }
 
 .gallery-topText h3 {
-    font-size: 0.85rem;
+    font-size: 0.7rem;
     font-weight: 700;
     color: #F7F4EF; /* Pure off-white to match reference */
     margin: 0;
     border: 1.5px solid rgba(247, 244, 239, 0.85); /* Solid off-white border outline */
-    padding: 0.5rem 1.15rem;
+    padding: 0.35rem 0.95rem;
     border-radius: 9999px;
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(4px);

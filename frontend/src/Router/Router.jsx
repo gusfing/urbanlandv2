@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
+import RootErrorBoundary from "../components/RootErrorBoundary";
 import Home from "../pages/Home/Home";
 import BlogList from "../pages/Blog/BlogList";
 import BlogDetail from "../pages/Blog/BlogDetail";
@@ -45,67 +46,74 @@ const router = createBrowserRouter([
     {
         path: "/", // Deployed at root domain
         element: <MainLayout />, // Layout wrapper
+        errorElement: <RootErrorBoundary layout={false} />, // Catch all layout/global level errors full-screen
         children: [
-            { path: "", element: <Home /> }, // default page
-            { path: "blog", element: <BlogList /> }, // blogs collection listing
-            { path: "blog/:slug", element: <BlogDetail /> }, // single blog article details
-            
-            // Products Sitemap Paths
-            { path: "products", element: <ProductsHub /> },
-            { path: "products/all", element: <Catalogue /> },
-            { path: "catalogue", element: <Catalogue /> },
-            { path: "admin", element: <ProductAdmin /> },
-            { path: "products/bus-shelters", element: <BusSheltersPage /> },
-            { path: "products/wicker-furniture", element: <WickerFurniturePage /> },
-            { path: "products/wicker-furniture/wicker-outdoor-products", element: <WickerOutdoorProductsPage /> },
-            { path: "products/dustbins", element: <DustbinsPage /> },
-            { path: "products/outdoor-dustbins", element: <DustbinsPage /> },
-            { path: "products/benches/aluminium-benches", element: <AluminiumBenchesPage /> },
-            { path: "products/benches", element: <BenchesPage /> },
-            { path: "products/wpc-benches", element: <BenchesPage /> },
-            { path: "products/cabanas", element: <CabanasPage /> },
-            { path: "products/canteen-tables", element: <CanteenTablesPage /> },
-            { path: "products/canteen-furniture", element: <CanteenTablesPage /> },
-            { path: "products/car-shelters", element: <CarSheltersPage /> },
-            { path: "products/car-parking-sheds", element: <CarSheltersPage /> },
-            { path: "products/car-sheds", element: <CarSheltersPage /> },
-            { path: "products/indoor-furniture", element: <IndoorFurniturePage /> },
-            { path: "products/metal-wooden-furniture", element: <MetalWoodenFurniturePage /> },
-            { path: "products/planters", element: <PlantersPage /> },
-            { path: "products/poolside-loungers", element: <PoolsideLoungersPage /> },
-            { path: "products/poolside-furniture", element: <PoolsideLoungersPage /> },
-            { path: "products/ss-bollards", element: <SSBollardsPage /> },
-            { path: "products/wicker-outdoor-products", element: <WickerOutdoorProductsPage /> },
-            { path: "products/wicker-living-sets", element: <WickerFurniturePage /> },
-            { path: "products/wicker-dining-sets", element: <WickerOutdoorProductsPage /> },
-            { path: "products/:category", element: <CategoryDetail /> },
-            { path: "products/:category/:subcategory", element: <CategoryDetail /> },
-            
-            // Solutions Sitemap Paths
-            { path: "solutions", element: <SolutionsHub /> },
-            { path: "solutions/:vertical", element: <SolutionsDetail /> },
-            
-            // Projects Sitemap Paths
-            { path: "projects", element: <ProjectsHub /> },
-            { path: "projects/:segment", element: <ProjectsDetail /> },
-            
-            // About Us Sitemap Path
-            { path: "about-us", element: <AboutUs /> },
-            
-            // Resources Sitemap Paths
-            { path: "resources", element: <ResourcesHub /> },
-            { path: "resources/downloads", element: <Downloads /> },
-            { path: "faq", element: <FAQ /> },
-            { path: "materials", element: <Materials /> },
-            
-            // Contact & Scope Quote Builder Paths
-            { path: "contact", element: <Contact /> },
-            { path: "get-quote", element: <Contact /> },
-            
-            // Supporting SEO & Legal Pages
-            { path: "sustainability", element: <Sustainability /> },
-            { path: "privacy-policy", element: <PrivacyPolicy /> },
-            { path: "style-guide", element: <StyleGuide /> }
+            {
+                // Pathless nested route to trap page-level errors inside the layout
+                errorElement: <RootErrorBoundary layout={true} />,
+                children: [
+                    { path: "", element: <Home /> }, // default page
+                    { path: "blog", element: <BlogList /> }, // blogs collection listing
+                    { path: "blog/:slug", element: <BlogDetail /> }, // single blog article details
+                    
+                    // Products Sitemap Paths
+                    { path: "products", element: <ProductsHub /> },
+                    { path: "products/all", element: <Catalogue /> },
+                    { path: "catalogue", element: <Catalogue /> },
+                    { path: "admin", element: <ProductAdmin /> },
+                    { path: "products/bus-shelters", element: <BusSheltersPage /> },
+                    { path: "products/wicker-furniture", element: <WickerFurniturePage /> },
+                    { path: "products/wicker-furniture/wicker-outdoor-products", element: <WickerOutdoorProductsPage /> },
+                    { path: "products/dustbins", element: <DustbinsPage /> },
+                    { path: "products/outdoor-dustbins", element: <DustbinsPage /> },
+                    { path: "products/benches/aluminium-benches", element: <AluminiumBenchesPage /> },
+                    { path: "products/benches", element: <BenchesPage /> },
+                    { path: "products/wpc-benches", element: <BenchesPage /> },
+                    { path: "products/cabanas", element: <CabanasPage /> },
+                    { path: "products/canteen-tables", element: <CanteenTablesPage /> },
+                    { path: "products/canteen-furniture", element: <CanteenTablesPage /> },
+                    { path: "products/car-shelters", element: <CarSheltersPage /> },
+                    { path: "products/car-parking-sheds", element: <CarSheltersPage /> },
+                    { path: "products/car-sheds", element: <CarSheltersPage /> },
+                    { path: "products/indoor-furniture", element: <IndoorFurniturePage /> },
+                    { path: "products/metal-wooden-furniture", element: <MetalWoodenFurniturePage /> },
+                    { path: "products/planters", element: <PlantersPage /> },
+                    { path: "products/poolside-loungers", element: <PoolsideLoungersPage /> },
+                    { path: "products/poolside-furniture", element: <PoolsideLoungersPage /> },
+                    { path: "products/ss-bollards", element: <SSBollardsPage /> },
+                    { path: "products/wicker-outdoor-products", element: <WickerOutdoorProductsPage /> },
+                    { path: "products/wicker-living-sets", element: <WickerFurniturePage /> },
+                    { path: "products/wicker-dining-sets", element: <WickerOutdoorProductsPage /> },
+                    { path: "products/:category", element: <CategoryDetail /> },
+                    { path: "products/:category/:subcategory", element: <CategoryDetail /> },
+                    
+                    // Solutions Sitemap Paths
+                    { path: "solutions", element: <SolutionsHub /> },
+                    { path: "solutions/:vertical", element: <SolutionsDetail /> },
+                    
+                    // Projects Sitemap Paths
+                    { path: "projects", element: <ProjectsHub /> },
+                    { path: "projects/:segment", element: <ProjectsDetail /> },
+                    
+                    // About Us Sitemap Path
+                    { path: "about-us", element: <AboutUs /> },
+                    
+                    // Resources Sitemap Paths
+                    { path: "resources", element: <ResourcesHub /> },
+                    { path: "resources/downloads", element: <Downloads /> },
+                    { path: "faq", element: <FAQ /> },
+                    { path: "materials", element: <Materials /> },
+                    
+                    // Contact & Scope Quote Builder Paths
+                    { path: "contact", element: <Contact /> },
+                    { path: "get-quote", element: <Contact /> },
+                    
+                    // Supporting SEO & Legal Pages
+                    { path: "sustainability", element: <Sustainability /> },
+                    { path: "privacy-policy", element: <PrivacyPolicy /> },
+                    { path: "style-guide", element: <StyleGuide /> }
+                ]
+            }
         ],
     },
 ]);

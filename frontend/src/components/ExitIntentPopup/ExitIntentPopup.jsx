@@ -179,37 +179,49 @@ const ExitIntentPopup = () => {
         const isShown = sessionStorage.getItem(sessionKey);
 
         if (!isShown) {
-            const handleMouseLeave = (e) => {
-                if (e.clientY < 20) {
-                    triggerPopup();
-                }
-            };
-
-            const handleScroll = () => {
-                const scrollPosition = window.scrollY + window.innerHeight;
-                const totalHeight = document.documentElement.scrollHeight;
-                if (totalHeight > 0 && scrollPosition / totalHeight >= 0.7) {
-                    triggerPopup();
-                }
-            };
-
-            const handleVisibilityChange = () => {
-                if (document.hidden) {
-                    triggerPopup();
-                }
-            };
+            // Track whether the user has reached 70% scroll depth on this page.
+            // Exit intent and tab-switch triggers are ONLY permitted after this gate is reached.
+            let hasReached70 = false;
 
             const triggerPopup = () => {
                 setIsVisible(true);
                 sessionStorage.setItem(sessionKey, "true");
+                // Clean up all listeners once popup fires
                 document.removeEventListener("mouseleave", handleMouseLeave);
                 window.removeEventListener("scroll", handleScroll);
                 document.removeEventListener("visibilitychange", handleVisibilityChange);
                 trackEvent("popup_trigger");
             };
 
+            const handleScroll = () => {
+                const scrollPercent =
+                    (window.scrollY + window.innerHeight) /
+                    document.documentElement.scrollHeight;
+
+                if (!hasReached70 && scrollPercent >= 0.7) {
+                    // User just crossed 70% for the first time — mark gate as open
+                    hasReached70 = true;
+                    // Fire the popup immediately at this point
+                    triggerPopup();
+                }
+            };
+
+            // Exit intent: mouse leaves top of viewport — only after 70% scroll gate
+            const handleMouseLeave = (e) => {
+                if (hasReached70 && e.clientY < 20) {
+                    triggerPopup();
+                }
+            };
+
+            // Tab switching / app minimising — only after 70% scroll gate
+            const handleVisibilityChange = () => {
+                if (hasReached70 && document.hidden) {
+                    triggerPopup();
+                }
+            };
+
             document.addEventListener("mouseleave", handleMouseLeave);
-            window.addEventListener("scroll", handleScroll);
+            window.addEventListener("scroll", handleScroll, { passive: true });
             document.addEventListener("visibilitychange", handleVisibilityChange);
 
             return () => {
