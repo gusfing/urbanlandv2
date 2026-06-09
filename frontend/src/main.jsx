@@ -40,10 +40,8 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
     let scrollLeft = scrollContainer.scrollLeft;
     let hasMoved = false;
 
-    // Kinetic velocity tracking variables
-    let lastX = e.pageX;
-    let lastTime = Date.now();
-    let velocity = 0;
+    // Kinetic velocity tracking variables (100ms moving window)
+    let dragHistory = [{ x: e.pageX, time: Date.now() }];
 
     scrollContainer.style.cursor = "grabbing";
     
@@ -60,15 +58,13 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
       
       const currentX = moveEvent.pageX;
       const currentTime = Date.now();
-      const dt = currentTime - lastTime;
+      dragHistory.push({ x: currentX, time: currentTime });
       
-      if (dt > 0) {
-        const dx = currentX - lastX;
-        velocity = dx / dt; // pixels per millisecond
+      // Keep only events from the last 100ms
+      const cutoff = currentTime - 100;
+      while (dragHistory.length > 0 && dragHistory[0].time < cutoff) {
+        dragHistory.shift();
       }
-      
-      lastX = currentX;
-      lastTime = currentTime;
       
       // Calculate delta
       const x = moveEvent.pageX - scrollContainer.offsetLeft;
@@ -103,15 +99,30 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
         scrollContainer.addEventListener("click", preventClick, true);
 
         // Apply kinetic momentum scroll animation if released with speed
-        const timeSinceLastMove = Date.now() - lastTime;
-        if (timeSinceLastMove < 100 && Math.abs(velocity) > 0.05) {
-          let momentumVelocity = velocity * 15; // speed factor
+        const currentTime = Date.now();
+        const cutoff = currentTime - 100;
+        while (dragHistory.length > 0 && dragHistory[0].time < cutoff) {
+          dragHistory.shift();
+        }
+
+        let velocity = 0;
+        if (dragHistory.length >= 2) {
+          const first = dragHistory[0];
+          const last = dragHistory[dragHistory.length - 1];
+          const dt = last.time - first.time;
+          if (dt > 10) {
+            velocity = (last.x - first.x) / dt; // pixels per ms
+          }
+        }
+
+        if (Math.abs(velocity) > 0.05) {
+          let momentumVelocity = velocity * 16; // speed factor
           
           const step = () => {
             scrollContainer.scrollLeft -= momentumVelocity;
             momentumVelocity *= 0.95; // decay factor (friction)
             
-            if (Math.abs(momentumVelocity) > 0.3 && !isDown) {
+            if (Math.abs(momentumVelocity) > 0.15 && !isDown) {
               scrollContainer.momentumId = requestAnimationFrame(step);
             } else {
               scrollContainer.momentumId = null;
