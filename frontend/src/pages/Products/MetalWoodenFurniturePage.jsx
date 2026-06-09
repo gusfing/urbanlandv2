@@ -34,6 +34,8 @@ const brandLogos = [
     { name: "Godrej Properties", img: logo10 }
 ];
 
+const carouselImages = [carouselImg1, carouselImg2, carouselImg3];
+
 const MetalWoodenFurniturePage = () => {
     const [activeTab, setActiveTab] = useState("standard");
     const [faqOpen, setFaqOpen] = useState(Array(5).fill(false));
@@ -383,53 +385,50 @@ const MetalWoodenFurniturePage = () => {
             </div>
 
             {/* PREMIUM HORIZONTAL CAROUSEL HERO SECTION */}
-            <section className="w-full mb-8 relative select-none">
+            <section className="w-full mb-8 relative select-none group/carousel">
+                {/* Floating Left Navigation Button */}
+                <button
+                    onClick={scrollHeroLeft}
+                    className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 bg-white/90 backdrop-blur-sm hover:bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer border border-black/5 opacity-100 lg:opacity-0 lg:group-hover/carousel:opacity-100"
+                    aria-label="Scroll left"
+                >
+                    <svg className="w-5 h-5 md:w-6 md:h-6 text-black" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                {/* Floating Right Navigation Button */}
+                <button
+                    onClick={scrollHeroRight}
+                    className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 bg-white/90 backdrop-blur-sm hover:bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer border border-black/5 opacity-100 lg:opacity-0 lg:group-hover/carousel:opacity-100"
+                    aria-label="Scroll right"
+                >
+                    <svg className="w-5 h-5 md:w-6 md:h-6 text-black" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
                 <div 
                     ref={heroScrollRef}
-                    className="flex gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth pb-4 px-6 md:px-12"
+                    className="flex gap-8 overflow-x-auto scrollbar-none snap-x snap-mandatory scroll-smooth pb-4 px-8 md:px-16"
                 >
                     {[{"tag":"Product Spotlight","h":"Bespoke Metal Wooden<br />Site Furniture in India","label":"01","desc":"Engineered steel-and-wood benches and seating"},{"tag":"Architectural Blend","h":"Perfect fusion of<br />structural metals &<br />natural timbers","label":"02","desc":"FSC certified Robinia, Teak or WPC wood"},{"tag":"B2B Guarantee","h":"2-Year Warranty<br />& ISO Certified<br />Standards","label":"03","desc":"Specified by top developers, hotels and public sectors"},{"tag":"Corrosion Proof","h":"Galvanized frames<br />coated with premium<br />Akzonobel powder","label":"04","desc":"Corrosion-resistant metal structures for public spaces"},{"tag":"Bespoke Shapes","h":"Custom linear, curved<br />or geometric modular<br />seating layouts","label":"05","desc":"Tailored to public parks and township plazas"}].map((card, idx) => (
-                        <div key={idx} className="flex-shrink-0 snap-start w-[90vw] sm:w-[65vw] md:w-[48vw] lg:w-[32.5vw] aspect-[3/4.2] min-h-[420px] sm:min-h-[520px] md:min-h-[620px] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
+                        <div key={idx} className="flex-shrink-0 snap-start w-[84vw] sm:w-[64vw] md:w-[46vw] lg:w-[32vw] aspect-[3/3.8] rounded-[1.75rem] overflow-hidden flex flex-col justify-between p-8 md:p-10 relative group transition-all duration-500 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.1)] border border-black/5">
                             <img 
-                                src={idx % 2 === 0 ? carouselImg1 : carouselImg2} 
-                                alt={card.tag} 
+                                src={carouselImages[idx % carouselImages.length]} 
+                                alt={card.tag || "carousel-image"} 
                                 className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/55 pointer-events-none" />
 
                             <div className="z-10">
-                                <span className="text-[9px] font-black uppercase tracking-wider bg-[#C9A84C] text-[#232120] px-3.5 py-1.5 rounded-full w-fit mb-3 block">
-                                    {card.tag}
-                                </span>
-                                <h3 className="text-3xl md:text-[2.6rem] font-light uppercase tracking-tight text-white leading-[1.05] font-sans" dangerouslySetInnerHTML={{ __html: card.h }} />
+                                <h3 className="carousel-card-title tracking-tight text-white leading-[1.1] font-sans" dangerouslySetInnerHTML={{ __html: card.h }} />
                             </div>
 
                             <div className="z-10 flex justify-between items-end w-full">
-                                <span className="text-[11px] font-bold tracking-wide text-white/90 uppercase">
-                                    <span className="font-black mr-2 text-[#C9A84C]">{card.label}</span>{card.desc}
+                                <span className="text-xs md:text-[13px] font-normal tracking-wide text-white/90">
+                                    <span className="font-bold mr-3 text-white">{card.label}</span>{card.desc}
                                 </span>
-                                {idx === 2 && (
-                                    <button 
-                                        onClick={scrollHeroRight}
-                                        className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
-                                        aria-label="Next slide"
-                                    >
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </button>
-                                )}
-                                {idx === 4 && (
-                                    <button 
-                                        onClick={scrollHeroStart}
-                                        className="w-12 h-12 bg-white text-[#1A1A1A] rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer pointer-events-auto shrink-0 border border-black/5"
-                                        aria-label="Start over"
-                                    >
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18" />
-                                        </svg>
-                                    </button>
-                                )}
                             </div>
                         </div>
                     ))}

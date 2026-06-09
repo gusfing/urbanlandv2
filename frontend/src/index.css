@@ -572,3 +572,33 @@ font-size: 0.75rem; /* Converted to rem for TV & 4K monitor scaling */
 .overflow-x-auto:active {
   cursor: grabbing;
 }
+
+/* Custom Responsive Title Scaling for Product Carousels */
+.carousel-card-title {
+  font-family: "Outfit", sans-serif;
+  line-height: 1.1;
+  font-weight: 300; /* Light weight to match font-light */
+}
+
+/* Small Screens (Mobile - < 576px) */
+@media (max-width: 575.98px) {
+  .carousel-card-title {
+    padding: 1.25rem 1.25rem 0.85rem !important;
+    font-size: 28px !important;
+  }
+}
+
+/* Medium/Large Screens (>= 576px) */
+@media (min-width: 576px) {
+  .carousel-card-title {
+    padding: 0 !important;
+    font-size: calc(14px + 1.5vw) !important;
+  }
+}
+
+/* Ultra-wide/High Screens (Height > 1081px) */
+@media (min-height: 1082px) {
+  .carousel-card-title {
+    font-size: 64px !important;
+  }
+}
