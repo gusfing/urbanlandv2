@@ -178,8 +178,7 @@ const Hero = () => {
           />
         ))}
 
-        {/* Ambient Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/55 z-10 pointer-events-none" />
+        {/* Ambient Overlay Gradient Removed */}
 
         {/* Fog/Smoke Video Layer */}
         <video
