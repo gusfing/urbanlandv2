@@ -387,7 +387,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
               {/* All Products Pill Button */}
               <button
                 onClick={() => setActiveCategory("all")}
-                className={`flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer shrink-0 ${
+                className={`flex items-center gap-1.5 px-5 py-2.5 rounded-full text-xs font-normal uppercase tracking-wider transition-all duration-300 cursor-pointer shrink-0 ${
                   activeCategory === "all"
                     ? "bg-[#2C5F2E] text-[#F7F4EF] shadow-sm border border-[#2C5F2E] scale-95"
                     : "bg-[#2D2D2D]/5 text-[#2D2D2D] border border-[#2D2D2D]/10 hover:bg-[#2D2D2D]/10"
@@ -407,7 +407,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
                   <button
                     key={cat.id}
                     onClick={() => setActiveCategory(isActive ? "all" : cat.id)}
-                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide border transition-all duration-300 cursor-pointer shrink-0 ${
+                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-normal tracking-wide border transition-all duration-300 cursor-pointer shrink-0 ${
                       isActive
                         ? "bg-[#2D2D2D] text-[#F7F4EF] border-[#2D2D2D] shadow-sm scale-95"
                         : "border-[#2D2D2D]/20 text-[#2D2D2D]/85 hover:bg-[#2D2D2D]/5"
@@ -456,7 +456,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
               Array.from({ length: 4 }).map((_, idx) => (
                 <div
                   key={idx}
-                  className="min-w-[310px] sm:min-w-[380px] md:min-w-[450px] aspect-[4/5] bg-white rounded-[37.5px] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] animate-pulse select-none"
+                  className="min-w-[360px] sm:min-w-[420px] md:min-w-[500px] aspect-[4/5] bg-white rounded-[37.5px] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] animate-pulse select-none"
                 >
                   <div className="flex justify-between items-start gap-4">
                     <div className="h-6 w-32 bg-black/10 rounded-md" />
@@ -478,8 +478,8 @@ const ProductsCatalog = ({ showTitle = true }) => {
                   onClick={() => setSelectedProduct(product)}
                   className={`catalog-card bg-white rounded-[37.5px] p-4 md:p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] transition-all duration-500 group cursor-pointer block aspect-auto md:aspect-[4/5] ${
                     filteredProducts.length === 1 
-                      ? 'w-[310px] sm:w-[350px] md:w-[450px] shrink-0' 
-                      : 'min-w-[310px] sm:min-w-[380px] md:min-w-[450px]'
+                      ? 'w-[360px] sm:w-[420px] md:w-[500px] shrink-0' 
+                      : 'min-w-[360px] sm:min-w-[420px] md:min-w-[500px]'
                   }`}
                 >
                   {/* DESKTOP CARD LAYOUT */}
@@ -495,7 +495,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
                         {product.badges.map((badge, idx) => (
                           <span
                             key={idx}
-                            className={`text-[0.65rem] font-bold uppercase tracking-wider rounded-full px-2.5 py-1 ${
+                            className={`text-[0.65rem] font-normal uppercase tracking-wider rounded-full px-2.5 py-1 ${
                               badge === "new"
                                 ? "bg-[#2C5F2E] text-white"
                                 : "bg-[#C9A84C]/10 text-[#C9A84C]"

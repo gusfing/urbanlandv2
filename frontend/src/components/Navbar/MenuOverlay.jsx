@@ -28,7 +28,6 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
       name: "Products", 
       path: "/products",
       subLinks: [
-        { name: "Products Directory", path: "/products" },
         { name: "Full Catalogue", path: "/catalogue" },
         { name: "Outdoor Benches", path: "/products/benches" },
         { name: "Aluminium Benches", path: "/products/benches/aluminium-benches" },

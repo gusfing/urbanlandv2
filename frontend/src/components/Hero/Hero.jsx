@@ -159,7 +159,7 @@ const Hero = () => {
   };
 
   return (
-    <section ref={heroSectionRef} id="hero" className="hero-section w-full md:h-dvh h-[100vh] relative">
+    <section ref={heroSectionRef} id="hero" className="hero-section w-full h-[100dvh] relative">
       <div className="relative w-full h-full overflow-hidden bg-[#F7F4EF]">
         
         {/* Background Images */}
@@ -168,7 +168,7 @@ const Hero = () => {
             key={index}
             src={slide.image}
             alt={slide.title}
-            className={`hero-slide-bg slide-bg-${index} absolute -top-[10%] -bottom-[10%] inset-x-0 w-full h-full object-cover pointer-events-none`}
+            className={`hero-slide-bg slide-bg-${index} absolute inset-0 w-full h-full object-cover pointer-events-none`}
             style={{
               opacity: index === 0 ? 1 : 0,
             }}

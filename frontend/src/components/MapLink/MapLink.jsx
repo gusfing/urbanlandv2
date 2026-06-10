@@ -179,6 +179,17 @@ const MapLink = () => {
                                 <p className="text-[#F7F4EF] text-xs font-semibold">Shelters</p>
                             </div>
                         </div>
+
+                        {/* CTA Button */}
+                        <a
+                            href="/catalogue"
+                            className="mt-6 w-full flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-[#C9A84C] hover:bg-[#e5c76b] text-[#1A1A1A] text-[11px] font-black uppercase tracking-widest transition-all duration-300 cursor-pointer shadow-md hover:shadow-lg no-underline"
+                        >
+                            View All Products
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
                     </div>
 
                     {/* Close Button */}

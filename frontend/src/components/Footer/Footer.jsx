@@ -22,10 +22,10 @@ const Footer = () => {
                 {/* Column 1: Brand */}
                 <div className="flex flex-col gap-4">
                     <h3 className="text-[#C9A84C] text-lg font-bold uppercase tracking-wider">Urbanland Products</h3>
-                    <p className="text-xs text-[#F7F4EF]/75 leading-relaxed font-light">
+                    <p className="text-sm text-[#F7F4EF]/75 leading-relaxed font-light">
                         Outdoor & Urban Furniture Manufacturer in India
                     </p>
-                    <p className="text-xs text-[#F7F4EF]/55 leading-relaxed font-light">
+                    <p className="text-sm text-[#F7F4EF]/55 leading-relaxed font-light">
                         Vasai Virar, Maharashtra | ISO 9001:2015 Certified
                     </p>
                 </div>
@@ -33,8 +33,8 @@ const Footer = () => {
                 {/* Column 2: Products */}
                 <div className="flex flex-col gap-4">
                     <h3 className="text-[#C9A84C] text-sm font-bold uppercase tracking-wider">Products</h3>
-                    <ul className="flex flex-col gap-2.5 text-xs text-[#F7F4EF]/75 list-none p-0 m-0 font-light">
-                        <li><Link to="/products/benches" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Outdoor Benches</Link></li>
+                    <ul className="flex flex-col gap-2.5 text-sm text-[#F7F4EF]/75 list-none p-0 m-0 font-light">
+                        <li><Link to="/products/benches" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75 text-sm">Outdoor Benches</Link></li>
                                                 <li><Link to="/products/planters" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Concrete Planters</Link></li>
                         <li><Link to="/products/dustbins" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Litter & Recycling Bins</Link></li>
                         <li><Link to="/products/bus-shelters" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Smart Bus Shelters</Link></li>
@@ -55,7 +55,7 @@ const Footer = () => {
                 {/* Column 3: Solutions */}
                 <div className="flex flex-col gap-4">
                     <h3 className="text-[#C9A84C] text-sm font-bold uppercase tracking-wider">Solutions</h3>
-                    <ul className="flex flex-col gap-2.5 text-xs text-[#F7F4EF]/75 list-none p-0 m-0 font-light">
+                    <ul className="flex flex-col gap-2.5 text-sm text-[#F7F4EF]/75 list-none p-0 m-0 font-light">
                         <li><Link to="/solutions/real-estate" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Real Estate & Townships</Link></li>
                         <li><Link to="/solutions/hotels-resorts" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Hotels & Resorts</Link></li>
                         <li><Link to="/solutions/hospitals" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/75">Hospitals & Healthcare</Link></li>
@@ -67,7 +67,7 @@ const Footer = () => {
                 {/* Column 4: Contact & Trust Badges */}
                 <div className="flex flex-col gap-4">
                     <h3 className="text-[#C9A84C] text-sm font-bold uppercase tracking-wider">Contact & Trust</h3>
-                    <div className="flex flex-col gap-2.5 text-xs text-[#F7F4EF]/75 leading-relaxed font-light">
+                    <div className="flex flex-col gap-2.5 text-sm text-[#F7F4EF]/75 leading-relaxed font-light">
                         <p>Phone: +91 20 6789 2200</p>
                         <p>Email: info@urbanlandproducts.com</p>
                         <p>WhatsApp: +91 97732 46830</p>
@@ -86,7 +86,7 @@ const Footer = () => {
                 <div className="flex flex-col gap-1 text-center md:text-left">
                     <p>© 2026 Urbanland Products. All rights reserved.   |   <Link to="/privacy-policy" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Privacy Policy</Link>   |   <Link to="/sitemap" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Sitemap</Link>   |   <Link to="/style-guide" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Style Guide</Link>   |   <Link to="/admin" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Admin Panel</Link></p>
                     <p className="text-[#F7F4EF]/60 font-medium tracking-wide mt-1.5">
-                        Outdoor Furniture Manufacturer in India — WPC Benches, Bus Shelters, Concrete Planters & Urban Street Furniture
+                        Outdoor Furniture Manufacturer in India — Eco-Friendly Benches, Bus Shelters, Concrete Planters &amp; Urban Street Furniture
                     </p>
                 </div>
                 
