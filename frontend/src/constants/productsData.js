@@ -1,4 +1,5 @@
 // Import product images (JPEG format)
+import { getOptimizedImageUrl } from "../utils/image";
 import benchPlantersImg from "../assets/products/Product Images/Bench Planter/Make_it_8k_resolution_image_202605170101.jpeg";
 import benchPlantersUgc from "../assets/products/Product Images/Bench Planter/UGC_Bench_Planter.jpeg";
 import benchesImg from "../assets/products/Product Images/Benches/Create_a_clean,_premium,_professional_202605162312.jpeg";
@@ -2027,6 +2028,14 @@ const staticProducts = [
   }
 ];
 
-export const products = (typeof window !== 'undefined' && window.localStorage && localStorage.getItem('urbanland_admin_products_v14'))
+const mapProductImage = (p) => ({
+  ...p,
+  image: getOptimizedImageUrl(p.image),
+  gallery: p.gallery ? p.gallery.map(getOptimizedImageUrl) : []
+});
+
+const baseProducts = (typeof window !== 'undefined' && window.localStorage && localStorage.getItem('urbanland_admin_products_v14'))
   ? JSON.parse(localStorage.getItem('urbanland_admin_products_v14'))
   : staticProducts;
+
+export const products = baseProducts.map(mapProductImage);

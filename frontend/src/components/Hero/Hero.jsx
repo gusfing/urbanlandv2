@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { getOptimizedImageUrl } from "../../utils/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -166,7 +167,7 @@ const Hero = () => {
         {slides.map((slide, index) => (
           <img
             key={index}
-            src={slide.image}
+            src={getOptimizedImageUrl(slide.image)}
             alt={slide.title}
             className={`hero-slide-bg slide-bg-${index} absolute inset-0 w-full h-full object-cover pointer-events-none`}
             style={{

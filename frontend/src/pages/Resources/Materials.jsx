@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
+import { getOptimizedImageUrl } from "../../utils/image";
 
 // Import premium images
 import materialsShowcase from "../../assets/materials_showcase.png";
@@ -160,7 +161,7 @@ const Materials = () => {
         </div>
         <div className="lg:col-span-5 w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl relative bg-black/5">
           <img
-            src={materialsShowcase}
+            src={getOptimizedImageUrl(materialsShowcase)}
             alt="Urbanland premium composite materials and powder-coated steel close-up showcase"
             className="w-full h-full object-cover"
           />
@@ -207,7 +208,7 @@ const Materials = () => {
                     }`}
                   >
                     <td className="py-6 px-4 font-black uppercase tracking-tight flex items-center gap-3.5">
-                      <img src={m.image} alt={m.name} className="w-8 h-8 rounded-lg object-cover border border-black/10 shrink-0" />
+                      <img src={getOptimizedImageUrl(m.image)} alt={m.name} className="w-8 h-8 rounded-lg object-cover border border-black/10 shrink-0" />
                       <span>{m.name}</span>
                     </td>
                     <td className="py-6 px-4">{m.lifespan}</td>
@@ -239,7 +240,7 @@ const Materials = () => {
             <div className="lg:col-span-8">
               <span className="text-[10px] font-black uppercase tracking-widest text-[#C9A84C] mb-3 block">— Material Deep-Dive</span>
               <h3 className="text-2xl font-black uppercase tracking-tight text-black flex items-center gap-3.5">
-                <img src={activeMaterialData.image} alt={activeMaterialData.name} className="w-10 h-10 rounded-xl object-cover border border-black/10 shrink-0" />
+                <img src={getOptimizedImageUrl(activeMaterialData.image)} alt={activeMaterialData.name} className="w-10 h-10 rounded-xl object-cover border border-black/10 shrink-0" />
                 <span>{activeMaterialData.name}</span>
               </h3>
               <p className="text-xs sm:text-sm text-black/65 leading-relaxed mt-4">
@@ -295,7 +296,7 @@ const Materials = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white rounded-[2rem] border border-black/[0.03] overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.005)] flex flex-col">
-            <img src={galvanizationSpec} alt="Galvanization Thickness Spec" className="w-full aspect-[16/10] object-cover" />
+            <img src={getOptimizedImageUrl(galvanizationSpec)} alt="Galvanization Thickness Spec" className="w-full aspect-[16/10] object-cover" />
             <div className="p-8 md:p-10 flex flex-col flex-1">
               <h3 className="text-sm font-black uppercase tracking-wider text-[#C9A84C] mb-3">Galvanization Thickness</h3>
               <p className="text-xs text-[#2D2D2D]/60 leading-relaxed">
@@ -305,7 +306,7 @@ const Materials = () => {
           </div>
 
           <div className="bg-white rounded-[2rem] border border-black/[0.03] overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.005)] flex flex-col">
-            <img src={concreteSpec} alt="Concrete Mix Design Formula" className="w-full aspect-[16/10] object-cover" />
+            <img src={getOptimizedImageUrl(concreteSpec)} alt="Concrete Mix Design Formula" className="w-full aspect-[16/10] object-cover" />
             <div className="p-8 md:p-10 flex flex-col flex-1">
               <h3 className="text-sm font-black uppercase tracking-wider text-[#C9A84C] mb-3">Concrete Mix Design Formula</h3>
               <p className="text-xs text-[#2D2D2D]/60 leading-relaxed">
@@ -315,7 +316,7 @@ const Materials = () => {
           </div>
 
           <div className="bg-white rounded-[2rem] border border-black/[0.03] overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.005)] flex flex-col">
-            <img src={wickerSpec} alt="PE Wicker UV weathering" className="w-full aspect-[16/10] object-cover" />
+            <img src={getOptimizedImageUrl(wickerSpec)} alt="PE Wicker UV weathering" className="w-full aspect-[16/10] object-cover" />
             <div className="p-8 md:p-10 flex flex-col flex-1">
               <h3 className="text-sm font-black uppercase tracking-wider text-[#C9A84C] mb-3">PE Wicker UV weathering</h3>
               <p className="text-xs text-[#2D2D2D]/60 leading-relaxed">

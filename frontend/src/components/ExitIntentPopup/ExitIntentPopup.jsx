@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { getOptimizedImageUrl } from "../../utils/image";
 
 // Import premium images for context-tailored popups
 import companyProfileImg from "../../assets/welcome-2.png";
@@ -268,7 +269,7 @@ const ExitIntentPopup = () => {
                 {/* Left Column: Image (Hidden on mobile, shown on md+) */}
                 <div className="hidden md:block md:w-[45%] relative md:min-h-full">
                     <img 
-                        src={content.image} 
+                        src={getOptimizedImageUrl(content.image)} 
                         alt={content.title} 
                         className="absolute inset-0 w-full h-full object-cover"
                     />

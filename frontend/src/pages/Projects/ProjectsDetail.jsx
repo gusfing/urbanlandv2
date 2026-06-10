@@ -381,14 +381,38 @@ const projectsMeta = {
   }
 };
 
+import { getOptimizedImageUrl } from "../../utils/image";
+
 const ProjectsDetail = () => {
   const { segment } = useParams();
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const meta = projectsMeta[segment] || projectsMeta["lodha"];
+  const rawMeta = projectsMeta[segment] || projectsMeta["lodha"];
+  const meta = React.useMemo(() => {
+    if (!rawMeta) return null;
+    return {
+      ...rawMeta,
+      image: getOptimizedImageUrl(rawMeta.image),
+      challenges: rawMeta.challenges ? rawMeta.challenges.map(c => ({
+        ...c,
+        image: getOptimizedImageUrl(c.image)
+      })) : [],
+      solutions: rawMeta.solutions ? rawMeta.solutions.map(s => ({
+        ...s,
+        image: getOptimizedImageUrl(s.image)
+      })) : [],
+      stats: rawMeta.stats || [],
+      cases: rawMeta.cases || [],
+      whyChoose: rawMeta.whyChoose || [],
+      faqs: rawMeta.faqs || [],
+      recommended: rawMeta.recommended || []
+    };
+  }, [rawMeta]);
 
   // Gallery array to loop visual assets for case studies
-  const galleryImages = [gbg1, gbg2, gbg3, gbg4, gbg5, welcome1, welcome2];
+  const galleryImages = React.useMemo(() => {
+    return [gbg1, gbg2, gbg3, gbg4, gbg5, welcome1, welcome2].map(getOptimizedImageUrl);
+  }, []);
 
   useEffect(() => {
     updatePageSEO({

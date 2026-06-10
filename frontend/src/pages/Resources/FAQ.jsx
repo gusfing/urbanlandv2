@@ -106,6 +106,9 @@ const faqsList = [
   }
 ];
 
+import { getOptimizedImageUrl } from "../../utils/image";
+
+// Keep rest of FAQ component initialization as is...
 const FAQ = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -175,7 +178,7 @@ const FAQ = () => {
           {/* Right Column: Hero visual mockup */}
           <div className="lg:col-span-5 relative rounded-[2.5rem] overflow-hidden select-none bg-[#EAE5DB]/25 p-4 shadow-sm border border-black/[0.04] aspect-[4/3] flex items-center justify-center">
             <img 
-              src={faqHeroImage} 
+              src={getOptimizedImageUrl(faqHeroImage)} 
               alt="Premium sustainable outdoor plaza benches and planters layouts" 
               className="rounded-[2rem] w-full h-full object-cover shadow-inner" 
             />

@@ -302,14 +302,38 @@ const verticalsMeta = {
   }
 };
 
+import { getOptimizedImageUrl } from "../../utils/image";
+
 const SolutionsDetail = () => {
   const { vertical } = useParams();
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const meta = verticalsMeta[vertical] || verticalsMeta["real-estate"];
+  const rawMeta = verticalsMeta[vertical] || verticalsMeta["real-estate"];
+  const meta = React.useMemo(() => {
+    if (!rawMeta) return null;
+    return {
+      ...rawMeta,
+      image: getOptimizedImageUrl(rawMeta.image),
+      challenges: rawMeta.challenges ? rawMeta.challenges.map(c => ({
+        ...c,
+        image: getOptimizedImageUrl(c.image)
+      })) : [],
+      solutions: rawMeta.solutions ? rawMeta.solutions.map(s => ({
+        ...s,
+        image: getOptimizedImageUrl(s.image)
+      })) : [],
+      stats: rawMeta.stats || [],
+      cases: rawMeta.cases || [],
+      whyChoose: rawMeta.whyChoose || [],
+      faqs: rawMeta.faqs || [],
+      recommended: rawMeta.recommended || []
+    };
+  }, [rawMeta]);
 
   // Gallery array to loop visual assets for cases
-  const galleryImages = [gbg1, gbg2, gbg3, gbg4, gbg5, welcome1, welcome2];
+  const galleryImages = React.useMemo(() => {
+    return [gbg1, gbg2, gbg3, gbg4, gbg5, welcome1, welcome2].map(getOptimizedImageUrl);
+  }, []);
 
   useEffect(() => {
     updatePageSEO({
