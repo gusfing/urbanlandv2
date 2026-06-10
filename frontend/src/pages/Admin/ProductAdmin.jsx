@@ -544,7 +544,7 @@ const ProductAdmin = () => {
   };
   // Persist modifications to localStorage
   const handleSavePreview = () => {
-    localStorage.setItem("urbanland_admin_products_v13", JSON.stringify(dbProducts));
+    localStorage.setItem("urbanland_admin_products_v14", JSON.stringify(dbProducts));
     showNotification("Saved to Local Preview! Re-loading elements...");
     // Trigger live update across open browser tabs
     window.location.reload();
@@ -553,7 +553,7 @@ const ProductAdmin = () => {
   // Revert back to code baseline
   const handleReset = () => {
     if (window.confirm("Revert database modifications back to static baseline?")) {
-      localStorage.removeItem("urbanland_admin_products_v13");
+      localStorage.removeItem("urbanland_admin_products_v14");
       showNotification("Restored static database baseline.");
       window.location.reload();
     }
@@ -663,7 +663,7 @@ import wickerFurnitureHero from '../assets/Wicker_Furniture.jpeg';`;
   }`;
     }).join(",\n");
 
-    return `${importStatements}\n\nconst staticProducts = [\n${arrayItems}\n];\n\nexport const products = (typeof window !== 'undefined' && window.localStorage && localStorage.getItem('urbanland_admin_products_v13'))\n  ? JSON.parse(localStorage.getItem('urbanland_admin_products_v13'))\n  : staticProducts;\n`;
+    return `${importStatements}\n\nconst staticProducts = [\n${arrayItems}\n];\n\nexport const products = (typeof window !== 'undefined' && window.localStorage && localStorage.getItem('urbanland_admin_products_v14'))\n  ? JSON.parse(localStorage.getItem('urbanland_admin_products_v14'))\n  : staticProducts;\n`;
   }, [dbProducts]);
 
   const handleDownload = () => {

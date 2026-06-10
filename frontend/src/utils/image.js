@@ -19,7 +19,12 @@ export const getOptimizedImageUrl = (url) => {
   if (url.startsWith("http://") || url.startsWith("https://")) {
     const isWordPressImage = url.includes("urbanlandproducts.com") || url.includes(WP_BASE_URL.replace(/^https?:\/\//, ""));
     if (isWordPressImage) {
-      return `${WP_BASE_URL}/cdn-cgi/image/width=800,quality=85,format=auto/${url}`;
+      if (import.meta.env.DEV) {
+        // Local dev: Load directly from WP backend to avoid 404s on localhost cdn-cgi
+        return url;
+      }
+      // Production: Route through relative Cloudflare Image Resizing zone on the main domain
+      return `/cdn-cgi/image/width=800,quality=85,format=auto/${url}`;
     }
     // Fallback for other external domains to use weserv (which runs on Cloudflare)
     const cleanUrl = url.replace(/^https?:\/\//, "");
@@ -36,3 +41,4 @@ export const getOptimizedImageUrl = (url) => {
   const cleanPath = url.startsWith("/") ? url : `/${url}`;
   return `/cdn-cgi/image/width=800,quality=85,format=auto${cleanPath}`;
 };
+
