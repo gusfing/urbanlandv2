@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 
 const BenchesPage = () => {
-    const [openFaq, setOpenFaq] = useState(null);
     const [activeSlide, setActiveSlide] = useState(0);
     const [collectionActiveSlide, setCollectionActiveSlide] = useState(0);
     const scrollRef = useRef(null);
@@ -18,7 +17,7 @@ const BenchesPage = () => {
     const materialData = {
         wpc: {
             title: "WPC Composite",
-            image: "/products/all_white/outdoor_benches_ulb_07.jpeg",
+            image: "https://lh3.googleusercontent.com/aida/AP1WRLtgD7SA9M12_oiqHyZaUoEmieg3YIdcuA_t2drB1O9bK6m9NhAz17prczyQ4BDQErNLxkyNxEj4_3i4SrHBS-ONjkBO_anG5R_7LTOdxhQHzULZxAFRPbPGpX6VcX-J41loMovajr2BHLLHln28JgpoQrgjs-UPUJGED9UaVhpirzcfuuLYTD113lSqNvGj-bwUiOwPrIBW6x5pt4Vt174gMGYP2HeOZXDr4hqLMzUnldGhbQBPu_rzzgx6",
             lifespan: "25+ YEARS",
             lifespanBar: "85%",
             maintenance: "LOW",
@@ -30,7 +29,7 @@ const BenchesPage = () => {
         },
         nfc: {
             title: "NFC Wood",
-            image: "/products/all_white/outdoor_benches_ulb_08.jpeg",
+            image: "https://lh3.googleusercontent.com/aida/AP1WRLu4kehjsIlYIod5XaZV1H_2dygHbDVZRVIWJKem5M-ABnJF0EU82X6fQxe7kEXSE0_oraQXj0i6Yjmk06yj9Br0CDeUA8ewX22vgCeUCkCdEQk_2YkpKGyUS67eHHyPab--cN_Sy9IxIkJO5btRA0vNrbAz9n-VhbzHp8xlDjB2i324TWMN5qslfJ5iuj2jK4FhH0ms-0QbyRIMFumT51qCOwMsmM1QOxBXjv_y1W6wB_fZRnPVI07WGgOI",
             lifespan: "30+ YEARS",
             lifespanBar: "92%",
             maintenance: "VERY LOW",
@@ -42,7 +41,7 @@ const BenchesPage = () => {
         },
         aluminium: {
             title: "Anodized Aluminium",
-            image: "/products/all_white/outdoor_benches_ulb_09.jpeg",
+            image: "https://lh3.googleusercontent.com/aida/AP1WRLuHiCFQa4uzPyzkbrZHdUP1s3ywut8_y1pBwgqZ9U26PWWVof8ehu0S8I5rbGF2yo51YtN50l2UV2xOeXiyCuAd6vomNlVS2I0nrOlDlY31U9nWD7VLmCyfVFmX27IzH6nPtN4ug5JyExdWMuadJV7-Y3okqu3XPB7t-LnUjgTlxsf3jZ-lDlMtWuSlClhniZ_cNPDvQZ_X5Xogrj2onzHzEfHpFgjET-kJZsvFM_Gz0LmOfyeEF6i3Xm0",
             lifespan: "40+ YEARS",
             lifespanBar: "95%",
             maintenance: "MINIMAL",
@@ -54,7 +53,7 @@ const BenchesPage = () => {
         },
         mild_steel: {
             title: "Mild Steel",
-            image: "/products/all_white/outdoor_benches_ulb_10.jpeg",
+            image: "https://lh3.googleusercontent.com/aida/AP1WRLtSdjWUT-NGXhFQoXWb-l45x2qyF7QUus3SUfGXNjx8KsxS9I0_V_Ltys1lgp2yBsVRD2IKZZ4pfijM1C0m81c7jIelEVzJ_Wt1oT1Rz1G61YDGmH7_PSlknNtgKIKL9tPdO0xEtT77WvF-cEmr69D4rj8v-6sguc2x09jfFeGt-UAx_F9_T8EXiuvjykbOtg2Ea_7sZ17fH01gPNIKfQHkWJQqDADqTWfvIdqkbqW7ti5NKlOiPLVkS8uQ",
             lifespan: "15+ YEARS",
             lifespanBar: "60%",
             maintenance: "MODERATE",
@@ -66,7 +65,7 @@ const BenchesPage = () => {
         },
         stainless_steel: {
             title: "Stainless Steel",
-            image: "/products/all_white/outdoor_benches_ulb_11.jpeg",
+            image: "https://lh3.googleusercontent.com/aida/AP1WRLuF4lrmMmZBglF67n7dt_IYze2X0o0AYG_XjSjG1iPcD7_ykZLR3BN4lEd4rb9Hq8gFa3T8f-qQWwzA7Ae1zGdon5POQqrpUNZMKjk3La34xsVPw28-_Ib2WqWahkV0VxWUYrrYp7f_tb_007eRszio0kdMMKhj06wfovfidshBbtnm_AurMV4HbyC7Ei6fkIS1qTwPw0qoFS7hqaXfqZ8R5-tP3TVo87RvrmgS8Da2d2kZwVdZUH4KeZq9",
             lifespan: "50+ YEARS",
             lifespanBar: "100%",
             maintenance: "ZERO",
@@ -128,10 +127,6 @@ const BenchesPage = () => {
         };
     }, []);
 
-    const toggleFaq = (idx) => {
-        setOpenFaq(openFaq === idx ? null : idx);
-    };
-
     const nextSlide = () => {
         setActiveSlide((prev) => (prev === projectSlides.length - 1 ? 0 : prev + 1));
     };
@@ -158,7 +153,7 @@ const BenchesPage = () => {
             if (child) {
                 const childWidth = child.clientWidth + 24; // child width + gap
                 const index = Math.round(scrollLeft / childWidth);
-                if (index >= 0 && index < 5) {
+                if (index >= 0 && index < 6) {
                     setCollectionActiveSlide(index);
                 }
             }
@@ -190,30 +185,6 @@ const BenchesPage = () => {
             title: "Premium WPC",
             alt: "Premium WPC Bench",
             src: "/products/all_white/outdoor_benches_ulb_07.jpeg"
-        }
-    ];
-
-
-    const faqs = [
-        {
-            question: "Which bench material is best for coastal areas?",
-            answer: "For coastal areas, Aluminium and Stainless Steel (Grade 304 or 316) are highly recommended due to their excellent corrosion resistance. Our polymer-coated and anodized finishes provide extra protection against salt air."
-        },
-        {
-            question: "Can benches be customized in length and design?",
-            answer: "Yes, we offer custom lengths starting from 1.2m up to customized continuous seating designs. You can also customize armrests, backrests, base colors, and materials."
-        },
-        {
-            question: "Are WPC and NFC Wood benches suitable for outdoor use?",
-            answer: "Absolutely. Both WPC (Wood Plastic Composite) and NFC (Natural Fiber Composite) wood are engineered to resist rotting, splitting, warping, and UV damage, making them ideal for heavy outdoor usage in Indian weather."
-        },
-        {
-            question: "What is the typical lead time?",
-            answer: "Standard models have a lead time of 2-3 weeks. Custom colors, customized lengths, or bulk municipal orders typically require 4-5 weeks."
-        },
-        {
-            question: "Do you provide installation services?",
-            answer: "We provide delivery and detailed installation guidance/drawings across India. On-site installation support by our team is also available for bulk corporate or township projects."
         }
     ];
 
@@ -382,7 +353,93 @@ const BenchesPage = () => {
                 </div>
                 <div className="absolute top-1/2 left-0 w-full h-1px bg-outline-variant/10 -z-20"></div>
                 <div className="absolute top-0 left-1/4 w-1px h-full bg-outline-variant/10 -z-20"></div>
-            </section>            {/* Why Quality Benches Matter */}
+            </section>
+
+            {/* The Urbanland Collection Slider Section */}
+            <section className="reveal-section py-24 bg-surface overflow-hidden border-b border-outline-variant">
+                <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 text-left space-y-4 reveal-up">
+                    <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
+                        Visual Gallery
+                    </span>
+                    <h2 className="font-headline-lg text-headline-lg text-deep-ink">The Urbanland Collection</h2>
+                    <div className="w-24 h-1 bg-craftsman-gold"></div>
+                    <p className="font-body-lg text-on-surface-variant max-w-2xl pt-2">Explore our range of premium outdoor seating in various materials and environments.</p>
+                </div>
+                <div className="relative reveal-up" style={{ transitionDelay: '100ms' }}>
+                    {/* Slider Container */}
+                    <div
+                        ref={collectionScrollRef}
+                        onScroll={handleCollectionScrollEvent}
+                        className="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar px-[10%] md:px-[20%] pb-6"
+                    >
+                        {collectionSlides.map((slide, idx) => (
+                            <div key={idx} className="flex-none w-[80vw] md:w-[50vw] snap-center relative group">
+                                <div className="aspect-[16/9] overflow-hidden rounded-none border border-outline-variant">
+                                    <img
+                                        alt={slide.alt}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        src={slide.src}
+                                    />
+                                </div>
+                            </div>
+                        ))}
+
+                        {/* View All Benches Special Card */}
+                        <div className="flex-none w-[80vw] md:w-[50vw] snap-center relative group">
+                            <Link 
+                                to="/catalogue"
+                                className="aspect-[16/9] flex flex-col justify-center items-center border border-forest-green hover:border-craftsman-gold transition-all duration-500 relative overflow-hidden text-center p-8 group cursor-pointer h-full w-full"
+                                style={{ 
+                                    backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0), linear-gradient(to bottom right, #2C5F2E, #1D4220)',
+                                    backgroundSize: '24px 24px, 100% 100%'
+                                }}
+                            >
+                                {/* Decorative elements */}
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05),transparent_80%)] -z-10"></div>
+                                <div className="absolute -top-12 -right-12 w-24 h-24 border border-white/10 rounded-full group-hover:scale-125 transition-transform duration-700"></div>
+                                <div className="absolute -bottom-12 -left-12 w-32 h-32 border border-white/10 rounded-full group-hover:scale-125 transition-transform duration-700"></div>
+
+                                <div className="mb-4 w-14 h-14 rounded-full border border-white/30 flex items-center justify-center bg-white/5 group-hover:border-craftsman-gold group-hover:bg-white/10 transition-all duration-500">
+                                    <span className="material-symbols-outlined text-white group-hover:text-craftsman-gold group-hover:translate-x-1 transition-transform duration-300">arrow_forward</span>
+                                </div>
+                                <h3 className="font-headline-md text-xl md:text-2xl text-white tracking-wide uppercase mb-2 group-hover:text-craftsman-gold transition-colors duration-300">
+                                    View All Benches
+                                </h3>
+                                <p className="font-label-technical text-craftsman-gold text-[10px] md:text-xs tracking-[0.2em] uppercase">
+                                    Explore the full collection
+                                </p>
+                            </Link>
+                        </div>
+                    </div>
+                    {/* Navigation Controls */}
+                    <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center mt-12">
+                        <div className="flex gap-4">
+                            <button
+                                onClick={() => handleCollectionScroll('left')}
+                                className="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:border-forest-green hover:text-forest-green hover:bg-forest-green/5 transition-all duration-300 cursor-pointer"
+                            >
+                                <span className="material-symbols-outlined">west</span>
+                            </button>
+                            <button
+                                onClick={() => handleCollectionScroll('right')}
+                                className="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:border-forest-green hover:text-forest-green hover:bg-forest-green/5 transition-all duration-300 cursor-pointer"
+                            >
+                                <span className="material-symbols-outlined">east</span>
+                            </button>
+                        </div>
+                        <div className="flex gap-2">
+                            {Array.from({ length: collectionSlides.length + 1 }).map((_, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`w-2 h-2 rounded-full transition-all duration-300 ${collectionActiveSlide === idx ? 'bg-forest-green scale-125' : 'bg-outline-variant'}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Why Quality Benches Matter */}
             <section className="reveal-section py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto bg-background">
                 {/* Header Group */}
                 <div className="mb-16 reveal-up space-y-4 text-left">
@@ -496,7 +553,7 @@ const BenchesPage = () => {
 
 
             {/* Closing Statement / Quote Section */}
-            <section className="bg-surface-container-low py-24 px-margin-mobile md:px-margin-desktop overflow-hidden border-b border-outline-variant">
+            <section className="reveal-section bg-surface-container-low py-24 px-margin-mobile md:px-margin-desktop overflow-hidden border-b border-outline-variant">
                 <div className="max-w-4xl mx-auto text-center reveal-up">
                     <span className="material-symbols-outlined text-6xl text-craftsman-gold mb-8 block" data-icon="format_quote">format_quote</span>
                     <p className="font-headline-md text-headline-md italic text-primary leading-tight mb-10">
@@ -513,7 +570,7 @@ const BenchesPage = () => {
             {/* Product Range Categories */}
             <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
                 <div className="max-w-container-max mx-auto">
-                    <div className="mb-16 text-left space-y-4">
+                    <div className="mb-16 text-left space-y-4 reveal-up">
                         <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
                             Material Palette
                         </span>
@@ -530,7 +587,8 @@ const BenchesPage = () => {
                             return (
                                 <div
                                     key={idx}
-                                    className={`group bento-card relative overflow-hidden bg-surface-container-low border border-outline-variant hover:border-craftsman-gold hover:shadow-lg transition-all duration-300 p-0 flex ${isLarge ? "md:col-span-8 flex-col md:flex-row" : "md:col-span-4 flex-col justify-between"
+                                    style={{ transitionDelay: `${idx * 150}ms` }}
+                                    className={`group bento-card reveal-up relative overflow-hidden bg-surface-container-low border border-outline-variant hover:border-craftsman-gold hover:shadow-lg transition-all duration-300 p-0 flex ${isLarge ? "md:col-span-8 flex-col md:flex-row" : "md:col-span-4 flex-col justify-between"
                                         }`}
                                 >
                                     {isLarge ? (
@@ -610,7 +668,7 @@ const BenchesPage = () => {
             {/* Design Your Specification Configurator */}
             <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
                 <div className="max-w-container-max mx-auto">
-                    <div className="mb-16 text-left space-y-4">
+                    <div className="mb-16 text-left space-y-4 reveal-up">
                         <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
                             Configuration Engine
                         </span>
@@ -623,7 +681,7 @@ const BenchesPage = () => {
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                         {/* Left Column: Controls */}
-                        <div className="lg:col-span-7 space-y-12">
+                        <div className="lg:col-span-7 space-y-12 reveal-up">
                             {/* Material Selection */}
                             <div className="space-y-6 text-left">
                                 <h3 className="font-label-caps text-xs text-on-surface-variant uppercase tracking-widest font-semibold">01 / Choose Material</h3>
@@ -635,7 +693,7 @@ const BenchesPage = () => {
                                             <button
                                                 key={key}
                                                 onClick={() => setConfigMaterial(key)}
-                                                className={`group border p-4 text-left transition-all duration-300 rounded-none ${isSelected
+                                                className={`group border p-4 text-left transition-all duration-300 rounded-[8px] ${isSelected
                                                     ? "border-craftsman-gold bg-surface-container-low"
                                                     : "border-outline-variant hover:bg-surface-container-low/50"
                                                     }`}
@@ -646,7 +704,7 @@ const BenchesPage = () => {
                                                         {key === "nfc" && (
                                                             <span className="group/tooltip relative inline-block">
                                                                 <span className="material-symbols-outlined text-sm text-on-surface-variant cursor-help">info</span>
-                                                                <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 scale-95 opacity-0 group-hover/tooltip:scale-100 group-hover/tooltip:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[10px] p-2 leading-relaxed z-20 normal-case font-normal rounded-none shadow-md">
+                                                                <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 scale-95 opacity-0 group-hover/tooltip:scale-100 group-hover/tooltip:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[10.5px] p-2.5 leading-relaxed z-20 normal-case font-normal rounded-[6px] shadow-lg border border-outline-variant/30">
                                                                     Natural Fiber Composite (NFC) utilizes natural fibers for superior thermal stability and organic aesthetics.
                                                                 </span>
                                                             </span>
@@ -654,7 +712,7 @@ const BenchesPage = () => {
                                                         {key === "mild_steel" && (
                                                             <span className="group/tooltip relative inline-block">
                                                                 <span className="material-symbols-outlined text-sm text-on-surface-variant cursor-help">info</span>
-                                                                <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 scale-95 opacity-0 group-hover/tooltip:scale-100 group-hover/tooltip:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[10px] p-2 leading-relaxed z-20 normal-case font-normal rounded-none shadow-md">
+                                                                <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 scale-95 opacity-0 group-hover/tooltip:scale-100 group-hover/tooltip:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[10.5px] p-2.5 leading-relaxed z-20 normal-case font-normal rounded-[6px] shadow-lg border border-outline-variant/30">
                                                                     Powder Coated finish provides industrial strength with a high-durability color shell.
                                                                 </span>
                                                             </span>
@@ -704,7 +762,7 @@ const BenchesPage = () => {
                                                     <button
                                                         key={len}
                                                         onClick={() => setConfigLength(len)}
-                                                        className={`px-6 py-2 border text-sm font-medium transition-colors rounded-none ${isSelected
+                                                        className={`px-6 py-2 border text-sm font-medium transition-colors rounded-[8px] ${isSelected
                                                             ? "border-primary bg-primary text-on-primary"
                                                             : "border-outline-variant text-on-surface hover:bg-surface-container-low"
                                                             }`}
@@ -726,7 +784,7 @@ const BenchesPage = () => {
                                                     <button
                                                         key={design}
                                                         onClick={() => setConfigDesign(design)}
-                                                        className={`px-6 py-2 border text-sm font-medium transition-colors rounded-none ${isSelected
+                                                        className={`px-6 py-2 border text-sm font-medium transition-colors rounded-[8px] ${isSelected
                                                             ? "border-primary bg-primary text-on-primary"
                                                             : "border-outline-variant text-on-surface hover:bg-surface-container-low"
                                                             }`}
@@ -747,7 +805,7 @@ const BenchesPage = () => {
                                                     type="checkbox"
                                                     checked={configAntiGraffiti}
                                                     onChange={() => setConfigAntiGraffiti(!configAntiGraffiti)}
-                                                    className="appearance-none h-5 w-5 border border-outline-variant bg-transparent checked:bg-[#c9a48c] checked:border-[#c9a48c] focus:outline-none focus:ring-2 focus:ring-[#c9a48c]/30 rounded-none relative cursor-pointer before:content-[''] before:absolute before:left-[6px] before:top-[2px] before:w-[6px] before:h-[11px] before:border-r-2 before:border-b-2 before:border-white before:rotate-45 before:opacity-0 checked:before:opacity-100 transition-all"
+                                                    className="appearance-none h-5 w-5 border border-outline-variant bg-transparent checked:bg-forest-green checked:border-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green/30 rounded-[4px] relative cursor-pointer before:content-[''] before:absolute before:left-[6px] before:top-[2px] before:w-[6px] before:h-[11px] before:border-r-2 before:border-b-2 before:border-white before:rotate-45 before:opacity-0 checked:before:opacity-100 transition-all"
                                                 />
                                                 <span className="text-sm font-medium text-on-surface">Anti-graffiti Coating</span>
                                             </label>
@@ -757,7 +815,7 @@ const BenchesPage = () => {
                                                     type="checkbox"
                                                     checked={configGroundFixing}
                                                     onChange={() => setConfigGroundFixing(!configGroundFixing)}
-                                                    className="appearance-none h-5 w-5 border border-outline-variant bg-transparent checked:bg-[#c9a48c] checked:border-[#c9a48c] focus:outline-none focus:ring-2 focus:ring-[#c9a48c]/30 rounded-none relative cursor-pointer before:content-[''] before:absolute before:left-[6px] before:top-[2px] before:w-[6px] before:h-[11px] before:border-r-2 before:border-b-2 before:border-white before:rotate-45 before:opacity-0 checked:before:opacity-100 transition-all"
+                                                    className="appearance-none h-5 w-5 border border-outline-variant bg-transparent checked:bg-forest-green checked:border-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green/30 rounded-[4px] relative cursor-pointer before:content-[''] before:absolute before:left-[6px] before:top-[2px] before:w-[6px] before:h-[11px] before:border-r-2 before:border-b-2 before:border-white before:rotate-45 before:opacity-0 checked:before:opacity-100 transition-all"
                                                 />
                                                 <span className="text-sm font-medium text-on-surface">Ground Fixing Kit</span>
                                             </label>
@@ -768,16 +826,16 @@ const BenchesPage = () => {
                         </div>
 
                         {/* Right Column: Sticky Preview */}
-                        <div className="lg:col-span-5 lg:sticky lg:top-28 text-left">
-                            <div className="bg-surface-container-low border border-outline-variant p-6 sm:p-8 rounded-none space-y-8">
+                        <div className="lg:col-span-5 lg:sticky lg:top-28 text-left reveal-up" style={{ transitionDelay: "150ms" }}>
+                            <div className="bg-[#f0ede9] border border-outline-variant p-6 sm:p-8 rounded-[8px] space-y-8">
                                 {/* Image Preview */}
-                                <div className="aspect-video overflow-hidden rounded-none bg-surface-dim relative border border-outline-variant">
+                                <div className="aspect-video overflow-hidden rounded-[8px] bg-surface-dim relative border border-outline-variant">
                                     <img
                                         alt="Bench Material Preview"
                                         className="w-full h-full object-cover transition-all duration-300"
                                         src={materialData[configMaterial].image}
                                     />
-                                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] font-bold font-label-caps border border-outline-variant uppercase tracking-widest">LIVE PREVIEW</div>
+                                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] font-bold font-label-caps border border-outline-variant uppercase tracking-widest rounded-[4px]">LIVE PREVIEW</div>
                                 </div>
 
                                 {/* Technical Scorecard */}
@@ -804,9 +862,9 @@ const BenchesPage = () => {
                                                 <span>LIFESPAN</span>
                                                 <span>{materialData[configMaterial].lifespan}</span>
                                             </div>
-                                            <div className="h-2 bg-outline-variant/30 overflow-hidden">
+                                            <div className="h-2 bg-outline-variant/30 rounded-full overflow-hidden">
                                                 <div
-                                                    className="h-full bg-forest-green transition-all duration-700"
+                                                    className="h-full bg-forest-green transition-all duration-700 rounded-full"
                                                     style={{ width: materialData[configMaterial].lifespanBar }}
                                                 />
                                             </div>
@@ -820,9 +878,9 @@ const BenchesPage = () => {
                                                     {configAntiGraffiti ? "SELF-CLEANING / ULTRA LOW" : materialData[configMaterial].maintenance}
                                                 </span>
                                             </div>
-                                            <div className="h-2 bg-outline-variant/30 overflow-hidden">
+                                            <div className="h-2 bg-outline-variant/30 rounded-full overflow-hidden">
                                                 <div
-                                                    className="h-full bg-craftsman-gold transition-all duration-700"
+                                                    className="h-full bg-craftsman-gold transition-all duration-700 rounded-full"
                                                     style={{ width: configAntiGraffiti ? "5%" : materialData[configMaterial].maintenanceBar }}
                                                 />
                                             </div>
@@ -836,9 +894,9 @@ const BenchesPage = () => {
                                                     {materialData[configMaterial].cost} ({totalCostMultiplier.toFixed(1)}x)
                                                 </span>
                                             </div>
-                                            <div className="h-2 bg-outline-variant/30 overflow-hidden">
+                                            <div className="h-2 bg-outline-variant/30 rounded-full overflow-hidden">
                                                 <div
-                                                    className="h-full bg-charcoal-industrial transition-all duration-700"
+                                                    className="h-full bg-charcoal-industrial transition-all duration-700 rounded-full"
                                                     style={{ width: materialData[configMaterial].costBar }}
                                                 />
                                             </div>
@@ -849,7 +907,7 @@ const BenchesPage = () => {
                                 {/* CTA */}
                                 <Link
                                     to="/contact"
-                                    className="w-full bg-forest-green text-on-primary py-3.5 sm:py-4 px-4 rounded-none font-bold font-label-caps hover:bg-primary transition-all flex items-center justify-center gap-3 text-center uppercase tracking-[0.1em] sm:tracking-widest text-xs sm:text-sm"
+                                    className="w-full bg-forest-green text-on-primary py-3.5 sm:py-4 px-4 rounded-[8px] font-bold font-label-caps hover:bg-primary transition-all flex items-center justify-center gap-3 text-center uppercase tracking-[0.1em] sm:tracking-widest text-xs sm:text-sm"
                                 >
                                     Request Technical Spec Sheet
                                     <span className="material-symbols-outlined">download</span>
@@ -867,7 +925,7 @@ const BenchesPage = () => {
             <section className="reveal-section bg-surface py-20 md:py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
                 <div className="max-w-container-max mx-auto">
                     {/* Header Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 reveal-up">
                         <div className="lg:col-span-6 text-left space-y-4">
                             <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
                                 Proven Excellence
@@ -884,7 +942,7 @@ const BenchesPage = () => {
                                     { val: "2 Yrs", label: "Direct Warranty" },
                                 ].map((stat, i) => (
                                     <div key={i} className="border-l-2 border-craftsman-gold/30 pl-4 space-y-1 text-left">
-                                        <div className="font-headline-md text-2xl sm:text-3xl text-deep-ink font-bold">{stat.val}</div>
+                                        <div className="font-headline-md text-2xl sm:text-3xl text-forest-green font-bold">{stat.val}</div>
                                         <div className="text-[10px] text-on-surface-variant font-label-caps tracking-widest font-semibold">{stat.label}</div>
                                     </div>
                                 ))}
@@ -893,18 +951,17 @@ const BenchesPage = () => {
                     </div>
 
                     {/* Interactive Tab Navigation */}
-                    <div className="flex border-b border-outline-variant overflow-x-auto no-scrollbar mb-8 scroll-smooth">
+                    <div className="flex border-b border-outline-variant overflow-x-auto no-scrollbar mb-8 scroll-smooth reveal-up" style={{ transitionDelay: "100ms" }}>
                         {projectSlides.map((slide, idx) => {
                             const isActive = activeSlide === idx;
                             return (
                                 <button
                                     key={idx}
                                     onClick={() => setActiveSlide(idx)}
-                                    className={`flex-shrink-0 px-6 py-4 border-b-2 text-left transition-all duration-300 focus:outline-none ${
-                                        isActive
-                                            ? "border-craftsman-gold text-deep-ink opacity-100 font-bold"
-                                            : "border-transparent text-on-surface-variant opacity-60 hover:opacity-100"
-                                    }`}
+                                    className={`flex-shrink-0 px-6 py-4 border-b-2 text-left transition-all duration-300 focus:outline-none ${isActive
+                                        ? "border-craftsman-gold text-deep-ink opacity-100 font-bold"
+                                        : "border-transparent text-on-surface-variant opacity-60 hover:opacity-100"
+                                        }`}
                                 >
                                     <span className="block text-[9px] tracking-widest font-semibold uppercase font-label-caps text-craftsman-gold mb-1">
                                         PROJECT 0{idx + 1}
@@ -916,7 +973,7 @@ const BenchesPage = () => {
                     </div>
 
                     {/* Case Study Slider */}
-                    <div className="relative mb-8 group">
+                    <div className="relative mb-8 group reveal-up" style={{ transitionDelay: "200ms" }}>
                         <div className="overflow-hidden relative border border-outline-variant bg-surface-container-lowest">
                             <div
                                 className="flex transition-transform duration-500 ease-in-out"
@@ -1045,133 +1102,119 @@ const BenchesPage = () => {
                 </div>
             </section>
 
-            {/* Installation, Warranty & FAQ */}
-            <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+
+
+
+            {/* Support & FAQ */}
+            <section className="reveal-section py-20 md:py-24 bg-surface px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
                 <div className="max-w-container-max mx-auto">
-                    {/* Installation & Warranty Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-                        <div className="p-8 bg-surface-container-low border border-outline-variant rounded-none flex items-start space-x-6 hover:border-secondary transition-colors text-left">
-                            <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                                <span className="material-symbols-outlined text-2xl">local_shipping</span>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                        {/* Support Block */}
+                        <div className="space-y-10 text-left reveal-up">
+                            <div className="space-y-2">
+                                <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
+                                    Service &amp; Support
+                                </span>
+                                <h2 className="font-headline-lg text-headline-lg text-deep-ink">
+                                    Installation &amp; Support
+                                </h2>
+                                <div className="w-20 h-1 bg-craftsman-gold"></div>
                             </div>
-                            <div>
-                                <h3 className="font-bold text-on-surface text-lg mb-2">Installation Support</h3>
-                                <p className="text-body-md text-on-surface-variant leading-relaxed">We provide delivery and professional installation support across India.</p>
-                            </div>
-                        </div>
-                        <div className="p-8 bg-surface-container-low border border-outline-variant rounded-none flex items-start space-x-6 hover:border-secondary transition-colors text-left">
-                            <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                                <span className="material-symbols-outlined text-2xl">verified_user</span>
-                            </div>
-                            <div>
-                                <h3 className="font-bold text-on-surface text-lg mb-2">2-Year Comprehensive Warranty</h3>
-                                <p className="text-body-md text-on-surface-variant leading-relaxed">Covers frame, seating surface, and manufacturing defects.</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    {/* FAQ Accordion */}
-                    <div className="max-w-3xl mx-auto">
-                        <div className="text-left mb-16 space-y-4">
-                            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-                                Customer Help
-                            </span>
-                            <h2 className="font-headline-lg text-headline-lg text-deep-ink">Frequently Asked Questions</h2>
-                            <div className="w-24 h-1 bg-craftsman-gold"></div>
-                        </div>
-
-                        <div className="space-y-4">
-                            {faqs.map((faq, idx) => (
-                                <div key={idx} className="border-b border-outline-variant">
-                                    <button
-                                        onClick={() => toggleFaq(idx)}
-                                        className="w-full py-6 flex justify-between items-center text-left group focus:outline-none"
-                                    >
-                                        <span className="font-bold text-on-surface group-hover:text-primary transition-colors text-base md:text-lg">
-                                            {faq.question}
-                                        </span>
-                                        <span
-                                            className="material-symbols-outlined text-primary transition-transform duration-300 select-none"
-                                            style={{ transform: openFaq === idx ? 'rotate(45deg)' : 'rotate(0deg)' }}
-                                        >
-                                            add
-                                        </span>
-                                    </button>
-                                    <div
-                                        className={`overflow-hidden transition-all duration-300 ${openFaq === idx ? 'max-h-96 pb-6' : 'max-h-0'}`}
-                                    >
+                            <div className="space-y-8">
+                                <div className="flex gap-6 items-start p-6 bg-surface-container/50 border border-outline-variant hover:border-craftsman-gold rounded-[8px] transition-all duration-300">
+                                    <div className="w-12 h-12 shrink-0 bg-forest-green text-on-primary flex items-center justify-center rounded-[8px]">
+                                        <span className="material-symbols-outlined">engineering</span>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-headline-md text-xl font-bold mb-2 text-deep-ink">Seamless Installation</h4>
                                         <p className="text-body-md text-on-surface-variant leading-relaxed">
-                                            {faq.answer}
+                                            We provide on-site installation guidance or turnkey setup services for major municipal and corporate projects across India.
                                         </p>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-
-            {/* The Urbanland Collection Slider Section */}
-            <section className="reveal-section py-24 bg-surface overflow-hidden border-b border-outline-variant">
-                <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 text-left space-y-4 reveal-up">
-                    <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-                        Visual Gallery
-                    </span>
-                    <h2 className="font-headline-lg text-headline-lg text-deep-ink">The Urbanland Collection</h2>
-                    <div className="w-24 h-1 bg-craftsman-gold"></div>
-                    <p className="font-body-lg text-on-surface-variant max-w-2xl pt-2">Explore our range of premium outdoor seating in various materials and environments.</p>
-                </div>
-                <div className="relative reveal-up" style={{ transitionDelay: '100ms' }}>
-                    {/* Slider Container */}
-                    <div
-                        ref={collectionScrollRef}
-                        onScroll={handleCollectionScrollEvent}
-                        className="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar px-[10%] md:px-[20%] pb-6"
-                    >
-                        {collectionSlides.map((slide, idx) => (
-                            <div key={idx} className="flex-none w-[80vw] md:w-[50vw] snap-center relative group">
-                                <div className="aspect-[16/9] overflow-hidden rounded-none border border-outline-variant">
-                                    <img
-                                        alt={slide.alt}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                        src={slide.src}
-                                    />
-                                </div>
-                                <div className="absolute bottom-6 left-6 bg-surface/90 backdrop-blur-sm px-4 py-2 border border-outline-variant rounded-none shadow-sm">
-                                    <span className="font-label-caps text-label-caps text-primary">{slide.title}</span>
+                                <div className="flex gap-6 items-start p-6 bg-surface-container/50 border border-outline-variant hover:border-craftsman-gold rounded-[8px] transition-all duration-300">
+                                    <div className="w-12 h-12 shrink-0 bg-forest-green text-on-primary flex items-center justify-center rounded-[8px]">
+                                        <span className="material-symbols-outlined">verified</span>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-headline-md text-xl font-bold mb-2 text-deep-ink">Extended Warranty</h4>
+                                        <p className="text-body-md text-on-surface-variant leading-relaxed">
+                                            Our 2-year manufacturer guarantee covers structural integrity and material defects, ensuring your investment is protected.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                    {/* Navigation Controls */}
-                    <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center mt-12">
-                        <div className="flex gap-4">
-                            <button
-                                onClick={() => handleCollectionScroll('left')}
-                                className="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:border-forest-green hover:text-forest-green hover:bg-forest-green/5 transition-all duration-300 cursor-pointer"
-                            >
-                                <span className="material-symbols-outlined">west</span>
-                            </button>
-                            <button
-                                onClick={() => handleCollectionScroll('right')}
-                                className="w-12 h-12 rounded-full border border-outline-variant flex items-center justify-center hover:border-forest-green hover:text-forest-green hover:bg-forest-green/5 transition-all duration-300 cursor-pointer"
-                            >
-                                <span className="material-symbols-outlined">east</span>
-                            </button>
                         </div>
-                        <div className="flex gap-2">
-                            {collectionSlides.map((_, idx) => (
-                                <div
-                                    key={idx}
-                                    className={`w-2 h-2 rounded-full transition-all duration-300 ${collectionActiveSlide === idx ? 'bg-forest-green scale-125' : 'bg-outline-variant'}`}
-                                />
-                            ))}
+
+                        {/* FAQ Block */}
+                        <div className="space-y-10 text-left reveal-up" style={{ transitionDelay: "150ms" }}>
+                            <div className="space-y-2">
+                                <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
+                                    Common Inquiries
+                                </span>
+                                <h2 className="font-headline-lg text-headline-lg text-deep-ink">
+                                    Frequently Asked Questions
+                                </h2>
+                                <div className="w-20 h-1 bg-craftsman-gold"></div>
+                            </div>
+
+                            <div className="space-y-4">
+                                <details className="group border border-outline-variant bg-surface-container p-4 sm:p-6 open:bg-[#f0ede9] transition-all duration-300 rounded-[8px]">
+                                    <summary className="list-none flex justify-between items-center cursor-pointer font-semibold text-deep-ink text-base md:text-lg select-none">
+                                        <span>Which bench material is best for coastal areas?</span>
+                                        <span className="material-symbols-outlined text-forest-green transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <div className="mt-4 text-on-surface-variant text-body-md leading-relaxed border-t border-outline-variant/30 pt-4">
+                                        For coastal areas, Aluminium and Stainless Steel (Grade 304 or 316) are highly recommended due to their excellent corrosion resistance. Our polymer-coated and anodized finishes provide extra protection against salt air.
+                                    </div>
+                                </details>
+
+                                <details className="group border border-outline-variant bg-surface-container p-4 sm:p-6 open:bg-[#f0ede9] transition-all duration-300 rounded-[8px]">
+                                    <summary className="list-none flex justify-between items-center cursor-pointer font-semibold text-deep-ink text-base md:text-lg select-none">
+                                        <span>Can benches be customized in length and design?</span>
+                                        <span className="material-symbols-outlined text-forest-green transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <div className="mt-4 text-on-surface-variant text-body-md leading-relaxed border-t border-outline-variant/30 pt-4">
+                                        Yes, we offer custom lengths starting from 1.2m up to customized continuous seating designs. You can also customize armrests, backrests, base colors, and materials.
+                                    </div>
+                                </details>
+
+                                <details className="group border border-outline-variant bg-surface-container p-4 sm:p-6 open:bg-[#f0ede9] transition-all duration-300 rounded-[8px]">
+                                    <summary className="list-none flex justify-between items-center cursor-pointer font-semibold text-deep-ink text-base md:text-lg select-none">
+                                        <span>Are WPC and NFC Wood benches suitable for outdoor use?</span>
+                                        <span className="material-symbols-outlined text-forest-green transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <div className="mt-4 text-on-surface-variant text-body-md leading-relaxed border-t border-outline-variant/30 pt-4">
+                                        Absolutely. Both WPC (Wood Plastic Composite) and NFC (Natural Fiber Composite) wood are engineered to resist rotting, splitting, warping, and UV damage, making them ideal for heavy outdoor usage in Indian weather.
+                                    </div>
+                                </details>
+
+                                <details className="group border border-outline-variant bg-surface-container p-4 sm:p-6 open:bg-[#f0ede9] transition-all duration-300 rounded-[8px]">
+                                    <summary className="list-none flex justify-between items-center cursor-pointer font-semibold text-deep-ink text-base md:text-lg select-none">
+                                        <span>What is the typical lead time?</span>
+                                        <span className="material-symbols-outlined text-forest-green transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <div className="mt-4 text-on-surface-variant text-body-md leading-relaxed border-t border-outline-variant/30 pt-4">
+                                        Standard orders are dispatched within 2-4 weeks. Bulk or custom project orders depend on the complexity and volume of the requirements.
+                                    </div>
+                                </details>
+
+                                <details className="group border border-outline-variant bg-surface-container p-4 sm:p-6 open:bg-[#f0ede9] transition-all duration-300 rounded-[8px]">
+                                    <summary className="list-none flex justify-between items-center cursor-pointer font-semibold text-deep-ink text-base md:text-lg select-none">
+                                        <span>Do you provide installation services?</span>
+                                        <span className="material-symbols-outlined text-forest-green transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                                    </summary>
+                                    <div className="mt-4 text-on-surface-variant text-body-md leading-relaxed border-t border-outline-variant/30 pt-4">
+                                        We provide detailed installation guidance/drawings across India. On-site installation support by our team is also available for bulk corporate or township projects.
+                                    </div>
+                                </details>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-
 
             {/* Bottom Advantage & Conversion Area */}
             <section className="reveal-section bg-primary text-on-primary py-24 px-margin-mobile md:px-margin-desktop overflow-hidden relative">
