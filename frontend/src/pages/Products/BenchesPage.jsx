@@ -9,6 +9,78 @@ const BenchesPage = () => {
     const scrollRef = useRef(null);
     const collectionScrollRef = useRef(null);
 
+    const [configMaterial, setConfigMaterial] = useState("wpc");
+    const [configLength, setConfigLength] = useState("1.5");
+    const [configDesign, setConfigDesign] = useState("Backrest");
+    const [configAntiGraffiti, setConfigAntiGraffiti] = useState(false);
+    const [configGroundFixing, setConfigGroundFixing] = useState(true);
+
+    const materialData = {
+        wpc: {
+            title: "WPC Composite",
+            image: "/products/all_white/outdoor_benches_ulb_07.jpeg",
+            lifespan: "25+ YEARS",
+            lifespanBar: "85%",
+            maintenance: "LOW",
+            maintenanceBar: "20%",
+            cost: "MID-RANGE",
+            costBar: "45%",
+            status: "OPTIMIZED",
+            costMultiplier: 1.6
+        },
+        nfc: {
+            title: "NFC Wood",
+            image: "/products/all_white/outdoor_benches_ulb_08.jpeg",
+            lifespan: "30+ YEARS",
+            lifespanBar: "92%",
+            maintenance: "VERY LOW",
+            maintenanceBar: "15%",
+            cost: "PREMIUM",
+            costBar: "75%",
+            status: "ECO-ENGINEERED",
+            costMultiplier: 2.0
+        },
+        aluminium: {
+            title: "Anodized Aluminium",
+            image: "/products/all_white/outdoor_benches_ulb_09.jpeg",
+            lifespan: "40+ YEARS",
+            lifespanBar: "95%",
+            maintenance: "MINIMAL",
+            maintenanceBar: "10%",
+            cost: "HIGH-END",
+            costBar: "85%",
+            status: "COASTAL READY",
+            costMultiplier: 2.2
+        },
+        mild_steel: {
+            title: "Mild Steel",
+            image: "/products/all_white/outdoor_benches_ulb_10.jpeg",
+            lifespan: "15+ YEARS",
+            lifespanBar: "60%",
+            maintenance: "MODERATE",
+            maintenanceBar: "50%",
+            cost: "ECONOMY",
+            costBar: "30%",
+            status: "DURABLE",
+            costMultiplier: 1.0
+        },
+        stainless_steel: {
+            title: "Stainless Steel",
+            image: "/products/all_white/outdoor_benches_ulb_11.jpeg",
+            lifespan: "50+ YEARS",
+            lifespanBar: "100%",
+            maintenance: "ZERO",
+            maintenanceBar: "5%",
+            cost: "ELITE",
+            costBar: "100%",
+            status: "MAXIMUM SPEC",
+            costMultiplier: 2.5
+        }
+    };
+
+    const baseCostMultiplier = materialData[configMaterial].costMultiplier;
+    const totalCostMultiplier = configAntiGraffiti ? baseCostMultiplier + 0.15 : baseCostMultiplier;
+
     useEffect(() => {
         updatePageSEO({
             title: "Benches Manufacturer India | WPC, Aluminium & GFRC Park Benches | Urbanland Products",
@@ -631,6 +703,266 @@ const BenchesPage = () => {
                             <span className="material-symbols-outlined text-primary text-3xl">extension</span>
                             <h4 className="font-bold text-on-surface text-sm uppercase tracking-wider font-label-technical">Add-ons</h4>
                             <p className="text-xs text-on-surface-variant">Anti-graffiti/Modular</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Design Your Specification Configurator */}
+            <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+                <div className="max-w-container-max mx-auto">
+                    <div className="mb-16 text-left space-y-4">
+                        <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
+                            Configuration Engine
+                        </span>
+                        <h2 className="font-headline-lg text-headline-lg text-deep-ink">Design Your Specification</h2>
+                        <div className="w-24 h-1 bg-craftsman-gold"></div>
+                        <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+                            Configure your urban seating solution with our high-performance material palette. Select a base material to view technical endurance scores.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                        {/* Left Column: Controls */}
+                        <div className="lg:col-span-7 space-y-12">
+                            {/* Material Selection */}
+                            <div className="space-y-6 text-left">
+                                <h3 className="font-label-caps text-xs text-on-surface-variant uppercase tracking-widest font-semibold">01 / Choose Material</h3>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                    {Object.keys(materialData).map((key) => {
+                                        const data = materialData[key];
+                                        const isSelected = configMaterial === key;
+                                        return (
+                                            <button
+                                                key={key}
+                                                onClick={() => setConfigMaterial(key)}
+                                                className={`group border p-4 text-left transition-all duration-300 rounded-none ${
+                                                    isSelected
+                                                        ? "border-craftsman-gold bg-surface-container-low"
+                                                        : "border-outline-variant hover:bg-surface-container-low/50"
+                                                }`}
+                                            >
+                                                <div className="flex items-center justify-between mb-3">
+                                                    <span className="font-bold text-sm text-on-surface flex items-center gap-1">
+                                                        {data.title}
+                                                        {key === "nfc" && (
+                                                            <span className="group/tooltip relative inline-block">
+                                                                <span className="material-symbols-outlined text-sm text-on-surface-variant cursor-help">info</span>
+                                                                <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 scale-95 opacity-0 group-hover/tooltip:scale-100 group-hover/tooltip:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[10px] p-2 leading-relaxed z-20 normal-case font-normal rounded-none shadow-md">
+                                                                    Natural Fiber Composite (NFC) utilizes natural fibers for superior thermal stability and organic aesthetics.
+                                                                </span>
+                                                            </span>
+                                                        )}
+                                                        {key === "mild_steel" && (
+                                                            <span className="group/tooltip relative inline-block">
+                                                                <span className="material-symbols-outlined text-sm text-on-surface-variant cursor-help">info</span>
+                                                                <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 scale-95 opacity-0 group-hover/tooltip:scale-100 group-hover/tooltip:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[10px] p-2 leading-relaxed z-20 normal-case font-normal rounded-none shadow-md">
+                                                                    Powder Coated finish provides industrial strength with a high-durability color shell.
+                                                                </span>
+                                                            </span>
+                                                        )}
+                                                    </span>
+                                                    <div
+                                                        className={`w-8 h-8 rounded-full border border-outline-variant ${
+                                                            key === "wpc"
+                                                                ? "bg-[#8B5E3C]"
+                                                                : key === "nfc"
+                                                                ? "bg-[#A0522D]"
+                                                                : key === "aluminium"
+                                                                ? "bg-[#C0C0C0]"
+                                                                : key === "mild_steel"
+                                                                ? "bg-[#4A4A4A]"
+                                                                : "bg-[#E5E4E2]"
+                                                        }`}
+                                                    />
+                                                </div>
+                                                <p className="text-[10px] text-on-surface-variant uppercase font-semibold tracking-wider font-label-technical">
+                                                    {key === "wpc"
+                                                        ? "Wood-Plastic Composite"
+                                                        : key === "nfc"
+                                                        ? "Premium Bio-Composite"
+                                                        : key === "aluminium"
+                                                        ? "Corrosion-Resistant"
+                                                        : key === "mild_steel"
+                                                        ? "Structural Hardness"
+                                                        : "Marine Grade 316"}
+                                                </p>
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+                            {/* Dimensions & Features */}
+                            <div className="space-y-8 text-left">
+                                <h3 className="font-label-caps text-xs text-on-surface-variant uppercase tracking-widest font-semibold">02 / Dimensions &amp; Features</h3>
+                                <div className="space-y-6">
+                                    {/* Length */}
+                                    <div>
+                                        <label className="font-body-md block mb-3 font-bold text-on-surface text-xs uppercase tracking-wider font-label-technical">Length Specification</label>
+                                        <div className="flex flex-wrap gap-2">
+                                            {["1.2", "1.5", "2.0", "Custom"].map((len) => {
+                                                const isSelected = configLength === len;
+                                                return (
+                                                    <button
+                                                        key={len}
+                                                        onClick={() => setConfigLength(len)}
+                                                        className={`px-6 py-2 border text-sm font-medium transition-colors rounded-none ${
+                                                            isSelected
+                                                                ? "border-primary bg-primary text-on-primary"
+                                                                : "border-outline-variant text-on-surface hover:bg-surface-container-low"
+                                                        }`}
+                                                    >
+                                                        {len === "Custom" ? "Custom" : `${len}m`}
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+
+                                    {/* Design */}
+                                    <div>
+                                        <label className="font-body-md block mb-3 font-bold text-on-surface text-xs uppercase tracking-wider font-label-technical">Design Architecture</label>
+                                        <div className="flex flex-wrap gap-2">
+                                            {["Backrest", "No Backrest"].map((design) => {
+                                                const isSelected = configDesign === design;
+                                                return (
+                                                    <button
+                                                        key={design}
+                                                        onClick={() => setConfigDesign(design)}
+                                                        className={`px-6 py-2 border text-sm font-medium transition-colors rounded-none ${
+                                                            isSelected
+                                                                ? "border-primary bg-primary text-on-primary"
+                                                                : "border-outline-variant text-on-surface hover:bg-surface-container-low"
+                                                        }`}
+                                                    >
+                                                        {design}
+                                                    </button>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+
+                                    {/* Technical Add-ons */}
+                                    <div>
+                                        <label className="font-body-md block mb-3 font-bold text-on-surface text-xs uppercase tracking-wider font-label-technical">Technical Add-ons</label>
+                                        <div className="flex flex-col sm:flex-row gap-6">
+                                            <label className="flex items-center space-x-3 cursor-pointer group">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={configAntiGraffiti}
+                                                    onChange={() => setConfigAntiGraffiti(!configAntiGraffiti)}
+                                                    className="form-checkbox h-5 w-5 text-forest-green border-outline-variant focus:ring-forest-green rounded-none"
+                                                />
+                                                <span className="text-sm font-medium text-on-surface">Anti-graffiti Coating</span>
+                                            </label>
+
+                                            <label className="flex items-center space-x-3 cursor-pointer group">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={configGroundFixing}
+                                                    onChange={() => setConfigGroundFixing(!configGroundFixing)}
+                                                    className="form-checkbox h-5 w-5 text-forest-green border-outline-variant focus:ring-forest-green rounded-none"
+                                                />
+                                                <span className="text-sm font-medium text-on-surface">Ground Fixing Kit</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Sticky Preview */}
+                        <div className="lg:col-span-5 lg:sticky lg:top-28 text-left">
+                            <div className="bg-surface-container-low border border-outline-variant p-8 rounded-none space-y-8">
+                                {/* Image Preview */}
+                                <div className="aspect-video overflow-hidden rounded-none bg-surface-dim relative border border-outline-variant">
+                                    <img
+                                        alt="Bench Material Preview"
+                                        className="w-full h-full object-cover transition-all duration-300"
+                                        src={materialData[configMaterial].image}
+                                    />
+                                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] font-bold font-label-caps border border-outline-variant uppercase tracking-widest">LIVE PREVIEW</div>
+                                </div>
+
+                                {/* Technical Scorecard */}
+                                <div className="space-y-6">
+                                    <div className="flex justify-between items-end border-b border-craftsman-gold pb-4">
+                                        <div>
+                                            <h4 className="font-label-caps text-xs text-on-surface-variant font-semibold">TECHNICAL SCORECARD</h4>
+                                            <h2 className="font-headline-md text-2xl text-deep-ink mt-1">
+                                                {materialData[configMaterial].title}
+                                            </h2>
+                                        </div>
+                                        <div className="text-right">
+                                            <span className="font-label-caps text-[10px] text-on-surface-variant font-semibold">BUILD INDEX</span>
+                                            <div className="text-forest-green font-bold text-sm">
+                                                {configAntiGraffiti && configMaterial === "wpc" ? "ULTRA-ENDURANT" : materialData[configMaterial].status}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="grid grid-cols-1 gap-4">
+                                        {/* Lifespan */}
+                                        <div className="space-y-2">
+                                            <div className="flex justify-between text-xs font-bold font-label-caps text-on-surface">
+                                                <span>LIFESPAN</span>
+                                                <span>{materialData[configMaterial].lifespan}</span>
+                                            </div>
+                                            <div className="h-2 bg-outline-variant/30 overflow-hidden">
+                                                <div
+                                                    className="h-full bg-forest-green transition-all duration-700"
+                                                    style={{ width: materialData[configMaterial].lifespanBar }}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Maintenance */}
+                                        <div className="space-y-2">
+                                            <div className="flex justify-between text-xs font-bold font-label-caps text-on-surface">
+                                                <span>MAINTENANCE FREQUENCY</span>
+                                                <span>
+                                                    {configAntiGraffiti ? "SELF-CLEANING / ULTRA LOW" : materialData[configMaterial].maintenance}
+                                                </span>
+                                            </div>
+                                            <div className="h-2 bg-outline-variant/30 overflow-hidden">
+                                                <div
+                                                    className="h-full bg-craftsman-gold transition-all duration-700"
+                                                    style={{ width: configAntiGraffiti ? "5%" : materialData[configMaterial].maintenanceBar }}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Cost */}
+                                        <div className="space-y-2">
+                                            <div className="flex justify-between text-xs font-bold font-label-caps text-on-surface">
+                                                <span>COST INDEX</span>
+                                                <span>
+                                                    {materialData[configMaterial].cost} ({totalCostMultiplier.toFixed(1)}x)
+                                                </span>
+                                            </div>
+                                            <div className="h-2 bg-outline-variant/30 overflow-hidden">
+                                                <div
+                                                    className="h-full bg-charcoal-industrial transition-all duration-700"
+                                                    style={{ width: materialData[configMaterial].costBar }}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* CTA */}
+                                <Link
+                                    to="/contact"
+                                    className="w-full bg-forest-green text-on-primary py-4 rounded-none font-bold font-label-caps hover:bg-primary transition-all flex items-center justify-center gap-3 text-center uppercase tracking-widest text-sm"
+                                >
+                                    Request Technical Spec Sheet
+                                    <span className="material-symbols-outlined">download</span>
+                                </Link>
+                                <p className="text-[11px] text-center text-on-surface-variant font-label-caps italic">
+                                    Estimated delivery: 4-6 Weeks for custom specifications.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
