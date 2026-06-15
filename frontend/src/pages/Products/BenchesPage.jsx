@@ -1021,7 +1021,7 @@ const BenchesPage = () => {
                     <div className="text-center mb-20">
                         <Link
                             to="/catalogue"
-                            className="flex sm:inline-flex items-center justify-center gap-3 border border-deep-ink hover:bg-deep-ink hover:text-white w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 text-[10px] sm:text-xs font-bold font-label-caps uppercase tracking-wider sm:tracking-widest transition-all duration-300 group"
+                            className="flex sm:inline-flex items-center justify-center gap-3 border border-deep-ink hover:bg-deep-ink hover:text-white w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 text-[11px] sm:text-xs font-bold font-label-caps uppercase tracking-wider sm:tracking-widest transition-all duration-300 group"
                         >
                             View More Projects &amp; Case Studies
                             <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
