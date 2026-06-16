@@ -168,35 +168,35 @@ export const productConfigs = {
                     title: "WPC Benches",
                     alt: "WPC Benches",
                     path: "/catalogue",
-                    src: "/products/all_white/outdoor_benches_ulb_07.jpeg",
+                    src: "/assets/products/benches/range-wpc-bench.webp",
                     desc: "Eco-friendly, water-resistant wood plastic composite benches designed for municipal parks and garden trails."
                 },
                 {
                     title: "NFC Wood Benches",
                     alt: "NFC Wood Benches",
                     path: "/catalogue",
-                    src: "/products/all_white/outdoor_benches_ulb_08.jpeg",
+                    src: "/assets/products/benches/range-nfc-wood-bench.webp",
                     desc: "Premium natural fiber composite benches offering rich natural wood grain aesthetics with zero maintenance."
                 },
                 {
                     title: "Aluminium Benches",
                     alt: "Aluminium Benches",
                     path: "/catalogue",
-                    src: "/products/all_white/outdoor_benches_ulb_09.jpeg",
+                    src: "/assets/products/benches/range-aluminium-bench.webp",
                     desc: "Lightweight, architectural grade anodized aluminium seating ideal for coastal salt air and modern urban plazas."
                 },
                 {
                     title: "Mild Steel Benches",
                     alt: "Mild Steel Benches",
                     path: "/catalogue",
-                    src: "/products/all_white/outdoor_benches_ulb_10.jpeg",
+                    src: "/assets/products/benches/range-mild-steel-bench.webp",
                     desc: "Heavy-duty, powder-coated steel benches built for extreme durability in high-traffic commercial zones and campuses."
                 },
                 {
                     title: "Stainless Steel Benches",
                     alt: "Stainless Steel Benches",
                     path: "/catalogue",
-                    src: "/products/all_white/outdoor_benches_ulb_11.jpeg",
+                    src: "/assets/products/benches/range-stainless-steel-bench.webp",
                     desc: "Elite 304/316 grade brushed stainless steel benches offering supreme structural longevity and modern style."
                 }
             ]
