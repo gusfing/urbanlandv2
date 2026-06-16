@@ -2641,27 +2641,27 @@ export const productConfigs = {
                 {
                     title: "Luxury Wicker Lounger",
                     alt: "Luxury Wicker Lounger",
-                    src: poolsideLoungersImg
+                    src: "/assets/products/poolside-loungers/gallery-luxury-wicker-lounger.webp"
                 },
                 {
                     title: "White Collection Lounger",
                     alt: "White Collection Lounger",
-                    src: "/products/all_white/7-1.webp_202606080031.jpeg"
+                    src: "/assets/products/poolside-loungers/gallery-white-collection-lounger.webp"
                 },
                 {
                     title: "Resort Daybed",
                     alt: "Resort Daybed",
-                    src: "/products/all_white/7-3.webp_202606080031.jpeg"
+                    src: "/assets/products/poolside-loungers/gallery-resort-daybed.webp"
                 },
                 {
                     title: "Premium Poolside Set",
                     alt: "Premium Poolside Set",
-                    src: "/products/all_white/7.webp_202606080031.jpeg"
+                    src: "/assets/products/poolside-loungers/gallery-premium-poolside-lounger-set.webp"
                 },
                 {
                     title: "Hospitality Daybed Pavilion",
                     alt: "Hospitality Daybed Pavilion",
-                    src: "/products/all_white/New-Project-3-1.webp_202606080031.jpeg"
+                    src: "/assets/products/poolside-loungers/gallery-hospitality-daybed-pavilion.webp"
                 }
             ],
             viewAllRedirect: "/catalogue"
