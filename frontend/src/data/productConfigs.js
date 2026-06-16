@@ -65,16 +65,16 @@ export const productConfigs = {
                 { icon: "apartment", label: "50+ Projects" }
             ],
             mainImage: {
-                src: "/products/all_white/outdoor_benches_ulb_02.jpeg",
+                src: "/assets/products/benches/hero-main.webp",
                 alt: "Premium Urbanland Bench"
             },
             subImage1: {
-                src: "/products/all_white/outdoor_benches_ulb_12.jpeg",
+                src: "/assets/products/benches/hero-sub-1.webp",
                 alt: "NFC Wood Texture",
                 label: "NFC WOOD"
             },
             subImage2: {
-                src: "/products/all_white/outdoor_benches_ulb_13.jpeg",
+                src: "/assets/products/benches/hero-sub-2.webp",
                 alt: "Stainless Steel Detail",
                 label: "STAINLESS STEEL"
             }
@@ -123,7 +123,7 @@ export const productConfigs = {
                     icon: "chair",
                     title: "Comfortable Seating",
                     desc: "Ergonomically designed benches provide essential rest and relaxation, meticulously curved to support the human form for extended periods. We study the sit-to-stand transition to ensure accessibility for all ages.",
-                    image: "/products/all_white/outdoor_benches_ulb_15.jpeg"
+                    image: "/assets/products/benches/philosophy-comfort.webp"
                 },
                 {
                     num: "02.",
@@ -144,14 +144,14 @@ export const productConfigs = {
                     title: "Low Maintenance",
                     desc: "Featuring easy-to-clean surfaces and corrosion-resistant materials like 304/316 grade stainless steel and NFC wood composites. Designed to minimize lifecycle costs for facility managers.",
                     tags: ["SS 316", "NFC COMPOSITE"],
-                    image: "/products/all_white/outdoor_benches_ulb_13.jpeg"
+                    image: "/assets/products/benches/philosophy-maintenance.webp"
                 },
                 {
                     num: "05.",
                     icon: "groups",
                     title: "Community & Social Hub",
                     desc: "Encourages social interaction and community bonding. Our benches are designed to facilitate conversation and create shared moments in the public realm—turning walkways into destinations.",
-                    image: "/products/all_white/outdoor_benches_ulb_03.jpeg"
+                    image: "/assets/products/benches/philosophy-community.webp"
                 }
             ]
         },
