@@ -2747,12 +2747,12 @@ export const productConfigs = {
             radialMap: {
                 centralImage: "/assets/products/poolside-loungers/config-central.webp",
                 centralImageAlt: "Premium Urbanland poolside lounger centered in a bright gallery",
-                backgroundImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAFmkQaFcNjNSWUmutrieGqYQK4ZUsxjwMumPQIERWBhUZcVqdhl4afYrwCs_oSXFHJkjw81vRim4flN36IhBRSj0-mOQSQ60KYEsSpju7VYn1NQEEQvZ7JvfdGJbKGe-YzHiFPokKN2wLuow9xl0KiSR-LQW9ivwz_focKQ6c3a4HCmGYEx8fK32U7P6ezMhYzzVYDtsU0tHbHo7H-Yg0AHecMNtC75wjChhfJsfI7Nksy5fudY0CaFXhCYcIZEqFl7IFIdQlx4NkM",
+                backgroundImage: "/assets/products/poolside-loungers/config-bg.webp",
                 cards: [
                     {
                         title: "Materials Focus",
                         desc: 'Hand-woven <span class="text-deep-ink font-semibold">High-Density PE Rattan</span> provides UV-resistance and weatherproof durability for long-term coastal exposure.',
-                        image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBYHezBXVUZgyX00ZAhxxDwNkpWOj9xBluScWgyA96w54lR899qZRVaSUQBnSBjmSlmO0sSqGFjCLnIDZo3hBbTQi6zCablc_ji-RcadshsIdlPPD4ORGDmaMhCPSsh_v8wvdkitIRT-U5fxvJvS3cnygwXeNr7dDt4mJqt6IlTq05ybWLZhOttHVpZbBVDnDVUHfbB19rKOO03PGj7_Kl1l6L28k4NwNgyUOQ0nC50UC90guxTxCKS07Y31hX6lFy89fxgGnM_dZiU",
+                        image: "/assets/products/poolside-loungers/config-material-detail.webp",
                         imageAlt: "PE Rattan texture close-up",
                         positionClass: "absolute top-[5%] left-[5%] md:top-[10%] md:left-[5%] w-72",
                         line: { x1: "320", x2: "550", y1: "200", y2: "350", cx: "550", cy: "350" }
