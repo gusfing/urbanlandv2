@@ -2618,16 +2618,16 @@ export const productConfigs = {
                 { icon: "apartment", label: "50+ Projects" }
             ],
             mainImage: {
-                src: poolsideLoungersImg,
+                src: "/assets/products/poolside-loungers/hero-main.webp",
                 alt: "Luxury Resort Lounger"
             },
             subImage1: {
-                src: poolsideLoungersUgc,
+                src: "/assets/products/poolside-loungers/hero-sub-1.webp",
                 alt: "Lounger Installed View",
                 label: "POOL DECK SEATING"
             },
             subImage2: {
-                src: poolsideLoungersDetail,
+                src: "/assets/products/poolside-loungers/hero-sub-2.webp",
                 alt: "Wicker Weave Detail",
                 label: "HDPE WICKER"
             }
