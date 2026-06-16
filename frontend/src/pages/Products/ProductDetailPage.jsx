@@ -2,14 +2,18 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import { productConfigs } from "../../data/productConfigs";
+import BenchesConfigurator from "../../components/BenchesConfigurator";
+import ProductConfigurator from "../../components/ProductConfigurator";
+import ScrollVideoSection from "../../components/ScrollVideoSection";
+
 
 const ProductDetailPage = ({ productId: propProductId }) => {
     const { productId: urlProductId } = useParams();
     const activeProductId = propProductId || urlProductId || "benches";
-    
+
     const baseConfig = productConfigs["benches"];
     const specificConfig = productConfigs[activeProductId] || {};
-    
+
     // Deep merge to support stub configurations
     const config = {
         ...baseConfig,
@@ -67,7 +71,12 @@ const ProductDetailPage = ({ productId: propProductId }) => {
             ...baseConfig.faq,
             ...specificConfig.faq,
             list: specificConfig.faq.list || baseConfig.faq.list
-        } : baseConfig.faq
+        } : baseConfig.faq,
+        conversion: specificConfig.conversion ? {
+            ...baseConfig.conversion,
+            ...specificConfig.conversion,
+            advantages: specificConfig.conversion.advantages || baseConfig.conversion.advantages
+        } : baseConfig.conversion
     };
 
     const [activeSlide, setActiveSlide] = useState(0);
@@ -104,7 +113,7 @@ const ProductDetailPage = ({ productId: propProductId }) => {
         }
         setActiveSlide(0);
         setCollectionActiveSlide(0);
-    }, [activeProductId, config]);
+    }, [activeProductId]);
 
     const activeMaterialData = materialData[configMaterial] || {};
     const baseCostMultiplier = activeMaterialData.costMultiplier || 1.0;
@@ -155,7 +164,7 @@ const ProductDetailPage = ({ productId: propProductId }) => {
             sections.forEach(section => observer.unobserve(section));
             revealUps.forEach(el => revealUpObserver.unobserve(el));
         };
-    }, [activeProductId, config]);
+    }, [activeProductId]);
 
     const projectSlides = config.provenExcellence.slides || [];
     const collectionSlides = config.gallery.slides || [];
@@ -233,7 +242,7 @@ const ProductDetailPage = ({ productId: propProductId }) => {
                             ))}
                         </div>
                     </div>
-                    <div className="lg:col-span-6 relative h-full min-h-[500px] md:min-h-[600px] animate-hero delay-2">
+                    <div className="lg:col-span-6 relative h-[500px] md:h-[600px] lg:h-[650px] w-full animate-hero delay-2">
                         <div className="grid grid-cols-6 grid-rows-6 gap-4 h-full w-full">
                             <div className="col-span-6 row-span-4 bento-img-container">
                                 <img
@@ -306,10 +315,10 @@ const ProductDetailPage = ({ productId: propProductId }) => {
 
                         {/* View All Special Card */}
                         <div className="flex-none w-[80vw] md:w-[50vw] snap-center relative group">
-                            <Link 
+                            <Link
                                 to={config.gallery.viewAllRedirect || "/catalogue"}
                                 className="aspect-[16/9] flex flex-col justify-center items-center border border-forest-green hover:border-craftsman-gold transition-all duration-500 relative overflow-hidden text-center p-8 group cursor-pointer h-full w-full"
-                                style={{ 
+                                style={{
                                     backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0), linear-gradient(to bottom right, #2C5F2E, #1D4220)',
                                     backgroundSize: '24px 24px, 100% 100%'
                                 }}
@@ -493,370 +502,142 @@ const ProductDetailPage = ({ productId: propProductId }) => {
                 </div>
             </section>
 
-            {/* Product Range Categories */}
-            <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
-                <div className="max-w-container-max mx-auto">
-                    <div className="mb-16 text-left space-y-4 reveal-up">
-                        <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-                            {config.categories.badge}
-                        </span>
-                        <h2 className="font-headline-lg text-headline-lg text-deep-ink">
-                            {config.categories.title}
-                        </h2>
-                        <div className="w-24 h-1 bg-craftsman-gold"></div>
-                        <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-                            {config.categories.description}
-                        </p>
-                    </div>
+            {/* Product Range Categories / Video Section */}
+            {activeProductId === "poolside-loungers" ? (
+                <ScrollVideoSection 
+                    badge="DESIGNED FOR LEISURE"
+                    heading="Why Premium Poolside Loungers Matter"
+                    description="A luxury pool deck is defined by the quality of its relaxation spaces. Cheap loungers crack, fade, and degrade under intense UV rays and chlorine exposure. Urbanland's premium sun loungers are built to withstand the harshest environments while delivering unmatched comfort."
+                />
+            ) : (
+                config.categories && config.categories.list && config.categories.list.length > 0 && (
+                    <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+                        <div className="max-w-container-max mx-auto">
+                            <div className="mb-16 text-left space-y-4 reveal-up">
+                                <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
+                                    {config.categories.badge}
+                                </span>
+                                <h2 className="font-headline-lg text-headline-lg text-deep-ink">
+                                    {config.categories.title}
+                                </h2>
+                                <div className="w-24 h-1 bg-craftsman-gold"></div>
+                                <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+                                    {config.categories.description}
+                                </p>
+                            </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
-                        {config.categories.list.map((cat, idx) => {
-                            const isLarge = idx === 0;
-                            return (
-                                <div
-                                    key={idx}
-                                    style={{ transitionDelay: `${idx * 150}ms` }}
-                                    className={`group bento-card reveal-up relative overflow-hidden bg-surface-container-low border border-outline-variant hover:border-craftsman-gold hover:shadow-lg transition-all duration-300 p-0 flex ${isLarge ? "md:col-span-8 flex-col md:flex-row" : "md:col-span-4 flex-col justify-between"
-                                        }`}
-                                >
-                                    {isLarge ? (
-                                        <>
-                                            <div className="md:w-1/2 overflow-hidden h-64 md:h-full relative">
-                                                <img
-                                                    alt={cat.alt}
-                                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                    src={cat.src}
-                                                />
-                                            </div>
-                                            <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-between text-left">
-                                                <div>
-                                                    <span className="font-label-caps text-xs text-craftsman-gold mb-4 block">COLLECTION 01</span>
-                                                    <Link to={cat.path} className="block group/title">
-                                                        <h3 className="font-headline-md font-semibold text-2xl text-on-surface group-hover/title:text-primary transition-colors">
-                                                            {cat.title}
-                                                        </h3>
-                                                    </Link>
-                                                    <p className="font-body-md text-sm text-on-surface-variant mt-4 leading-relaxed">
-                                                        {cat.desc}
-                                                    </p>
-                                                </div>
-                                                <div className="flex items-center justify-between pt-6 border-t border-outline-variant/40 mt-8">
-                                                    <Link to={cat.path} className="font-label-caps text-xs text-forest-green hover:text-primary transition-colors flex items-center gap-1 font-semibold uppercase group/explore">
-                                                        Explore Collection
-                                                        <span className="material-symbols-outlined text-sm group-hover/explore:translate-x-1 transition-transform">arrow_forward</span>
-                                                    </Link>
-                                                    <Link to="/contact" className="bg-primary text-on-primary px-4 py-2.5 text-[10px] font-label-caps uppercase rounded-none hover:bg-forest-green transition-all shadow-sm border-b border-charcoal-industrial active:opacity-90">
-                                                        Request Quote
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <div>
-                                                <div className="h-64 overflow-hidden relative">
-                                                    <img
-                                                        alt={cat.alt}
-                                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                        src={cat.src}
-                                                    />
-                                                </div>
-                                                <div className="p-8 text-left">
-                                                    <span className="font-label-caps text-xs text-craftsman-gold mb-4 block">COLLECTION 0{idx + 1}</span>
-                                                    <Link to={cat.path} className="block group/title">
-                                                        <h3 className="font-headline-md font-semibold text-2xl text-on-surface group-hover/title:text-primary transition-colors">
-                                                            {cat.title}
-                                                        </h3>
-                                                    </Link>
-                                                    <p className="font-body-md text-sm text-on-surface-variant mt-3 leading-relaxed">
-                                                        {cat.desc}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="p-8 pt-0 text-left">
-                                                <div className="flex items-center justify-between pt-6 border-t border-outline-variant/40">
-                                                    <Link to={cat.path} className="font-label-caps text-xs text-forest-green hover:text-primary transition-colors flex items-center gap-1 font-semibold uppercase group/explore">
-                                                        Explore Collection
-                                                        <span className="material-symbols-outlined text-sm group-hover/explore:translate-x-1 transition-transform">arrow_forward</span>
-                                                    </Link>
-                                                    <Link to="/contact" className="bg-primary text-on-primary px-4 py-2.5 text-[10px] font-label-caps uppercase rounded-none hover:bg-forest-green transition-all shadow-sm border-b border-charcoal-industrial active:opacity-90">
-                                                        Request Quote
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </section>
-
-            {/* Design Your Specification Configurator */}
-            {materialKeys.length > 0 && (
-                <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
-                    <div className="max-w-container-max mx-auto">
-                        <div className="mb-16 text-left space-y-4 reveal-up">
-                            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-                                {config.configurator.badge}
-                            </span>
-                            <h2 className="font-headline-lg text-headline-lg text-deep-ink">
-                                {config.configurator.title}
-                            </h2>
-                            <div className="w-24 h-1 bg-craftsman-gold"></div>
-                            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-                                {config.configurator.description}
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                            {/* Left Column: Controls */}
-                            <div className="lg:col-span-7 space-y-12 reveal-up">
-                                {/* Material Selection */}
-                                <div className="space-y-6 text-left">
-                                    <h3 className="font-label-caps text-xs text-on-surface-variant uppercase tracking-widest font-semibold">01 / Choose Material</h3>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                                        {materialKeys.map((key) => {
-                                            const data = materialData[key];
-                                            const isSelected = configMaterial === key;
-                                            return (
-                                                <button
-                                                    key={key}
-                                                    onClick={() => setConfigMaterial(key)}
-                                                    className={`group border p-4 text-left transition-all duration-300 rounded-[8px] ${isSelected
-                                                        ? "border-craftsman-gold bg-surface-container-low"
-                                                        : "border-outline-variant hover:bg-surface-container-low/50"
-                                                        }`}
-                                                >
-                                                    <div className="flex items-center justify-between mb-3">
-                                                        <span className="font-bold text-sm text-on-surface flex items-center gap-1">
-                                                            {data.title}
-                                                            {key === "nfc" && (
-                                                                <span className="group/tooltip relative inline-block">
-                                                                    <span className="material-symbols-outlined text-sm text-on-surface-variant cursor-help">info</span>
-                                                                    <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 scale-95 opacity-0 group-hover/tooltip:scale-100 group-hover/tooltip:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[10.5px] p-2.5 leading-relaxed z-20 normal-case font-normal rounded-[6px] shadow-lg border border-outline-variant/30">
-                                                                        Natural Fiber Composite (NFC) utilizes natural fibers for superior thermal stability and organic aesthetics.
-                                                                    </span>
-                                                                </span>
-                                                            )}
-                                                            {key === "mild_steel" && (
-                                                                <span className="group/tooltip relative inline-block">
-                                                                    <span className="material-symbols-outlined text-sm text-on-surface-variant cursor-help">info</span>
-                                                                    <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 scale-95 opacity-0 group-hover/tooltip:scale-100 group-hover/tooltip:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[10.5px] p-2.5 leading-relaxed z-20 normal-case font-normal rounded-[6px] shadow-lg border border-outline-variant/30">
-                                                                        Powder Coated finish provides industrial strength with a high-durability color shell.
-                                                                    </span>
-                                                                </span>
-                                                            )}
-                                                        </span>
-                                                        <div
-                                                            className={`w-8 h-8 rounded-full border border-outline-variant ${key === "wpc"
-                                                                ? "bg-[#8B5E3C]"
-                                                                : key === "nfc"
-                                                                    ? "bg-[#A0522D]"
-                                                                    : key === "aluminium"
-                                                                        ? "bg-[#C0C0C0]"
-                                                                        : key === "mild_steel"
-                                                                            ? "bg-[#4A4A4A]"
-                                                                            : "bg-[#E5E4E2]"
-                                                                }`}
+                            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                                {config.categories.list.map((cat, idx) => {
+                                    const isLarge = idx === 0;
+                                    return (
+                                        <div
+                                            key={idx}
+                                            style={{ transitionDelay: `${idx * 150}ms` }}
+                                            className={`group bento-card reveal-up relative overflow-hidden bg-surface-container-low border border-outline-variant hover:border-craftsman-gold hover:shadow-lg transition-all duration-300 p-0 flex ${isLarge ? "md:col-span-8 flex-col md:flex-row" : "md:col-span-4 flex-col justify-between"
+                                                }`}
+                                        >
+                                            {isLarge ? (
+                                                <>
+                                                    <div className="md:w-1/2 overflow-hidden h-64 md:h-full relative">
+                                                        <img
+                                                            alt={cat.alt}
+                                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                            src={cat.src}
                                                         />
                                                     </div>
-                                                    <p className="text-[10px] text-on-surface-variant uppercase font-semibold tracking-wider font-label-technical">
-                                                        {key === "wpc"
-                                                            ? "Wood-Plastic Composite"
-                                                            : key === "nfc"
-                                                                ? "Premium Bio-Composite"
-                                                                : key === "aluminium"
-                                                                    ? "Corrosion-Resistant"
-                                                                    : key === "mild_steel"
-                                                                        ? "Structural Hardness"
-                                                                        : "Marine Grade 316"}
-                                                    </p>
-                                                </button>
-                                            );
-                                        })}
-                                    </div>
-                                </div>
-
-                                {/* Dimensions & Features */}
-                                <div className="space-y-8 text-left">
-                                    <h3 className="font-label-caps text-xs text-on-surface-variant uppercase tracking-widest font-semibold">02 / Dimensions &amp; Features</h3>
-                                    <div className="space-y-6">
-                                        {/* Length */}
-                                        <div>
-                                            <label className="font-body-md block mb-3 font-bold text-on-surface text-xs uppercase tracking-wider font-label-technical">Size / Length Specification</label>
-                                            <div className="flex flex-wrap gap-2">
-                                                {lengthOptions.map((len) => {
-                                                    const isSelected = configLength === len;
-                                                    return (
-                                                        <button
-                                                            key={len}
-                                                            onClick={() => setConfigLength(len)}
-                                                            className={`px-6 py-2 border text-sm font-medium transition-colors rounded-[8px] ${isSelected
-                                                                ? "border-primary bg-primary text-on-primary"
-                                                                : "border-outline-variant text-on-surface hover:bg-surface-container-low"
-                                                                }`}
-                                                        >
-                                                            {len === "Custom" || isNaN(Number(len)) ? len : `${len}m`}
-                                                        </button>
-                                                    );
-                                                })}
-                                            </div>
+                                                    <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-between text-left">
+                                                        <div>
+                                                            <span className="font-label-caps text-xs text-craftsman-gold mb-4 block">COLLECTION 01</span>
+                                                            <Link to={cat.path} className="block group/title">
+                                                                <h3 className="font-headline-md font-semibold text-2xl text-on-surface group-hover/title:text-primary transition-colors">
+                                                                    {cat.title}
+                                                                </h3>
+                                                            </Link>
+                                                            <p className="font-body-md text-sm text-on-surface-variant mt-4 leading-relaxed">
+                                                                {cat.desc}
+                                                            </p>
+                                                        </div>
+                                                        <div className="flex items-center justify-between pt-6 border-t border-outline-variant/40 mt-8">
+                                                            <Link to={cat.path} className="font-label-caps text-xs text-forest-green hover:text-primary transition-colors flex items-center gap-1 font-semibold uppercase group/explore">
+                                                                Explore Collection
+                                                                <span className="material-symbols-outlined text-sm group-hover/explore:translate-x-1 transition-transform">arrow_forward</span>
+                                                            </Link>
+                                                            <Link to="/contact" className="bg-primary text-on-primary px-4 py-2.5 text-[10px] font-label-caps uppercase rounded-none hover:bg-forest-green transition-all shadow-sm border-b border-charcoal-industrial active:opacity-90">
+                                                                Request Quote
+                                                            </Link>
+                                                        </div>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <div>
+                                                        <div className="h-64 overflow-hidden relative">
+                                                            <img
+                                                                alt={cat.alt}
+                                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                                src={cat.src}
+                                                            />
+                                                        </div>
+                                                        <div className="p-8 text-left">
+                                                            <span className="font-label-caps text-xs text-craftsman-gold mb-4 block">COLLECTION 0{idx + 1}</span>
+                                                            <Link to={cat.path} className="block group/title">
+                                                                <h3 className="font-headline-md font-semibold text-2xl text-on-surface group-hover/title:text-primary transition-colors">
+                                                                    {cat.title}
+                                                                </h3>
+                                                            </Link>
+                                                            <p className="font-body-md text-sm text-on-surface-variant mt-3 leading-relaxed">
+                                                                {cat.desc}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div className="p-8 pt-0 text-left">
+                                                        <div className="flex items-center justify-between pt-6 border-t border-outline-variant/40">
+                                                            <Link to={cat.path} className="font-label-caps text-xs text-forest-green hover:text-primary transition-colors flex items-center gap-1 font-semibold uppercase group/explore">
+                                                                Explore Collection
+                                                                <span className="material-symbols-outlined text-sm group-hover/explore:translate-x-1 transition-transform">arrow_forward</span>
+                                                            </Link>
+                                                            <Link to="/contact" className="bg-primary text-on-primary px-4 py-2.5 text-[10px] font-label-caps uppercase rounded-none hover:bg-forest-green transition-all shadow-sm border-b border-charcoal-industrial active:opacity-90">
+                                                                Request Quote
+                                                            </Link>
+                                                        </div>
+                                                    </div>
+                                                </>
+                                            )}
                                         </div>
-
-                                        {/* Design */}
-                                        <div>
-                                            <label className="font-body-md block mb-3 font-bold text-on-surface text-xs uppercase tracking-wider font-label-technical">Design Architecture</label>
-                                            <div className="flex flex-wrap gap-2">
-                                                {designOptions.map((design) => {
-                                                    const isSelected = configDesign === design;
-                                                    return (
-                                                        <button
-                                                            key={design}
-                                                            onClick={() => setConfigDesign(design)}
-                                                            className={`px-6 py-2 border text-sm font-medium transition-colors rounded-[8px] ${isSelected
-                                                                ? "border-primary bg-primary text-on-primary"
-                                                                : "border-outline-variant text-on-surface hover:bg-surface-container-low"
-                                                                }`}
-                                                        >
-                                                            {design}
-                                                        </button>
-                                                    );
-                                                })}
-                                            </div>
-                                        </div>
-
-                                        {/* Technical Add-ons */}
-                                        <div>
-                                            <label className="font-body-md block mb-3 font-bold text-on-surface text-xs uppercase tracking-wider font-label-technical">Technical Add-ons</label>
-                                            <div className="flex flex-col sm:flex-row gap-6">
-                                                <label className="flex items-center space-x-3 cursor-pointer group">
-                                                    <input
-                                                        type="checkbox"
-                                                        checked={configAntiGraffiti}
-                                                        onChange={() => setConfigAntiGraffiti(!configAntiGraffiti)}
-                                                        className="appearance-none h-5 w-5 border border-outline-variant bg-transparent checked:bg-forest-green checked:border-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green/30 rounded-[4px] relative cursor-pointer before:content-[''] before:absolute before:left-[6px] before:top-[2px] before:w-[6px] before:h-[11px] before:border-r-2 before:border-b-2 before:border-white before:rotate-45 before:opacity-0 checked:before:opacity-100 transition-all"
-                                                    />
-                                                    <span className="text-sm font-medium text-on-surface">Anti-graffiti Coating</span>
-                                                </label>
-
-                                                <label className="flex items-center space-x-3 cursor-pointer group">
-                                                    <input
-                                                        type="checkbox"
-                                                        checked={configGroundFixing}
-                                                        onChange={() => setConfigGroundFixing(!configGroundFixing)}
-                                                        className="appearance-none h-5 w-5 border border-outline-variant bg-transparent checked:bg-forest-green checked:border-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green/30 rounded-[4px] relative cursor-pointer before:content-[''] before:absolute before:left-[6px] before:top-[2px] before:w-[6px] before:h-[11px] before:border-r-2 before:border-b-2 before:border-white before:rotate-45 before:opacity-0 checked:before:opacity-100 transition-all"
-                                                    />
-                                                    <span className="text-sm font-medium text-on-surface">Ground Fixing Kit</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Right Column: Sticky Preview */}
-                            <div className="lg:col-span-5 lg:sticky lg:top-28 text-left reveal-up" style={{ transitionDelay: "150ms" }}>
-                                <div className="bg-[#f0ede9] border border-outline-variant p-6 sm:p-8 rounded-[8px] space-y-8">
-                                    {/* Image Preview */}
-                                    {activeMaterialData.image && (
-                                        <div className="aspect-video overflow-hidden rounded-[8px] bg-surface-dim relative border border-outline-variant">
-                                            <img
-                                                alt="Material Preview"
-                                                className="w-full h-full object-cover transition-all duration-300"
-                                                src={activeMaterialData.image}
-                                            />
-                                            <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 text-[10px] font-bold font-label-caps border border-outline-variant uppercase tracking-widest rounded-[4px]">LIVE PREVIEW</div>
-                                        </div>
-                                    )}
-
-                                    {/* Technical Scorecard */}
-                                    <div className="space-y-6">
-                                        <div className="flex justify-between items-end border-b border-craftsman-gold pb-4">
-                                            <div>
-                                                <h4 className="font-label-caps text-xs text-on-surface-variant font-semibold">TECHNICAL SCORECARD</h4>
-                                                <h2 className="font-headline-md text-2xl text-deep-ink mt-1">
-                                                    {activeMaterialData.title}
-                                                </h2>
-                                            </div>
-                                            <div className="text-right">
-                                                <span className="font-label-caps text-[10px] text-on-surface-variant font-semibold">BUILD INDEX</span>
-                                                <div className="text-forest-green font-bold text-sm">
-                                                    {configAntiGraffiti && configMaterial === "wpc" ? "ULTRA-ENDURANT" : activeMaterialData.status}
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div className="grid grid-cols-1 gap-4">
-                                            {/* Lifespan */}
-                                            <div className="space-y-2">
-                                                <div className="flex justify-between text-xs font-bold font-label-caps text-on-surface">
-                                                    <span>LIFESPAN</span>
-                                                    <span>{activeMaterialData.lifespan}</span>
-                                                </div>
-                                                <div className="h-2 bg-outline-variant/30 rounded-full overflow-hidden">
-                                                    <div
-                                                        className="h-full bg-forest-green transition-all duration-700 rounded-full"
-                                                        style={{ width: activeMaterialData.lifespanBar || "0%" }}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            {/* Maintenance */}
-                                            <div className="space-y-2">
-                                                <div className="flex justify-between text-xs font-bold font-label-caps text-on-surface">
-                                                    <span>MAINTENANCE FREQUENCY</span>
-                                                    <span>
-                                                        {configAntiGraffiti ? "SELF-CLEANING / ULTRA LOW" : activeMaterialData.maintenance}
-                                                    </span>
-                                                </div>
-                                                <div className="h-2 bg-outline-variant/30 rounded-full overflow-hidden">
-                                                    <div
-                                                        className="h-full bg-craftsman-gold transition-all duration-700 rounded-full"
-                                                        style={{ width: configAntiGraffiti ? "5%" : (activeMaterialData.maintenanceBar || "0%") }}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            {/* Cost */}
-                                            <div className="space-y-2">
-                                                <div className="flex justify-between text-xs font-bold font-label-caps text-on-surface">
-                                                    <span>COST INDEX</span>
-                                                    <span>
-                                                        {activeMaterialData.cost} ({totalCostMultiplier.toFixed(1)}x)
-                                                    </span>
-                                                </div>
-                                                <div className="h-2 bg-outline-variant/30 rounded-full overflow-hidden">
-                                                    <div
-                                                        className="h-full bg-charcoal-industrial transition-all duration-700 rounded-full"
-                                                        style={{ width: activeMaterialData.costBar || "0%" }}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* CTA */}
-                                    <Link
-                                        to="/contact"
-                                        className="w-full bg-forest-green text-on-primary py-3.5 sm:py-4 px-4 rounded-[8px] font-bold font-label-caps hover:bg-primary transition-all flex items-center justify-center gap-3 text-center uppercase tracking-[0.1em] sm:tracking-widest text-xs sm:text-sm"
-                                    >
-                                        Request Technical Spec Sheet
-                                        <span className="material-symbols-outlined">download</span>
-                                    </Link>
-                                    <p className="text-[11px] text-center text-on-surface-variant font-label-caps italic">
-                                        Estimated delivery: 4-6 Weeks for custom specifications.
-                                    </p>
-                                </div>
+                                    );
+                                })}
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                )
+            )}
+
+            {/* Design Your Specification Configurator */}
+            {activeProductId === "benches" ? (
+                <BenchesConfigurator
+                    config={config}
+                    materialKeys={materialKeys}
+                    materialData={materialData}
+                    configMaterial={configMaterial}
+                    setConfigMaterial={setConfigMaterial}
+                    lengthOptions={lengthOptions}
+                    configLength={configLength}
+                    setConfigLength={setConfigLength}
+                    designOptions={designOptions}
+                    configDesign={configDesign}
+                    configAntiGraffiti={configAntiGraffiti}
+                    setConfigAntiGraffiti={setConfigAntiGraffiti}
+                    configGroundFixing={configGroundFixing}
+                    setConfigGroundFixing={setConfigGroundFixing}
+                    activeMaterialData={activeMaterialData}
+                    totalCostMultiplier={totalCostMultiplier}
+                />
+            ) : (
+                <ProductConfigurator config={config} />
             )}
 
             {/* Case Studies / Projects */}
-            {projectSlides.length > 0 && (
+            {projectSlides.length > 0 && config.provenExcellence.show !== false && (
                 <section className="reveal-section bg-surface py-20 md:py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
                     <div className="max-w-container-max mx-auto">
                         {/* Header Grid */}
@@ -913,9 +694,9 @@ const ProductDetailPage = ({ productId: propProductId }) => {
                                 >
                                     {projectSlides.map((slide, idx) => (
                                         <div key={idx} className="w-full flex-shrink-0">
-                                            <div className="flex flex-col lg:flex-row h-full lg:min-h-[480px]">
+                                            <div className="flex flex-col lg:flex-row h-full lg:h-[480px]">
                                                 {/* Image Showcase with Zoom effect */}
-                                                <div className="lg:w-1/2 h-64 sm:h-80 lg:h-auto overflow-hidden relative group/img border-b lg:border-b-0 lg:border-r border-outline-variant">
+                                                <div className="lg:w-1/2 h-64 sm:h-80 lg:h-full overflow-hidden relative group/img border-b lg:border-b-0 lg:border-r border-outline-variant">
                                                     <img
                                                         alt={slide.name}
                                                         className="w-full h-full object-cover transform scale-100 group-hover/img:scale-105 transition-transform duration-700"
@@ -939,18 +720,18 @@ const ProductDetailPage = ({ productId: propProductId }) => {
                                                         </div>
                                                     </div>
 
-                                                    <div className="grid grid-cols-3 gap-4 py-4 border-y border-outline-variant">
-                                                        <div>
+                                                    <div className="grid grid-cols-4 gap-4 py-4 border-y border-outline-variant">
+                                                        <div className="col-span-1">
                                                             <p className="text-[9px] uppercase tracking-widest text-on-surface-variant mb-1 font-semibold">Quantity</p>
                                                             <p className="font-bold text-deep-ink text-sm sm:text-base">{slide.qty}</p>
                                                         </div>
-                                                        <div>
+                                                        <div className="col-span-1">
                                                             <p className="text-[9px] uppercase tracking-widest text-on-surface-variant mb-1 font-semibold">Timeline</p>
                                                             <p className="font-bold text-deep-ink text-sm sm:text-base">{slide.timeline}</p>
                                                         </div>
-                                                        <div>
+                                                        <div className="col-span-2">
                                                             <p className="text-[9px] uppercase tracking-widest text-on-surface-variant mb-1 font-semibold">Material</p>
-                                                            <p className="font-bold text-deep-ink text-sm sm:text-base truncate">{slide.material.split(' ')[0]}</p>
+                                                            <p className="font-bold text-deep-ink text-sm sm:text-base whitespace-normal break-words" title={slide.material}>{slide.material}</p>
                                                         </div>
                                                     </div>
 
@@ -1107,52 +888,33 @@ const ProductDetailPage = ({ productId: propProductId }) => {
                             <h3 className="font-headline-md text-3xl md:text-4xl text-on-primary leading-tight">Why Urbanland Stands Apart</h3>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                            <div className="flex items-start space-x-4">
-                                <span className="material-symbols-outlined text-secondary text-2xl">verified</span>
-                                <div>
-                                    <p className="font-bold text-sm uppercase tracking-wider font-label-technical">ISO 9001:2015</p>
-                                    <p className="text-xs text-white/70 mt-1">Certified manufacturing excellence</p>
+                            {config.conversion && config.conversion.advantages && config.conversion.advantages.map((adv, idx) => (
+                                <div key={idx} className="flex items-start space-x-4">
+                                    <span className="material-symbols-outlined text-secondary text-2xl">{adv.icon}</span>
+                                    <div>
+                                        <p className="font-bold text-sm uppercase tracking-wider font-label-technical">{adv.title}</p>
+                                        <p className="text-xs text-white/70 mt-1">{adv.desc}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="flex items-start space-x-4">
-                                <span className="material-symbols-outlined text-secondary text-2xl">workspace_premium</span>
-                                <div>
-                                    <p className="font-bold text-sm uppercase tracking-wider font-label-technical">2-Year Guarantee</p>
-                                    <p className="text-xs text-white/70 mt-1">India's only comprehensive warranty</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start space-x-4">
-                                <span className="material-symbols-outlined text-secondary text-2xl">precision_manufacturing</span>
-                                <div>
-                                    <p className="font-bold text-sm uppercase tracking-wider font-label-technical">Precision Engineering</p>
-                                    <p className="text-xs text-white/70 mt-1">Built for high-traffic durability</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start space-x-4">
-                                <span className="material-symbols-outlined text-secondary text-2xl">public</span>
-                                <div>
-                                    <p className="font-bold text-sm uppercase tracking-wider font-label-technical">Pan-India Delivery</p>
-                                    <p className="text-xs text-white/70 mt-1">Professional installation support</p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
 
                     {/* Conversion Area Card */}
                     <div className="bg-white/5 p-8 md:p-12 border border-white/10 backdrop-blur-sm rounded-none text-left">
                         <h2 className="font-headline-lg text-3xl md:text-4xl text-on-primary mb-8 leading-tight">
-                            Ready to Install Premium {config.gallery.viewAllText || "Products"} in Your Space?
+                            {config.conversion && config.conversion.title ? config.conversion.title : `Ready to Install Premium ${config.gallery.viewAllText || "Products"} in Your Space?`}
                         </h2>
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link to="/contact" className="bg-secondary text-on-secondary px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:opacity-90 transition-all duration-300 rounded-[4px]">
-                                Request Custom Quote <span className="ml-2">→</span>
+                            <Link to={config.hero.ctaLink || "/contact"} className="bg-secondary text-on-secondary px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:opacity-90 transition-all duration-300 rounded-[4px]">
+                                {config.hero.ctaText} <span className="ml-2">→</span>
                             </Link>
-                            <a href="#" className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 rounded-[4px]">
-                                Download Brochure <span className="ml-2">↓</span>
+                            <a href={config.hero.brochureLink || "#"} className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 rounded-[4px]">
+                                {config.hero.brochureText} <span className="ml-2">↓</span>
                             </a>
                         </div>
                         <p className="mt-8 text-xs text-white/60 font-label-technical uppercase tracking-widest font-semibold">
-                            Trusted by 50+ major projects across 15+ Indian cities
+                            Trusted by {config.provenExcellence.stats[0]?.val}+ major projects across {config.provenExcellence.stats[1]?.val}+ Indian cities
                         </p>
                     </div>
                 </div>
