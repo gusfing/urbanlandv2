@@ -2745,7 +2745,7 @@ export const productConfigs = {
             title: "MATERIALS & CUSTOMIZATION OPTIONS FOR POOLSIDE LOUNGERS",
             description: "Configure loungers with elite outdoor finishes and adjustability functions.",
             radialMap: {
-                centralImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCYJvCBmZa45Y9Ol85cj95UOnxNe7wyd-1ECb82CgpAJkPDelfnBEz-5Zn858GsHTwykVJIztjhkHfKdwbJRM6AvxjU26AwSnAOwixWipTUoGF4NA55rn39aPNZzvtrnjz-4Pwa1XKjw53-AFw-mQLhqM3nmCOf34Gf40xepcDeX4EDSC_rf1S1_AVjufNfyQEstMZzZDe7LiiNN1xMrlajkGQrtLEvHED7_p6m3mWr_WU2bvM-Hqo9wzgBps1uSv4ZDErcnOe92oXu",
+                centralImage: "/assets/products/poolside-loungers/config-central.webp",
                 centralImageAlt: "Premium Urbanland poolside lounger centered in a bright gallery",
                 backgroundImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAFmkQaFcNjNSWUmutrieGqYQK4ZUsxjwMumPQIERWBhUZcVqdhl4afYrwCs_oSXFHJkjw81vRim4flN36IhBRSj0-mOQSQ60KYEsSpju7VYn1NQEEQvZ7JvfdGJbKGe-YzHiFPokKN2wLuow9xl0KiSR-LQW9ivwz_focKQ6c3a4HCmGYEx8fK32U7P6ezMhYzzVYDtsU0tHbHo7H-Yg0AHecMNtC75wjChhfJsfI7Nksy5fudY0CaFXhCYcIZEqFl7IFIdQlx4NkM",
                 cards: [
