@@ -287,7 +287,7 @@ export const productConfigs = {
                     material: "Premium WPC (Wood-Plastic)",
                     benefits: ["High Durability", "Zero Splintering", "UV Protected"],
                     desc: "Premium WPC benches supplied and installed across multiple residential towers, creating elegant, eco-friendly seating for family gardens and modern courtyards.",
-                    src: "/products/all_white/outdoor_benches_ulb_12.jpeg"
+                    src: "/assets/products/benches/project-godrej-benches.webp"
                 },
                 {
                     name: "Vadnagar Museum",
@@ -298,7 +298,7 @@ export const productConfigs = {
                     material: "Powder Coated Mild Steel",
                     benefits: ["Vandal Resistant", "Classical Design", "Anti-Corrosive Coat"],
                     desc: "Custom architectural benches designed to match the historic and cultural significance of the museum plaza, built to withstand massive daily tourist crowds.",
-                    src: "/products/all_white/outdoor_benches_ulb_13.jpeg"
+                    src: "/assets/products/benches/project-vadnagar-museum-benches.webp"
                 },
                 {
                     name: "Indore Smart City Plaza",
@@ -309,7 +309,7 @@ export const productConfigs = {
                     material: "Anodized Aluminium",
                     benefits: ["Rain Protection", "Ultra-Lightweight", "Modern Vibe"],
                     desc: "Sleek, futuristic anodized aluminium benches installed in pedestrian zones and smart plazas, optimized for weathering and low maintenance in public squares.",
-                    src: "/products/all_white/outdoor_benches_ulb_14.jpeg"
+                    src: "/assets/products/benches/project-indore-smart-city-benches.webp"
                 },
                 {
                     name: "BKC Business District",
@@ -320,7 +320,7 @@ export const productConfigs = {
                     material: "Marine Stainless Steel 316",
                     benefits: ["Elite Aesthetics", "Corrosion Proof", "Maximum Spec"],
                     desc: "Ultra-premium Grade 316 brushed stainless steel benches deployed in corporate walkways, matching the modern glass-and-steel skyscraper aesthetic.",
-                    src: "/products/all_white/outdoor_benches_ulb_11.jpeg"
+                    src: "/assets/products/benches/project-bkc-business-district-benches.webp"
                 }
             ]
         },
