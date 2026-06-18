@@ -558,25 +558,47 @@ export const productConfigs = {
             ],
             slides: [
                 {
-                    name: "Godrej Projects Development",
-                    location: "Palghar, Maharashtra",
-                    tag: "Villa Landscaping",
+                    name: "Godrej Projects Development Limited",
+                    location: "Village Kunzre, District Palghar, Maharashtra",
+                    tag: "Luxury Villa Landscaping",
                     qty: "65 Planters",
-                    timeline: "3 Weeks",
+                    timeline: "2–3 Weeks",
                     material: "Premium Wooden & Mild Steel",
                     benefits: ["Biophilic Design", "Root Insulation", "UV Resistant"],
-                    desc: "Supplied and installed 65 premium planter boxes for luxury villa gardens and estate greening, fully matching high-end residential landscaping.",
+                    desc: "65 premium planter boxes supplied and installed for luxury villa landscaping across the Godrej Projects development, blending high-end aesthetics with durable outdoor engineering.",
                     src: plantersImg
                 },
                 {
                     name: "Navandhe Village",
-                    location: "Raigad, Maharashtra",
-                    tag: "Municipal Parks",
-                    qty: "24 Planters",
-                    timeline: "2 Weeks",
+                    location: "Taluka Khalapur, Raigad, Maharashtra",
+                    tag: "Community Gardens",
+                    qty: "42 Planters",
+                    timeline: "2–3 Weeks",
                     material: "Mild Steel Powder Coated",
-                    benefits: ["Vandal Resistant", "Weatherproof", "Easy Relocation"],
-                    desc: "High-durability street planter boxes deployed along walking pathways and public plazas to introduce lush greenery.",
+                    benefits: ["Sustainable Design", "Weatherproof", "Community-Friendly"],
+                    desc: "42 sustainable planter boxes installed across community gardens and pathways, bringing greenery and a sense of place to the public spaces of Navandhe Village.",
+                    src: plantersUgc
+                },
+                {
+                    name: "TATA Projects Ltd",
+                    location: "Gujarat",
+                    tag: "Smart City Landscaping",
+                    qty: "30 Planters",
+                    timeline: "2–3 Weeks",
+                    material: "Heavy-Duty Mild Steel",
+                    benefits: ["Smart City Ready", "Large Scale", "Low Maintenance"],
+                    desc: "30 large-scale planter boxes supplied for smart-city landscaping and public spaces, delivering premium green infrastructure aligned with Gujarat's urban development vision.",
+                    src: plantersPng
+                },
+                {
+                    name: "Arandiya",
+                    location: "Indore, Madhya Pradesh",
+                    tag: "Residential Clubhouse",
+                    qty: "25 Planters",
+                    timeline: "2–3 Weeks",
+                    material: "Custom Wooden & Mild Steel",
+                    benefits: ["Custom Design", "Biophilic Aesthetic", "Premium Finish"],
+                    desc: "25 custom wooden and mild steel planter boxes crafted for a premium residential clubhouse and garden area, elevating the outdoor ambiance with bespoke nature-inspired design.",
                     src: plantersUgc
                 }
             ]
