@@ -109,7 +109,7 @@ const getVideoSectionData = (productId) => {
         "aluminium-benches": {
             badge: "CIVIC SEATING",
             heading: "Why Premium Aluminium Benches Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/Aluminium-benches.mp4",
             description: "Aluminium benches are perfect for parks and urban streetscapes. Urbanland's anodized and powder-coated aluminium benches are lightweight, incredibly strong, and 100% rust-free for lifetime outdoor durability.",
             features: [
                 { icon: "verified", title: "Anodized Protection", desc: "Oxidation-free coating that prevents rust, pitting, and corrosion." },

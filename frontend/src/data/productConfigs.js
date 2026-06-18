@@ -7,11 +7,11 @@ import cabanasImg from "../assets/products/Product Images/Cabanas/Create_a_clean
 import cabanasUgc from "../assets/products/Product Images/Cabanas/UGC_Cabanas.jpeg";
 import cabanasPng from "../assets/products/Product Images/Cabanas/Create_a_clean,_premium,_professional_202605170136.png";
 
+
 // Aluminium Benches Images
 import aluminiumBenchesImg from "../assets/products/Product Images/Benches/Create_a_clean,_premium,_professional_202605162312.jpeg";
 import aluminiumBenchesUgc from "../assets/products/Product Images/Benches/UGC_Benches.jpeg";
 import aluminiumBenchesPng from "../assets/products/Product Images/Benches/Create_a_clean,_premium,_professional_202605162312.png";
-
 // Planters Images
 import plantersImg from "../assets/products/Product Images/Planters Box/Create_a_clean,_premium,_professional_202605170111.jpeg";
 import plantersUgc from "../assets/products/Product Images/Planters Box/UGC_Planters_Box.jpeg";
@@ -1146,16 +1146,16 @@ export const productConfigs = {
                 { icon: "apartment", label: "50+ Projects" }
             ],
             mainImage: {
-                src: aluminiumBenchesImg,
+                src: "/assets/products/aluminium-benches/premium-aluminium-park-bench-seating.webp",
                 alt: "Premium Aluminium Bench"
             },
             subImage1: {
-                src: aluminiumBenchesUgc,
+                src: "/assets/products/aluminium-benches/outdoor-aluminium-bench-quality-india.webp",
                 alt: "Aluminium Bench Site Setup",
                 label: "LIGHTWEIGHT SEATING"
             },
             subImage2: {
-                src: aluminiumBenchesPng,
+                src: "/assets/products/aluminium-benches/modern-anodized-aluminium-slats-bench.webp",
                 alt: "Modern Aluminium slats bench",
                 label: "ANODIZED FINISH"
             }
@@ -1169,17 +1169,22 @@ export const productConfigs = {
                 {
                     title: "Architectural Slats Bench",
                     alt: "Architectural Slats Bench",
-                    src: aluminiumBenchesImg
+                    src: "/assets/products/aluminium-benches/architectural-aluminium-slats-bench.webp"
                 },
                 {
                     title: "Park Rest Bench",
                     alt: "Park Rest Bench",
-                    src: aluminiumBenchesUgc
+                    src: "/assets/products/aluminium-benches/public-park-aluminium-bench-rest.webp"
                 },
                 {
                     title: "Minimalist Backless Bench",
                     alt: "Minimalist Backless Bench",
-                    src: aluminiumBenchesPng
+                    src: "/assets/products/aluminium-benches/minimalist-backless-aluminium-bench.webp"
+                },
+                {
+                    title: "Aluminium Bench Design",
+                    alt: "Aluminium Bench Design",
+                    src: "/assets/products/aluminium-benches/aluminium-bench-design.webp"
                 }
             ],
             viewAllRedirect: "/catalogue"
@@ -1194,7 +1199,7 @@ export const productConfigs = {
                     icon: "fitness_center",
                     title: "Lightweight Yet Strong",
                     desc: "Easy to install and transport while maintaining high load-bearing capacity and robust everyday strength.",
-                    image: aluminiumBenchesUgc
+                    image: "/assets/products/aluminium-benches/lightweight-durable-aluminium-seating.webp"
                 },
                 {
                     num: "02.",
@@ -1214,14 +1219,14 @@ export const productConfigs = {
                     icon: "handyman",
                     title: "Low Maintenance",
                     desc: "No need for regular painting or anti-rust treatment. Simple cleaning keeps them looking brand new for years.",
-                    image: aluminiumBenchesImg
+                    image: "/assets/products/aluminium-benches/low-maintenance-aluminium-garden-bench.webp"
                 },
                 {
                     num: "05.",
                     icon: "hourglass_empty",
                     title: "Long Lifespan",
                     desc: "Highly durable in harsh Indian weather conditions with minimal degradation or aging over time.",
-                    image: aluminiumBenchesPng
+                    image: "/assets/products/aluminium-benches/weatherproof-outdoor-aluminium-bench.webp"
                 }
             ]
         },
@@ -1238,21 +1243,21 @@ export const productConfigs = {
                     title: "Aluminium Benches with Backrest",
                     alt: "With Backrest",
                     path: "/catalogue",
-                    src: aluminiumBenchesImg,
+                    src: "/assets/products/aluminium-benches/aluminium-bench-design.webp",
                     desc: "Ergonomic designs featuring comfortable angled backrests and armrests."
                 },
                 {
                     title: "Backless Aluminium Benches",
                     alt: "Backless Benches",
                     path: "/catalogue",
-                    src: aluminiumBenchesUgc,
+                    src: "/assets/products/aluminium-benches/minimalist-backless-aluminium-bench.webp",
                     desc: "Sleek, minimalist backless benches perfect for pathways and transit stations."
                 },
                 {
                     title: "Modular Curved Seating",
                     alt: "Modular curved",
                     path: "/catalogue",
-                    src: aluminiumBenchesPng,
+                    src: "/assets/products/aluminium-benches/modern-anodized-aluminium-slats-bench.webp",
                     desc: "Custom modular benches designed to create continuous curved seating around trees and plazas."
                 }
             ]
@@ -1262,9 +1267,9 @@ export const productConfigs = {
             title: "MATERIALS & CUSTOMIZATION OPTIONS FOR ALUMINIUM BENCHES",
             description: "Design specifications for lengths, armrests, finishes, and fixings.",
             radialMap: {
-                centralImage: aluminiumBenchesPng,
+                centralImage: "/assets/products/aluminium-benches/aluminium-configurator-central-bench.webp",
                 centralImageAlt: "Premium Aluminium Bench",
-                backgroundImage: aluminiumBenchesImg,
+                backgroundImage: "/assets/products/aluminium-benches/aluminium-configurator-ambient-background.webp",
                 cards: [
                     {
                         title: "100% Rust-Proof Frame",
@@ -1317,7 +1322,7 @@ export const productConfigs = {
                     material: "Anodized Aluminium",
                     benefits: ["Rust Free", "Lightweight", "Low Upkeep"],
                     desc: "Supplied and installed 20 premium Aluminium benches, providing durable and stylish seating that complements the school grounds.",
-                    src: aluminiumBenchesImg
+                    src: "/assets/products/aluminium-benches/shrimad-rajchandra-trust-aluminium-bench.webp"
                 }
             ]
         },
