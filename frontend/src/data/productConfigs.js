@@ -558,7 +558,7 @@ export const productConfigs = {
             ],
             slides: [
                 {
-                    name: "Godrej Projects Development Limited",
+                    name: "Godrej Projects",
                     location: "Village Kunzre, District Palghar, Maharashtra",
                     tag: "Luxury Villa Landscaping",
                     qty: "65 Planters",
