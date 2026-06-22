@@ -169,7 +169,7 @@ const getVideoSectionData = (productId) => {
         "indoor-furniture": {
             badge: "BESPOKE COMMERCIAL FURNITURE",
             heading: "Why Premium Indoor Furniture Matters",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/Indoor-Furniture.mp4",
             description: "Office and lounge spaces require furniture that communicates premium branding and comfort. Cheap materials wobble and peel. Urbanland's bespoke furniture combines premium metal finishes, seasoned wood, and expert joinery.",
             features: [
                 { icon: "forest", title: "Seasoned Hardwoods", desc: "Kiln-dried premium timber to eliminate warping, splits, and rot." },
