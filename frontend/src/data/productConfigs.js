@@ -1426,16 +1426,16 @@ export const productConfigs = {
                 { icon: "apartment", label: "50+ Projects" }
             ],
             mainImage: {
-                src: cabanasImg,
+                src: "/assets/products/cabanas/hero-main.webp",
                 alt: "Luxury Resort Cabana"
             },
             subImage1: {
-                src: cabanasUgc,
+                src: "/assets/products/cabanas/hero-1.webp",
                 alt: "Cabana Deployed View",
                 label: "POOL DECK CABANA"
             },
             subImage2: {
-                src: cabanasPng,
+                src: "/assets/products/cabanas/hero-2.webp",
                 alt: "Modern Minimalist Cabana",
                 label: "WPC & METAL ACCENT"
             }
@@ -1449,17 +1449,22 @@ export const productConfigs = {
                 {
                     title: "Poolside Recline Cabana",
                     alt: "Poolside Recline Cabana",
-                    src: cabanasImg
+                    src: "/assets/products/cabanas/product-1.webp"
                 },
                 {
                     title: "Garden Lounger Shelter",
                     alt: "Garden Lounger Shelter",
-                    src: cabanasUgc
+                    src: "/assets/products/cabanas/product-2.webp"
                 },
                 {
                     title: "WPC Wood Accent Cabana",
                     alt: "WPC Wood Accent Cabana",
-                    src: cabanasPng
+                    src: "/assets/products/cabanas/product-3.webp"
+                },
+                {
+                    title: "Custom Outdoor Cabana",
+                    alt: "Custom Outdoor Cabana",
+                    src: "/assets/products/cabanas/product-4.webp"
                 }
             ],
             viewAllRedirect: "/catalogue"
@@ -1474,7 +1479,7 @@ export const productConfigs = {
                     icon: "wb_sunny",
                     title: "Luxurious Shade & Comfort",
                     desc: "Provides stylish shade and privacy, making poolside, garden, or terrace areas more comfortable and usable throughout the day.",
-                    image: cabanasUgc
+                    image: "/assets/products/cabanas/product-card-1.webp"
                 },
                 {
                     num: "02.",
@@ -1494,14 +1499,14 @@ export const productConfigs = {
                     icon: "pool",
                     title: "Versatile Applications",
                     desc: "Ideal for pools, beaches, gardens, resorts, hotels, rooftops, and commercial outdoor lounges.",
-                    image: cabanasImg
+                    image: "/assets/products/cabanas/product-card-2.webp"
                 },
                 {
                     num: "05.",
                     icon: "eco",
                     title: "Long-Term Value",
                     desc: "Built with premium materials to deliver years of beauty with minimal maintenance, reducing replacement waste.",
-                    image: cabanasPng
+                    image: "/assets/products/cabanas/product-card-3.webp"
                 }
             ]
         },
@@ -1518,21 +1523,21 @@ export const productConfigs = {
                     title: "Poolside Cabanas",
                     alt: "Poolside Cabanas",
                     path: "/catalogue",
-                    src: cabanasImg,
+                    src: "/assets/products/cabanas/product-1.webp",
                     desc: "Water-resistant, ventilated structures with integrated curtains and mesh options for pool decks."
                 },
                 {
                     title: "Garden & Resort Daybeds",
                     alt: "Garden Daybeds",
                     path: "/catalogue",
-                    src: cabanasUgc,
+                    src: "/assets/products/cabanas/product-2.webp",
                     desc: "Elegant wooden and composite framed structures that blend beautifully with green landscapes."
                 },
                 {
                     title: "Modern Metal Cabanas",
                     alt: "Metal Cabanas",
                     path: "/catalogue",
-                    src: cabanasPng,
+                    src: "/assets/products/cabanas/product-3.webp",
                     desc: "Sleek stainless steel or aluminium structures offering maximum architectural style."
                 }
             ]
@@ -1542,9 +1547,9 @@ export const productConfigs = {
             title: "MATERIALS & CUSTOMIZATION OPTIONS FOR CABANAS",
             description: "Select sizes, roof materials, curtain meshes, and structural frame options.",
             radialMap: {
-                centralImage: cabanasPng,
+                centralImage: "/assets/products/cabanas/cabana-main.webp",
                 centralImageAlt: "Premium Poolside Cabana",
-                backgroundImage: cabanasImg,
+                backgroundImage: "/assets/products/cabanas/cabana-bg.webp",
                 cards: [
                     {
                         title: "Tensile / WPC Roofing",
@@ -1597,7 +1602,7 @@ export const productConfigs = {
                     material: "WPC & Tensile Fabric",
                     benefits: ["Waterproof Roof", "UV Blocking", "Privacy Curtains"],
                     desc: "Supplied and installed custom poolside cabanas featuring luxury performance drapes and insulated shade ceilings.",
-                    src: cabanasImg
+                    src: "/assets/products/cabanas/luxury-resort-poolside-project-1.webp"
                 },
                 {
                     name: "Grand Hyatt Resort & Spa",
@@ -1608,7 +1613,7 @@ export const productConfigs = {
                     material: "Marine-Grade Aluminium & Sunbrella Fabric",
                     benefits: ["Rust-Proof Frame", "Fade-Resistant Fabric", "Integrated LED Lighting"],
                     desc: "Delivered 12 premium wind-resistant cabanas for beachfront lounge areas, customized with weather-proof sheer curtains and dual loungers.",
-                    src: cabanasUgc
+                    src: "/assets/products/cabanas/grand-hyatt-resort-project-2.webp"
                 },
                 {
                     name: "Prestige Golfshire Villas",
@@ -1619,7 +1624,7 @@ export const productConfigs = {
                     material: "Premium WPC & Mild Steel (Powder Coated)",
                     benefits: ["Wood-Polymer Accent", "High Wind Resistance", "Plush Daybeds"],
                     desc: "Installed WPC accent cabanas in the clubhouse and private villa pool decks, blending naturally with the scenic landscape.",
-                    src: cabanasPng
+                    src: "/assets/products/cabanas/prestige-golfshire-villas-project-3.webp"
                 },
                 {
                     name: "DLF Kings Court",
@@ -1630,7 +1635,7 @@ export const productConfigs = {
                     material: "Heavy-Duty Stainless Steel & Tensile Membrane",
                     benefits: ["Ultra-Modern Look", "Zero Maintenance", "Rainwater Drainage"],
                     desc: "Designed and erected sleek, minimalist stainless steel cabanas with tensile roofs for the rooftop recreation deck.",
-                    src: cabanasImg
+                    src: "/assets/products/cabanas/dlf-kings-court-project-4.webp"
                 }
             ]
         },
