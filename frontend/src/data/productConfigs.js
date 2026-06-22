@@ -3498,16 +3498,16 @@ export const productConfigs = {
                 { icon: "apartment", label: "50+ Projects" }
             ],
             mainImage: {
-                src: "/assets/products/wicker-furniture/wicker-furniture-2.webp",
+                src: "/assets/products/wicker-dining/hero-main.webp",
                 alt: "Premium Wicker Dining Set"
             },
             subImage1: {
-                src: "/assets/products/wicker-furniture/hero-1.webp",
+                src: "/assets/products/wicker-dining/hero-1.webp",
                 alt: "Wicker Dining Chair Close-up",
                 label: "HAND-WOVEN STRANDS"
             },
             subImage2: {
-                src: "/assets/products/wicker-furniture/hero-2.webp",
+                src: "/assets/products/wicker-dining/hero-2.webp",
                 alt: "Modern Outdoor Dining Setup",
                 label: "TEMPERED GLASS TOP"
             }
@@ -3521,22 +3521,22 @@ export const productConfigs = {
                 {
                     title: "Classic 4-Seater Dining Set",
                     alt: "Classic 4-Seater Dining Set",
-                    src: "/assets/products/wicker-furniture/wicker-furniture-2.webp"
+                    src: "/assets/products/wicker-dining/wicker-dining-1.webp"
                 },
                 {
                     title: "Modern Cafe Dining Setup",
                     alt: "Modern Cafe Dining Setup",
-                    src: "/assets/products/wicker-furniture/wicker-furniture-1.webp"
+                    src: "/assets/products/wicker-dining/wicker-dining-2.webp"
                 },
                 {
                     title: "Bespoke Glass Top Dining Table",
                     alt: "Bespoke Glass Top Dining Table",
-                    src: "/assets/products/wicker-furniture/wicker-furniture-3.webp"
+                    src: "/assets/products/wicker-dining/wicker-dining-3.webp"
                 },
                 {
                     title: "Luxury Balcony Dining Set",
                     alt: "Luxury Balcony Dining Set",
-                    src: "/assets/products/wicker-furniture/wicker-furniture-4.webp"
+                    src: "/assets/products/wicker-dining/wicker-dining-4.webp"
                 }
             ],
             viewAllRedirect: "/catalogue"
@@ -3551,7 +3551,7 @@ export const productConfigs = {
                     icon: "restaurant",
                     title: "Resort-Grade Comfort",
                     desc: "Ergonomically designed chairs with high-density quick-dry cushions to keep guests comfortable for hours.",
-                    image: "/assets/products/wicker-furniture/product-card-1.webp"
+                    image: "/assets/products/wicker-dining/wicker-dining-product-card-1.webp"
                 },
                 {
                     num: "02.",
@@ -3571,14 +3571,14 @@ export const productConfigs = {
                     icon: "widgets",
                     title: "Bespoke Configurations",
                     desc: "Available in 2-seater bistro setups, classic 4-seater squares, and large 6/8-seater rectangular banquet styles.",
-                    image: "/assets/products/wicker-furniture/product-card-2.webp"
+                    image: "/assets/products/wicker-dining/wicker-dining-product-card-2.webp"
                 },
                 {
                     num: "05.",
                     icon: "eco",
                     title: "Eco-Conscious Quality",
                     desc: "100% recyclable synthetic rattan fibers paired with zero-rust, T6 structural aluminium frames.",
-                    image: "/assets/products/wicker-furniture/product-card-3.webp"
+                    image: "/assets/products/wicker-dining/wicker-dining-product-card-3.webp"
                 }
             ]
         },
@@ -3595,21 +3595,21 @@ export const productConfigs = {
                     title: "Bistro & Cafe 2-Seaters",
                     alt: "Bistro Wicker Dining Set",
                     path: "/catalogue",
-                    src: "/assets/products/wicker-furniture/wicker-furniture-4.webp",
+                    src: "/assets/products/wicker-dining/wicker-dining-4.webp",
                     desc: "Compact, space-saving round tables and chairs ideal for balconies and boutique cafes."
                 },
                 {
                     title: "Family Patio 4-Seaters",
                     alt: "Patio Wicker Dining Set",
                     path: "/catalogue",
-                    src: "/assets/products/wicker-furniture/wicker-furniture-2.webp",
+                    src: "/assets/products/wicker-dining/wicker-dining-2.webp",
                     desc: "Square wicker dining tables with matching high-backed chairs for gardens and terraces."
                 },
                 {
                     title: "Banquets & Resort 6-Seaters",
                     alt: "Resort Wicker Dining Set",
                     path: "/catalogue",
-                    src: "/assets/products/wicker-furniture/wicker-furniture-3.webp",
+                    src: "/assets/products/wicker-dining/wicker-dining-3.webp",
                     desc: "Large rectangular dining tables perfect for outdoor family dinners and resort poolside dining."
                 }
             ]
@@ -3619,9 +3619,9 @@ export const productConfigs = {
             title: "MATERIALS & CUSTOMIZATION OPTIONS FOR DINING SETS",
             description: "Configure synthetic wicker rattan, frame alloys, glass tops, and performance upholstery.",
             radialMap: {
-                centralImage: "/assets/products/wicker-furniture/sec-6-wicker-furniture-main.webp",
+                centralImage: "/assets/products/wicker-dining/sec6-wicker-dining-main.png",
                 centralImageAlt: "Premium Wicker Dining Chair",
-                backgroundImage: "/assets/products/wicker-furniture/sec-6-wicker-furniture-bg.webp",
+                backgroundImage: "/assets/products/wicker-dining/sec6-wicker-dining-bg.webp",
                 cards: [
                     {
                         title: "HDPE Synthetic Rattan",
@@ -3674,7 +3674,7 @@ export const productConfigs = {
                     material: "HDPE Wicker & Tempered Glass Tables",
                     benefits: ["Mist & Moisture Resistant", "High-Traffic Durable", "Premium Forest Weave"],
                     desc: "Furnished the central forest-view deck with luxury 6-seater wicker dining sets, matching the lush natural topography of the Western Ghats.",
-                    src: "/assets/products/wicker-furniture/navrang-oasis-project-2.webp"
+                    src: "/assets/products/wicker-dining/verdant-hills-resort-project-1.webp"
                 },
                 {
                     name: "The Palms Cafeteria",
@@ -3685,7 +3685,7 @@ export const productConfigs = {
                     material: "HDPE Wicker & Marine-Grade Aluminium",
                     benefits: ["Salt-Air Corrosion Proof", "Tempered Glass Top", "Space-Saving Layout"],
                     desc: "Supplied heavy-duty 2-seater and 4-seater wicker dining sets for a premium beachfront cafe, engineered to withstand salt-mist and high guest turnover.",
-                    src: "/assets/products/wicker-outdoor-products/bharwadi-colony-project-3.webp"
+                    src: "/assets/products/wicker-dining/palms-cafeteria-project-2.webp"
                 },
                 {
                     name: "Skyline Penthouse Terrace",
@@ -3696,7 +3696,7 @@ export const productConfigs = {
                     material: "HDPE Wicker & Beige Performance Cushioning",
                     benefits: ["100% UV Protection Weave", "Water-Repellent Cushions", "Deep Lounge Seating"],
                     desc: "Designed a private penthouse outdoor dining pavilion with coordinates of 8-seater rectangular dining sets, providing year-round durability and comfort.",
-                    src: "/assets/products/wicker-outdoor-products/luxury-villa-project-1.webp"
+                    src: "/assets/products/wicker-dining/skyline-penthouse-terrace-project-3.webp"
                 }
             ]
         },
