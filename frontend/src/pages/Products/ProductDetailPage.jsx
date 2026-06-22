@@ -237,7 +237,6 @@ const ProductDetailPage = ({ productId: propProductId }) => {
 
     const aliasMap = {
         "wicker-living-sets": "wicker-furniture",
-        "wicker-dining-sets": "wicker-outdoor-products",
     };
     const resolvedProductId = aliasMap[activeProductId] || activeProductId;
 

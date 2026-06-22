@@ -3478,6 +3478,271 @@ export const productConfigs = {
             ]
         }
     },
+    "wicker-dining-sets": {
+        seo: {
+            title: "Wicker Dining Sets Manufacturer India | Outdoor Cafeteria & Garden Sets | Urbanland",
+            description: "Premium outdoor wicker dining sets for gardens, patios, terraces, cafes, and resorts. Handcrafted HDPE synthetic rattan dining tables and chairs with rust-proof aluminum frames. Weather-proof, durable, and backed by a 2-Year Guarantee."
+        },
+        hero: {
+            badge: "Al-Fresco Dining Luxury",
+            title: "Premium Wicker Dining Sets Manufacturer in India – Elegant Outdoor Cafe & Patio Dining Sets",
+            description: "Transform your outdoor seating into a luxurious al-fresco dining experience. Urbanland Products designs and manufactures premium wicker dining sets that combine hand-woven sophistication with industrial-grade resilience. Ideal for resort poolside decks, open-air cafes, residential gardens, and rooftop terraces.",
+            ctaText: "Request Custom Quote",
+            ctaLink: "/contact",
+            brochureText: "Download the Brochure",
+            brochureLink: "#",
+            stats: [
+                { icon: "verified", label: "2-Year Guarantee" },
+                { icon: "verified_user", label: "ISO 9001:2015" },
+                { icon: "precision_manufacturing", label: "Made in India" },
+                { icon: "apartment", label: "50+ Projects" }
+            ],
+            mainImage: {
+                src: "/assets/products/wicker-furniture/wicker-furniture-2.webp",
+                alt: "Premium Wicker Dining Set"
+            },
+            subImage1: {
+                src: "/assets/products/wicker-furniture/hero-1.webp",
+                alt: "Wicker Dining Chair Close-up",
+                label: "HAND-WOVEN STRANDS"
+            },
+            subImage2: {
+                src: "/assets/products/wicker-furniture/hero-2.webp",
+                alt: "Modern Outdoor Dining Setup",
+                label: "TEMPERED GLASS TOP"
+            }
+        },
+        gallery: {
+            title: "Wicker Dining Gallery",
+            subtitle: "Elegant Al-Fresco Dining",
+            description: "Explore our premium hand-woven dining table and chair layouts in luxury resorts, terraces, and clubhouses.",
+            viewAllText: "Wicker Dining Sets",
+            slides: [
+                {
+                    title: "Classic 4-Seater Dining Set",
+                    alt: "Classic 4-Seater Dining Set",
+                    src: "/assets/products/wicker-furniture/wicker-furniture-2.webp"
+                },
+                {
+                    title: "Modern Cafe Dining Setup",
+                    alt: "Modern Cafe Dining Setup",
+                    src: "/assets/products/wicker-furniture/wicker-furniture-1.webp"
+                },
+                {
+                    title: "Bespoke Glass Top Dining Table",
+                    alt: "Bespoke Glass Top Dining Table",
+                    src: "/assets/products/wicker-furniture/wicker-furniture-3.webp"
+                },
+                {
+                    title: "Luxury Balcony Dining Set",
+                    alt: "Luxury Balcony Dining Set",
+                    src: "/assets/products/wicker-furniture/wicker-furniture-4.webp"
+                }
+            ],
+            viewAllRedirect: "/catalogue"
+        },
+        philosophy: {
+            badge: "Dining Artistry",
+            title: "Why Premium Wicker Dining Sets Matter",
+            description: "Creating premium outdoor dining environments requires seating that coordinates perfectly with landscaping while resisting UV exposure, chlorine, and moisture.",
+            cards: [
+                {
+                    num: "01.",
+                    icon: "restaurant",
+                    title: "Resort-Grade Comfort",
+                    desc: "Ergonomically designed chairs with high-density quick-dry cushions to keep guests comfortable for hours.",
+                    image: "/assets/products/wicker-furniture/product-card-1.webp"
+                },
+                {
+                    num: "02.",
+                    icon: "water_drop",
+                    title: "All-Weather Strands",
+                    desc: "Handcrafted using UV-stabilized HDPE synthetic rattan that resists splitting, rot, and intense monsoons.",
+                    isPrimary: true
+                },
+                {
+                    num: "03.",
+                    icon: "grid_view",
+                    title: "Tempered Glass Mounts",
+                    desc: "Tables finished with secure, non-slip tempered safety glass or weather-proof slatted wood surfaces."
+                },
+                {
+                    num: "04.",
+                    icon: "widgets",
+                    title: "Bespoke Configurations",
+                    desc: "Available in 2-seater bistro setups, classic 4-seater squares, and large 6/8-seater rectangular banquet styles.",
+                    image: "/assets/products/wicker-furniture/product-card-2.webp"
+                },
+                {
+                    num: "05.",
+                    icon: "eco",
+                    title: "Eco-Conscious Quality",
+                    desc: "100% recyclable synthetic rattan fibers paired with zero-rust, T6 structural aluminium frames.",
+                    image: "/assets/products/wicker-furniture/product-card-3.webp"
+                }
+            ]
+        },
+        quote: {
+            text: "Dining outdoors is a sensory experience. Our wicker dining sets are designed to merge natural beauty with zero-maintenance reliability.",
+            author: "CHIEF OF PATIO DESIGN, URBANLAND"
+        },
+        categories: {
+            badge: "Dining Collections",
+            title: "Wicker Dining Configuration Options",
+            description: "Select weave pattern, frame options, and performance canvas colors:",
+            list: [
+                {
+                    title: "Bistro & Cafe 2-Seaters",
+                    alt: "Bistro Wicker Dining Set",
+                    path: "/catalogue",
+                    src: "/assets/products/wicker-furniture/wicker-furniture-4.webp",
+                    desc: "Compact, space-saving round tables and chairs ideal for balconies and boutique cafes."
+                },
+                {
+                    title: "Family Patio 4-Seaters",
+                    alt: "Patio Wicker Dining Set",
+                    path: "/catalogue",
+                    src: "/assets/products/wicker-furniture/wicker-furniture-2.webp",
+                    desc: "Square wicker dining tables with matching high-backed chairs for gardens and terraces."
+                },
+                {
+                    title: "Banquets & Resort 6-Seaters",
+                    alt: "Resort Wicker Dining Set",
+                    path: "/catalogue",
+                    src: "/assets/products/wicker-furniture/wicker-furniture-3.webp",
+                    desc: "Large rectangular dining tables perfect for outdoor family dinners and resort poolside dining."
+                }
+            ]
+        },
+        configurator: {
+            badge: "MATERIALS & CUSTOMIZATION",
+            title: "MATERIALS & CUSTOMIZATION OPTIONS FOR DINING SETS",
+            description: "Configure synthetic wicker rattan, frame alloys, glass tops, and performance upholstery.",
+            radialMap: {
+                centralImage: "/assets/products/wicker-furniture/sec-6-wicker-furniture-main.webp",
+                centralImageAlt: "Premium Wicker Dining Chair",
+                backgroundImage: "/assets/products/wicker-furniture/sec-6-wicker-furniture-bg.webp",
+                cards: [
+                    {
+                        title: "HDPE Synthetic Rattan",
+                        desc: "Woven from heavy-duty, UV-stabilized synthetic rattan fibers that resist sun splitting or bleaching.",
+                        positionClass: "absolute top-[10%] left-[5%] w-72",
+                        line: { x1: "320", x2: "550", y1: "200", y2: "350", cx: "550", cy: "350" }
+                    },
+                    {
+                        title: "Marine Aluminium Frame",
+                        desc: "Thick-walled T6 aluminium structural frames, anti-rust pre-treated and powder coated.",
+                        positionClass: "absolute bottom-[15%] left-[5%] w-72",
+                        line: { x1: "320", x2: "480", y1: "550", y2: "480", cx: "480", cy: "480" }
+                    },
+                    {
+                        title: "Tempered Glass / Teak Tops",
+                        desc: "Choose between sleek tempered safety glass top or water-resistant teak wood slat top.",
+                        positionClass: "absolute top-[10%] right-[5%] w-72 text-right md:text-left",
+                        line: { x1: "960", x2: "750", y1: "200", y2: "320", cx: "750", cy: "320" }
+                    },
+                    {
+                        title: "Sunbrella® Upholstery",
+                        desc: "Water-repellent, stain-resistant, UV-proof fabric cushions with quick-dry foam cores.",
+                        positionClass: "absolute bottom-[15%] right-[5%] w-72 text-right md:text-left",
+                        line: { x1: "960", x2: "820", y1: "550", y2: "520", cx: "820", cy: "520" }
+                    }
+                ],
+                specs: [
+                    { label: "Seat Capacity", value: "2, 4, 6, or 8 Seaters" },
+                    { label: "Glass Tabletop", value: "8mm Tempered Safety Glass" },
+                    { label: "Frame Warranty", value: "2 Years Comprehensive" }
+                ]
+            }
+        },
+        provenExcellence: {
+            badge: "Proven Excellence",
+            title: "Real Wicker Dining. Real Results. Across India.",
+            stats: [
+                { val: "40+", label: "Resort Projects" },
+                { val: "12+", label: "Cities Served" },
+                { val: "500+", label: "Dining Sets Placed" },
+                { val: "2 Yrs", label: "Direct Warranty" }
+            ],
+            slides: [
+                {
+                    name: "Navrang Oasis Clubhouse",
+                    location: "Goregaon West, Mumbai",
+                    tag: "Clubhouse Dining",
+                    qty: "6 Dining Sets",
+                    timeline: "3 Weeks",
+                    material: "HDPE Wicker & Tempered Glass Tables",
+                    benefits: ["100% Water Repellent", "High-Traffic Durable", "Classy Modern Look"],
+                    desc: "Furnished the central residential clubhouse poolside deck with premium 4-seater wicker dining sets for family outdoor meals.",
+                    src: "/assets/products/wicker-furniture/navrang-oasis-project-2.webp"
+                },
+                {
+                    name: "Bhardawadi Balcony",
+                    location: "Andheri West, Mumbai",
+                    tag: "Private Balcony Dining",
+                    qty: "4 Pieces",
+                    timeline: "1-2 Weeks",
+                    material: "HDPE Wicker & T6 Aluminium",
+                    benefits: ["Water Repellent", "Glass Table Top", "Space-Saving"],
+                    desc: "Supplied sophisticated balcony dining armchairs and a matching table, instantly upgrading the outdoor seating area with timeless comfort.",
+                    src: "/assets/products/wicker-outdoor-products/bharwadi-colony-project-3.webp"
+                },
+                {
+                    name: "Luxury Villa Balcony",
+                    location: "Mulshi, Pune",
+                    tag: "Residential Balcony Dining",
+                    qty: "1 Dining Set",
+                    timeline: "2 Weeks",
+                    material: "HDPE Wicker & Beige Cushioning",
+                    benefits: ["UV Protected", "Balcony Fit", "Deep Lounge Comfort"],
+                    desc: "Transformed an exclusive villa balcony with a modern, comfortable wicker dining and lounge set, matching natural scenery.",
+                    src: "/assets/products/wicker-outdoor-products/luxury-villa-project-1.webp"
+                }
+            ]
+        },
+        support: {
+            badge: "Service & Support",
+            title: "Installation & Support",
+            list: [
+                {
+                    icon: "delivery_dining",
+                    title: "Pan-India Secure Shipping",
+                    desc: "We ensure custom crating and professional transit delivery to any residential, hospitality, or commercial site."
+                },
+                {
+                    icon: "verified",
+                    title: "2-Year Direct Guarantee",
+                    desc: "Covers the HDPE wicker rattan strands against splitting or fading, and frame structural welds against failure."
+                }
+            ]
+        },
+        faq: {
+            badge: "Common Inquiries",
+            title: "Frequently Asked Questions",
+            list: [
+                {
+                    q: "Is wicker dining furniture suitable for outdoor rain and sun?",
+                    a: "Yes. Our premium HDPE synthetic wicker is specifically engineered to handle intense monsoons and direct tropical sun without cracking, peeling, or fading."
+                },
+                {
+                    q: "How do we clean the wicker dining table and chairs?",
+                    a: "They are extremely low maintenance. Simply hose down with fresh water or clean with a soft brush and mild soap water to wash off dust."
+                },
+                {
+                    q: "Can we order customized dimensions or weave colors?",
+                    a: "Yes. We offer customized seating arrangements (2/4/6/8-seaters) and multiple weave color choices including dark charcoal, classic honey tan, and warm beige."
+                }
+            ]
+        },
+        conversion: {
+            advantages: [
+                { icon: "verified", title: "ISO 9001:2015", desc: "Certified manufacturing excellence" },
+                { icon: "workspace_premium", title: "2-Year Guarantee", desc: "India's only comprehensive warranty" },
+                { icon: "precision_manufacturing", title: "Precision Engineering", desc: "Built for high-traffic durability" },
+                { icon: "public", title: "Pan-India Delivery", desc: "Professional installation support" }
+            ]
+        }
+    },
     "wicker-outdoor-products": {
         seo: {
             title: "Wicker Outdoor Products India | Cabanas, Poolside Loungers, Wicker Living & Dining Sets | Urbanland",
