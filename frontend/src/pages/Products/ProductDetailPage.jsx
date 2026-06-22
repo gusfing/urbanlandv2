@@ -25,7 +25,7 @@ const getVideoSectionData = (productId) => {
         "cabanas": {
             badge: "ELITE OUTDOOR LUXURY",
             heading: "Why Premium Cabanas Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/cabana-video.mp4",
             description: "Cabanas create private sanctuaries of comfort and luxury. Cheap, flimsy structures cannot withstand high winds, intense heat, or monsoon downpours. Urbanland designs premium, engineered cabanas built to endure and elevate hospitality environments.",
             features: [
                 { icon: "architecture", title: "Heavy-Duty Framework", desc: "Structural wind-loaded powder-coated aluminum construction." },
@@ -49,7 +49,7 @@ const getVideoSectionData = (productId) => {
         "dustbins": {
             badge: "URBAN HYGIENE & UTILITY",
             heading: "Why Premium Dustbins Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/dustbin-video.mp4",
             description: "Public litter bins must combine sleek aesthetics with extreme vandal resistance. Low-quality bins rust quickly, leak, and spoil the landscape. Urbanland's premium waste receptacles are built for heavy commercial traffic with rust-proof coatings.",
             features: [
                 { icon: "gpp_good", title: "Corrosion Resistant", desc: "Constructed with galvanized steel and rust-proof aluminum hardware." },
@@ -61,7 +61,7 @@ const getVideoSectionData = (productId) => {
         "bus-shelters": {
             badge: "TRANSIT INFRASTRUCTURE",
             heading: "Why Premium Bus Shelters Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/bus-shelter-video.mp4",
             description: "Transit shelters protect hundreds of commuters daily. Urbanland designs heavy-duty, weather-resistant bus shelters that offer maximum comfort, safety, and modern styling for smart cities and commercial townships.",
             features: [
                 { icon: "security", title: "Shatterproof Panels", desc: "Tempered safety glass panels for maximum occupant protection." },
@@ -73,7 +73,7 @@ const getVideoSectionData = (productId) => {
         "car-shelters": {
             badge: "VEHICLE PROTECTION",
             heading: "Why Premium Car Shelters Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/car-shed-video.mp4",
             description: "Premium vehicles deserve premium protection. Cheap carports leak and sag under storm stress. Urbanland's tensile and cantilever car shelters are engineered for high wind resistance and thermal blocking to protect vehicle finishes.",
             features: [
                 { icon: "tsunami", title: "High Tensile Strength", desc: "Engineered membrane fabrics that handle extreme wind and rain loads." },
@@ -85,7 +85,7 @@ const getVideoSectionData = (productId) => {
         "ss-bollards": {
             badge: "SECURITY & TRAFFIC CONTROL",
             heading: "Why Premium SS Bollards Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/stainless-steel-video.mp4",
             description: "Bollards protect pedestrians and demarcate pathways. Cheap bollards dent easily, lose their shine, and rust. Urbanland's grade 304/316 stainless steel bollards deliver robust impact resistance with high-end architectural finishes.",
             features: [
                 { icon: "shield", title: "Marine Grade Steel", desc: "Grade 304 or 316 stainless steel to completely eliminate rusting." },
@@ -97,7 +97,7 @@ const getVideoSectionData = (productId) => {
         "canteen-tables": {
             badge: "COMMUNAL DINING",
             heading: "Why Premium Canteen Tables Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/canteen-table-video.mp4",
             description: "Canteen spaces need heavy-duty, hygienic dining furniture. Urbanland's premium canteen tables are built to withstand intensive daily use, food spills, and heavy scrubbing while remaining clean and modern.",
             features: [
                 { icon: "sanitizer", title: "Food-Grade Surfaces", desc: "Hygienic, easy-to-sanitize tabletops resisting heat and food stains." },
@@ -121,7 +121,7 @@ const getVideoSectionData = (productId) => {
         "wicker-furniture": {
             badge: "HANDCRAFTED WICKER",
             heading: "Why Premium Wicker Furniture Matters",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/wicker-furniture-video.mp4",
             description: "Luxury resorts require seating that evokes artisanal charm without sacrificing durability. Low-quality wicker unravels, fades, and snaps. Urbanland's synthetic wicker is hand-woven over rust-free frames with high UV stability.",
             features: [
                 { icon: "wb_sunny", title: "High-Density PE Wicker", desc: "UV-stabilized synthetic rattan that won't snap, crack, or fade." },
@@ -133,8 +133,32 @@ const getVideoSectionData = (productId) => {
         "wicker-outdoor-products": {
             badge: "HANDCRAFTED WICKER",
             heading: "Why Premium Wicker Products Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/wicker-outdoor-furniture-video.mp4",
             description: "Outdoor hospitality spaces demand high-performance, elegant wicker accessories and furnishings. Urbanland's premium wicker products deliver heavy-duty commercial utility with handcrafted resort design.",
+            features: [
+                { icon: "wb_sunny", title: "High-Density PE Wicker", desc: "UV-stabilized synthetic rattan that won't snap, crack, or fade." },
+                { icon: "draw", title: "Hand-Woven Art", desc: "Tensioned weave by master craftsmen for ultimate support and finish." },
+                { icon: "crop_square", title: "Aluminum Under-frame", desc: "Thick-walled aluminum pipes that never rust or warp over time." },
+                { icon: "water_drop", title: "Cushion Resilience", desc: "Premium Olefin fabrics with high water-shedding performance." }
+            ]
+        },
+        "wicker-living-sets": {
+            badge: "HANDCRAFTED WICKER",
+            heading: "Why Premium Wicker Living Sets Matter",
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/wicker-living-furniture-video.mp4",
+            description: "Luxury outdoor lounging demands wicker sets that stand up to the sun and moisture. Urbanland's living configurations feature thick-walled frames and quick-dry cushions.",
+            features: [
+                { icon: "wb_sunny", title: "High-Density PE Wicker", desc: "UV-stabilized synthetic rattan that won't snap, crack, or fade." },
+                { icon: "draw", title: "Hand-Woven Art", desc: "Tensioned weave by master craftsmen for ultimate support and finish." },
+                { icon: "crop_square", title: "Aluminum Under-frame", desc: "Thick-walled aluminum pipes that never rust or warp over time." },
+                { icon: "water_drop", title: "Cushion Resilience", desc: "Premium Olefin fabrics with high water-shedding performance." }
+            ]
+        },
+        "wicker-dining-sets": {
+            badge: "HANDCRAFTED WICKER",
+            heading: "Why Premium Wicker Dining Sets Matter",
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/wicker-dining-video.mp4",
+            description: "Al fresco dining spaces deserve highly resistant, resort-grade tables and chairs. Urbanland's wicker dining sets combine commercial steel/aluminum bases with hand-woven detailing.",
             features: [
                 { icon: "wb_sunny", title: "High-Density PE Wicker", desc: "UV-stabilized synthetic rattan that won't snap, crack, or fade." },
                 { icon: "draw", title: "Hand-Woven Art", desc: "Tensioned weave by master craftsmen for ultimate support and finish." },
@@ -169,7 +193,7 @@ const getVideoSectionData = (productId) => {
         "pergolas": {
             badge: "PERGOLAS & OUTDOOR SHADE",
             heading: "Why Premium Pergolas Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/pergola-video.mp4",
             description: "Pergolas define outdoor living spaces and provide elegant shade. Urbanland designs premium, weather-resistant pergolas built to endure intense sunlight, rain, and wind while adding architectural beauty to gardens and terraces.",
             features: [
                 { icon: "wb_sunny", title: "Weatherproof Structure", desc: "Constructed with powder-coated aluminum or treated wood to resist weathering." },
@@ -181,7 +205,7 @@ const getVideoSectionData = (productId) => {
         "gazebos": {
             badge: "GAZEBOS & PAVILIONS",
             heading: "Why Premium Gazebos Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/gazebo-video.mp4",
             description: "Gazebos serve as elegant focal points for outdoor recreation. Low-quality gazebos rust, leak, or fail under wind loads. Urbanland constructs high-performance gazebos with reinforced frames and premium weather protection.",
             features: [
                 { icon: "roofing", title: "Robust Roof Engineering", desc: "Designed to handle heavy rain, wind loads, and direct sun exposure." },
@@ -193,7 +217,7 @@ const getVideoSectionData = (productId) => {
         "pre-fab-homes": {
             badge: "PREFABRICATED LIVING",
             heading: "Why Premium Pre-Fab Homes Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/prefab-homes-video.mp4",
             description: "Pre-fab homes offer quick, eco-friendly, and high-quality modular housing solutions. Urbanland's prefabricated structures are engineered for quick assembly, premium insulation, and superior weather resistance.",
             features: [
                 { icon: "bolt", title: "Rapid Installation", desc: "Precision-engineered components assembled quickly on site." },
@@ -211,8 +235,14 @@ const ProductDetailPage = ({ productId: propProductId }) => {
     const { productId: urlProductId } = useParams();
     const activeProductId = propProductId || urlProductId || "benches";
 
+    const aliasMap = {
+        "wicker-living-sets": "wicker-furniture",
+        "wicker-dining-sets": "wicker-outdoor-products",
+    };
+    const resolvedProductId = aliasMap[activeProductId] || activeProductId;
+
     const baseConfig = productConfigs["benches"];
-    const specificConfig = productConfigs[activeProductId] || {};
+    const specificConfig = productConfigs[resolvedProductId] || {};
 
     // Deep merge to support stub configurations
     const config = {

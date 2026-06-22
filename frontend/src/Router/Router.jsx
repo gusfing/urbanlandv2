@@ -30,6 +30,8 @@ import WickerOutdoorProductsPage from "../pages/Products/WickerOutdoorProductsPa
 import PergolasPage from "../pages/Products/PergolasPage";
 import GazebosPage from "../pages/Products/GazebosPage";
 import PreFabHomesPage from "../pages/Products/PreFabHomesPage";
+import WickerLivingSetsPage from "../pages/Products/WickerLivingSetsPage";
+import WickerDiningSetsPage from "../pages/Products/WickerDiningSetsPage";
 
 import SolutionsHub from "../pages/Solutions/SolutionsHub";
 import SolutionsDetail from "../pages/Solutions/SolutionsDetail";
@@ -85,8 +87,8 @@ const router = createBrowserRouter([
                     { path: "products/poolside-furniture", element: <PoolsideLoungersPage /> },
                     { path: "products/ss-bollards", element: <SSBollardsPage /> },
                     { path: "products/wicker-outdoor-products", element: <WickerOutdoorProductsPage /> },
-                    { path: "products/wicker-living-sets", element: <WickerFurniturePage /> },
-                    { path: "products/wicker-dining-sets", element: <WickerOutdoorProductsPage /> },
+                    { path: "products/wicker-living-sets", element: <WickerLivingSetsPage /> },
+                    { path: "products/wicker-dining-sets", element: <WickerDiningSetsPage /> },
                     { path: "products/pergolas", element: <PergolasPage /> },
                     { path: "products/gazebos", element: <GazebosPage /> },
                     { path: "products/pre-fab-homes", element: <PreFabHomesPage /> },
