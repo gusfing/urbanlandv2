@@ -37,7 +37,7 @@ const getVideoSectionData = (productId) => {
         "planters": {
             badge: "ARCHITECTURAL LANDSCAPING",
             heading: "Why Premium Planters Matter",
-            videoUrl: defaultVideo,
+            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/planters-video.mp4",
             description: "Planters frame the greenery of public spaces. Cheap plastic or thin-walled planters crack under soil expansion and solar heat. Urbanland's designer planters are engineered with reinforced materials for heavy soil loads and root protection.",
             features: [
                 { icon: "fitness_center", title: "Reinforced Walls", desc: "Built to prevent bulging and cracking from heavy soil expansion." },
