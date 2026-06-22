@@ -2221,16 +2221,16 @@ export const productConfigs = {
                 { icon: "apartment", label: "50+ Projects" }
             ],
             mainImage: {
-                src: caneFurniturePng,
+                src: "/assets/products/indoor-furniture/hero-main.webp",
                 alt: "Premium Indoor Furniture Piece"
             },
             subImage1: {
-                src: wickerLivingImg,
+                src: "/assets/products/indoor-furniture/hero-1.webp",
                 alt: "Wicker Indoor Sofa Set",
                 label: "WICKER LIVING SETS"
             },
             subImage2: {
-                src: wickerDiningImg,
+                src: "/assets/products/indoor-furniture/hero-2.webp",
                 alt: "Wicker Dining Chair",
                 label: "WICKER DINING SETS"
             }
@@ -2244,17 +2244,17 @@ export const productConfigs = {
                 {
                     title: "Wicker Teardrop Swing Chair",
                     alt: "Wicker Teardrop Swing Chair",
-                    src: caneFurniturePng
+                    src: "/assets/products/indoor-furniture/indoor-furniture-1.webp"
                 },
                 {
                     title: "Contemporary Metal-Wooden Table",
                     alt: "Contemporary Metal-Wooden Table",
-                    src: wickerLivingImg
+                    src: "/assets/products/indoor-furniture/indoor-furniture-2.webp"
                 },
                 {
                     title: "Luxury Wicker Dining Suite",
                     alt: "Luxury Wicker Dining Suite",
-                    src: wickerDiningImg
+                    src: "/assets/products/indoor-furniture/indoor-furniture-3.webp"
                 }
             ],
             viewAllRedirect: "/catalogue"
@@ -2269,7 +2269,7 @@ export const productConfigs = {
                     icon: "handyman",
                     title: "Durability & Longevity",
                     desc: "Strong metal frames combined with quality wood or wicker deliver furniture that lasts for years with minimal maintenance.",
-                    image: wickerLivingImg
+                    image: "/assets/products/indoor-furniture/product-card-1.webp"
                 },
                 {
                     num: "02.",
@@ -2289,14 +2289,14 @@ export const productConfigs = {
                     icon: "cleaning_services",
                     title: "Low Maintenance",
                     desc: "Easy-to-clean surfaces and high-quality finishes reduce upkeep while maintaining a premium appearance.",
-                    image: caneFurniturePng
+                    image: "/assets/products/indoor-furniture/product-card-2.webp"
                 },
                 {
                     num: "05.",
                     icon: "apartment",
                     title: "Versatile Applications",
                     desc: "Suitable for residential homes, corporate offices, hotels, restaurants, schools, hospitals, and institutional canteens.",
-                    image: wickerDiningImg
+                    image: "/assets/products/indoor-furniture/product-card-3.webp"
                 }
             ]
         },
@@ -2313,21 +2313,21 @@ export const productConfigs = {
                     title: "Metal-Wooden Indoor Furniture",
                     alt: "Metal-Wooden Indoor",
                     path: "/catalogue",
-                    src: wickerLivingImg,
+                    src: "/assets/products/indoor-furniture/indoor-furniture-4.webp",
                     desc: "Industrial-chic tables, benches, and chairs combining robust metal frames with warm timber tops."
                 },
                 {
                     title: "Wicker Indoor Living Sets",
                     alt: "Wicker Indoor Living Sets",
                     path: "/catalogue",
-                    src: wickerDiningImg,
+                    src: "/assets/products/indoor-furniture/indoor-furniture-2.webp",
                     desc: "Hand-woven synthetic wicker sofas, armchairs, and tables offering comfortable indoor seating."
                 },
                 {
                     title: "Cane Hanging Swings",
                     alt: "Cane Hanging Swings",
                     path: "/catalogue",
-                    src: caneFurniturePng,
+                    src: "/assets/products/indoor-furniture/indoor-furniture-3.webp",
                     desc: "Teardrop-shaped woven wicker swing chairs supported by sleek curved metal stands."
                 }
             ]
@@ -2337,9 +2337,9 @@ export const productConfigs = {
             title: "MATERIALS & CUSTOMIZATION OPTIONS FOR INDOOR FURNITURE",
             description: "Configure materials, finishes, cushion fabrics, and sizes.",
             radialMap: {
-                centralImage: caneFurniturePng,
+                centralImage: "/assets/products/indoor-furniture/indoor-furniture-main.webp",
                 centralImageAlt: "Premium Indoor Swing Chair",
-                backgroundImage: wickerLivingImg,
+                backgroundImage: "/assets/products/indoor-furniture/indoor-furniture-bg.webp",
                 cards: [
                     {
                         title: "Woven HDPE Wicker",
@@ -2392,7 +2392,7 @@ export const productConfigs = {
                     material: "Premium Cane (Wicker) & Curved Metal Stand",
                     benefits: ["Teardrop Shaped", "Plush Neutral Cushion", "Indoor & Outdoor Utility"],
                     desc: "Installed premium teardrop-shaped hanging swing chairs crafted from woven wicker, supported by sleek curved metal stands and featuring plush, neutral-toned cushions for a relaxing indoor cafe lounge experience.",
-                    src: "/assets/products/wicker-furniture/hero-2.webp"
+                    src: "/assets/products/indoor-furniture/dario-cafe-project-1.webp"
                 },
                 {
                     name: "Titanium Corporate Park",
@@ -2403,7 +2403,7 @@ export const productConfigs = {
                     material: "Metal-Wooden Lounge Tables & Armchairs",
                     benefits: ["High-Traffic Durable", "AkzoNobel Finish", "Ergonomic Cushioning"],
                     desc: "Furnished the central breakout lounge with premium steel-framed wooden dining/coffee tables and matching modular armchairs to optimize collaborative working.",
-                    src: "/assets/products/wicker-furniture/wicker-furniture-1.webp"
+                    src: "/assets/products/indoor-furniture/indoor-furniture-5.webp"
                 },
                 {
                     name: "Symbiosis Cafeteria",
@@ -2414,7 +2414,7 @@ export const productConfigs = {
                     material: "Seasoned Teak Wood & Powder Coated MS",
                     benefits: ["Scratch-Resistant Tops", "Heavy-Duty Framing", "Easy Maintenance"],
                     desc: "Supplied heavy-duty metal-wooden indoor bench sets and dining tables for the student cafeteria, built to withstand continuous daily use.",
-                    src: "/assets/products/wicker-furniture/wicker-furniture-3.webp"
+                    src: "/assets/products/indoor-furniture/indoor-furniture-6.webp"
                 }
             ]
         },
