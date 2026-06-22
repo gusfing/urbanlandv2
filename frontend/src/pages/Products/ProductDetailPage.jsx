@@ -165,6 +165,42 @@ const getVideoSectionData = (productId) => {
                 { icon: "auto_awesome", title: "Premium Finishes", desc: "Scratch-resistant powder coating and luxury protective wood oils." },
                 { icon: "airline_seat_recline_normal", title: "Ergonomic Outlines", desc: "Comfort-focused seating angles and ergonomic back support." }
             ]
+        },
+        "pergolas": {
+            badge: "PERGOLAS & OUTDOOR SHADE",
+            heading: "Why Premium Pergolas Matter",
+            videoUrl: defaultVideo,
+            description: "Pergolas define outdoor living spaces and provide elegant shade. Urbanland designs premium, weather-resistant pergolas built to endure intense sunlight, rain, and wind while adding architectural beauty to gardens and terraces.",
+            features: [
+                { icon: "wb_sunny", title: "Weatherproof Structure", desc: "Constructed with powder-coated aluminum or treated wood to resist weathering." },
+                { icon: "design_services", title: "Architectural Elegance", desc: "Sleek, modern profiles that blend seamlessly with high-end landscaping." },
+                { icon: "filter_hdr", title: "Customizable Shade", desc: "Adjustable louver options or canopy systems to control light and ventilation." },
+                { icon: "verified", title: "Commercial Quality", desc: "Built to last and backed by our comprehensive 2-year guarantee." }
+            ]
+        },
+        "gazebos": {
+            badge: "GAZEBOS & PAVILIONS",
+            heading: "Why Premium Gazebos Matter",
+            videoUrl: defaultVideo,
+            description: "Gazebos serve as elegant focal points for outdoor recreation. Low-quality gazebos rust, leak, or fail under wind loads. Urbanland constructs high-performance gazebos with reinforced frames and premium weather protection.",
+            features: [
+                { icon: "roofing", title: "Robust Roof Engineering", desc: "Designed to handle heavy rain, wind loads, and direct sun exposure." },
+                { icon: "diversity_3", title: "Social Gathering Hub", desc: "Creates the perfect sheltered area for seating, dining, and outdoor events." },
+                { icon: "shield", title: "Corrosion Proofing", desc: "High-grade metal finishes and anti-rust coatings for durability." },
+                { icon: "verified", title: "Long-Term Guarantee", desc: "Manufactured for lifetime durability and backed by a 2-year warranty." }
+            ]
+        },
+        "pre-fab-homes": {
+            badge: "PREFABRICATED LIVING",
+            heading: "Why Premium Pre-Fab Homes Matter",
+            videoUrl: defaultVideo,
+            description: "Pre-fab homes offer quick, eco-friendly, and high-quality modular housing solutions. Urbanland's prefabricated structures are engineered for quick assembly, premium insulation, and superior weather resistance.",
+            features: [
+                { icon: "bolt", title: "Rapid Installation", desc: "Precision-engineered components assembled quickly on site." },
+                { icon: "thermostat", title: "Thermal & Sound Insulation", desc: "High-grade wall panels for excellent energy efficiency and comfort." },
+                { icon: "eco", title: "Sustainable Building", desc: "Eco-friendly materials that minimize carbon footprints and site waste." },
+                { icon: "gpp_good", title: "Structural Integrity", desc: "Seismic and wind-resistant framework built to high safety standards." }
+            ]
         }
     };
     return data[productId] || data["poolside-loungers"];

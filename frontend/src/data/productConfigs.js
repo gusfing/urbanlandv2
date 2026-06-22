@@ -3702,5 +3702,752 @@ export const productConfigs = {
                 { icon: "public", title: "Pan-India Delivery", desc: "Professional installation support" }
             ]
         }
+    },
+    "pergolas": {
+        seo: {
+            title: "Architectural Pergolas Manufacturer India | Modern Outdoor Shade Pergolas | Urbanland",
+            description: "High-quality architectural pergolas in aluminum and timber. Premium outdoor shade structures for corporate plazas, residential gardens and hotels. Custom sizes, wind-load resistant, 2-Year Guarantee."
+        },
+        hero: {
+            badge: "Architectural Shading",
+            title: "Premium Pergolas Manufacturer in India – Elegant & Weather-Resistant Outdoor Shade Structures",
+            description: "Enhance your outdoor living spaces with Urbanland's designer pergolas. Custom-built from powder-coated aluminum or premium treated timbers, they provide shelter, visual structure, and elegance. Built to withstand tropical weather and backed by our 2-Year Comprehensive Guarantee.",
+            ctaText: "Request Custom Quote",
+            ctaLink: "/contact",
+            brochureText: "Download Brochure",
+            brochureLink: "#",
+            stats: [
+                { icon: "verified", label: "2-Year Guarantee" },
+                { icon: "verified_user", label: "ISO 9001:2015" },
+                { icon: "precision_manufacturing", label: "Made in India" },
+                { icon: "apartment", label: "30+ Installations" }
+            ],
+            mainImage: {
+                src: carSheltersImg,
+                alt: "Premium Pergola shade"
+            },
+            subImage1: {
+                src: cabanasImg,
+                alt: "Pergola Terrace View",
+                label: "ROOFTOP SHADE"
+            },
+            subImage2: {
+                src: cabanasPng,
+                alt: "Modern Pergola render",
+                label: "TERRACE PERGOLA"
+            }
+        },
+        gallery: {
+            title: "Visual Gallery",
+            subtitle: "Modern Pergola Structures",
+            description: "Explore our collection of custom-designed pergolas installed in premium commercial plazas, residential terraces, and resort pooldecks.",
+            viewAllText: "Pergolas",
+            slides: [
+                {
+                    title: "Modern Aluminum Louvered Pergola",
+                    alt: "Modern Louvered Pergola",
+                    src: carSheltersImg
+                },
+                {
+                    title: "Classic Hardwood Garden Pergola",
+                    alt: "Classic Timber Pergola",
+                    src: cabanasImg
+                },
+                {
+                    title: "High-Tension Shade Sail Pergola",
+                    alt: "High-Tension Shade Sail Pergola",
+                    src: cabanasUgc
+                }
+            ],
+            viewAllRedirect: "/catalogue"
+        },
+        philosophy: {
+            badge: "Shading Innovation",
+            title: "Why Premium Pergolas Are Crucial for Smart Landscaping",
+            description: "A well-designed pergola provides definition, thermal comfort, and aesthetic value to any modern landscape layout.",
+            cards: [
+                {
+                    num: "01.",
+                    icon: "wb_sunny",
+                    title: "Climate Control",
+                    desc: "Reduces direct solar radiation, lowering ambient temperatures on terraces and decks by up to 8°C.",
+                    image: cabanasImg
+                },
+                {
+                    num: "02.",
+                    icon: "design_services",
+                    title: "Space Definition",
+                    desc: "Creates distinct outdoor zones for dining, socializing, and relaxation, improving user engagement.",
+                    isPrimary: true
+                },
+                {
+                    num: "03.",
+                    icon: "shield",
+                    title: "Severe Weather Build",
+                    desc: "Engineered with corrosion-proof aluminum and high-tensile fasteners to survive tropical wind loads."
+                },
+                {
+                    num: "04.",
+                    icon: "eco",
+                    title: "Low Carbon Footprint",
+                    desc: "Utilizes sustainably sourced FSC timbers and fully recyclable aluminum alloys.",
+                    image: carSheltersImg
+                },
+                {
+                    num: "05.",
+                    icon: "handyman",
+                    title: "Zero Stress Care",
+                    desc: "Features automotive-grade polyurethane and powder finishes that resist moisture and salt air.",
+                    image: cabanasPng
+                }
+            ]
+        },
+        quote: {
+            text: "A pergola is not just a structure; it is an architectural frame that captures the sunlight and shadows to define outdoor luxury.",
+            author: "PRINCIPAL ARCHITECT, URBANLAND"
+        },
+        categories: {
+            badge: "Pergola Formats",
+            title: "Our Architectural Pergola Series",
+            description: "We manufacture custom pergolas tailored to residential and commercial project scopes:",
+            list: [
+                {
+                    title: "Bio-Climatic Louvered Pergola",
+                    alt: "Bio-Climatic Pergolas",
+                    path: "/catalogue",
+                    src: carSheltersImg,
+                    desc: "Motorized or manual adjustable louvers for total control over sunlight and rain runoff."
+                },
+                {
+                    title: "High-Tensile Fabric Pergola",
+                    alt: "High-Tensile Fabric Pergola",
+                    path: "/catalogue",
+                    src: cabanasImg,
+                    desc: "Steel framework with premium PVDF tensile membranes for dramatic, large-span shading."
+                },
+                {
+                    title: "Architectural Timber Pergola",
+                    alt: "Architectural Timber Pergola",
+                    path: "/catalogue",
+                    src: cabanasPng,
+                    desc: "FSC-certified seasoned teak or Robinia wood pergolas for a natural, classic resort aesthetic."
+                }
+            ]
+        },
+        configurator: {
+            badge: "MATERIALS & CUSTOMIZATION",
+            title: "CUSTOMIZATION CONFIGURATOR FOR PERGOLAS",
+            description: "Configure frame alloys, shading controls, side screens, and smart lighting systems.",
+            radialMap: {
+                centralImage: cabanasPng,
+                centralImageAlt: "Modern Louvered Pergola",
+                backgroundImage: carSheltersImg,
+                cards: [
+                    {
+                        title: "Motorized Louver Controls",
+                        desc: "Adjust louver angles via remote control or smart home integration to block sun or rain.",
+                        positionClass: "absolute top-[10%] left-[5%] w-72",
+                        line: { x1: "320", x2: "550", y1: "200", y2: "350", cx: "550", cy: "350" }
+                    },
+                    {
+                        title: "Premium Structural Alloys",
+                        desc: "High-strength T6 aluminum extrusion profiles finished in architectural-grade Akzonobel coatings.",
+                        positionClass: "absolute bottom-[15%] left-[5%] w-72",
+                        line: { x1: "320", x2: "480", y1: "550", y2: "480", cx: "480", cy: "480" }
+                    },
+                    {
+                        title: "Integrated Rain Gutters",
+                        desc: "Concealed post-drainage systems that redirect rainwater away from the seating deck automatically.",
+                        positionClass: "absolute top-[10%] right-[5%] w-72 text-right md:text-left",
+                        line: { x1: "960", x2: "750", y1: "200", y2: "320", cx: "750", cy: "320" }
+                    },
+                    {
+                        title: "Dimmable LED Lighting",
+                        desc: "Pre-wired low-voltage LED strip lights built directly into louver profiles for evening utility.",
+                        positionClass: "absolute bottom-[15%] right-[5%] w-72 text-right md:text-left",
+                        line: { x1: "960", x2: "820", y1: "550", y2: "520", cx: "820", cy: "520" }
+                    }
+                ],
+                specs: [
+                    { label: "Dimensions", value: "3m x 3m to 6m x 8m, custom sizes" },
+                    { label: "Materials", value: "T6 Aluminum, FSC Hardwood" },
+                    { label: "Wind Load", value: "Certified up to 110 km/h" }
+                ]
+            }
+        },
+        provenExcellence: {
+            badge: "Proven Excellence",
+            title: "Real Pergolas. Real Results. Across India.",
+            stats: [
+                { val: "30+", label: "Installations" },
+                { val: "10+", label: "Cities Served" },
+                { val: "2 Yrs", label: "Full Guarantee" },
+                { val: "100%", label: "UV Protection" }
+            ],
+            slides: [
+                {
+                    name: "Taj Exotica Deck",
+                    location: "Goa",
+                    tag: "Luxury Hospitality",
+                    qty: "4 Structures",
+                    timeline: "6 Weeks",
+                    material: "Anodized Louvered Aluminum",
+                    benefits: ["Rust Proof", "Concealed Drainage", "Remote Controlled"],
+                    desc: "Delivered 4 architectural bioclimatic pergolas for the seaside dining patio, ensuring high wind stability and complete corrosion resistance.",
+                    src: cabanasImg
+                },
+                {
+                    name: "Lodha Gated Estate",
+                    location: "Thane, Mumbai",
+                    tag: "Residential Amenity",
+                    qty: "6 Systems",
+                    timeline: "4 Weeks",
+                    material: "Powder Coated T6 Aluminum",
+                    benefits: ["LED Pre-run", "Integrated Seating", "High Shade"],
+                    desc: "Installed 6 modular louvered pergolas across podium gardens to create high-end shaded reading corners for residents.",
+                    src: carSheltersUgc
+                }
+            ]
+        },
+        support: {
+            badge: "Service & Support",
+            title: "Installation & Support",
+            list: [
+                {
+                    icon: "engineering",
+                    title: "Foundation & Setup Support",
+                    desc: "We provide concrete anchor design specifications and dispatch our expert crew for rapid, wind-safe on-site assembly."
+                },
+                {
+                    icon: "verified",
+                    title: "2-Year Structural Warranty",
+                    desc: "Covers frame welds, motorized mechanical components, and surface coatings against cracking or peeling."
+                }
+            ]
+        },
+        faq: {
+            badge: "Common Inquiries",
+            title: "Frequently Asked Questions",
+            list: [
+                {
+                    q: "Are Louvered Pergolas completely rainproof?",
+                    a: "Yes. When fully closed, the interlocking louver blades form a watertight seal, and the integrated gutter system drains the water away via the posts."
+                },
+                {
+                    q: "What maintenance is required for aluminium pergolas?",
+                    a: "Aluminium pergolas require virtually zero maintenance. A simple wash down with water every few months is sufficient to keep them looking brand new."
+                },
+                {
+                    q: "Can you mount them on rooftop decks?",
+                    a: "Yes. We design custom load-bearing anchor plates specifically for concrete roof decks, ensuring wind safety and zero leakage into the structure."
+                }
+            ]
+        },
+        conversion: {
+            advantages: [
+                { icon: "verified", title: "ISO 9001:2015", desc: "Certified manufacturing excellence" },
+                { icon: "workspace_premium", title: "2-Year Guarantee", desc: "India's only comprehensive warranty" },
+                { icon: "precision_manufacturing", title: "Precision Engineering", desc: "Built for high-traffic durability" },
+                { icon: "public", title: "Pan-India Delivery", desc: "Professional installation support" }
+            ]
+        }
+    },
+    "gazebos": {
+        seo: {
+            title: "Premium Gazebos Manufacturer India | Designer Timber Pavilions | Urbanland",
+            description: "High-performance outdoor gazebos and luxury wooden pavilions. Engineered for public parks, resorts, and premium housing. 2-Year Guarantee, weather-resistant structural frames."
+        },
+        hero: {
+            badge: "Luxury Garden Pavilions",
+            title: "Premium Gazebos Manufacturer in India – Beautiful Garden Pavilions & Outdoor Social Hubs",
+            description: "Transform your gardens and lawns with Urbanland's designer gazebos and pavilions. Precision-engineered with high-grade treated hardwoods or anti-corrosion metals, they serve as the perfect shaded hub for relaxation, events, and outdoor dining. Built for life and backed by our 2-Year Guarantee.",
+            ctaText: "Request Custom Quote",
+            ctaLink: "/contact",
+            brochureText: "Download Brochure",
+            brochureLink: "#",
+            stats: [
+                { icon: "verified", label: "2-Year Guarantee" },
+                { icon: "verified_user", label: "ISO 9001:2015" },
+                { icon: "precision_manufacturing", label: "Made in India" },
+                { icon: "apartment", label: "40+ Projects" }
+            ],
+            mainImage: {
+                src: cabanasImg,
+                alt: "Premium Garden Gazebo"
+            },
+            subImage1: {
+                src: wickerLivingImg,
+                alt: "Gazebo Seating View",
+                label: "RESORT GAZEBO"
+            },
+            subImage2: {
+                src: caneFurniturePng,
+                alt: "Luxury Wood Pavilion Render",
+                label: "TIMBER PAVILION"
+            }
+        },
+        gallery: {
+            title: "Visual Gallery",
+            subtitle: "Luxury Outdoor Pavilions",
+            description: "Explore our range of classic timber and contemporary metal pavilions installed at premium resorts, country clubs, and residential developments.",
+            viewAllText: "Gazebos",
+            slides: [
+                {
+                    title: "Classic Hardwood Pavilion",
+                    alt: "Classic Wooden Gazebo",
+                    src: cabanasImg
+                },
+                {
+                    title: "Contemporary Steel Gazebo",
+                    alt: "Contemporary Metal Gazebo",
+                    src: wickerLivingImg
+                },
+                {
+                    title: "Poolside Resort Cabana-Gazebo",
+                    alt: "Poolside Gazebo",
+                    src: caneFurniturePng
+                }
+            ],
+            viewAllRedirect: "/catalogue"
+        },
+        philosophy: {
+            badge: "Comfort & Craft",
+            title: "Why High-Performance Gazebos Are the Ultimate Garden Centerpiece",
+            description: "Our gazebos blend old-world artisanal timber framing with modern weather-proofing to create comfortable, long-lasting shelter.",
+            cards: [
+                {
+                    num: "01.",
+                    icon: "roofing",
+                    title: "Leakproof Roofing",
+                    desc: "Multi-layered asphalt shingles or polycarbonate roofs provide complete protection from heavy monsoon downpours.",
+                    image: cabanasImg
+                },
+                {
+                    num: "02.",
+                    icon: "diversity_3",
+                    title: "Social Gathering Hub",
+                    desc: "Perfectly proportioned to accommodate dining tables, wicker sofas, or poolside daybeds.",
+                    isPrimary: true
+                },
+                {
+                    num: "03.",
+                    icon: "shield",
+                    title: "Fungal & Pest Shield",
+                    desc: "Hardwood timbers undergo pressure seasoning to resist rot, termites, and fungal decay."
+                },
+                {
+                    num: "04.",
+                    icon: "eco",
+                    title: "100% Certified Wood",
+                    desc: "Sourced from sustainably managed forests matching global environmental benchmarks.",
+                    image: wickerLivingImg
+                },
+                {
+                    num: "05.",
+                    icon: "handyman",
+                    title: "Heavy Anchored Stability",
+                    desc: "Sub-surface concrete anchor assemblies ensure the structure remains perfectly secure against strong storms.",
+                    image: caneFurniturePng
+                }
+            ]
+        },
+        quote: {
+            text: "A garden gazebo is a sanctuary in the landscape, offering shelter while keeping you intimately connected with nature.",
+            author: "LANDSCAPE ARCHITECT, URBANLAND"
+        },
+        categories: {
+            badge: "Gazebo Designs",
+            title: "Our Collection of Outdoor Pavilions",
+            description: "We manufacture robust, high-performance gazebos customized to municipal, commercial, and private developer standards:",
+            list: [
+                {
+                    title: "Traditional Wooden Pavilions",
+                    alt: "Traditional Wood Gazebos",
+                    path: "/catalogue",
+                    src: cabanasImg,
+                    desc: "Premium seasoned teak or Robinia structures with classic post-and-beam construction."
+                },
+                {
+                    title: "Contemporary Steel Gazebos",
+                    alt: "Contemporary Metal Gazebos",
+                    path: "/catalogue",
+                    src: wickerLivingImg,
+                    desc: "Modern structural steel frames finished in weather-resistant Akzonobel coatings."
+                },
+                {
+                    title: "Poolside Cabana Pavilions",
+                    alt: "Poolside Cabana Pavilions",
+                    path: "/catalogue",
+                    src: caneFurniturePng,
+                    desc: "Open-sided structures with integrated wicker privacy drapes and daybed layouts."
+                }
+            ]
+        },
+        configurator: {
+            badge: "MATERIALS & CUSTOMIZATION",
+            title: "CUSTOMIZATION OPTIONS FOR OUTDOOR GAZEBOS",
+            description: "Configure frame materials, roof shingles, integrated seating, and electrical wiring panels.",
+            radialMap: {
+                centralImage: caneFurniturePng,
+                centralImageAlt: "Designer Garden Gazebo",
+                backgroundImage: cabanasImg,
+                cards: [
+                    {
+                        title: "Double-Tier Shingle Roof",
+                        desc: "Asphalt slate shingles or cedar shakes provide weather protection and hot air ventilation.",
+                        positionClass: "absolute top-[10%] left-[5%] w-72",
+                        line: { x1: "320", x2: "550", y1: "200", y2: "350", cx: "550", cy: "350" }
+                    },
+                    {
+                        title: "Seasoned Timber Framing",
+                        desc: "Select from kiln-dried Burmese Teak, Malaysian Shorea, or durable chemical-treated Pine.",
+                        positionClass: "absolute bottom-[15%] left-[5%] w-72",
+                        line: { x1: "320", x2: "480", y1: "550", y2: "480", cx: "480", cy: "480" }
+                    },
+                    {
+                        title: "Pre-Routed Wiring Channels",
+                        desc: "Concealed channels run through hollow posts to support lighting, fans, and audio systems.",
+                        positionClass: "absolute top-[10%] right-[5%] w-72 text-right md:text-left",
+                        line: { x1: "960", x2: "750", y1: "200", y2: "320", cx: "750", cy: "320" }
+                    },
+                    {
+                        title: "Integrated Timber Benches",
+                        desc: "Wrap-around perimeter wood benches designed for seating capacity optimization.",
+                        positionClass: "absolute bottom-[15%] right-[5%] w-72 text-right md:text-left",
+                        line: { x1: "960", x2: "820", y1: "550", y2: "520", cx: "820", cy: "520" }
+                    }
+                ],
+                specs: [
+                    { label: "Seating Capacity", value: "6 to 15 persons" },
+                    { label: "Frame Wood", value: "Teak, Shorea, Pine, Treated MS" },
+                    { label: "Warranty", value: "2 Year Comprehensive Guarantee" }
+                ]
+            }
+        },
+        provenExcellence: {
+            badge: "Proven Excellence",
+            title: "Real Gazebos. Real Results. Across India.",
+            stats: [
+                { val: "40+", label: "B2B Projects" },
+                { val: "12+", label: "Cities Served" },
+                { val: "200+", label: "Pavilions Built" },
+                { val: "2 Yrs", label: "Comprehensive Warranty" }
+            ],
+            slides: [
+                {
+                    name: "Prestige Golfshire",
+                    location: "Bangalore, Karnataka",
+                    tag: "Resort Clubhouse",
+                    qty: "3 Pavilions",
+                    timeline: "5 Weeks",
+                    material: "Seasoned Teakwood & Slate Shingle",
+                    benefits: ["Termite Proofed", "Concealed Fan Run", "Heavy Anchored"],
+                    desc: "Successfully installed 3 grand teakwood gazebos on resort lawns, serving as premium outdoor wedding and event check-in points.",
+                    src: cabanasImg
+                },
+                {
+                    name: "Jindal Steel Campus",
+                    location: "Bellary, Karnataka",
+                    tag: "Corporate Recreation",
+                    qty: "5 Gazebos",
+                    timeline: "6 Weeks",
+                    material: "Powder Coated Structural Steel",
+                    benefits: ["Vandal-Resistant", "HPL Perimeter Bench", "High Wind Load"],
+                    desc: "Supplied 5 heavy-duty metal octagonal gazebos for the employee recreation park, providing complete shade and zero maintenance.",
+                    src: wickerLivingImg
+                }
+            ]
+        },
+        support: {
+            badge: "Service & Support",
+            title: "Installation & Support",
+            list: [
+                {
+                    icon: "engineering",
+                    title: "Turnkey Civil Assembly",
+                    desc: "We supply anchor bolt kits, concrete base drawings, and deploy our crew to construct the gazebo on site."
+                },
+                {
+                    icon: "verified",
+                    title: "2-Year Material Guarantee",
+                    desc: "Covers structural framing, timber decay resistance, and roof leakages under standard weather."
+                }
+            ]
+        },
+        faq: {
+            badge: "Common Inquiries",
+            title: "Frequently Asked Questions",
+            list: [
+                {
+                    q: "What wood is used and does it decay in monsoons?",
+                    a: "We use premium Grade-A teak and seasoned Shorea wood which are naturally dense in oils. Combined with protective UV sealant stains, they remain immune to monsoon decay."
+                },
+                {
+                    q: "Can we install electrical outlets in the gazebo?",
+                    a: "Yes. All our gazebos are manufactured with pre-routed internal hollow channels, allowing you to run wires for fans, lighting, and power outlets safely and invisibly."
+                },
+                {
+                    q: "What happens during very high wind storms?",
+                    a: "Our gazebos are built with heavy-duty structural steel plates bolted into a concrete slab foundation. They are certified to withstand winds up to 120 km/h."
+                }
+            ]
+        },
+        conversion: {
+            advantages: [
+                { icon: "verified", title: "ISO 9001:2015", desc: "Certified manufacturing excellence" },
+                { icon: "workspace_premium", title: "2-Year Guarantee", desc: "India's only comprehensive warranty" },
+                { icon: "precision_manufacturing", title: "Precision Engineering", desc: "Built for high-traffic durability" },
+                { icon: "public", title: "Pan-India Delivery", desc: "Professional installation support" }
+            ]
+        }
+    },
+    "pre-fab-homes": {
+        seo: {
+            title: "Prefab Homes & Modular Cabins India | Garden Pods | Urbanland",
+            description: "Premium prefabricated modular homes, luxury garden cabins, and smart outdoor pods. Engineered with insulated chassis and eco-friendly WPC cladding. Fast 48h installation, 2-Year Guarantee."
+        },
+        hero: {
+            badge: "Modular Prefabricated Living",
+            title: "Premium Pre-Fab Homes Manufacturer in India – Eco-Friendly & Insulated Modular Cabins",
+            description: "Discover the future of living with Urbanland's premium prefabricated modular homes. Built with high-performance insulation, structural steel chassis, and eco-friendly WPC cladding. They offer rapid, waste-free installation in just 48 hours — perfect for farmhouses, eco-resorts, garden cabins, and rooftop cottages. Backed by our 2-Year Guarantee.",
+            ctaText: "Request Custom Quote",
+            ctaLink: "/contact",
+            brochureText: "Download Brochure",
+            brochureLink: "#",
+            stats: [
+                { icon: "verified", label: "2-Year Guarantee" },
+                { icon: "verified_user", label: "ISO 9001:2015" },
+                { icon: "precision_manufacturing", label: "Made in India" },
+                { icon: "apartment", label: "20+ Modular Sites" }
+            ],
+            mainImage: {
+                src: cabanasImg,
+                alt: "Premium Prefab Home Cabin"
+            },
+            subImage1: {
+                src: carSheltersImg,
+                alt: "Prefab Home Interior View",
+                label: "MODULAR LIVING"
+            },
+            subImage2: {
+                src: cabanasPng,
+                alt: "Smart Garden Cabin Render",
+                label: "GARDEN CABIN"
+            }
+        },
+        gallery: {
+            title: "Visual Gallery",
+            subtitle: "Prefab Modular Living",
+            description: "Explore our modular prefab homes, garden pods, and office cabins installed in high-end farmhouses, wellness resorts, and rooftop terraces.",
+            viewAllText: "Pre Fab Homes",
+            slides: [
+                {
+                    title: "Luxury Farmhouse Modular Cabin",
+                    alt: "Luxury Prefab Cabin",
+                    src: cabanasImg
+                },
+                {
+                    title: "Smart Glass Garden Studio",
+                    alt: "Smart Glass Garden Cabin",
+                    src: carSheltersImg
+                },
+                {
+                    title: "Modern Rooftop Eco Cottage",
+                    alt: "Rooftop Prefab Cottage",
+                    src: cabanasUgc
+                }
+            ],
+            viewAllRedirect: "/catalogue"
+        },
+        philosophy: {
+            badge: "Modular Green Living",
+            title: "Why Modular Pre-Fab Homes Are the Future of Sustainable Building",
+            description: "Prefabrication minimizes construction waste, eliminates site disruption, and ensures precision thermal and acoustic insulation.",
+            cards: [
+                {
+                    num: "01.",
+                    icon: "bolt",
+                    title: "Rapid 48h Installation",
+                    desc: "Engineered factory panels are pre-fabricated and assembled on light foundations within 2 days, saving weeks of dust and noise.",
+                    image: cabanasImg
+                },
+                {
+                    num: "02.",
+                    icon: "thermostat",
+                    title: "Thermal Insulation",
+                    desc: "EPS/Rockwool double-layered insulation walls keep interiors cool in summers and warm in winters, reducing AC bills by 30%.",
+                    isPrimary: true
+                },
+                {
+                    num: "03.",
+                    icon: "eco",
+                    title: "Green Materials",
+                    desc: "Features recyclable galvanized steel frameworks, FSC timbers, and low-VOC interior paints."
+                },
+                {
+                    num: "04.",
+                    icon: "cloud_done",
+                    title: "100% Leakproof Build",
+                    desc: "Factory-sealed multi-layered roof membranes ensure zero leakage even in heavy torrential rain zones.",
+                    image: carSheltersImg
+                },
+                {
+                    num: "05.",
+                    icon: "gpp_good",
+                    title: "Seismic Wind Safety",
+                    desc: "Designed with interlocking structural steel joints that absorb vibrations and resist severe wind loads up to 130 km/h.",
+                    image: cabanasPng
+                }
+            ]
+        },
+        quote: {
+            text: "Prefabricated architecture is not about cheap housing; it is about precision engineering, waste reduction, and building without harming the landscape.",
+            author: "HEAD OF ARCHITECTURE, URBANLAND"
+        },
+        categories: {
+            badge: "Modular Formats",
+            title: "Our Prefab Housing Series",
+            description: "We manufacture premium modular structures customized to hospitality, commercial, and residential specifications:",
+            list: [
+                {
+                    title: "Eco-Resort Modular Cottage",
+                    alt: "Eco-Resort Cottage",
+                    path: "/catalogue",
+                    src: cabanasImg,
+                    desc: "Spacious modular hotel suites with premium WPC cladding, large double-glazed glass fronts, and attached bathrooms."
+                },
+                {
+                    title: "Garden Office & Hobby Pods",
+                    alt: "Garden Office Pods",
+                    path: "/catalogue",
+                    src: carSheltersImg,
+                    desc: "Compact, pre-wired acoustic pods ideal for backyard work-from-home offices or writing rooms."
+                },
+                {
+                    title: "Rooftop Guest Studio",
+                    alt: "Rooftop Guest Cabin",
+                    path: "/catalogue",
+                    src: cabanasPng,
+                    desc: "Lightweight structures engineered specifically for existing concrete terrace slabs, adding value without heavy loads."
+                }
+            ]
+        },
+        configurator: {
+            badge: "MATERIALS & CUSTOMIZATION",
+            title: "CUSTOMIZATION CONFIGURATOR FOR MODULES",
+            description: "Configure wall panel insulation, cladding finishes, glazing, and electrical plumbing setups.",
+            radialMap: {
+                centralImage: cabanasPng,
+                centralImageAlt: "Prefab Modular Studio",
+                backgroundImage: cabanasImg,
+                cards: [
+                    {
+                        title: "Double-Glazed Windows",
+                        desc: "Argo-gas filled double glazing blocks sound and heat, providing complete indoor silence.",
+                        positionClass: "absolute top-[10%] left-[5%] w-72",
+                        line: { x1: "320", x2: "550", y1: "200", y2: "350", cx: "550", cy: "350" }
+                    },
+                    {
+                        title: "Exterior WPC Cladding",
+                        desc: "Select wood-grain or charcoal WPC composite panels that never require painting or staining.",
+                        positionClass: "absolute bottom-[15%] left-[5%] w-72",
+                        line: { x1: "320", x2: "480", y1: "550", y2: "480", cx: "480", cy: "480" }
+                    },
+                    {
+                        title: "Double-Layer Insulation",
+                        desc: "Choose between high-density Rockwool or eco-friendly EPS foam for thermal efficiency.",
+                        positionClass: "absolute top-[10%] right-[5%] w-72 text-right md:text-left",
+                        line: { x1: "960", x2: "750", y1: "200", y2: "320", cx: "750", cy: "320" }
+                    },
+                    {
+                        title: "Integrated Utilities",
+                        desc: "Pre-routed electrical conduits, DB boxes, and bathroom plumbing pipes ready for instant hookup.",
+                        positionClass: "absolute bottom-[15%] right-[5%] w-72 text-right md:text-left",
+                        line: { x1: "960", x2: "820", y1: "550", y2: "520", cx: "820", cy: "520" }
+                    }
+                ],
+                specs: [
+                    { label: "Floor Area", value: "150 sq ft to 600 sq ft modules" },
+                    { label: "Insulation R-Value", value: "R-15 to R-22 high-efficiency" },
+                    { label: "Structural Life", value: "30+ years certified framework" }
+                ]
+            }
+        },
+        provenExcellence: {
+            badge: "Proven Excellence",
+            title: "Real Prefab Homes. Real Results. Across India.",
+            stats: [
+                { val: "20+", label: "Modular Sites" },
+                { val: "8+", label: "Cities Served" },
+                { val: "48 Hrs", label: "Assembly Time" },
+                { val: "2 Yrs", label: "Structural Warranty" }
+            ],
+            slides: [
+                {
+                    name: "Karjat Eco Retreat",
+                    location: "Karjat, Maharashtra",
+                    tag: "Eco-Hospitality",
+                    qty: "6 Cottages",
+                    timeline: "6 Weeks",
+                    material: "Rockwool insulated, WPC cladded",
+                    benefits: ["Zero site waste", "48h setup per cottage", "30% lower AC bills"],
+                    desc: "Assembled 6 luxury resort guest suites on light pile foundations in a forested area, causing zero tree damage or soil disturbance.",
+                    src: cabanasImg
+                },
+                {
+                    name: "Wayanad Wellness Pods",
+                    location: "Wayanad, Kerala",
+                    tag: "Wellness Resort",
+                    qty: "4 Pods",
+                    timeline: "4 Weeks",
+                    material: "Galvanized steel framework, Glass front",
+                    benefits: ["Scenic glass front", "Rain runoff proof", "High sound insulation"],
+                    desc: "Installed 4 modular yoga and meditation guest pods overlooking valley slopes. Precision weather sealing prevents monsoon humidity ingress.",
+                    src: carSheltersUgc
+                }
+            ]
+        },
+        support: {
+            badge: "Service & Support",
+            title: "Installation & Support",
+            list: [
+                {
+                    icon: "engineering",
+                    title: "Turnkey Foundation & Hookup",
+                    desc: "We supply structural foundation specifications, coordinate pile anchors, and manage electricity/plumbing hookups."
+                },
+                {
+                    icon: "verified",
+                    title: "2-Year Structural Guarantee",
+                    desc: "Covers structural framework load capacities, panel joins, and weatherproof roof sealants."
+                }
+            ]
+        },
+        faq: {
+            badge: "Common Inquiries",
+            title: "Frequently Asked Questions",
+            list: [
+                {
+                    q: "Do prefab cabins need a concrete foundation?",
+                    a: "They require basic support: either lightweight concrete pad foundations or simple helical steel screw piles. This avoids heavy site excavation."
+                },
+                {
+                    q: "Are prefab homes hot in Indian summers?",
+                    a: "No. Our wall panels are packed with 75mm of high-density insulation. This keeps the interior cooler than standard concrete buildings, saving AC bills."
+                },
+                {
+                    q: "Can they be disassembled and relocated?",
+                    a: "Yes. The interlocking structural steel chassis allows them to be unbolted, lifted by crane, and transported to a new location if needed."
+                }
+            ]
+        },
+        conversion: {
+            advantages: [
+                { icon: "verified", title: "ISO 9001:2015", desc: "Certified manufacturing excellence" },
+                { icon: "workspace_premium", title: "2-Year Guarantee", desc: "India's only comprehensive warranty" },
+                { icon: "precision_manufacturing", title: "Precision Engineering", desc: "Built for high-traffic durability" },
+                { icon: "public", title: "Pan-India Delivery", desc: "Professional installation support" }
+            ]
+        }
     }
 };
