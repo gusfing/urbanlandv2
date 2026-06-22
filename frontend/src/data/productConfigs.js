@@ -3244,16 +3244,16 @@ export const productConfigs = {
                 { icon: "apartment", label: "50+ Projects" }
             ],
             mainImage: {
-                src: wickerLivingImg,
+                src: "/assets/products/wicker-furniture/hero-main.webp",
                 alt: "Premium Wicker Sofa Set"
             },
             subImage1: {
-                src: wickerDiningImg,
+                src: "/assets/products/wicker-furniture/hero-1.webp",
                 alt: "Wicker Dining Chair",
                 label: "WICKER DINING"
             },
             subImage2: {
-                src: caneFurniturePng,
+                src: "/assets/products/wicker-furniture/hero-2.webp",
                 alt: "Cane Hanging Swings",
                 label: "CANE SWINGS"
             }
@@ -3267,17 +3267,22 @@ export const productConfigs = {
                 {
                     title: "Modular Corner Sofa Set",
                     alt: "Modular Corner Sofa Set",
-                    src: wickerLivingImg
+                    src: "/assets/products/wicker-furniture/wicker-furniture-1.webp"
                 },
                 {
                     title: "Wicker Dining Suite",
                     alt: "Wicker Dining Suite",
-                    src: wickerDiningImg
+                    src: "/assets/products/wicker-furniture/wicker-furniture-2.webp"
                 },
                 {
                     title: "Teardrop Garden Swing",
                     alt: "Teardrop Garden Swing",
-                    src: caneFurniturePng
+                    src: "/assets/products/wicker-furniture/wicker-furniture-3.webp"
+                },
+                {
+                    title: "Custom Wicker Lounge Chair",
+                    alt: "Custom Wicker Lounge Chair",
+                    src: "/assets/products/wicker-furniture/wicker-furniture-4.webp"
                 }
             ],
             viewAllRedirect: "/catalogue"
@@ -3292,7 +3297,7 @@ export const productConfigs = {
                     icon: "deck",
                     title: "Sofa Sets & Living Sets",
                     desc: "Elegant outdoor sofas, armchairs and coffee tables that create luxurious, inviting poolside and terrace lounges.",
-                    image: wickerLivingImg
+                    image: "/assets/products/wicker-furniture/product-card-1.webp"
                 },
                 {
                     num: "02.",
@@ -3312,14 +3317,14 @@ export const productConfigs = {
                     icon: "chair",
                     title: "Cabana Daybeds",
                     desc: "Luxurious, fully-woven daybeds with integrated curtains and cushions to form private garden sanctuaries.",
-                    image: caneFurniturePng
+                    image: "/assets/products/wicker-furniture/product-card-2.webp"
                 },
                 {
                     num: "05.",
                     icon: "eco",
                     title: "Eco-Friendly Materials",
                     desc: "Uses 100% recyclable high-density polyethylene synthetic rattan, reducing environmental impact.",
-                    image: wickerDiningImg
+                    image: "/assets/products/wicker-furniture/product-card-3.webp"
                 }
             ]
         },
@@ -3336,21 +3341,21 @@ export const productConfigs = {
                     title: "Wicker Sofa Sets",
                     alt: "Wicker Sofa Sets",
                     path: "/catalogue",
-                    src: wickerLivingImg,
+                    src: "/assets/products/wicker-furniture/wicker-furniture-1.webp",
                     desc: "Modular, deep-seating configurations featuring Sunbrella upholstery and T6 aluminum support frames."
                 },
                 {
                     title: "Wicker Dining Sets",
                     alt: "Wicker Dining Sets",
                     path: "/catalogue",
-                    src: wickerDiningImg,
+                    src: "/assets/products/wicker-furniture/wicker-furniture-2.webp",
                     desc: "Classic dining tables and high-backed woven chairs with non-slip safety glass tabletop mounts."
                 },
                 {
                     title: "Outdoor Daybeds & Cabanas",
                     alt: "Outdoor Daybeds",
                     path: "/catalogue",
-                    src: caneFurniturePng,
+                    src: "/assets/products/wicker-furniture/wicker-furniture-3.webp",
                     desc: "Luxury sunbeds and covered cabanas offering premium poolside shade."
                 }
             ]
@@ -3360,9 +3365,9 @@ export const productConfigs = {
             title: "MATERIALS & CUSTOMIZATION OPTIONS FOR WICKER FURNITURE",
             description: "Configure synthetic rattan fibers, structural frame alloys, and performance cushions.",
             radialMap: {
-                centralImage: caneFurniturePng,
+                centralImage: "/assets/products/wicker-furniture/sec-6-wicker-furniture-main.webp",
                 centralImageAlt: "Premium Wicker Chair",
-                backgroundImage: wickerLivingImg,
+                backgroundImage: "/assets/products/wicker-furniture/sec-6-wicker-furniture-bg.webp",
                 cards: [
                     {
                         title: "UV-Resistant HDPE Weave",
@@ -3415,7 +3420,7 @@ export const productConfigs = {
                     material: "HDPE Wicker & Sunbrella Canvas",
                     benefits: ["UV Protected", "Plush Deep Comfort", "Rust-proof Frame"],
                     desc: "Supplied modular wicker sofa configuration for Arkade Prime's premium terrace park, delivering high-end resort styling.",
-                    src: wickerLivingImg
+                    src: "/assets/products/wicker-furniture/arcade-prime-project-1.webp"
                 },
                 {
                     name: "Navrang Oasis",
@@ -3426,7 +3431,7 @@ export const productConfigs = {
                     material: "Wicker Living & Dining Suites",
                     benefits: ["Water Repellent", "Safety Glass Top", "Fade Resistant"],
                     desc: "Furnished the central residential clubhouse poolside deck with durable and comfortable wicker loungers and dining tables.",
-                    src: wickerDiningImg
+                    src: "/assets/products/wicker-furniture/navrang-oasis-project-2.webp"
                 }
             ]
         },
