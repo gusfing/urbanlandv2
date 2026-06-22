@@ -395,16 +395,16 @@ export const productConfigs = {
                 { icon: "apartment", label: "50+ Green Projects" }
             ],
             mainImage: {
-                src: plantersImg,
+                src: "/assets/products/planters/planters-hero-main.webp",
                 alt: "Premium Planter Boxes"
             },
             subImage1: {
-                src: plantersUgc,
+                src: "/assets/products/planters/planters-hero-sub1.webp",
                 alt: "Planter Box Installation",
                 label: "OUTDOOR PLANTERS"
             },
             subImage2: {
-                src: plantersPng,
+                src: "/assets/products/planters/planters-hero-sub2.webp",
                 alt: "Modern Planter Box",
                 label: "MILD STEEL PLANTER"
             }
@@ -418,17 +418,22 @@ export const productConfigs = {
                 {
                     title: "Modern Rectangular Box",
                     alt: "Modern Rectangular Box Planter",
-                    src: plantersImg
+                    src: "/assets/products/planters/planter-box-1.webp"
                 },
                 {
                     title: "Square Planter Cube",
                     alt: "Square Planter Cube",
-                    src: plantersUgc
+                    src: "/assets/products/planters/planter-box-2.webp"
                 },
                 {
                     title: "Planter Box with WPC Bench",
                     alt: "Planter Box with WPC Bench",
-                    src: plantersPng
+                    src: "/assets/products/planters/planter-box-3.webp"
+                },
+                {
+                    title: "Custom Garden Planter",
+                    alt: "Custom Garden Planter",
+                    src: "/assets/products/planters/planter-box-4.webp"
                 }
             ],
             viewAllRedirect: "/catalogue"
@@ -443,7 +448,7 @@ export const productConfigs = {
                     icon: "park",
                     title: "Green Oasis",
                     desc: "Planter boxes provide an opportunity to create lush garden sanctuaries in the midst of concrete jungles, enhancing the aesthetic appeal of urban areas and providing a sense of tranquility and beauty.",
-                    image: plantersUgc
+                    image: "/assets/products/planters/planters-philosophy-1.webp"
                 },
                 {
                     num: "02.",
@@ -463,14 +468,14 @@ export const productConfigs = {
                     icon: "space_dashboard",
                     title: "Space Optimization",
                     desc: "With their space-saving design, planter boxes allow urban dwellers, developers and architects to enjoy the benefits of gardening and greenery even in limited outdoor areas, maximizing the use of space.",
-                    image: plantersImg
+                    image: "/assets/products/planters/planters-philosophy-4.webp"
                 },
                 {
                     num: "05.",
                     icon: "eco",
                     title: "Sustainability & Green Architecture",
                     desc: "Urbanland’s planter boxes are engineered for longevity, reducing replacement frequency and lowering long-term environmental impact. Architects and developers choose our solutions because they support IGBC, GRIHA and LEED certifications.",
-                    image: plantersPng
+                    image: "/assets/products/planters/planters-philosophy-5.webp"
                 }
             ]
         },
@@ -487,21 +492,21 @@ export const productConfigs = {
                     title: "Mild Steel Garden Planters",
                     alt: "Mild Steel Garden Planters",
                     path: "/catalogue",
-                    src: plantersImg,
+                    src: "/assets/products/planters/planter-box-3.webp",
                     desc: "Powder-coated mild steel planter boxes offering exceptional strength and modern aesthetics for parks and commercial zones."
                 },
                 {
                     title: "Wooden Planter Boxes",
                     alt: "Wooden Planter Boxes",
                     path: "/catalogue",
-                    src: plantersUgc,
+                    src: "/assets/products/planters/planter-box-1.webp",
                     desc: "Premium wooden planter boxes delivering natural warmth and elegance for luxury villas and clubhouses."
                 },
                 {
                     title: "Aluminium Planters",
                     alt: "Aluminium Planters",
                     path: "/catalogue",
-                    src: plantersPng,
+                    src: "/assets/products/planters/planter-box-2.webp",
                     desc: "Lightweight, corrosion-resistant aluminium planters perfect for coastal areas, rooftops, and hospitality spaces."
                 }
             ]
@@ -511,9 +516,9 @@ export const productConfigs = {
             title: "MATERIALS & CUSTOMIZATION OPTIONS FOR PLANTERS",
             description: "Select materials, finishes, and dimensions to suit your green architecture requirements.",
             radialMap: {
-                centralImage: plantersPng,
+                centralImage: "/assets/products/planters/planters-configurator-central.webp",
                 centralImageAlt: "Premium Urbanland Planter Box",
-                backgroundImage: plantersImg,
+                backgroundImage: "/assets/products/planters/planters-configurator-bg.webp",
                 cards: [
                     {
                         title: "Root Temperature Insulation",
@@ -566,7 +571,7 @@ export const productConfigs = {
                     material: "Premium Wooden & Mild Steel",
                     benefits: ["Biophilic Design", "Root Insulation", "UV Resistant"],
                     desc: "65 premium planter boxes supplied and installed for luxury villa landscaping across the Godrej Projects development, blending high-end aesthetics with durable outdoor engineering.",
-                    src: plantersImg
+                    src: "/assets/products/planters/godrej-project.webp"
                 },
                 {
                     name: "Navandhe Village",
@@ -577,7 +582,7 @@ export const productConfigs = {
                     material: "Mild Steel Powder Coated",
                     benefits: ["Sustainable Design", "Weatherproof", "Community-Friendly"],
                     desc: "42 sustainable planter boxes installed across community gardens and pathways, bringing greenery and a sense of place to the public spaces of Navandhe Village.",
-                    src: plantersUgc
+                    src: "/assets/products/planters/navandhe-village-project.webp"
                 },
                 {
                     name: "TATA Projects Ltd",
@@ -588,7 +593,7 @@ export const productConfigs = {
                     material: "Heavy-Duty Mild Steel",
                     benefits: ["Smart City Ready", "Large Scale", "Low Maintenance"],
                     desc: "30 large-scale planter boxes supplied for smart-city landscaping and public spaces, delivering premium green infrastructure aligned with Gujarat's urban development vision.",
-                    src: plantersPng
+                    src: "/assets/products/planters/tata-project.jpeg"
                 },
                 {
                     name: "Arandiya",
@@ -599,7 +604,7 @@ export const productConfigs = {
                     material: "Custom Wooden & Mild Steel",
                     benefits: ["Custom Design", "Biophilic Aesthetic", "Premium Finish"],
                     desc: "25 custom wooden and mild steel planter boxes crafted for a premium residential clubhouse and garden area, elevating the outdoor ambiance with bespoke nature-inspired design.",
-                    src: plantersUgc
+                    src: "/assets/products/planters/arandiya-project.webp"
                 }
             ]
         },
