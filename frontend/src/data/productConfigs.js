@@ -3498,16 +3498,16 @@ export const productConfigs = {
                 { icon: "apartment", label: "50+ Projects" }
             ],
             mainImage: {
-                src: wickerLivingImg,
+                src: "/assets/products/wicker-outdoor-products/hero-main.webp",
                 alt: "Premium Wicker Lounge Suite"
             },
             subImage1: {
-                src: wickerDiningImg,
+                src: "/assets/products/wicker-outdoor-products/hero-1.webp",
                 alt: "Wicker Dining Furniture Set",
                 label: "OUTDOOR DINING"
             },
             subImage2: {
-                src: caneFurniturePng,
+                src: "/assets/products/wicker-outdoor-products/hero-2.webp",
                 alt: "Hanging Swing Chairs",
                 label: "TERRACE SWINGS"
             }
@@ -3521,17 +3521,27 @@ export const productConfigs = {
                 {
                     title: "Teardrop Garden Swing Suite",
                     alt: "Teardrop Garden Swing Suite",
-                    src: caneFurniturePng
+                    src: "/assets/products/wicker-outdoor-products/wicker-outdoor-product-3.webp"
                 },
                 {
                     title: "Villa Outdoor Sofa Configuration",
                     alt: "Villa Outdoor Sofa Configuration",
-                    src: wickerLivingImg
+                    src: "/assets/products/wicker-outdoor-products/wicker-outdoor-product-1.webp"
                 },
                 {
                     title: "Resort Al-Fresco Dining",
                     alt: "Resort Al-Fresco Dining",
-                    src: wickerDiningImg
+                    src: "/assets/products/wicker-outdoor-products/wicker-outdoor-product-2.webp"
+                },
+                {
+                    title: "Custom Wicker Daybed",
+                    alt: "Custom Wicker Daybed",
+                    src: "/assets/products/wicker-outdoor-products/wicker-outdoor-product-4.webp"
+                },
+                {
+                    title: "Wicker Patio Armchair",
+                    alt: "Wicker Patio Armchair",
+                    src: "/assets/products/wicker-outdoor-products/wicker-outdoor-product-5.webp"
                 }
             ],
             viewAllRedirect: "/catalogue"
@@ -3546,7 +3556,7 @@ export const productConfigs = {
                     icon: "deck",
                     title: "Wicker Cabanas",
                     desc: "Elegant shaded retreats with woven privacy screens and drapes, perfect for poolsides, gardens, and rooftops.",
-                    image: wickerLivingImg
+                    image: "/assets/products/wicker-outdoor-products/product-card-1.webp"
                 },
                 {
                     num: "02.",
@@ -3566,14 +3576,14 @@ export const productConfigs = {
                     icon: "restaurant",
                     title: "Wicker Dining Sets",
                     desc: "Slatted wood or safety glass dining tables with matching woven chairs, built for al-fresco dining.",
-                    image: caneFurniturePng
+                    image: "/assets/products/wicker-outdoor-products/product-card-2.webp"
                 },
                 {
                     num: "05.",
                     icon: "eco",
                     title: "Sustainable Engineering",
                     desc: "Crafted using 100% recyclable polymers and CFC-free quick-dry foam, reducing environmental footprint.",
-                    image: wickerDiningImg
+                    image: "/assets/products/wicker-outdoor-products/product-card-3.webp"
                 }
             ]
         },
@@ -3590,21 +3600,21 @@ export const productConfigs = {
                     title: "Wicker Sofa Systems",
                     alt: "Wicker Sofa Systems",
                     path: "/catalogue",
-                    src: wickerLivingImg,
+                    src: "/assets/products/wicker-outdoor-products/wicker-outdoor-product-1.webp",
                     desc: "Modular sectional sofas and deep-seat club armchairs with UV-stable synthetic rattan weave."
                 },
                 {
                     title: "Poolside Chaise Loungers",
                     alt: "Poolside Chaise Loungers",
                     path: "/catalogue",
-                    src: wickerDiningImg,
+                    src: "/assets/products/wicker-outdoor-products/wicker-outdoor-product-2.webp",
                     desc: "Ergonomic reclining sunbeds upholstered in weather-resistant Sunbrella fabric."
                 },
                 {
                     title: "Luxury Patio Hanging Swings",
                     alt: "Luxury Patio Swings",
                     path: "/catalogue",
-                    src: caneFurniturePng,
+                    src: "/assets/products/wicker-outdoor-products/wicker-outdoor-product-3.webp",
                     desc: "Cinematic hanging wicker swings with heavy steel support stands."
                 }
             ]
@@ -3614,9 +3624,9 @@ export const productConfigs = {
             title: "MATERIALS & CUSTOMIZATION OPTIONS FOR WICKER PRODUCTS",
             description: "Select custom wicker shades, structural frameworks, and cushioning.",
             radialMap: {
-                centralImage: caneFurniturePng,
+                centralImage: "/assets/products/wicker-outdoor-products/wicker-outdoor-product-main.webp",
                 centralImageAlt: "Premium Wicker Lounge Suite",
-                backgroundImage: wickerLivingImg,
+                backgroundImage: "/assets/products/wicker-outdoor-products/wicker-outdoor-product-bg.webp",
                 cards: [
                     {
                         title: "HDPE Synthetic Rattan",
@@ -3669,7 +3679,7 @@ export const productConfigs = {
                     material: "HDPE Wicker & Beige Cushioning",
                     benefits: ["UV Protected", "Balcony Fit", "Deep Lounge Comfort"],
                     desc: "Transformed an exclusive villa balcony with a modern, comfortable wicker dining and lounge set, matching natural scenery.",
-                    src: caneFurniturePng
+                    src: "/assets/products/wicker-outdoor-products/luxury-villa-project-1.webp"
                 },
                 {
                     name: "Trinity Palava II",
@@ -3680,7 +3690,7 @@ export const productConfigs = {
                     material: "Heavy Duty HDPE Wicker",
                     benefits: ["High-Volume Use", "Sleek Polish", "Zero Splintering"],
                     desc: "Delivered a large-scale wicker furniture deployment for Palava II's central gardens, built to withstand daily family use.",
-                    src: wickerLivingImg
+                    src: "/assets/products/wicker-outdoor-products/trinity-palava-project-2.webp"
                 },
                 {
                     name: "Bhardawadi Balcony",
@@ -3691,7 +3701,7 @@ export const productConfigs = {
                     material: "Wicker Dining Suite",
                     benefits: ["Water Repellent", "Glass Table Top", "Space-Saving"],
                     desc: "Supplied sophisticated balcony armchairs and a matching table, instantly upgrading the outdoor seating area with timeless comfort.",
-                    src: wickerDiningImg
+                    src: "/assets/products/wicker-outdoor-products/bharwadi-colony-project-3.webp"
                 }
             ]
         },
