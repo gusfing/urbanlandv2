@@ -517,80 +517,111 @@ const ProjectsDetail = () => {
     <div className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-0 overflow-x-hidden pt-0 antialiased">
       
       {/* Dynamic Hero Section */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden py-20 px-margin-mobile lg:px-0">
-        <div className="max-w-container-max mx-auto pt-[100px] px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden py-24 bg-gradient-to-br from-[#122213] via-[#0E1A0F] to-[#0A120A] text-white px-margin-mobile lg:px-0">
+        <div className="max-w-container-max mx-auto pt-[100px] px-margin-mobile md:px-margin-desktop w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
           
           {/* Left Text Block */}
-          <div className="lg:col-span-6 z-10 animate-hero text-left">
+          <div className="lg:col-span-5 z-10 animate-hero text-left">
             <div className="inline-block border-b-2 border-craftsman-gold mb-6 pb-1">
-              <span className="font-label-technical text-primary tracking-widest uppercase font-semibold text-xs">
+              <span className="font-label-technical text-craftsman-gold tracking-widest uppercase font-semibold text-xs">
                 Case Study
               </span>
             </div>
             
             {/* Dynamic Breadcrumbs */}
-            <nav className="flex items-center select-none text-[9px] sm:text-[10px] font-black uppercase tracking-widest gap-2 bg-white text-[#1A1A1A] border border-black/10 px-4 py-2.5 rounded-full w-fit mb-6 shadow-sm">
-              <Link to="/" className="text-[#1A1A1A]/60 hover:text-[#2C5F2E] transition-colors no-underline">Home</Link>
-              <span className="text-[#1A1A1A]/30">/</span>
-              <Link to="/projects" className="text-[#1A1A1A]/60 hover:text-[#2C5F2E] transition-colors no-underline">Projects</Link>
-              <span className="text-[#1A1A1A]/30">/</span>
-              <span className="text-[#2C5F2E] font-bold">{meta.title}</span>
+            <nav className="flex items-center select-none text-[9px] sm:text-[10px] font-black uppercase tracking-widest gap-2 bg-white/5 text-white/80 border border-white/10 px-4 py-2.5 rounded-full w-fit mb-6 backdrop-blur-md shadow-sm">
+              <Link to="/" className="text-white/60 hover:text-craftsman-gold transition-colors no-underline">Home</Link>
+              <span className="text-white/30">/</span>
+              <Link to="/projects" className="text-white/60 hover:text-craftsman-gold transition-colors no-underline">Projects</Link>
+              <span className="text-white/30">/</span>
+              <span className="text-craftsman-gold font-bold">{meta.title}</span>
             </nav>
 
-            <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink mb-6 leading-tight max-w-xl">
+            <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-[3rem] text-white mb-6 leading-tight max-w-xl">
               {meta.title}
             </h1>
             
             <div className="w-24 h-1 bg-craftsman-gold mb-6"></div>
             
-            <p className="font-body-lg text-on-surface-variant max-w-xl mb-8">
+            <p className="font-body-lg text-white/70 max-w-xl mb-8 leading-relaxed">
               {meta.desc}
             </p>
 
-            {/* Standard Checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-              {["IGBC Certified Materials", "Climate-Resilient Design", "Low Lifecycle Maintenance", "Eco-Luxury Aesthetics"].map((pt, idx) => (
-                <div key={idx} className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-forest-green font-bold" style={{ fontVariationSettings: "'wght' 700" }}>check_circle</span>
-                  <span className="font-body-md text-sm md:text-base text-deep-ink font-semibold">{pt}</span>
+            {/* Glassmorphic Feature Badges */}
+            <div className="grid grid-cols-1 gap-4 mb-4">
+              {[
+                { text: "IGBC Certified Materials", icon: "workspace_premium" },
+                { text: "Climate-Resilient Design", icon: "wb_sunny" },
+                { text: "Low Lifecycle Maintenance", icon: "build" },
+                { text: "Eco-Luxury Aesthetics", icon: "temp_preferences_custom" }
+              ].map((pt, idx) => (
+                <div key={idx} className="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-lg hover:border-craftsman-gold hover:bg-white/10 transition-all duration-300 group">
+                  <span className="material-symbols-outlined text-craftsman-gold text-lg group-hover:scale-110 transition-transform duration-300">{pt.icon}</span>
+                  <span className="font-body-md text-xs sm:text-sm text-white/95 font-semibold">{pt.text}</span>
                 </div>
               ))}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <Link to="/contact" className="bg-forest-green text-white px-8 py-4 font-label-technical text-xs uppercase tracking-widest hover:bg-deep-ink transition-all no-underline text-center">
-                Request Quote for Your Project →
-              </Link>
-              <Link to="/resources/downloads" className="border-2 border-craftsman-gold text-craftsman-gold px-8 py-4 font-label-technical text-xs uppercase tracking-widest hover:bg-craftsman-gold hover:text-white transition-all no-underline text-center">
-                Download Sustainable Portfolio ↓
-              </Link>
             </div>
           </div>
 
           {/* Right Immersive Image */}
-          <div className="lg:col-span-6 z-10 relative flex justify-center items-center">
-            <div className="relative aspect-[4/3] w-full max-w-2xl overflow-hidden border border-outline-variant shadow-2xl">
+          <div className="lg:col-span-7 z-10 relative flex justify-center items-center">
+            {/* Background Radial Glow */}
+            <div className="absolute w-[350px] h-[350px] bg-craftsman-gold/10 blur-[80px] rounded-full -top-10 -right-10 -z-10 pointer-events-none animate-pulse-slow"></div>
+            
+            <div className="relative w-full h-[45vh] sm:h-[55vh] lg:h-[65vh] overflow-hidden border border-white/10 shadow-2xl hover:shadow-craftsman-gold/10 transition-shadow duration-500 group rounded-lg">
               <img
                 alt={meta.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 src={meta.image}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none"></div>
               
-              {/* Gold Badge for Units Delivered */}
-              <div className="absolute -bottom-6 -left-6 bg-craftsman-gold p-8 hidden lg:block border border-outline-variant shadow-lg z-20">
-                <p className="font-display-lg text-4xl text-white font-bold leading-none">{unitsCount}</p>
-                <p className="font-label-technical text-[10px] text-white uppercase tracking-widest mt-2">Units Delivered</p>
+              {/* Floating Location Badge */}
+              <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-md px-4 py-2 border border-white/10 rounded-full z-20 flex items-center gap-2">
+                <span className="material-symbols-outlined text-craftsman-gold text-sm">location_on</span>
+                <span className="font-label-technical text-[9px] text-white uppercase tracking-widest">{meta.location || segment}</span>
               </div>
+
+              {/* Gold Badge for Units Delivered */}
+              <div className="absolute -bottom-6 -left-6 bg-gradient-to-br from-craftsman-gold to-[#a98835] p-6 hidden lg:block border border-white/20 shadow-xl z-20 hover:-translate-y-1 transition-transform duration-300 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <span className="material-symbols-outlined text-white text-3xl">domain</span>
+                  <div>
+                    <p className="font-display-lg text-3xl text-white font-bold leading-none">{unitsCount}</p>
+                    <p className="font-label-technical text-[9px] text-white/90 uppercase tracking-widest mt-1">Units Delivered</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Transition Action Panel */}
+          <div className="lg:col-span-12 mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-6 z-20">
+            <div className="space-y-1 text-left">
+              <h4 className="font-label-technical text-craftsman-gold uppercase tracking-widest text-xs font-semibold">Transforming Spaces Sustainably</h4>
+              <p className="font-body-md text-xs text-white/50">Request customized project specifications or download our sustainable solutions catalogue.</p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/contact" className="bg-craftsman-gold text-white px-8 py-4 font-label-technical text-xs uppercase tracking-widest hover:bg-white hover:text-[#122213] hover:shadow-lg hover:shadow-craftsman-gold/25 transition-all duration-300 no-underline text-center">
+                Request Quote for Your Project →
+              </Link>
+              <Link to="/resources/downloads" className="border-2 border-white/30 text-white px-8 py-4 font-label-technical text-xs uppercase tracking-widest hover:border-white hover:bg-white/10 transition-all duration-300 no-underline text-center">
+                Download Sustainable Portfolio ↓
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Structural Grid lines matching BenchesPage */}
-        <div className="absolute top-0 left-0 w-full h-full structural-grid -z-30 opacity-60"></div>
-        <div className="absolute top-1/2 left-0 w-full h-1px bg-outline-variant/10 -z-20"></div>
-        <div className="absolute top-0 left-1/4 w-1px h-full bg-outline-variant/10 -z-20"></div>
+        {/* Structural Grid lines and radial pattern */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(#C9A84C 1px, transparent 1px)",
+            backgroundSize: "32px 32px"
+          }}
+        ></div>
+        <div className="absolute top-0 left-0 w-full h-full structural-grid -z-30 opacity-20"></div>
+        <div className="absolute top-1/2 left-0 w-full h-1px bg-white/5 -z-20"></div>
+        <div className="absolute top-0 left-1/4 w-1px h-full bg-white/5 -z-20"></div>
       </section>
 
       {/* Challenges Section */}
