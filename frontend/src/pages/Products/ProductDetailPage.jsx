@@ -5,6 +5,8 @@ import { productConfigs } from "../../data/productConfigs";
 import BenchesConfigurator from "../../components/BenchesConfigurator";
 import ProductConfigurator from "../../components/ProductConfigurator";
 import ScrollVideoSection from "../../components/ScrollVideoSection";
+import SupportFAQ from "../../components/SupportFAQ/SupportFAQ";
+import AdvantageCTA from "../../components/AdvantageCTA/AdvantageCTA";
 
 
 const getVideoSectionData = (productId) => {
@@ -1044,113 +1046,10 @@ const ProductDetailPage = ({ productId: propProductId }) => {
             )}
 
             {/* Support & FAQ */}
-            <section className="reveal-section py-20 md:py-24 bg-surface px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
-                <div className="max-w-container-max mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-                        {/* Support Block */}
-                        <div className="space-y-10 text-left reveal-up">
-                            <div className="space-y-2">
-                                <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-                                    {config.support.badge}
-                                </span>
-                                <h2 className="font-headline-lg text-headline-lg text-deep-ink">
-                                    {config.support.title}
-                                </h2>
-                                <div className="w-20 h-1 bg-craftsman-gold"></div>
-                            </div>
-
-                            <div className="space-y-8">
-                                {config.support.list.map((item, idx) => (
-                                    <div key={idx} className="flex gap-6 items-start p-6 bg-surface-container/50 border border-outline-variant hover:border-craftsman-gold rounded-[8px] transition-all duration-300">
-                                        <div className="w-12 h-12 shrink-0 bg-forest-green text-on-primary flex items-center justify-center rounded-[8px]">
-                                            <span className="material-symbols-outlined">{item.icon}</span>
-                                        </div>
-                                        <div>
-                                            <h4 className="font-headline-md text-xl font-bold mb-2 text-deep-ink">{item.title}</h4>
-                                            <p className="text-body-md text-on-surface-variant leading-relaxed">
-                                                {item.desc}
-                                            </p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* FAQ Block */}
-                        <div className="space-y-10 text-left reveal-up" style={{ transitionDelay: "150ms" }}>
-                            <div className="space-y-2">
-                                <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-                                    {config.faq.badge}
-                                </span>
-                                <h2 className="font-headline-lg text-headline-lg text-deep-ink">
-                                    {config.faq.title}
-                                </h2>
-                                <div className="w-20 h-1 bg-craftsman-gold"></div>
-                            </div>
-
-                            <div className="space-y-4">
-                                {config.faq.list.map((item, idx) => (
-                                    <details key={idx} className="group border border-outline-variant bg-surface-container p-4 sm:p-6 open:bg-[#f0ede9] transition-all duration-300 rounded-[8px]">
-                                        <summary className="list-none flex justify-between items-center cursor-pointer font-semibold text-deep-ink text-base md:text-lg select-none">
-                                            <span>{item.q}</span>
-                                            <span className="material-symbols-outlined text-forest-green transition-transform duration-300 group-open:rotate-180">expand_more</span>
-                                        </summary>
-                                        <div className="mt-4 text-on-surface-variant text-body-md leading-relaxed border-t border-outline-variant/30 pt-4">
-                                            {item.a}
-                                        </div>
-                                    </details>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <SupportFAQ />
 
             {/* Bottom Advantage & Conversion Area */}
-            <section className="reveal-section bg-primary text-on-primary py-24 px-margin-mobile md:px-margin-desktop overflow-hidden relative">
-                <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-                    {/* Trust Panel */}
-                    <div className="space-y-10 border-l-2 border-secondary/30 pl-8 md:pl-10 text-left">
-                        <div className="space-y-2">
-                            <span className="font-label-technical text-secondary tracking-[0.2em] uppercase font-semibold text-xs block">
-                                The Urbanland Advantage
-                            </span>
-                            <h3 className="font-headline-md text-3xl md:text-4xl text-on-primary leading-tight">Why Urbanland Stands Apart</h3>
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                            {config.conversion && config.conversion.advantages && config.conversion.advantages.map((adv, idx) => (
-                                <div key={idx} className="flex items-start space-x-4">
-                                    <span className="material-symbols-outlined text-secondary text-2xl">{adv.icon}</span>
-                                    <div>
-                                        <p className="font-bold text-sm uppercase tracking-wider font-label-technical">{adv.title}</p>
-                                        <p className="text-xs text-white/70 mt-1">{adv.desc}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Conversion Area Card */}
-                    <div className="bg-white/5 p-8 md:p-12 border border-white/10 backdrop-blur-sm rounded-none text-left">
-                        <h2 className="font-headline-lg text-3xl md:text-4xl text-on-primary mb-8 leading-tight">
-                            {config.conversion && config.conversion.title ? config.conversion.title : `Ready to Install Premium ${config.gallery.viewAllText || "Products"} in Your Space?`}
-                        </h2>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Link to={config.hero.ctaLink || "/contact"} className="bg-secondary text-on-secondary px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:opacity-90 transition-all duration-300 rounded-[4px]">
-                                {config.hero.ctaText} <span className="ml-2">→</span>
-                            </Link>
-                            <a href={config.hero.brochureLink || "#"} className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 rounded-[4px]">
-                                {config.hero.brochureText} <span className="ml-2">↓</span>
-                            </a>
-                        </div>
-                        <p className="mt-8 text-xs text-white/60 font-label-technical uppercase tracking-widest font-semibold">
-                            Trusted by {config.provenExcellence.stats[0]?.val}+ major projects across {config.provenExcellence.stats[1]?.val}+ Indian cities
-                        </p>
-                    </div>
-                </div>
-                {/* Decorative Background Element */}
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-black/10 -skew-x-12 translate-x-1/4 z-0"></div>
-            </section>
+            <AdvantageCTA />
         </div>
     );
 };

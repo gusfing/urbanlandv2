@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import CTASection from "../../components/CTASection/CTASection";
+import SupportFAQ from "../../components/SupportFAQ/SupportFAQ";
+import AdvantageCTA from "../../components/AdvantageCTA/AdvantageCTA";
 
 // Import images
 import gbg1 from '../../assets/gallery_real_estate.png';
@@ -404,7 +406,6 @@ const deliveredUnitsMap = {
 
 const ProjectsDetail = () => {
   const { segment } = useParams();
-  const [activeFaq, setActiveFaq] = useState(null);
 
   const rawMeta = projectsMeta[segment] || projectsMeta["lodha"];
   const meta = React.useMemo(() => {
@@ -756,77 +757,11 @@ const ProjectsDetail = () => {
           </div>
         </div>
       </section>
-
       {/* FAQ Accordion Section */}
-      <section className="reveal-section py-24 px-margin-mobile md:px-margin-desktop bg-[#F2F0EB]">
-        <div className="max-w-3xl mx-auto">
-          <div className="mb-12 text-center space-y-4 reveal-up flex flex-col items-center">
-            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-              FAQ
-            </span>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink">
-              Project Support &amp; Sustainability FAQs
-            </h2>
-            <div className="w-24 h-1 bg-craftsman-gold"></div>
-          </div>
-          
-          <div className="space-y-4">
-            {meta.faqs.map((faq, idx) => {
-              const isOpen = activeFaq === idx;
-              return (
-                <div key={idx} className="bg-white border border-outline-variant transition-all duration-300 reveal-up">
-                  <button
-                    onClick={() => setActiveFaq(isOpen ? null : idx)}
-                    className="w-full p-6 text-left flex justify-between items-center cursor-pointer select-none bg-white border-none focus:outline-none"
-                  >
-                    <span className="font-headline-md text-forest-green text-sm md:text-base font-semibold">{faq.q}</span>
-                    <span className={`material-symbols-outlined transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>expand_more</span>
-                  </button>
-                  <div className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-[300px] border-t border-outline-variant/30' : 'max-h-0'}`}>
-                    <div className="p-6 font-body-md text-on-surface-variant text-xs md:text-sm text-left leading-relaxed">
-                      {faq.a}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <SupportFAQ />
 
       {/* Final CTA Section */}
-      <section className="relative py-24 px-margin-mobile md:px-margin-desktop bg-forest-green text-white text-center overflow-hidden">
-        
-        {/* Decorative Gold Radial Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0"
-            style={{
-              backgroundImage: "radial-gradient(#C9A84C 1px, transparent 1px)",
-              backgroundSize: "32px 32px"
-            }}
-          ></div>
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <h2 className="font-display-lg text-headline-lg-mobile md:text-[2.5rem] text-white font-bold mb-8 leading-tight">
-            Ready to Enhance Safety and Aesthetics with Premium Sustainable Outdoor Furniture?
-          </h2>
-          <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <Link
-              to="/contact"
-              className="bg-craftsman-gold text-white px-10 py-5 font-label-technical text-xs uppercase tracking-widest hover:brightness-110 transition-all shadow-xl no-underline text-center"
-            >
-              Request Quote
-            </Link>
-            <Link
-              to="/resources/downloads"
-              className="border-2 border-white text-white px-10 py-5 font-label-technical text-xs uppercase tracking-widest hover:bg-white hover:text-forest-green transition-all no-underline text-center"
-            >
-              Download Brochure
-            </Link>
-          </div>
-        </div>
-      </section>
+      <AdvantageCTA />
 
     </div>
   );
