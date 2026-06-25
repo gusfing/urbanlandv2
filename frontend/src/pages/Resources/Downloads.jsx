@@ -266,11 +266,6 @@ const Downloads = () => {
                       <p className="text-craftsman-gold font-label-technical text-xs font-bold tracking-[0.15em]">URBANLAND PRODUCTS 2026</p>
                     </div>
                   </div>
-                  
-                  {/* Floating luxury tag */}
-                  <div className="absolute top-4 right-4 bg-craftsman-gold text-forest-green px-3.5 py-1.5 rounded-full font-label-technical text-[9px] font-bold tracking-wider uppercase shadow-md pointer-events-none select-none animate-pulse">
-                    Free B2B Copy
-                  </div>
 
                 </div>
               </div>
