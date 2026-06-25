@@ -72,52 +72,106 @@ const Downloads = () => {
   return (
     <div className="w-full bg-[#fcf9f4] text-[#1c1c19] font-sans overflow-x-hidden pt-0 selection:bg-craftsman-gold/30">
       
-      {/* Hero Section */}
-      <header className="relative min-h-[750px] md:min-h-[870px] flex items-center pt-20 overflow-hidden">
+      {/* Dynamic Hero Section */}
+      <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden py-32 bg-gradient-to-b from-[#122213] to-[#0A120A] text-white px-margin-mobile lg:px-0">
+        {/* Full-Screen Background Image with Green/Charcoal Gradient Overlay */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-forest-green/40 z-10"></div>
-          <div 
-            className="w-full h-full bg-cover bg-center transition-transform duration-[10000ms] hover:scale-110 select-none pointer-events-none"
-            style={{ backgroundImage: `url(${getOptimizedImageUrl("https://lh3.googleusercontent.com/aida-public/AB6AXuBf7Ibeb9NDXCT72gQMXsoP3ttUUVi3tA-1zHOD6g16YGotlouPpUqX8fTDdKcOk-ppDpDjIw1l93zs4SUKVjx8eY1sJ1LjFwXo5t4Hc95zrsZIVAseobtg53NMg66DXgQzXjHo6XYVKNniZ0uFOOSl-xbsaTf5Po0o8SGMaYSc7_EjNt_HZlJ-vD1ULidCDho61zo7pDNAfPXJX4_L2i3ZI8E4N8BipvaQu1LZOofyQ6QILEAHDAE3lDkIgwl9tvgJlFl49so-agPv")})` }}
+          <img
+            src={getOptimizedImageUrl("https://lh3.googleusercontent.com/aida-public/AB6AXuBf7Ibeb9NDXCT72gQMXsoP3ttUUVi3tA-1zHOD6g16YGotlouPpUqX8fTDdKcOk-ppDpDjIw1l93zs4SUKVjx8eY1sJ1LjFwXo5t4Hc95zrsZIVAseobtg53NMg66DXgQzXjHo6XYVKNniZ0uFOOSl-xbsaTf5Po0o8SGMaYSc7_EjNt_HZlJ-vD1ULidCDho61zo7pDNAfPXJX4_L2i3ZI8E4N8BipvaQu1LZOofyQ6QILEAHDAE3lDkIgwl9tvgJlFl49so-agPv")}
+            alt="Downloads Background"
+            className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A120A]/70 via-[#0E1A0F]/85 to-[#0A120A] pointer-events-none"></div>
         </div>
-        
-        <div className="relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
-          <div className="max-w-2xl bg-white/95 backdrop-blur-md p-6 md:p-12 border-l-4 border-craftsman-gold shadow-xl rounded-sm">
-            <h1 className="font-headline-xl text-4xl md:text-5xl lg:text-6xl text-charcoal-industrial mb-6 uppercase tracking-tight">
-              Downloads
-            </h1>
-            <p className="font-body-lg text-sm md:text-base text-on-surface-variant mb-8 leading-relaxed">
-              Download our latest Master Catalogue to explore Urbanland's complete collection of sustainable
-              outdoor furniture and urban infrastructure solutions.
-            </p>
-            
-            <div className="space-y-4 mb-8 font-label-caps">
-              <div className="flex items-center gap-3 text-xs md:text-sm text-charcoal-industrial">
-                <span className="material-symbols-outlined text-forest-green font-bold text-[18px]">check_circle</span>
-                <span>Latest Master Catalogue</span>
+
+        <div className="max-w-4xl mx-auto pt-10 md:pt-[100px] w-full text-center relative z-10 px-margin-mobile md:px-margin-desktop">
+          <div className="inline-block border-b-2 border-craftsman-gold mb-6 pb-1">
+            <span className="font-label-technical text-craftsman-gold tracking-widest uppercase font-semibold text-xs">
+              Resources
+            </span>
+          </div>
+
+          {/* Dynamic Breadcrumbs (Centered) */}
+          <nav className="flex items-center justify-center select-none text-[9px] sm:text-[10px] font-black uppercase tracking-widest gap-2 bg-white/5 text-white/80 border border-white/10 px-4 py-2.5 rounded-full w-fit mx-auto mb-8 backdrop-blur-md shadow-lg">
+            <Link to="/" className="text-white/60 hover:text-craftsman-gold transition-colors no-underline">Home</Link>
+            <span className="text-white/30">/</span>
+            <Link to="/resources" className="text-white/60 hover:text-craftsman-gold transition-colors no-underline">Resources Hub</Link>
+            <span className="text-white/30">/</span>
+            <span className="text-craftsman-gold font-bold">Downloads</span>
+          </nav>
+
+          {/* Title */}
+          <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-[3.5rem] text-white mb-6 leading-tight max-w-3xl mx-auto tracking-wide font-bold">
+            Downloads &amp; Catalogues
+          </h1>
+
+          <div className="w-24 h-1 bg-craftsman-gold mx-auto mb-8"></div>
+
+          {/* Description */}
+          <p className="font-body-lg text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed text-sm md:text-lg">
+            Download our latest Master Catalogue, architectural specifications, and sustainable portfolios to choose the right premium outdoor furniture solutions for your next project.
+          </p>
+
+          {/* Glassmorphic Highlights Checklist */}
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-3 mb-10 max-w-[420px] sm:max-w-3xl mx-auto">
+            {[
+              { text: "Latest Master Catalogue", icon: "workspace_premium" },
+              { text: "Complete Product Range", icon: "widgets" },
+              { text: "Project Inspiration", icon: "wb_sunny" },
+              { text: "Technical Specifications", icon: "description" }
+            ].map((pt, idx) => (
+              <div key={idx} className="flex items-center justify-center text-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full hover:border-craftsman-gold hover:bg-white/10 transition-all duration-300 group w-full sm:w-auto">
+                <span className="material-symbols-outlined text-craftsman-gold text-sm group-hover:scale-110 transition-transform duration-300">{pt.icon}</span>
+                <span className="font-body-md text-[11px] text-white/95 font-semibold tracking-wide">{pt.text}</span>
               </div>
-              <div className="flex items-center gap-3 text-xs md:text-sm text-charcoal-industrial">
-                <span className="material-symbols-outlined text-forest-green font-bold text-[18px]">check_circle</span>
-                <span>Complete Product Range</span>
-              </div>
-              <div className="flex items-center gap-3 text-xs md:text-sm text-charcoal-industrial">
-                <span className="material-symbols-outlined text-forest-green font-bold text-[18px]">check_circle</span>
-                <span>Project Inspiration &amp; Specifications</span>
+            ))}
+          </div>
+
+          {/* Floating Location and Scope Stats Bar */}
+          <div className="flex justify-center items-center gap-8 mb-12 bg-black/40 backdrop-blur-md border border-white/10 p-5 rounded-xl max-w-xl mx-auto shadow-2xl">
+            <div className="flex items-center gap-3 text-left">
+              <span className="material-symbols-outlined text-craftsman-gold text-3xl">download</span>
+              <div>
+                <p className="font-label-technical text-[9px] text-white/60 uppercase tracking-widest">Version</p>
+                <p className="font-body-md text-sm text-white font-semibold mt-0.5">2026 Edition</p>
               </div>
             </div>
-            
-            <a 
+            <div className="w-px h-10 bg-white/15"></div>
+            <div className="flex items-center gap-3 text-left">
+              <span className="material-symbols-outlined text-craftsman-gold text-3xl">menu_book</span>
+              <div>
+                <p className="font-label-technical text-[9px] text-white/60 uppercase tracking-widest">Format</p>
+                <p className="font-body-md text-sm text-white font-semibold mt-0.5">Digital PDF</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
               onClick={scrollToCatalogue}
               href="#catalogue"
-              className="inline-flex items-center bg-forest-green text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold hover:bg-charcoal-industrial transition-all duration-300 group cursor-pointer rounded-sm no-underline"
+              className="bg-craftsman-gold text-white px-8 py-4 font-label-technical text-xs uppercase tracking-widest hover:bg-white hover:text-[#122213] hover:shadow-lg hover:shadow-craftsman-gold/25 transition-all duration-300 no-underline text-center cursor-pointer"
             >
-              Download Master Catalogue
-              <span className="material-symbols-outlined ml-3 group-hover:translate-x-2 transition-transform">arrow_forward</span>
+              Get Master Catalogue ↓
             </a>
+            <Link to="/contact" className="border-2 border-white/30 text-white px-8 py-4 font-label-technical text-xs uppercase tracking-widest hover:border-white hover:bg-white/10 transition-all duration-300 no-underline text-center">
+              Request Print Copy →
+            </Link>
           </div>
         </div>
-      </header>
+
+        {/* Structural Grid lines and radial pattern */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none"
+          style={{
+            backgroundImage: "radial-gradient(#C9A84C 1px, transparent 1px)",
+            backgroundSize: "32px 32px"
+          }}
+        ></div>
+        <div className="absolute top-0 left-0 w-full h-full structural-grid -z-30 opacity-20"></div>
+        <div className="absolute top-1/2 left-0 w-full h-1px bg-white/5 -z-20"></div>
+        <div className="absolute top-0 left-1/4 w-1px h-full bg-white/5 -z-20"></div>
+      </section>
 
       {/* Section 1: Master Catalogue Feature */}
       <section className="py-20 bg-surface-container-low" id="catalogue">
