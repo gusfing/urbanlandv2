@@ -156,7 +156,7 @@ const Downloads = () => {
               Get Master Catalogue ↓
             </a>
             <Link to="/contact" className="border-2 border-white/30 text-white px-8 py-4 font-label-technical text-xs uppercase tracking-widest hover:border-white hover:bg-white/10 transition-all duration-300 no-underline text-center">
-              Request Print Copy →
+              Contact Us →
             </Link>
           </div>
         </div>
