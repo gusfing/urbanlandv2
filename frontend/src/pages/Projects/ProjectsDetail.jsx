@@ -456,45 +456,7 @@ const ProjectsDetail = () => {
     };
   }, [meta]);
 
-  const challengesRef = useRef(null);
   const [activeChallengeIdx, setActiveChallengeIdx] = useState(0);
-
-  // Auto-slide effect for mobile viewports
-  useEffect(() => {
-    if (!meta || !meta.challenges) return;
-
-    const interval = setInterval(() => {
-      if (window.innerWidth >= 768) return; // Only auto-slide on mobile viewports
-
-      setActiveChallengeIdx((prev) => {
-        const next = (prev + 1) % meta.challenges.length;
-        if (challengesRef.current) {
-          const container = challengesRef.current;
-          // Approximate container width per card + gap
-          const cardWidth = container.offsetWidth * 0.85 + 24;
-          container.scrollTo({
-            left: next * cardWidth,
-            behavior: "smooth"
-          });
-        }
-        return next;
-      });
-    }, 3500);
-
-    return () => clearInterval(interval);
-  }, [meta]);
-
-  // Handle manual scroll sync to update indicator dots
-  const handleChallengesScroll = () => {
-    if (!challengesRef.current) return;
-    const container = challengesRef.current;
-    const scrollLeft = container.scrollLeft;
-    const cardWidth = container.offsetWidth * 0.85 + 24;
-    const index = Math.round(scrollLeft / cardWidth);
-    if (index >= 0 && index < meta.challenges.length) {
-      setActiveChallengeIdx(index);
-    }
-  };
 
   if (!meta) return null;
 
@@ -517,6 +479,35 @@ const ProjectsDetail = () => {
     "WPC/NFC Wood",
     "Waste reduction",
     "Biophilic design"
+  ];
+
+  // Specific focus areas/mitigations per challenge
+  const challengeMitigations = [
+    [
+      "FSC timber & recycled composite tracking",
+      "Low-VOC and zero-toxin finishes",
+      "GRIHA & LEED credit documentation support"
+    ],
+    [
+      "100% circular material sourcing",
+      "Carbon footprint tracking per unit",
+      "Zero-waste production facility standards"
+    ],
+    [
+      "Deforestation-free composite structures",
+      "UV-resistant, weather-tested NFC wood",
+      "Natural organic appearance with zero maintenance"
+    ],
+    [
+      "Pre-assembled modular designs",
+      "Flat-pack logistics to reduce transport emissions",
+      "Scrap recycling loops at manufacturing site"
+    ],
+    [
+      "Resident well-being & interaction spaces",
+      "Lush integration with local flora & fauna",
+      "Restorative, community-centric outdoor zones"
+    ]
   ];
 
   // Why Choose Us content
@@ -655,6 +646,16 @@ const ProjectsDetail = () => {
 
       {/* Challenges Section */}
       <section className="reveal-section py-24 px-margin-mobile md:px-margin-desktop bg-[#F7F4EF] border-t border-outline-variant">
+        <style>{`
+          @keyframes fadeInCustom {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fade-in-custom {
+            animation: fadeInCustom 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+        `}</style>
+
         <div className="max-w-container-max mx-auto">
           <div className="mb-16 text-center space-y-4 reveal-up flex flex-col items-center">
             <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
@@ -665,35 +666,79 @@ const ProjectsDetail = () => {
             </h2>
             <div className="w-24 h-1 bg-craftsman-gold"></div>
           </div>
-          {/* Mobile horizontal snap-slider / Desktop 5-column grid */}
-          <div
-            ref={challengesRef}
-            onScroll={handleChallengesScroll}
-            className="flex md:grid overflow-x-auto md:overflow-x-visible snap-x snap-mandatory gap-6 md:grid-cols-5 pb-6 md:pb-0 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 scrollbar-none"
-          >
+
+          {/* Option A Horizontal Scrollable Tab Bar */}
+          <div className="flex overflow-x-auto md:flex-wrap md:justify-center gap-2.5 border-b border-outline-variant/60 pb-4 mb-8 md:mb-12 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 scrollbar-none">
             {meta.challenges.map((c, idx) => (
-              <div
+              <button
                 key={idx}
-                className="min-w-[85vw] sm:min-w-[45%] md:min-w-0 snap-align-start bg-surface-container-low p-8 border border-outline-variant hover:border-craftsman-gold/40 hover:shadow-md transition-all duration-300 flex flex-col text-left reveal-up"
+                onClick={() => setActiveChallengeIdx(idx)}
+                className={`flex items-center gap-2.5 px-4 md:px-6 py-3 border-b-2 transition-all duration-300 font-label-technical text-[10px] md:text-xs font-bold uppercase tracking-wider shrink-0 cursor-pointer ${
+                  idx === activeChallengeIdx
+                    ? "border-craftsman-gold text-craftsman-gold bg-craftsman-gold/5"
+                    : "border-transparent text-on-surface-variant hover:text-deep-ink hover:bg-surface-container-low"
+                }`}
               >
-                <div className="w-12 h-12 bg-craftsman-gold/10 text-craftsman-gold flex items-center justify-center rounded-lg mb-6">
-                  <span className="material-symbols-outlined text-craftsman-gold text-2xl">{challengeIcons[idx] || "domain"}</span>
-                </div>
-                <h3 className="font-label-technical text-xs font-bold uppercase tracking-wider mb-4 text-deep-ink">{challengeTitles[idx] || "Challenge"}</h3>
-                <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">{c.text}</p>
-              </div>
+                <span className="material-symbols-outlined text-lg md:text-xl">{challengeIcons[idx]}</span>
+                <span className="whitespace-nowrap">{challengeTitles[idx]}</span>
+              </button>
             ))}
           </div>
 
-          {/* Sleek Swipe Dots (Visible on mobile only) */}
-          <div className="flex md:hidden justify-center items-center gap-2 mt-4">
-            {meta.challenges.map((_, idx) => (
-              <div
-                key={idx}
-                className={`h-1.5 rounded-full transition-all duration-300 ${idx === activeChallengeIdx ? "w-6 bg-craftsman-gold" : "w-1.5 bg-forest-green/20"
-                  }`}
+          {/* Active Detail Showcase Card */}
+          <div
+            key={activeChallengeIdx}
+            className="animate-fade-in-custom bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row items-stretch min-h-[420px]"
+          >
+            {/* Left Side: Showcase Image */}
+            <div className="w-full md:w-1/2 min-h-[250px] md:min-h-auto relative overflow-hidden bg-surface-container-high">
+              <img
+                src={meta.challenges[activeChallengeIdx].image}
+                alt={challengeTitles[activeChallengeIdx]}
+                className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 hover:scale-105"
               />
-            ))}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                <span className="w-2 h-2 rounded-full bg-craftsman-gold animate-pulse"></span>
+                <span className="font-label-technical text-[10px] text-white uppercase tracking-widest font-semibold font-bold">Active Site Preview</span>
+              </div>
+            </div>
+
+            {/* Right Side: Content Details */}
+            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-left space-y-6">
+              <div className="flex items-center justify-between border-b border-outline-variant/60 pb-4">
+                <span className="font-label-technical text-xs font-bold text-craftsman-gold uppercase tracking-widest">
+                  Challenge 0{activeChallengeIdx + 1} / 05
+                </span>
+                <div className="w-10 h-10 bg-craftsman-gold/10 text-craftsman-gold flex items-center justify-center rounded-full">
+                  <span className="material-symbols-outlined text-xl">{challengeIcons[activeChallengeIdx]}</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-headline-md text-xl md:text-2xl text-deep-ink font-bold mb-3">
+                  {challengeTitles[activeChallengeIdx]}
+                </h3>
+                <p className="font-body-md text-on-surface-variant text-sm md:text-base leading-relaxed">
+                  {meta.challenges[activeChallengeIdx].text}
+                </p>
+              </div>
+
+              {/* Mitigation Focus Areas */}
+              <div className="space-y-3 pt-2">
+                <h4 className="font-label-technical text-[10px] text-forest-green uppercase tracking-widest font-bold">
+                  Sustainable Focus Areas
+                </h4>
+                <div className="grid grid-cols-1 gap-2.5">
+                  {challengeMitigations[activeChallengeIdx].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2.5 text-sm text-on-surface-variant">
+                      <span className="material-symbols-outlined text-craftsman-gold text-base shrink-0 mt-0.5 font-bold">check_circle</span>
+                      <span className="font-body-md text-xs md:text-sm leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
