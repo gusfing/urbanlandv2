@@ -3,7 +3,6 @@ import { useParams, Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import CTASection from "../../components/CTASection/CTASection";
 import SupportFAQ from "../../components/SupportFAQ/SupportFAQ";
-import AdvantageCTA from "../../components/AdvantageCTA/AdvantageCTA";
 
 // Import images
 import gbg1 from '../../assets/gallery_real_estate.png';
@@ -1053,11 +1052,10 @@ const ProjectsDetail = () => {
               <button
                 key={idx}
                 onClick={() => setActiveWhyChooseIdx(idx)}
-                className={`flex items-center gap-2.5 px-4 md:px-6 py-3 border-b-2 transition-all duration-300 font-label-technical text-[10px] md:text-xs font-bold uppercase tracking-wider shrink-0 cursor-pointer ${
-                  idx === activeWhyChooseIdx
+                className={`flex items-center gap-2.5 px-4 md:px-6 py-3 border-b-2 transition-all duration-300 font-label-technical text-[10px] md:text-xs font-bold uppercase tracking-wider shrink-0 cursor-pointer ${idx === activeWhyChooseIdx
                     ? "border-craftsman-gold text-craftsman-gold bg-craftsman-gold/5"
                     : "border-transparent text-on-surface-variant hover:text-deep-ink hover:bg-surface-container-low"
-                }`}
+                  }`}
               >
                 <span className="material-symbols-outlined text-lg md:text-xl">{item.icon}</span>
                 <span className="whitespace-nowrap">{item.title}</span>
@@ -1124,10 +1122,6 @@ const ProjectsDetail = () => {
       </section>
       {/* FAQ Accordion Section */}
       <SupportFAQ />
-
-      {/* Final CTA Section */}
-      <AdvantageCTA />
-
     </div>
   );
 };
