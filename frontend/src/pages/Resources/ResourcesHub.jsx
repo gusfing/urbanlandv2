@@ -141,7 +141,45 @@ const ResourcesHub = () => {
       description: "Access our technical guides, product catalogs, materials comparison specifications, and expert blog insights for sustainable outdoor furniture in India.",
       og_image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC_dEL1OxvrW5JvdGCGOSirMUW062F_x705fdolWum4ct9GBB2yGjUXOu11zaupORQ65jllwHQmjn8AVkW9_6Srir8X1n7j6OTJQvNORxUVImvjOUAc-6DNRyxflGJgP4hqFB_17sc_4f60MfpxVHwKMIZuZoUQ95oI8bY4x6eN7hMQR1NeRCzm6J2vcRTRFPKUHzWgmYsOJu6cmuOYj-m7COuOFYwnNzXieBU1t-FrpjEYgoO0mY4OdJHULgi7o85cTWODUw_IB0ZG"
     });
-    return () => cleanPageSEO();
+
+    // Smooth reveal animation on scroll
+    const observerOptions = {
+      threshold: 0.05,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-10');
+        }
+      });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll('.reveal-section');
+    sections.forEach(section => {
+      section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+      observer.observe(section);
+    });
+
+    // Intersection Observer for Reveal Up Animations
+    const revealUpObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+    const revealUps = document.querySelectorAll('.reveal-up');
+    revealUps.forEach(el => revealUpObserver.observe(el));
+
+    return () => {
+      cleanPageSEO();
+      sections.forEach(section => observer.unobserve(section));
+      revealUps.forEach(el => revealUpObserver.unobserve(el));
+    };
   }, []);
 
   const scrollToResources = () => {
@@ -202,7 +240,7 @@ const ResourcesHub = () => {
           {/* Trust Line */}
           <div className="border-t border-[#2D2D2D]/10 pt-6 flex flex-wrap items-center justify-between gap-y-4">
             {trustItems.map((item, idx) => (
-              <div key={idx} className="flex items-center gap-2 text-[#C9A84C] font-semibold text-xs tracking-wider uppercase">
+              <div key={idx} className="flex items-center gap-2 text-craftsman-gold font-semibold text-xs tracking-wider uppercase">
                 <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
                   check_circle
                 </span>
@@ -214,18 +252,23 @@ const ResourcesHub = () => {
       </section>
 
       {/* Explore Our Resources (Grid) */}
-      <section ref={resourcesGridRef} className="py-20 bg-white">
+      <section ref={resourcesGridRef} className="reveal-section py-20 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 md:px-16">
-          <div className="mb-12 border-l-4 border-[#C9A84C] pl-6 text-left">
-            <h2 className="font-headline-lg text-3xl font-semibold text-[#002f09]">
+          <div className="mb-16 text-left space-y-4 reveal-up">
+            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
+              Support Library
+            </span>
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink">
               Your Complete Guide to Sustainable Outdoor Furniture
             </h2>
+            <div className="w-24 h-1 bg-craftsman-gold"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {resourceCategories.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-[#fcf9f4] border border-[#2D2D2D]/10 p-8 flex flex-col h-full hover:border-[#C9A84C] transition-colors duration-300 rounded-lg text-left"
+                style={{ transitionDelay: `${idx * 100}ms` }}
+                className="bg-[#fcf9f4] border border-outline-variant p-8 flex flex-col h-full hover:border-craftsman-gold hover:shadow-md transition-all duration-300 rounded-none text-left reveal-up"
               >
                 <span className="material-symbols-outlined text-[#C9A84C] text-4xl mb-4">
                   {item.icon}
@@ -252,13 +295,16 @@ const ResourcesHub = () => {
       </section>
 
       {/* Why Trust Our Resources (Visual List) */}
-      <section className="py-20 bg-[#F7F4EF]">
+      <section className="reveal-section py-20 bg-[#F7F4EF]">
         <div className="max-w-[1280px] mx-auto px-6 md:px-16">
-          <div className="text-center mb-16">
-            <h2 className="font-headline-lg text-3xl font-semibold text-[#002f09] mb-4">
+          <div className="text-center mb-16 space-y-4 reveal-up flex flex-col items-center">
+            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
+              Key Advantages
+            </span>
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink">
               Why Our Resources Are Different
             </h2>
-            <div className="h-1 w-24 bg-[#C9A84C] mx-auto"></div>
+            <div className="w-24 h-1 bg-craftsman-gold"></div>
           </div>
           <div className="space-y-6">
             {differences.map((item, idx) => (
@@ -274,7 +320,7 @@ const ResourcesHub = () => {
                   </span>
                 </div>
                 <div
-                  className={`md:w-3/4 flex gap-6 bg-white p-8 shadow-sm rounded-xl text-left ${
+                  className={`md:w-3/4 flex gap-6 bg-white p-8 shadow-sm rounded-[4px] border border-outline-variant hover:border-craftsman-gold/40 transition-all duration-300 text-left ${
                     idx % 2 === 1 ? "border-r-4" : "border-l-4"
                   } border-[#002f09]`}
                 >
@@ -297,24 +343,30 @@ const ResourcesHub = () => {
       </section>
 
       {/* Featured Resources */}
-      <section className="py-20 overflow-hidden bg-white">
+      <section className="reveal-section py-20 overflow-hidden bg-white">
         <div className="max-w-[1280px] mx-auto px-6 md:px-16">
-          <div className="flex justify-between items-end mb-12">
-            <h2 className="font-headline-lg text-3xl font-semibold text-[#002f09] text-left">
-              Featured Resources
-            </h2>
-            <div className="hidden md:flex gap-4">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12 text-left">
+            <div className="space-y-4 reveal-up">
+              <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
+                Curated Selection
+              </span>
+              <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink">
+                Featured Resources
+              </h2>
+              <div className="w-24 h-1 bg-craftsman-gold"></div>
+            </div>
+            <div className="hidden md:flex gap-4 reveal-up">
               <button
                 onClick={() => scrollFeaturedResources("left")}
-                className="w-12 h-12 border border-[#002f09] text-[#002f09] rounded-full flex items-center justify-center hover:bg-[#002f09] hover:text-white transition-all cursor-pointer"
+                className="w-12 h-12 border border-outline-variant text-[#002f09] rounded-full flex items-center justify-center hover:border-forest-green hover:text-forest-green hover:bg-forest-green/5 transition-all duration-300 cursor-pointer"
               >
-                <span className="material-symbols-outlined">chevron_left</span>
+                <span className="material-symbols-outlined">west</span>
               </button>
               <button
                 onClick={() => scrollFeaturedResources("right")}
-                className="w-12 h-12 border border-[#002f09] text-[#002f09] rounded-full flex items-center justify-center hover:bg-[#002f09] hover:text-white transition-all cursor-pointer"
+                className="w-12 h-12 border border-outline-variant text-[#002f09] rounded-full flex items-center justify-center hover:border-forest-green hover:text-forest-green hover:bg-forest-green/5 transition-all duration-300 cursor-pointer"
               >
-                <span className="material-symbols-outlined">chevron_right</span>
+                <span className="material-symbols-outlined">east</span>
               </button>
             </div>
           </div>
@@ -326,9 +378,10 @@ const ResourcesHub = () => {
               <Link
                 key={idx}
                 to={item.path}
-                className="group cursor-pointer min-w-[280px] md:min-w-[calc(25%-1.25rem)] shrink-0 snap-align-start no-underline text-left"
+                style={{ transitionDelay: `${idx * 100}ms` }}
+                className="group cursor-pointer min-w-[280px] md:min-w-[calc(25%-1.25rem)] shrink-0 snap-align-start no-underline text-left reveal-up"
               >
-                <div className="relative aspect-[3/4] mb-4 bg-[#e5e2dd] overflow-hidden rounded-xl">
+                <div className="relative aspect-[3/4] mb-4 bg-surface-dim overflow-hidden rounded-none border border-outline-variant">
                   <img
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     alt={item.title}
@@ -340,7 +393,7 @@ const ResourcesHub = () => {
                     </span>
                   </div>
                 </div>
-                <h4 className="font-headline-md text-base font-semibold text-[#002f09] group-hover:text-[#C9A84C] transition-colors leading-tight">
+                <h4 className="font-headline-md text-base font-semibold text-deep-ink group-hover:text-craftsman-gold transition-colors leading-tight">
                   {item.title}
                 </h4>
                 <p className="font-semibold text-[10px] text-[#41493f] uppercase tracking-widest mt-1.5">
@@ -353,25 +406,31 @@ const ResourcesHub = () => {
       </section>
 
       {/* FAQ (Accordion) */}
-      <section className="py-20 bg-white border-t border-[#2D2D2D]/10">
+      <section className="reveal-section py-20 bg-white border-t border-[#2D2D2D]/10">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="font-headline-lg text-3xl font-semibold text-[#002f09] mb-12 text-center">
-            Frequently Asked Questions
-          </h2>
+          <div className="text-center mb-12 space-y-4 reveal-up flex flex-col items-center">
+            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
+              FAQ
+            </span>
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink">
+              Frequently Asked Questions
+            </h2>
+            <div className="w-24 h-1 bg-craftsman-gold"></div>
+          </div>
           <div className="space-y-4">
             {faqsList.map((faq, idx) => {
               const isOpen = activeFAQIndex === idx;
               return (
-                <div key={idx} className="border-b border-[#2D2D2D]/10 pb-4 text-left">
+                <div key={idx} className="border-b border-outline-variant pb-4 text-left reveal-up">
                   <button
                     onClick={() => setActiveFAQIndex(isOpen ? null : idx)}
                     className="w-full flex justify-between items-center text-left py-4 focus:outline-none cursor-pointer border-none bg-transparent"
                   >
-                    <span className="font-body-lg font-semibold text-[#002f09] text-base md:text-lg">
+                    <span className="font-body-lg font-semibold text-deep-ink text-base md:text-lg">
                       {faq.q}
                     </span>
                     <span
-                      className={`material-symbols-outlined text-[#C9A84C] transition-transform duration-300 ${
+                      className={`material-symbols-outlined text-craftsman-gold transition-transform duration-300 ${
                         isOpen ? "rotate-45" : ""
                       }`}
                     >
