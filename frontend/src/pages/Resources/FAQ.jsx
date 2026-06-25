@@ -168,8 +168,8 @@ const FAQ = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           {/* Side Navigation Categories */}
-          <div className="lg:col-span-3">
-            <div className="sticky top-28 space-y-2 flex lg:flex-col overflow-x-auto pb-4 lg:pb-0 gap-2 scrollbar-none">
+          <div className="lg:col-span-3 lg:sticky lg:top-28 h-fit">
+            <div className="space-y-2 flex lg:flex-col overflow-x-auto pb-4 lg:pb-0 gap-2 scrollbar-none">
               <h3 className="hidden lg:block font-label-technical text-xs text-outline uppercase tracking-widest mb-4">
                 Categories
               </h3>
