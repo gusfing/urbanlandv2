@@ -219,7 +219,7 @@ const Downloads = () => {
                 className="group w-full md:w-auto bg-forest-green hover:bg-craftsman-gold text-white px-8 py-5 font-label-technical uppercase tracking-widest text-xs font-bold hover:shadow-xl hover:shadow-craftsman-gold/25 transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer rounded-full"
               >
                 <span className="material-symbols-outlined transition-transform group-hover:translate-y-0.5">download</span>
-                {submitted ? "Download Master Catalogue (PDF)" : "Unlock Master Catalogue"}
+                {submitted ? "Download Master Catalogue (PDF)" : "Get Your Free Catalogue"}
               </button>
             </div>
             
