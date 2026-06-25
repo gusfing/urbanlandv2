@@ -174,58 +174,103 @@ const Downloads = () => {
       </section>
 
       {/* Section 1: Master Catalogue Feature */}
-      <section className="py-20 bg-surface-container-low" id="catalogue">
+      <section className="py-24 bg-gradient-to-br from-[#F7F5F0] via-white to-[#F2EFE9]" id="catalogue">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            <div className="lg:col-span-5">
-              <span className="text-craftsman-gold font-label-technical text-xs font-bold uppercase tracking-widest block mb-4">
+            <div className="lg:col-span-5 order-2 lg:order-1">
+              <span className="font-label-technical text-craftsman-gold text-xs font-bold tracking-[0.2em] uppercase block mb-3">
                 The Collection
               </span>
-              <h2 className="font-headline-lg text-3xl md:text-4xl text-charcoal-industrial mb-6">
+              <h2 className="font-headline-lg text-3xl md:text-5xl text-charcoal-industrial mb-6 font-bold tracking-tight leading-tight">
                 Master Catalogue
               </h2>
-              <p className="font-body-md text-sm md:text-base text-on-surface-variant mb-8 leading-relaxed">
-                Our comprehensive catalogue showcases our complete range of outdoor furniture and site
-                furnishing products, including: Benches, Planter Boxes, Bus Shelters, Dustbins, Outdoor
-                Furniture, Tables &amp; Seating, and bespoke Urban Infrastructure Solutions.
+              <p className="font-body-md text-sm md:text-base text-on-surface-variant/90 mb-8 leading-relaxed">
+                Our comprehensive catalogue showcases our complete range of premium outdoor furniture and site
+                furnishing products. Discover Benches, Planter Boxes, Bus Shelters, Dustbins, Tables &amp; Seating, and bespoke Urban Infrastructure Solutions designed for modern B2B developments.
               </p>
               
-              <div className="p-6 bg-white border border-charcoal-industrial/10 mb-8 rounded-sm">
-                <p className="font-label-technical text-xs font-bold text-on-surface-variant uppercase tracking-widest">
-                  Edition 2026
-                </p>
-                <p className="font-body-md text-sm text-charcoal-industrial mt-2">
-                  Includes WPC, NFC Wood, Aluminium, Mild Steel &amp; Stainless Steel collections
-                </p>
+              <div className="p-6 bg-white/80 backdrop-blur-sm border border-charcoal-industrial/10 mb-8 rounded-2xl shadow-sm flex items-start gap-4">
+                <span className="material-symbols-outlined text-craftsman-gold text-3xl select-none mt-1">auto_awesome</span>
+                <div>
+                  <p className="font-label-technical text-xs font-bold text-charcoal-industrial uppercase tracking-wider">
+                    Edition 2026 Features
+                  </p>
+                  <ul className="mt-3 space-y-2 text-xs md:text-sm text-on-surface-variant/80 font-medium">
+                    <li className="flex items-center gap-2">
+                      <span className="material-symbols-outlined text-forest-green text-sm font-bold">check</span>
+                      WPC, NFC Wood, Aluminium &amp; Steel collections
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="material-symbols-outlined text-forest-green text-sm font-bold">check</span>
+                      Comprehensive technical drawings &amp; BOQ templates
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="material-symbols-outlined text-forest-green text-sm font-bold">check</span>
+                      Certified eco-luxury sustainable designs
+                    </li>
+                  </ul>
+                </div>
               </div>
               
               <button
                 onClick={() => triggerDownload("Master Catalogue 2026 PDF")}
-                className="w-full md:w-auto bg-craftsman-gold text-white px-8 py-5 font-label-technical uppercase tracking-widest text-xs font-bold hover:brightness-110 transition-all flex items-center justify-center gap-3 cursor-pointer rounded-sm"
+                className="group w-full md:w-auto bg-forest-green hover:bg-craftsman-gold text-white px-8 py-5 font-label-technical uppercase tracking-widest text-xs font-bold hover:shadow-xl hover:shadow-craftsman-gold/25 transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer rounded-full"
               >
-                <span className="material-symbols-outlined">download</span>
+                <span className="material-symbols-outlined transition-transform group-hover:translate-y-0.5">download</span>
                 {submitted ? "Download Master Catalogue (PDF)" : "Unlock Master Catalogue"}
               </button>
             </div>
             
-            <div className="lg:col-span-7 relative pt-12 lg:pt-0">
-              <div className="aspect-[4/3] bg-charcoal-industrial/5 p-4 md:p-8 relative overflow-hidden group rounded-sm">
-                <div className="absolute inset-0 bg-gradient-to-tr from-charcoal-industrial/10 to-transparent"></div>
+            <div className="lg:col-span-7 order-1 lg:order-2 relative">
+              <div className="aspect-[4/3] bg-gradient-to-tr from-[#EFEDE8] to-[#E3DFD5] p-6 md:p-12 relative overflow-hidden group rounded-3xl border border-charcoal-industrial/5 shadow-inner">
+                {/* Visual grid pattern background inside the mockup card */}
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                  style={{
+                    backgroundImage: "radial-gradient(#122213 1px, transparent 1px)",
+                    backgroundSize: "20px 20px"
+                  }}
+                ></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-charcoal-industrial/10 via-transparent to-transparent pointer-events-none"></div>
                 
-                {/* Catalogue Mockup */}
-                <div className="relative w-full h-full flex items-center justify-center transform rotate-[-2deg] group-hover:rotate-0 transition-transform duration-700">
-                  <div className="w-3/4 h-full bg-white shadow-2xl relative overflow-hidden rounded-[2px] border border-black/5">
-                    <div 
-                      className="absolute inset-0 bg-cover bg-center opacity-90 select-none pointer-events-none"
-                      style={{ backgroundImage: `url(${getOptimizedImageUrl("https://lh3.googleusercontent.com/aida-public/AB6AXuAW2JMHuHhtbj9vMjxNKDHlvS4vBBQrmdpyfO49bgz5hVqI1795fjpm2EuVzUdoisdFGgOW2G8RjJgoUFO_OUHmfZ_pTXuDnYtlalxm8EwKMyffBlv5dMOircT8e96rmnNJMZNFUcZVCMkiOGa5BfB4TQU0zzsVeVl215cJbuAFceT5e5eTW_VEFm2Pb_X_4cJ_fegmahUs76OhLRLA2vnxs4ImGtqQXt6nQ53Fb8kgv5wcStscNTcn5xnKnIZqWbuMB05M-0zGxQND")})` }}
-                    />
-                    <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-forest-green/90 to-transparent">
-                      <p className="text-white font-headline-md text-xl md:text-2xl mb-1">Master Catalogue</p>
-                      <p className="text-craftsman-gold font-label-technical text-xs font-semibold tracking-wider">URBANLAND PRODUCTS 2026</p>
+                {/* Catalogue 3D Overlap Mockup */}
+                <div className="relative w-full h-full flex items-center justify-center">
+                  
+                  {/* Decorative Back page (blueprint) */}
+                  <div className="absolute w-[68%] h-[90%] bg-[#EFEDE8] shadow-lg rounded-[4px] border border-charcoal-industrial/10 transform rotate-[4deg] translate-x-12 translate-y-2 opacity-60 pointer-events-none select-none overflow-hidden hidden md:block">
+                    <div className="p-6 border-b border-charcoal-industrial/10 flex justify-between items-center">
+                      <span className="text-[8px] font-mono tracking-widest text-charcoal-industrial/40">URBANLAND CAD SECTION</span>
+                      <span className="text-[8px] font-mono tracking-widest text-charcoal-industrial/40">PAGE 12</span>
+                    </div>
+                    <div className="p-6 flex flex-col gap-4 opacity-20">
+                      <div className="w-full h-2 bg-charcoal-industrial rounded-sm"></div>
+                      <div className="w-3/4 h-2 bg-charcoal-industrial rounded-sm"></div>
+                      <div className="w-5/6 h-2 bg-charcoal-industrial rounded-sm"></div>
+                      <div className="grid grid-cols-2 gap-4 mt-4">
+                        <div className="aspect-square border-2 border-dashed border-charcoal-industrial rounded-sm"></div>
+                        <div className="aspect-square border-2 border-dashed border-charcoal-industrial rounded-sm"></div>
+                      </div>
                     </div>
                   </div>
-                  <div className="absolute w-3/4 h-full bg-white shadow-xl transform translate-x-8 translate-y-6 -z-10 border border-black/5 rounded-[2px]" />
+
+                  {/* Main Catalogue Cover Front page */}
+                  <div className="relative w-[75%] md:w-[70%] h-[95%] bg-white shadow-2xl rounded-[4px] border border-black/5 overflow-hidden transform rotate-[-2deg] group-hover:rotate-0 group-hover:scale-[1.02] transition-all duration-500">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center opacity-95 select-none pointer-events-none"
+                      style={{ backgroundImage: `url(${getOptimizedImageUrl("https://lh3.googleusercontent.com/aida-public/AB6AXuAW2JMHuHhtbj9vMjxNKDHlvS4vBBQrmdpyfO49bgz5hVqI1795fjpm2EuVzUdoisdFGgOW2G8RjJgoUFO_OUHmfZ_pTXuDnYtlalxm8EwKMyffBlv5dMOircT8e96rmnNJMZNFUcZVCMkiOGa5BfB4TQU0zzsVeVl215cJbuAFceT5e5eTW_VEFm2Pb_X_4cJ_fegmahUs76OhLRLA2vnxs4ImGtqQXt6nQ53Fb8kgv5wcStscNTcn5xnKnIZqWbuMB05M-0zGxQND")})` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 text-left">
+                      <p className="text-white font-headline-md text-2xl md:text-3xl mb-1.5 font-bold tracking-tight">Master Catalogue</p>
+                      <p className="text-craftsman-gold font-label-technical text-xs font-bold tracking-[0.15em]">URBANLAND PRODUCTS 2026</p>
+                    </div>
+                  </div>
+                  
+                  {/* Floating luxury tag */}
+                  <div className="absolute top-4 right-4 bg-craftsman-gold text-forest-green px-3.5 py-1.5 rounded-full font-label-technical text-[9px] font-bold tracking-wider uppercase shadow-md pointer-events-none select-none animate-pulse">
+                    Free B2B Copy
+                  </div>
+
                 </div>
               </div>
             </div>
