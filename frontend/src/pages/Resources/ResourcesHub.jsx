@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
-import CTASection from "../../components/CTASection/CTASection";
+import AdvantageCTA from "../../components/AdvantageCTA/AdvantageCTA";
 
 const trustItems = [
   "Master Catalogue",
@@ -454,14 +454,13 @@ const ResourcesHub = () => {
       </section>
 
       {/* Final CTA */}
-      <CTASection
+      <AdvantageCTA
         title="Ready to Transform Your Space with Sustainable Outdoor Furniture?"
-        description="Support biophilic architectural design, earn IGBC points, and reduce deforestation with our premium WPC and NFC solutions."
-        tagText="Ready to Partner"
-        primaryText="Get in Touch With Our Team →"
-        primaryLink="/contact"
-        secondaryText="Download Master Catalogue ↓"
-        secondaryLink="/resources/downloads"
+        ctaText="Get in Touch With Our Team"
+        ctaLink="/contact"
+        brochureText="Download Master Catalogue"
+        brochureLink="/resources/downloads"
+        statsText="Support biophilic architectural design, earn IGBC points, and reduce deforestation with our premium WPC and NFC solutions."
       />
     </div>
   );
