@@ -869,7 +869,7 @@ const ProjectsDetail = () => {
                   className="min-w-[85vw] sm:min-w-[45%] snap-align-start bg-white rounded-2xl overflow-hidden border border-outline-variant hover:shadow-lg transition-all duration-300 flex flex-col text-left"
                 >
                   {/* Card Image with Rating overlay tag */}
-                  <div className="w-full h-48 relative overflow-hidden bg-surface-container-high">
+                  <div className="w-full h-60 relative overflow-hidden bg-surface-container-high">
                     <img className="w-full h-full object-cover" alt={item.title} src={item.image} />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                     <div className="absolute top-4 right-4 bg-forest-green text-white font-label-technical text-[9px] px-2.5 py-1 rounded-full uppercase tracking-wider font-bold">
