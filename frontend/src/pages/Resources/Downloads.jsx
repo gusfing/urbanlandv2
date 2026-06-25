@@ -295,60 +295,80 @@ const Downloads = () => {
             <div className="w-24 h-1 bg-craftsman-gold"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
             {/* Value 1 */}
-            <div className="p-8 border-t border-charcoal-industrial/10 hover:bg-[#F2F0EB]/50 transition-colors duration-300">
-              <span className="material-symbols-outlined text-craftsman-gold text-4xl mb-6 select-none pointer-events-none">view_cozy</span>
-              <h3 className="font-label-technical text-xs font-bold text-charcoal-industrial mb-4 uppercase tracking-wider">
-                Product Range
-              </h3>
-              <p className="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                Explore our complete collection of outdoor furnishings in one place.
-              </p>
+            <div className="group p-8 bg-[#FCF9F4]/70 backdrop-blur-sm border border-charcoal-industrial/10 rounded-[2rem] hover:bg-[#F2F0EB]/90 hover:border-craftsman-gold/50 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-craftsman-gold/10 flex items-center justify-center mb-6 group-hover:bg-forest-green group-hover:text-white transition-all duration-500 text-forest-green">
+                  <span className="material-symbols-outlined text-2xl select-none pointer-events-none">view_cozy</span>
+                </div>
+                <h3 className="font-label-technical text-xs font-bold text-charcoal-industrial mb-3 uppercase tracking-widest">
+                  Product Range
+                </h3>
+                <p className="font-body-md text-xs text-on-surface-variant/90 leading-relaxed">
+                  Explore our complete collection of outdoor furnishings in one place.
+                </p>
+              </div>
             </div>
             
             {/* Value 2 */}
-            <div className="p-8 border-t border-charcoal-industrial/10 hover:bg-[#F2F0EB]/50 transition-colors duration-300">
-              <span className="material-symbols-outlined text-craftsman-gold text-4xl mb-6 select-none pointer-events-none">straighten</span>
-              <h3 className="font-label-technical text-xs font-bold text-charcoal-industrial mb-4 uppercase tracking-wider">
-                Specifications
-              </h3>
-              <p className="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                View detailed product dimensions and technical blueprints.
-              </p>
+            <div className="group p-8 bg-[#FCF9F4]/70 backdrop-blur-sm border border-charcoal-industrial/10 rounded-[2rem] hover:bg-[#F2F0EB]/90 hover:border-craftsman-gold/50 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-craftsman-gold/10 flex items-center justify-center mb-6 group-hover:bg-forest-green group-hover:text-white transition-all duration-500 text-forest-green">
+                  <span className="material-symbols-outlined text-2xl select-none pointer-events-none">straighten</span>
+                </div>
+                <h3 className="font-label-technical text-xs font-bold text-charcoal-industrial mb-3 uppercase tracking-widest">
+                  Specifications
+                </h3>
+                <p className="font-body-md text-xs text-on-surface-variant/90 leading-relaxed">
+                  View detailed product dimensions and technical blueprints.
+                </p>
+              </div>
             </div>
             
             {/* Value 3 */}
-            <div className="p-8 border-t border-charcoal-industrial/10 hover:bg-[#F2F0EB]/50 transition-colors duration-300">
-              <span className="material-symbols-outlined text-craftsman-gold text-4xl mb-6 select-none pointer-events-none">lightbulb</span>
-              <h3 className="font-label-technical text-xs font-bold text-charcoal-industrial mb-4 uppercase tracking-wider">
-                Inspiration
-              </h3>
-              <p className="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                Get inspiration from real project applications and architectural layouts.
-              </p>
+            <div className="group p-8 bg-[#FCF9F4]/70 backdrop-blur-sm border border-charcoal-industrial/10 rounded-[2rem] hover:bg-[#F2F0EB]/90 hover:border-craftsman-gold/50 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-craftsman-gold/10 flex items-center justify-center mb-6 group-hover:bg-forest-green group-hover:text-white transition-all duration-500 text-forest-green">
+                  <span className="material-symbols-outlined text-2xl select-none pointer-events-none">lightbulb</span>
+                </div>
+                <h3 className="font-label-technical text-xs font-bold text-charcoal-industrial mb-3 uppercase tracking-widest">
+                  Inspiration
+                </h3>
+                <p className="font-body-md text-xs text-on-surface-variant/90 leading-relaxed">
+                  Get inspiration from real project applications and architectural layouts.
+                </p>
+              </div>
             </div>
             
             {/* Value 4 */}
-            <div className="p-8 border-t border-charcoal-industrial/10 hover:bg-[#F2F0EB]/50 transition-colors duration-300">
-              <span className="material-symbols-outlined text-craftsman-gold text-4xl mb-6 select-none pointer-events-none">layers</span>
-              <h3 className="font-label-technical text-xs font-bold text-charcoal-industrial mb-4 uppercase tracking-wider">
-                Materials
-              </h3>
-              <p className="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                Compare various material options for durability and aesthetics.
-              </p>
+            <div className="group p-8 bg-[#FCF9F4]/70 backdrop-blur-sm border border-charcoal-industrial/10 rounded-[2rem] hover:bg-[#F2F0EB]/90 hover:border-craftsman-gold/50 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-craftsman-gold/10 flex items-center justify-center mb-6 group-hover:bg-forest-green group-hover:text-white transition-all duration-500 text-forest-green">
+                  <span className="material-symbols-outlined text-2xl select-none pointer-events-none">layers</span>
+                </div>
+                <h3 className="font-label-technical text-xs font-bold text-charcoal-industrial mb-3 uppercase tracking-widest">
+                  Materials
+                </h3>
+                <p className="font-body-md text-xs text-on-surface-variant/90 leading-relaxed">
+                  Compare various material options for durability and aesthetics.
+                </p>
+              </div>
             </div>
             
             {/* Value 5 */}
-            <div className="p-8 border-t border-charcoal-industrial/10 hover:bg-[#F2F0EB]/50 transition-colors duration-300">
-              <span className="material-symbols-outlined text-craftsman-gold text-4xl mb-6 select-none pointer-events-none">location_city</span>
-              <h3 className="font-label-technical text-xs font-bold text-charcoal-industrial mb-4 uppercase tracking-wider">
-                Urban Solutions
-              </h3>
-              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">
-                Find specific solutions for communities and public infrastructure.
-              </p>
+            <div className="group p-8 bg-[#FCF9F4]/70 backdrop-blur-sm border border-charcoal-industrial/10 rounded-[2rem] hover:bg-[#F2F0EB]/90 hover:border-craftsman-gold/50 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-craftsman-gold/10 flex items-center justify-center mb-6 group-hover:bg-forest-green group-hover:text-white transition-all duration-500 text-forest-green">
+                  <span className="material-symbols-outlined text-2xl select-none pointer-events-none">location_city</span>
+                </div>
+                <h3 className="font-label-technical text-xs font-bold text-charcoal-industrial mb-3 uppercase tracking-widest">
+                  Urban Solutions
+                </h3>
+                <p className="font-body-md text-xs text-on-surface-variant/90 leading-relaxed">
+                  Find specific solutions for communities and public infrastructure.
+                </p>
+              </div>
             </div>
           </div>
         </div>
