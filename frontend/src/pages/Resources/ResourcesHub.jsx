@@ -192,7 +192,11 @@ const ResourcesHub = () => {
     if (!featuredResourcesRef.current) return;
     const container = featuredResourcesRef.current;
     if (container.children.length > 0) {
-      const cardWidth = container.children[0].offsetWidth + 24; // Card width + gap
+      const card = container.children[0];
+      const cardStyle = window.getComputedStyle(card);
+      const marginRight = parseFloat(cardStyle.marginRight) || 0;
+      const gap = parseFloat(window.getComputedStyle(container).gap) || 16;
+      const cardWidth = card.offsetWidth + gap + marginRight;
       container.scrollBy({
         left: direction === "left" ? -cardWidth : cardWidth,
         behavior: "smooth"
@@ -345,41 +349,41 @@ const ResourcesHub = () => {
       {/* Featured Resources */}
       <section className="reveal-section py-20 overflow-hidden bg-white">
         <div className="max-w-[1280px] mx-auto px-6 md:px-16">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12 text-left">
-            <div className="space-y-4 reveal-up">
+          <div className="flex justify-between items-end gap-4 mb-8 md:mb-12 text-left">
+            <div className="space-y-3 md:space-y-4 reveal-up">
               <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
                 Curated Selection
               </span>
-              <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink">
+              <h2 className="font-headline-lg text-2xl md:text-headline-lg text-deep-ink">
                 Featured Resources
               </h2>
               <div className="w-24 h-1 bg-craftsman-gold"></div>
             </div>
-            <div className="hidden md:flex gap-4 reveal-up">
+            <div className="flex gap-2 reveal-up shrink-0 pb-1">
               <button
                 onClick={() => scrollFeaturedResources("left")}
-                className="w-12 h-12 border border-outline-variant text-[#002f09] rounded-full flex items-center justify-center hover:border-forest-green hover:text-forest-green hover:bg-forest-green/5 transition-all duration-300 cursor-pointer"
+                className="w-10 h-10 md:w-12 md:h-12 border border-outline-variant text-[#002f09] rounded-full flex items-center justify-center hover:border-forest-green hover:text-forest-green hover:bg-forest-green/5 transition-all duration-300 cursor-pointer"
               >
-                <span className="material-symbols-outlined">west</span>
+                <span className="material-symbols-outlined text-base">west</span>
               </button>
               <button
                 onClick={() => scrollFeaturedResources("right")}
-                className="w-12 h-12 border border-outline-variant text-[#002f09] rounded-full flex items-center justify-center hover:border-forest-green hover:text-forest-green hover:bg-forest-green/5 transition-all duration-300 cursor-pointer"
+                className="w-10 h-10 md:w-12 md:h-12 border border-outline-variant text-[#002f09] rounded-full flex items-center justify-center hover:border-forest-green hover:text-forest-green hover:bg-forest-green/5 transition-all duration-300 cursor-pointer"
               >
-                <span className="material-symbols-outlined">east</span>
+                <span className="material-symbols-outlined text-base">east</span>
               </button>
             </div>
           </div>
           <div
             ref={featuredResourcesRef}
-            className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 scrollbar-none scroll-smooth"
+            className="flex overflow-x-auto snap-x snap-mandatory gap-4 md:gap-6 pb-6 scrollbar-none scroll-smooth"
           >
             {featuredResourcesList.map((item, idx) => (
               <Link
                 key={idx}
                 to={item.path}
                 style={{ transitionDelay: `${idx * 100}ms` }}
-                className="group cursor-pointer min-w-[280px] md:min-w-[calc(25%-1.25rem)] shrink-0 snap-align-start no-underline text-left reveal-up"
+                className="group cursor-pointer w-[72vw] sm:w-[45vw] md:w-[calc(25%-1.25rem)] shrink-0 snap-align-start no-underline text-left reveal-up"
               >
                 <div className="relative aspect-[3/4] mb-4 bg-surface-dim overflow-hidden rounded-none border border-outline-variant">
                   <img
