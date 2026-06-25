@@ -456,7 +456,46 @@ const ProjectsDetail = () => {
     };
   }, [meta]);
 
+  const challengesRef = useRef(null);
   const [activeChallengeIdx, setActiveChallengeIdx] = useState(0);
+  const [activeWhyChooseIdx, setActiveWhyChooseIdx] = useState(0);
+
+  // Auto-slide effect for mobile viewports
+  useEffect(() => {
+    if (!meta || !meta.challenges) return;
+
+    const interval = setInterval(() => {
+      if (window.innerWidth >= 768) return; // Only auto-slide on mobile viewports
+
+      setActiveChallengeIdx((prev) => {
+        const next = (prev + 1) % meta.challenges.length;
+        if (challengesRef.current) {
+          const container = challengesRef.current;
+          // Approximate container width per card + gap
+          const cardWidth = container.offsetWidth * 0.85 + 24;
+          container.scrollTo({
+            left: next * cardWidth,
+            behavior: "smooth"
+          });
+        }
+        return next;
+      });
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [meta]);
+
+  // Handle manual scroll sync to update indicator dots
+  const handleChallengesScroll = () => {
+    if (!challengesRef.current) return;
+    const container = challengesRef.current;
+    const scrollLeft = container.scrollLeft;
+    const cardWidth = container.offsetWidth * 0.85 + 24;
+    const index = Math.round(scrollLeft / cardWidth);
+    if (index >= 0 && index < meta.challenges.length) {
+      setActiveChallengeIdx(index);
+    }
+  };
 
   if (!meta) return null;
 
@@ -527,6 +566,48 @@ const ProjectsDetail = () => {
     { title: "Fast Delivery", icon: "speed", desc: meta.whyChoose[3] || defaultChooseDesc[3] },
     { title: "End-to-End Support", icon: "handshake", desc: meta.whyChoose[4] || defaultChooseDesc[4] },
     { title: "2-Year Warranty", icon: "security", desc: defaultChooseDesc[5] }
+  ];
+
+  const whyChooseImages = [
+    benchImg,
+    welcome2,
+    gbg1,
+    carShelterImg,
+    welcome1,
+    benchPlanterImg
+  ];
+
+  const whyChooseBenefits = [
+    [
+      "Engineered with 100% recycled plastic & wood fibers",
+      "Sourced from certified eco-friendly manufacturing units",
+      "Zero hazardous chemicals or deforestation impact"
+    ],
+    [
+      "Durable construction with 15–20+ year lifespan",
+      "UV-resistant formulation prevents fading & cracking",
+      "Engineered to withstand intense weather & heavy foot traffic"
+    ],
+    [
+      "Fully compatible with LEED v4, GRIHA & IGBC standards",
+      "Comprehensive environmental product declarations (EPD) provided",
+      "Earns maximum carbon offset and material recycling points"
+    ],
+    [
+      "Direct-from-factory logistics within 2–4 weeks",
+      "Pre-assembled components minimize site installation time",
+      "Real-time tracking and dedicated project managers"
+    ],
+    [
+      "Design consultation and 2D/3D layout rendering support",
+      "Professional installation anchoring and safety testing",
+      "Post-handover inspection and care guidelines"
+    ],
+    [
+      "Comprehensive coverage against structural degradation",
+      "Backed by certified ISO 9001:2015 quality control",
+      "Dedicated customer service hotline for swift replacements"
+    ]
   ];
 
   // Additional installations
@@ -863,6 +944,16 @@ const ProjectsDetail = () => {
 
       {/* Why Choose Section */}
       <section className="reveal-section py-24 px-margin-mobile md:px-margin-desktop bg-[#F7F4EF]">
+        <style>{`
+          @keyframes fadeInChoose {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fade-in-choose {
+            animation: fadeInChoose 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+        `}</style>
+
         <div className="max-w-container-max mx-auto">
           <div className="mb-16 text-center space-y-4 reveal-up flex flex-col items-center">
             <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
@@ -873,16 +964,79 @@ const ProjectsDetail = () => {
             </h2>
             <div className="w-24 h-1 bg-craftsman-gold"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          {/* Option A Horizontal Scrollable Tab Bar */}
+          <div className="flex overflow-x-auto md:flex-wrap md:justify-center gap-2.5 border-b border-outline-variant/60 pb-4 mb-8 md:mb-12 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 scrollbar-none">
             {whyChooseItems.map((item, idx) => (
-              <div key={idx} className="p-8 bg-white border border-outline-variant hover:shadow-lg transition-all duration-300 flex flex-col text-left reveal-up">
-                <div className="w-12 h-12 bg-forest-green flex items-center justify-center text-white mb-6">
-                  <span className="material-symbols-outlined">{item.icon}</span>
-                </div>
-                <h3 className="font-headline-md text-lg text-forest-green font-bold mb-4">{item.title}</h3>
-                <p className="font-body-md text-on-surface-variant text-sm leading-relaxed">{item.desc}</p>
-              </div>
+              <button
+                key={idx}
+                onClick={() => setActiveWhyChooseIdx(idx)}
+                className={`flex items-center gap-2.5 px-4 md:px-6 py-3 border-b-2 transition-all duration-300 font-label-technical text-[10px] md:text-xs font-bold uppercase tracking-wider shrink-0 cursor-pointer ${
+                  idx === activeWhyChooseIdx
+                    ? "border-craftsman-gold text-craftsman-gold bg-craftsman-gold/5"
+                    : "border-transparent text-on-surface-variant hover:text-deep-ink hover:bg-surface-container-low"
+                }`}
+              >
+                <span className="material-symbols-outlined text-lg md:text-xl">{item.icon}</span>
+                <span className="whitespace-nowrap">{item.title}</span>
+              </button>
             ))}
+          </div>
+
+          {/* Active Detail Showcase Card */}
+          <div
+            key={activeWhyChooseIdx}
+            className="animate-fade-in-choose bg-surface-container-low border border-outline-variant rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row items-stretch min-h-[420px]"
+          >
+            {/* Left Side: Showcase Image */}
+            <div className="w-full md:w-1/2 min-h-[250px] md:min-h-auto relative overflow-hidden bg-surface-container-high">
+              <img
+                src={whyChooseImages[activeWhyChooseIdx]}
+                alt={whyChooseItems[activeWhyChooseIdx].title}
+                className="w-full h-full object-cover absolute inset-0 transition-transform duration-700 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div className="absolute bottom-6 left-6 flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                <span className="w-2 h-2 rounded-full bg-craftsman-gold animate-pulse"></span>
+                <span className="font-label-technical text-[10px] text-white uppercase tracking-widest font-semibold font-bold">Design Standard</span>
+              </div>
+            </div>
+
+            {/* Right Side: Content Details */}
+            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-left space-y-6">
+              <div className="flex items-center justify-between border-b border-outline-variant/60 pb-4">
+                <span className="font-label-technical text-xs font-bold text-craftsman-gold uppercase tracking-widest">
+                  Specification 0{activeWhyChooseIdx + 1} / 06
+                </span>
+                <div className="w-10 h-10 bg-forest-green/10 text-forest-green flex items-center justify-center rounded-full">
+                  <span className="material-symbols-outlined text-xl">{whyChooseItems[activeWhyChooseIdx].icon}</span>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-headline-md text-xl md:text-2xl text-deep-ink font-bold mb-3">
+                  {whyChooseItems[activeWhyChooseIdx].title}
+                </h3>
+                <p className="font-body-md text-on-surface-variant text-sm md:text-base leading-relaxed">
+                  {whyChooseItems[activeWhyChooseIdx].desc}
+                </p>
+              </div>
+
+              {/* Specification Bullet Points */}
+              <div className="space-y-3 pt-2">
+                <h4 className="font-label-technical text-[10px] text-forest-green uppercase tracking-widest font-bold">
+                  Key Developer Advantages
+                </h4>
+                <div className="grid grid-cols-1 gap-2.5">
+                  {whyChooseBenefits[activeWhyChooseIdx].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2.5 text-sm text-on-surface-variant">
+                      <span className="material-symbols-outlined text-craftsman-gold text-base shrink-0 mt-0.5 font-bold">check_circle</span>
+                      <span className="font-body-md text-xs md:text-sm leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
