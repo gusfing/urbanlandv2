@@ -537,6 +537,20 @@ const ProjectsDetail = () => {
     }
   };
 
+  const desktopSolutionsRef = useRef(null);
+
+  const scrollDesktopSolutions = (direction) => {
+    if (!desktopSolutionsRef.current) return;
+    const container = desktopSolutionsRef.current;
+    if (container.children.length > 0) {
+      const cardWidth = container.children[0].offsetWidth + 32;
+      container.scrollBy({
+        left: direction === "left" ? -cardWidth : cardWidth,
+        behavior: "smooth"
+      });
+    }
+  };
+
   if (!meta) return null;
 
   const unitsCount = deliveredUnitsMap[segment] || "150+";
@@ -814,25 +828,45 @@ const ProjectsDetail = () => {
       <section className="reveal-section py-24 px-margin-mobile md:px-margin-desktop bg-[#EFEDE8]">
         <div className="max-w-container-max mx-auto">
 
-          <div className="mb-16 text-left space-y-4 reveal-up">
-            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-              Green Solutions
-            </span>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink">
-              Green Outdoor Furniture Solutions
-            </h2>
-            <div className="w-24 h-1 bg-craftsman-gold"></div>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl pt-2">
-              Precision engineered for {meta.title}
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 reveal-up">
+            <div className="space-y-4 text-left">
+              <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
+                Green Solutions
+              </span>
+              <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink">
+                Green Outdoor Furniture Solutions
+              </h2>
+              <div className="w-24 h-1 bg-craftsman-gold"></div>
+              <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl pt-2">
+                Precision engineered for {meta.title}
+              </p>
+            </div>
+            {/* Desktop Slider Controls */}
+            <div className="hidden md:flex gap-3">
+              <button
+                onClick={() => scrollDesktopSolutions("left")}
+                className="w-12 h-12 rounded-full border border-forest-green/20 flex items-center justify-center text-forest-green hover:bg-forest-green hover:text-[#EFEDE8] hover:border-forest-green transition-all duration-300 cursor-pointer shadow-sm active:scale-95"
+              >
+                <span className="material-symbols-outlined font-bold">arrow_back</span>
+              </button>
+              <button
+                onClick={() => scrollDesktopSolutions("right")}
+                className="w-12 h-12 rounded-full border border-forest-green/20 flex items-center justify-center text-forest-green hover:bg-forest-green hover:text-[#EFEDE8] hover:border-forest-green transition-all duration-300 cursor-pointer shadow-sm active:scale-95"
+              >
+                <span className="material-symbols-outlined font-bold">arrow_forward</span>
+              </button>
+            </div>
           </div>
 
-          {/* Desktop View */}
-          <div className="hidden md:flex flex-wrap justify-center gap-8">
+          {/* Desktop View (Horizontal Carousel Slider) */}
+          <div
+            ref={desktopSolutionsRef}
+            className="hidden md:flex overflow-x-auto snap-x snap-mandatory gap-8 pb-6 scrollbar-none scroll-smooth -mx-margin-desktop px-margin-desktop"
+          >
             {meta.solutions.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl overflow-hidden border border-outline-variant hover:shadow-xl hover:border-craftsman-gold/40 hover:-translate-y-1 transition-all duration-300 flex flex-col text-left w-full md:w-[calc(33.33%-1.5rem)] min-w-[300px] reveal-up"
+                className="bg-white rounded-2xl overflow-hidden border border-outline-variant hover:shadow-xl hover:border-craftsman-gold/40 hover:-translate-y-1 transition-all duration-300 flex flex-col text-left w-[calc(33.333%-1.33rem)] shrink-0 snap-align-start reveal-up"
               >
                 {/* Product Image Container */}
                 <div className="w-full h-56 relative overflow-hidden bg-surface-container-high">
