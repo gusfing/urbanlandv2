@@ -323,47 +323,6 @@ const FAQ = () => {
 
         </div>
       </section>
-
-      {/* Final CTA Banner */}
-      <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-12 relative z-10">
-        <div className="bg-forest-green rounded-[2.5rem] p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
-          {/* Subtle Overlay Pattern */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none"
-            style={{
-              backgroundImage: "radial-gradient(#ffffff 1px, transparent 1px)",
-              backgroundSize: "40px 40px"
-            }}
-          />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(201,168,76,0.15),transparent_60%)] pointer-events-none" />
-          
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block mb-4">
-              Connect
-            </span>
-            <h2 className="font-headline-xl text-headline-xl text-white mb-6">
-              Still Have Questions?
-            </h2>
-            <p className="font-body-lg text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Our technical team is ready to provide specific engineering answers and design consultations for
-              your upcoming urban project.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-              <Link
-                to="/contact"
-                className="bg-white text-forest-green px-8 py-4.5 font-label-technical text-xs font-bold uppercase tracking-widest hover:bg-craftsman-gold hover:text-white transition-all shadow-lg rounded-full flex items-center gap-2"
-              >
-                Get in Touch With Us <span className="material-symbols-outlined">arrow_forward</span>
-              </Link>
-              <Link
-                to="/resources/downloads"
-                className="border-2 border-craftsman-gold text-craftsman-gold px-8 py-4 font-label-technical text-xs font-bold uppercase tracking-widest hover:bg-craftsman-gold/10 transition-all rounded-full flex items-center gap-2"
-              >
-                Download Master Catalogue <span className="material-symbols-outlined">download</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
