@@ -39,33 +39,33 @@ const AboutUs = () => {
             ✦ About Our Company
           </span>
           <h1 className="font-display-lg-mobile text-4xl md:font-display-lg md:text-6xl lg:text-7xl text-white max-w-4xl uppercase font-bold tracking-tight">
-            Building Sustainable Outdoor Spaces for Tomorrow
+            About Urbanland Products
           </h1>
           <p className="font-body-lg text-white/80 max-w-3xl mt-2 leading-relaxed">
-            Urbanland Products designs and manufactures premium outdoor furniture and urban infrastructure solutions that combine durability, sustainability, and timeless design for India's evolving landscapes.
+            Urbanland Products is a Made-in-India manufacturer of premium sustainable outdoor furniture, including benches, planter boxes, bus shelters, litter bins, pergolas, and custom urban solutions for projects across India.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mt-4">
             <Link
               to="/products"
-              className="bg-craftsman-gold text-charcoal-industrial px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold hover:bg-white transition-all duration-300 rounded-[4px] no-underline"
+              className="bg-craftsman-gold text-charcoal-industrial px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold hover:bg-white transition-all duration-300 rounded-[4px] no-underline flex items-center gap-2"
             >
-              Explore Our Products
+              Explore Our Products <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
             </Link>
             <Link
               to="/contact"
               className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold hover:bg-white hover:text-charcoal-industrial transition-all duration-300 rounded-[4px] no-underline"
             >
-              Contact Our Team
+              Request a Quote
             </Link>
           </div>
           
           <div className="flex flex-wrap justify-center gap-3 mt-8 font-label-caps text-xs text-craftsman-gold">
             {[
-              "Made in India",
               "ISO 9001:2015 Certified",
               "2-Year Warranty",
-              "50+ Projects Delivered"
+              "50+ Projects Delivered",
+              "Pan-India Supply"
             ].map((badge, idx) => (
               <span key={idx} className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-craftsman-gold/30">
                 <span className="material-symbols-outlined text-architectural-gold text-[16px]">check_circle</span> {badge}
