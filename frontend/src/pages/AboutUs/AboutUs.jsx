@@ -125,7 +125,7 @@ const AboutUs = () => {
               <img
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
                 src={getOptimizedImageUrl(
-                  "https://lh3.googleusercontent.com/aida-public/AB6AXuDR3s1qp4gGvJths9T-z1i3P_jRxLjlYgJl6wt4RvbCELAXwHeMKUtQEfLkJAH2iUiFBTeSH-r64ngm4VJPrHL6uEO4nol7vzUcpmUuM6Ls7IiHeNpZnARoaUTLruRtNpmAhpxTgKlf7nrPwDJQaTwtW96ESZnQPN4z0_ALJKm04nMfo5pIgbqLOpOdQgbE1KZDG14Fc-1NQtDz7KyUgfTd1seE4u12PGyPSnTHQmKBs8_Fv7GRZCGaE1DnhX0UEcjijIHhfuPYeHgx"
+                  "https://img.youtube.com/vi/G933XopJkMw/maxresdefault.jpg"
                 )}
                 alt="Manufacturing story video thumbnail."
               />
