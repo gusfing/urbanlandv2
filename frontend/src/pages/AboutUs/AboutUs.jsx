@@ -21,61 +21,59 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="w-full bg-[#fcf9f4] text-[#1c1c19] font-body-md overflow-x-hidden pt-20">
+    <div className="w-full bg-[#fcf9f4] text-[#1c1c19] font-body-md overflow-x-hidden pt-0">
       {/* Hero Section */}
-      <header className="relative w-full h-[70vh] min-h-[500px] md:h-[921px] md:min-h-[600px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div
-            className="w-full h-full bg-cover bg-center select-none"
-            style={{
-              backgroundImage: `url(${getOptimizedImageUrl(
-                "https://lh3.googleusercontent.com/aida-public/AB6AXuBJaj7ZzTk-LfCZLjEDK6N94vTzH-S2nEuRAZ5EDYJg5EyUydp792DQpT9ozD5Ht_rdo68jh9F0TMbZfIsSu0cmzz6FpnJQbpSRFhmlKXvY-JoFLIBxb5xvf5GCWX9S31quwdBRO6oK3FsmHQeldHtajsExOnCgNvI2TEEowFH3uXkbTAJK3YsNUMbDibwSH55h1MhHox8lTJvrVxyQBb5-CTDORHb3aF6YtKD0Zvw21p7AIEauYMF-_gBdklRSomBLYvtUGdRAIL3w"
-              )})`
-            }}
-            data-alt="A sweeping wide-angle architectural shot of a contemporary urban plaza at sunset featuring premium Urbanland wood-composite benches."
-          />
-          <div className="absolute inset-0 bg-industrial-charcoal/40" />
-        </div>
-        <div className="relative z-10 w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-white">
-          <div className="max-w-3xl">
-            <h1 className="font-display-lg-mobile text-3xl sm:font-display-lg sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight drop-shadow-md uppercase font-bold tracking-tight">
-              Building Sustainable Outdoor Spaces for Tomorrow
-            </h1>
-            <p className="font-body-lg text-sm sm:text-base md:text-lg mb-10 opacity-90 leading-relaxed max-w-2xl">
-              Urbanland Products designs and manufactures premium outdoor furniture and urban infrastructure solutions that combine durability, sustainability, and timeless design for India's evolving landscapes.
-            </p>
-            <div className="flex flex-wrap gap-4 mb-12">
-              <Link
-                to="/products"
-                className="bg-forest-deep text-white px-8 py-4 font-label-md text-xs uppercase tracking-widest flex items-center gap-2 hover:bg-primary transition-colors no-underline rounded-[4px] font-bold"
-              >
-                Explore Our Products{" "}
-                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-              </Link>
-              <Link
-                to="/contact"
-                className="border-2 border-architectural-gold text-architectural-gold px-8 py-4 font-label-md text-xs uppercase tracking-widest hover:bg-architectural-gold/10 transition-colors no-underline rounded-[4px] font-bold"
-              >
-                Contact Our Team
-              </Link>
-            </div>
-            {/* Trust Badges */}
-            <div className="flex flex-wrap gap-x-8 gap-y-4 pt-8 border-t border-white/20">
-              {[
-                "Made in India",
-                "ISO 9001:2015 Certified",
-                "2-Year Warranty",
-                "50+ Projects Delivered"
-              ].map((badge, idx) => (
-                <div key={idx} className="flex items-center gap-2 font-label-md text-xs uppercase tracking-wider font-semibold">
-                  <span className="material-symbols-outlined text-architectural-gold text-[18px]">check_circle</span>{" "}
-                  {badge}
-                </div>
-              ))}
-            </div>
+      <section className="w-full relative bg-charcoal-industrial text-white overflow-hidden py-24 md:py-32 flex flex-col items-center">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-30 select-none pointer-events-none"
+          style={{
+            backgroundImage: `url(${getOptimizedImageUrl(
+              "https://lh3.googleusercontent.com/aida-public/AB6AXuBJaj7ZzTk-LfCZLjEDK6N94vTzH-S2nEuRAZ5EDYJg5EyUydp792DQpT9ozD5Ht_rdo68jh9F0TMbZfIsSu0cmzz6FpnJQbpSRFhmlKXvY-JoFLIBxb5xvf5GCWX9S31quwdBRO6oK3FsmHQeldHtajsExOnCgNvI2TEEowFH3uXkbTAJK3YsNUMbDibwSH55h1MhHox8lTJvrVxyQBb5-CTDORHb3aF6YtKD0Zvw21p7AIEauYMF-_gBdklRSomBLYvtUGdRAIL3w"
+            )})`
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal-industrial/80 to-charcoal-industrial" />
+        
+        <div className="relative w-full max-w-container-max px-margin-mobile md:px-margin-desktop flex flex-col items-center text-center gap-4">
+          <span className="font-label-caps tracking-[0.2em] uppercase font-bold text-xs text-craftsman-gold bg-craftsman-gold/10 px-4 py-2 rounded-full border border-craftsman-gold/30">
+            ✦ About Our Company
+          </span>
+          <h1 className="font-display-lg-mobile text-4xl md:font-display-lg md:text-6xl lg:text-7xl text-white max-w-4xl uppercase font-bold tracking-tight">
+            Building Sustainable Outdoor Spaces for Tomorrow
+          </h1>
+          <p className="font-body-lg text-white/80 max-w-3xl mt-2 leading-relaxed">
+            Urbanland Products designs and manufactures premium outdoor furniture and urban infrastructure solutions that combine durability, sustainability, and timeless design for India's evolving landscapes.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4 mt-4">
+            <Link
+              to="/products"
+              className="bg-craftsman-gold text-charcoal-industrial px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold hover:bg-white transition-all duration-300 rounded-[4px] no-underline"
+            >
+              Explore Our Products
+            </Link>
+            <Link
+              to="/contact"
+              className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold hover:bg-white hover:text-charcoal-industrial transition-all duration-300 rounded-[4px] no-underline"
+            >
+              Contact Our Team
+            </Link>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-3 mt-8 font-label-caps text-xs text-craftsman-gold">
+            {[
+              "Made in India",
+              "ISO 9001:2015 Certified",
+              "2-Year Warranty",
+              "50+ Projects Delivered"
+            ].map((badge, idx) => (
+              <span key={idx} className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-craftsman-gold/30">
+                <span className="material-symbols-outlined text-architectural-gold text-[16px]">check_circle</span> {badge}
+              </span>
+            ))}
           </div>
         </div>
-      </header>
+      </section>
 
       {/* Meet the Founder */}
       <section className="py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
@@ -108,29 +106,35 @@ const AboutUs = () => {
               Watch Founder Story
             </button>
           </div>
-          <div className="order-1 md:order-2 relative h-[300px] md:h-[450px] w-full rounded-lg overflow-hidden shadow-2xl group cursor-pointer" onClick={() => setIsVideoOpen(true)}>
-            <img
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              src={getOptimizedImageUrl(
-                "https://img.youtube.com/vi/G933XopJkMw/maxresdefault.jpg"
-              )}
-              alt="Manufacturing story video thumbnail."
-            />
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-              <div className="relative flex items-center justify-center">
-                {/* Pulsing Outer Rings */}
-                <div className="absolute w-24 h-24 rounded-full bg-red-600/30 animate-ping duration-1000"></div>
-                <div className="absolute w-20 h-20 rounded-full bg-red-600/40 animate-pulse"></div>
-                {/* Main Play Button */}
-                <div className="relative w-16 h-16 md:w-20 md:h-20 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 transform group-hover:scale-110">
-                  <span className="material-symbols-outlined text-3xl md:text-4xl translate-x-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>
-                    play_arrow
-                  </span>
-                </div>
-              </div>
+          <div className="order-1 md:order-2 grid grid-cols-12 gap-4 relative">
+            <div className="col-span-8 h-64 md:h-96 bg-surface-container relative z-10 overflow-hidden rounded-[2px] shadow-sm">
+              <img
+                className="w-full h-full object-cover"
+                src={getOptimizedImageUrl(
+                  "https://lh3.googleusercontent.com/aida-public/AB6AXuDm5XSys0gybXBlcF-qyh5z00D4Ppdw369F6iNuxj2HK4hYzvU4UCoIu3ycvS7KfnfgUgrpM0VhhoAWVpLhPecxLjO0TwmlCW1ZJP2pLzgpHvapEajOK-7TjoomLe_PXXsOfz0wNGT-CAXOvifTGd5v0NiRAgF1NyAUJ0Reymlp5_0EOdU2LR-U2mT08ocIiXtyqdxDz4NJd4uU40w80p2vLH1IP_zq9M_93vOrrzX31ZGzPOse-m55kWpzt8i5nyDC3RF_RAwmsqWQ"
+                )}
+                alt="Raj Shekhar, founder of Urbanland Products."
+              />
             </div>
-            <div className="absolute -top-4 -right-4 w-32 h-32 border-t-2 border-r-2 border-architectural-gold/30 hidden md:block pointer-events-none" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 border-b-2 border-l-2 border-architectural-gold/30 hidden md:block pointer-events-none" />
+            <div
+              onClick={() => setIsVideoOpen(true)}
+              className="col-span-10 col-start-3 -mt-16 md:-mt-32 relative z-20 aspect-video bg-industrial-charcoal flex items-center justify-center group cursor-pointer shadow-xl rounded-[2px] overflow-hidden"
+            >
+              <img
+                className="absolute inset-0 w-full h-full object-cover opacity-60"
+                src={getOptimizedImageUrl(
+                  "https://img.youtube.com/vi/G933XopJkMw/maxresdefault.jpg"
+                )}
+                alt="Manufacturing story video thumbnail."
+              />
+              <span
+                className="material-symbols-outlined text-white text-5xl md:text-6xl group-hover:scale-110 transition-transform"
+                style={{ fontVariationSettings: "'FILL' 1" }}
+              >
+                play_circle
+              </span>
+            </div>
+            <div className="absolute -top-4 -right-4 w-32 h-32 border-t-2 border-r-2 border-architectural-gold/30 hidden md:block" />
           </div>
         </div>
       </section>
@@ -363,8 +367,8 @@ const AboutUs = () => {
                 desc: "Guaranteed durability and peace of mind for every installation."
               }
             ].map((item, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="flex items-start gap-4 p-5 rounded-[4px] hover:bg-white/5 transition-all duration-300 hover:-translate-y-1"
               >
                 <span className="material-symbols-outlined text-architectural-gold text-3xl shrink-0">
@@ -462,7 +466,7 @@ const AboutUs = () => {
 
       {/* Video Story Modal */}
       {isVideoOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 transition-all duration-300 ease-out animate-fade-in"
           onClick={() => setIsVideoOpen(false)}
         >
@@ -482,7 +486,7 @@ const AboutUs = () => {
               animation: popUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
             }
           `}</style>
-          <div 
+          <div
             className="relative w-full max-w-[92vw] lg:max-w-6xl aspect-video bg-black shadow-2xl border border-white/10 rounded-lg overflow-hidden transform transition-all duration-500 scale-100 ease-out animate-pop-up"
             onClick={(e) => e.stopPropagation()}
           >
