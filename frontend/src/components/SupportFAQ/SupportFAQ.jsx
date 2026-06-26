@@ -56,9 +56,6 @@ const SupportFAQ = ({ support = DEFAULT_SUPPORT, faq = DEFAULT_FAQ, showHero = f
             {showHero && (
                 <section className="bg-surface py-20 border-b border-outline-variant/10 text-center">
                     <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
-                        <span className="inline-block px-4 py-1 bg-surface-container text-forest-green font-label-technical text-xs uppercase tracking-widest mb-6">
-                            Support Center
-                        </span>
 
                         {/* Dynamic Breadcrumbs (Centered) */}
                         <nav className="flex items-center justify-center select-none text-[9px] sm:text-[10px] font-black uppercase tracking-widest gap-2 bg-surface-container-low text-on-surface/80 border border-outline-variant/30 px-4 py-2.5 rounded-full w-fit mx-auto mb-8 backdrop-blur-md shadow-sm">
