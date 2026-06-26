@@ -54,7 +54,7 @@ const SupportFAQ = ({ support = DEFAULT_SUPPORT, faq = DEFAULT_FAQ, showHero = f
     return (
         <div className="w-full">
             {showHero && (
-                <section className="bg-surface py-20 border-b border-outline-variant/10 text-center">
+                <section className="bg-surface pt-32 pb-20 border-b border-outline-variant/10 text-center">
                     <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
 
                         {/* Dynamic Breadcrumbs (Centered) */}

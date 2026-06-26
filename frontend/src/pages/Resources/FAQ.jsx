@@ -131,7 +131,7 @@ const FAQ = () => {
       <div className="absolute top-[40%] left-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_bottom_left,rgba(201,168,76,0.04),transparent_65%)] pointer-events-none z-0" />
 
       {/* Dynamic Hero Section */}
-      <section className="bg-surface py-20 border-b border-outline-variant/10 text-center">
+      <section className="bg-surface pt-32 pb-20 border-b border-outline-variant/10 text-center">
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
 
           {/* Dynamic Breadcrumbs (Centered) */}
