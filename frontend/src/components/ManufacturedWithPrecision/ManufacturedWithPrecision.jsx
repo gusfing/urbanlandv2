@@ -101,7 +101,7 @@ const ManufacturedWithPrecision = () => {
                             <video
                                 ref={videoRef}
                                 className="w-full h-full object-cover"
-                                src={manufacturingVideo}
+                                src="https://urbanlandproducts.com/wp-content/uploads/2026/06/homepage-video-bench.mp4"
                                 poster={welcome1}
                                 muted
                                 loop
