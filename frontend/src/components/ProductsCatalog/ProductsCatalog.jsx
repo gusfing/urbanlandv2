@@ -465,7 +465,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
               Array.from({ length: 4 }).map((_, idx) => (
                 <div
                   key={idx}
-                  className="min-w-[360px] sm:min-w-[420px] md:min-w-[500px] aspect-[4/5] bg-white rounded-[37.5px] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] animate-pulse select-none"
+                  className="min-w-[80vw] sm:min-w-[420px] md:min-w-[500px] aspect-[4/5] bg-white rounded-[37.5px] p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-black/[0.02] animate-pulse select-none"
                 >
                   <div className="flex justify-between items-start gap-4">
                     <div className="h-6 w-32 bg-black/10 rounded-md" />
@@ -487,8 +487,8 @@ const ProductsCatalog = ({ showTitle = true }) => {
                   onClick={() => setSelectedProduct(product)}
                   className={`catalog-card bg-white rounded-[37.5px] p-4 md:p-8 flex flex-col justify-between items-stretch snap-start shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] transition-all duration-500 group cursor-pointer block aspect-auto md:aspect-[4/5] ${
                     filteredProducts.length === 1 
-                      ? 'w-[360px] sm:w-[420px] md:w-[500px] shrink-0' 
-                      : 'min-w-[360px] sm:min-w-[420px] md:min-w-[500px]'
+                      ? 'w-[80vw] sm:w-[420px] md:w-[500px] shrink-0' 
+                      : 'min-w-[80vw] sm:min-w-[420px] md:min-w-[500px]'
                   }`}
                 >
                   {/* DESKTOP CARD LAYOUT */}

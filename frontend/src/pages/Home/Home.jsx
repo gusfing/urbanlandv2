@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Hero from '../../components/Hero/Hero'
 import ProductsCatalog from '../../components/ProductsCatalog/ProductsCatalog'
 import Materials from '../../components/Materials/Materials'
@@ -14,6 +14,23 @@ import InsightsResources from '../../components/InsightsResources/InsightsResour
 import HomeFAQ from '../../components/HomeFAQ/HomeFAQ'
 
 const Home = () => {
+    useEffect(() => {
+        const revealUpObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.05, rootMargin: "0px 0px -50px 0px" });
+
+        const revealUps = document.querySelectorAll('.reveal-up');
+        revealUps.forEach(el => revealUpObserver.observe(el));
+
+        return () => {
+            revealUps.forEach(el => revealUpObserver.unobserve(el));
+        };
+    }, []);
+
     return (
         <div>
             <Hero />

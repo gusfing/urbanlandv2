@@ -120,7 +120,7 @@ const Hero = () => {
 
               {/* Slide Content */}
               <div className="relative z-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full h-full flex flex-col justify-center text-left">
-                <div className="max-w-3xl space-y-4 sm:space-y-6">
+                <div className={`max-w-3xl space-y-4 sm:space-y-6 transition-all duration-700 delay-300 transform ${isActive ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"}`}>
                   {index === 0 ? (
                     <h1 className="font-display-lg text-[28px] sm:text-display-lg-mobile md:text-display-lg leading-tight uppercase">
                       {slide.title}
@@ -234,7 +234,7 @@ const Hero = () => {
       <section className="py-8 sm:py-stack-xl px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-0 relative">
           {/* Left 60%: Visual Anchor */}
-          <div className="w-full lg:w-3/5 z-0">
+          <div className="w-full lg:w-3/5 z-0 reveal-up">
             <div className="relative overflow-hidden rounded-[24px] smooth-shadow group">
               <img
                 alt="Luxury outdoor architectural project featuring modern seating and premium landscaping"
@@ -245,7 +245,7 @@ const Hero = () => {
             </div>
           </div>
           {/* Right 40%: Content Card (Overlapping) */}
-          <div className="w-full lg:w-2/5 lg:-ml-20 mt-6 lg:mt-20 z-10">
+          <div className="w-full lg:w-2/5 lg:-ml-20 mt-6 lg:mt-20 z-10 reveal-up" style={{ transitionDelay: '150ms' }}>
             <div className="bg-surface-container-lowest p-6 sm:p-8 md:p-12 rounded-[24px] smooth-shadow border border-industrial-charcoal/5">
               <span className="font-label-md text-xs sm:text-label-md text-architectural-gold uppercase tracking-[0.2em] block mb-4">
                 ABOUT URBANLAND
@@ -307,7 +307,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
 
             {/* Left side: Heading */}
-            <div className="lg:col-span-5 space-y-4">
+            <div className="lg:col-span-5 space-y-4 reveal-up">
               <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
                 WHY URBANLAND
               </span>
@@ -321,7 +321,7 @@ const Hero = () => {
             </div>
 
             {/* Right side: Accordion list */}
-            <div className="lg:col-span-7 border-t border-white/10">
+            <div className="lg:col-span-7 border-t border-white/10 reveal-up" style={{ transitionDelay: '150ms' }}>
               {[
                 {
                   num: "01",
