@@ -24,7 +24,7 @@ const ManufacturedWithPrecision = () => {
                 }
             },
             {
-                threshold: 0.25,
+                threshold: 0.05,
             }
         );
 
@@ -102,11 +102,10 @@ const ManufacturedWithPrecision = () => {
                                 ref={videoRef}
                                 className="w-full h-full object-cover"
                                 src="https://urbanlandproducts.com/wp-content/uploads/2026/06/homepage-video-bench.mp4"
-                                poster={welcome1}
                                 muted
                                 loop
                                 playsInline
-                                preload="none"
+                                preload="auto"
                             />
 
                             {/* Shading overlay */}
