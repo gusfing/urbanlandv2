@@ -455,6 +455,71 @@ const ProductAdmin = () => {
     }
   };
 
+  // Upload image to Supabase
+  const handleImageUpload = async (productId, file) => {
+    if (!file) return;
+    try {
+      showNotification("Uploading image...");
+      
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${productId}-${Date.now()}.${fileExt}`;
+      const filePath = `${fileName}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from('urbanland-products')
+        .upload(filePath, file);
+
+      if (uploadError) throw uploadError;
+
+      const { data: { publicUrl } } = supabase.storage
+        .from('urbanland-products')
+        .getPublicUrl(filePath);
+
+      const { error: updateError } = await supabase
+        .from('products')
+        .update({ image: publicUrl })
+        .eq('id', productId);
+
+      if (updateError) throw updateError;
+
+      const updated = dbProducts.map((p) => {
+        if (p.id === productId) {
+          return { ...p, image: publicUrl };
+        }
+        return p;
+      });
+      setDbProducts(updated);
+      showNotification("Image uploaded successfully!");
+    } catch (err) {
+      alert("Error uploading image: " + err.message);
+    }
+  };
+
+  // Remove image
+  const handleRemoveImage = async (productId) => {
+    if (window.confirm("Are you sure you want to remove the image for this product?")) {
+      try {
+        const { error } = await supabase
+          .from('products')
+          .update({ image: null })
+          .eq('id', productId);
+
+        if (error) throw error;
+
+        const updated = dbProducts.map((p) => {
+          if (p.id === productId) {
+            return { ...p, image: null };
+          }
+          return p;
+        });
+        setDbProducts(updated);
+        showNotification("Image removed successfully!");
+      } catch (err) {
+        alert("Error removing image: " + err.message);
+      }
+    }
+  };
+
   // Open add product modal
   const handleOpenAddModal = () => {
     setFormId("");
@@ -863,6 +928,32 @@ import wickerFurnitureHero from '../assets/Wicker_Furniture.jpeg';`;
                     {/* Controls (Category & Sorting) */}
                     <div className="flex flex-wrap items-center gap-4 w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 pt-4 md:pt-0 border-white/5">
                       
+                      {/* Image controllers */}
+                      <div className="flex flex-col gap-1 items-start md:items-end">
+                        <label className="text-[8px] font-bold uppercase tracking-widest text-white/40 self-start md:self-end">Image</label>
+                        <div className="flex items-center gap-1.5">
+                          <input type="file" id={`upload-${prod.id}`} hidden accept="image/*" onChange={(e) => handleImageUpload(prod.id, e.target.files[0])} />
+                          <button
+                            onClick={() => document.getElementById(`upload-${prod.id}`).click()}
+                            title="Upload Image"
+                            className="p-2 bg-[#142216] hover:bg-[#C9A84C] hover:text-[#142216] rounded-lg transition-colors cursor-pointer text-[10px] border border-white/5 select-none"
+                          >
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                            </svg>
+                          </button>
+                          <button
+                            onClick={() => handleRemoveImage(prod.id)}
+                            title="Remove Image"
+                            className="p-2 bg-[#142216] hover:bg-red-800/80 hover:text-white rounded-lg transition-colors cursor-pointer text-[10px] border border-white/5 select-none"
+                          >
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+
                       {/* Move to another category */}
                       <div className="flex flex-col gap-1">
                         <label className="text-[8px] font-bold uppercase tracking-widest text-white/40">Category</label>
