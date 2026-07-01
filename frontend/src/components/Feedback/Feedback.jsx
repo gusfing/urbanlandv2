@@ -25,7 +25,7 @@ const Feedback = () => {
 
             <div className="max-w-7xl mx-auto text-center relative z-10">
                 {/* Header block */}
-                <div className="mb-16">
+                <div className="mb-16 reveal-up">
                     <span className="font-label-technical text-craftsman-gold tracking-[0.25em] uppercase font-semibold text-xs block mb-3">
                         — Client Testimonials
                     </span>

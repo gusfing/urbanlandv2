@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
-import AdvantageCTA from "../../components/AdvantageCTA/AdvantageCTA";
 import { getOptimizedImageUrl } from "../../utils/image";
 
 const trustItems = [
@@ -456,15 +455,7 @@ const ResourcesHub = () => {
       </section>
 
       {/* Final CTA */}
-      <AdvantageCTA
-        title="Ready to Transform Your Space with Sustainable Outdoor Furniture?"
-        ctaText="Get in Touch With Our Team"
-        ctaLink="/contact"
-        brochureText="Download Master Catalogue"
-        brochureLink="/resources/downloads"
-        statsText="Support biophilic architectural design, earn IGBC points, and reduce deforestation with our premium WPC and NFC solutions."
-      />
-    </div>
+          </div>
   );
 };
 

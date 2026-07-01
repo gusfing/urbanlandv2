@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import { getOptimizedImageUrl } from "../../utils/image";
+import Breadcrumbs from "../../components/ui/Breadcrumbs";
+import SupportFAQ from "../../components/SupportFAQ/SupportFAQ";
 
 const Downloads = () => {
   const [formData, setFormData] = useState({ name: "", email: "", company: "", phone: "", purpose: "Architect" });
@@ -91,14 +93,15 @@ const Downloads = () => {
             </span>
           </div>
 
-          {/* Dynamic Breadcrumbs (Centered) */}
-          <nav className="flex items-center justify-center select-none text-[9px] sm:text-[10px] font-black uppercase tracking-widest gap-2 bg-white/5 text-white/80 border border-white/10 px-4 py-2.5 rounded-full w-fit mx-auto mb-8 backdrop-blur-md shadow-lg">
-            <Link to="/" className="text-white/60 hover:text-craftsman-gold transition-colors no-underline">Home</Link>
-            <span className="text-white/30">/</span>
-            <Link to="/resources" className="text-white/60 hover:text-craftsman-gold transition-colors no-underline">Resources Hub</Link>
-            <span className="text-white/30">/</span>
-            <span className="text-craftsman-gold font-bold">Downloads</span>
-          </nav>
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Resources Hub', href: '/resources' },
+              { label: 'Downloads' }
+            ]}
+            theme="dark"
+            className="mx-auto mb-8"
+          />
 
           {/* Title */}
           <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-[3.5rem] text-white mb-6 leading-tight max-w-3xl mx-auto tracking-wide font-bold">
@@ -454,39 +457,8 @@ const Downloads = () => {
         </div>
       </section>
 
-      {/* Section 5: Final CTA Section */}
-      <section className="py-20 bg-forest-green text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none select-none">
-          <div className="absolute -right-24 -top-24 w-96 h-96 border border-craftsman-gold rounded-full"></div>
-          <div className="absolute -left-12 -bottom-12 w-64 h-64 border border-craftsman-gold rounded-full"></div>
-        </div>
-        
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center relative z-10">
-          <h2 className="font-headline-xl text-3xl md:text-5xl mb-6 text-white uppercase tracking-tight">
-            Ready to Bring Your Project to Life?
-          </h2>
-          <p className="font-body-lg text-sm md:text-lg text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Whether you're planning a residential community, commercial development, public park, or institutional space, our team is here to help you choose the right outdoor furniture solutions.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link
-              to="/contact"
-              className="w-full sm:w-auto bg-craftsman-gold text-forest-green hover:bg-white hover:text-forest-green px-8 py-5 font-label-technical uppercase tracking-widest text-xs font-bold transition-all duration-300 rounded-sm text-center no-underline flex items-center justify-center gap-2 cursor-pointer"
-            >
-              Contact Us
-              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </Link>
-            <Link
-              to="/contact?subject=quote"
-              className="w-full sm:w-auto border border-white text-white hover:bg-white hover:text-forest-green px-8 py-5 font-label-technical uppercase tracking-widest text-xs font-bold transition-all duration-300 rounded-sm text-center no-underline flex items-center justify-center gap-2 cursor-pointer"
-            >
-              Request a Quote
-              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Section 5: Final CTA & Support FAQ */}
+            <SupportFAQ />
 
       {/* Verification Modal Popup Form */}
       {showModal && (

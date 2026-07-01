@@ -32,13 +32,29 @@ const ProductsHub = () => {
       description: "Explore Urbanland's extensive catalog of premium street furniture including benches, shelters, sheds, planters, wicker lounge, and steel/aluminum furniture in India.",
       og_type: "website"
     });
-    return () => cleanPageSEO();
+
+    // Scroll reveal observer for all reveal classes
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -60px 0px" });
+    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale');
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    return () => {
+      cleanPageSEO();
+      revealEls.forEach(el => revealObserver.unobserve(el));
+    };
   }, []);
 
   return (
     <div className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-32">
       {/* Editorial Header */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-16 reveal-up">
         <p className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-3">— Collection Directories</p>
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-none text-[#1A1A1A] max-w-5xl">
           Engineered for <br/>
@@ -89,7 +105,7 @@ const ProductsHub = () => {
               <Link
                 key={div.id}
                 to={div.path}
-                className="catalog-card bg-white rounded-[37.5px] p-6 sm:p-8 flex flex-col justify-between items-stretch shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] transition-all duration-500 group cursor-pointer no-underline block aspect-[4/5] hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(0,0,0,0.06)]"
+                className={`catalog-card bg-white rounded-[37.5px] p-6 sm:p-8 flex flex-col justify-between items-stretch shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-black/[0.03] transition-all duration-500 group cursor-pointer no-underline block aspect-[4/5] hover:-translate-y-2 hover:shadow-[0_20px_45px_rgba(0,0,0,0.06)] reveal-scale delay-${[100,150,200,100,150,200,100,150,200,100,150,200,100,150,200,100,150,200,100][divisions.indexOf(div)] || 100}`}
               >
                 {/* Header info */}
                 <div className="flex justify-between items-start gap-4">

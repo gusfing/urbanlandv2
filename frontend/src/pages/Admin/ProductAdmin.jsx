@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { products } from "../../constants/productsData";
+import { supabase } from "../../lib/supabaseClient";
 
 // Import original image assets to map resolved URLs back to variable names in JS export
 import benchPlantersImg from "../../assets/products/Product Images/Bench Planter/Make_it_8k_resolution_image_202605170101.jpeg";
@@ -349,8 +350,17 @@ const ProductAdmin = () => {
 
   // Load database on mount
   useEffect(() => {
-    // Read from products array directly (which resolves local storage if set)
-    setDbProducts([...products]);
+    const fetchProducts = async () => {
+      try {
+        const { data, error } = await supabase.from("products").select("*").order("title");
+        if (error) throw error;
+        setDbProducts(data || []);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+        setDbProducts([...products]);
+      }
+    };
+    fetchProducts();
   }, []);
 
   const showNotification = (msg) => {
@@ -409,27 +419,39 @@ const ProductAdmin = () => {
   };
 
   // Change category of product
-  const handleChangeCategory = (productId, newCat) => {
-    const updated = dbProducts.map((p) => {
-      if (p.id === productId) {
-        return {
-          ...p,
-          category: newCat,
-          url: `/product/${p.id}` // maintain URL integrity
-        };
-      }
-      return p;
-    });
-    setDbProducts(updated);
-    showNotification(`Changed product category successfully!`);
+  const handleChangeCategory = async (productId, newCat) => {
+    try {
+      const { error } = await supabase.from("products").update({ category: newCat, url: `/product/${productId}` }).eq("id", productId);
+      if (error) throw error;
+      const updated = dbProducts.map((p) => {
+        if (p.id === productId) {
+          return {
+            ...p,
+            category: newCat,
+            url: `/product/${p.id}` // maintain URL integrity
+          };
+        }
+        return p;
+      });
+      setDbProducts(updated);
+      showNotification(`Changed product category successfully!`);
+    } catch (err) {
+      alert("Error changing category: " + err.message);
+    }
   };
 
   // Delete product
-  const handleDeleteProduct = (productId) => {
+  const handleDeleteProduct = async (productId) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
-      const updated = dbProducts.filter((p) => p.id !== productId);
-      setDbProducts(updated);
-      showNotification("Product deleted successfully!");
+      try {
+        const { error } = await supabase.from("products").delete().eq("id", productId);
+        if (error) throw error;
+        const updated = dbProducts.filter((p) => p.id !== productId);
+        setDbProducts(updated);
+        showNotification("Product deleted successfully!");
+      } catch (err) {
+        alert("Error deleting product: " + err.message);
+      }
     }
   };
 
@@ -484,6 +506,7 @@ const ProductAdmin = () => {
 
     const newProd = {
       id: cleanId,
+      product_id: cleanId, // add product_id
       title: formTitle.trim(),
       line: formLine.trim(),
       category: formCategory,
@@ -496,9 +519,15 @@ const ProductAdmin = () => {
       ...template
     };
 
-    setDbProducts([...dbProducts, newProd]);
-    setIsAddModalOpen(false);
-    showNotification("Product added successfully!");
+    supabase.from("products").insert([newProd]).then(({ error }) => {
+      if (error) {
+        alert("Error adding product: " + error.message);
+      } else {
+        setDbProducts([...dbProducts, newProd]);
+        setIsAddModalOpen(false);
+        showNotification("Product added successfully!");
+      }
+    });
   };
 
   // Open edit product modal
@@ -521,26 +550,36 @@ const ProductAdmin = () => {
       return;
     }
 
-    const updated = dbProducts.map((p) => {
-      if (p.id === editingProduct.id) {
-        return {
-          ...p,
-          title: formTitle.trim(),
-          category: formCategory,
-          image: formImage,
-          gallery: p.gallery[0] === p.image ? [formImage] : p.gallery,
-          line: formLine.trim(),
-          description: formDescription.trim(),
-          url: `/product/${p.id}`
-        };
-      }
-      return p;
-    });
+    const updatedProduct = {
+      title: formTitle.trim(),
+      category: formCategory,
+      image: formImage,
+      line: formLine.trim(),
+      description: formDescription.trim(),
+    };
+    
+    supabase.from("products").update(updatedProduct).eq("id", editingProduct.id).then(({ error }) => {
+      if (error) {
+        alert("Error updating product: " + error.message);
+      } else {
+        const updated = dbProducts.map((p) => {
+          if (p.id === editingProduct.id) {
+            return {
+              ...p,
+              ...updatedProduct,
+              gallery: p.gallery && p.gallery[0] === p.image ? [formImage] : (p.gallery || [formImage]),
+              url: `/product/${p.id}`
+            };
+          }
+          return p;
+        });
 
-    setDbProducts(updated);
-    setIsEditModalOpen(false);
-    setEditingProduct(null);
-    showNotification("Product edited successfully!");
+        setDbProducts(updated);
+        setIsEditModalOpen(false);
+        setEditingProduct(null);
+        showNotification("Product edited successfully!");
+      }
+    });
   };
   // Persist modifications to localStorage
   const handleSavePreview = () => {

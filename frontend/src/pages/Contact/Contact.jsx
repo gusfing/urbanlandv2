@@ -63,7 +63,22 @@ const Contact = () => {
       title: "Contact Urbanland Products | Sustainable Outdoor Furniture Manufacturer",
       description: "Get in touch with Urbanland Products for premium outdoor furniture solutions. Request a quote, discuss your project, or speak with our experts. Pan-India delivery and installation."
     });
-    return () => cleanPageSEO();
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -60px 0px" });
+    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale');
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    return () => {
+      cleanPageSEO();
+      revealEls.forEach(el => revealObserver.unobserve(el));
+    };
   }, []);
 
   useEffect(() => {

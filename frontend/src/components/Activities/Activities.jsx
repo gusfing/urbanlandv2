@@ -32,7 +32,7 @@ const Activities = () => {
         <section id="activities" className="activities-section w-full py-16 p-6 sm:p-8 md:px-16 lg:px-20 relative overflow-hidden bg-background">
             {/* Infinite Scrolling Client logo Marquee */}
             <div className="w-full">
-                <div className="text-center mb-10">
+                <div className="text-center mb-10 reveal-up">
                     <span className="font-label-technical text-craftsman-gold tracking-[0.25em] uppercase font-semibold text-xs block mb-3">
                         Trusted Across India
                     </span>

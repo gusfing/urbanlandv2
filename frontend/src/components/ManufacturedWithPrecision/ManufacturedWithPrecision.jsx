@@ -57,7 +57,7 @@ const ManufacturedWithPrecision = () => {
                         
                         {/* Stats Dashboard Grid */}
                         <div className="flex flex-col gap-8 mb-12">
-                            <div className="flex items-center gap-6 border-b border-white/10 pb-6">
+                            <div className="flex items-center gap-6 border-b border-white/10 pb-6 reveal-scale delay-100">
                                 <span className="text-4xl md:text-5xl font-black text-craftsman-gold font-headline-lg shrink-0 w-28">
                                     20k
                                 </span>
@@ -65,7 +65,7 @@ const ManufacturedWithPrecision = () => {
                                     Sq. Ft. Factory Floor
                                 </span>
                             </div>
-                            <div className="flex items-center gap-6 border-b border-white/10 pb-6">
+                            <div className="flex items-center gap-6 border-b border-white/10 pb-6 reveal-scale delay-200">
                                 <span className="text-4xl md:text-5xl font-black text-craftsman-gold font-headline-lg shrink-0 w-28">
                                     100%
                                 </span>
@@ -73,7 +73,7 @@ const ManufacturedWithPrecision = () => {
                                     CNC Precision Check
                                 </span>
                             </div>
-                            <div className="flex items-center gap-6 pb-2">
+                            <div className="flex items-center gap-6 pb-2 reveal-scale delay-300">
                                 <span className="text-4xl md:text-5xl font-black text-craftsman-gold font-headline-lg shrink-0 w-28">
                                     Zero
                                 </span>

@@ -41,7 +41,7 @@ const InsightsResources = () => {
             
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header with Title, description and Link */}
-                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16">
+                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16 reveal-up">
                     <div className="max-w-3xl">
                         <span className="font-label-technical text-craftsman-gold tracking-[0.25em] uppercase font-semibold text-xs block mb-3">
                             — Knowledge Centre
@@ -69,7 +69,7 @@ const InsightsResources = () => {
                     {resources.map((item, idx) => (
                         <div 
                             key={idx}
-                            className="bg-[#FBF9F5] p-8 rounded-2xl border border-black/5 hover:border-craftsman-gold/30 hover:shadow-lg transition-all duration-300 group flex flex-col justify-between"
+                            className={`bg-[#FBF9F5] p-8 rounded-2xl border border-black/5 hover:border-craftsman-gold/30 hover:shadow-lg transition-all duration-300 group flex flex-col justify-between reveal-up delay-${[100,200,300,400][idx]}`}
                         >
                             <div>
                                 <div className="p-3 bg-white w-14 h-14 rounded-xl flex items-center justify-center border border-black/5 shadow-sm mb-6 group-hover:scale-105 transition-transform duration-300">

@@ -51,7 +51,7 @@ const ProductConfigurator = ({ config }) => {
     };
 
     return (
-        <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant overflow-hidden">
+        <section className="reveal-section bg-surface pt-24 pb-32 lg:pb-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant overflow-hidden">
             <div className="max-w-container-max mx-auto">
                 {/* Header */}
                 <div className="mb-16 text-left space-y-4 reveal-up">
@@ -69,8 +69,8 @@ const ProductConfigurator = ({ config }) => {
                     )}
                 </div>
 
-                {/* Desktop layout: md and up */}
-                <div className="hidden md:flex relative w-full max-w-container-max mx-auto h-[700px] items-center justify-center">
+                {/* Desktop layout: lg and up */}
+                <div className="hidden lg:flex relative w-full max-w-container-max mx-auto h-[700px] items-center justify-center">
                     {/* Ambient Background Image */}
                     {radialMap.backgroundImage && (
                         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-30">
@@ -192,8 +192,8 @@ const ProductConfigurator = ({ config }) => {
                     </div>
                 </div>
 
-                {/* Mobile layout: below md */}
-                <div className="md:hidden flex flex-col w-full items-center">
+                {/* Mobile/Tablet layout: below lg */}
+                <div className="lg:hidden flex flex-col w-full items-center">
                     {/* Ambient Background & Central Product Render */}
                     <div className="relative w-full aspect-video flex items-center justify-center overflow-hidden mb-8 rounded-[8px]">
                         {radialMap.backgroundImage && (

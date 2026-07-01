@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import { getOptimizedImageUrl } from "../../utils/image";
-import AdvantageCTA from "../../components/AdvantageCTA/AdvantageCTA";
 
 const sustainabilityFaqsList = [
   {
@@ -406,7 +405,7 @@ const Sustainability = () => {
             </div>
             <div className="flex items-start gap-4">
               <span className="material-symbols-outlined text-[#C9A84C]">verified</span>
-              <p class="font-body-lg text-body-lg m-0">Supporting sustainable building initiatives</p>
+              <p className="font-body-lg text-body-lg m-0">Supporting sustainable building initiatives</p>
             </div>
             <div className="flex items-start gap-4">
               <span className="material-symbols-outlined text-[#C9A84C]">verified</span>
@@ -463,17 +462,6 @@ const Sustainability = () => {
           </div>
         </div>
       </section>
-
-      {/* Final CTA */}
-      <AdvantageCTA
-        advantages={sustainabilityAdvantages}
-        title="Ready to Build More Sustainable Outdoor Spaces Together?"
-        ctaText="Request a Quote"
-        ctaLink="/contact"
-        brochureText="Download Product Catalogue"
-        brochureLink="/resources/downloads"
-        statsText="Whether you're planning a township, park, campus or commercial landscape, Urbanland Products can help you create durable outdoor spaces with responsible materials."
-      />
     </div>
   );
 };

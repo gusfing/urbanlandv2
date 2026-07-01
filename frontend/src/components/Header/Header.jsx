@@ -26,7 +26,7 @@ const Header = () => {
 
       {/* 1. Premium Floating Top Header Bar (Visible when NOT scrolled - Compact Pill) */}
       <header
-        className={`fixed top-5 left-1/2 -translate-x-1/2 w-fit h-9 md:h-10 bg-[#F7F4EF]/90 backdrop-blur-md border border-[#1A1A1A]/10 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] z-50 flex items-center justify-between gap-3.5 px-4 md:px-5 transition-all duration-500 ease-out ${scrolled ? "opacity-0 -translate-y-10 pointer-events-none" : "opacity-100 translate-y-0"
+        className={`fixed top-5 left-1/2 -translate-x-1/2 w-fit h-11 md:h-12 bg-[#F7F4EF]/90 backdrop-blur-md border border-[#1A1A1A]/10 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] z-50 flex items-center justify-between gap-4 px-5 md:px-6 transition-all duration-500 ease-out ${scrolled ? "opacity-0 -translate-y-10 pointer-events-none" : "opacity-100 translate-y-0"
           }`}
       >
         {/* Left Side: Brand Logo */}
@@ -34,7 +34,7 @@ const Header = () => {
           <img
             src={logoImg}
             alt="Urbanland Products LLP Logo"
-            className="h-6 sm:h-7 object-contain hover:opacity-80 transition-opacity duration-300"
+            className="h-7 sm:h-8 object-contain hover:opacity-80 transition-opacity duration-300"
           />
         </Link>
 
@@ -52,7 +52,7 @@ const Header = () => {
 
       {/* 2. Premium Floating Bottom Header Bar (Visible when SCROLLED - Compact Pill) */}
       <header
-        className={`fixed bottom-5 left-1/2 -translate-x-1/2 w-fit h-9 md:h-10 bg-[#F7F4EF]/90 backdrop-blur-md border border-[#1A1A1A]/10 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] z-50 flex items-center justify-between gap-3.5 px-4 md:px-5 transition-all duration-500 ease-out ${scrolled ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-90 pointer-events-none"
+        className={`fixed bottom-5 left-1/2 -translate-x-1/2 w-fit h-11 md:h-12 bg-[#F7F4EF]/90 backdrop-blur-md border border-[#1A1A1A]/10 rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] z-50 flex items-center justify-between gap-4 px-5 md:px-6 transition-all duration-500 ease-out ${scrolled ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-90 pointer-events-none"
           }`}
       >
         {/* Left Side: Brand Logo - Dark on light background */}
@@ -60,7 +60,7 @@ const Header = () => {
           <img
             src={logoImg}
             alt="Urbanland Products LLP Logo"
-            className="h-6 sm:h-7 object-contain hover:opacity-80 transition-opacity duration-300"
+            className="h-7 sm:h-8 object-contain hover:opacity-80 transition-opacity duration-300"
           />
         </Link>
 

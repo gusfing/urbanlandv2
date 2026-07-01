@@ -15,19 +15,22 @@ import HomeFAQ from '../../components/HomeFAQ/HomeFAQ'
 
 const Home = () => {
     useEffect(() => {
-        const revealUpObserver = new IntersectionObserver((entries) => {
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.05, rootMargin: "0px 0px -50px 0px" });
+        }, { threshold: 0.08, rootMargin: "0px 0px -60px 0px" });
 
-        const revealUps = document.querySelectorAll('.reveal-up');
-        revealUps.forEach(el => revealUpObserver.observe(el));
+        const revealEls = document.querySelectorAll(
+            '.reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale'
+        );
+        revealEls.forEach(el => revealObserver.observe(el));
 
         return () => {
-            revealUps.forEach(el => revealUpObserver.unobserve(el));
+            revealEls.forEach(el => revealObserver.unobserve(el));
         };
     }, []);
 

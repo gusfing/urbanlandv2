@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Breadcrumbs from "../ui/Breadcrumbs";
 import { getOptimizedImageUrl } from "../../utils/image";
 import faqHeroImage from "../../assets/faq_hero_image.png";
 
@@ -57,14 +58,15 @@ const SupportFAQ = ({ support = DEFAULT_SUPPORT, faq = DEFAULT_FAQ, showHero = f
                 <section className="bg-surface pt-32 pb-20 border-b border-outline-variant/10 text-center">
                     <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
 
-                        {/* Dynamic Breadcrumbs (Centered) */}
-                        <nav className="flex items-center justify-center select-none text-[9px] sm:text-[10px] font-black uppercase tracking-widest gap-2 bg-surface-container-low text-on-surface/80 border border-outline-variant/30 px-4 py-2.5 rounded-full w-fit mx-auto mb-8 backdrop-blur-md shadow-sm">
-                            <Link to="/" className="text-on-surface/60 hover:text-craftsman-gold transition-colors no-underline">Home</Link>
-                            <span className="text-on-surface/30">&gt;</span>
-                            <Link to="/resources" className="text-on-surface/60 hover:text-craftsman-gold transition-colors no-underline">Resources</Link>
-                            <span className="text-on-surface/30">&gt;</span>
-                            <span className="text-craftsman-gold font-bold">FAQ</span>
-                        </nav>
+                        <Breadcrumbs
+                            items={[
+                                { label: 'Home', href: '/' },
+                                { label: 'Resources', href: '/resources' },
+                                { label: 'FAQ' }
+                            ]}
+                            theme="light"
+                            className="mx-auto mb-8"
+                        />
 
                         <h1 className="font-display-lg text-4xl md:text-5xl text-on-surface mb-6 font-bold leading-tight max-w-3xl mx-auto">
                             Frequently Asked Questions

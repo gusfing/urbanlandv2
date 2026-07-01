@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Header from "../components/Header/Header";
@@ -9,9 +9,16 @@ import Footer from "../components/Footer/Footer";
 import FooterTitle from "../components/Footer/FooterTitle";
 import ScrollToTop from "../components/ScrollToTop";
 import ExitIntentPopup from "../components/ExitIntentPopup/ExitIntentPopup";
-import AriaChatbot from "../components/Chatbot/Chatbot";
+import VedaChatbot from "../components/Chatbot/Chatbot";
+import SupportFAQ from "../components/SupportFAQ/SupportFAQ";
+import FloatingContact from "../components/FloatingContact/FloatingContact";
+import AdvantageCTA from "../components/AdvantageCTA/AdvantageCTA";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 const MainLayout = () => {
+    useScrollReveal();
+    const location = useLocation();
+    const hideSupportFAQ = location.pathname === '/contact' || location.pathname === '/get-quote';
 
     useEffect(() => {
         // Initialize Lenis smooth scroll
@@ -59,10 +66,13 @@ const MainLayout = () => {
             <ExitIntentPopup />
             <main>
                 <Outlet /> {/* Hero, About, Contact, etc. */}
+                {!hideSupportFAQ && <AdvantageCTA />}
+                {!hideSupportFAQ && <SupportFAQ />}
                 <Footer />
                 <FooterTitle />
             </main>
-            <AriaChatbot />
+            <VedaChatbot />
+            <FloatingContact />
         </>
     );
 };

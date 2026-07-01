@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
+import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import CTASection from "../../components/CTASection/CTASection";
 
 // Import images
@@ -306,6 +307,7 @@ import { getOptimizedImageUrl } from "../../utils/image";
 import RealEstateSolutions from "./RealEstateSolutions";
 import HospitalitySolutions from "./HospitalitySolutions";
 import HealthcareSolutions from "./HealthcareSolutions";
+import SharedFAQ from "../../components/SharedFAQ/SharedFAQ";
 import EducationSolutions from "./EducationSolutions";
 import SmartCitySolutions from "./SmartCitySolutions";
 
@@ -393,14 +395,15 @@ const SolutionsDetail = () => {
               {meta.tagline}
             </p>
 
-            {/* Breadcrumb inside Hero, below tagline */}
-            <nav className="flex items-center select-none text-[9px] sm:text-[10px] font-black uppercase tracking-widest gap-2 bg-white text-[#1A1A1A] border border-black/10 px-4 py-2.5 rounded-full w-fit mt-6 shadow-md">
-              <Link to="/" className="text-[#1A1A1A]/60 hover:text-[#2C5F2E] transition-colors no-underline">Home</Link>
-              <span className="text-[#1A1A1A]/30">/</span>
-              <Link to="/solutions" className="text-[#1A1A1A]/60 hover:text-[#2C5F2E] transition-colors no-underline">Solutions</Link>
-              <span className="text-[#1A1A1A]/30">/</span>
-              <span className="text-[#2C5F2E] font-bold">{meta.name}</span>
-            </nav>
+            <Breadcrumbs
+              items={[
+                { label: 'Home', href: '/' },
+                { label: 'Solutions', href: '/solutions' },
+                { label: meta.name }
+              ]}
+              theme="light"
+              className="mt-6"
+            />
           </div>
         </div>
       </section>
@@ -620,54 +623,7 @@ const SolutionsDetail = () => {
       )}
 
       {/* Sector FAQ Accordion */}
-      {meta.faqs && (
-        <section className="max-w-[850px] mx-auto px-6 mb-24">
-          <div className="text-center mb-12">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— FAQ</span>
-            <h2 className="text-3xl font-black uppercase tracking-tight text-[#1A1A1A]">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            {meta.faqs.map((faq, idx) => {
-              const isOpen = activeIndex === idx;
-              return (
-                <div 
-                  key={idx}
-                  className={`bg-white rounded-[2rem] border transition-all duration-500 overflow-hidden shadow-[0_5px_20px_rgba(0,0,0,0.005)] ${
-                    isOpen 
-                      ? "border-[#2C5F2E]/40 ring-1 ring-[#2C5F2E]/10" 
-                      : "border-black/[0.03] hover:border-black/10"
-                  }`}
-                >
-                  <button
-                    onClick={() => setActiveIndex(isOpen ? null : idx)}
-                    className="w-full px-6 py-6 md:px-8 flex justify-between items-center text-left cursor-pointer focus:outline-none border-none select-none group bg-white"
-                  >
-                    <h3 className="text-sm sm:text-base font-black uppercase tracking-tight text-[#1A1A1A] group-hover:text-[#2C5F2E] pr-6 transition-colors leading-snug">
-                      {faq.q}
-                    </h3>
-                    <span className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs transition-all duration-300 shrink-0 select-none ${
-                      isOpen ? "bg-[#2C5F2E] text-white rotate-45" : "bg-[#F7F4EF] text-[#2D2D2D] group-hover:bg-[#2C5F2E]/10"
-                    }`}>
-                      ＋
-                    </span>
-                  </button>
-
-                  <div className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                    isOpen ? "max-h-[300px] border-t border-black/[0.05]" : "max-h-0"
-                  }`}>
-                    <p className="px-6 py-6 md:px-8 text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/75 bg-[#F7F4EF]/20">
-                      {faq.a}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
+      {meta.faqs && <SharedFAQ faqs={meta.faqs} />}
 
       {/* Recommended Products Grid */}
       {meta.recommended?.length > 0 && (

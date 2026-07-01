@@ -6,7 +6,6 @@ import BenchesConfigurator from "../../components/BenchesConfigurator";
 import ProductConfigurator from "../../components/ProductConfigurator";
 import ScrollVideoSection from "../../components/ScrollVideoSection";
 import SupportFAQ from "../../components/SupportFAQ/SupportFAQ";
-import AdvantageCTA from "../../components/AdvantageCTA/AdvantageCTA";
 
 
 const getVideoSectionData = (productId) => {
@@ -378,22 +377,23 @@ const ProductDetailPage = ({ productId: propProductId }) => {
             observer.observe(section);
         });
 
-        // Intersection Observer for Reveal Up Animations
-        const revealUpObserver = new IntersectionObserver((entries) => {
+        // Intersection Observer for Reveal Animations
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-        const revealUps = document.querySelectorAll('.reveal-up');
-        revealUps.forEach(el => revealUpObserver.observe(el));
+        const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale');
+        revealEls.forEach(el => revealObserver.observe(el));
 
         return () => {
             cleanPageSEO();
             sections.forEach(section => observer.unobserve(section));
-            revealUps.forEach(el => revealUpObserver.unobserve(el));
+            revealEls.forEach(el => revealObserver.unobserve(el));
         };
     }, [activeProductId]);
 
@@ -727,10 +727,10 @@ const ProductDetailPage = ({ productId: propProductId }) => {
                 </div>
             </section>
 
-            {/* Product Range Categories / Video Section */}
-            {activeProductId !== "benches" ? (
-                (() => {
-                    const videoData = getVideoSectionData(activeProductId);
+            {/* Scroll Video Section */}
+            {(() => {
+                const videoData = getVideoSectionData(activeProductId);
+                if (videoData) {
                     return (
                         <ScrollVideoSection
                             badge={videoData.badge}
@@ -740,10 +740,13 @@ const ProductDetailPage = ({ productId: propProductId }) => {
                             features={videoData.features}
                         />
                     );
-                })()
-            ) : (
-                config.categories && config.categories.list && config.categories.list.length > 0 && (
-                    <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+                }
+                return null;
+            })()}
+
+            {/* Product Range Categories Section */}
+            {config.categories && config.categories.list && config.categories.list.length > 0 && (
+                <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
                         <div className="max-w-container-max mx-auto">
                             <div className="mb-16 text-left space-y-4 reveal-up">
                                 <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
@@ -840,8 +843,7 @@ const ProductDetailPage = ({ productId: propProductId }) => {
                                 })}
                             </div>
                         </div>
-                    </section>
-                )
+                </section>
             )}
 
             {/* Design Your Specification Configurator */}
@@ -1045,12 +1047,8 @@ const ProductDetailPage = ({ productId: propProductId }) => {
                 </section>
             )}
 
-            {/* Support & FAQ */}
-            <SupportFAQ />
-
             {/* Bottom Advantage & Conversion Area */}
-            <AdvantageCTA />
-        </div>
+                    </div>
     );
 };
 

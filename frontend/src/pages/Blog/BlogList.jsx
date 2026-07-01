@@ -40,8 +40,22 @@ const BlogList = () => {
       og_description: "Explore articles, trends, and engineering details on public space design and smart street furniture.",
       og_type: "blog"
     });
+
+    // Scroll reveal for all reveal classes
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -60px 0px" });
+    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale');
+    revealEls.forEach(el => revealObserver.observe(el));
+
     return () => {
       cleanPageSEO();
+      revealEls.forEach(el => revealObserver.unobserve(el));
     };
   }, []);
 
@@ -65,7 +79,7 @@ const BlogList = () => {
   return (
     <div className="w-full min-h-screen bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-24 overflow-x-hidden pt-32">
       {/* Blog List Header */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 py-8 border-b border-black/[0.04]">
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 py-8 border-b border-black/[0.04] reveal-up">
         <p className="text-[0.8125rem] md:text-sm font-black uppercase tracking-widest text-[#2C5F2E] mb-2">— Urbanland Journal</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight uppercase leading-none text-black">
           Insights & Ideas
@@ -154,7 +168,7 @@ const BlogList = () => {
                   <Link
                     key={post.id}
                     to={`/blog/${post.slug}`}
-                    className="bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between group cursor-pointer no-underline aspect-[4/5] p-6"
+                    className={`bg-white rounded-[2.5rem] border border-black/[0.03] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between group cursor-pointer no-underline aspect-[4/5] p-6 reveal-up delay-${['100','200','300'][idx % 3]}`}
                   >
                     {/* Featured Image */}
                     <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden bg-black/5 mb-4 relative">

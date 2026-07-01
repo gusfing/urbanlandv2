@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
-import { products } from "../../constants/productsData";
+import { fetchProducts } from "../../lib/wp";
+import { imageMap } from "../../utils/imageMap";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -32,20 +33,31 @@ const categoriesConfig = [
 const Catalogue = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
+  const [activeBadge, setActiveBadge] = useState("all");
+  const [sortBy, setSortBy] = useState("default");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState({});
   const pillsRef = useRef(null);
   const containerRef = useRef(null);
 
-  // Dynamic skeleton loading transition
+const [products, setProducts] = useState([]);
+
+  // Fetch products
   useEffect(() => {
-    setLoading(true);
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 450);
-    return () => clearTimeout(timer);
-  }, [activeCategory, searchTerm]);
+    const loadProducts = async () => {
+      setLoading(true);
+      try {
+        const data = await fetchProducts();
+        setProducts(data || []);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadProducts();
+  }, []);
 
   // Set page SEO on mount
   useEffect(() => {
@@ -65,12 +77,14 @@ const Catalogue = () => {
       counts[cat] = (counts[cat] || 0) + 1;
     });
     return counts;
-  }, []);
+  }, [products]);
 
   // Filter products based on search term and category
+  // Filter and sort products based on search term, category, badge, and sort selection
   const filteredProducts = useMemo(() => {
-    return products.filter((p) => {
+    let result = products.filter((p) => {
       const matchesCategory = activeCategory === "all" || p.category === activeCategory;
+      const matchesBadge = activeBadge === "all" || (p.badges && p.badges.some(b => b.toLowerCase() === activeBadge.toLowerCase()));
       const cleanSearch = searchTerm.toLowerCase().trim();
       const matchesSearch =
         !cleanSearch ||
@@ -78,11 +92,19 @@ const Catalogue = () => {
         (p.line || "").toLowerCase().includes(cleanSearch) ||
         (p.description || "").toLowerCase().includes(cleanSearch) ||
         (p.category || "").toLowerCase().includes(cleanSearch) ||
-        (p.id || "").toLowerCase().includes(cleanSearch);
+        (p.product_id || p.id || "").toLowerCase().includes(cleanSearch);
       
-      return matchesCategory && matchesSearch;
+      return matchesCategory && matchesBadge && matchesSearch;
     });
-  }, [activeCategory, searchTerm]);
+
+    if (sortBy === "az") {
+      result.sort((a, b) => (a.title || "").localeCompare(b.title || ""));
+    } else if (sortBy === "za") {
+      result.sort((a, b) => (b.title || "").localeCompare(a.title || ""));
+    }
+
+    return result;
+  }, [products, activeCategory, activeBadge, searchTerm, sortBy]);
 
   // Categories slider drag to scroll behavior
   useEffect(() => {
@@ -252,6 +274,51 @@ const Catalogue = () => {
           </button>
 
         </div>
+
+        {/* Advanced Filters & Sort Bar */}
+        <div className="w-full flex flex-col sm:flex-row items-center justify-between pt-4 gap-4">
+          
+          {/* Badge Filter */}
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#2D2D2D]/60">Filter by:</span>
+            <div className="flex items-center gap-2">
+              {['all', 'Best Seller', 'New Arrival', 'Premium'].map((badge) => (
+                <button
+                  key={badge}
+                  onClick={() => setActiveBadge(badge)}
+                  className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
+                    activeBadge === badge
+                      ? "bg-[#1A1A1A] text-white border-[#1A1A1A]"
+                      : "bg-transparent text-[#2D2D2D] border-[#2D2D2D]/20 hover:border-[#1A1A1A]"
+                  }`}
+                >
+                  {badge === 'all' ? 'All Collections' : badge}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Sort Dropdown */}
+          <div className="flex items-center gap-3 w-full sm:w-auto">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#2D2D2D]/60">Sort by:</span>
+            <div className="relative w-full sm:w-48">
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="w-full appearance-none bg-white border border-[#2D2D2D]/20 text-[#1A1A1A] text-xs px-4 py-2 rounded-full focus:outline-none focus:border-[#2C5F2E] focus:ring-1 focus:ring-[#2C5F2E] cursor-pointer"
+              >
+                <option value="default">Default Relevance</option>
+                <option value="az">Alphabetical (A - Z)</option>
+                <option value="za">Alphabetical (Z - A)</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#2D2D2D]/60">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Grid of Catalogue Cards */}
@@ -321,7 +388,7 @@ const Catalogue = () => {
                       </div>
                     )}
                     <img
-                      src={p.image}
+                      src={imageMap[p.image] || p.image}
                       alt={`${p.title} street furniture`}
                       loading="lazy"
                       decoding="async"
@@ -333,8 +400,8 @@ const Catalogue = () => {
                     />
                     {secondImage && (
                       <img
-                        src={secondImage}
-                        alt={`${p.title} installation`}
+                        src={imageMap[secondImage] || secondImage}
+                        alt={`${p.title} alternate view`}
                         loading="lazy"
                         decoding="async"
                         className="absolute inset-0 w-full h-full object-cover rounded-2xl select-none opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"

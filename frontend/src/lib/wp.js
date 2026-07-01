@@ -1,4 +1,6 @@
 import { products as localProducts } from "../constants/productsData";
+import { supabase } from "./supabaseClient";
+import { imageMap } from "../utils/imageMap";
 
 // Resolve WordPress base URL from env variables
 const WP_BASE_URL = import.meta.env.VITE_WP_API_URL || "https://backend.urbanlandproducts.com";
@@ -369,8 +371,18 @@ const parseWPPostToProduct = (post) => {
  * Falls back to our local high-fidelity products list if all fetch routes are unconfigured or fail.
  */
 export const fetchProducts = async () => {
-  console.log("Returning local catalog products.");
-  return localProducts;
+  try {
+    const { data, error } = await supabase.from("products").select("*").order("title");
+    if (error) throw error;
+    return (data || []).map(p => ({
+      ...p,
+      image: imageMap[p.image] || p.image,
+      gallery: p.gallery ? p.gallery.map(img => imageMap[img] || img) : []
+    }));
+  } catch (err) {
+    console.error("Error fetching products from Supabase:", err);
+    return localProducts; // Fallback to local
+  }
 };
 
 /**

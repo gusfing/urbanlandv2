@@ -7,7 +7,7 @@ const Logo = () => {
             <img 
                 src={logoImg} 
                 alt="Urbanland Logo" 
-                className="h-6 sm:h-8 md:h-9 object-contain brightness-0 invert hover:opacity-85 transition-opacity duration-300 cursor-pointer" 
+                className="h-8 sm:h-10 md:h-12 object-contain brightness-0 invert hover:opacity-85 transition-opacity duration-300 cursor-pointer" 
             />
         </div>
     )

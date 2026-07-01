@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchProducts } from "../../lib/wp";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
+import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -374,18 +375,20 @@ const CategoryDetail = () => {
       `}} />
 
       {/* Breadcrumb path */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-4 flex items-center select-none text-[10px] font-bold uppercase tracking-widest text-[#2D2D2D]/55 font-outfit">
-        <Link to="/" className="hover:text-[#2C5F2E] transition-colors">Home</Link>
-        <span className="mx-1.5">/</span>
-        <Link to="/products" className="hover:text-[#2C5F2E] transition-colors">Products</Link>
-        <span className="mx-1.5">/</span>
-        <span className="text-[#2D2D2D]/85">{meta.title}</span>
-        {subcategory && (
-          <>
-            <span className="mx-1.5">/</span>
-            <span className="text-[#2C5F2E]">{subcategory.replace("-", " ")}</span>
-          </>
-        )}
+      <section className="max-w-[1400px] mx-auto px-6 md:px-12 mb-4 font-outfit">
+        <Breadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Products', href: '/products' },
+            ...(subcategory ? [
+              { label: meta.title },
+              { label: subcategory.replace("-", " ") }
+            ] : [
+              { label: meta.title }
+            ])
+          ]}
+          theme="light"
+        />
       </section>
 
       {/* Hero Banner Section */}

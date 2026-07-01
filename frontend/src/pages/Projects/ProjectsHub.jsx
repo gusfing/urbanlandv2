@@ -48,9 +48,22 @@ const ProjectsHub = () => {
       observer.observe(section);
     });
 
+    // Also observe all CSS reveal classes
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -60px 0px" });
+    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale');
+    revealEls.forEach(el => revealObserver.observe(el));
+
     return () => {
       cleanPageSEO();
       sections.forEach(section => observer.unobserve(section));
+      revealEls.forEach(el => revealObserver.unobserve(el));
     };
   }, []);
 
@@ -538,45 +551,7 @@ const ProjectsHub = () => {
       </section>
 
       {/* Section 4: FAQ */}
-      <section className="reveal-section py-24 bg-surface-container-lowest/30">
-        <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
-          <div className="mb-16 text-left space-y-4">
-            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-              FAQ
-            </span>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink uppercase">
-              Frequently Asked Questions
-            </h2>
-            <div className="w-24 h-1 bg-craftsman-gold"></div>
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-6 text-left">
-            {faqs.map((faq, idx) => {
-              const isOpen = activeFaqIndex === idx;
-              return (
-                <div key={idx} className="bg-white border border-black/[0.05] shadow-sm rounded-lg overflow-hidden transition-all duration-300">
-                  <button
-                    className="w-full text-left p-8 flex justify-between items-center outline-none bg-white select-none cursor-pointer group"
-                    onClick={() => toggleFaq(idx)}
-                  >
-                    <span className="font-bold text-sm uppercase tracking-widest text-deep-ink group-hover:text-forest-green transition-colors">
-                      {faq.q}
-                    </span>
-                    <span className={`material-symbols-outlined transition-transform duration-300 ${isOpen ? 'rotate-180 text-forest-green' : 'text-deep-ink/50'}`}>
-                      expand_more
-                    </span>
-                  </button>
-                  <div className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[300px] opacity-100 p-8 border-t border-black/[0.05] pt-6' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-                    <p className="text-sm text-deep-ink/75 leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <SharedFAQ faqs={faqs} />
 
       {/* Pre-Footer CTA */}
       <section className="reveal-section bg-forest-green text-white py-24 px-6 md:px-margin-desktop overflow-hidden relative">

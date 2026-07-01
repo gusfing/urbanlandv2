@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { imageMap } from "../../utils/imageMap";
 
 const ProductInquiryModal = ({ product, onClose }) => {
   const [formData, setFormData] = useState({
@@ -39,7 +40,7 @@ const ProductInquiryModal = ({ product, onClose }) => {
 
   if (!product) return null;
 
-  const productImage = product.image || "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80";
+  const productImage = (product.image ? (imageMap[product.image] || product.image) : null) || "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80";
 
   return (
     <div data-lenis-prevent onClick={onClose} className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6 bg-black/60 backdrop-blur-sm animate-fadeIn">

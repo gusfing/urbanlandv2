@@ -14,17 +14,6 @@ const Footer = () => {
 
   return (
     <section className='w-full h-auto px-6 pt-24 pb-16 bg-[#2D2D2D] border-t border-[#F7F4EF]/10'>
-      {/* Top segment with Call to Action marquee */}
-      <div className='flex flex-col md:flex-row w-full h-auto justify-between border-b pb-8 border-[#F7F4EF]/15'>
-        <p className='text-[.7rem] text-[#F7F4EF]/90 choose-subtitle mt-4'>
-          Interested in transforming your space?<br />
-          Explore premium urban furniture solutions by Urbanland<span>®</span>
-        </p>
-      </div>
-      <div className="text-[#C9A84C] py-4">
-        <MarqueeText />
-      </div>
-
       {/* 4-Column Sitemap Grid */}
       <div className='grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-10 mt-16 text-[#F7F4EF]/80 border-b border-[#F7F4EF]/15 pb-16'>
         {/* Column 1: Brand */}

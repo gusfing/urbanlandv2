@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
+import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import { getOptimizedImageUrl } from "../../utils/image";
-import AdvantageCTA from "../../components/AdvantageCTA/AdvantageCTA";
 
 const materialsFaqsList = [
   {
@@ -79,14 +79,15 @@ const Materials = () => {
             </span>
           </div>
 
-          {/* Dynamic Breadcrumbs (Centered) */}
-          <nav className="flex items-center justify-center select-none text-[9px] sm:text-[10px] font-black uppercase tracking-widest gap-2 bg-white/5 text-white/80 border border-white/10 px-4 py-2.5 rounded-full w-fit mx-auto mb-8 backdrop-blur-md shadow-lg">
-            <Link to="/" className="text-white/60 hover:text-[#C9A84C] transition-colors no-underline">Home</Link>
-            <span className="text-white/30">/</span>
-            <Link to="/resources" className="text-white/60 hover:text-[#C9A84C] transition-colors no-underline">Resources Hub</Link>
-            <span className="text-white/30">/</span>
-            <span className="text-[#C9A84C] font-bold">Materials</span>
-          </nav>
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Resources Hub', href: '/resources' },
+              { label: 'Materials' }
+            ]}
+            theme="dark"
+            className="mx-auto mb-8"
+          />
 
           {/* Title */}
           <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-[3.5rem] text-white mb-6 leading-tight max-w-3xl mx-auto tracking-wide font-bold">
@@ -476,15 +477,7 @@ const Materials = () => {
       </section>
 
       {/* Final CTA */}
-      <AdvantageCTA
-        title="Ready to Transform Your Space with Sustainable Outdoor Furniture?"
-        ctaText="Get in Touch With Our Team"
-        ctaLink="/contact"
-        brochureText="Download Master Catalogue"
-        brochureLink="/resources/downloads"
-        statsText="Support biophilic architectural design, earn IGBC points, and reduce deforestation with our premium WPC and NFC solutions."
-      />
-    </div>
+          </div>
   );
 };
 

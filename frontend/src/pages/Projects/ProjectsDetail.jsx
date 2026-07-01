@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
+import Breadcrumbs from "../../components/ui/Breadcrumbs";
 import CTASection from "../../components/CTASection/CTASection";
 import SupportFAQ from "../../components/SupportFAQ/SupportFAQ";
-import AdvantageCTA from "../../components/AdvantageCTA/AdvantageCTA";
 
 // Import images
 import gbg1 from '../../assets/gallery_real_estate.png';
@@ -439,20 +441,21 @@ const ProjectsDetail = () => {
     });
 
     // Intersection Observer for Scroll Reveal Animations
-    const revealUpObserver = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.05, rootMargin: "0px 0px -50px 0px" });
 
-    const revealUps = document.querySelectorAll('.reveal-up');
-    revealUps.forEach(el => revealUpObserver.observe(el));
+    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale');
+    revealEls.forEach(el => revealObserver.observe(el));
 
     return () => {
       cleanPageSEO();
-      revealUps.forEach(el => revealUpObserver.unobserve(el));
+      revealEls.forEach(el => revealObserver.unobserve(el));
     };
   }, [meta]);
 
@@ -683,7 +686,7 @@ const ProjectsDetail = () => {
     <div className="w-full bg-[#F7F4EF] text-[#1A1A1A] font-sans pb-0 overflow-x-hidden pt-0 antialiased">
 
       {/* Dynamic Hero Section */}
-      <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden py-32 bg-gradient-to-b from-[#122213] to-[#0A120A] text-white px-margin-mobile lg:px-0">
+      <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 md:pt-40 pb-24 bg-gradient-to-b from-[#122213] to-[#0A120A] text-white px-margin-mobile lg:px-0">
         {/* Full-Screen Background Image with Green/Charcoal Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <img
@@ -694,21 +697,22 @@ const ProjectsDetail = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A120A]/70 via-[#0E1A0F]/85 to-[#0A120A] pointer-events-none"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto pt-10 md:pt-[100px] w-full text-center relative z-10 px-margin-mobile md:px-margin-desktop">
+        <div className="max-w-4xl mx-auto w-full text-center relative z-10 px-margin-mobile md:px-margin-desktop">
           <div className="inline-block border-b-2 border-craftsman-gold mb-6 pb-1">
             <span className="font-label-technical text-craftsman-gold tracking-widest uppercase font-semibold text-xs">
               Case Study
             </span>
           </div>
 
-          {/* Dynamic Breadcrumbs (Centered) */}
-          <nav className="flex items-center justify-center select-none text-[9px] sm:text-[10px] font-black uppercase tracking-widest gap-2 bg-white/5 text-white/80 border border-white/10 px-4 py-2.5 rounded-full w-fit mx-auto mb-8 backdrop-blur-md shadow-lg">
-            <Link to="/" className="text-white/60 hover:text-craftsman-gold transition-colors no-underline">Home</Link>
-            <span className="text-white/30">/</span>
-            <Link to="/projects" className="text-white/60 hover:text-craftsman-gold transition-colors no-underline">Projects</Link>
-            <span className="text-white/30">/</span>
-            <span className="text-craftsman-gold font-bold">{meta.title}</span>
-          </nav>
+          <Breadcrumbs
+            items={[
+              { label: 'Home', href: '/' },
+              { label: 'Projects', href: '/projects' },
+              { label: meta.title }
+            ]}
+            theme="dark"
+            className="mx-auto mb-8"
+          />
 
           {/* Title */}
           <h1 className="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-[3.5rem] text-white mb-6 leading-tight max-w-3xl mx-auto tracking-wide font-bold">
@@ -1121,12 +1125,9 @@ const ProjectsDetail = () => {
           </div>
         </div>
       </section>
-      {/* FAQ Accordion Section */}
-      <SupportFAQ />
 
       {/* Final CTA Section */}
-      <AdvantageCTA />
-
+      
     </div>
   );
 };

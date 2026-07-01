@@ -50,11 +50,11 @@ const steps = [
 const ConceptToCompletion = () => {
     const [activeStep, setActiveStep] = useState(0);
 
-    // Auto-advance step every 8 seconds, pausing if user interacts
+    // Auto-advance step every 3 seconds, pausing if user interacts
     useEffect(() => {
         const timer = setInterval(() => {
             setActiveStep((prev) => (prev + 1) % steps.length);
-        }, 8000);
+        }, 3000);
         return () => clearInterval(timer);
     }, []);
 
@@ -65,7 +65,7 @@ const ConceptToCompletion = () => {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
-                <div className="mb-16 text-left">
+                <div className="mb-16 text-left reveal-up">
                     <span className="font-label-technical text-craftsman-gold tracking-[0.25em] uppercase font-semibold text-xs block mb-3">
                         Our Workflow
                     </span>
@@ -79,7 +79,7 @@ const ConceptToCompletion = () => {
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch">
                     
                     {/* Left Column: Timeline Stepper */}
-                    <div className="w-full lg:w-5/12 flex flex-col justify-between pr-0 lg:pr-8">
+                    <div className="w-full lg:w-5/12 flex flex-col justify-between pr-0 lg:pr-8 reveal-left">
                         <div className="relative flex flex-col gap-2 pl-4 border-l-2 border-outline-variant/30">
                             
                             {steps.map((step, idx) => {
@@ -126,7 +126,7 @@ const ConceptToCompletion = () => {
                     </div>
 
                     {/* Right Column: Visual Media Box */}
-                    <div className="w-full lg:w-7/12 flex items-center justify-center">
+                    <div className="w-full lg:w-7/12 flex items-center justify-center reveal-right delay-200">
                         <div className="w-full aspect-[16/10] rounded-2xl border border-black/5 overflow-hidden relative bg-black shadow-xl group">
                             
                             {/* Slides Image Showcase */}
@@ -138,7 +138,7 @@ const ConceptToCompletion = () => {
                                     }`}
                                 >
                                     <img
-                                        className="w-full h-full object-cover transition-transform duration-[8000ms] ease-out group-hover:scale-105"
+                                        className="w-full h-full object-cover transition-transform duration-[3000ms] ease-out group-hover:scale-105"
                                         src={step.img}
                                         alt={step.title}
                                         loading="lazy"

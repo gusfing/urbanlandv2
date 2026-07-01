@@ -24,7 +24,7 @@ const HomeFAQ = () => {
     };
 
     return (
-        <section id="home-faq" className="py-24 px-6 md:px-16 bg-[#ebe8e3]/30 border-t border-black/5 relative overflow-hidden">
+        <section id="home-faq" className="py-24 px-6 md:px-16 bg-[#ebe8e3]/30 border-t border-black/5 relative overflow-hidden reveal-up">
             <div className="max-w-3xl mx-auto relative z-10">
                 <div className="mb-12 text-left">
                     <span className="font-label-technical text-craftsman-gold tracking-[0.22em] uppercase font-semibold text-xs block mb-3">

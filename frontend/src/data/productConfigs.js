@@ -1,4 +1,5 @@
 import poolsideLoungersImg from "../assets/products/Product Images/Poolside Loungers/Create_a_clean,_premium,_professional_202605170154.jpeg";
+import poolsideLoungersPng from "../assets/products/Product Images/Poolside Loungers/Create_a_clean,_premium,_professional_202605170154.png";
 import poolsideLoungersUgc from "../assets/products/Product Images/Poolside Loungers/UGC_Poolside_Loungers.jpeg";
 import poolsideLoungersDetail from "../assets/products/Product Images/Poolside Loungers/Ultra_high-quality_8K_Red_Magic_202605281553.jpeg";
 
@@ -474,7 +475,7 @@ export const productConfigs = {
                     num: "05.",
                     icon: "eco",
                     title: "Sustainability & Green Architecture",
-                    desc: "Urbanland’s planter boxes are engineered for longevity, reducing replacement frequency and lowering long-term environmental impact. Architects and developers choose our solutions because they support IGBC, GRIHA and LEED certifications.",
+                    desc: "Engineered for longevity, supporting IGBC, GRIHA, and LEED certifications.",
                     image: "/assets/products/planters/planters-philosophy-5.webp"
                 }
             ]
@@ -748,7 +749,7 @@ export const productConfigs = {
                     icon: "cleaning_services",
                     title: "Ease of Use & Maintenance",
                     desc: "User-friendly designs with smooth surfaces make cleaning quick and efficient for municipal staff and facility managers.",
-                    image: "/assets/products/dustbins/dustbins-card-2.webp"
+                    image: "/assets/products/dustbins/dustbins-card-3.webp"
                 },
                 {
                     num: "05.",
@@ -2868,9 +2869,9 @@ export const productConfigs = {
             title: "MATERIALS & CUSTOMIZATION OPTIONS FOR POOLSIDE LOUNGERS",
             description: "Configure loungers with elite outdoor finishes and adjustability functions.",
             radialMap: {
-                centralImage: "/assets/products/poolside-loungers/config-central.webp",
+                centralImage: poolsideLoungersPng,
                 centralImageAlt: "Premium Urbanland poolside lounger centered in a bright gallery",
-                backgroundImage: "/assets/products/poolside-loungers/config-bg.webp",
+                backgroundImage: "",
                 cards: [
                     {
                         title: "Materials Focus",
@@ -3360,30 +3361,30 @@ export const productConfigs = {
             author: "HEAD OF WEAVING, URBANLAND"
         },
         categories: {
-            badge: "Wicker Formats",
+            badge: "Wicker Categories",
             title: "Wicker Configuration Palette",
-            description: "Configure wicker styles, weave colors, and performance fabrics:",
+            description: "Explore our wicker subcategories:",
             list: [
                 {
-                    title: "Wicker Sofa Sets",
-                    alt: "Wicker Sofa Sets",
-                    path: "/catalogue",
+                    title: "Wicker Living Sets",
+                    alt: "Wicker Living Sets",
+                    path: "/products/wicker-living-sets",
                     src: "/assets/products/wicker-furniture/wicker-furniture-1.webp",
                     desc: "Modular, deep-seating configurations featuring Sunbrella upholstery and T6 aluminum support frames."
                 },
                 {
                     title: "Wicker Dining Sets",
                     alt: "Wicker Dining Sets",
-                    path: "/catalogue",
+                    path: "/products/wicker-dining-sets",
                     src: "/assets/products/wicker-furniture/wicker-furniture-2.webp",
                     desc: "Classic dining tables and high-backed woven chairs with non-slip safety glass tabletop mounts."
                 },
                 {
-                    title: "Outdoor Daybeds & Cabanas",
-                    alt: "Outdoor Daybeds",
-                    path: "/catalogue",
+                    title: "Wicker Outdoor Products",
+                    alt: "Wicker Outdoor Products",
+                    path: "/products/wicker-outdoor-products",
                     src: "/assets/products/wicker-furniture/wicker-furniture-3.webp",
-                    desc: "Luxury sunbeds and covered cabanas offering premium poolside shade."
+                    desc: "Luxury sunbeds, planters, and cabanas offering premium poolside shade and aesthetics."
                 }
             ]
         },

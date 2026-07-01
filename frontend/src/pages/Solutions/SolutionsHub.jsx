@@ -6,6 +6,7 @@ import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import gbg1 from '../../assets/gallery_real_estate.png';
 import gbg2 from '../../assets/gallery_hotels.png';
 import gbg3 from '../../assets/gallery_hospitals.png';
+import SharedFAQ from "../../components/SharedFAQ/SharedFAQ";
 import gbg4 from '../../assets/gallery_education.png';
 import gbg5 from '../../assets/gallery_smart_city.png';
 
@@ -600,20 +601,7 @@ const SolutionsHub = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="reveal-section py-24 px-6 max-w-4xl mx-auto">
-        <div className="mb-16 text-center space-y-4 flex flex-col items-center">
-          <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-            FAQ
-          </span>
-          <h2 className="font-headline-lg text-headline-lg text-deep-ink">
-            Frequently Asked Questions
-          </h2>
-          <div className="w-24 h-1 bg-craftsman-gold mx-auto"></div>
-        </div>
-
-        <div className="space-y-4">
-          {[
+      <SharedFAQ faqs={[
             {
               q: "What are the typical lead times for bulk orders?",
               a: "For standard catalog items in bulk, our lead time is typically 3-4 weeks. Custom-engineered solutions may take 6-8 weeks depending on the complexity and volume of the order."
@@ -630,33 +618,7 @@ const SolutionsHub = () => {
               q: "Can we request custom branding on the furniture?",
               a: "Absolutely. We can integrate laser-cut logos, custom color schemes, and specific architectural motifs into the furniture design to ensure it reflects your brand's identity perfectly."
             }
-          ].map((faq, idx) => {
-            const isOpen = activeFaq === idx;
-            return (
-              <div
-                key={idx}
-                className={`bg-surface-container-lowest border transition-all duration-300 overflow-hidden ${isOpen ? "border-craftsman-gold/60" : "border-outline-variant/30 hover:border-outline-variant/60"
-                  } rounded-lg`}
-              >
-                <button
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none bg-surface-container-lowest select-none group"
-                  onClick={() => toggleFaq(idx)}
-                >
-                  <span className="font-headline-md text-[18px] text-deep-ink group-hover:text-primary transition-colors">{faq.q}</span>
-                  <span className={`material-symbols-outlined transition-transform duration-300 ${isOpen ? 'rotate-180 text-primary' : 'text-on-surface-variant'}`}>
-                    expand_more
-                  </span>
-                </button>
-                <div className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100 py-6 border-t border-outline-variant/20' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-                  <div className="px-6 font-body-md text-on-surface-variant leading-relaxed">
-                    {faq.a}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+          ]} />
 
       {/* Rebuilt Footer CTA */}
       <section className="reveal-section bg-primary text-on-primary py-24 px-margin-mobile md:px-margin-desktop overflow-hidden relative">
