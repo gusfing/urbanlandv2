@@ -11,7 +11,6 @@ import ScrollToTop from "../components/ScrollToTop";
 import ExitIntentPopup from "../components/ExitIntentPopup/ExitIntentPopup";
 import VedaChatbot from "../components/Chatbot/Chatbot";
 import SupportFAQ from "../components/SupportFAQ/SupportFAQ";
-import FloatingContact from "../components/FloatingContact/FloatingContact";
 import AdvantageCTA from "../components/AdvantageCTA/AdvantageCTA";
 import useScrollReveal from "../hooks/useScrollReveal";
 
@@ -72,7 +71,6 @@ const MainLayout = () => {
                 <FooterTitle />
             </main>
             <VedaChatbot />
-            <FloatingContact />
         </>
     );
 };

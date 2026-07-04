@@ -6,6 +6,7 @@ const SLIDE_DURATION = 6500;
 
 const VedaChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
@@ -213,26 +214,97 @@ const VedaChatbot = () => {
         </div>
       )}
 
-      {/* ── FAB button ── */}
-      <button
-        onClick={() => { setIsOpen(!isOpen); setShowNotification(false); }}
-        Veda-label="Toggle chat"
-        className="relative w-14 h-14 rounded-2xl flex items-center justify-center shadow-2xl cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
-        style={{ background: "linear-gradient(135deg, #2C5F2E 0%, #1a3d1c 100%)", border: "1px solid rgba(255,255,255,0.12)" }}
-      >
-        <span
-          className={`material-symbols-outlined text-white text-2xl transition-all duration-300 ${isOpen ? "rotate-180 opacity-0 absolute" : "rotate-0 opacity-100"}`}
+      {/* ── FAB & Contact Options ── */}
+      <div className="relative group flex flex-col items-end">
+        {/* Floating Contact Options (appear on hover when chat is closed or when tapped on mobile) */}
+        {!isOpen && (
+          <div className={`absolute bottom-full pb-3 right-0 flex flex-col-reverse items-end gap-3 transition-all duration-300 origin-bottom z-[-1] ${
+            isMenuOpen 
+              ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto' 
+              : 'opacity-0 translate-y-4 scale-90 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:pointer-events-auto'
+          }`}>
+            
+            {/* Email Button */}
+            <a 
+              href="mailto:contact@urbanland.in" 
+              className="group/btn relative w-12 h-12 bg-[#2D2D2D] hover:bg-[#1a1a1a] rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer mr-1"
+              aria-label="Email Us"
+            >
+              <span className="material-symbols-outlined text-white text-[20px] font-bold">mail</span>
+              <span className="absolute right-14 bg-black/80 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded opacity-0 group-hover/btn:opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm pointer-events-none">
+                Email
+              </span>
+            </a>
+
+            {/* Call Button */}
+            <a 
+              href="tel:+919999999999" 
+              className="group/btn relative w-12 h-12 bg-[#C9A84C] hover:bg-[#E5C76B] rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer mr-1"
+              aria-label="Call Now"
+            >
+              <span className="material-symbols-outlined text-white text-[20px] font-bold">call</span>
+              <span className="absolute right-14 bg-black/80 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded opacity-0 group-hover/btn:opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm pointer-events-none">
+                Call
+              </span>
+            </a>
+
+            {/* WhatsApp Button */}
+            <a 
+              href="https://wa.me/919999999999" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="group/btn relative w-12 h-12 bg-[#25D366] rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer mr-1"
+              aria-label="WhatsApp Now"
+            >
+              <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+              </svg>
+              <span className="absolute right-14 bg-black/80 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded opacity-0 group-hover/btn:opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm pointer-events-none">
+                WhatsApp
+              </span>
+            </a>
+
+            {/* Veda AI Chat Button */}
+            <button 
+              onClick={(e) => { e.stopPropagation(); setIsOpen(true); setIsMenuOpen(false); }}
+              className="group/btn relative w-12 h-12 bg-white rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.1)] flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer mr-1"
+              aria-label="Veda AI Chat"
+            >
+              <span className="material-symbols-outlined text-[#2C5F2E] text-[24px] font-bold">robot_2</span>
+              <span className="absolute right-14 bg-black/80 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded opacity-0 group-hover/btn:opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm pointer-events-none">
+                Veda AI
+              </span>
+            </button>
+          </div>
+        )}
+
+        <button
+          onClick={(e) => { 
+            if (isOpen) {
+              setIsOpen(false);
+            } else {
+              setIsMenuOpen(!isMenuOpen);
+              setShowNotification(false);
+            }
+          }}
+          Veda-label="Toggle chat"
+          className={`relative w-14 h-14 rounded-2xl flex items-center justify-center shadow-2xl cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 z-10 ${isMenuOpen ? 'rotate-45' : ''}`}
+          style={{ background: "linear-gradient(135deg, #2C5F2E 0%, #1a3d1c 100%)", border: "1px solid rgba(255,255,255,0.12)" }}
         >
-          chat
-        </span>
-        <span
-          className={`material-symbols-outlined text-white text-2xl transition-all duration-300 ${isOpen ? "rotate-0 opacity-100" : "-rotate-180 opacity-0 absolute"}`}
-        >
-          keyboard_arrow_down
-        </span>
-        {/* Gold dot */}
-        <span className="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-[#C9A84C] border-2 border-[#2C5F2E]" />
-      </button>
+          <span
+            className={`material-symbols-outlined text-white text-2xl transition-all duration-300 ${isOpen || isMenuOpen ? "opacity-0 absolute" : "opacity-100"}`}
+          >
+            chat
+          </span>
+          <span
+            className={`material-symbols-outlined text-white text-3xl transition-all duration-300 ${isOpen || isMenuOpen ? "opacity-100" : "opacity-0 absolute"}`}
+          >
+            add
+          </span>
+          {/* Gold dot */}
+          <span className={`absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-[#C9A84C] border-2 border-[#2C5F2E] transition-opacity duration-300 ${isOpen || isMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
+        </button>
+      </div>
 
       {/* ── Chat Window ── */}
       {isOpen && (
