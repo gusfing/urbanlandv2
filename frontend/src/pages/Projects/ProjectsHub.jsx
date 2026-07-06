@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import { getOptimizedImageUrl } from "../../utils/image";
+import SharedFAQ from "../../components/SharedFAQ/SharedFAQ";
 
 // Import local assets
 import gbg1 from '../../assets/gallery_real_estate.png';
