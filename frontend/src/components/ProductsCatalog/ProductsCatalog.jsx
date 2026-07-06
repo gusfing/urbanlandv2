@@ -277,6 +277,20 @@ const ProductsCatalog = ({ showTitle = true }) => {
     }
   };
 
+  const handleNextCategory = () => {
+    const currentIndex = categories.findIndex(c => c.id === activeCategory);
+    const nextIndex = (currentIndex + 1) % categories.length;
+    setActiveCategory(categories[nextIndex].id);
+  };
+
+  const handlePrevCategory = () => {
+    const currentIndex = categories.findIndex(c => c.id === activeCategory);
+    const prevIndex = (currentIndex - 1 + categories.length) % categories.length;
+    setActiveCategory(categories[prevIndex].id);
+  };
+
+  const activeCategoryData = categories.find(c => c.id === activeCategory) || categories[0];
+
   useGSAP(() => {
     if (loading) return;
 
@@ -372,9 +386,8 @@ const ProductsCatalog = ({ showTitle = true }) => {
 
       {/* FULL WIDTH CATEGORY EXPLORER LAYOUT */}
       <div className="w-full flex flex-col gap-8 catalog-pills-row">
-        
-        {/* Horizontal Navigation Grid */}
-        <div className="w-full flex items-center justify-between pb-6 border-b border-[#2D2D2D]/10">
+              {/* DESKTOP: Horizontal Navigation Grid */}
+        <div className="hidden md:flex w-full items-center justify-between pb-6 border-b border-[#2D2D2D]/10">
           
           {/* Pills Wrapper with Left and Right scroll buttons flanking them */}
           <div className="flex-1 flex items-center relative w-full overflow-hidden">
@@ -382,7 +395,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
             {/* Left Category Scroll Button */}
             <button
               onClick={() => scrollPills("left")}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EAE5DB] text-[#2D2D2D] hover:bg-[#EAE5DB]/80 flex justify-center items-center transition-all cursor-pointer shrink-0 mr-3 shadow-sm active:scale-95"
+              className="w-10 h-10 rounded-full bg-[#EAE5DB] text-[#2D2D2D] hover:bg-[#EAE5DB]/80 flex justify-center items-center transition-all cursor-pointer shrink-0 mr-3 shadow-sm active:scale-95"
               aria-label="Scroll categories left"
             >
               <svg className="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -432,17 +445,58 @@ const ProductsCatalog = ({ showTitle = true }) => {
             {/* Right Pill Scroll Button */}
             <button
               onClick={() => scrollPills("right")}
-              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#2C5F2E] text-[#F7F4EF] hover:bg-[#2C5F2E]/90 flex justify-center items-center shadow-md transition-all cursor-pointer shrink-0 ml-3 active:scale-95"
+              className="w-10 h-10 rounded-full bg-[#2C5F2E] text-[#F7F4EF] hover:bg-[#2C5F2E]/90 flex justify-center items-center shadow-md transition-all cursor-pointer shrink-0 ml-3 active:scale-95"
               aria-label="Scroll categories right"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
             </button>
-
           </div>
         </div>
 
+        {/* MOBILE: Category Cycler */}
+        <div className="flex md:hidden w-full justify-center pb-6 border-b border-[#2D2D2D]/10">
+          <div className="flex items-center bg-[#F7F4EF] rounded-[40px] p-1.5 shadow-sm border border-black/5">
+            {/* Left Category Arrow */}
+            <button
+              onClick={handlePrevCategory}
+              className="w-11 h-11 rounded-full bg-[#EAE5DB] text-[#2D2D2D] hover:bg-[#EAE5DB]/80 flex justify-center items-center transition-all cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.05)] active:scale-95 shrink-0"
+              aria-label="Previous category"
+            >
+              <svg className="w-5 h-5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Active Category Display */}
+            <div className="px-5 h-11 mx-2 rounded-full border border-black/10 bg-white flex items-center gap-2 min-w-[180px] max-w-[240px] justify-center text-[#2D2D2D] shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+              <div className="shrink-0 text-[#2C5F2E]">
+                {activeCategoryData.id === "all" ? (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                ) : (
+                  activeCategoryData.icon
+                )}
+              </div>
+              <span className="text-xs font-bold uppercase tracking-wider text-[#2D2D2D] truncate">
+                {activeCategoryData.name}
+              </span>
+            </div>
+
+            {/* Right Category Arrow */}
+            <button
+              onClick={handleNextCategory}
+              className="w-11 h-11 rounded-full bg-[#2C5F2E] text-[#F7F4EF] hover:bg-[#2C5F2E]/90 flex justify-center items-center shadow-[0_4px_12px_rgba(44,95,46,0.2)] transition-all cursor-pointer active:scale-95 shrink-0"
+              aria-label="Next category"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
         {/* Bottom row: Slider container */}
         <div className="w-full relative">
           

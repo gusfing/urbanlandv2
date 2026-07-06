@@ -35,19 +35,42 @@ const useScrollReveal = (options = {}) => {
       ".reveal-fade",
       ".reveal-scale",
     ];
+    const selectorString = selectors.join(", ");
 
-    const elements = document.querySelectorAll(selectors.join(", "));
+    // 1. Observe existing elements in the DOM
+    const elements = document.querySelectorAll(selectorString);
     elements.forEach((el) => {
-      // Don't re-add active if already animated
       if (!el.classList.contains("active")) {
         observer.observe(el);
       }
     });
 
+    // 2. Observe dynamically added elements (fixes blank space on route change / async render)
+    const mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node.nodeType === 1) { // ELEMENT_NODE
+            if (node.matches && node.matches(selectorString)) {
+              if (!node.classList.contains("active")) observer.observe(node);
+            }
+            if (node.querySelectorAll) {
+              const childElements = node.querySelectorAll(selectorString);
+              childElements.forEach((child) => {
+                if (!child.classList.contains("active")) observer.observe(child);
+              });
+            }
+          }
+        });
+      });
+    });
+
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
     return () => {
-      elements.forEach((el) => observer.unobserve(el));
+      mutationObserver.disconnect();
+      observer.disconnect();
     };
-  }, [location.pathname]);
+  }, [location.pathname, options]);
 };
 
 export default useScrollReveal;

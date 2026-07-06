@@ -294,7 +294,7 @@ const VedaChatbot = () => {
           <span
             className={`material-symbols-outlined text-white text-2xl transition-all duration-300 ${isOpen || isMenuOpen ? "opacity-0 absolute" : "opacity-100"}`}
           >
-            chat
+            support_agent
           </span>
           <span
             className={`material-symbols-outlined text-white text-3xl transition-all duration-300 ${isOpen || isMenuOpen ? "opacity-100" : "opacity-0 absolute"}`}

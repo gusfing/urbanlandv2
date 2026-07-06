@@ -22,7 +22,7 @@ const BenchesConfigurator = ({
     if (materialKeys.length === 0) return null;
 
     return (
-        <section className="reveal-section bg-surface py-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
+        <section className="reveal-section bg-surface pt-24 pb-40 lg:pb-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant">
             <div className="max-w-container-max mx-auto">
                 <div className="mb-16 text-left space-y-4 reveal-up">
                     <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
@@ -41,65 +41,37 @@ const BenchesConfigurator = ({
                     {/* Left Column: Controls */}
                     <div className="lg:col-span-7 space-y-12 reveal-up">
                         {/* Material Selection */}
-                        <div className="space-y-6 text-left">
-                            <h3 className="font-label-caps text-xs text-on-surface-variant uppercase tracking-widest font-semibold">01 / Choose Material</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        <div className="space-y-4 text-left">
+                            <div>
+                                <h3 className="font-label-caps text-[11px] text-on-surface-variant uppercase tracking-widest font-semibold">01 / Choose Material</h3>
+                                <h4 className="font-headline-sm text-2xl text-deep-ink mt-1">
+                                    {materialData[configMaterial]?.title || "Select Material"}
+                                </h4>
+                            </div>
+                            <div className="flex flex-wrap gap-4 pt-2">
                                 {materialKeys.map((key) => {
                                     const data = materialData[key];
                                     const isSelected = configMaterial === key;
+                                    const bgColor = key === "wpc" ? "bg-[#8B5E3C]"
+                                        : key === "nfc" ? "bg-[#A0522D]"
+                                        : key === "aluminium" ? "bg-[#C0C0C0]"
+                                        : key === "mild_steel" ? "bg-[#4A4A4A]"
+                                        : "bg-[#E5E4E2]";
+                                        
                                     return (
                                         <button
                                             key={key}
                                             onClick={() => setConfigMaterial(key)}
-                                            className={`group border p-4 text-left transition-all duration-300 rounded-[8px] ${isSelected
-                                                ? "border-craftsman-gold bg-surface-container-low"
-                                                : "border-outline-variant hover:bg-surface-container-low/50"
-                                                }`}
+                                            className={`group relative w-16 h-16 sm:w-20 sm:h-20 rounded-[12px] transition-all duration-300 ${bgColor} ${
+                                                isSelected
+                                                    ? "ring-2 ring-offset-4 ring-craftsman-gold shadow-md scale-105"
+                                                    : "border border-outline-variant/30 hover:opacity-80 hover:scale-105"
+                                            }`}
                                         >
-                                            <div className="flex items-center justify-between mb-3">
-                                                <span className="font-bold text-sm text-on-surface flex items-center gap-1">
-                                                    {data.title}
-                                                    {key === "nfc" && (
-                                                        <span className="group/tooltip relative inline-block">
-                                                            <span className="material-symbols-outlined text-sm text-on-surface-variant cursor-help">info</span>
-                                                            <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 scale-95 opacity-0 group-hover/tooltip:scale-100 group-hover/tooltip:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[10.5px] p-2.5 leading-relaxed z-20 normal-case font-normal rounded-[6px] shadow-lg border border-outline-variant/30">
-                                                                Natural Fiber Composite (NFC) utilizes natural fibers for superior thermal stability and organic aesthetics.
-                                                            </span>
-                                                        </span>
-                                                    )}
-                                                    {key === "mild_steel" && (
-                                                        <span className="group/tooltip relative inline-block">
-                                                            <span className="material-symbols-outlined text-sm text-on-surface-variant cursor-help">info</span>
-                                                            <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 scale-95 opacity-0 group-hover/tooltip:scale-100 group-hover/tooltip:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[10.5px] p-2.5 leading-relaxed z-20 normal-case font-normal rounded-[6px] shadow-lg border border-outline-variant/30">
-                                                                Powder Coated finish provides industrial strength with a high-durability color shell.
-                                                            </span>
-                                                        </span>
-                                                    )}
-                                                </span>
-                                                <div
-                                                    className={`w-8 h-8 rounded-full border border-outline-variant ${key === "wpc"
-                                                        ? "bg-[#8B5E3C]"
-                                                        : key === "nfc"
-                                                            ? "bg-[#A0522D]"
-                                                            : key === "aluminium"
-                                                                ? "bg-[#C0C0C0]"
-                                                                : key === "mild_steel"
-                                                                    ? "bg-[#4A4A4A]"
-                                                                    : "bg-[#E5E4E2]"
-                                                        }`}
-                                                />
-                                            </div>
-                                            <p className="text-[10px] text-on-surface-variant uppercase font-semibold tracking-wider font-label-technical">
-                                                {key === "wpc"
-                                                    ? "Wood-Plastic Composite"
-                                                    : key === "nfc"
-                                                        ? "Premium Bio-Composite"
-                                                        : key === "aluminium"
-                                                            ? "Corrosion-Resistant"
-                                                            : key === "mild_steel"
-                                                                ? "Structural Hardness"
-                                                                : "Marine Grade 316"}
-                                            </p>
+                                            {/* Tooltip on hover */}
+                                            <span className="pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-max max-w-[200px] scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 bg-charcoal-industrial text-white text-[11px] py-1.5 px-3 leading-relaxed z-20 normal-case font-medium rounded-[6px] shadow-lg text-center">
+                                                {data.title}
+                                            </span>
                                         </button>
                                     );
                                 })}

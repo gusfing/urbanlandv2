@@ -438,31 +438,6 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-stack-xl bg-surface-container-highest border-y border-industrial-charcoal/5">
-        <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
-          <h2 className="font-headline-lg text-2xl md:text-headline-lg text-deep-ink mb-6 font-bold">
-            Ready to Create Better Outdoor Spaces?
-          </h2>
-          <p className="font-body-lg text-sm sm:text-base text-on-surface-variant mb-12 max-w-2xl mx-auto leading-relaxed">
-            Whether you're designing a township, resort, park, campus, or public space, we'd love to be part of your project.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link
-              to="/contact"
-              className="w-full sm:w-auto bg-primary text-on-primary px-12 py-5 font-label-md text-xs uppercase tracking-widest hover:opacity-90 transition-all no-underline text-center font-bold rounded-[4px]"
-            >
-              Request a Quote
-            </Link>
-            <Link
-              to="/contact"
-              className="w-full sm:w-auto border-2 border-primary text-primary px-12 py-5 font-label-md text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-all no-underline text-center font-bold rounded-[4px]"
-            >
-              Contact Our Team
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Video Story Modal */}
       {isVideoOpen && (

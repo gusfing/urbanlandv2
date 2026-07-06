@@ -51,7 +51,7 @@ const ProductConfigurator = ({ config }) => {
     };
 
     return (
-        <section className="reveal-section bg-surface pt-24 pb-32 lg:pb-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant overflow-hidden">
+        <section className="reveal-section bg-surface pt-24 pb-40 lg:pb-24 px-margin-mobile md:px-margin-desktop border-b border-outline-variant overflow-hidden">
             <div className="max-w-container-max mx-auto">
                 {/* Header */}
                 <div className="mb-16 text-left space-y-4 reveal-up">

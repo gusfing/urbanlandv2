@@ -161,11 +161,11 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
   const activeLink = links[activeMenuIndex] || links[0];
 
   return (
-    <div ref={containerRef} onClick={handleBackdropClick} className="fixed inset-0 z-[999] bg-[#F7F4EF] flex items-stretch justify-center font-sans opacity-0 invisible">
-      <div ref={innerRef} className="menu-overlay-inner relative w-full h-full bg-[#F7F4EF] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-14 lg:p-16 shadow-none border-none rounded-none">
+    <div ref={containerRef} onClick={handleBackdropClick} className="fixed inset-0 z-[9999] bg-[#F7F4EF] flex items-stretch justify-center font-sans opacity-0 invisible">
+      <div ref={innerRef} className="menu-overlay-inner relative w-full h-full bg-[#F7F4EF] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-14 lg:px-16 lg:pt-16 lg:pb-32 shadow-none border-none rounded-none">
         
         {/* Main Content Area */}
-        <div className="menu-main-content w-full h-full flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-16 z-10 overflow-y-auto scrollbar-none pb-12 lg:pb-0">
+        <div className="menu-main-content w-full flex-1 min-h-0 flex flex-col lg:flex-row items-stretch justify-between gap-12 lg:gap-16 z-10 overflow-y-auto scrollbar-none pb-12 lg:pb-0">
           
           {/* LEFT COLUMN */}
           <div className="w-full lg:w-[35%] flex flex-col justify-between py-4 lg:py-6 pl-2 lg:pl-6 mt-8 lg:mt-0 lg:h-full lg:overflow-y-auto lg:scrollbar-none pb-24 lg:pb-28">
