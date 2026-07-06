@@ -49,7 +49,7 @@ const FloatingContact = () => {
 
         {/* Email Button */}
         <a 
-          href="mailto:contact@urbanland.in" 
+          href="mailto:contact@decorlab.in" 
           className="group relative w-12 h-12 bg-[#2D2D2D] hover:bg-[#1a1a1a] rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer"
           aria-label="Email Us"
         >

@@ -26,7 +26,7 @@ const resources = [
     },
     {
         icon: <FiFeather className="text-3xl text-craftsman-gold mb-4" />,
-        title: "Urbanland Blog",
+        title: "Decorlab Blog",
         description: "Read insights on furniture design, landscape architecture, and modern trends.",
         linkText: "Read Articles",
         to: "/blog/"

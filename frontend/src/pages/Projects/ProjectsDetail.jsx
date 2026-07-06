@@ -34,10 +34,10 @@ const projectsMeta = {
     volume: "Multiple Township and Sky Deck sites in MMR & Pune",
     standards: "Custom structural stability, FSC timbers, C5 corrosion barrier powder coating",
     image: gbg1,
-    metaTitle: "Lodha Projects | Sustainable Outdoor Furniture & Green Amenity Solutions | Urbanland Products",
+    metaTitle: "Lodha Projects | Sustainable Outdoor Furniture & Green Amenity Solutions | Decorlab Products",
     metaDesc: "Sustainable outdoor benches, planter boxes and green amenity solutions delivered for Lodha Projects. Eco-friendly WPC, NFC Wood, Aluminium & Mild Steel furniture supporting green building certifications. 2-Year Guarantee.",
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
-    desc: "Urbanland Products partners with Lodha to deliver premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions. Our sustainable WPC, NFC Wood and long-life metal products help create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
+    desc: "Decorlab Products partners with Lodha to deliver premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions. Our sustainable WPC, NFC Wood and long-life metal products help create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
     challenges: [
       { text: "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED).", image: gbg1 },
       { text: "Reducing long-term environmental impact through durable, low-maintenance materials.", image: benchImg },
@@ -85,10 +85,10 @@ const projectsMeta = {
     volume: "Premium luxury towers and townships in Ahmedabad, Mumbai, NCR",
     standards: "High-wind certified cantilever structural car sheds, Grade 304/316 SS hardware",
     image: gbg5,
-    metaTitle: "Adani Realty Projects | Sustainable Outdoor Furniture & Green Amenity Solutions | Urbanland Products",
+    metaTitle: "Adani Realty Projects | Sustainable Outdoor Furniture & Green Amenity Solutions | Decorlab Products",
     metaDesc: "Sustainable outdoor benches, planter boxes and green amenity solutions delivered for Adani Realty Projects. Eco-friendly WPC, NFC Wood, Aluminium & Mild Steel furniture supporting green building certifications and biophilic design. 2-Year Guarantee.",
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
-    desc: "Urbanland Products partners with Adani Realty to deliver premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions. Our sustainable WPC, NFC Wood and long-life metal products help create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
+    desc: "Decorlab Products partners with Adani Realty to deliver premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions. Our sustainable WPC, NFC Wood and long-life metal products help create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
     challenges: [
       { text: "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED).", image: gbg5 },
       { text: "Reducing long-term environmental impact through durable, low-maintenance materials.", image: benchImg },
@@ -136,10 +136,10 @@ const projectsMeta = {
     volume: "Luxury residential towers and premium wellness resort decks",
     standards: "PE synthetic UV-tested wicker, weatherproof quick-dry cushions",
     image: gbg2,
-    metaTitle: "Oberoi Projects | Sustainable Outdoor Furniture & Green Amenity Solutions | Urbanland Products",
+    metaTitle: "Oberoi Projects | Sustainable Outdoor Furniture & Green Amenity Solutions | Decorlab Products",
     metaDesc: "Sustainable outdoor benches, planter boxes and green amenity solutions delivered for Oberoi Projects. Eco-friendly WPC, NFC Wood, Aluminium & Mild Steel furniture supporting green building certifications and biophilic design. 2-Year Guarantee.",
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
-    desc: "Urbanland Products partners with Oberoi to deliver premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions. Our sustainable WPC, NFC Wood and long-life metal products help create sophisticated, low-maintenance green spaces that enhance luxury living and support biophilic design.",
+    desc: "Decorlab Products partners with Oberoi to deliver premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions. Our sustainable WPC, NFC Wood and long-life metal products help create sophisticated, low-maintenance green spaces that enhance luxury living and support biophilic design.",
     challenges: [
       { text: "Creating world-class, premium outdoor spaces while achieving high green building standards (IGBC, GRIHA, LEED).", image: gbg2 },
       { text: "Reducing environmental impact through durable, recyclable materials instead of traditional wood.", image: benchImg },
@@ -187,10 +187,10 @@ const projectsMeta = {
     volume: "Corporate hubs in BKC, residential towers in Kandivali, Thane, Dombivali",
     standards: "Grade 316 Marine-grade stainless steel options to resist heavy coastal humidity",
     image: gbg5,
-    metaTitle: "Mumbai Projects | Outdoor Furniture Installations by Urbanland Products – Benches, Planters & Amenity Solutions",
+    metaTitle: "Mumbai Projects | Outdoor Furniture Installations by Decorlab Products – Benches, Planters & Amenity Solutions",
     metaDesc: "Premium outdoor benches, planter boxes and amenity furniture delivered for Mumbai, Navi Mumbai, Thane, Kharghar, Kandivali and surrounding areas. Trusted by Godrej, Kalpataru, Wadhwa and leading developers. Sustainable WPC & NFC Wood solutions with 2-Year Guarantee.",
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
-    desc: "Urbanland Products has successfully delivered premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions across Mumbai, Navi Mumbai, Thane and surrounding regions. Our sustainable WPC, NFC Wood and metal furniture help leading developers create beautiful, long-lasting green spaces in luxury residential projects.",
+    desc: "Decorlab Products has successfully delivered premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions across Mumbai, Navi Mumbai, Thane and surrounding regions. Our sustainable WPC, NFC Wood and metal furniture help leading developers create beautiful, long-lasting green spaces in luxury residential projects.",
     challenges: [
       { text: "Creating premium outdoor spaces while meeting green building standards in a dense urban environment.", image: gbg5 },
       { text: "Combating a harsh coastal climate, heavy monsoons, and high humidity levels daily.", image: wickerFurnitureImg },
@@ -238,10 +238,10 @@ const projectsMeta = {
     volume: "Public squares, educational campuses in Gurgaon, Noida, Greater Noida",
     standards: "Grade 304 Stainless steel hardware, high wind-certified structural anchors",
     image: gbg4,
-    metaTitle: "Delhi Projects | Outdoor Furniture & Sustainable Amenity Solutions for Delhi NCR | Urbanland Products",
+    metaTitle: "Delhi Projects | Outdoor Furniture & Sustainable Amenity Solutions for Delhi NCR | Decorlab Products",
     metaDesc: "Sustainable outdoor benches, planter boxes and green amenity solutions delivered for Delhi NCR projects. Eco-friendly WPC, NFC Wood and metal furniture for luxury real estate, municipal and institutional developments in Delhi, Gurgaon, Noida and Greater Noida. 2-Year Guarantee.",
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
-    desc: "Urbanland Products delivers premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions across Delhi NCR. Our sustainable WPC, NFC Wood and long-life metal products help developers and architects create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
+    desc: "Decorlab Products delivers premium, eco-friendly benches, planter boxes and complete outdoor amenity solutions across Delhi NCR. Our sustainable WPC, NFC Wood and long-life metal products help developers and architects create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
     challenges: [
       { text: "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED) in a highly polluted urban environment.", image: gbg4 },
       { text: "Combating extreme climate weathering – scorching summers, heavy monsoons, and cold winters.", image: benchImg },
@@ -289,10 +289,10 @@ const projectsMeta = {
     volume: "Outer Ring Road tech parks, gated estates in Anekal, Whitefield, Electronic City",
     standards: "FSC certified responsible composites, low-VOC antibacterial finishes",
     image: gbg3,
-    metaTitle: "Bangalore Projects | Sustainable Outdoor Furniture & Green Amenity Solutions | Urbanland Products",
+    metaTitle: "Bangalore Projects | Sustainable Outdoor Furniture & Green Amenity Solutions | Decorlab Products",
     metaDesc: "Sustainable outdoor benches, planter boxes and amenity solutions delivered in Bangalore (Bengaluru). Eco-friendly WPC, NFC Wood and metal furniture for residential, tech parks and institutional projects in Bengaluru. 2-Year Guarantee.",
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
-    desc: "Urbanland Products has successfully delivered premium, sustainable outdoor furniture solutions in Bangalore (Bengaluru). Our eco-friendly benches, planter boxes and durable products help create beautiful, low-maintenance green spaces for residential, tech park and institutional developments.",
+    desc: "Decorlab Products has successfully delivered premium, sustainable outdoor furniture solutions in Bangalore (Bengaluru). Our eco-friendly benches, planter boxes and durable products help create beautiful, low-maintenance green spaces for residential, tech park and institutional developments.",
     challenges: [
       { text: "Creating premium outdoor spaces while meeting green building standards (IGBC, GRIHA, LEED).", image: gbg3 },
       { text: "Combating high humidity, heavy monsoons, and urban heat island effects.", image: benchImg },
@@ -339,10 +339,10 @@ const projectsMeta = {
     volume: "IT campuses in Hinjewadi, Kharadi, residential townships in Yerwada, Haveli",
     standards: "Galvanized heavy structural steel frames, zinc-rich rust primer coatings",
     image: gbg1,
-    metaTitle: "Pune Projects | Sustainable Outdoor Furniture & Green Amenity Solutions | Urbanland Products",
+    metaTitle: "Pune Projects | Sustainable Outdoor Furniture & Green Amenity Solutions | Decorlab Products",
     metaDesc: "Sustainable outdoor benches, planter boxes, canteen tables and green amenity solutions delivered for Pune projects. Eco-friendly WPC, NFC Wood and metal furniture for luxury real estate, tech parks and institutional developments in Pune. 2-Year Guarantee.",
     subTitle: "Sustainable Outdoor Furniture & Green Amenity Solutions",
-    desc: "Urbanland Products has successfully delivered premium, eco-friendly benches, planter boxes, canteen tables and complete outdoor amenity solutions across Pune. Our sustainable WPC, NFC Wood and long-life metal products help developers and architects create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
+    desc: "Decorlab Products has successfully delivered premium, eco-friendly benches, planter boxes, canteen tables and complete outdoor amenity solutions across Pune. Our sustainable WPC, NFC Wood and long-life metal products help developers and architects create beautiful, low-maintenance green spaces that support biophilic design and green building certifications.",
     challenges: [
       { text: "Creating premium outdoor spaces while meeting strict green building standards (IGBC, GRIHA, LEED).", image: gbg1 },
       { text: "Combating high humidity, heavy monsoons, and the urban heat island effect.", image: benchImg },
@@ -435,7 +435,7 @@ const ProjectsDetail = () => {
     if (!meta) return;
 
     updatePageSEO({
-      title: meta.metaTitle || `${meta.title} Showcase | Urbanland Projects`,
+      title: meta.metaTitle || `${meta.title} Showcase | Decorlab Projects`,
       description: meta.metaDesc || meta.desc,
       og_image: meta.image
     });
@@ -1046,7 +1046,7 @@ const ProjectsDetail = () => {
               Developer Preference
             </span>
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink max-w-3xl">
-              Why Luxury Developers Prefer Urbanland’s Sustainable Solutions
+              Why Luxury Developers Prefer Decorlab’s Sustainable Solutions
             </h2>
             <div className="w-24 h-1 bg-craftsman-gold"></div>
           </div>

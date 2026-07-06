@@ -1,4 +1,4 @@
-const WP_BASE_URL = import.meta.env.VITE_WP_API_URL || "https://backend.urbanlandproducts.com";
+const WP_BASE_URL = import.meta.env.VITE_WP_API_URL || "https://backend.decorlabproducts.com";
 
 /**
  * Image CDN Optimization Helper: Uses Cloudflare Image Resizing (/cdn-cgi/image/)
@@ -31,7 +31,7 @@ export const getOptimizedImageUrl = (url) => {
 
   // 1. WordPress dynamic images (external absolute URLs)
   if (url.startsWith("http://") || url.startsWith("https://")) {
-    const isWordPressImage = url.includes("urbanlandproducts.com") || url.includes(WP_BASE_URL.replace(/^https?:\/\//, ""));
+    const isWordPressImage = url.includes("decorlabproducts.com") || url.includes(WP_BASE_URL.replace(/^https?:\/\//, ""));
     if (isWordPressImage) {
       if (!isCloudflareActive) {
         // If not on the live custom domain (e.g. localhost or vercel.app), load directly from WP backend to avoid 404s

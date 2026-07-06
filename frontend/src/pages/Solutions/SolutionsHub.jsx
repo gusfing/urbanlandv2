@@ -6,7 +6,7 @@ import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import gbg1 from '../../assets/gallery_real_estate.png';
 import gbg2 from '../../assets/gallery_hotels.png';
 import gbg3 from '../../assets/gallery_hospitals.png';
-import SharedFAQ from "../../components/SharedFAQ/SharedFAQ";
+
 import gbg4 from '../../assets/gallery_education.png';
 import gbg5 from '../../assets/gallery_smart_city.png';
 
@@ -107,7 +107,7 @@ const SolutionsHub = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Industry Solutions | URBANLAND Products",
+      title: "Industry Solutions | DECORLAB Products",
       description: "Explore customized street furniture solutions for Real Estate, Hospitality, Hotels, Healthcare, Universities, and Smart City Municipalities.",
       og_image: gbg1
     });
@@ -535,14 +535,14 @@ const SolutionsHub = () => {
         </div>
       </section>
 
-      {/* Why Choose Urbanland */}
+      {/* Why Choose Decorlab */}
       <section className="reveal-section py-24 px-6 md:px-margin-desktop max-w-container-max mx-auto">
         <div className="mb-16 text-center space-y-4 flex flex-col items-center">
           <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
             Our Value Proposition
           </span>
           <h2 className="font-headline-lg text-headline-lg text-deep-ink">
-            Why Leading Organisations Choose Urbanland
+            Why Leading Organisations Choose Decorlab
           </h2>
           <div className="w-24 h-1 bg-craftsman-gold mx-auto"></div>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
@@ -601,82 +601,8 @@ const SolutionsHub = () => {
         </div>
       </section>
 
-      <SharedFAQ faqs={[
-            {
-              q: "What are the typical lead times for bulk orders?",
-              a: "For standard catalog items in bulk, our lead time is typically 3-4 weeks. Custom-engineered solutions may take 6-8 weeks depending on the complexity and volume of the order."
-            },
-            {
-              q: "Do you offer pan-India delivery and installation?",
-              a: "Yes, we provide nationwide delivery across India. Our logistics network ensures safe transit to Tier 1, 2, and 3 cities. We also offer professional installation services through our certified regional partners."
-            },
-            {
-              q: "How do Urbanland products contribute to Green Building?",
-              a: "Our products utilize FSC-certified timber and high-recycled-content aluminum and steel. We also offer finishes with low-VOC powder coatings, which help projects earn LEED and IGBC rating points."
-            },
-            {
-              q: "Can we request custom branding on the furniture?",
-              a: "Absolutely. We can integrate laser-cut logos, custom color schemes, and specific architectural motifs into the furniture design to ensure it reflects your brand's identity perfectly."
-            }
-          ]} />
 
-      {/* Rebuilt Footer CTA */}
-      <section className="reveal-section bg-primary text-on-primary py-24 px-margin-mobile md:px-margin-desktop overflow-hidden relative">
-        <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          {/* Trust Panel */}
-          <div className="space-y-10 border-l-2 border-secondary/30 pl-8 md:pl-10 text-left">
-            <div className="space-y-2">
-              <span className="font-label-technical text-secondary tracking-[0.2em] uppercase font-semibold text-xs block">
-                The Urbanland Advantage
-              </span>
-              <h3 className="font-headline-md text-3xl md:text-4xl text-on-primary leading-tight">Why Urbanland Stands Apart</h3>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {[
-                { icon: "verified", title: "ISO 9001:2015", desc: "Certified manufacturing excellence" },
-                { icon: "workspace_premium", title: "2-Year Guarantee", desc: "India's only comprehensive warranty" },
-                { icon: "precision_manufacturing", title: "Precision Engineering", desc: "Built for high-traffic durability" },
-                { icon: "public", title: "Pan-India Delivery", desc: "Professional installation support" }
-              ].map((adv, idx) => (
-                <div key={idx} className="flex items-start space-x-4">
-                  <span className="material-symbols-outlined text-secondary text-2xl">{adv.icon}</span>
-                  <div>
-                    <p className="font-bold text-sm uppercase tracking-wider font-label-technical">{adv.title}</p>
-                    <p className="text-xs text-white/70 mt-1">{adv.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Conversion Area Card */}
-          <div className="bg-white/5 p-8 md:p-12 border border-white/10 backdrop-blur-sm rounded-none text-left">
-            <h2 className="font-headline-lg text-3xl md:text-4xl text-on-primary mb-8 leading-tight">
-              Ready to Transform Your Space with <br />
-              <span className="text-secondary">Premium Outdoor Solutions?</span>
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/contact"
-                className="bg-secondary text-on-secondary px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:opacity-90 transition-all duration-300 rounded-[4px]"
-              >
-                Request a Custom Quote <span className="ml-2">→</span>
-              </Link>
-              <Link
-                to="/contact"
-                className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 rounded-[4px]"
-              >
-                Talk to an Engineer <span className="ml-2">→</span>
-              </Link>
-            </div>
-            <p className="mt-8 text-xs text-white/60 font-label-technical uppercase tracking-widest font-semibold">
-              Trusted by 50+ major projects across 15+ Indian cities
-            </p>
-          </div>
-        </div>
-        {/* Decorative Background Element */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-black/10 -skew-x-12 translate-x-1/4 z-0"></div>
-      </section>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { supabase } from "./supabaseClient";
 import { imageMap } from "../utils/imageMap";
 
 // Resolve WordPress base URL from env variables
-const WP_BASE_URL = import.meta.env.VITE_WP_API_URL || "https://backend.urbanlandproducts.com";
+const WP_BASE_URL = import.meta.env.VITE_WP_API_URL || "https://backend.decorlabproducts.com";
 
 /**
  * Image CDN Optimization Helper: Uses images.weserv.nl (Cloudflare) to resize, 
@@ -43,7 +43,7 @@ const fallbackPosts = [
     category_names: ["Urban Planning", "Sustainability"],
     featured_image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80",
     yoast_head_json: {
-      title: "Reclaiming Parking Spaces: The Rise of Modular Parklets | Urbanland",
+      title: "Reclaiming Parking Spaces: The Rise of Modular Parklets | Decorlab",
       description: "Discover how cities are transforming static curbside parking lanes into vibrant, green modular parklets for walkable, human-centric urban living.",
       og_title: "Reclaiming Parking Spaces: The Rise of Modular Parklets",
       og_description: "Curbside reclamation transforms static parking bays into public terraces. Learn about our modular PLATFORM street furniture.",
@@ -107,7 +107,7 @@ const fallbackPosts = [
     category_names: ["Materials", "Eco-design"],
     featured_image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80",
     yoast_head_json: {
-      title: "Choosing the Right Timber: Sustainably Sourced Materials | Urbanland",
+      title: "Choosing the Right Timber: Sustainably Sourced Materials | Decorlab",
       description: "An evaluation of FSC-certified timbers (Jatoba and Robinia) for high-performance public street furniture, analyzing durability and environmental impact.",
       og_title: "Choosing the Right Timber: Sustainably Sourced Materials for Public Spaces",
       og_description: "timber selection matters for public street furniture. Learn about FSC certification, Robinia, and Jatoba weathering.",
@@ -150,7 +150,7 @@ const fallbackPosts = [
     category_names: ["Smart Cities", "Technology"],
     featured_image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=80",
     yoast_head_json: {
-      title: "Smart City Shelters: Rethinking Public Transit Hubs | Urbanland",
+      title: "Smart City Shelters: Rethinking Public Transit Hubs | Decorlab",
       description: "How smart bus shelters equipped with solar panels and real-time e-paper displays are revolutionizing municipal public transit systems.",
       og_title: "Smart City Shelters: Rethinking Public Transit Hubs",
       og_description: "Discover the technology and ecological impact of solar-powered transit shelters in modern cities.",
@@ -302,10 +302,10 @@ const parseWPPostToProduct = (post) => {
     .replace(/\s*[–|-]\s*Transforming Open Spaces.*$/gi, "")
     .replace(/\s*[–|-]\s*Trusted WPC Bench.*$/gi, "")
     .replace(/\s*[–|-]\s*Luxury Outdoor Furniture.*$/gi, "")
-    .replace(/\s*[–|-]\s*Urbanland Products.*$/gi, "")
-    .replace(/\s*[–|-]\s*UrbanLand Products.*$/gi, "")
+    .replace(/\s*[–|-]\s*Decorlab Products.*$/gi, "")
+    .replace(/\s*[–|-]\s*Decorlab Products.*$/gi, "")
     .replace(/\s*[–|-]\s*Leading Smart City.*$/gi, "")
-    .replace(/\s*[–|-]\s*Why UrbanLand Products Leads.*$/gi, "")
+    .replace(/\s*[–|-]\s*Why Decorlab Products Leads.*$/gi, "")
     .replace(/Manufacturers in India/gi, "")
     .replace(/Manufacturer in India/gi, "")
     .replace(/Manufacturers/gi, "")
@@ -390,7 +390,7 @@ export const fetchProducts = async () => {
  */
 const parseWPPost = (post) => {
   // Extract author
-  let author_name = "Urbanland Contributor";
+  let author_name = "Decorlab Contributor";
   if (post._embedded?.author?.[0]?.name) {
     author_name = post._embedded.author[0].name;
   }

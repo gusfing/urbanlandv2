@@ -21,7 +21,7 @@ const HospitalitySolutions = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Outdoor Furniture for Hospitality & Hotels India | Resorts, Pool Areas, Restaurants & Rooftops | Urbanland Products",
+      title: "Outdoor Furniture for Hospitality & Hotels India | Resorts, Pool Areas, Restaurants & Rooftops | Decorlab Products",
       description: "Premium wicker furniture, benches, planter boxes and outdoor seating solutions for hotels, resorts, restaurants and pool areas in India. Durable, stylish and low-maintenance products trusted by hospitality operators. 2-Year Guarantee.",
       og_image: gbg2
     });
@@ -396,7 +396,7 @@ const HospitalitySolutions = () => {
                   "Arkade Prime: Exceptional Hospitality Standards"
                 </h3>
                 <p className="text-lg leading-relaxed text-charcoal-industrial/85 mb-8 font-serif">
-                  "Urbanland's custom wicker collection instantly upgraded our hotel's pool deck. The material stands up perfectly to water splash and midday sun, saving our team immense maintenance effort."
+                  "Decorlab's custom wicker collection instantly upgraded our hotel's pool deck. The material stands up perfectly to water splash and midday sun, saving our team immense maintenance effort."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-1 bg-craftsman-gold"></div>
@@ -405,83 +405,6 @@ const HospitalitySolutions = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: Why Choose Us */}
-      <section className="reveal-section py-24 bg-[#F7F4EF]">
-        <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
-          <div className="mb-16 text-left space-y-4">
-            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-              Why Choose Us
-            </span>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink uppercase">
-              The Urbanland Advantage for Hotels &amp; Resorts
-            </h2>
-            <div className="w-24 h-1 bg-craftsman-gold"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">hotel_class</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Guest-First Design</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Furniture engineered to maximize comfort, support posture, and create stunning visual appeal.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">water_drop</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Water &amp; UV Immunity</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                High-density polyethylene wicker handles chlorinated pool water and heavy seaside saline air.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">cleaning_services</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Low Facility OPEX</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Stain-resistant fabrics and wipe-clean wicker slats cut housekeeping prep times in half.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">flash_on</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Renovation Agility</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Rapid manufacturing and shipping systems built to sync with off-season hotel renovation windows.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">workspace_premium</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">2-Year Commercial Warranty</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Full replacement and repair warranty covering professional hospitality usage environments.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">palette</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Wicker &amp; Fabric Customization</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Select from premium weaves and performance outdoor fabrics to match your brand style.
-              </p>
             </div>
           </div>
         </div>
@@ -543,63 +466,6 @@ const HospitalitySolutions = () => {
             })}
           </div>
         </div>
-      </section>
-
-      {/* Pre-Footer CTA */}
-      <section className="reveal-section bg-primary text-on-primary py-24 px-6 md:px-margin-desktop overflow-hidden relative">
-        <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="space-y-10 border-l-2 border-secondary/30 pl-8 md:pl-10 text-left">
-            <div className="space-y-2">
-              <span className="font-label-technical text-secondary tracking-[0.2em] uppercase font-semibold text-xs block">
-                The Urbanland Advantage
-              </span>
-              <h3 className="font-headline-md text-3xl md:text-4xl text-on-primary leading-tight">
-                Crafted for Hospitality Environments
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {[
-                { icon: "star", title: "Luxury Grade Weaves", desc: "Premium synthetic HDPE rattan" },
-                { icon: "workspace_premium", title: "2-Year Commercial Warranty", desc: "Engineered for hospitality use" },
-                { icon: "water_drop", title: "Fast-Dry Foam Cushions", desc: "No moisture retention in monsoons" },
-                { icon: "local_shipping", title: "Renovation Scheduling", desc: "Delivery synchronized with renovations" }
-              ].map((adv, idx) => (
-                <div key={idx} className="flex items-start space-x-4">
-                  <span className="material-symbols-outlined text-secondary text-2xl">{adv.icon}</span>
-                  <div>
-                    <p className="font-bold text-sm uppercase tracking-wider font-label-technical">{adv.title}</p>
-                    <p className="text-xs text-white/70 mt-1">{adv.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-white/5 p-8 md:p-12 border border-white/10 backdrop-blur-sm rounded-none text-left">
-            <h2 className="font-headline-lg text-3xl md:text-4xl text-on-primary mb-8 leading-tight">
-              Ready to Upgrade Your Guest Experience with <br />
-              <span className="text-secondary">Premium Hospitality furniture?</span>
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/contact" 
-                className="bg-secondary text-on-secondary px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:opacity-90 transition-all duration-300 rounded-[4px] no-underline"
-              >
-                Inquire for Resort Project <span className="ml-2">→</span>
-              </Link>
-              <Link 
-                to="/contact" 
-                className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 rounded-[4px] no-underline"
-              >
-                Request Material Samples <span className="ml-2">→</span>
-              </Link>
-            </div>
-            <p className="mt-8 text-xs text-white/60 font-label-technical uppercase tracking-widest font-semibold">
-              Trusted by premium hospitality developers and resorts across India
-            </p>
-          </div>
-        </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-black/10 -skew-x-12 translate-x-1/4 z-0"></div>
       </section>
 
     </div>

@@ -42,17 +42,17 @@ const GalleryOld = () => {
         return () => mm.revert();
     }, { scope: pageRef });
 
-    // Generate repeating Urbanland® watermark elements in the background
-    const generateUrbanland = (quantity = 6) => {
-        const Urbanland = [];
+    // Generate repeating Decorlab® watermark elements in the background
+    const generateDecorlab = (quantity = 6) => {
+        const Decorlab = [];
         for (let i = 1; i <= quantity; i++) {
-            Urbanland.push(
+            Decorlab.push(
                 <h3 key={i} style={{ "--index": i }} className='tracking-tighter'>
                     Outdoor & Urban Furniture Solutions for Every Project Type
                 </h3>
             );
         }
-        return Urbanland;
+        return Decorlab;
     };
 
     return (
@@ -63,7 +63,7 @@ const GalleryOld = () => {
                     className="gallery-box"
                     style={{ "--time": "60s", "--quantity": 6 }}
                 >
-                    {generateUrbanland(6)}
+                    {generateDecorlab(6)}
                 </div>
             </div>
 

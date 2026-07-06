@@ -5,8 +5,8 @@ import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 const PrivacyPolicy = () => {
   useEffect(() => {
     updatePageSEO({
-      title: "Privacy Policy | Urbanland Products – Sustainable Outdoor Furniture",
-      description: "Urbanland Products Privacy Policy. Learn how we collect, use, and protect your personal information when you request a quote, download catalogues, or contact us. Committed to data security and data privacy."
+      title: "Privacy Policy | Decorlab Products – Sustainable Outdoor Furniture",
+      description: "Decorlab Products Privacy Policy. Learn how we collect, use, and protect your personal information when you request a quote, download catalogues, or contact us. Committed to data security and data privacy."
     });
     return () => cleanPageSEO();
   }, []);
@@ -23,14 +23,14 @@ const PrivacyPolicy = () => {
         </p>
 
         <p className="text-sm sm:text-base leading-relaxed text-[#2D2D2D]/80 mb-12">
-          At Urbanland Products, we are committed to protecting your privacy and handling your personal data responsibly. This Privacy Policy explains how we collect, use, store, and protect your information when you visit our website, request a quote, download resources, or interact with us.
+          At Decorlab Products, we are committed to protecting your privacy and handling your personal data responsibly. This Privacy Policy explains how we collect, use, store, and protect your information when you visit our website, request a quote, download resources, or interact with us.
         </p>
 
         <div className="prose prose-lg prose-[#2D2D2D] max-w-none text-xs sm:text-sm leading-relaxed text-[#2D2D2D]/80 space-y-8">
           <div>
             <h2 className="text-base sm:text-lg font-black text-black uppercase mb-3">— 1. Introduction</h2>
             <p>
-              Urbanland Products (hereinafter “we”, “us”, or “our”) respects your privacy and is committed to protecting your personal data. This Privacy Policy applies to the website https://urbanlandproducts.com and all related services.
+              Decorlab Products (hereinafter “we”, “us”, or “our”) respects your privacy and is committed to protecting your personal data. This Privacy Policy applies to the website https://decorlabproducts.com and all related services.
             </p>
             <p className="mt-3">
               By using our website or providing your information, you consent to the practices described in this policy.
@@ -111,7 +111,7 @@ const PrivacyPolicy = () => {
 
           <div className="bg-[#EAE5DB]/40 p-6 md:p-8 rounded-[2rem] border border-black/[0.04] mt-8">
             <h2 className="text-base sm:text-lg font-black text-[#2C5F2E] uppercase mb-3">— 9. Contact Us</h2>
-            <p className="font-bold text-black mb-1">Urbanland Products</p>
+            <p className="font-bold text-black mb-1">Decorlab Products</p>
             <p className="text-xs sm:text-sm text-[#2D2D2D]/85 leading-relaxed">
               Unit no 217, Gauri Complex,<br/>
               Above Bank of Baroda,<br/>
@@ -120,7 +120,7 @@ const PrivacyPolicy = () => {
               Maharashtra 401202
             </p>
             <p className="mt-4 text-xs sm:text-sm">
-              <strong>Email:</strong> info@urbanlandproducts.com<br/>
+              <strong>Email:</strong> info@decorlabproducts.com<br/>
               <strong>Phone:</strong> +91 93228 59776
             </p>
           </div>

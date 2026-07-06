@@ -62,8 +62,8 @@ const [products, setProducts] = useState([]);
   // Set page SEO on mount
   useEffect(() => {
     updatePageSEO({
-      title: "Complete Product Catalogue | Urbanland Street Furniture",
-      description: "Browse the full collection of Urbanland street furniture, benches, planters, bus shelters, canopies, and wicker outdoor seating. Filter by categories and find matching models.",
+      title: "Complete Product Catalogue | Decorlab Street Furniture",
+      description: "Browse the full collection of Decorlab street furniture, benches, planters, bus shelters, canopies, and wicker outdoor seating. Filter by categories and find matching models.",
       og_type: "website"
     });
     return () => cleanPageSEO();

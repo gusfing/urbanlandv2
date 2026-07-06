@@ -9,13 +9,13 @@ import SupportFAQ from "../../components/SupportFAQ/SupportFAQ";
 
 
 const getVideoSectionData = (productId) => {
-    const defaultVideo = "https://urbanlandproducts.com/wp-content/uploads/2026/06/poolside-loungers-text.mp4";
+    const defaultVideo = "https://decorlabproducts.com/wp-content/uploads/2026/06/poolside-loungers-text.mp4";
     const data = {
         "poolside-loungers": {
             badge: "DESIGNED FOR LEISURE",
             heading: "Why Premium Poolside Loungers Matter",
             videoUrl: defaultVideo,
-            description: "A luxury pool deck is defined by the quality of its relaxation spaces. Cheap loungers crack, fade, and degrade under intense UV rays and chlorine exposure. Urbanland's premium sun loungers are built to withstand the harshest environments while delivering unmatched comfort.",
+            description: "A luxury pool deck is defined by the quality of its relaxation spaces. Cheap loungers crack, fade, and degrade under intense UV rays and chlorine exposure. Decorlab's premium sun loungers are built to withstand the harshest environments while delivering unmatched comfort.",
             features: [
                 { icon: "wb_sunny", title: "All-Weather Resilience", desc: "UV-stabilized HDPE synthetic rattan and rust-proof aluminum frames." },
                 { icon: "water_drop", title: "Quick-Dry Engineering", desc: "Reticulated foam cushions that drain water instantly to prevent mold." },
@@ -26,8 +26,8 @@ const getVideoSectionData = (productId) => {
         "cabanas": {
             badge: "ELITE OUTDOOR LUXURY",
             heading: "Why Premium Cabanas Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/cabanas-text.mp4",
-            description: "Cabanas create private sanctuaries of comfort and luxury. Cheap, flimsy structures cannot withstand high winds, intense heat, or monsoon downpours. Urbanland designs premium, engineered cabanas built to endure and elevate hospitality environments.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/cabanas-text.mp4",
+            description: "Cabanas create private sanctuaries of comfort and luxury. Cheap, flimsy structures cannot withstand high winds, intense heat, or monsoon downpours. Decorlab designs premium, engineered cabanas built to endure and elevate hospitality environments.",
             features: [
                 { icon: "architecture", title: "Heavy-Duty Framework", desc: "Structural wind-loaded powder-coated aluminum construction." },
                 { icon: "shield", title: "UV-Block Canopies", desc: "Premium outdoor fabrics resisting fading, UV radiation, and tearing." },
@@ -38,8 +38,8 @@ const getVideoSectionData = (productId) => {
         "planters": {
             badge: "ARCHITECTURAL LANDSCAPING",
             heading: "Why Premium Planters Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/planters-text.mp4",
-            description: "Planters frame the greenery of public spaces. Cheap plastic or thin-walled planters crack under soil expansion and solar heat. Urbanland's designer planters are engineered with reinforced materials for heavy soil loads and root protection.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/planters-text.mp4",
+            description: "Planters frame the greenery of public spaces. Cheap plastic or thin-walled planters crack under soil expansion and solar heat. Decorlab's designer planters are engineered with reinforced materials for heavy soil loads and root protection.",
             features: [
                 { icon: "fitness_center", title: "Reinforced Walls", desc: "Built to prevent bulging and cracking from heavy soil expansion." },
                 { icon: "thermostat", title: "Thermal Insulation", desc: "Protects delicate root systems from extreme temperature drops and spikes." },
@@ -50,8 +50,8 @@ const getVideoSectionData = (productId) => {
         "dustbins": {
             badge: "URBAN HYGIENE & UTILITY",
             heading: "Why Premium Dustbins Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/dustbins-text.mp4",
-            description: "Public litter bins must combine sleek aesthetics with extreme vandal resistance. Low-quality bins rust quickly, leak, and spoil the landscape. Urbanland's premium waste receptacles are built for heavy commercial traffic with rust-proof coatings.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/dustbins-text.mp4",
+            description: "Public litter bins must combine sleek aesthetics with extreme vandal resistance. Low-quality bins rust quickly, leak, and spoil the landscape. Decorlab's premium waste receptacles are built for heavy commercial traffic with rust-proof coatings.",
             features: [
                 { icon: "gpp_good", title: "Corrosion Resistant", desc: "Constructed with galvanized steel and rust-proof aluminum hardware." },
                 { icon: "local_fire_department", title: "Fire Safe Design", desc: "Double-walled structural lining to contain heat and prevent fire spread." },
@@ -62,8 +62,8 @@ const getVideoSectionData = (productId) => {
         "bus-shelters": {
             badge: "TRANSIT INFRASTRUCTURE",
             heading: "Why Premium Bus Shelters Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/bus-shelters-text.mp4",
-            description: "Transit shelters protect hundreds of commuters daily. Urbanland designs heavy-duty, weather-resistant bus shelters that offer maximum comfort, safety, and modern styling for smart cities and commercial townships.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/bus-shelters-text.mp4",
+            description: "Transit shelters protect hundreds of commuters daily. Decorlab designs heavy-duty, weather-resistant bus shelters that offer maximum comfort, safety, and modern styling for smart cities and commercial townships.",
             features: [
                 { icon: "security", title: "Shatterproof Panels", desc: "Tempered safety glass panels for maximum occupant protection." },
                 { icon: "construction", title: "Heavy Steel Chassis", desc: "Wind-load engineered steel structure with multi-layer anti-rust treatment." },
@@ -74,8 +74,8 @@ const getVideoSectionData = (productId) => {
         "car-shelters": {
             badge: "VEHICLE PROTECTION",
             heading: "Why Premium Car Shelters Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/car-sheds-text.mp4",
-            description: "Premium vehicles deserve premium protection. Cheap carports leak and sag under storm stress. Urbanland's tensile and cantilever car shelters are engineered for high wind resistance and thermal blocking to protect vehicle finishes.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/car-sheds-text.mp4",
+            description: "Premium vehicles deserve premium protection. Cheap carports leak and sag under storm stress. Decorlab's tensile and cantilever car shelters are engineered for high wind resistance and thermal blocking to protect vehicle finishes.",
             features: [
                 { icon: "tsunami", title: "High Tensile Strength", desc: "Engineered membrane fabrics that handle extreme wind and rain loads." },
                 { icon: "design_services", title: "Cantilever Geometry", desc: "Saves parking space with single-sided steel column layouts." },
@@ -86,8 +86,8 @@ const getVideoSectionData = (productId) => {
         "ss-bollards": {
             badge: "SECURITY & TRAFFIC CONTROL",
             heading: "Why Premium SS Bollards Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/ss-bollards-text.mp4",
-            description: "Bollards protect pedestrians and demarcate pathways. Cheap bollards dent easily, lose their shine, and rust. Urbanland's grade 304/316 stainless steel bollards deliver robust impact resistance with high-end architectural finishes.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/ss-bollards-text.mp4",
+            description: "Bollards protect pedestrians and demarcate pathways. Cheap bollards dent easily, lose their shine, and rust. Decorlab's grade 304/316 stainless steel bollards deliver robust impact resistance with high-end architectural finishes.",
             features: [
                 { icon: "shield", title: "Marine Grade Steel", desc: "Grade 304 or 316 stainless steel to completely eliminate rusting." },
                 { icon: "handyman", title: "Impact Absorbing", desc: "Engineered core mounts for superior pedestrian and asset protection." },
@@ -98,8 +98,8 @@ const getVideoSectionData = (productId) => {
         "canteen-tables": {
             badge: "COMMUNAL DINING",
             heading: "Why Premium Canteen Tables Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/cantteen-tables-text.mp4",
-            description: "Canteen spaces need heavy-duty, hygienic dining furniture. Urbanland's premium canteen tables are built to withstand intensive daily use, food spills, and heavy scrubbing while remaining clean and modern.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/cantteen-tables-text.mp4",
+            description: "Canteen spaces need heavy-duty, hygienic dining furniture. Decorlab's premium canteen tables are built to withstand intensive daily use, food spills, and heavy scrubbing while remaining clean and modern.",
             features: [
                 { icon: "sanitizer", title: "Food-Grade Surfaces", desc: "Hygienic, easy-to-sanitize tabletops resisting heat and food stains." },
                 { icon: "grid_view", title: "Heavy Steel Frames", desc: "Fully welded structural tubing that prevents wobbles, squeaks, or rocking." },
@@ -110,8 +110,8 @@ const getVideoSectionData = (productId) => {
         "aluminium-benches": {
             badge: "CIVIC SEATING",
             heading: "Why Premium Aluminium Benches Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/Aluminium-benches-text.mp4",
-            description: "Aluminium benches are perfect for parks and urban streetscapes. Urbanland's anodized and powder-coated aluminium benches are lightweight, incredibly strong, and 100% rust-free for lifetime outdoor durability.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/Aluminium-benches-text.mp4",
+            description: "Aluminium benches are perfect for parks and urban streetscapes. Decorlab's anodized and powder-coated aluminium benches are lightweight, incredibly strong, and 100% rust-free for lifetime outdoor durability.",
             features: [
                 { icon: "verified", title: "Anodized Protection", desc: "Oxidation-free coating that prevents rust, pitting, and corrosion." },
                 { icon: "fitness_center", title: "Structural Strength", desc: "Internal reinforcing webs that prevent load sagging or bending." },
@@ -122,8 +122,8 @@ const getVideoSectionData = (productId) => {
         "wicker-furniture": {
             badge: "HANDCRAFTED WICKER",
             heading: "Why Premium Wicker Furniture Matters",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/wicker-furniture-text.mp4",
-            description: "Luxury resorts require seating that evokes artisanal charm without sacrificing durability. Low-quality wicker unravels, fades, and snaps. Urbanland's synthetic wicker is hand-woven over rust-free frames with high UV stability.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/wicker-furniture-text.mp4",
+            description: "Luxury resorts require seating that evokes artisanal charm without sacrificing durability. Low-quality wicker unravels, fades, and snaps. Decorlab's synthetic wicker is hand-woven over rust-free frames with high UV stability.",
             features: [
                 { icon: "wb_sunny", title: "High-Density PE Wicker", desc: "UV-stabilized synthetic rattan that won't snap, crack, or fade." },
                 { icon: "draw", title: "Hand-Woven Art", desc: "Tensioned weave by master craftsmen for ultimate support and finish." },
@@ -134,8 +134,8 @@ const getVideoSectionData = (productId) => {
         "wicker-outdoor-products": {
             badge: "HANDCRAFTED WICKER",
             heading: "Why Premium Wicker Products Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/wicker-outdoor-products.mp4",
-            description: "Outdoor hospitality spaces demand high-performance, elegant wicker accessories and furnishings. Urbanland's premium wicker products deliver heavy-duty commercial utility with handcrafted resort design.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/wicker-outdoor-products.mp4",
+            description: "Outdoor hospitality spaces demand high-performance, elegant wicker accessories and furnishings. Decorlab's premium wicker products deliver heavy-duty commercial utility with handcrafted resort design.",
             features: [
                 { icon: "wb_sunny", title: "High-Density PE Wicker", desc: "UV-stabilized synthetic rattan that won't snap, crack, or fade." },
                 { icon: "draw", title: "Hand-Woven Art", desc: "Tensioned weave by master craftsmen for ultimate support and finish." },
@@ -146,8 +146,8 @@ const getVideoSectionData = (productId) => {
         "wicker-living-sets": {
             badge: "HANDCRAFTED WICKER",
             heading: "Why Premium Wicker Living Sets Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/wicker-living-furniture-text.mp4",
-            description: "Luxury outdoor lounging demands wicker sets that stand up to the sun and moisture. Urbanland's living configurations feature thick-walled frames and quick-dry cushions.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/wicker-living-furniture-text.mp4",
+            description: "Luxury outdoor lounging demands wicker sets that stand up to the sun and moisture. Decorlab's living configurations feature thick-walled frames and quick-dry cushions.",
             features: [
                 { icon: "wb_sunny", title: "High-Density PE Wicker", desc: "UV-stabilized synthetic rattan that won't snap, crack, or fade." },
                 { icon: "draw", title: "Hand-Woven Art", desc: "Tensioned weave by master craftsmen for ultimate support and finish." },
@@ -158,8 +158,8 @@ const getVideoSectionData = (productId) => {
         "wicker-dining-sets": {
             badge: "HANDCRAFTED WICKER",
             heading: "Why Premium Wicker Dining Sets Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/wicker-dining-text.mp4",
-            description: "Al fresco dining spaces deserve highly resistant, resort-grade tables and chairs. Urbanland's wicker dining sets combine commercial steel/aluminum bases with hand-woven detailing.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/wicker-dining-text.mp4",
+            description: "Al fresco dining spaces deserve highly resistant, resort-grade tables and chairs. Decorlab's wicker dining sets combine commercial steel/aluminum bases with hand-woven detailing.",
             features: [
                 { icon: "wb_sunny", title: "High-Density PE Wicker", desc: "UV-stabilized synthetic rattan that won't snap, crack, or fade." },
                 { icon: "draw", title: "Hand-Woven Art", desc: "Tensioned weave by master craftsmen for ultimate support and finish." },
@@ -170,8 +170,8 @@ const getVideoSectionData = (productId) => {
         "indoor-furniture": {
             badge: "BESPOKE COMMERCIAL FURNITURE",
             heading: "Why Premium Indoor Furniture Matters",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/indoor-furniture-text.mp4",
-            description: "Office and lounge spaces require furniture that communicates premium branding and comfort. Cheap materials wobble and peel. Urbanland's bespoke furniture combines premium metal finishes, seasoned wood, and expert joinery.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/indoor-furniture-text.mp4",
+            description: "Office and lounge spaces require furniture that communicates premium branding and comfort. Cheap materials wobble and peel. Decorlab's bespoke furniture combines premium metal finishes, seasoned wood, and expert joinery.",
             features: [
                 { icon: "forest", title: "Seasoned Hardwoods", desc: "Kiln-dried premium timber to eliminate warping, splits, and rot." },
                 { icon: "handyman", title: "Precision Joinery", desc: "Reinforced structural joints for high load capacity and long lifespan." },
@@ -183,7 +183,7 @@ const getVideoSectionData = (productId) => {
             badge: "COMMERCIAL METAL & WOOD",
             heading: "Why Premium Metal & Wood Furniture Matters",
             videoUrl: defaultVideo,
-            description: "Industrial and hospitality spaces demand rugged yet highly polished steel and wood furnishings. Urbanland's custom metal and wooden furniture combines commercial-grade structural metals with hand-finished premium timber.",
+            description: "Industrial and hospitality spaces demand rugged yet highly polished steel and wood furnishings. Decorlab's custom metal and wooden furniture combines commercial-grade structural metals with hand-finished premium timber.",
             features: [
                 { icon: "forest", title: "Seasoned Hardwoods", desc: "Kiln-dried premium timber to eliminate warping, splits, and rot." },
                 { icon: "handyman", title: "Precision Joinery", desc: "Reinforced structural joints for high load capacity and long lifespan." },
@@ -194,8 +194,8 @@ const getVideoSectionData = (productId) => {
         "pergolas": {
             badge: "PERGOLAS & OUTDOOR SHADE",
             heading: "Why Premium Pergolas Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/pergola-text.mp4",
-            description: "Pergolas define outdoor living spaces and provide elegant shade. Urbanland designs premium, weather-resistant pergolas built to endure intense sunlight, rain, and wind while adding architectural beauty to gardens and terraces.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/pergola-text.mp4",
+            description: "Pergolas define outdoor living spaces and provide elegant shade. Decorlab designs premium, weather-resistant pergolas built to endure intense sunlight, rain, and wind while adding architectural beauty to gardens and terraces.",
             features: [
                 { icon: "wb_sunny", title: "Weatherproof Structure", desc: "Constructed with powder-coated aluminum or treated wood to resist weathering." },
                 { icon: "design_services", title: "Architectural Elegance", desc: "Sleek, modern profiles that blend seamlessly with high-end landscaping." },
@@ -206,8 +206,8 @@ const getVideoSectionData = (productId) => {
         "gazebos": {
             badge: "GAZEBOS & PAVILIONS",
             heading: "Why Premium Gazebos Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/gazebos-text.mp4",
-            description: "Gazebos serve as elegant focal points for outdoor recreation. Low-quality gazebos rust, leak, or fail under wind loads. Urbanland constructs high-performance gazebos with reinforced frames and premium weather protection.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/gazebos-text.mp4",
+            description: "Gazebos serve as elegant focal points for outdoor recreation. Low-quality gazebos rust, leak, or fail under wind loads. Decorlab constructs high-performance gazebos with reinforced frames and premium weather protection.",
             features: [
                 { icon: "roofing", title: "Robust Roof Engineering", desc: "Designed to handle heavy rain, wind loads, and direct sun exposure." },
                 { icon: "diversity_3", title: "Social Gathering Hub", desc: "Creates the perfect sheltered area for seating, dining, and outdoor events." },
@@ -218,8 +218,8 @@ const getVideoSectionData = (productId) => {
         "pre-fab-homes": {
             badge: "PREFABRICATED LIVING",
             heading: "Why Premium Pre-Fab Homes Matter",
-            videoUrl: "https://urbanlandproducts.com/wp-content/uploads/2026/06/prefab-homes-video.mp4",
-            description: "Pre-fab homes offer quick, eco-friendly, and high-quality modular housing solutions. Urbanland's prefabricated structures are engineered for quick assembly, premium insulation, and superior weather resistance.",
+            videoUrl: "https://decorlabproducts.com/wp-content/uploads/2026/06/prefab-homes-video.mp4",
+            description: "Pre-fab homes offer quick, eco-friendly, and high-quality modular housing solutions. Decorlab's prefabricated structures are engineered for quick assembly, premium insulation, and superior weather resistance.",
             features: [
                 { icon: "bolt", title: "Rapid Installation", desc: "Precision-engineered components assembled quickly on site." },
                 { icon: "thermostat", title: "Thermal & Sound Insulation", desc: "High-grade wall panels for excellent energy efficiency and comfort." },

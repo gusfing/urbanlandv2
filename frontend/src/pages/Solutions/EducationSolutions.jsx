@@ -21,7 +21,7 @@ const EducationSolutions = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Outdoor Furniture for Education & Universities India | Campus Canteens, Open Classrooms & Student Zones | Urbanland Products",
+      title: "Outdoor Furniture for Education & Universities India | Campus Canteens, Open Classrooms & Student Zones | Decorlab Products",
       description: "Durable canteen tables, benches and planter boxes for schools, colleges and universities in India. Student-proof, low-maintenance outdoor furniture for campuses, open-air classrooms and common areas. 2-Year Guarantee.",
       og_image: gbg4
     });
@@ -396,7 +396,7 @@ const EducationSolutions = () => {
                   "Panchshil Tech: Student Proof Performance"
                 </h3>
                 <p className="text-lg leading-relaxed text-charcoal-industrial/85 mb-8 font-serif">
-                  "Students put furniture through absolute tests daily. Urbanland's canteen tables have withstood heavy bags, heavy rainfall, and constant lunch crowds for four years. The metal anchors prevent any shifting."
+                  "Students put furniture through absolute tests daily. Decorlab's canteen tables have withstood heavy bags, heavy rainfall, and constant lunch crowds for four years. The metal anchors prevent any shifting."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-1 bg-craftsman-gold"></div>
@@ -405,83 +405,6 @@ const EducationSolutions = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: Why Choose Us */}
-      <section className="reveal-section py-24 bg-[#F7F4EF]">
-        <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
-          <div className="mb-16 text-left space-y-4">
-            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-              Why Choose Us
-            </span>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink uppercase">
-              The Urbanland Advantage for Education Campuses
-            </h2>
-            <div className="w-24 h-1 bg-craftsman-gold"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">gavel</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Student-Proof Durability</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Thick-walled steel structures and reinforced composite slating engineered to handle high daily impacts.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">cleaning_services</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Graffiti &amp; Stain Resistant</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Non-porous surfaces allow facilities teams to wash off marker drawings, paint, and food stains with ease.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">schedule</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Academic Break Delivery</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Scheduled fabrication and anchoring during semester breaks to prevent disrupting campus classes.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">eco</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Green Campus Alignment</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Using recyclable and long-lasting metals that reduce replacement carbon footprint.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">security</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Anti-Tipping Base Anchors</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Heavy-duty hidden chemical concrete anchors prevent students from tipping tables or relocation/theft.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">palette</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Campus Branding colors</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                We finish frames in custom RAL powder coat colors matching the school or university's official emblem.
-              </p>
             </div>
           </div>
         </div>
@@ -543,63 +466,6 @@ const EducationSolutions = () => {
             })}
           </div>
         </div>
-      </section>
-
-      {/* Pre-Footer CTA */}
-      <section className="reveal-section bg-primary text-on-primary py-24 px-6 md:px-margin-desktop overflow-hidden relative">
-        <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="space-y-10 border-l-2 border-secondary/30 pl-8 md:pl-10 text-left">
-            <div className="space-y-2">
-              <span className="font-label-technical text-secondary tracking-[0.2em] uppercase font-semibold text-xs block">
-                The Urbanland Advantage
-              </span>
-              <h3 className="font-headline-md text-3xl md:text-4xl text-on-primary leading-tight">
-                Built to Withstand Active Campuses
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {[
-                { icon: "school", title: "Campus Durability", desc: "Reinforced structures for active crowds" },
-                { icon: "workspace_premium", title: "2-Year Guarantee", desc: "Durable institutional components" },
-                { icon: "clean_hands", title: "Graffiti Resistant", desc: "Wipe-clean non-porous composites" },
-                { icon: "calendar_month", title: "Academic Break Sync", desc: "Delivery timed during off-semesters" }
-              ].map((adv, idx) => (
-                <div key={idx} className="flex items-start space-x-4">
-                  <span className="material-symbols-outlined text-secondary text-2xl">{adv.icon}</span>
-                  <div>
-                    <p className="font-bold text-sm uppercase tracking-wider font-label-technical">{adv.title}</p>
-                    <p className="text-xs text-white/70 mt-1">{adv.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-white/5 p-8 md:p-12 border border-white/10 backdrop-blur-sm rounded-none text-left">
-            <h2 className="font-headline-lg text-3xl md:text-4xl text-on-primary mb-8 leading-tight">
-              Ready to Upgrade Your Campus with <br />
-              <span className="text-secondary">Premium Educational furniture?</span>
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/contact" 
-                className="bg-secondary text-on-secondary px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:opacity-90 transition-all duration-300 rounded-[4px] no-underline"
-              >
-                Inquire for School Project <span className="ml-2">→</span>
-              </Link>
-              <Link 
-                to="/contact" 
-                className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 rounded-[4px] no-underline"
-              >
-                Download Canteen Brochure <span className="ml-2">→</span>
-              </Link>
-            </div>
-            <p className="mt-8 text-xs text-white/60 font-label-technical uppercase tracking-widest font-semibold">
-              Trusted by colleges, universities, and educational institutions across India
-            </p>
-          </div>
-        </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-black/10 -skew-x-12 translate-x-1/4 z-0"></div>
       </section>
 
     </div>

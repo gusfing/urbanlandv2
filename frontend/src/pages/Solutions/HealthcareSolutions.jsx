@@ -21,7 +21,7 @@ const HealthcareSolutions = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Outdoor Furniture for Healthcare & Hospitals India | Healing Gardens, Waiting Areas & Hospital Campuses | Urbanland Products",
+      title: "Outdoor Furniture for Healthcare & Hospitals India | Healing Gardens, Waiting Areas & Hospital Campuses | Decorlab Products",
       description: "Premium, easy-clean benches and planter boxes for healthcare & hospitals in India. Hygienic, durable solutions for healing gardens, waiting areas and hospital campuses. Trusted by healthcare facilities with 2-Year Guarantee.",
       og_image: gbg3
     });
@@ -396,7 +396,7 @@ const HealthcareSolutions = () => {
                   "TATA Projects: Meeting High Clinical Standards"
                 </h3>
                 <p className="text-lg leading-relaxed text-charcoal-industrial/85 mb-8 font-serif">
-                  "Hospitals demand absolute structural hygiene. Urbanland's smooth, non-porous composite benches are exceptionally easy to sanitise, and the secure concrete chemical anchoring gives us 100% security."
+                  "Hospitals demand absolute structural hygiene. Decorlab's smooth, non-porous composite benches are exceptionally easy to sanitise, and the secure concrete chemical anchoring gives us 100% security."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-1 bg-craftsman-gold"></div>
@@ -405,83 +405,6 @@ const HealthcareSolutions = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: Why Choose Us */}
-      <section className="reveal-section py-24 bg-[#F7F4EF]">
-        <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
-          <div className="mb-16 text-left space-y-4">
-            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-              Why Choose Us
-            </span>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink uppercase">
-              The Urbanland Advantage for Healthcare &amp; Hospitals
-            </h2>
-            <div className="w-24 h-1 bg-craftsman-gold"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">sanitizer</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Infection-Control Friendly</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Anti-microbial friendly materials with smooth surfaces preventing bacterial growth.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">nature_people</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Biophilic Recovery Focus</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Integrated planter benches and layouts designed specifically to support patient mental health.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">accessible</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">ADA &amp; Elderly Accessible</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Optimal heights, non-slip structures, and rounded edges for safety and disabled mobility support.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">hourglass_empty</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Zero Rot &amp; Rust</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Our heavy-gauge steel and premium composites require zero staining, oiling, or rust-proofing.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">verified</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">ISO 9001:2015 QC</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Every batch undergoes extreme testing to ensure consistent strength and structural safety.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">engineering</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Technical Site Support</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                We supply CAD blocks, spec sheets, and chemical anchoring guidance directly to contractors.
-              </p>
             </div>
           </div>
         </div>
@@ -543,63 +466,6 @@ const HealthcareSolutions = () => {
             })}
           </div>
         </div>
-      </section>
-
-      {/* Pre-Footer CTA */}
-      <section className="reveal-section bg-primary text-on-primary py-24 px-6 md:px-margin-desktop overflow-hidden relative">
-        <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="space-y-10 border-l-2 border-secondary/30 pl-8 md:pl-10 text-left">
-            <div className="space-y-2">
-              <span className="font-label-technical text-secondary tracking-[0.2em] uppercase font-semibold text-xs block">
-                The Urbanland Advantage
-              </span>
-              <h3 className="font-headline-md text-3xl md:text-4xl text-on-primary leading-tight">
-                Calming, Hygienic &amp; Durable
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {[
-                { icon: "medical_services", title: "Clinical Hygiene", desc: "Easy to sanitize non-porous slats" },
-                { icon: "workspace_premium", title: "2-Year Commercial Warranty", desc: "Heavy patient/visitor build grade" },
-                { icon: "accessible", title: "ADA Support", desc: "Customized seating dimensions" },
-                { icon: "anchor", title: "Chemical Anchoring", desc: "Secure anchoring for public safety" }
-              ].map((adv, idx) => (
-                <div key={idx} className="flex items-start space-x-4">
-                  <span className="material-symbols-outlined text-secondary text-2xl">{adv.icon}</span>
-                  <div>
-                    <p className="font-bold text-sm uppercase tracking-wider font-label-technical">{adv.title}</p>
-                    <p className="text-xs text-white/70 mt-1">{adv.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-white/5 p-8 md:p-12 border border-white/10 backdrop-blur-sm rounded-none text-left">
-            <h2 className="font-headline-lg text-3xl md:text-4xl text-on-primary mb-8 leading-tight">
-              Ready to Upgrade Patient Recovery with <br />
-              <span className="text-secondary">Premium Healthcare seating?</span>
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/contact" 
-                className="bg-secondary text-on-secondary px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:opacity-90 transition-all duration-300 rounded-[4px] no-underline"
-              >
-                Inquire for Hospital Project <span className="ml-2">→</span>
-              </Link>
-              <Link 
-                to="/contact" 
-                className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 rounded-[4px] no-underline"
-              >
-                Download Technical Catalog <span className="ml-2">→</span>
-              </Link>
-            </div>
-            <p className="mt-8 text-xs text-white/60 font-label-technical uppercase tracking-widest font-semibold">
-              Trusted by premium developers and clinical organizations across India
-            </p>
-          </div>
-        </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-black/10 -skew-x-12 translate-x-1/4 z-0"></div>
       </section>
 
     </div>

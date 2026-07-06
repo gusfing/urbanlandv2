@@ -126,7 +126,7 @@ const pageConfigs = {
     ],
     projects: [
       { tag: "Nagpur Smart City", subtitle: "Nagpur Municipal Corp", title: "Public Promenade Seating — 200 WPC Benches", time: "4 months", desc: "Nagpur Smart City authority selected our heavy-duty WPC park benches for central public walkway beautification. The robust steel frames and weather-resistant composite slats met municipal budgets while ensuring anti-vandal reliability." },
-      { tag: "Lodha World Towers", subtitle: "Lodha Group — Mumbai", title: "Premium Residential Podium — 80 Timber Benches", time: "3 months", desc: "Lodha partnered with Urbanland for 80 Premium Robinia timber benches custom-designed with black powder-coated cast iron legs. Coordinated staggered delivery and anchoring to match podium landscape layouts." },
+      { tag: "Lodha World Towers", subtitle: "Lodha Group — Mumbai", title: "Premium Residential Podium — 80 Timber Benches", time: "3 months", desc: "Lodha partnered with Decorlab for 80 Premium Robinia timber benches custom-designed with black powder-coated cast iron legs. Coordinated staggered delivery and anchoring to match podium landscape layouts." },
       { tag: "L&T Tech Park", subtitle: "L&T Realty — Bangalore", title: "Corporate Tech Campus — 40 Modular Benches", time: "2 months", desc: "Installed custom double-sided flat benches in the main campus plaza. Designed with linear concrete bases and grey WPC slats to match the modern corporate architecture." }
     ],
     stats: { p: "80+", c: "25+", o: "5000+", pLbl: "Major B2B Projects Delivered", cLbl: "Cities Served", oLbl: "Outdoor Benches Installed" },
@@ -191,9 +191,9 @@ const pageConfigs = {
       "Add-ons: LED lighting, solar panels, digital displays, IoT sensor pre-wiring"
     ],
     projects: [
-      { tag: "Nagpur Smart City", subtitle: "Nagpur Municipal Corp", title: "Smart City Municipal Project — 120 Shelters", time: "8 months", desc: "A metropolitan city selected Urbanland for 120 bus stops across its transit network. Standard configuration (MS frame, galvanized roof) met municipal budget while ensuring durability. Urbanland coordinated bulk manufacturing, logistics, and staggered installation." },
-      { tag: "Lodha World Towers", subtitle: "Lodha Group — Maharashtra", title: "Premium Township — 85 Stainless Steel Shelters", time: "6 months", desc: "Lodha partnered with Urbanland for 85 Premium SS shelters custom-designed with mirror-polished finish. Design consistency across 3 townships. Zero maintenance needed 18+ months post-installation—critical for resident satisfaction." },
-      { tag: "Goa Development", subtitle: "Coastal Authority — Goa", title: "Coastal Smart City — 45 SS Shelters (Zero Degradation)", time: "4 months", desc: "Coastal city required shelters withstanding salt spray, humidity, and extreme heat. Urbanland specified 316-grade SS (premium vs. standard 304) for superior corrosion resistance. Result: 14 months post-installation, zero rust or degradation observed." }
+      { tag: "Nagpur Smart City", subtitle: "Nagpur Municipal Corp", title: "Smart City Municipal Project — 120 Shelters", time: "8 months", desc: "A metropolitan city selected Decorlab for 120 bus stops across its transit network. Standard configuration (MS frame, galvanized roof) met municipal budget while ensuring durability. Decorlab coordinated bulk manufacturing, logistics, and staggered installation." },
+      { tag: "Lodha World Towers", subtitle: "Lodha Group — Maharashtra", title: "Premium Township — 85 Stainless Steel Shelters", time: "6 months", desc: "Lodha partnered with Decorlab for 85 Premium SS shelters custom-designed with mirror-polished finish. Design consistency across 3 townships. Zero maintenance needed 18+ months post-installation—critical for resident satisfaction." },
+      { tag: "Goa Development", subtitle: "Coastal Authority — Goa", title: "Coastal Smart City — 45 SS Shelters (Zero Degradation)", time: "4 months", desc: "Coastal city required shelters withstanding salt spray, humidity, and extreme heat. Decorlab specified 316-grade SS (premium vs. standard 304) for superior corrosion resistance. Result: 14 months post-installation, zero rust or degradation observed." }
     ],
     stats: { p: "50+", c: "15+", o: "2000+", pLbl: "Major Infrastructure Projects", cLbl: "Cities Served", oLbl: "Operational Shelters" },
     faqList: [
@@ -257,7 +257,7 @@ const pageConfigs = {
       "Mounting: Leveling glide feet, concrete lag bolts, or timber deck screws"
     ],
     projects: [
-      { tag: "Taj Exotica Goa", subtitle: "Taj Hotels — Goa", title: "Luxury Beachfront Resort — 15 Cabanas", time: "3 months", desc: "Taj Hotels partnered with Urbanland to deploy 15 premium double cabanas along its Goan beach front. Engineered with 316 Stainless Steel and Sunbrella canvas to resist harsh saltwater mist, providing guest privacy and luxury appeal." },
+      { tag: "Taj Exotica Goa", subtitle: "Taj Hotels — Goa", title: "Luxury Beachfront Resort — 15 Cabanas", time: "3 months", desc: "Taj Hotels partnered with Decorlab to deploy 15 premium double cabanas along its Goan beach front. Engineered with 316 Stainless Steel and Sunbrella canvas to resist harsh saltwater mist, providing guest privacy and luxury appeal." },
       { tag: "Prestige Golfshire", subtitle: "Prestige Group — Bangalore", title: "Country Club Resort — 20 Premium Daybed Pavilions", time: "4 months", desc: "Installed custom wicker-wrapped double cabanas across the resort pool decks. The fast draining quick-dry foam cores ensured loungers were dry and operational within minutes of heavy tropical rain showers." },
       { tag: "Oberoi Beach Resort", subtitle: "Oberoi Group — Mumbai", title: "Rooftop Poolside Cabanas — 10 Custom Sets", time: "2 months", desc: "Manufactured premium aluminium cabanas for a luxury rooftop deck. Installed custom wind-anchoring brackets to withstand high-altitude wind gusts of up to 90 km/h." }
     ],
@@ -457,7 +457,7 @@ const pageConfigs = {
     projects: [
       { tag: "Nagpur Smart City", subtitle: "Nagpur Municipal Corp", title: "Pedestrian Walkway Beautification — 250 Segregation Bests", time: "5 months", desc: " Nagpur Smart City authority deployed 250 double sorting premium public bins across central walking paths. The anti-vandal anchor systems prevent theft while clean labeling aids public compliance." },
       { tag: "TCS IT Park", subtitle: "Tata Consultancy Services — Chennai", title: "IT Campus Walkway — 80 Triple Sorting Bins", time: "2 months", desc: "Installed custom segregation bins across outdoor food courts and walking lanes. Provided space-efficient design matching clean campus architecture." },
-      { tag: "Taj Exotica Goa", subtitle: "Taj Hotels — Goa", title: "Luxury Beachfront Promenade — 30 Stainless Steel Bins", time: "3 months", desc: " Taj Hotels partnered with Urbanland to supply 30 mirror-finished SS 316 double sorting bins. Marine-grade steel holds up against corrosive salt sprays and sea mist." }
+      { tag: "Taj Exotica Goa", subtitle: "Taj Hotels — Goa", title: "Luxury Beachfront Promenade — 30 Stainless Steel Bins", time: "3 months", desc: " Taj Hotels partnered with Decorlab to supply 30 mirror-finished SS 316 double sorting bins. Marine-grade steel holds up against corrosive salt sprays and sea mist." }
     ],
     stats: { p: "80+", c: "25+", o: "5000+", pLbl: "B2B Waste Management Projects", cLbl: "Cities Served", oLbl: "Outdoor Bins Manufactured" },
     faqList: [
@@ -719,7 +719,7 @@ const pageConfigs = {
       "Frames: Lightweight aluminium, marine-grade SS 316, or raw teak wood bases"
     ],
     projects: [
-      { tag: "Taj Exotica Goa", subtitle: "Taj Hotels — Goa", title: "Luxury Beachfront Resort — 40 Poolside Loungers", time: "3 months", desc: " Taj Hotels partnered with Urbanland to manufacture and supply 40 premium reclining sun loungers. Engineered with rust-proof aluminium and UV-stabilized synthetic wicker, they successsfully withstand beach humidity." },
+      { tag: "Taj Exotica Goa", subtitle: "Taj Hotels — Goa", title: "Luxury Beachfront Resort — 40 Poolside Loungers", time: "3 months", desc: " Taj Hotels partnered with Decorlab to manufacture and supply 40 premium reclining sun loungers. Engineered with rust-proof aluminium and UV-stabilized synthetic wicker, they successsfully withstand beach humidity." },
       { tag: "Prestige Golfshire", subtitle: "Prestige Group — Bangalore", title: "Resort Golf Clubhouse — 30 Sunbeds & Daybeds", time: "2 months", desc: "Installed custom hand-woven rope loungers around the central clubhouse lagoon. The open-cell reticulated foam cushions dry rapidly after rain." },
       { tag: "Oberoi Beach Resort", subtitle: "Oberoi Group — Mumbai", title: "Rooftop Pool Deck — 20 Premium Custom Sunbeds", time: "2 months", desc: "Installed custom double sunbeds on the luxury rooftop pool deck. Fronted with rear roller wheels to enable staff to easily adjust configurations." }
     ],
@@ -851,7 +851,7 @@ const pageConfigs = {
       "Configurations: Custom modular seating rows, L-shaped sectional sofas, or large banquette dining setups"
     ],
     projects: [
-      { tag: "Taj Exotica Goa", subtitle: "Taj Hotels — Goa", title: "Rooftop Cafeteria Deck — 25 Wicker Dining Sets", time: "3 months", desc: " taj Hotels partnered with Urbanland to manufacture and deploy 25 premium wicker dining sets for their open-air oceanfront cafe. The aluminium frames and HDPE weaves successfully withstand Goan humidity." },
+      { tag: "Taj Exotica Goa", subtitle: "Taj Hotels — Goa", title: "Rooftop Cafeteria Deck — 25 Wicker Dining Sets", time: "3 months", desc: " taj Hotels partnered with Decorlab to manufacture and deploy 25 premium wicker dining sets for their open-air oceanfront cafe. The aluminium frames and HDPE weaves successfully withstand Goan humidity." },
       { tag: "Prestige Golfshire", subtitle: "Prestige Group — Bangalore", title: "Clubhouse Terrace — 15 Wicker Lounge Ensembles", time: "2 months", desc: "Installed custom modular wicker sectional sofas around the central golf clubhouse deck. The reticulated quick-dry foam cushions ensure seating is dry and usable within minutes of rain." },
       { tag: "Oberoi Beach Resort", subtitle: "Oberoi Group — Mumbai", title: "VIP Poolside Deck — 10 Custom Daybed Cabanas", time: "2 months", desc: "Manufactured and installed 10 bespoke circular wicker loungers for a VIP poolside lounge area. Rear roller wheels enable staff to easily adjust configurations." }
     ],
@@ -917,7 +917,7 @@ const pageConfigs = {
       "Configurations: Custom modular seating rows, L-shaped sectional sofas, or large banquette dining setups"
     ],
     projects: [
-      { tag: "Taj Exotica Goa", subtitle: "Taj Hotels — Goa", title: "Rooftop Cafeteria Deck — 25 Wicker Dining Sets", time: "3 months", desc: " taj Hotels partnered with Urbanland to manufacture and deploy 25 premium wicker dining sets for their open-air oceanfront cafe. The aluminium frames and HDPE weaves successfully withstand Goan humidity." },
+      { tag: "Taj Exotica Goa", subtitle: "Taj Hotels — Goa", title: "Rooftop Cafeteria Deck — 25 Wicker Dining Sets", time: "3 months", desc: " taj Hotels partnered with Decorlab to manufacture and deploy 25 premium wicker dining sets for their open-air oceanfront cafe. The aluminium frames and HDPE weaves successfully withstand Goan humidity." },
       { tag: "Prestige Golfshire", subtitle: "Prestige Group — Bangalore", title: "Clubhouse Terrace — 15 Wicker Lounge Ensembles", time: "2 months", desc: "Installed custom modular wicker sectional sofas around the central golf clubhouse deck. The reticulated quick-dry foam cushions ensure seating is dry and usable within minutes of rain." },
       { tag: "Oberoi Beach Resort", subtitle: "Oberoi Group — Mumbai", title: "VIP Poolside Deck — 10 Custom Daybed Cabanas", time: "2 months", desc: "Manufactured and installed 10 bespoke circular wicker loungers for a VIP poolside lounge area. Rear roller wheels enable staff to easily adjust configurations." }
     ],
@@ -1030,7 +1030,7 @@ import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 const ${componentName} = () => {
     useEffect(() => {
         updatePageSEO({
-            title: "${parsed.metaTitle || (pageName + ' | Urbanland')}",
+            title: "${parsed.metaTitle || (pageName + ' | Decorlab')}",
             description: "${parsed.metaDesc || 'Premium outdoor and municipal solutions'}",
             og_type: "product"
         });
@@ -1049,14 +1049,14 @@ export default ${componentName};
 }
 
 // Generate the files
-const localSummaryPath = "C:/Users/ks209/Documents/kawaki clients/urbanland/urbanv2-main/urbanv2-main/frontend/src/constants/docx_content_summary.txt";
+const localSummaryPath = "C:/Users/ks209/Documents/kawaki clients/decorlab/urbanv2-main/urbanv2-main/frontend/src/constants/docx_content_summary.txt";
 const relativeSummaryPath = path.join(__dirname, "docx_content_summary.txt");
 const summaryPath = fs.existsSync(localSummaryPath) ? localSummaryPath : relativeSummaryPath;
 
 const fileText = fs.readFileSync(summaryPath, 'utf8');
 const docxBlocks = fileText.split("=== FILE: ");
 
-const localProductsBaseDir = "C:/Users/ks209/Documents/kawaki clients/urbanland/urbanv2-main/urbanv2-main/frontend/src/pages/Products";
+const localProductsBaseDir = "C:/Users/ks209/Documents/kawaki clients/decorlab/urbanv2-main/urbanv2-main/frontend/src/pages/Products";
 const relativeProductsBaseDir = path.join(__dirname, "../pages/Products");
 const productsBaseDir = fs.existsSync(localProductsBaseDir) ? localProductsBaseDir : relativeProductsBaseDir;
 

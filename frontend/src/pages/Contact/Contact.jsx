@@ -60,8 +60,8 @@ const Contact = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Contact Urbanland Products | Sustainable Outdoor Furniture Manufacturer",
-      description: "Get in touch with Urbanland Products for premium outdoor furniture solutions. Request a quote, discuss your project, or speak with our experts. Pan-India delivery and installation."
+      title: "Contact Decorlab Products | Sustainable Outdoor Furniture Manufacturer",
+      description: "Get in touch with Decorlab Products for premium outdoor furniture solutions. Request a quote, discuss your project, or speak with our experts. Pan-India delivery and installation."
     });
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -377,14 +377,14 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* Why Urbanland */}
+          {/* Why Decorlab */}
           <div className="lg:col-span-5 flex flex-col justify-center text-left">
             <div className="mb-12 text-left space-y-4">
               <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
                 ✦ Key Advantages
               </span>
               <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink">
-                Why Choose Urbanland Products
+                Why Choose Decorlab Products
               </h2>
               <div className="w-24 h-1 bg-craftsman-gold"></div>
             </div>
@@ -458,7 +458,7 @@ const Contact = () => {
               <div>
                 <h4 className="font-label-md uppercase tracking-wider text-architectural-gold mb-3">Office Location</h4>
                 <p className="font-body-lg text-industrial-charcoal leading-relaxed max-w-md">
-                  Urbanland Products, Unit No. 217, Gauri Complex, Above Bank of Baroda, Navghar, Vasai East, Maharashtra – 401202
+                  Decorlab Products, Unit No. 217, Gauri Complex, Above Bank of Baroda, Navghar, Vasai East, Maharashtra – 401202
                 </p>
               </div>
               <div>
@@ -494,7 +494,7 @@ const Contact = () => {
                 />
                 <Marker position={[19.3792, 72.8205]} icon={customIcon}>
                   <Popup>
-                    <strong className="text-industrial-charcoal font-bold">Urbanland Products</strong>
+                    <strong className="text-industrial-charcoal font-bold">Decorlab Products</strong>
                     <br />
                     <span className="text-industrial-charcoal text-xs">Unit no 217, Gauri Complex, Navghar Vasai East, Mumbai</span>
                   </Popup>

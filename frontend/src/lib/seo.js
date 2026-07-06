@@ -8,8 +8,8 @@ export const updatePageSEO = (seoData = {}) => {
   if (typeof window === "undefined") return;
 
   const {
-    title = "Urbanland | Premium Street Furniture & Parklets",
-    description = "Urbanland Products LLP designs and manufactures premium modular street furniture, concrete planter systems, and transit shelters in India.",
+    title = "Decorlab | Premium Street Furniture & Parklets",
+    description = "Decorlab Products LLP designs and manufactures premium modular street furniture, concrete planter systems, and transit shelters in India.",
     og_title,
     og_description,
     og_image,
@@ -92,7 +92,7 @@ export const generateProductSchema = (product, pageUrl = "") => {
     "description": product.tagline || product.description,
     "brand": {
       "@type": "Brand",
-      "name": "Urbanland"
+      "name": "Decorlab"
     },
     "category": product.category,
     "offers": {
@@ -120,14 +120,14 @@ export const generateBlogPostingSchema = (post, pageUrl = "") => {
     "datePublished": post.date,
     "author": {
       "@type": "Person",
-      "name": post.author_name || "Urbanland Contributor"
+      "name": post.author_name || "Decorlab Contributor"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Urbanland Products LLP",
+      "name": "Decorlab Products LLP",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://urbanland.in/logo.png" // placeholder for logo asset
+        "url": "https://decorlab.in/logo.png" // placeholder for logo asset
       }
     },
     "description": post.excerpt?.rendered?.replace(/<[^>]*>/g, "") || ""

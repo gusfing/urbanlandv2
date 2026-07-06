@@ -137,7 +137,7 @@ export default function PreloaderII() {
             <div className="preloader-progress flex flex-col items-center">
                 <div className="preloader-progress-bar"></div>
                 <div className="preloader-logo flex flex-col items-center gap-4 text-center">
-                    <h1>Urbanland</h1>
+                    <h1>Decorlab</h1>
                 </div>
             </div>
 
@@ -146,7 +146,7 @@ export default function PreloaderII() {
             <div className="preloader-content">
                 <div className="preloader-footer">
                     <p className="text-sm">
-                        Meet Urbanland®—premium urban<br />
+                        Meet Decorlab®—premium urban<br />
                         and outdoor furniture solutions.
                     </p>
                 </div>

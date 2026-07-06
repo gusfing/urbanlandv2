@@ -21,7 +21,7 @@ const SmartCitySolutions = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Street Furniture for Municipal & Smart Cities India | Bus Shelters, Public Parks & Urban Infrastructure | Urbanland Products",
+      title: "Street Furniture for Municipal & Smart Cities India | Bus Shelters, Public Parks & Urban Infrastructure | Decorlab Products",
       description: "Durable municipal street furniture, transit bus shelters, waste bins, benches and safety bollards in India. Vandal-proof, hot-dip galvanized solutions for smart cities and public parks. Tender compliant. 2-Year Guarantee.",
       og_image: gbg5
     });
@@ -396,7 +396,7 @@ const SmartCitySolutions = () => {
                   "Wadhwa Transit: Outstanding Structural Integrity"
                 </h3>
                 <p className="text-lg leading-relaxed text-charcoal-industrial/85 mb-8 font-serif">
-                  "In public transport, durability is non-negotiable. Urbanland's bus shelters are manufactured with exceptional structural engineering. They met all our wind-load certifications and municipal requirements with ease."
+                  "In public transport, durability is non-negotiable. Decorlab's bus shelters are manufactured with exceptional structural engineering. They met all our wind-load certifications and municipal requirements with ease."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-1 bg-craftsman-gold"></div>
@@ -405,83 +405,6 @@ const SmartCitySolutions = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: Why Choose Us */}
-      <section className="reveal-section py-24 bg-[#F7F4EF]">
-        <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
-          <div className="mb-16 text-left space-y-4">
-            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-              Why Choose Us
-            </span>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink uppercase">
-              The Urbanland Advantage for Municipalities &amp; Smart Cities
-            </h2>
-            <div className="w-24 h-1 bg-craftsman-gold"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-left">
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">security</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Vandal-Proof Construction</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Tamper-proof anchoring hardware and heavy steel panels prevent structural vandalism.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">assignment</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Tender Specification Compliant</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Custom fabrication capability to meet exact government specifications, material standards, and dimensions.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">layers</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Corrosion &amp; UV Immunity</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Zinc-primed carbon steel or structural stainless steel stands up to monsoons and high humidity.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">verified_user</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Public Safety Standards</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Rounded edges, safe transitions, and heavy chemical base anchoring prevent accidental injuries.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">description</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">Audit Documentation Ready</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Full manufacturing and quality certifications supplied to support government audit requirements.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-12 h-12 border border-craftsman-gold flex items-center justify-center text-craftsman-gold rounded-[4px]">
-                <span className="material-symbols-outlined">workspace_premium</span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-deep-ink">2-Year Commercial Warranty</h4>
-              <p className="text-sm text-deep-ink/75 leading-relaxed">
-                Comprehensive structural guarantee ensuring municipal capital works are fully protected.
-              </p>
             </div>
           </div>
         </div>
@@ -543,63 +466,6 @@ const SmartCitySolutions = () => {
             })}
           </div>
         </div>
-      </section>
-
-      {/* Pre-Footer CTA */}
-      <section className="reveal-section bg-primary text-on-primary py-24 px-6 md:px-margin-desktop overflow-hidden relative">
-        <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="space-y-10 border-l-2 border-secondary/30 pl-8 md:pl-10 text-left">
-            <div className="space-y-2">
-              <span className="font-label-technical text-secondary tracking-[0.2em] uppercase font-semibold text-xs block">
-                The Urbanland Advantage
-              </span>
-              <h3 className="font-headline-md text-3xl md:text-4xl text-on-primary leading-tight">
-                Vandal-Proof &amp; Tender Compliant
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {[
-                { icon: "gavel", title: "Anti-Vandal Hardware", desc: "Anti-tamper bolts and hidden anchors" },
-                { icon: "workspace_premium", title: "2-Year Civic Warranty", desc: "India's best public infrastructure support" },
-                { icon: "layers", title: "Hot-Dip Galvanized", desc: "Maximum rust-proofing on steel" },
-                { icon: "menu_book", title: "Tender Ready Docs", desc: "Material test and CAD packages ready" }
-              ].map((adv, idx) => (
-                <div key={idx} className="flex items-start space-x-4">
-                  <span className="material-symbols-outlined text-secondary text-2xl">{adv.icon}</span>
-                  <div>
-                    <p className="font-bold text-sm uppercase tracking-wider font-label-technical">{adv.title}</p>
-                    <p className="text-xs text-white/70 mt-1">{adv.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-white/5 p-8 md:p-12 border border-white/10 backdrop-blur-sm rounded-none text-left">
-            <h2 className="font-headline-lg text-3xl md:text-4xl text-on-primary mb-8 leading-tight">
-              Ready to Upgrade Public Spaces with <br />
-              <span className="text-secondary">Premium Smart-City street furniture?</span>
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/contact" 
-                className="bg-secondary text-on-secondary px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:opacity-90 transition-all duration-300 rounded-[4px] no-underline"
-              >
-                Submit Tender Inquiry <span className="ml-2">→</span>
-              </Link>
-              <Link 
-                to="/contact" 
-                className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:bg-white hover:text-primary transition-all duration-300 rounded-[4px] no-underline"
-              >
-                Inquire for Smart City <span className="ml-2">→</span>
-              </Link>
-            </div>
-            <p className="mt-8 text-xs text-white/60 font-label-technical uppercase tracking-widest font-semibold">
-              Trusted by municipal corporations and smart city authorities across India
-            </p>
-          </div>
-        </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-black/10 -skew-x-12 translate-x-1/4 z-0"></div>
       </section>
 
     </div>

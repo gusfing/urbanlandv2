@@ -27,7 +27,7 @@ const VedaChatbot = () => {
       {
         id: "welcome",
         sender: "Veda",
-        text: "Hello! Welcome to Urbanland Products. I am Veda, your AI Architectural Consultant. How can I assist you with your project today?",
+        text: "Hello! Welcome to Decorlab Products. I am Veda, your AI Architectural Consultant. How can I assist you with your project today?",
         options: [
           { text: "Match Products to Project", icon: "apartment", value: "match_project" },
           { text: "Frequently Asked Questions", icon: "help_outline", value: "faq" },
@@ -124,7 +124,7 @@ const VedaChatbot = () => {
         ]);
         break;
       case "faq_warranty":
-        simulateVedaTyping("All Urbanland products feature a **2-Year Comprehensive Guarantee** covering structural defects, paint coatings, and mechanical elements. Marine-grade Class C5 anti-corrosion treatments are also available.", [
+        simulateVedaTyping("All Decorlab products feature a **2-Year Comprehensive Guarantee** covering structural defects, paint coatings, and mechanical elements. Marine-grade Class C5 anti-corrosion treatments are also available.", [
           { text: "More FAQs", icon: "help_outline", value: "faq" },
           { text: "Main Menu", icon: "home", value: "main_menu" }
         ]);
@@ -179,9 +179,9 @@ const VedaChatbot = () => {
     } else if (leadForm.step === 3) {
       const finalForm = { ...leadForm, phone: text, timestamp: new Date().toISOString() };
       try {
-        const existing = JSON.parse(localStorage.getItem("urbanland_leads") || "[]");
+        const existing = JSON.parse(localStorage.getItem("decorlab_leads") || "[]");
         existing.push(finalForm);
-        localStorage.setItem("urbanland_leads", JSON.stringify(existing));
+        localStorage.setItem("decorlab_leads", JSON.stringify(existing));
       } catch (err) {}
       setLeadForm({ active: false, step: 0, name: "", email: "", phone: "", productInterest: "" });
       simulateVedaTyping(
@@ -226,7 +226,7 @@ const VedaChatbot = () => {
             
             {/* Email Button */}
             <a 
-              href="mailto:contact@urbanland.in" 
+              href="mailto:contact@decorlab.in" 
               className="group/btn relative w-12 h-12 bg-[#2D2D2D] hover:bg-[#1a1a1a] rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer mr-1"
               aria-label="Email Us"
             >
@@ -287,7 +287,7 @@ const VedaChatbot = () => {
               setShowNotification(false);
             }
           }}
-          Veda-label="Toggle chat"
+          veda-label="Toggle chat"
           className={`relative w-14 h-14 rounded-2xl flex items-center justify-center shadow-2xl cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 z-10 ${isMenuOpen ? 'rotate-45' : ''}`}
           style={{ background: "linear-gradient(135deg, #2C5F2E 0%, #1a3d1c 100%)", border: "1px solid rgba(255,255,255,0.12)" }}
         >
@@ -487,7 +487,7 @@ const VedaChatbot = () => {
                   type="submit"
                   className="w-7 h-7 rounded-lg flex items-center justify-center cursor-pointer transition-all hover:opacity-80 shrink-0"
                   style={{ background: "#C9A84C" }}
-                  Veda-label="Send"
+                  veda-label="Send"
                 >
                   <span className="material-symbols-outlined text-sm text-[#0f1f11]">send</span>
                 </button>
@@ -502,7 +502,7 @@ const VedaChatbot = () => {
               style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
             >
               <span className="text-[9px] uppercase tracking-[0.18em]" style={{ color: "rgba(255,255,255,0.2)" }}>
-                Powered by Urbanland Infrastructure
+                Powered by Decorlab Infrastructure
               </span>
             </div>
           )}

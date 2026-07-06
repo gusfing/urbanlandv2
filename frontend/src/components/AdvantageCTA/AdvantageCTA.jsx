@@ -26,10 +26,10 @@ const AdvantageCTA = ({
                 <div className="space-y-10 border-l-2 border-secondary/30 pl-8 md:pl-10">
                     <div className="space-y-2">
                         <span className="font-label-technical text-secondary tracking-[0.2em] uppercase font-semibold text-xs block">
-                            The Urbanland Advantage
+                            The Decorlab Advantage
                         </span>
                         <h3 className="font-headline-md text-3xl md:text-4xl text-on-primary leading-tight">
-                            Why Urbanland Stands Apart
+                            Why Decorlab Stands Apart
                         </h3>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

@@ -87,7 +87,7 @@ const Choose = () => {
                 
             <div className="choose-sec w-full flex flex-col justify-start items-start gap-10 lg:mt-0 pb-6">
                 <div className='w-full lg:max-w-4xl text-[#2D2D2D]/90 lg:text-[2.2rem] text-[1.2rem] md:leading-[1.2] lg:mt-0 mt-8 font-light'>
-                    <p>When a real estate developer, hotel chain, or municipal body specifies outdoor and urban furniture for a large-scale project, they need a manufacturer they can trust — on quality, delivery timelines, and long-term durability. Urbanland Products is India's only outdoor furniture manufacturer offering a comprehensive 2-year guarantee, with a proven track record supplying premium WPC benches, bus shelters, concrete planters, and more to landmark developments across the country.</p>
+                    <p>When a real estate developer, hotel chain, or municipal body specifies outdoor and urban furniture for a large-scale project, they need a manufacturer they can trust — on quality, delivery timelines, and long-term durability. Decorlab Products is India's only outdoor furniture manufacturer offering a comprehensive 2-year guarantee, with a proven track record supplying premium WPC benches, bus shelters, concrete planters, and more to landmark developments across the country.</p>
                 </div>
             </div>
 

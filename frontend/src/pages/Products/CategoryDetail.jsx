@@ -313,7 +313,7 @@ const CategoryDetail = () => {
       ? `${subcategory.replace("-", " ").toUpperCase()} | ${meta.title} Division`
       : `${meta.title} Division | Premium Street Furniture`;
     updatePageSEO({
-      title: `${pageTitle} | Urbanland Products`,
+      title: `${pageTitle} | Decorlab Products`,
       description: meta.description,
       og_image: meta.image
     });

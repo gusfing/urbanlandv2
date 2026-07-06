@@ -59,7 +59,7 @@ const ActivitiesOld = () => {
                             <div key={index} className="brand-logo-card flex justify-center items-center h-14 md:h-16 p-3 bg-[#2D2D2D]/5 hover:bg-[#2C5F2E]/10 rounded-xl transition-all duration-300 shadow-sm hover:scale-105 transform">
                                 <img 
                                     src={logo} 
-                                    alt={`${brandNames[index] || "Leading real estate developer"} outdoor furniture supplier — Urbanland Products`} 
+                                    alt={`${brandNames[index] || "Leading real estate developer"} outdoor furniture supplier — Decorlab Products`} 
                                     className="max-h-full max-w-full object-contain hover:scale-110 transition-transform duration-300"
                                 />
                             </div>
@@ -71,7 +71,7 @@ const ActivitiesOld = () => {
                     <div className="activities-featured-img w-full h-[200px] md:h-[250px] overflow-hidden rounded-3xl border border-[#2D2D2D]/10 shadow-2xl">
                         <img 
                             src={featuredImg} 
-                            alt="Lodha township WPC benches and concrete planters installed by Urbanland Products" 
+                            alt="Lodha township WPC benches and concrete planters installed by Decorlab Products" 
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" 
                         />
                     </div>

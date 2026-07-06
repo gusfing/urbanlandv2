@@ -39,12 +39,12 @@ const MarqueeSticky = () => {
                     </h2>
                     <div className="w-24 h-1 bg-craftsman-gold"></div>
                     <p className="font-body-lg text-on-surface-variant max-w-3xl pt-2">
-                        From India's largest residential townships to luxury resorts and government smart city initiatives — Urbanland Products has delivered outdoor and urban furniture for 50+ major projects. Here are a few highlights.
+                        From India's largest residential townships to luxury resorts and government smart city initiatives — Decorlab Products has delivered outdoor and urban furniture for 50+ major projects. Here are a few highlights.
                     </p>
                 </div>
             </div>
 
-            {/* Symmetrical Edge-to-Edge 'Contact Urbanland' Marquee placed cleanly AFTER the subheading paragraph */}
+            {/* Symmetrical Edge-to-Edge 'Contact Decorlab' Marquee placed cleanly AFTER the subheading paragraph */}
             <div className="marquee-con-none w-full text-[#C9A84C] mt-6 mb-2 lg:mt-10 lg:mb-8 overflow-hidden">
                 <MarqueeText />
             </div>

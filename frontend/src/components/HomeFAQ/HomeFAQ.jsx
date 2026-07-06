@@ -4,7 +4,7 @@ import { FiChevronDown } from 'react-icons/fi';
 const faqList = [
     {
         q: "Do you ship pan-India?",
-        a: "Yes, Urbanland Products offers pan-India delivery for all our project-scale orders. We have an established logistics network to ensure safe handling of premium furniture."
+        a: "Yes, Decorlab Products offers pan-India delivery for all our project-scale orders. We have an established logistics network to ensure safe handling of premium furniture."
     },
     {
         q: "Can you customize furniture to our specific designs?",

@@ -28,11 +28,11 @@ const verticalsMeta = {
     name: "Real Estate Projects",
     tagline: "Luxury Villas, Gated Communities & Clubhouses",
     image: gbg1,
-    desc: "Urbanland Products delivers premium, sustainable benches, planter boxes and complete amenity solutions that help developers create high-value outdoor spaces, accelerate sales and meet green building standards. Our weather-resistant WPC, NFC, and metal systems are built to withstand heavy footfall while maintaining pristine aesthetics.",
+    desc: "Decorlab Products delivers premium, sustainable benches, planter boxes and complete amenity solutions that help developers create high-value outdoor spaces, accelerate sales and meet green building standards. Our weather-resistant WPC, NFC, and metal systems are built to withstand heavy footfall while maintaining pristine aesthetics.",
     developer: "Godrej, Kalpataru, Wadhwa & Leading Developers",
     supplied: "50+ Gated Communities & Townships Delivered",
     standards: "ISO 9001:2015, IGBC, GRIHA & LEED Compliant",
-    metaTitle: "Outdoor Furniture for Real Estate Projects India | Luxury Villas, Gated Communities & Clubhouses | Urbanland Products",
+    metaTitle: "Outdoor Furniture for Real Estate Projects India | Luxury Villas, Gated Communities & Clubhouses | Decorlab Products",
     metaDesc: "Premium outdoor benches, planter boxes and amenity furniture for real estate projects in India. Trusted by Godrej, Kalpataru, Wadhwa Wise City and leading developers. Durable WPC, NFC Wood, Aluminium & Mild Steel solutions with 2-Year Guarantee.",
     challenges: [
       { text: "Tight RERA handover timelines for amenity decks and common areas.", image: welcome2 },
@@ -84,11 +84,11 @@ const verticalsMeta = {
     name: "Hospitality & Hotels",
     tagline: "Resorts, Pool Areas, Restaurants & Rooftops",
     image: gbg2,
-    desc: "Urbanland Products delivers premium, weather-resistant wicker furniture, benches, planter boxes and complete outdoor seating solutions that enhance guest experience, withstand high daily usage and reduce maintenance costs for hotels, resorts and restaurants.",
+    desc: "Decorlab Products delivers premium, weather-resistant wicker furniture, benches, planter boxes and complete outdoor seating solutions that enhance guest experience, withstand high daily usage and reduce maintenance costs for hotels, resorts and restaurants.",
     developer: "Hotels, Resorts & Restaurant Chains",
     supplied: "Durable Solutions for High-Traffic Pooldecks & Lounges",
     standards: "ISO 9001:2015, UV Stable, Chlorine & Saline Resistant",
-    metaTitle: "Outdoor Furniture for Hospitality & Hotels India | Resorts, Pool Areas, Restaurants & Rooftops | Urbanland Products",
+    metaTitle: "Outdoor Furniture for Hospitality & Hotels India | Resorts, Pool Areas, Restaurants & Rooftops | Decorlab Products",
     metaDesc: "Premium wicker furniture, benches, planter boxes and outdoor seating solutions for hotels, resorts, restaurants and pool areas in India. Durable, stylish and low-maintenance products trusted by hospitality operators. 2-Year Guarantee.",
     challenges: [
       { text: "High daily footfall and constant guest usage in pool, restaurant, and lounge areas.", image: gbg2 },
@@ -140,11 +140,11 @@ const verticalsMeta = {
     name: "Healthcare & Hospitals",
     tagline: "Healing Gardens, Waiting Areas & Hospital Campuses",
     image: gbg3,
-    desc: "Urbanland Products delivers premium, hygienic and easy-to-clean benches, planter boxes and outdoor seating solutions that create calming, therapeutic environments while meeting strict healthcare standards for durability and infection control.",
+    desc: "Decorlab Products delivers premium, hygienic and easy-to-clean benches, planter boxes and outdoor seating solutions that create calming, therapeutic environments while meeting strict healthcare standards for durability and infection control.",
     developer: "Hospitals, Healing Gardens & Medical Campuses",
     supplied: "Hygienic easy-clean benches, wheelchair planters, walkways",
     standards: "ISO 9001:2015, Antibacterial coatings, ADA Compliant",
-    metaTitle: "Outdoor Furniture for Healthcare & Hospitals India | Healing Gardens, Waiting Areas & Hospital Campuses | Urbanland Products",
+    metaTitle: "Outdoor Furniture for Healthcare & Hospitals India | Healing Gardens, Waiting Areas & Hospital Campuses | Decorlab Products",
     metaDesc: "Premium, easy-clean benches and planter boxes for healthcare & hospitals in India. Hygienic, durable solutions for healing gardens, waiting areas and hospital campuses. Trusted by healthcare facilities with 2-Year Guarantee.",
     challenges: [
       { text: "Strict infection control and ease of sanitization/cleaning protocols for public spaces.", image: gbg3 },
@@ -194,11 +194,11 @@ const verticalsMeta = {
     name: "Education & Universities",
     tagline: "Campus Canteens, Open Classrooms & Student Zones",
     image: gbg4,
-    desc: "Urbanland Products delivers heavy-duty, student-proof benches, canteen tables and planter boxes engineered for high daily usage. Our solutions create durable, functional and welcoming outdoor spaces that support learning, relaxation and campus life while keeping maintenance costs low.",
+    desc: "Decorlab Products delivers heavy-duty, student-proof benches, canteen tables and planter boxes engineered for high daily usage. Our solutions create durable, functional and welcoming outdoor spaces that support learning, relaxation and campus life while keeping maintenance costs low.",
     developer: "Schools, Colleges & Universities",
     supplied: "Heavy-duty integrated canteen tables, open-air diner benches",
     standards: "ISO 9001:2015, Vandal-Resistant, Flame-Retardant HPL Slats",
-    metaTitle: "Outdoor Furniture for Education & Universities India | Campus Canteens, Open Classrooms & Student Zones | Urbanland Products",
+    metaTitle: "Outdoor Furniture for Education & Universities India | Campus Canteens, Open Classrooms & Student Zones | Decorlab Products",
     metaDesc: "Durable canteen tables, benches and planter boxes for schools, colleges and universities in India. Student-proof, low-maintenance outdoor furniture for campuses, open-air classrooms and common areas. 2-Year Guarantee.",
     challenges: [
       { text: "Extreme daily wear and tear from thousands of active students in high-volume zones.", image: gbg4 },
@@ -249,11 +249,11 @@ const verticalsMeta = {
     name: "Municipal & Smart Cities",
     tagline: "Bus Shelters, Public Parks & Urban Infrastructure",
     image: gbg5,
-    desc: "Urbanland Products delivers heavy-duty, vandal-resistant bus shelters, benches, dustbins, bollards and planter boxes engineered for 24/7 public use. Our solutions meet tender specifications, reduce long-term maintenance costs and help create cleaner, more organized, and aesthetically upgraded urban spaces.",
+    desc: "Decorlab Products delivers heavy-duty, vandal-resistant bus shelters, benches, dustbins, bollards and planter boxes engineered for 24/7 public use. Our solutions meet tender specifications, reduce long-term maintenance costs and help create cleaner, more organized, and aesthetically upgraded urban spaces.",
     developer: "Municipal Corporations, Smart Cities & Pedestrian Zones",
     supplied: "Solar-powered bus shelters, heavy dustbins, safety bollards",
     standards: "ISO 9001:2015, Tender-Compliant, Vandal-Resistant, Rust-Protected",
-    metaTitle: "Outdoor Furniture for Municipal & Smart Cities India | Bus Shelters, Benches, Dustbins & Urban Infrastructure | Urbanland Products",
+    metaTitle: "Outdoor Furniture for Municipal & Smart Cities India | Bus Shelters, Benches, Dustbins & Urban Infrastructure | Decorlab Products",
     metaDesc: "Durable, vandal-resistant bus shelters, benches, dustbins, bollards and planter boxes for municipal corporations and smart city projects in India. Tender-compliant, low-maintenance urban furniture with 2-Year Guarantee.",
     challenges: [
       { text: "Constant 24/7 public usage leading to rapid physical wear, weathering, and vandalism.", image: gbg5 },
@@ -307,7 +307,7 @@ import { getOptimizedImageUrl } from "../../utils/image";
 import RealEstateSolutions from "./RealEstateSolutions";
 import HospitalitySolutions from "./HospitalitySolutions";
 import HealthcareSolutions from "./HealthcareSolutions";
-import SharedFAQ from "../../components/SharedFAQ/SharedFAQ";
+
 import EducationSolutions from "./EducationSolutions";
 import SmartCitySolutions from "./SmartCitySolutions";
 
@@ -361,7 +361,7 @@ const SolutionsDetail = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: meta.metaTitle || `${meta.name} Solutions | Urbanland Products`,
+      title: meta.metaTitle || `${meta.name} Solutions | Decorlab Products`,
       description: meta.metaDesc || meta.desc,
       og_image: meta.image
     });
@@ -602,7 +602,7 @@ const SolutionsDetail = () => {
           <div className="bg-white rounded-[2.5rem] border border-black/[0.04] p-8 md:p-14 shadow-sm">
             <span className="text-[10px] font-black uppercase tracking-widest text-[#2C5F2E] mb-3 block">— The Client Advantage</span>
             <h2 className="text-3xl font-black uppercase tracking-tight text-[#1A1A1A] mb-12 border-b border-[#2D2D2D]/10 pb-4">
-              Why Leading Developers & Organizations Prefer Urbanland Solutions
+              Why Leading Developers & Organizations Prefer Decorlab Solutions
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
               {meta.whyChoose.map((item, idx) => (
@@ -622,8 +622,6 @@ const SolutionsDetail = () => {
         </section>
       )}
 
-      {/* Sector FAQ Accordion */}
-      {meta.faqs && <SharedFAQ faqs={meta.faqs} />}
 
       {/* Recommended Products Grid */}
       {meta.recommended?.length > 0 && (
@@ -670,7 +668,7 @@ const SolutionsDetail = () => {
       <CTASection 
         title={`Ready to Partner with India's Leading solutions Provider for ${meta.name}?`}
         description="Support sustainable development, earn LEED points, and select premium outdoor systems designed for absolute longevity."
-        tagText="Collaborate with Urbanland"
+        tagText="Collaborate with Decorlab"
         primaryText="Initiate Quote Builder →"
         primaryLink="/contact"
         secondaryText="Download Sector Brochure ↓"

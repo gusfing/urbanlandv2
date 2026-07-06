@@ -48,13 +48,13 @@ import caneFurniturePng from "../assets/products/Product Images/Cane Furniture/3
 export const productConfigs = {
     benches: {
         seo: {
-            title: "Benches Manufacturer India | WPC, Aluminium & GFRC Park Benches | Urbanland Products",
+            title: "Benches Manufacturer India | WPC, Aluminium & GFRC Park Benches | Decorlab Products",
             description: "Premium outdoor benches in WPC, Aluminium, GFRC and Mild Steel. Park benches, garden benches and public seating solutions. Durable, stylish and low-maintenance. India’s only 2-Year Guarantee."
         },
         hero: {
             badge: "Engineered Seating Solutions",
             title: "Premium Benches Manufacturer in India – NFC Wood, Aluminium, Mild Steel & Stainless Steel Park Benches",
-            description: "Urbanland Products offers a complete range of high-quality outdoor benches engineered for Indian conditions. From modern WPC and NFC Wood benches to durable Aluminium, Mild Steel and Stainless Steel options — we provide stylish, comfortable and long-lasting public seating solutions for parks, townships, schools, hospitals and commercial spaces.",
+            description: "Decorlab Products offers a complete range of high-quality outdoor benches engineered for Indian conditions. From modern WPC and NFC Wood benches to durable Aluminium, Mild Steel and Stainless Steel options — we provide stylish, comfortable and long-lasting public seating solutions for parks, townships, schools, hospitals and commercial spaces.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -67,7 +67,7 @@ export const productConfigs = {
             ],
             mainImage: {
                 src: "/assets/products/benches/hero-main.webp",
-                alt: "Premium Urbanland Bench"
+                alt: "Premium Decorlab Bench"
             },
             subImage1: {
                 src: "/assets/products/benches/hero-sub-1.webp",
@@ -82,7 +82,7 @@ export const productConfigs = {
         },
         gallery: {
             title: "Visual Gallery",
-            subtitle: "The Urbanland Collection",
+            subtitle: "The Decorlab Collection",
             description: "Explore our range of premium outdoor seating in various materials and environments.",
             viewAllText: "Benches",
             slides: [
@@ -158,12 +158,12 @@ export const productConfigs = {
         },
         quote: {
             text: "We don't just manufacture seating; we engineer the silent foundations of community life. A well-placed bench can change the entire rhythm of a city street.",
-            author: "DIRECTOR OF DESIGN, URBANLAND"
+            author: "DIRECTOR OF DESIGN, DECORLAB"
         },
         categories: {
             badge: "Material Palette",
             title: "Our Range of Premium Benches",
-            description: "Urbanland manufactures multiple types of high-quality benches to suit different environments, budgets, and design requirements:",
+            description: "Decorlab manufactures multiple types of high-quality benches to suit different environments, budgets, and design requirements:",
             list: [
                 {
                     title: "WPC Benches",
@@ -378,13 +378,13 @@ export const productConfigs = {
     },
     planters: {
         seo: {
-            title: "Planter Boxes Manufacturer India | Mild Steel, Wooden & Aluminium Garden Planters | Urbanland Products",
+            title: "Planter Boxes Manufacturer India | Mild Steel, Wooden & Aluminium Garden Planters | Decorlab Products",
             description: "Premium planter boxes and garden planters in mild steel, wooden, stainless steel and aluminium. Durable, stylish, low-maintenance outdoor planters for real estate, parks, hospitality, hospitals and municipal projects. India’s trusted manufacturer with 2-Year Guarantee."
         },
         hero: {
             badge: "Biophilic Design & Green Architecture",
             title: "Premium Planter Boxes Manufacturer in India – Mild Steel, Wooden, Aluminium & Stainless Steel Garden Planters",
-            description: "Urbanland Products brings innovative planter boxes to urban environments. Designed to maximize space and style, our sustainable outdoor planters enhance any setting — from luxury real estate projects and gated communities to parks, hospitality spaces, hospitals and smart cities. Discover stylish, durable and truly green solutions that make urban gardening easy and elegant while supporting green building certifications and biophilic design principles.",
+            description: "Decorlab Products brings innovative planter boxes to urban environments. Designed to maximize space and style, our sustainable outdoor planters enhance any setting — from luxury real estate projects and gated communities to parks, hospitality spaces, hospitals and smart cities. Discover stylish, durable and truly green solutions that make urban gardening easy and elegant while supporting green building certifications and biophilic design principles.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -482,12 +482,12 @@ export const productConfigs = {
         },
         quote: {
             text: "We don't just build planters; we engineer the biophilic lungs of the modern city, integrating lush nature seamlessly into architectural spaces.",
-            author: "HEAD OF LANDSCAPING, URBANLAND"
+            author: "HEAD OF LANDSCAPING, DECORLAB"
         },
         categories: {
             badge: "Planter Styles",
             title: "Our Range of Premium Planter Boxes",
-            description: "Urbanland manufactures multiple types of high-quality planter boxes to suit different environments, budgets, and design requirements:",
+            description: "Decorlab manufactures multiple types of high-quality planter boxes to suit different environments, budgets, and design requirements:",
             list: [
                 {
                     title: "Mild Steel Garden Planters",
@@ -518,7 +518,7 @@ export const productConfigs = {
             description: "Select materials, finishes, and dimensions to suit your green architecture requirements.",
             radialMap: {
                 centralImage: "/assets/products/planters/planters-configurator-central.webp",
-                centralImageAlt: "Premium Urbanland Planter Box",
+                centralImageAlt: "Premium Decorlab Planter Box",
                 backgroundImage: "/assets/products/planters/planters-configurator-bg.webp",
                 cards: [
                     {
@@ -658,13 +658,13 @@ export const productConfigs = {
     },
     dustbins: {
         seo: {
-            title: "Dustbins Manufacturer India | Outdoor & Commercial Dustbins | Urbanland Products",
+            title: "Dustbins Manufacturer India | Outdoor & Commercial Dustbins | Decorlab Products",
             description: "Premium dustbins and waste bins in Mild Steel, Stainless Steel & Galvanized finish. Ideal for parks, hospitals, schools, commercial complexes, townships and smart cities. Durable, hygienic and low-maintenance. India’s only 2-Year Guarantee."
         },
         hero: {
             badge: "Hygienic & Durable Waste Solutions",
             title: "Premium Dustbins Manufacturer in India – Outdoor & Commercial Waste Bins",
-            description: "Urbanland Products presents high-quality dustbins designed for modern urban and commercial spaces. Engineered for durability, hygiene, and ease of use, our dustbins help maintain cleanliness while enhancing the aesthetics of any environment while supporting sustainability and green urban practices.",
+            description: "Decorlab Products presents high-quality dustbins designed for modern urban and commercial spaces. Engineered for durability, hygiene, and ease of use, our dustbins help maintain cleanliness while enhancing the aesthetics of any environment while supporting sustainability and green urban practices.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -762,12 +762,12 @@ export const productConfigs = {
         },
         quote: {
             text: "Hygienic urban environments start with waste solutions that are as easy to use as they are beautiful.",
-            author: "CHIEF ENGINEER, URBANLAND"
+            author: "CHIEF ENGINEER, DECORLAB"
         },
         categories: {
             badge: "Bin Options",
             title: "Our Range of Premium Waste Bins",
-            description: "Urbanland manufactures multiple types of high-quality dustbins to suit different environments, budgets, and design requirements:",
+            description: "Decorlab manufactures multiple types of high-quality dustbins to suit different environments, budgets, and design requirements:",
             list: [
                 {
                     title: "Single Litter Bins",
@@ -798,7 +798,7 @@ export const productConfigs = {
             description: "Configure capacity, lids, segregation modules, and finishes.",
             radialMap: {
                 centralImage: "/assets/products/dustbins/dustbins-configurator-main.png",
-                centralImageAlt: "Premium Urbanland Twin Dustbin",
+                centralImageAlt: "Premium Decorlab Twin Dustbin",
                 backgroundImage: "/assets/products/dustbins/dustbins-configurator-bg.webp",
                 cards: [
                     {
@@ -912,7 +912,7 @@ export const productConfigs = {
     },
     "bus-shelters": {
         seo: {
-            title: "Bus Shelter Manufacturer India | Bus Stop Shelters | Urbanland Products",
+            title: "Bus Shelter Manufacturer India | Bus Stop Shelters | Decorlab Products",
             description: "High-quality bus stop shelters in Mild Steel, Stainless Steel & Aluminium. Designed for Indian weather, smart cities & municipalities. 2-Year Guarantee, custom sizes & fast installation."
         },
         hero: {
@@ -1016,7 +1016,7 @@ export const productConfigs = {
         },
         quote: {
             text: "A bus shelter is not just a transit stop—it is a community's welcome mat, protecting and dignifying everyday commuters.",
-            author: "HEAD OF URBAN PLANNING, URBANLAND"
+            author: "HEAD OF URBAN PLANNING, DECORLAB"
         },
         categories: {
             badge: "Structure Types",
@@ -1052,7 +1052,7 @@ export const productConfigs = {
             description: "Configure frame materials, roof shading, seating modules, and smart add-ons.",
             radialMap: {
                 centralImage: "/assets/products/bus-shelters/bus-shelter-main.webp",
-                centralImageAlt: "Premium Urbanland Bus Shelter",
+                centralImageAlt: "Premium Decorlab Bus Shelter",
                 backgroundImage: "/assets/products/bus-shelters/bus-shelter-bg.webp",
                 cards: [
                     {
@@ -1166,13 +1166,13 @@ export const productConfigs = {
     },
     "aluminium-benches": {
         seo: {
-            title: "Aluminium Benches Manufacturer India | Outdoor & Park Aluminium Benches | Urbanland",
+            title: "Aluminium Benches Manufacturer India | Outdoor & Park Aluminium Benches | Decorlab",
             description: "Premium Aluminium Benches for parks, gardens, townships and commercial spaces. Lightweight, corrosion-resistant, modern design and low-maintenance. Backed by India’s only 2-Year Guarantee."
         },
         hero: {
             badge: "Lightweight & Corrosion-Resistant",
             title: "Premium Aluminium Benches Manufacturer in India – Lightweight & Corrosion-Resistant Outdoor Benches",
-            description: "Urbanland Products presents high-quality Aluminium Benches engineered for modern outdoor environments. Lightweight, rust-proof, and stylish, they offer excellent durability with minimal maintenance — perfect for parks, gardens, balconies, townships, and commercial spaces.",
+            description: "Decorlab Products presents high-quality Aluminium Benches engineered for modern outdoor environments. Lightweight, rust-proof, and stylish, they offer excellent durability with minimal maintenance — perfect for parks, gardens, balconies, townships, and commercial spaces.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -1270,7 +1270,7 @@ export const productConfigs = {
         },
         quote: {
             text: "Engineering seating that survives coastal humidity and heavy public use requires materials that naturally resist the elements. Aluminium is that perfect material.",
-            author: "CHIEF METALLURGIST, URBANLAND"
+            author: "CHIEF METALLURGIST, DECORLAB"
         },
         categories: {
             badge: "Seating Styles",
@@ -1409,13 +1409,13 @@ export const productConfigs = {
     },
     cabanas: {
         seo: {
-            title: "Cabanas Manufacturer India | Luxury Outdoor, Sustainable & Poolside Cabanas | Urbanland",
+            title: "Cabanas Manufacturer India | Luxury Outdoor, Sustainable & Poolside Cabanas | Decorlab",
             description: "Premium luxury cabanas for pools, gardens, resorts, townships and commercial spaces. Available in Mild Steel, Stainless Steel, Aluminium & WPC. Stylish, durable, weather-resistant and sustainability-conscious. Backed by India’s only 2-Year Guarantee."
         },
         hero: {
             badge: "Luxury Outdoor Living",
             title: "Premium Cabanas Manufacturer in India – Luxury Outdoor & Poolside Cabanas",
-            description: "Urbanland Products presents elegant and durable cabanas designed to create luxurious, sustainable shaded spaces. Perfect for poolside areas, gardens, resorts, rooftops, townships, and commercial landscapes.",
+            description: "Decorlab Products presents elegant and durable cabanas designed to create luxurious, sustainable shaded spaces. Perfect for poolside areas, gardens, resorts, rooftops, townships, and commercial landscapes.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -1513,7 +1513,7 @@ export const productConfigs = {
         },
         quote: {
             text: "A cabana is the ultimate architectural statement in outdoor luxury, transforming any poolside or garden into a private sanctuary.",
-            author: "DIRECTOR OF ARCHITECTURE, URBANLAND"
+            author: "DIRECTOR OF ARCHITECTURE, DECORLAB"
         },
         categories: {
             badge: "Cabana Styles",
@@ -1666,7 +1666,7 @@ export const productConfigs = {
                 },
                 {
                     q: "Can cabanas be customized in size and design?",
-                    a: "Yes. All Urbanland cabanas are custom-manufactured in size, height, canopy style (cantilever or modular), curtains, lighting, and frame finishes."
+                    a: "Yes. All Decorlab cabanas are custom-manufactured in size, height, canopy style (cantilever or modular), curtains, lighting, and frame finishes."
                 },
                 {
                     q: "Are they suitable for coastal areas?",
@@ -1685,13 +1685,13 @@ export const productConfigs = {
     },
     "canteen-tables": {
         seo: {
-            title: "Canteen Tables Manufacturer India | Cafeteria & Dining Tables | Urbanland Products",
+            title: "Canteen Tables Manufacturer India | Cafeteria & Dining Tables | Decorlab Products",
             description: "Premium canteen tables and cafeteria tables in Mild Steel, Stainless Steel & powder-coated finish. Ideal for schools, colleges, factories, offices, hospitals & hostels. 2-Year Guarantee. Durable, stylish & hygienic."
         },
         hero: {
             badge: "Cafeteria & Institution Dining",
             title: "Premium Canteen Tables Manufacturer in India – Durable & Stylish Cafeteria Tables",
-            description: "Urbanland Products presents premium canteen tables designed to elevate your dining experience. Meticulously crafted, they blend durability with contemporary style for any urban setting. Discover the perfect mix of strength and elegance while supporting sustainability and green design.",
+            description: "Decorlab Products presents premium canteen tables designed to elevate your dining experience. Meticulously crafted, they blend durability with contemporary style for any urban setting. Discover the perfect mix of strength and elegance while supporting sustainability and green design.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -1789,7 +1789,7 @@ export const productConfigs = {
         },
         quote: {
             text: "A cafeteria table is the central anchor of workplace community. It must be strong, easy to clean, and inviting.",
-            author: "HEAD OF CORPORATE SPACES, URBANLAND"
+            author: "HEAD OF CORPORATE SPACES, DECORLAB"
         },
         categories: {
             badge: "Table Formats",
@@ -1939,7 +1939,7 @@ export const productConfigs = {
     },
     "car-shelters": {
         seo: {
-            title: "Car Sheds Manufacturer India | Car Parking Sheds & Carports | Urbanland Products",
+            title: "Car Sheds Manufacturer India | Car Parking Sheds & Carports | Decorlab Products",
             description: "Premium car parking sheds and carports in Mild Steel, Stainless Steel & Aluminium. Custom-designed for homes, apartments, townships & commercial spaces. India’s only 2-Year Guarantee. Fast delivery & professional installation."
         },
         hero: {
@@ -2043,7 +2043,7 @@ export const productConfigs = {
         },
         quote: {
             text: "A premium carport is more than just a roof; it's a structural shield for your vehicle that enhances your property's architectural profile.",
-            author: "CHIEF STRUCTURAL ENGINEER, URBANLAND"
+            author: "CHIEF STRUCTURAL ENGINEER, DECORLAB"
         },
         categories: {
             badge: "Carport Models",
@@ -2204,13 +2204,13 @@ export const productConfigs = {
     },
     "indoor-furniture": {
         seo: {
-            title: "Indoor Furniture Manufacturer India | Metal Wooden & Wicker Indoor Furniture | Urbanland",
+            title: "Indoor Furniture Manufacturer India | Metal Wooden & Wicker Indoor Furniture | Decorlab",
             description: "Premium indoor furniture in India. Metal wooden indoor tables, chairs, benches, canteen furniture and wicker indoor living & dining sets. Durable, stylish and low-maintenance solutions for homes, offices, cafes, hotels and institutions. Backed by India’s only 2-Year Guarantee."
         },
         hero: {
             badge: "Premium Interior Seating",
             title: "Premium Indoor Furniture Manufacturer in India – Metal Wooden & Wicker Indoor Furniture",
-            description: "Urbanland Products brings the same quality and craftsmanship from our outdoor range to your indoor spaces. We specialize in premium metal wooden and wicker indoor furniture that combines durability, elegance, and comfort for homes, offices, cafes, hotels, restaurants, and institutions while supporting sustainability and green design principles.",
+            description: "Decorlab Products brings the same quality and craftsmanship from our outdoor range to your indoor spaces. We specialize in premium metal wooden and wicker indoor furniture that combines durability, elegance, and comfort for homes, offices, cafes, hotels, restaurants, and institutions while supporting sustainability and green design principles.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -2303,7 +2303,7 @@ export const productConfigs = {
         },
         quote: {
             text: "We bring the relentless durability of outdoor engineering to the refined beauty of indoor comfort.",
-            author: "HEAD OF INTERIOR DESIGN, URBANLAND"
+            author: "HEAD OF INTERIOR DESIGN, DECORLAB"
         },
         categories: {
             badge: "Furniture Ranges",
@@ -2464,13 +2464,13 @@ export const productConfigs = {
     },
     "metal-wooden-furniture": {
         seo: {
-            title: "Metal Wooden Furniture Manufacturer India | Outdoor Benches, Car Sheds, Bus Shelters & More | Urbanland",
+            title: "Metal Wooden Furniture Manufacturer India | Outdoor Benches, Car Sheds, Bus Shelters & More | Decorlab",
             description: "Premium metal wooden outdoor furniture in India. Outdoor benches, car sheds, bus shelters, street planters, canteen tables, outdoor dustbins and more. Strong metal frames combined with natural wood for durability and elegance. Backed by India’s only 2-Year Guarantee."
         },
         hero: {
             badge: "Metal Strength & Natural Wood",
             title: "Premium Metal Wooden Furniture Manufacturer in India – Outdoor Benches, Car Sheds, Bus Shelters & More",
-            description: "At Urbanland Products, we specialise in premium wooden and metal outdoor furniture that transforms your garden, patio, or street into a stylish, functional oasis. As the providers of the best outdoor furniture in India, we focus on combining the natural beauty of wood with the durability of metal to create pieces that are both elegant and long-lasting.",
+            description: "At Decorlab Products, we specialise in premium wooden and metal outdoor furniture that transforms your garden, patio, or street into a stylish, functional oasis. As the providers of the best outdoor furniture in India, we focus on combining the natural beauty of wood with the durability of metal to create pieces that are both elegant and long-lasting.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -2563,7 +2563,7 @@ export const productConfigs = {
         },
         quote: {
             text: "Metal provides the unbreakable skeleton, while wood provides the warm, inviting soul. Together, they create timeless design.",
-            author: "CHIEF METALLURGIST, URBANLAND"
+            author: "CHIEF METALLURGIST, DECORLAB"
         },
         categories: {
             badge: "Hybrid Palette",
@@ -2724,13 +2724,13 @@ export const productConfigs = {
     },
     "poolside-loungers": {
         seo: {
-            title: "Poolside Loungers Manufacturer India | Luxury Outdoor Daybeds & Chaise Loungers | Urbanland",
+            title: "Poolside Loungers Manufacturer India | Luxury Outdoor Daybeds & Chaise Loungers | Decorlab",
             description: "Premium poolside loungers and outdoor daybeds in India. Weather-resistant synthetic wicker, aluminium frames and comfortable cushions. Perfect for pools, resorts, gardens, townships and luxury homes. Backed by India’s only 2-Year Guarantee."
         },
         hero: {
             badge: "Resort Grade Loungers",
             title: "Premium Poolside Loungers Manufacturer in India – Luxury Outdoor Daybeds & Chaise Loungers",
-            description: "Urbanland Products presents premium poolside loungers designed for ultimate relaxation and style. Crafted with high-grade synthetic wicker and durable frames, our loungers offer superior comfort, weather resistance, and elegance for poolside areas, resorts, gardens, and luxury outdoor spaces while supporting sustainability through eco-friendly materials and responsible manufacturing practices.",
+            description: "Decorlab Products presents premium poolside loungers designed for ultimate relaxation and style. Crafted with high-grade synthetic wicker and durable frames, our loungers offer superior comfort, weather resistance, and elegance for poolside areas, resorts, gardens, and luxury outdoor spaces while supporting sustainability through eco-friendly materials and responsible manufacturing practices.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -2834,12 +2834,12 @@ export const productConfigs = {
         },
         quote: {
             text: "We don't just manufacture loungers; we design the silent foundations of leisure and relaxation. A well-placed daybed can redefine the entire experience of an outdoor oasis.",
-            author: "DIRECTOR OF DESIGN, URBANLAND"
+            author: "DIRECTOR OF DESIGN, DECORLAB"
         },
         categories: {
             badge: "Material & Build",
             title: "Our Range of Premium Poolside Loungers",
-            description: "Urbanland manufactures multiple types of high-quality sun loungers and daybeds to suit different resort, residential, and commercial pool areas:",
+            description: "Decorlab manufactures multiple types of high-quality sun loungers and daybeds to suit different resort, residential, and commercial pool areas:",
             list: [
                 {
                     title: "Synthetic Wicker Loungers",
@@ -2870,7 +2870,7 @@ export const productConfigs = {
             description: "Configure loungers with elite outdoor finishes and adjustability functions.",
             radialMap: {
                 centralImage: poolsideLoungersPng,
-                centralImageAlt: "Premium Urbanland poolside lounger centered in a bright gallery",
+                centralImageAlt: "Premium Decorlab poolside lounger centered in a bright gallery",
                 backgroundImage: "",
                 cards: [
                     {
@@ -3011,13 +3011,13 @@ export const productConfigs = {
     },
     "ss-bollards": {
         seo: {
-            title: "SS Bollards Manufacturer India | Stainless Steel Bollards for Traffic & Urban Safety | Urbanland",
+            title: "SS Bollards Manufacturer India | Stainless Steel Bollards for Traffic & Urban Safety | Decorlab",
             description: "Premium Stainless Steel (SS 304 / SS 316) bollards in India. Fixed, removable and decorative bollards for traffic control, pedestrian safety, parking management and streetscaping. Corrosion-resistant, durable and elegant. Backed by India’s only 2-Year Guarantee."
         },
         hero: {
             badge: "Traffic & Pedestrian Safety",
             title: "Premium SS Bollards Manufacturer in India – Stainless Steel Traffic & Urban Safety Bollards",
-            description: "Urbanland Products manufactures high-quality Stainless Steel Bollards (SS Bollards) designed for traffic control, pedestrian safety, parking management and urban beautification. Made from SS 304 and SS 316 grades, our bollards offer superior corrosion resistance, strength and modern aesthetics for streets, parks, townships, commercial complexes and smart city projects while supporting sustainability and green urban development goals.",
+            description: "Decorlab Products manufactures high-quality Stainless Steel Bollards (SS Bollards) designed for traffic control, pedestrian safety, parking management and urban beautification. Made from SS 304 and SS 316 grades, our bollards offer superior corrosion resistance, strength and modern aesthetics for streets, parks, townships, commercial complexes and smart city projects while supporting sustainability and green urban development goals.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -3115,7 +3115,7 @@ export const productConfigs = {
         },
         quote: {
             text: "Bollards are the silent guardians of pedestrian zones, drawing an elegant, unbreakable line between traffic and safety.",
-            author: "CHIEF OF URBAN SAFETY, URBANLAND"
+            author: "CHIEF OF URBAN SAFETY, DECORLAB"
         },
         categories: {
             badge: "Bollard Types",
@@ -3254,13 +3254,13 @@ export const productConfigs = {
     },
     "wicker-furniture": {
         seo: {
-            title: "Wicker Furniture Manufacturer India | Outdoor Wicker Sets, Loungers, Cabanas & Benches | Urbanland",
+            title: "Wicker Furniture Manufacturer India | Outdoor Wicker Sets, Loungers, Cabanas & Benches | Decorlab",
             description: "Premium wicker outdoor furniture in India. Wicker sofa sets, dining sets, poolside loungers, cabanas, WPC benches, aluminium benches and GFRC benches. Stylish, durable, weather-resistant and low-maintenance. Backed by India’s only 2-Year Guarantee."
         },
         hero: {
             badge: "Hand-Woven Luxury",
             title: "Premium Wicker Furniture Manufacturer in India – Outdoor Wicker Sets, Loungers, Cabanas & Benches",
-            description: "At Urbanland Products, we specialize in premium wicker outdoor furniture that transforms your garden, patio, balcony, or commercial space into a stylish, functional oasis. As the providers of the best outdoor furniture in India, we create beautiful and durable wicker pieces that add elegance, comfort, and long-lasting performance to your outdoor spaces while supporting sustainability through eco-friendly materials and responsible manufacturing practices.",
+            description: "At Decorlab Products, we specialize in premium wicker outdoor furniture that transforms your garden, patio, balcony, or commercial space into a stylish, functional oasis. As the providers of the best outdoor furniture in India, we create beautiful and durable wicker pieces that add elegance, comfort, and long-lasting performance to your outdoor spaces while supporting sustainability through eco-friendly materials and responsible manufacturing practices.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -3358,7 +3358,7 @@ export const productConfigs = {
         },
         quote: {
             text: "Every weave represents the dedication of our master craftsmen, binding modern polymer tech with timeless hand-weaving arts.",
-            author: "HEAD OF WEAVING, URBANLAND"
+            author: "HEAD OF WEAVING, DECORLAB"
         },
         categories: {
             badge: "Wicker Categories",
@@ -3508,13 +3508,13 @@ export const productConfigs = {
     },
     "wicker-dining-sets": {
         seo: {
-            title: "Wicker Dining Sets Manufacturer India | Outdoor Cafeteria & Garden Sets | Urbanland",
+            title: "Wicker Dining Sets Manufacturer India | Outdoor Cafeteria & Garden Sets | Decorlab",
             description: "Premium outdoor wicker dining sets for gardens, patios, terraces, cafes, and resorts. Handcrafted HDPE synthetic rattan dining tables and chairs with rust-proof aluminum frames. Weather-proof, durable, and backed by a 2-Year Guarantee."
         },
         hero: {
             badge: "Al-Fresco Dining Luxury",
             title: "Premium Wicker Dining Sets Manufacturer in India – Elegant Outdoor Cafe & Patio Dining Sets",
-            description: "Transform your outdoor seating into a luxurious al-fresco dining experience. Urbanland Products designs and manufactures premium wicker dining sets that combine hand-woven sophistication with industrial-grade resilience. Ideal for resort poolside decks, open-air cafes, residential gardens, and rooftop terraces.",
+            description: "Transform your outdoor seating into a luxurious al-fresco dining experience. Decorlab Products designs and manufactures premium wicker dining sets that combine hand-woven sophistication with industrial-grade resilience. Ideal for resort poolside decks, open-air cafes, residential gardens, and rooftop terraces.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -3612,7 +3612,7 @@ export const productConfigs = {
         },
         quote: {
             text: "Dining outdoors is a sensory experience. Our wicker dining sets are designed to merge natural beauty with zero-maintenance reliability.",
-            author: "CHIEF OF PATIO DESIGN, URBANLAND"
+            author: "CHIEF OF PATIO DESIGN, DECORLAB"
         },
         categories: {
             badge: "Dining Collections",
@@ -3773,13 +3773,13 @@ export const productConfigs = {
     },
     "wicker-outdoor-products": {
         seo: {
-            title: "Wicker Outdoor Products India | Cabanas, Poolside Loungers, Wicker Living & Dining Sets | Urbanland",
+            title: "Wicker Outdoor Products India | Cabanas, Poolside Loungers, Wicker Living & Dining Sets | Decorlab",
             description: "Premium wicker outdoor products including cabanas, poolside loungers, wicker living sets and wicker dining sets. Stylish, durable, weather-resistant and low-maintenance. Perfect for gardens, patios, resorts, townships and commercial spaces. Backed by India’s only 2-Year Guarantee."
         },
         hero: {
             badge: "Outdoor Comfort & Style",
             title: "Premium Wicker Outdoor Products Manufacturer in India – Cabanas, Poolside Loungers, Living & Dining Sets",
-            description: "At Urbanland Products, we specialize in premium wicker outdoor furniture that transforms your garden, patio, or outdoor space into a stylish, functional oasis. As the providers of the best outdoor furniture in India, we focus on creating beautiful and durable wicker pieces that add a touch of elegance and comfort to your outdoor spaces.",
+            description: "At Decorlab Products, we specialize in premium wicker outdoor furniture that transforms your garden, patio, or outdoor space into a stylish, functional oasis. As the providers of the best outdoor furniture in India, we focus on creating beautiful and durable wicker pieces that add a touch of elegance and comfort to your outdoor spaces.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download the Brochure",
@@ -3842,7 +3842,7 @@ export const productConfigs = {
         philosophy: {
             badge: "Outdoor Luxury",
             title: "Why People Choose Wicker Outdoor Products",
-            description: "Urbanland wicker outdoor products combine natural beauty with modern engineering. They are designed to withstand India’s harsh climate while offering elegance, comfort, and minimal maintenance.",
+            description: "Decorlab wicker outdoor products combine natural beauty with modern engineering. They are designed to withstand India’s harsh climate while offering elegance, comfort, and minimal maintenance.",
             cards: [
                 {
                     num: "01.",
@@ -3882,7 +3882,7 @@ export const productConfigs = {
         },
         quote: {
             text: "Outdoor spaces are extensions of our living rooms. We design furniture that makes the transition from indoors to outdoors completely seamless.",
-            author: "HEAD OF PRODUCT DEVELOPMENT, URBANLAND"
+            author: "HEAD OF PRODUCT DEVELOPMENT, DECORLAB"
         },
         categories: {
             badge: "Outdoor Collections",
@@ -4043,13 +4043,13 @@ export const productConfigs = {
     },
     "pergolas": {
         seo: {
-            title: "Architectural Pergolas Manufacturer India | Modern Outdoor Shade Pergolas | Urbanland",
+            title: "Architectural Pergolas Manufacturer India | Modern Outdoor Shade Pergolas | Decorlab",
             description: "High-quality architectural pergolas in aluminum and timber. Premium outdoor shade structures for corporate plazas, residential gardens and hotels. Custom sizes, wind-load resistant, 2-Year Guarantee."
         },
         hero: {
             badge: "Architectural Shading",
             title: "Premium Pergolas Manufacturer in India – Elegant & Weather-Resistant Outdoor Shade Structures",
-            description: "Enhance your outdoor living spaces with Urbanland's designer pergolas. Custom-built from powder-coated aluminum or premium treated timbers, they provide shelter, visual structure, and elegance. Built to withstand tropical weather and backed by our 2-Year Comprehensive Guarantee.",
+            description: "Enhance your outdoor living spaces with Decorlab's designer pergolas. Custom-built from powder-coated aluminum or premium treated timbers, they provide shelter, visual structure, and elegance. Built to withstand tropical weather and backed by our 2-Year Comprehensive Guarantee.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download Brochure",
@@ -4142,7 +4142,7 @@ export const productConfigs = {
         },
         quote: {
             text: "A pergola is not just a structure; it is an architectural frame that captures the sunlight and shadows to define outdoor luxury.",
-            author: "PRINCIPAL ARCHITECT, URBANLAND"
+            author: "PRINCIPAL ARCHITECT, DECORLAB"
         },
         categories: {
             badge: "Pergola Formats",
@@ -4292,13 +4292,13 @@ export const productConfigs = {
     },
     "gazebos": {
         seo: {
-            title: "Premium Gazebos Manufacturer India | Designer Timber Pavilions | Urbanland",
+            title: "Premium Gazebos Manufacturer India | Designer Timber Pavilions | Decorlab",
             description: "High-performance outdoor gazebos and luxury wooden pavilions. Engineered for public parks, resorts, and premium housing. 2-Year Guarantee, weather-resistant structural frames."
         },
         hero: {
             badge: "Luxury Garden Pavilions",
             title: "Premium Gazebos Manufacturer in India – Beautiful Garden Pavilions & Outdoor Social Hubs",
-            description: "Transform your gardens and lawns with Urbanland's designer gazebos and pavilions. Precision-engineered with high-grade treated hardwoods or anti-corrosion metals, they serve as the perfect shaded hub for relaxation, events, and outdoor dining. Built for life and backed by our 2-Year Guarantee.",
+            description: "Transform your gardens and lawns with Decorlab's designer gazebos and pavilions. Precision-engineered with high-grade treated hardwoods or anti-corrosion metals, they serve as the perfect shaded hub for relaxation, events, and outdoor dining. Built for life and backed by our 2-Year Guarantee.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download Brochure",
@@ -4391,7 +4391,7 @@ export const productConfigs = {
         },
         quote: {
             text: "A garden gazebo is a sanctuary in the landscape, offering shelter while keeping you intimately connected with nature.",
-            author: "LANDSCAPE ARCHITECT, URBANLAND"
+            author: "LANDSCAPE ARCHITECT, DECORLAB"
         },
         categories: {
             badge: "Gazebo Designs",
@@ -4541,13 +4541,13 @@ export const productConfigs = {
     },
     "pre-fab-homes": {
         seo: {
-            title: "Prefab Homes & Modular Cabins India | Garden Pods | Urbanland",
+            title: "Prefab Homes & Modular Cabins India | Garden Pods | Decorlab",
             description: "Premium prefabricated modular homes, luxury garden cabins, and smart outdoor pods. Engineered with insulated chassis and eco-friendly WPC cladding. Fast 48h installation, 2-Year Guarantee."
         },
         hero: {
             badge: "Modular Prefabricated Living",
             title: "Premium Pre-Fab Homes Manufacturer in India – Eco-Friendly & Insulated Modular Cabins",
-            description: "Discover the future of living with Urbanland's premium prefabricated modular homes. Built with high-performance insulation, structural steel chassis, and eco-friendly WPC cladding. They offer rapid, waste-free installation in just 48 hours — perfect for farmhouses, eco-resorts, garden cabins, and rooftop cottages. Backed by our 2-Year Guarantee.",
+            description: "Discover the future of living with Decorlab's premium prefabricated modular homes. Built with high-performance insulation, structural steel chassis, and eco-friendly WPC cladding. They offer rapid, waste-free installation in just 48 hours — perfect for farmhouses, eco-resorts, garden cabins, and rooftop cottages. Backed by our 2-Year Guarantee.",
             ctaText: "Request Custom Quote",
             ctaLink: "/contact",
             brochureText: "Download Brochure",
@@ -4640,7 +4640,7 @@ export const productConfigs = {
         },
         quote: {
             text: "Prefabricated architecture is not about cheap housing; it is about precision engineering, waste reduction, and building without harming the landscape.",
-            author: "HEAD OF ARCHITECTURE, URBANLAND"
+            author: "HEAD OF ARCHITECTURE, DECORLAB"
         },
         categories: {
             badge: "Modular Formats",

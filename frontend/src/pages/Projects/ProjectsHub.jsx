@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { updatePageSEO, cleanPageSEO } from "../../lib/seo";
 import { getOptimizedImageUrl } from "../../utils/image";
-import SharedFAQ from "../../components/SharedFAQ/SharedFAQ";
+
 
 // Import local assets
 import gbg1 from '../../assets/gallery_real_estate.png';
@@ -24,8 +24,8 @@ const ProjectsHub = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Our Projects - Urbanland Products",
-      description: "Real installations. Real impact. Discover how Urbanland Products' durable, stylish and sustainable outdoor furniture is transforming public and private spaces across India.",
+      title: "Our Projects - Decorlab Products",
+      description: "Real installations. Real impact. Discover how Decorlab Products' durable, stylish and sustainable outdoor furniture is transforming public and private spaces across India.",
       og_image: gbg1
     });
 
@@ -255,7 +255,7 @@ const ProjectsHub = () => {
             Our Projects
           </h1>
           <p className="font-body-lg text-white/80 max-w-3xl mt-2 leading-relaxed">
-            Real installations. Real impact. Discover how Urbanland Products’ durable, stylish and sustainable
+            Real installations. Real impact. Discover how Decorlab Products’ durable, stylish and sustainable
             outdoor furniture is transforming public and private spaces across India.
           </p>
           
@@ -355,7 +355,7 @@ const ProjectsHub = () => {
         </div>
       </section>
 
-      {/* Section 3: Why Urbanland */}
+      {/* Section 3: Why Decorlab */}
       <section className="w-full bg-gradient-to-br from-forest-green via-[#152e18] to-[#0d1f10] text-white py-20 md:py-28 px-margin-mobile md:px-margin-desktop relative overflow-hidden">
         {/* Style block for loading progress indicator */}
         <style dangerouslySetInnerHTML={{__html: `
@@ -386,7 +386,7 @@ const ProjectsHub = () => {
             <div className="w-24 h-1 bg-craftsman-gold"></div>
             
             <p className="font-body-lg text-white/80 leading-relaxed max-w-lg mb-4">
-              Every piece of Urbanland furniture is engineered to withstand heavy public use and harsh weather, 
+              Every piece of Decorlab furniture is engineered to withstand heavy public use and harsh weather, 
               ensuring your investment looks impeccable for years to come.
             </p>
 
@@ -551,65 +551,7 @@ const ProjectsHub = () => {
         </div>
       </section>
 
-      {/* Section 4: FAQ */}
-      <SharedFAQ faqs={faqs} />
 
-      {/* Pre-Footer CTA */}
-      <section className="reveal-section bg-forest-green text-white py-24 px-6 md:px-margin-desktop overflow-hidden relative">
-        <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="space-y-10 border-l-2 border-craftsman-gold/30 pl-8 md:pl-10 text-left">
-            <div className="space-y-2">
-              <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-                The Urbanland Advantage
-              </span>
-              <h3 className="font-headline-md text-3xl md:text-4xl text-white leading-tight">
-                Architectural Quality &amp; Volume Scale
-              </h3>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {[
-                { icon: "verified", title: "2-Year Warranty", desc: "Comprehensive commercial coverage" },
-                { icon: "speed", title: "Fast Lead Times", desc: "Direct manufacturer-to-site supply" },
-                { icon: "architecture", title: "CAD/BIM Ready", desc: "Precise models for architectural layout" },
-                { icon: "eco", title: "Sustainable Sourcing", desc: "FSC certified and green build ready" }
-              ].map((adv, idx) => (
-                <div key={idx} className="flex items-start space-x-4">
-                  <span className="material-symbols-outlined text-craftsman-gold text-2xl">{adv.icon}</span>
-                  <div>
-                    <p className="font-bold text-sm uppercase tracking-wider font-label-technical text-white">{adv.title}</p>
-                    <p className="text-xs text-white/70 mt-1">{adv.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="bg-white/5 p-8 md:p-12 border border-white/10 backdrop-blur-sm rounded-none text-left">
-            <h2 className="font-headline-lg text-3xl md:text-4xl text-white mb-8 leading-tight">
-              Ready to Upgrade Public Spaces with <br />
-              <span className="text-craftsman-gold">Premium Urbanland Products?</span>
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                to="/contact" 
-                className="bg-craftsman-gold text-charcoal-industrial px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:bg-white transition-all duration-300 rounded-[4px] no-underline"
-              >
-                Request a Quote <span className="ml-2">→</span>
-              </Link>
-              <Link 
-                to="/resources/downloads" 
-                className="border-2 border-white text-white px-8 py-4 font-label-technical uppercase tracking-widest text-xs font-bold flex items-center justify-center hover:bg-white hover:text-forest-green transition-all duration-300 rounded-[4px] no-underline"
-              >
-                Download Portfolio <span className="ml-2">→</span>
-              </Link>
-            </div>
-            <p className="mt-8 text-xs text-white/60 font-label-technical uppercase tracking-widest font-semibold">
-              Partnering with India's leading developers and master planners
-            </p>
-          </div>
-        </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-black/10 -skew-x-12 translate-x-1/4 z-0"></div>
-      </section>
     </div>
   );
 };

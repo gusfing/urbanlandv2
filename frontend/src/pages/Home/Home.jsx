@@ -11,7 +11,7 @@ import Activities from '../../components/Activities/Activities'
 import Showcase from '../../components/Showcase/Showcase'
 import Feedback from '../../components/Feedback/Feedback'
 import InsightsResources from '../../components/InsightsResources/InsightsResources'
-import HomeFAQ from '../../components/HomeFAQ/HomeFAQ'
+
 
 const Home = () => {
     useEffect(() => {
@@ -47,7 +47,7 @@ const Home = () => {
                 <ManufacturedWithPrecision />
                 <Feedback />
                 <InsightsResources />
-                <HomeFAQ />
+
             </div>
         </div>
     )

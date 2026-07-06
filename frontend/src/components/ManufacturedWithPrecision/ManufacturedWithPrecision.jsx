@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // Import local assets
 import welcome1 from '../../assets/welcome-1.png';
-import manufacturingVideo from '../../assets/smoke_final.mp4';
+
 
 const ManufacturedWithPrecision = () => {
     const videoRef = useRef(null);

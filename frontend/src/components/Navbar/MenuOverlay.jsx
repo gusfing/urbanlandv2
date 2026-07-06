@@ -265,7 +265,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 exit={{ opacity: 0, y: -10, filter: "blur(4px)" }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="w-full h-full bg-white rounded-[3rem] shadow-2xl border border-black/5 overflow-hidden flex flex-col p-10 relative"
+                className="w-full h-full bg-white rounded-[3rem] border border-black/5 overflow-hidden flex flex-col p-10 relative"
               >
                 {/* Background Image for simple links */}
                 {(!activeLink.isMega && !activeLink.subLinks) && (
@@ -275,7 +275,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
                        <div className="w-12 h-12 rounded-full border border-white/60 flex items-center justify-center">
                          <span className="text-xl font-semibold leading-none">®</span>
                        </div>
-                       <h2 className="text-6xl font-bold tracking-tighter">Urbanland</h2>
+                       <h2 className="text-6xl font-bold tracking-tighter">Decorlab</h2>
                     </div>
                   </div>
                 )}

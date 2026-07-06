@@ -18,7 +18,7 @@ const Footer = () => {
       <div className='grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-10 mt-16 text-[#F7F4EF]/80 border-b border-[#F7F4EF]/15 pb-16'>
         {/* Column 1: Brand */}
         <div className="flex flex-col gap-4 border-b border-[#F7F4EF]/10 pb-6 md:border-0 md:pb-0">
-          <h3 className="text-[#C9A84C] text-lg font-bold uppercase tracking-wider">Urbanland Products</h3>
+          <h3 className="text-[#C9A84C] text-lg font-bold uppercase tracking-wider">Decorlab Products</h3>
           <p className="text-sm text-[#F7F4EF]/75 leading-relaxed font-light">
             Outdoor & Urban Furniture Manufacturer in India
           </p>
@@ -140,7 +140,7 @@ const Footer = () => {
           >
             <div className="flex flex-col gap-2.5 text-sm text-[#F7F4EF]/75 leading-relaxed font-light">
               <p>Phone: +91 20 6789 2200</p>
-              <p>Email: info@urbanlandproducts.com</p>
+              <p>Email: info@decorlabproducts.com</p>
               <p>WhatsApp: +91 97732 46830</p>
               <p>Address: Vasai Virar, Maharashtra</p>
             </div>
@@ -156,7 +156,7 @@ const Footer = () => {
       {/* Bottom copyright bar with crawlable keyword paragraph */}
       <div className="w-full flex flex-col md:flex-row justify-between items-center mt-8 gap-6 pt-4 text-[11px] text-[#F7F4EF]/45">
         <div className="flex flex-col gap-1 text-center md:text-left">
-          <p>© 2026 Urbanland Products. All rights reserved.   |   <Link to="/privacy-policy" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Privacy Policy</Link>   |   <Link to="/sitemap" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Sitemap</Link>   |   <Link to="/style-guide" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Style Guide</Link>   |   <Link to="/admin" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Admin Panel</Link></p>
+          <p>© 2026 Decorlab Products. All rights reserved.   |   <Link to="/privacy-policy" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Privacy Policy</Link>   |   <Link to="/sitemap" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Sitemap</Link>   |   <Link to="/style-guide" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Style Guide</Link>   |   <Link to="/admin" className="hover:text-[#C9A84C] transition-colors no-underline text-[#F7F4EF]/45">Admin Panel</Link></p>
           <p className="text-[#F7F4EF]/60 font-medium tracking-wide mt-1.5">
             Outdoor Furniture Manufacturer in India — Eco-Friendly Benches, Bus Shelters, Concrete Planters &amp; Urban Street Furniture
           </p>

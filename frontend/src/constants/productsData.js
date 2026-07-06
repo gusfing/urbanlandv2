@@ -2034,8 +2034,8 @@ const mapProductImage = (p) => ({
   gallery: p.gallery ? p.gallery.map(getOptimizedImageUrl) : []
 });
 
-const baseProducts = (typeof window !== 'undefined' && window.localStorage && localStorage.getItem('urbanland_admin_products_v14'))
-  ? JSON.parse(localStorage.getItem('urbanland_admin_products_v14'))
+const baseProducts = (typeof window !== 'undefined' && window.localStorage && localStorage.getItem('decorlab_admin_products_v14'))
+  ? JSON.parse(localStorage.getItem('decorlab_admin_products_v14'))
   : staticProducts;
 
 export const products = baseProducts.map(mapProductImage);

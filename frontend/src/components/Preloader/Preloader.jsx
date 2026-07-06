@@ -140,7 +140,7 @@ const Preloader = () => {
             <div className="preloader-progress">
                 <div className="preloader-progress-bar"></div>
                 <div className="preloader-logo">
-                    <h1 ref={preloaderLogoRef} className="logo-text">Urbanland</h1>
+                    <h1 ref={preloaderLogoRef} className="logo-text">Decorlab</h1>
                 </div>
             </div>
 

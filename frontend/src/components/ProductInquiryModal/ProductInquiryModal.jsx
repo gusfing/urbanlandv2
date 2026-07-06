@@ -60,7 +60,7 @@ const ProductInquiryModal = ({ product, onClose }) => {
         <div className="w-full md:w-1/2 h-[250px] sm:h-[300px] md:h-full border-b md:border-b-0 md:border-r border-[#2D2D2D]/10 bg-white flex items-center justify-center p-6 md:p-10">
           <img
             src={productImage}
-            alt={`${product.title} — Urbanland Products`}
+            alt={`${product.title} — Decorlab Products`}
             className="max-h-full max-w-full object-contain select-none"
             style={{ mixBlendMode: 'multiply', filter: 'brightness(1.05) contrast(1.02)' }}
           />
@@ -75,7 +75,7 @@ const ProductInquiryModal = ({ product, onClose }) => {
                 Inquiry Sent
               </h3>
               <p className="text-[11px] md:text-xs text-[#2D2D2D]/80 leading-relaxed max-w-[380px]">
-                Thank you! Your query has been logged. An Urbanland LLP project manager will contact you with custom quotes within 24 hours.
+                Thank you! Your query has been logged. An Decorlab LLP project manager will contact you with custom quotes within 24 hours.
               </p>
               <button
                 onClick={onClose}
