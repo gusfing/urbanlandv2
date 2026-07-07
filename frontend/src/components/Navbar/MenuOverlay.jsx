@@ -161,7 +161,7 @@ const MenuOverlay = ({ isOpen, setIsOpen }) => {
   const activeLink = links[activeMenuIndex] || links[0];
 
   return (
-    <div ref={containerRef} onClick={handleBackdropClick} className="fixed inset-0 z-[9999] bg-[#F7F4EF] flex items-stretch justify-center font-sans opacity-0 invisible">
+    <div ref={containerRef} onClick={handleBackdropClick} data-lenis-prevent className="fixed inset-0 z-[9999] bg-[#F7F4EF] flex items-stretch justify-center font-sans opacity-0 invisible">
       <div ref={innerRef} className="menu-overlay-inner relative w-full h-full bg-[#F7F4EF] overflow-hidden flex flex-col justify-between p-6 sm:p-10 md:p-14 lg:px-16 lg:pt-16 lg:pb-32 shadow-none border-none rounded-none">
         
         {/* Main Content Area */}
