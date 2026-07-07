@@ -55,8 +55,8 @@ const ProductsHub = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Urban Furniture Divisions Catalog | Decorlab Products",
-      description: "Explore Decorlab's extensive catalog of premium street furniture including benches, shelters, sheds, planters, wicker lounge, and steel/aluminum furniture in India.",
+      title: "Urban Furniture Divisions Catalog | Urbanland Products",
+      description: "Explore Urbanland's extensive catalog of premium street furniture including benches, shelters, sheds, planters, wicker lounge, and steel/aluminum furniture in India.",
       og_type: "website"
     });
 
@@ -234,7 +234,7 @@ const ProductsHub = () => {
                   {image && (
                     <img
                       src={image}
-                      alt={`${div.name} manufacturer India — Decorlab Products`}
+                      alt={`${div.name} manufacturer India — Urbanland Products`}
                       className={`absolute inset-0 h-full w-full object-contain select-none transition-opacity duration-700 ease-in-out scale-105 ${
                         secondImage ? 'group-hover:opacity-0' : ''
                       }`}

@@ -17,7 +17,7 @@ const Hero = () => {
       image: "/assets/bench-hero.jpeg",
       tag: "OUTDOOR FURNITURE",
       title: "Premium Outdoor Furniture Manufacturer in India",
-      subtext: "Decorlab Products designs and manufactures premium, aesthetic, and sustainable urban furniture and landscape solutions for developers, architects, and public spaces across India.",
+      subtext: "Urbanland Products designs and manufactures premium, aesthetic, and sustainable urban furniture and landscape solutions for developers, architects, and public spaces across India.",
       cta1Text: "Request a Quote",
       cta1Link: "/contact",
       cta1Icon: "arrow_forward",
@@ -30,7 +30,7 @@ const Hero = () => {
       image: "/assets/canteen-tables-hero.jpeg",
       tag: "CRAFTSMANSHIP",
       title: "Precision Engineering with Indian Craftsmanship",
-      subtext: "Since 2023, Decorlab Products has been a trusted partner for architects and developers, combining traditional manufacturing with avant-garde architectural design.",
+      subtext: "Since 2023, Urbanland Products has been a trusted partner for architects and developers, combining traditional manufacturing with avant-garde architectural design.",
       cta1Text: "Explore Products",
       cta1Link: "/products",
       cta1Icon: "arrow_forward",
@@ -334,13 +334,13 @@ const Hero = () => {
           <div className="w-full lg:w-2/5 lg:-ml-20 mt-6 lg:mt-20 z-10 reveal-up" style={{ transitionDelay: '150ms' }}>
             <div className="bg-surface-container-lowest p-6 sm:p-8 md:p-12 rounded-[24px] smooth-shadow border border-industrial-charcoal/5">
               <span className="font-label-md text-xs sm:text-label-md text-architectural-gold uppercase tracking-[0.2em] block mb-4">
-                ABOUT DECORLAB
+                ABOUT URBANLAND
               </span>
               <h2 className="font-headline-lg text-2xl sm:text-headline-lg text-forest-deep mb-6 leading-tight">
                 Built for Projects That Last
               </h2>
               <p className="font-body-md text-sm sm:text-body-md text-on-surface-variant mb-8 leading-relaxed">
-                Decorlab Products is India's leading manufacturer of premium outdoor furniture and urban
+                Urbanland Products is India's leading manufacturer of premium outdoor furniture and urban
                 infrastructure solutions. We design custom WPC park benches, designer planters, bus shelters,
                 gazebos, and site furnishings. Every product is engineered for durability, weather
                 resistance, and sustainable outdoor performance.
@@ -384,7 +384,7 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* ─── WHY CHOOSE DECORLAB ───────────────────────────────── */}
+      {/* ─── WHY CHOOSE URBANLAND ───────────────────────────────── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#123114] to-[#0d220e] text-white py-16 sm:py-stack-xl border-t border-white/5">
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-architectural-gold/10 rounded-full blur-[120px] pointer-events-none" />
 
@@ -394,10 +394,10 @@ const Hero = () => {
             {/* Left */}
             <div className="lg:col-span-5 space-y-4 reveal-up">
               <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-                WHY DECORLAB
+                WHY URBANLAND
               </span>
               <h2 className="font-headline-lg text-headline-lg text-white leading-tight">
-                Why Developers &amp; Architects Choose Decorlab
+                Why Developers &amp; Architects Choose Urbanland
               </h2>
               <div className="w-24 h-1 bg-craftsman-gold"></div>
               <p className="font-body-md text-sm text-white/50 leading-relaxed max-w-md pt-2">

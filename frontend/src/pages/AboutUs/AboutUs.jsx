@@ -14,8 +14,8 @@ const AboutUs = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "About Decorlab Products | India's Sustainable Outdoor Furniture Manufacturer",
-      description: "Learn about Decorlab Products, our mission, founder, team, and commitment to manufacturing premium sustainable outdoor furniture for projects across India."
+      title: "About Urbanland Products | India's Sustainable Outdoor Furniture Manufacturer",
+      description: "Learn about Urbanland Products, our mission, founder, team, and commitment to manufacturing premium sustainable outdoor furniture for projects across India."
     });
     return () => cleanPageSEO();
   }, []);
@@ -39,10 +39,10 @@ const AboutUs = () => {
             ✦ About Our Company
           </span>
           <h1 className="font-display-lg-mobile text-4xl md:font-display-lg md:text-6xl lg:text-7xl text-white max-w-4xl uppercase font-bold tracking-tight">
-            About Decorlab Products
+            About Urbanland Products
           </h1>
           <p className="font-body-lg text-white/80 max-w-3xl mt-2 leading-relaxed">
-            Decorlab Products is a Made-in-India manufacturer of premium sustainable outdoor furniture, including benches, planter boxes, bus shelters, litter bins, pergolas, and custom urban solutions for projects across India.
+            Urbanland Products is a Made-in-India manufacturer of premium sustainable outdoor furniture, including benches, planter boxes, bus shelters, litter bins, pergolas, and custom urban solutions for projects across India.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mt-4">
@@ -89,7 +89,7 @@ const AboutUs = () => {
               <div className="w-24 h-1 bg-craftsman-gold"></div>
             </div>
             <p className="font-body-md text-sm md:text-body-md text-on-surface-variant mb-8 leading-loose">
-              Founded by Raj Shekhar in 2023, Decorlab Products was built on a simple belief—outdoor spaces should be beautiful, durable, and environmentally responsible. Watch Raj share the vision behind Decorlab, our commitment to sustainable manufacturing, and how we're helping shape greener communities across India.
+              Founded by Raj Shekhar in 2023, Urbanland Products was built on a simple belief—outdoor spaces should be beautiful, durable, and environmentally responsible. Watch Raj share the vision behind Urbanland, our commitment to sustainable manufacturing, and how we're helping shape greener communities across India.
             </p>
             <button
               onClick={() => setIsVideoOpen(true)}
@@ -113,7 +113,7 @@ const AboutUs = () => {
                 src={getOptimizedImageUrl(
                   "https://lh3.googleusercontent.com/aida-public/AB6AXuDm5XSys0gybXBlcF-qyh5z00D4Ppdw369F6iNuxj2HK4hYzvU4UCoIu3ycvS7KfnfgUgrpM0VhhoAWVpLhPecxLjO0TwmlCW1ZJP2pLzgpHvapEajOK-7TjoomLe_PXXsOfz0wNGT-CAXOvifTGd5v0NiRAgF1NyAUJ0Reymlp5_0EOdU2LR-U2mT08ocIiXtyqdxDz4NJd4uU40w80p2vLH1IP_zq9M_93vOrrzX31ZGzPOse-m55kWpzt8i5nyDC3RF_RAwmsqWQ"
                 )}
-                alt="Raj Shekhar, founder of Decorlab Products."
+                alt="Raj Shekhar, founder of Urbanland Products."
               />
             </div>
             <div
@@ -153,7 +153,7 @@ const AboutUs = () => {
               <div className="w-24 h-1 bg-craftsman-gold"></div>
             </div>
             <p className="font-body-md text-sm md:text-body-md text-on-surface-variant mb-10 leading-loose">
-              From a manufacturing unit in Vasai, Maharashtra, Decorlab Products has grown into a trusted partner for architects, developers, municipalities, hospitality brands, educational institutions, and infrastructure projects across India. Today, we manufacture benches, planter boxes, bus shelters, litter bins, pergolas, street furniture, and custom urban solutions designed specifically for Indian weather conditions.
+              From a manufacturing unit in Vasai, Maharashtra, Urbanland Products has grown into a trusted partner for architects, developers, municipalities, hospitality brands, educational institutions, and infrastructure projects across India. Today, we manufacture benches, planter boxes, bus shelters, litter bins, pergolas, street furniture, and custom urban solutions designed specifically for Indian weather conditions.
             </p>
             <Link
               to="/projects"
@@ -278,7 +278,7 @@ const AboutUs = () => {
               OUR TEAM
             </span>
             <h2 className="font-headline-lg text-headline-lg text-deep-ink mb-4">
-              The People Behind Decorlab
+              The People Behind Urbanland
             </h2>
             <div className="w-24 h-1 bg-craftsman-gold mb-6"></div>
           </div>
@@ -310,7 +310,7 @@ const AboutUs = () => {
               <img
                 className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
                 src={getOptimizedImageUrl(member.img)}
-                alt={`Professional headshot of a ${member.role} at Decorlab.`}
+                alt={`Professional headshot of a ${member.role} at Urbanland.`}
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-industrial-charcoal to-transparent text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <p className="font-label-md text-xs uppercase tracking-wider font-semibold">{member.role}</p>
@@ -320,7 +320,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Why Decorlab */}
+      {/* Why Urbanland */}
       <section className="bg-[#2D2D2D] text-white py-stack-xl">
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="text-center mb-16">
@@ -329,7 +329,7 @@ const AboutUs = () => {
                 OUR ADVANTAGES
               </span>
               <h2 className="font-headline-lg text-headline-lg text-white mb-4">
-                Why Clients Choose Decorlab
+                Why Clients Choose Urbanland
               </h2>
               <div className="w-24 h-1 bg-craftsman-gold mx-auto"></div>
             </div>

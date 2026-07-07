@@ -33,7 +33,7 @@ const Header = () => {
         <Link to="/" className="flex items-center cursor-pointer select-none">
           <img
             src={logoImg}
-            alt="Decorlab Products LLP Logo"
+            alt="Urbanland Products LLP Logo"
             className="h-7 sm:h-8 object-contain hover:opacity-80 transition-opacity duration-300"
           />
         </Link>
@@ -59,7 +59,7 @@ const Header = () => {
         <Link to="/" className="flex items-center cursor-pointer select-none">
           <img
             src={logoImg}
-            alt="Decorlab Products LLP Logo"
+            alt="Urbanland Products LLP Logo"
             className="h-7 sm:h-8 object-contain hover:opacity-80 transition-opacity duration-300"
           />
         </Link>

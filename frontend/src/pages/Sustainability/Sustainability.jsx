@@ -22,7 +22,7 @@ const sustainabilityFaqsList = [
   },
   {
     q: "Are your manufacturing processes certified?",
-    a: "Yes, Decorlab Products is ISO 9001:2015 certified, ensuring that our quality management systems meet international standards for excellence and consistency."
+    a: "Yes, Urbanland Products is ISO 9001:2015 certified, ensuring that our quality management systems meet international standards for excellence and consistency."
   }
 ];
 
@@ -39,8 +39,8 @@ const Sustainability = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Sustainability | Green Outdoor Furniture Manufacturer in India | Decorlab Products",
-      description: "Discover how Decorlab Products designs and manufactures sustainable outdoor furniture using WPC, NFC Wood, aluminium and recyclable materials. Built for long-lasting performance while supporting greener urban spaces across India.",
+      title: "Sustainability | Green Outdoor Furniture Manufacturer in India | Urbanland Products",
+      description: "Discover how Urbanland Products designs and manufactures sustainable outdoor furniture using WPC, NFC Wood, aluminium and recyclable materials. Built for long-lasting performance while supporting greener urban spaces across India.",
       og_image: heroImage
     });
 
@@ -157,7 +157,7 @@ const Sustainability = () => {
             </h2>
             <div className="w-24 h-1 bg-[#C9A84C] mb-8"></div>
             <blockquote className="font-body-lg text-lg md:text-body-lg text-[#41493f] leading-relaxed m-0">
-              Sustainability isn't an afterthought—it's part of our manufacturing philosophy. Instead of relying on traditional hardwoods such as teak, acacia and sesam, we use innovative materials like WPC (Wood-Plastic Composite) and NFC Wood (Natural Fiber Composite). These materials incorporate recycled plastics and natural fibres, helping reduce dependence on natural timber while supporting more responsible manufacturing. Every Decorlab product is engineered for durability, with an expected lifespan of 12–20+ years, helping minimise replacement waste and long-term maintenance.
+              Sustainability isn't an afterthought—it's part of our manufacturing philosophy. Instead of relying on traditional hardwoods such as teak, acacia and sesam, we use innovative materials like WPC (Wood-Plastic Composite) and NFC Wood (Natural Fiber Composite). These materials incorporate recycled plastics and natural fibres, helping reduce dependence on natural timber while supporting more responsible manufacturing. Every Urbanland product is engineered for durability, with an expected lifespan of 12–20+ years, helping minimise replacement waste and long-term maintenance.
             </blockquote>
           </div>
         </div>
@@ -324,7 +324,7 @@ const Sustainability = () => {
               </h2>
               <div className="w-24 h-1 bg-[#C9A84C] mb-6"></div>
               <p className="font-body-lg text-body-lg text-[#41493f] mb-8 leading-relaxed">
-                Decorlab Products has delivered 50+ outdoor furniture projects for residential communities,
+                Urbanland Products has delivered 50+ outdoor furniture projects for residential communities,
                 hospitality developments, educational institutions, municipalities and public
                 infrastructure. Every installation reflects our commitment to durable design, responsible
                 material selection and long-term environmental value.

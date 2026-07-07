@@ -152,12 +152,12 @@ const StickyCols = () => {
                     <div className="col col-2">
                         <div className="col-img col-img-1">
                             <div className="col-img-wrapper">
-                                <img src={colimg1} alt="Decorlab Products WPC benches and planters installed in Lodha township" />
+                                <img src={colimg1} alt="Urbanland Products WPC benches and planters installed in Lodha township" />
                             </div>
                         </div>
                         <div className="col-img col-img-2">
                             <div className="col-img-wrapper">
-                                <img src={colimg2} alt="Outdoor urban furniture installed at Adani Realty residential project by Decorlab Products" />
+                                <img src={colimg2} alt="Outdoor urban furniture installed at Adani Realty residential project by Urbanland Products" />
                             </div>
                         </div>
                     </div>
@@ -329,7 +329,7 @@ const StickyCols = () => {
                         <div className="w-full aspect-[16/10] bg-black/20 rounded-[37.4px] overflow-hidden relative group mt-auto">
                             <img 
                                 src={colimg1} 
-                                alt="Decorlab Products WPC benches and planters installed in Lodha township" 
+                                alt="Urbanland Products WPC benches and planters installed in Lodha township" 
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                                 style={{ borderRadius: "38px", boxShadow: "rgba(255, 255, 255, 0.3) 5px 5px 10px 10px inset" }}
                             />
@@ -370,7 +370,7 @@ const StickyCols = () => {
                         <div className="w-full aspect-[16/10] bg-black/20 rounded-[37.4px] overflow-hidden relative group mt-auto">
                             <img 
                                 src={colimg2} 
-                                alt="Outdoor urban furniture installed at Adani Realty residential project by Decorlab Products" 
+                                alt="Outdoor urban furniture installed at Adani Realty residential project by Urbanland Products" 
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                                 style={{ borderRadius: "38px", boxShadow: "rgba(255, 255, 255, 0.3) 5px 5px 10px 10px inset" }}
                             />

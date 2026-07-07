@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CTASection = ({
     title = "Ready to Specify Outdoor Furniture for Your Project?",
-    description = "Get a custom quote, detailed proposal, and technical specifications within 24 hours. Decorlab serves municipalities, developers, and architects nationwide.",
+    description = "Get a custom quote, detailed proposal, and technical specifications within 24 hours. Urbanland serves municipalities, developers, and architects nationwide.",
     tagText = "Ready to Partner",
     primaryText = "Request Custom Quote →",
     primaryLink = "/get-quote",

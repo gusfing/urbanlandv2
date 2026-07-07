@@ -21,7 +21,7 @@ const EducationSolutions = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Outdoor Furniture for Education & Universities India | Campus Canteens, Open Classrooms & Student Zones | Decorlab Products",
+      title: "Outdoor Furniture for Education & Universities India | Campus Canteens, Open Classrooms & Student Zones | Urbanland Products",
       description: "Durable canteen tables, benches and planter boxes for schools, colleges and universities in India. Student-proof, low-maintenance outdoor furniture for campuses, open-air classrooms and common areas. 2-Year Guarantee.",
       og_image: gbg4
     });
@@ -396,7 +396,7 @@ const EducationSolutions = () => {
                   "Panchshil Tech: Student Proof Performance"
                 </h3>
                 <p className="text-lg leading-relaxed text-charcoal-industrial/85 mb-8 font-serif">
-                  "Students put furniture through absolute tests daily. Decorlab's canteen tables have withstood heavy bags, heavy rainfall, and constant lunch crowds for four years. The metal anchors prevent any shifting."
+                  "Students put furniture through absolute tests daily. Urbanland's canteen tables have withstood heavy bags, heavy rainfall, and constant lunch crowds for four years. The metal anchors prevent any shifting."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-1 bg-craftsman-gold"></div>

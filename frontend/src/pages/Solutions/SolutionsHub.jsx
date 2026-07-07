@@ -107,7 +107,7 @@ const SolutionsHub = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Industry Solutions | DECORLAB Products",
+      title: "Industry Solutions | URBANLAND Products",
       description: "Explore customized street furniture solutions for Real Estate, Hospitality, Hotels, Healthcare, Universities, and Smart City Municipalities.",
       og_image: gbg1
     });
@@ -535,14 +535,14 @@ const SolutionsHub = () => {
         </div>
       </section>
 
-      {/* Why Choose Decorlab */}
+      {/* Why Choose Urbanland */}
       <section className="reveal-section py-24 px-6 md:px-margin-desktop max-w-container-max mx-auto">
         <div className="mb-16 text-center space-y-4 flex flex-col items-center">
           <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
             Our Value Proposition
           </span>
           <h2 className="font-headline-lg text-headline-lg text-deep-ink">
-            Why Leading Organisations Choose Decorlab
+            Why Leading Organisations Choose Urbanland
           </h2>
           <div className="w-24 h-1 bg-craftsman-gold mx-auto"></div>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">

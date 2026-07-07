@@ -42,7 +42,7 @@ const FooterBannerOld = () => {
                     onMouseLeave={() => setActive(false)}
                     ref={fbImgRef} 
                     src={banner} 
-                    alt="Decorlab Products landmark project outdoor furniture installation" 
+                    alt="Urbanland Products landmark project outdoor furniture installation" 
                     className="w-full h-full object-cover absolute inset-0 z-0" 
                 />
 
@@ -57,7 +57,7 @@ const FooterBannerOld = () => {
                     </h2>
                     
                     <p className="text-xs sm:text-base text-[#F7F4EF]/85 leading-relaxed max-w-2xl text-center font-light">
-                        Get your custom project quote and full product catalogue in under 60 seconds. Decorlab Products — India's guaranteed outdoor furniture manufacturer for real estate, hospitality & smart cities.
+                        Get your custom project quote and full product catalogue in under 60 seconds. Urbanland Products — India's guaranteed outdoor furniture manufacturer for real estate, hospitality & smart cities.
                     </p>
 
                     {/* CTA Buttons */}

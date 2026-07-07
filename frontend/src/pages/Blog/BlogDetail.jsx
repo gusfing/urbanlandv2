@@ -307,7 +307,7 @@ const BlogDetail = () => {
       const pageUrl = window.location.href;
       const schemaMarkup = post.yoast_head_json?.schema || generateBlogPostingSchema(post, pageUrl);
       updatePageSEO({
-        title: post.yoast_head_json?.title || `${post.title?.rendered} | Decorlab Journal`,
+        title: post.yoast_head_json?.title || `${post.title?.rendered} | Urbanland Journal`,
         description: post.yoast_head_json?.description || post.excerpt?.rendered?.replace(/<[^>]*>/g, ""),
         og_title: post.yoast_head_json?.og_title || post.title?.rendered,
         og_description: post.yoast_head_json?.og_description || post.excerpt?.rendered?.replace(/<[^>]*>/g, ""),
@@ -591,7 +591,7 @@ const BlogDetail = () => {
               <div className="border-t border-black/[0.04] pt-4.5">
                 <h5 className="text-[9px] font-black uppercase tracking-widest text-[#2D2D2D]/55 mb-1">Author</h5>
                 <p className="text-xs font-bold text-[#2D2D2D]">{post.author_name}</p>
-                <p className="text-[10px] text-[#2D2D2D]/40 uppercase font-black tracking-wider mt-0.5">Decorlab Expert</p>
+                <p className="text-[10px] text-[#2D2D2D]/40 uppercase font-black tracking-wider mt-0.5">Urbanland Expert</p>
               </div>
 
               <div className="border-t border-black/[0.04] pt-4.5">

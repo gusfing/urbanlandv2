@@ -21,7 +21,7 @@ const SmartCitySolutions = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Street Furniture for Municipal & Smart Cities India | Bus Shelters, Public Parks & Urban Infrastructure | Decorlab Products",
+      title: "Street Furniture for Municipal & Smart Cities India | Bus Shelters, Public Parks & Urban Infrastructure | Urbanland Products",
       description: "Durable municipal street furniture, transit bus shelters, waste bins, benches and safety bollards in India. Vandal-proof, hot-dip galvanized solutions for smart cities and public parks. Tender compliant. 2-Year Guarantee.",
       og_image: gbg5
     });
@@ -396,7 +396,7 @@ const SmartCitySolutions = () => {
                   "Wadhwa Transit: Outstanding Structural Integrity"
                 </h3>
                 <p className="text-lg leading-relaxed text-charcoal-industrial/85 mb-8 font-serif">
-                  "In public transport, durability is non-negotiable. Decorlab's bus shelters are manufactured with exceptional structural engineering. They met all our wind-load certifications and municipal requirements with ease."
+                  "In public transport, durability is non-negotiable. Urbanland's bus shelters are manufactured with exceptional structural engineering. They met all our wind-load certifications and municipal requirements with ease."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-1 bg-craftsman-gold"></div>

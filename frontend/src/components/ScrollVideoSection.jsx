@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from "react";
 const ScrollVideoSection = ({
     badge = "DESIGNED FOR LEISURE",
     heading = "Why Premium Poolside Loungers Matter",
-    videoUrl = "https://decorlabproducts.com/wp-content/uploads/2026/06/Poolside-Loungers_UBL.mp4",
-    description = "A luxury pool deck is defined by the quality of its relaxation spaces. Cheap loungers crack, fade, and degrade under intense UV rays and chlorine exposure. Decorlab's premium sun loungers are built to withstand the harshest environments while delivering unmatched comfort.",
+    videoUrl = "https://urbanlandproducts.com/wp-content/uploads/2026/06/Poolside-Loungers_UBL.mp4",
+    description = "A luxury pool deck is defined by the quality of its relaxation spaces. Cheap loungers crack, fade, and degrade under intense UV rays and chlorine exposure. Urbanland's premium sun loungers are built to withstand the harshest environments while delivering unmatched comfort.",
     features = [
         {
             icon: "wb_sunny",

@@ -73,7 +73,7 @@ const FooterTitle = () => {
         <section ref={ftConRef} className='relative z-1 w-full h-[50vh] md:h-[55vh] border-t border-t-[#F7F4EF]/15 bg-[#2D2D2D] overflow-hidden flex flex-col justify-between pb-6 md:pb-10'>
             <div className='flex flex-col md:flex-row w-full justify-between items-center px-6 md:px-16 pt-8 md:pt-10 gap-3 md:gap-0' >
                 <p className='text-[#F7F4EF]/60 text-[0.75rem] font-medium tracking-wide'>
-                    Website made by—<a href="#" className='text-[#F7F4EF] hover:text-[#C9A84C] underline transition-colors duration-300'>Decorlab®</a>
+                    Website made by—<a href="#" className='text-[#F7F4EF] hover:text-[#C9A84C] underline transition-colors duration-300'>Urbanland®</a>
                 </p>
                 <p className='text-[#F7F4EF]/60 text-[0.75rem] font-medium tracking-wide'>
                     This website is using <span className='text-[#F7F4EF] font-semibold'>cookies.</span>
@@ -85,7 +85,7 @@ const FooterTitle = () => {
 
             <div className='footer-title w-full text-center select-none pb-14 md:pb-0'>
                 <h1 className='text-[clamp(3rem,16vw,18rem)] font-bold tracking-tighter translate-y-[0%] leading-none flex items-baseline justify-center'>
-                    <span className="footer-brand-text">Decorlab</span>
+                    <span className="footer-brand-text">Urbanland</span>
                     <sub className="footer-brand-sub"><span>®</span></sub>
                 </h1>
             </div>

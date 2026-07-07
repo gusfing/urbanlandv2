@@ -44,7 +44,7 @@ const ExitIntentPopup = () => {
     const getPopupContent = () => {
         if (normalizedPath === "/about-us") {
             return {
-                title: "Download the Decorlab Company Profile",
+                title: "Download the Urbanland Company Profile",
                 description: "Learn more about our architectural street furniture legacy, manufacturing capabilities, and completed projects across India.",
                 buttonText: "Get Company Profile (PDF)",
                 image: companyProfileImg
@@ -161,7 +161,7 @@ const ExitIntentPopup = () => {
 
         // Default Master Catalog for Home, Blog, etc.
         return {
-            title: "Download the Decorlab Master Catalog",
+            title: "Download the Urbanland Master Catalog",
             description: "Get our complete 2026 product guide featuring full material specifications, dimensions, and standard designs.",
             buttonText: "Get the Master Catalog (PDF)",
             image: masterCatalogImg
@@ -176,7 +176,7 @@ const ExitIntentPopup = () => {
 
         if (isExcluded) return;
 
-        const sessionKey = `decorlab_global_exit_intent_${normalizedPath.replace(/\//g, "_")}`;
+        const sessionKey = `urbanland_global_exit_intent_${normalizedPath.replace(/\//g, "_")}`;
         const isShown = sessionStorage.getItem(sessionKey);
 
         if (!isShown) {

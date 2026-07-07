@@ -125,7 +125,7 @@ const faqsList = [
     a: "Lead times vary by project scale, typically ranging from 6 to 10 weeks. Our team provides detailed production timelines and regular updates throughout the manufacturing process."
   },
   {
-    q: "How do I maintain Decorlab furniture?",
+    q: "How do I maintain Urbanland furniture?",
     a: "Our furniture is designed for ultra-low maintenance. Regular cleaning with mild soap and water is usually sufficient. We provide comprehensive maintenance guides with every purchase to ensure decades of use."
   }
 ];
@@ -137,7 +137,7 @@ const ResourcesHub = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Resources | Sustainable Outdoor Furniture & Green Amenity Solutions | Decorlab Products",
+      title: "Resources | Sustainable Outdoor Furniture & Green Amenity Solutions | Urbanland Products",
       description: "Access our technical guides, product catalogs, materials comparison specifications, and expert blog insights for sustainable outdoor furniture in India.",
       og_image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC_dEL1OxvrW5JvdGCGOSirMUW062F_x705fdolWum4ct9GBB2yGjUXOu11zaupORQ65jllwHQmjn8AVkW9_6Srir8X1n7j6OTJQvNORxUVImvjOUAc-6DNRyxflGJgP4hqFB_17sc_4f60MfpxVHwKMIZuZoUQ95oI8bY4x6eN7hMQR1NeRCzm6J2vcRTRFPKUHzWgmYsOJu6cmuOYj-m7COuOFYwnNzXieBU1t-FrpjEYgoO0mY4OdJHULgi7o85cTWODUw_IB0ZG"
     });

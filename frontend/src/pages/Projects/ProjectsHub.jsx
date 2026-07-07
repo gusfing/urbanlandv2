@@ -24,8 +24,8 @@ const ProjectsHub = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Our Projects - Decorlab Products",
-      description: "Real installations. Real impact. Discover how Decorlab Products' durable, stylish and sustainable outdoor furniture is transforming public and private spaces across India.",
+      title: "Our Projects - Urbanland Products",
+      description: "Real installations. Real impact. Discover how Urbanland Products' durable, stylish and sustainable outdoor furniture is transforming public and private spaces across India.",
       og_image: gbg1
     });
 
@@ -255,7 +255,7 @@ const ProjectsHub = () => {
             Our Projects
           </h1>
           <p className="font-body-lg text-white/80 max-w-3xl mt-2 leading-relaxed">
-            Real installations. Real impact. Discover how Decorlab Products’ durable, stylish and sustainable
+            Real installations. Real impact. Discover how Urbanland Products’ durable, stylish and sustainable
             outdoor furniture is transforming public and private spaces across India.
           </p>
           
@@ -355,7 +355,7 @@ const ProjectsHub = () => {
         </div>
       </section>
 
-      {/* Section 3: Why Decorlab */}
+      {/* Section 3: Why Urbanland */}
       <section className="w-full bg-gradient-to-br from-forest-green via-[#152e18] to-[#0d1f10] text-white py-20 md:py-28 px-margin-mobile md:px-margin-desktop relative overflow-hidden">
         {/* Style block for loading progress indicator */}
         <style dangerouslySetInnerHTML={{__html: `
@@ -386,7 +386,7 @@ const ProjectsHub = () => {
             <div className="w-24 h-1 bg-craftsman-gold"></div>
             
             <p className="font-body-lg text-white/80 leading-relaxed max-w-lg mb-4">
-              Every piece of Decorlab furniture is engineered to withstand heavy public use and harsh weather, 
+              Every piece of Urbanland furniture is engineered to withstand heavy public use and harsh weather, 
               ensuring your investment looks impeccable for years to come.
             </p>
 

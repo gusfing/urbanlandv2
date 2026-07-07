@@ -17,7 +17,7 @@ const categories = [
 const faqsList = [
   {
     category: "general",
-    q: "Who is ARCH-FAB Decorlab Products?",
+    q: "Who is ARCH-FAB Urbanland Products?",
     a: "ARCH-FAB is a premier Indian manufacturer specializing in high-performance, architecturally designed outdoor furniture and urban landscape solutions, engineered for permanence and aesthetic excellence."
   },
   {
@@ -73,8 +73,8 @@ const FAQ = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "FAQ | ARCH-FAB Decorlab Products",
-      description: "Answers to all your questions about Decorlab Products – sustainable outdoor furniture, materials (WPC, NFC Wood, Aluminium, Mild Steel), warranty, customization, delivery, installation, green building certifications and more."
+      title: "FAQ | ARCH-FAB Urbanland Products",
+      description: "Answers to all your questions about Urbanland Products – sustainable outdoor furniture, materials (WPC, NFC Wood, Aluminium, Mild Steel), warranty, customization, delivery, installation, green building certifications and more."
     });
 
     // Open first FAQ by default

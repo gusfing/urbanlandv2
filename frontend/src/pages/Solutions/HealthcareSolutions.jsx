@@ -21,7 +21,7 @@ const HealthcareSolutions = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Outdoor Furniture for Healthcare & Hospitals India | Healing Gardens, Waiting Areas & Hospital Campuses | Decorlab Products",
+      title: "Outdoor Furniture for Healthcare & Hospitals India | Healing Gardens, Waiting Areas & Hospital Campuses | Urbanland Products",
       description: "Premium, easy-clean benches and planter boxes for healthcare & hospitals in India. Hygienic, durable solutions for healing gardens, waiting areas and hospital campuses. Trusted by healthcare facilities with 2-Year Guarantee.",
       og_image: gbg3
     });
@@ -396,7 +396,7 @@ const HealthcareSolutions = () => {
                   "TATA Projects: Meeting High Clinical Standards"
                 </h3>
                 <p className="text-lg leading-relaxed text-charcoal-industrial/85 mb-8 font-serif">
-                  "Hospitals demand absolute structural hygiene. Decorlab's smooth, non-porous composite benches are exceptionally easy to sanitise, and the secure concrete chemical anchoring gives us 100% security."
+                  "Hospitals demand absolute structural hygiene. Urbanland's smooth, non-porous composite benches are exceptionally easy to sanitise, and the secure concrete chemical anchoring gives us 100% security."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-1 bg-craftsman-gold"></div>

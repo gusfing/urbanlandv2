@@ -26,6 +26,10 @@ const DEFAULT_FAQ = {
     title: "Frequently Asked Questions",
     list: [
         {
+            q: "What are the primary materials used in your products?",
+            a: "We primarily use galvanized steel, high-grade aluminum, and Wood Polymer Composite (WPC) or FSC-certified hardwoods. All metals are powder-coated for maximum durability."
+        },
+        {
             q: "Which material is best for coastal areas?",
             a: "For coastal areas, Aluminium and Stainless Steel (Grade 304 or 316) are highly recommended due to their excellent corrosion resistance. Our polymer-coated and anodized finishes provide extra protection against salt air."
         },
@@ -38,12 +42,20 @@ const DEFAULT_FAQ = {
             a: "Absolutely. Both WPC (Wood Plastic Composite) and NFC (Natural Fiber Composite) wood are engineered to resist rotting, splitting, warping, and UV damage, making them ideal for heavy outdoor usage in Indian weather."
         },
         {
+            q: "How do Urbanland products handle the Indian monsoon?",
+            a: "Our products are tested for salt spray resistance and high humidity. WPC components are non-porous and do not absorb water, while our metal coatings prevent oxidation even in coastal areas."
+        },
+        {
             q: "What is the typical lead time?",
             a: "Standard orders are dispatched within 2-4 weeks. Bulk or custom project orders depend on the complexity and volume of the requirements."
         },
         {
             q: "Do you provide installation services?",
             a: "We provide detailed installation guidance and drawings across India. On-site installation support by our team is also available for bulk corporate or township projects."
+        },
+        {
+            q: "Are 3D models and CAD files available for architects?",
+            a: "Yes, we provide .dwg and .skp files for our entire standard range to facilitate seamless integration into your architectural plans and mood boards."
         }
     ]
 };

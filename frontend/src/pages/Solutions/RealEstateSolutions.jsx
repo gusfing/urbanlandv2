@@ -13,16 +13,11 @@ import welcome1 from '../../assets/welcome-1.png';
 import welcome2 from '../../assets/welcome-2.png';
 
 const RealEstateSolutions = () => {
-  const [activeFaq, setActiveFaq] = useState(null);
-
-  const toggleFaq = (index) => {
-    setActiveFaq(activeFaq === index ? null : index);
-  };
 
   useEffect(() => {
     // Update SEO headers
     updatePageSEO({
-      title: "Outdoor Furniture for Real Estate Projects India | Luxury Villas, Gated Communities & Clubhouses | Decorlab Products",
+      title: "Outdoor Furniture for Real Estate Projects India | Luxury Villas, Gated Communities & Clubhouses | Urbanland Products",
       description: "Premium outdoor benches, planter boxes and amenity furniture for real estate projects in India. Trusted by Godrej, Kalpataru, Wadhwa Wise City and leading developers. Durable WPC, NFC Wood, Aluminium & Mild Steel solutions with 2-Year Guarantee.",
       og_image: gbg1
     });
@@ -397,7 +392,7 @@ const RealEstateSolutions = () => {
                   "Navandhe Real Estate: Luxury Heights"
                 </h3>
                 <p className="text-lg leading-relaxed text-charcoal-industrial/85 mb-8 font-serif">
-                  "Decorlab's ability to provide high-quality CAD drawings early in the planning phase made them our preferred partner. The durability of their NFC benches is exactly what our luxury clients expect."
+                  "Urbanland's ability to provide high-quality CAD drawings early in the planning phase made them our preferred partner. The durability of their NFC benches is exactly what our luxury clients expect."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-1 bg-craftsman-gold"></div>
@@ -419,7 +414,7 @@ const RealEstateSolutions = () => {
               Why Choose Us
             </span>
             <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink uppercase">
-              Why Leading Developers &amp; Architects Prefer Decorlab
+              Why Leading Developers &amp; Architects Prefer Urbanland
             </h2>
             <div className="w-24 h-1 bg-craftsman-gold"></div>
           </div>
@@ -494,63 +489,7 @@ const RealEstateSolutions = () => {
         </div>
       </section>
 
-      {/* FAQ Section - Stateful React Accordion */}
-      <section className="reveal-section py-24 bg-surface-container-lowest/30">
-        <div className="px-6 md:px-margin-desktop max-w-container-max mx-auto">
-          <div className="mb-16 text-left space-y-4">
-            <span className="font-label-technical text-craftsman-gold tracking-[0.2em] uppercase font-semibold text-xs block">
-              FAQ
-            </span>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-deep-ink uppercase">
-              Technical Specifications FAQ
-            </h2>
-            <div className="w-24 h-1 bg-craftsman-gold"></div>
-          </div>
-          
-          <div className="max-w-4xl mx-auto space-y-6 text-left">
-            {[
-              {
-                q: "What are the primary materials used in your benches?",
-                a: "We primarily use galvanized steel, high-grade aluminum, and Wood Polymer Composite (WPC) or FSC-certified hardwoods. All metals are powder-coated for maximum durability."
-              },
-              {
-                q: "Do you provide custom dimensions for large-scale amenities?",
-                a: "Yes, our in-house design team can customize lengths, finishes, and anchoring systems to meet specific site requirements for projects with a minimum order quantity."
-              },
-              {
-                q: "How do Decorlab products handle the Indian monsoon?",
-                a: "Our products are tested for salt spray resistance and high humidity. WPC components are non-porous and do not absorb water, while our metal coatings prevent oxidation even in coastal areas."
-              },
-              {
-                q: "Are 3D models and CAD files available for architects?",
-                a: "Yes, we provide .dwg and .skp files for our entire standard range to facilitate seamless integration into your architectural plans and mood boards."
-              }
-            ].map((faq, idx) => {
-              const isOpen = activeFaq === idx;
-              return (
-                <div key={idx} className="bg-white border border-black/[0.05] shadow-sm rounded-lg overflow-hidden transition-all duration-300">
-                  <button
-                    className="w-full text-left p-8 flex justify-between items-center outline-none bg-white select-none cursor-pointer group"
-                    onClick={() => toggleFaq(idx)}
-                  >
-                    <span className="font-bold text-sm uppercase tracking-widest text-deep-ink group-hover:text-forest-green transition-colors">
-                      {faq.q}
-                    </span>
-                    <span className={`material-symbols-outlined transition-transform duration-300 ${isOpen ? 'rotate-180 text-forest-green' : 'text-deep-ink/50'}`}>
-                      expand_more
-                    </span>
-                  </button>
-                  <div className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[300px] opacity-100 p-8 border-t border-black/[0.05] pt-6' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-                    <p className="text-sm text-deep-ink/75 leading-relaxed">
-                      {faq.a}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+
 
     </div>
   );

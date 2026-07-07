@@ -98,7 +98,7 @@ const Materials = () => {
 
           {/* Description */}
           <p className="font-body-lg text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed text-sm md:text-lg">
-            Choosing the right material is critical for long-lasting, beautiful and eco-friendly outdoor furniture. This guide compares the materials we use at Decorlab Products — with a strong focus on sustainability, durability and performance in Indian conditions.
+            Choosing the right material is critical for long-lasting, beautiful and eco-friendly outdoor furniture. This guide compares the materials we use at Urbanland Products — with a strong focus on sustainability, durability and performance in Indian conditions.
           </p>
 
           {/* Glassmorphic Highlights Checklist */}

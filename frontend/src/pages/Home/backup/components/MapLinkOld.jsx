@@ -71,10 +71,10 @@ const MapLinkOld = () => {
             {/* Existing Title Text */}
             <div>
                 <p className="text-[0.7rem] font-bold text-[#2C5F2E] choose-subtitle uppercase tracking-widest mb-4">
-                    — Decorlab in the world
+                    — Urbanland in the world
                 </p>                
                 <h1 className="text-3xl md:text-[5vw] md:leading-[1.1] tracking-tight mt-5 text-[#1A1A1A]">
-                    Decorlab® delivers custom outdoor furniture<br />
+                    Urbanland® delivers custom outdoor furniture<br />
                     Mumbai to architects and developers<br />
                 </h1>
             </div>
@@ -158,7 +158,7 @@ const MapLinkOld = () => {
                         ref={mapUI}
                         className="absolute top-8 md:top-12 left-6 md:left-12 bg-[#2C5F2E]/95 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 w-[85%] max-w-[380px] text-left shadow-2xl z-20 pointer-events-auto"
                     >
-                        <h2 className="text-[#F7F4EF] text-3xl font-bold tracking-tight mb-1">Decorlab<sup className="text-sm">®</sup></h2>
+                        <h2 className="text-[#F7F4EF] text-3xl font-bold tracking-tight mb-1">Urbanland<sup className="text-sm">®</sup></h2>
                         <p className="text-[#C9A84C] text-sm font-medium mb-8 pb-6 border-b border-white/10">Delivering everywhere in India.</p>
                         
                         <p className="text-[#F7F4EF]/75 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">Featured Collections</p>

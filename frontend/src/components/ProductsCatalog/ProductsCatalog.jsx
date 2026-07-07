@@ -575,7 +575,7 @@ const ProductsCatalog = ({ showTitle = true }) => {
                       {/* First image: White background */}
                       <img
                         src={product.image}
-                        alt={`${product.title} manufacturer India — Decorlab Products`}
+                        alt={`${product.title} manufacturer India — Urbanland Products`}
                         className={`absolute inset-0 max-h-[92%] max-w-[92%] m-auto object-contain select-none transition-opacity duration-700 ease-in-out ${
                           product.gallery && product.gallery[1] ? 'group-hover:opacity-0' : ''
                         }`}

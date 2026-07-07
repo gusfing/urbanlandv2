@@ -13,8 +13,8 @@ const Downloads = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Downloads | Master Catalogue | Decorlab Products",
-      description: "Download the latest Decorlab Products Master Catalogue featuring our complete range of premium outdoor furniture, benches, planters, bus shelters, dustbins, and site furnishing solutions."
+      title: "Downloads | Master Catalogue | Urbanland Products",
+      description: "Download the latest Urbanland Products Master Catalogue featuring our complete range of premium outdoor furniture, benches, planters, bus shelters, dustbins, and site furnishing solutions."
     });
 
     const isUnlocked = localStorage.getItem("downloads_unlocked") === "true";
@@ -243,7 +243,7 @@ const Downloads = () => {
                   {/* Decorative Back page (blueprint) */}
                   <div className="absolute w-[68%] h-[90%] bg-[#EFEDE8] shadow-lg rounded-[4px] border border-charcoal-industrial/10 transform rotate-[4deg] translate-x-12 translate-y-2 opacity-60 pointer-events-none select-none overflow-hidden hidden md:block">
                     <div className="p-6 border-b border-charcoal-industrial/10 flex justify-between items-center">
-                      <span className="text-[8px] font-mono tracking-widest text-charcoal-industrial/40">DECORLAB CAD SECTION</span>
+                      <span className="text-[8px] font-mono tracking-widest text-charcoal-industrial/40">URBANLAND CAD SECTION</span>
                       <span className="text-[8px] font-mono tracking-widest text-charcoal-industrial/40">PAGE 12</span>
                     </div>
                     <div className="p-6 flex flex-col gap-4 opacity-20">
@@ -266,7 +266,7 @@ const Downloads = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
                     <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 text-left">
                       <p className="text-white font-headline-md text-2xl md:text-3xl mb-1.5 font-bold tracking-tight">Master Catalogue</p>
-                      <p className="text-craftsman-gold font-label-technical text-xs font-bold tracking-[0.15em]">DECORLAB PRODUCTS 2026</p>
+                      <p className="text-craftsman-gold font-label-technical text-xs font-bold tracking-[0.15em]">URBANLAND PRODUCTS 2026</p>
                     </div>
                   </div>
 

@@ -21,7 +21,7 @@ const HospitalitySolutions = () => {
 
   useEffect(() => {
     updatePageSEO({
-      title: "Outdoor Furniture for Hospitality & Hotels India | Resorts, Pool Areas, Restaurants & Rooftops | Decorlab Products",
+      title: "Outdoor Furniture for Hospitality & Hotels India | Resorts, Pool Areas, Restaurants & Rooftops | Urbanland Products",
       description: "Premium wicker furniture, benches, planter boxes and outdoor seating solutions for hotels, resorts, restaurants and pool areas in India. Durable, stylish and low-maintenance products trusted by hospitality operators. 2-Year Guarantee.",
       og_image: gbg2
     });
@@ -396,7 +396,7 @@ const HospitalitySolutions = () => {
                   "Arkade Prime: Exceptional Hospitality Standards"
                 </h3>
                 <p className="text-lg leading-relaxed text-charcoal-industrial/85 mb-8 font-serif">
-                  "Decorlab's custom wicker collection instantly upgraded our hotel's pool deck. The material stands up perfectly to water splash and midday sun, saving our team immense maintenance effort."
+                  "Urbanland's custom wicker collection instantly upgraded our hotel's pool deck. The material stands up perfectly to water splash and midday sun, saving our team immense maintenance effort."
                 </p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-1 bg-craftsman-gold"></div>

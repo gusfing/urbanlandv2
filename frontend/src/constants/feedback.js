@@ -1,6 +1,6 @@
 export const testimonials = [
     {
-        quote: "Decorlab® outdoor furniture elevated our township's luxury index — modern design, durable WPC benches, and stunning cabanas that our premium residents absolutely love.",
+        quote: "Urbanland® outdoor furniture elevated our township's luxury index — modern design, durable WPC benches, and stunning cabanas that our premium residents absolutely love.",
         author: "Rohan Mehta",
         role: "Director, Prestige Group",
         location: "Bengaluru",
@@ -27,7 +27,7 @@ export const testimonials = [
         avatarLetter: "A"
     },
     {
-        quote: "Decorlab's attention to detail and material quality is unparalleled in the Indian market. Their furniture didn't just meet our specifications; it elevated the entire landscape project. Truly a partner for permanence.",
+        quote: "Urbanland's attention to detail and material quality is unparalleled in the Indian market. Their furniture didn't just meet our specifications; it elevated the entire landscape project. Truly a partner for permanence.",
         author: "Ar. Sanjay Deshpande",
         role: "Principal Architect, S.D. Associates",
         location: "Mumbai",
@@ -36,7 +36,7 @@ export const testimonials = [
         avatarLetter: "S"
     },
     {
-        quote: "For our high-profile luxury residential projects, material durability is non-negotiable. Decorlab's customized architectural benches stood the test of heavy monsoons while retaining their premium finish.",
+        quote: "For our high-profile luxury residential projects, material durability is non-negotiable. Urbanland's customized architectural benches stood the test of heavy monsoons while retaining their premium finish.",
         author: "Vikram Oberoi",
         role: "Senior VP Landscape, Oberoi Realty",
         location: "Mumbai",

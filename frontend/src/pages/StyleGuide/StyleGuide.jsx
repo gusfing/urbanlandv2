@@ -31,7 +31,7 @@ const StyleGuide = () => {
                     <span className="text-[#C9A84C]">Style Guide.</span>
                 </h1>
                 <p className="text-sm sm:text-base text-[#2D2D2D]/70 max-w-2xl leading-relaxed">
-                    This documentation page defines the design tokens and reusable UI elements that drive visual consistency across the entire Decorlab site. Use these guidelines to maintain visual order.
+                    This documentation page defines the design tokens and reusable UI elements that drive visual consistency across the entire Urbanland site. Use these guidelines to maintain visual order.
                 </p>
             </section>
 
